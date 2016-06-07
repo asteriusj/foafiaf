@@ -3,7 +3,7 @@ var express = require('express')
   , routes = require('./routes')
   //, OAuth = require('./lib/oauth')
   , host = process.env.IP || 'localhost'
-  , port = process.env.PORT || 59902;
+  , port = process.env.PORT || 8080;
 
 
 //var app = express()
@@ -44,6 +44,8 @@ app.get('/', routes.index);
 // the foafiaf/map path routes to the foafiaf_map.js in /routes folder
 app.get('/foafiaf/map', routes.foafiaf_map);
 
+
+app.get('/foafiaf/bacon', routes.bacon_map);
 
 
 app.listen(port, host);

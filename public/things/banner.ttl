@@ -1,0 +1,14 @@
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<>      a                       foaf:Person ;
+        foaf:firstName          "David" ;
+        foaf:homepage           <http://www.davidbanner.com> ;
+        foaf:name               "David Banner" ;
+        foaf:nick               "hulk" ;
+        foaf:schoolHomepage     <http://www.mit.edu> ;
+        foaf:surname            "Banner" ;
+        foaf:title              "Mr" ;
+        foaf:weblog             <http://www.davidbanner.com/blog> ;
+        foaf:workInfoHomepage   <http://www.gamma-rays-r-us.com/~banner/crazy-experiments.html> ;
+        foaf:workplaceHomepage  <http://www.gamma-rays-r-us.com> .

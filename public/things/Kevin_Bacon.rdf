@@ -1,0 +1,14 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dbo="http://dbpedia.org/ontology/"
+    xmlns:dbr="http://dbpedia.org/resource/"
+    xmlns:dbp="http://dbpedia.org/property/" > 
+  <rdf:Description rdf:about="http://dbpedia.org/resource/True_Romance">
+    <dbp:starring rdf:resource="http://dbpedia.org/resource/Patricia_Arquette"/>
+    <dbp:starring rdf:resource="http://dbpedia.org/resource/Brad_Pitt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sleepers_(film)">
+    <dbp:starring rdf:resource="http://dbpedia.org/resource/Brad_Pitt"/>
+    <dbp:starring rdf:resource="http://dbpedia.org/resource/Kevin_Bacon"/>
+  </rdf:Description>
+</rdf:RDF>

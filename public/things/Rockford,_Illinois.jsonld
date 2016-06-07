@@ -1,0 +1,6494 @@
+{
+http://dbpedia.org/resource/Rockford_Symphony_Orchestra: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Robert_Reitsch: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Perry_Graves: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Milton_Olander: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/World_Congress_of_Families: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_Henry_Breasted: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Arthur_Chapman_(poet): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/George_Edgar_Vincent: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Frank_La_Forge: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kathryn_Layng: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Leonard_B._Keller: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dave_Barclay: {
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Taylor_Lewis: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WNTA: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WRTB: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WKGL-FM: {
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WXXQ: {
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WZOK: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WYRB: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WGFB: {
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WQFL_(FM): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WSEY: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WXRX: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WNIU: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/U.S._Route_51_in_Illinois: {
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/McClain_Airlines: {
+http://dbpedia.org/property/destinations: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/destination: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Gene_Lamont: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rock_Valley_College_Studio_Theatre: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Chick_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Herrick_Cobblestone: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Graham–Ginestra_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ira_Matthews: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Tom_McNeill: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Powers_(tight_end): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Early_(politician): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dorothy_Ferguson: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Alexe_Gilles: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/William_S._Day: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Cornell_Big_Red_men's_ice_hockey: {
+http://dbpedia.org/property/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Elmer_Lindroth: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_Willard_Hurst: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WJVL: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WSJY: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WFEN: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/U.S._Route_51: {
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/1943_Wisconsin_Badgers_football_team: {
+http://dbpedia.org/property/siteCityst: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Robert_C._Richardson_III: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/George_J._Dufek: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_IceHogs: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_C._Renick: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dan_Tipple: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/J._P._Tokoto: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Al_Barker: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ken_Rudolph: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/George_Bird_(baseball): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Hunkey_Hines: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Blake_(American_football): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Stephanie_Raymond: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Shaun_Smith_(make-up_effects_artist): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Josh_Bell_(baseball,_born_1986): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/1942_Northern_Illinois_State_Huskies_football_team: {
+http://dbpedia.org/property/siteCityst: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Sarah_Kelly: {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jace_Sayler: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://en.wikipedia.org/wiki/Rockford,_Illinois: {
+http://xmlns.com/foaf/0.1/primaryTopic: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Stephanie_Bellars: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Paris_Bennett: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Mark_Dean_(swimmer): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Michael_St._Angel: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2014–15_St._Bonaventure_Bonnies_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/List_of_Phi_Beta_Sigma_chapters: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2012–13_Wichita_State_Shockers_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2014–15_North_Texas_Mean_Green_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Lisa_Coole: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Tony_Blevins: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Joie_De_Vivre_(band): {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Albert_Morris_Sames: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Riverdawgs: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Fury: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Estwing: {
+http://dbpedia.org/property/locationCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/foundationPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/locationCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_IceHogs_(UHL): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/H._Russell_Albee: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Charlie_Swindells: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jean_Cione: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Harry_Sullivan_(baseball): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Varney_Anderson: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rodney_Myers: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Cody_Scarpetta: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Mike_Golden: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Charlie_Sproull: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Sundstrand_Corporation: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Derek_Dimke: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Lake–Peterson_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Danfoss_Power_Solutions: {
+http://dbpedia.org/property/foundation: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/foundationPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Edith_Quimby: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Phantom_Regiment_Drum_and_Bugle_Corps: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Elaine_Roe: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Shane_Hendrixson: {
+http://dbpedia.org/property/homeTown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Michael_Kleen: {
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Michelle_Williams_(singer): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Ortberg: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kim_Hammer: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Charles_Box: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Douglas_P._Scott: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Aidan_Quinn: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rock_River_Raptors: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WHJG-LP: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Black_Hawk_(Amtrak_train): {
+http://dbpedia.org/property/end: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Don_Manzullo: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/United_States_District_Court_for_the_Northern_District_of_Illinois: {
+http://dbpedia.org/property/dutyStation: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Swedish_American_Hospital: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_B._Anderson: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Interstate_39: {
+http://dbpedia.org/property/junction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kenneth_and_Phyllis_Laurent_House: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WROK_(AM): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rock_River_Times: {
+http://dbpedia.org/ontology/headquarter: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/The_Felix_Culpa: {
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/The_Color_Morale: {
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Park_District: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2014–15_Wichita_State_Shockers_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2015–16_St._Bonaventure_Bonnies_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2015–16_Wichita_State_Shockers_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2013–14_Wichita_State_Shockers_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Wichita_State_Shockers_men's_basketball: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ed_Swartwood: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rex_Enright: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dwight_Johns: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Pacific_Bearing_Corp: {
+http://dbpedia.org/ontology/foundationPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Klapmeier_brothers: {
+http://dbpedia.org/property/birthDate: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Greg_Klazura: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jake_Smolinski: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dolph_Stanley: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Tim_Maculan: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Marin_Mazzie: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jodi_Benson: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2011–12_Texas_A&M–Corpus_Christi_Islanders_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2014–15_Middle_Tennessee_Blue_Raiders_women's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ken_Roskie: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Mark_Ingram,_Sr.: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bill_Larson_(fullback): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Laurence_S._Kuter: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_Cartwright: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Brock_Spack: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Illinois_Route_251: {
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Richard_Bulliet: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Larry_Dale_Lee: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Illinois_Route_2: {
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Steve_Cherundolo: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Air_show: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Illinois_National_Guard_Armory_(Rockford): {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bun_E._Carlos: {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Frederick_J._Kapala: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Steve_Stadelman: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Sammy_Mandell: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Edward_Edson_Lee: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ben_Abruzzo: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Karol_Schayer: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Fenton_Robinson: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_T._Buckbee: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Julia_Lathrop: {
+http://dbpedia.org/property/restingPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rick_Nielsen: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Daniel_Roberts_(fighter): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Joe_Sosnowski: {
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Robert_Greenblatt: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jon_Pritikin: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Joe_Mantello: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Emily_Bear: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Brad_Ring: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ron_Husmann: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Michele_Reagan: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Clay_Guida: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Heather_Nauert: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Corey_Anderson_(fighter): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/George_Boswell: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Larry_Morrissey: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/R._T._Moore_(soccer): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jake_Runestad: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Chad_Knaus: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Debra_Bowen: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Soleternity: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bill_Kopp: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Leo_Stasica: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/C._J._Klaas: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_A._Kjellstrom: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Meredith_Miller: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Todd_J._Campbell: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jerry_Wayne_Wickam: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Thomas_G._Lawler: {
+http://dbpedia.org/ontology/restingPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Fred_E._Smith: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Lutheran_High_School: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Central_High_School: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Iqra_School: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Saint_Anthony_College_of_Nursing: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Thomas_Jefferson_High_School_(Rockford,_Illinois): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Todd_Gilles: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Boylan_Catholic_High_School: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Coronado_Theatre: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Cathedral_of_Saint_Peter_(Rockford,_Illinois): {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Guilford_High_School_(Illinois): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Rage: {
+http://dbpedia.org/property/metroArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Public_School_District_205: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_University: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Auburn_High_School_(Rockford,_Illinois): {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rock_Valley_College: {
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_East_High_School: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WIFR: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WQRF-TV: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WREX: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WTVO: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rosecrance: {
+http://dbpedia.org/property/locationCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/locationCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Simon_Nelson: {
+http://dbpedia.org/property/locations: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/David_Mulford: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Gordon_Tullock: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Shawn_Ryan: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Steven_C._Hebert: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Weasel_Walter: {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Cheap_Trick: {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Harmony_Riley: {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Fuse_(band): {
+http://dbpedia.org/property/origin: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Beattie_Park_Mound_Group: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/On_the_Waterfront_(festival): {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Keith_Country_Day_School: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Winnebago_County,_Illinois: {
+http://dbpedia.org/ontology/largestCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/countySeat: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford,_Illinois: {
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type: [
+{
+type: "uri",
+value: "http://www.w3.org/2002/07/owl#Thing"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Municipality108626283"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/GeographicalArea108574314"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/District108552138"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Location100027167"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/City108524735"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Site108651247"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Tract108673395"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Region108630985"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Seat108647945"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/UrbanArea108675967"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/YagoGeoEntity"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/ontology/PopulatedPlace"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/ontology/Place"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/ontology/Location"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/AdministrativeDistrict108491826"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Center108523483"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Area108497294"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/CountySeatsInIllinois"
+},
+{
+type: "uri",
+value: "http://www.wikidata.org/entity/Q486972"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/ontology/Settlement"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/CitiesInIllinois"
+},
+{
+type: "uri",
+value: "http://schema.org/Place"
+},
+{
+type: "uri",
+value: "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/PopulatedPlacesInWinnebagoCounty,Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/CountySeat108547143"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/PopulatedPlacesEstablishedIn1834"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/Object100002684"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/class/yago/YagoLegalActorGeo"
+}
+],
+http://purl.org/dc/terms/subject: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:1834_establishments_in_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:Rockford_metropolitan_area"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:Cities_in_Winnebago_County,_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:Cities_in_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:Rockford,_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:County_seats_in_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Category:Populated_places_established_in_1834"
+}
+],
+http://dbpedia.org/property/symbol: [
+{
+type: "literal",
+value: "Seal of Rockford.png",
+lang: "en"
+}
+],
+http://dbpedia.org/property/populationDate: [
+{
+type: "literal",
+value: 2013,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://www.w3.org/2002/07/owl#sameAs: [
+{
+type: "uri",
+value: "http://yago-knowledge.org/resource/Rockford,_Illinois"
+},
+{
+type: "uri",
+value: "http://nl.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+},
+{
+type: "uri",
+value: "http://pt.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://id.dbpedia.org/resource/Rockford,_Illinois"
+},
+{
+type: "uri",
+value: "http://rdf.freebase.com/ns/m.0sjqm"
+},
+{
+type: "uri",
+value: "http://it.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://ko.dbpedia.org/resource/록퍼드_(일리노이_주)"
+},
+{
+type: "uri",
+value: "http://pl.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://de.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://es.dbpedia.org/resource/Rockford_(Illinois)"
+},
+{
+type: "uri",
+value: "http://wikidata.dbpedia.org/resource/Q233892"
+},
+{
+type: "uri",
+value: "http://ja.dbpedia.org/resource/ロックフォード_(イリノイ州)"
+},
+{
+type: "uri",
+value: "http://www.wikidata.org/entity/Q233892"
+},
+{
+type: "uri",
+value: "http://sws.geonames.org/4907959/"
+},
+{
+type: "uri",
+value: "http://linkedgeodata.org/triplify/node153748224"
+},
+{
+type: "uri",
+value: "http://fr.dbpedia.org/resource/Rockford_(Illinois)"
+}
+],
+http://www.w3.org/2000/01/rdf-schema#label: [
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "fr"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "de"
+},
+{
+type: "literal",
+value: "روكفورد (إلينوي)",
+lang: "ar"
+},
+{
+type: "literal",
+value: "Рокфорд (Иллинойс)",
+lang: "ru"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "pl"
+},
+{
+type: "literal",
+value: "Rockford, Illinois",
+lang: "en"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "es"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "nl"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "it"
+},
+{
+type: "literal",
+value: "罗克福德",
+lang: "zh"
+},
+{
+type: "literal",
+value: "ロックフォード (イリノイ州)",
+lang: "ja"
+},
+{
+type: "literal",
+value: "Rockford (Illinois)",
+lang: "pt"
+}
+],
+http://www.w3.org/2000/01/rdf-schema#comment: [
+{
+type: "literal",
+value: "Rockford é uma cidade localizada no estado americano de Illinois, no Condado de Winnebago.Segundo o censo nacional de 2010, a sua área é de 160 km². Sua população é de 152 871 habitantes e sua densidade populacional é de 966,3 hab/km². É atualmente a terceira cidade mais populosa do Illinois. Possui 66 700 residências, que resulta em uma densidade de 421,63 residências/km².== Referências ==",
+lang: "pt"
+},
+{
+type: "literal",
+value: "Rockford es una localidad de los Estados Unidos de América, situada al Norte del estado de Illinois y a ambas orillas del río Rock, afluente del Misisipi. Capital del condado de Winnebago, es conocida como «La Ciudad del bosque» (The Forest City).Su población estimada es de 157.272 habitantes(2008), lo que la convierte en la tercera ciudada más poblada del estado de Illinois tras Chicago y Aurora.",
+lang: "es"
+},
+{
+type: "literal",
+value: "Rockford is een stad in de Amerikaanse staat Illinois en telt 150.115 inwoners. Het is hiermee de 136e stad in de Verenigde Staten (2000). De oppervlakte bedraagt 145,0 km², waarmee het de 121e stad is.Rockford ligt aan de Rock River, een zijrivier van de Mississippi met een lengte van naar schatting 459 kilometer.",
+lang: "nl"
+},
+{
+type: "literal",
+value: "Rockford – miasto w Stanach Zjednoczonych, w stanie Illinois, w hrabstwie Winnebago nad rzeką Rock (dopływ Missisipi). Około 150,1 tys. mieszkańców natomiast aglomeracja liczy około 320 tys. ludzi.",
+lang: "pl"
+},
+{
+type: "literal",
+value: "Rockford ist eine Stadt und Verwaltungssitz des Winnebago County im Norden des US-amerikanischen Bundesstaates Illinois.",
+lang: "de"
+},
+{
+type: "literal",
+value: "Ро́кфорд (англ. Rockford) — третий по численности населения город в штате Иллинойс, США. Расположен в округе Уиннебейго, в северо-западной части штата, вблизи границы со штатом Висконсин. По данным переписи 2010 года, численность населения Рокфорда составляла 152 871 человек, увеличившись на 1,8 % по сравнению с переписью 2000 года.",
+lang: "ru"
+},
+{
+type: "literal",
+value: "罗克福德（Rockford）位于美国伊利诺伊州北部罗克河畔，是温纳贝戈县的县治所在，人口约15万（2000年）。罗克福德為仅次於芝加哥和奥罗拉之伊利诺伊州第三大城市。",
+lang: "zh"
+},
+{
+type: "literal",
+value: "Rockford è una città degli Stati Uniti d'America, capoluogo della contea di Winnebago nello Stato dell'Illinois. È situata a nord-ovest di Chicago, sul Rock River (affluente del Mississippi).Si estende su una superficie di 147 km² e nel censimento del 2000 contava 150.115 abitanti (1.035 per km²), passati a 155.138 secondo una stima del 2006.Sede vescovile cattolica, è un notevole centro agricolo, commerciale e industriale.",
+lang: "it"
+},
+{
+type: "literal",
+value: "La ville de Rockford est le siège du comté de Winnebago, dans l'Illinois. Elle est située à 115 km au nord-ouest de Chicago. Selon le Bureau du recensement des États-Unis, elle abritait 152 871 habitants lors du recensement de 2010. C’est la troisième ville la plus peuplée de l’État après Chicago et Aurora.Rockford a été bâtie à partir de 1834 par Germanicus Kent, Thatcher Blake et Lewis Lemon, originaires de Galena.",
+lang: "fr"
+},
+{
+type: "literal",
+value: "Rockford is the third largest city in the U.S. state of Illinois, the 164th most populous city in the United States, and the 148th most populous region in the United States. It is the county seat of Winnebago County and is located on both banks of the Rock River in far northern Illinois.",
+lang: "en"
+},
+{
+type: "literal",
+value: "روكفورد، إلينوي Rockford, Illinois مدينة متوسطة المساحة توجد بشمال ولاية إلينوي ،و يشار أليها أحيانا بمدينة الغابات ،إحصاء تعداد السكان سنة 2006 150.115 نسمه تقريبا، سكانها الأوائل سكنوا بها أول مره سنة 1834 و183532x28pxبوابة الولايات المتحدة",
+lang: "ar"
+},
+{
+type: "literal",
+value: "ロックフォード（Rockford）は、アメリカ合衆国イリノイ州北部、ウィネベーゴ郡に位置する都市。同郡の郡庁所在地である。シカゴからは西北西へ約135kmに位置する。人口は152,871人（2010年国勢調査）で、シカゴ都市圏外のイリノイ州の都市としては最大である。ウィネベーゴ郡、および東に隣接するブーン郡の2郡にまたがる都市圏は人口349,431人（2010年国勢調査）を数える。ロックフォードは市内に立ち並ぶニレの木で知られており、それ故に「森の街」（Forest City）と呼ばれている。市街地はミシシッピ川の支流の1つであるロック川の両岸に広がっている。",
+lang: "ja"
+}
+],
+http://www.w3.org/2000/01/rdf-schema#seeAlso: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford_Public_School_District_205"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Boylan_Catholic_High_School"
+}
+],
+http://dbpedia.org/property/aprPrecipitationInch: [
+{
+type: "literal",
+value: 3.35,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/augPrecipitationInch: [
+{
+type: "literal",
+value: 4.59,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/decPrecipitationInch: [
+{
+type: "literal",
+value: 1.98,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/febPrecipitationInch: [
+{
+type: "literal",
+value: 1.41,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/janPrecipitationInch: [
+{
+type: "literal",
+value: 1.37,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/julPrecipitationInch: [
+{
+type: "literal",
+value: 3.94,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/junPrecipitationInch: [
+{
+type: "literal",
+value: 4.65,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/leaderType: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Mayor"
+}
+],
+http://dbpedia.org/property/marPrecipitationInch: [
+{
+type: "literal",
+value: 2.31,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/mayPrecipitationInch: [
+{
+type: "literal",
+value: 4.01,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/novPrecipitationInch: [
+{
+type: "literal",
+value: 2.58,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octPrecipitationInch: [
+{
+type: "literal",
+value: 2.66,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sepPrecipitationInch: [
+{
+type: "literal",
+value: 3.35,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sourceName: [
+{
+type: "literal",
+value: 2013,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/populationDensityMetroImperial: [
+{
+type: "literal",
+value: 344623,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://xmlns.com/foaf/0.1/name: [
+{
+type: "literal",
+value: "Rockford, Illinois",
+lang: "en"
+}
+],
+http://xmlns.com/foaf/0.1/nick: [
+{
+type: "literal",
+value: "The Forest City",
+lang: "en"
+}
+],
+http://xmlns.com/foaf/0.1/homepage: [
+{
+type: "uri",
+value: "http://ci.rockford.il.us/"
+}
+],
+http://www.w3.org/2003/01/geo/wgs84_pos#lat: [
+{
+type: "literal",
+value: 42.25944519042969,
+datatype: "http://www.w3.org/2001/XMLSchema#float"
+}
+],
+http://www.w3.org/2003/01/geo/wgs84_pos#long: [
+{
+type: "literal",
+value: -89.06444549560547,
+datatype: "http://www.w3.org/2001/XMLSchema#float"
+}
+],
+http://xmlns.com/foaf/0.1/depiction: [
+{
+type: "uri",
+value: "http://commons.wikimedia.org/wiki/Special:FilePath/Overview_of_eastern_downtown_Rockford.jpg"
+}
+],
+http://xmlns.com/foaf/0.1/isPrimaryTopicOf: [
+{
+type: "uri",
+value: "http://en.wikipedia.org/wiki/Rockford,_Illinois"
+}
+],
+http://www.w3.org/2003/01/geo/wgs84_pos#geometry: [
+{
+type: "literal",
+value: "POINT(-89.064445495605 42.25944519043)",
+datatype: "http://www.openlinksw.com/schemas/virtrdf#Geometry"
+}
+],
+http://www.w3.org/ns/prov#wasDerivedFrom: [
+{
+type: "uri",
+value: "http://en.wikipedia.org/wiki/Rockford,_Illinois?oldid=679476181"
+}
+],
+http://dbpedia.org/property/longS: [
+{
+type: "literal",
+value: 52,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/latS: [
+{
+type: "literal",
+value: 34,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/districtType: [
+{
+type: "literal",
+value: "Township",
+lang: "en"
+}
+],
+http://dbpedia.org/property/establishedType: [
+{
+type: "literal",
+value: "Founded",
+lang: "en"
+}
+],
+http://www.georss.org/georss/point: [
+{
+type: "literal",
+value: "42.25944444444445 -89.06444444444445"
+}
+],
+http://dbpedia.org/ontology/leader: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Larry_Morrissey"
+}
+],
+http://dbpedia.org/property/category: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/List_of_cities_in_Illinois"
+}
+],
+http://dbpedia.org/property/aprHighF: [
+{
+type: "literal",
+value: 60.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/aprLowF: [
+{
+type: "literal",
+value: 38.1,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/aprRecordHighF: [
+{
+type: "literal",
+value: 93,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/aprRecordLowF: [
+{
+type: "literal",
+value: 5,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/augHighF: [
+{
+type: "literal",
+value: 82.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/augLowF: [
+{
+type: "literal",
+value: 61.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/augRecordHighF: [
+{
+type: "literal",
+value: 104,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/augRecordLowF: [
+{
+type: "literal",
+value: 35,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/decHighF: [
+{
+type: "literal",
+value: 33.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/decLowF: [
+{
+type: "literal",
+value: 17.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/decRecordHighF: [
+{
+type: "literal",
+value: 69,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/decRecordLowF: [
+{
+type: "literal",
+value: "−24",
+lang: "en"
+}
+],
+http://dbpedia.org/property/febHighF: [
+{
+type: "literal",
+value: 34.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/febLowF: [
+{
+type: "literal",
+value: 17.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/febRecordHighF: [
+{
+type: "literal",
+value: 70,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/febRecordLowF: [
+{
+type: "literal",
+value: "−25",
+lang: "en"
+}
+],
+http://dbpedia.org/property/imperialFirst: [
+{
+type: "literal",
+value: "Y",
+lang: "en"
+}
+],
+http://dbpedia.org/property/janHighF: [
+{
+type: "literal",
+value: 29.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/janLowF: [
+{
+type: "literal",
+value: 13.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/janRecordHighF: [
+{
+type: "literal",
+value: 63,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/janRecordLowF: [
+{
+type: "literal",
+value: "−27",
+lang: "en"
+}
+],
+http://dbpedia.org/property/julHighF: [
+{
+type: "literal",
+value: 84.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/julLowF: [
+{
+type: "literal",
+value: 63,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/julRecordHighF: [
+{
+type: "literal",
+value: 112,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/julRecordLowF: [
+{
+type: "literal",
+value: 43,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/junHighF: [
+{
+type: "literal",
+value: 81.1,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/junLowF: [
+{
+type: "literal",
+value: 58.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/junRecordHighF: [
+{
+type: "literal",
+value: 106,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/junRecordLowF: [
+{
+type: "literal",
+value: 35,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/marHighF: [
+{
+type: "literal",
+value: 46.9,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/marLowF: [
+{
+type: "literal",
+value: 27.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/marRecordHighF: [
+{
+type: "literal",
+value: 85,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/marRecordLowF: [
+{
+type: "literal",
+value: "−11",
+lang: "en"
+}
+],
+http://dbpedia.org/property/mayHighF: [
+{
+type: "literal",
+value: 71.8,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/mayLowF: [
+{
+type: "literal",
+value: 48.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/mayRecordHighF: [
+{
+type: "literal",
+value: 106,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/mayRecordLowF: [
+{
+type: "literal",
+value: 24,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/novHighF: [
+{
+type: "literal",
+value: 47.6,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/novLowF: [
+{
+type: "literal",
+value: 30.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/novRecordHighF: [
+{
+type: "literal",
+value: 81,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/novRecordLowF: [
+{
+type: "literal",
+value: "−10",
+lang: "en"
+}
+],
+http://dbpedia.org/property/octHighF: [
+{
+type: "literal",
+value: 62.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octLowF: [
+{
+type: "literal",
+value: 40.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octRecordHighF: [
+{
+type: "literal",
+value: 91,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/octRecordLowF: [
+{
+type: "literal",
+value: 7,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/sepHighF: [
+{
+type: "literal",
+value: 75.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sepLowF: [
+{
+type: "literal",
+value: 52.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sepRecordHighF: [
+{
+type: "literal",
+value: 103,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/sepRecordLowF: [
+{
+type: "literal",
+value: 24,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/yearRecordHighF: [
+{
+type: "literal",
+value: 112,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/yearRecordLowF: [
+{
+type: "literal",
+value: "−27",
+lang: "en"
+}
+],
+http://dbpedia.org/property/established: [
+{
+type: "literal",
+value: 1834,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/ontology/district: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford_Township,_Winnebago_County,_Illinois"
+}
+],
+http://dbpedia.org/property/latD: [
+{
+type: "literal",
+value: 42,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/latM: [
+{
+type: "literal",
+value: 15,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/latNs: [
+{
+type: "literal",
+value: "N",
+lang: "en"
+}
+],
+http://dbpedia.org/property/longD: [
+{
+type: "literal",
+value: 89,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/longEw: [
+{
+type: "literal",
+value: "W",
+lang: "en"
+}
+],
+http://dbpedia.org/property/longM: [
+{
+type: "literal",
+value: 3,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/district: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford_Township,_Winnebago_County,_Illinois"
+}
+],
+http://dbpedia.org/property/aggravatedAssault: [
+{
+type: "literal",
+value: 513.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/burglary: [
+{
+type: "literal",
+value: 789.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/cityName: [
+{
+type: "literal",
+value: "Rockford, Illinois",
+lang: "en"
+}
+],
+http://dbpedia.org/property/homicide: [
+{
+type: "literal",
+value: 7.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/larcenyTheft: [
+{
+type: "literal",
+value: 2055.6,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/propertyCrime: [
+{
+type: "literal",
+value: 2990.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/robbery: [
+{
+type: "literal",
+value: 132.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sourceUrl: [
+{
+type: "uri",
+value: "http://www.fbi.gov/about-us/cjis/ucr/crime-in-the-u.s/2013/crime-in-the-u.s.-2013/tables/6tabledatadecpdf/table-6"
+}
+],
+http://dbpedia.org/property/violentCrime: [
+{
+type: "literal",
+value: 711.1,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/motorVehicleTheft: [
+{
+type: "literal",
+value: 145,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/areaImperial: [
+{
+type: "literal",
+value: 61.95,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/areaLandImperial: [
+{
+type: "literal",
+value: 61.08,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/areaWaterImperial: [
+{
+type: "literal",
+value: 0.87,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/elevationImperial: [
+{
+type: "literal",
+value: 728,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/populationDensityImperial: [
+{
+type: "literal",
+value: 2502.8,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/aprSnowInch: [
+{
+type: "literal",
+value: 0.8,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/augSnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/decSnowInch: [
+{
+type: "literal",
+value: 10.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/febSnowInch: [
+{
+type: "literal",
+value: 8,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/janSnowInch: [
+{
+type: "literal",
+value: 10.6,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/julSnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/junSnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/marSnowInch: [
+{
+type: "literal",
+value: 4.6,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/maySnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/novSnowInch: [
+{
+type: "literal",
+value: 1.6,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octSnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/sepSnowInch: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/imageCaption: [
+{
+type: "literal",
+value: "Downtown Rockford including the Rock River and the Jefferson Street Bridge",
+lang: "en"
+}
+],
+http://dbpedia.org/ontology/region: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Winnebago_County,_Illinois"
+}
+],
+http://dbpedia.org/property/leader: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Larry_Morrissey"
+}
+],
+http://dbpedia.org/property/map: [
+{
+type: "literal",
+value: "Winnebago County Illinois incorporated and unincorporated areas Rockford highlighted.svg",
+lang: "en"
+}
+],
+http://dbpedia.org/property/mapSize: [
+{
+type: "literal",
+value: 260,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/population: [
+{
+type: "literal",
+value: 150251,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/singleLine: [
+{
+type: "literal",
+value: "Y",
+lang: "en"
+}
+],
+http://dbpedia.org/property/source: [
+{
+type: "literal",
+value: "The Weather Channel ,",
+lang: "en"
+},
+{
+type: "literal",
+value: "NOAA",
+lang: "en"
+}
+],
+http://dbpedia.org/property/state: [
+{
+type: "literal",
+value: "Illinois",
+lang: "en"
+}
+],
+http://dbpedia.org/property/date: [
+{
+type: "literal",
+value: "February 2012",
+lang: "en"
+}
+],
+http://dbpedia.org/property/location: [
+{
+type: "literal",
+value: "Rockford, Illinois , 1981−2010 normals & extremes",
+lang: "en"
+}
+],
+http://dbpedia.org/ontology/areaCode: [
+{
+type: "literal",
+value: "815, 779"
+}
+],
+http://dbpedia.org/ontology/country: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/United_States"
+}
+],
+http://dbpedia.org/ontology/elevation: [
+{
+type: "literal",
+value: 221.8944,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/ontology/populationTotal: [
+{
+type: "literal",
+value: "150251",
+datatype: "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+}
+],
+http://dbpedia.org/ontology/postalCode: [
+{
+type: "literal",
+value: "61101-61110, 61112, 61114, 61125, 61126"
+}
+],
+http://dbpedia.org/property/country: [
+{
+type: "literal",
+value: "United States",
+lang: "en"
+}
+],
+http://dbpedia.org/property/northeast: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Machesney_Park,_Illinois"
+}
+],
+http://dbpedia.org/property/region: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Winnebago_County,_Illinois"
+}
+],
+http://dbpedia.org/property/southeast: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Cherry_Valley,_Illinois"
+}
+],
+http://dbpedia.org/ontology/state: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Illinois"
+}
+],
+http://dbpedia.org/property/forcibleRape: [
+{
+type: "literal",
+value: 57.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/ontology/daylightSavingTimeZone: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Central_Time_Zone"
+}
+],
+http://dbpedia.org/ontology/river: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rock_River_(Mississippi_River)"
+}
+],
+http://dbpedia.org/ontology/wikiPageID: [
+{
+type: "literal",
+value: 112090,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/ontology/wikiPageRevisionID: [
+{
+type: "literal",
+value: 679476181,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/ontology/wikiPageExternalLink: [
+{
+type: "uri",
+value: "http://www.rrstar.com"
+},
+{
+type: "uri",
+value: "http://www.northwestquarterly.com/"
+},
+{
+type: "uri",
+value: "http://www.swedishhistorical.org/"
+},
+{
+type: "uri",
+value: "http://www.cbhpaper.com"
+},
+{
+type: "uri",
+value: "http://www.artsforeveryone.com/artsorg.cfm?cat=1004&show=1098"
+},
+{
+type: "uri",
+value: "http://www.gorockford.com/"
+},
+{
+type: "uri",
+value: "http://www.oscarwildeinamerica.org/lecture-tour/0302-rockford.html"
+},
+{
+type: "uri",
+value: "http://www.midwayvillage.com/"
+},
+{
+type: "uri",
+value: "http://www.rockrivertimes.com"
+},
+{
+type: "uri",
+value: "http://www.discoverycentermuseum.org/"
+},
+{
+type: "uri",
+value: "http://www.fbi.gov/about-us/cjis/ucr/crime-in-the-u.s/2013/crime-in-the-u.s.-2013/tables/6tabledatadecpdf/table-6"
+},
+{
+type: "uri",
+value: "http://www.rasmussen.edu"
+},
+{
+type: "uri",
+value: "http://ci.rockford.il.us/"
+},
+{
+type: "uri",
+value: "https://www.facebook.com/pages/EatRockford/156933904333675?fref=ts"
+},
+{
+type: "uri",
+value: "http://www.rockfordlink.com/index2.htm"
+},
+{
+type: "uri",
+value: "http://www.rockfordil.gov/"
+},
+{
+type: "uri",
+value: "http://www.rockfordillinois.com/swedishhistory.htm"
+},
+{
+type: "uri",
+value: "https://www.mendelssohnpac.org/index.cfm"
+}
+],
+http://dbpedia.org/property/name: [
+{
+type: "literal",
+value: "Rockford, Illinois",
+lang: "en"
+}
+],
+http://dbpedia.org/ontology/thumbnail: [
+{
+type: "uri",
+value: "http://commons.wikimedia.org/wiki/Special:FilePath/Overview_of_eastern_downtown_Rockford.jpg?width=300"
+}
+],
+http://dbpedia.org/ontology/abstract: [
+{
+type: "literal",
+value: "Rockford è una città degli Stati Uniti d'America, capoluogo della contea di Winnebago nello Stato dell'Illinois. È situata a nord-ovest di Chicago, sul Rock River (affluente del Mississippi).Si estende su una superficie di 147 km² e nel censimento del 2000 contava 150.115 abitanti (1.035 per km²), passati a 155.138 secondo una stima del 2006.Sede vescovile cattolica, è un notevole centro agricolo, commerciale e industriale.",
+lang: "it"
+},
+{
+type: "literal",
+value: "Rockford is een stad in de Amerikaanse staat Illinois en telt 150.115 inwoners. Het is hiermee de 136e stad in de Verenigde Staten (2000). De oppervlakte bedraagt 145,0 km², waarmee het de 121e stad is.Rockford ligt aan de Rock River, een zijrivier van de Mississippi met een lengte van naar schatting 459 kilometer.",
+lang: "nl"
+},
+{
+type: "literal",
+value: "Ро́кфорд (англ. Rockford) — третий по численности населения город в штате Иллинойс, США. Расположен в округе Уиннебейго, в северо-западной части штата, вблизи границы со штатом Висконсин. По данным переписи 2010 года, численность населения Рокфорда составляла 152 871 человек, увеличившись на 1,8 % по сравнению с переписью 2000 года.",
+lang: "ru"
+},
+{
+type: "literal",
+value: "Rockford is the third largest city in the U.S. state of Illinois, the 164th most populous city in the United States, and the 148th most populous region in the United States. It is the county seat of Winnebago County and is located on both banks of the Rock River in far northern Illinois. According to 2010 census data, the City of Rockford had a population of 152,871, with an outlying metropolitan area population of 348,360, which was estimated to have decreased to 150,251 and 344,623, respectively, by July 2013.Settled between 1834 and 1835, Rockford was strategically positioned between Chicago and Galena and thus became suitable for industrial development. Rockford was notable for its output of heavy machinery and tools; by the twentieth century, it was the second leading center of furniture manufacturing in the nation. Its decline, emblematic of other cities in the Rust Belt, led to economic diversification into automotive, aerospace, and healthcare industries, as well as the undertaking of various tourism and downtown revitalization efforts.Referred to as the Forest City, Rockford is known for various venues of cultural or historical significance, including Anderson Japanese Gardens, Klehm Arboretum, Tinker Swiss Cottage, the BMO Harris Bank Center, the Coronado Theatre, the Laurent House, and the Burpee Museum of Natural History. Moreover, its contributions to music are noted in the Mendelssohn Club, the oldest music club in the nation, and performers such as Phantom Regiment and Cheap Trick.",
+lang: "en"
+},
+{
+type: "literal",
+value: "La ville de Rockford est le siège du comté de Winnebago, dans l'Illinois. Elle est située à 115 km au nord-ouest de Chicago. Selon le Bureau du recensement des États-Unis, elle abritait 152 871 habitants lors du recensement de 2010. C’est la troisième ville la plus peuplée de l’État après Chicago et Aurora.Rockford a été bâtie à partir de 1834 par Germanicus Kent, Thatcher Blake et Lewis Lemon, originaires de Galena.",
+lang: "fr"
+},
+{
+type: "literal",
+value: "روكفورد، إلينوي Rockford, Illinois مدينة متوسطة المساحة توجد بشمال ولاية إلينوي ،و يشار أليها أحيانا بمدينة الغابات ،إحصاء تعداد السكان سنة 2006 150.115 نسمه تقريبا، سكانها الأوائل سكنوا بها أول مره سنة 1834 و183532x28pxبوابة الولايات المتحدة",
+lang: "ar"
+},
+{
+type: "literal",
+value: "Rockford es una localidad de los Estados Unidos de América, situada al Norte del estado de Illinois y a ambas orillas del río Rock, afluente del Misisipi. Capital del condado de Winnebago, es conocida como «La Ciudad del bosque» (The Forest City).Su población estimada es de 157.272 habitantes(2008), lo que la convierte en la tercera ciudada más poblada del estado de Illinois tras Chicago y Aurora. Según las cifras oficiales del Censo de 2000, era 155.115 habitantes en la ciudad y 339.178 en su área metropolitana.",
+lang: "es"
+},
+{
+type: "literal",
+value: "罗克福德（Rockford）位于美国伊利诺伊州北部罗克河畔，是温纳贝戈县的县治所在，人口约15万（2000年）。罗克福德為仅次於芝加哥和奥罗拉之伊利诺伊州第三大城市。",
+lang: "zh"
+},
+{
+type: "literal",
+value: "Rockford ist eine Stadt und Verwaltungssitz des Winnebago County im Norden des US-amerikanischen Bundesstaates Illinois. Im Jahr 2000 hatte Rockford 150.115 Einwohner, eine Zahl, die sich bis 2009 auf 155.138 erhöhte.Rockford, das Kernstadt der Metropolregion Rockford ist, ist nach Chicago und Aurora die drittgrößte Stadt von Illinois.In Rockford befindet sich am Broadway das historische Herrick-Cobblestone-Haus, das 1980 vom National Register of Historic Places in die Register der Denkmalschutzbehörde aufgenommen wurde.Die Stadt ist Sitz des Bistums Rockford.",
+lang: "de"
+},
+{
+type: "literal",
+value: "ロックフォード（Rockford）は、アメリカ合衆国イリノイ州北部、ウィネベーゴ郡に位置する都市。同郡の郡庁所在地である。シカゴからは西北西へ約135kmに位置する。人口は152,871人（2010年国勢調査）で、シカゴ都市圏外のイリノイ州の都市としては最大である。ウィネベーゴ郡、および東に隣接するブーン郡の2郡にまたがる都市圏は人口349,431人（2010年国勢調査）を数える。ロックフォードは市内に立ち並ぶニレの木で知られており、それ故に「森の街」（Forest City）と呼ばれている。市街地はミシシッピ川の支流の1つであるロック川の両岸に広がっている。",
+lang: "ja"
+},
+{
+type: "literal",
+value: "Rockford é uma cidade localizada no estado americano de Illinois, no Condado de Winnebago.Segundo o censo nacional de 2010, a sua área é de 160 km². Sua população é de 152 871 habitantes e sua densidade populacional é de 966,3 hab/km². É atualmente a terceira cidade mais populosa do Illinois. Possui 66 700 residências, que resulta em uma densidade de 421,63 residências/km².== Referências ==",
+lang: "pt"
+},
+{
+type: "literal",
+value: "Rockford – miasto w Stanach Zjednoczonych, w stanie Illinois, w hrabstwie Winnebago nad rzeką Rock (dopływ Missisipi). Około 150,1 tys. mieszkańców natomiast aglomeracja liczy około 320 tys. ludzi.",
+lang: "pl"
+}
+],
+http://dbpedia.org/property/year: [
+{
+type: "literal",
+value: 2013,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/aprPrecipitationDays: [
+{
+type: "literal",
+value: 11.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/aprSnowDays: [
+{
+type: "literal",
+value: 1,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/areaCode: [
+{
+type: "literal",
+value: 815779,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/augPrecipitationDays: [
+{
+type: "literal",
+value: 9.7,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/augSnowDays: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/centre: [
+{
+type: "literal",
+value: "Rockford",
+lang: "en"
+}
+],
+http://dbpedia.org/property/commons: [
+{
+type: "literal",
+value: "Rockford, Illinois",
+lang: "en"
+}
+],
+http://dbpedia.org/property/decPrecipitationDays: [
+{
+type: "literal",
+value: 10.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/decSnowDays: [
+{
+type: "literal",
+value: 7.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/east: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Belvidere,_Illinois"
+}
+],
+http://dbpedia.org/property/febPrecipitationDays: [
+{
+type: "literal",
+value: 8.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/febSnowDays: [
+{
+type: "literal",
+value: 6,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/janPrecipitationDays: [
+{
+type: "literal",
+value: 9.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/janSnowDays: [
+{
+type: "literal",
+value: 8.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/julPrecipitationDays: [
+{
+type: "literal",
+value: 9.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/julSnowDays: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/junPrecipitationDays: [
+{
+type: "literal",
+value: 10.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/junSnowDays: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/mapCaption: [
+{
+type: "literal",
+value: "Location in Winnebago County and the state of Illinois.",
+lang: "en"
+}
+],
+http://dbpedia.org/property/marPrecipitationDays: [
+{
+type: "literal",
+value: 10.5,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/marSnowDays: [
+{
+type: "literal",
+value: 4,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/mayPrecipitationDays: [
+{
+type: "literal",
+value: 12.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/maySnowDays: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/motto: [
+{
+type: "literal",
+value: ""The Government Closest To The People"",
+lang: "en"
+}
+],
+http://dbpedia.org/property/nickname: [
+{
+type: "literal",
+value: "The Forest City",
+lang: "en"
+}
+],
+http://dbpedia.org/property/north: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Loves_Park,_Illinois"
+}
+],
+http://dbpedia.org/property/northwest: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Durand,_Illinois"
+}
+],
+http://dbpedia.org/property/novPrecipitationDays: [
+{
+type: "literal",
+value: 10.2,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/novSnowDays: [
+{
+type: "literal",
+value: 1.8,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octPrecipitationDays: [
+{
+type: "literal",
+value: 9.4,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/octSnowDays: [
+{
+type: "literal",
+value: 0.1,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/populationMetro: [
+{
+type: "literal",
+value: 344623,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/postalCode: [
+{
+type: "literal",
+value: 61101,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/precipitationColour: [
+{
+type: "literal",
+value: "green",
+lang: "en"
+}
+],
+http://dbpedia.org/property/sepPrecipitationDays: [
+{
+type: "literal",
+value: 8.3,
+datatype: "http://www.w3.org/2001/XMLSchema#double"
+}
+],
+http://dbpedia.org/property/sepSnowDays: [
+{
+type: "literal",
+value: 0,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/south: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/New_Milford,_Illinois"
+}
+],
+http://dbpedia.org/property/southwest: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Byron,_Illinois"
+},
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Stillman_Valley,_Illinois"
+}
+],
+http://dbpedia.org/property/timezone: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Central_Time_Zone"
+}
+],
+http://dbpedia.org/property/timezoneDst: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Central_Time_Zone"
+}
+],
+http://dbpedia.org/property/unitPrecipitationDays: [
+{
+type: "literal",
+value: "0.01",
+datatype: "http://dbpedia.org/datatype/inch"
+}
+],
+http://dbpedia.org/property/utcOffset: [
+{
+type: "literal",
+value: -6,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/utcOffsetDst: [
+{
+type: "literal",
+value: -5,
+datatype: "http://www.w3.org/2001/XMLSchema#integer"
+}
+],
+http://dbpedia.org/property/west: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Winnebago,_Illinois"
+}
+],
+http://dbpedia.org/ontology/motto: [
+{
+type: "literal",
+value: ""The Government Closest To The People""
+}
+],
+http://dbpedia.org/ontology/populationMetro: [
+{
+type: "literal",
+value: "344623",
+datatype: "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+}
+],
+http://dbpedia.org/ontology/timeZone: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Central_Time_Zone"
+}
+],
+http://dbpedia.org/ontology/type: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/List_of_cities_in_Illinois"
+}
+],
+http://dbpedia.org/property/unitSnowDays: [
+{
+type: "literal",
+value: "0.1",
+datatype: "http://dbpedia.org/datatype/inch"
+}
+],
+http://dbpedia.org/property/regionType: [
+{
+type: "literal",
+value: "County",
+lang: "en"
+}
+],
+http://dbpedia.org/property/river: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rock_River_(Mississippi_River)"
+}
+]
+},
+http://dbpedia.org/resource/Charles_E._Jefferson: {
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Register_Star: {
+http://dbpedia.org/ontology/headquarter: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ryan_International_Airlines: {
+http://dbpedia.org/ontology/headquarter: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Central_High_School__Rockford_Central_High_School__1: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jeff_Mitchell_(golfer): {
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kenneth_Gould: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Timothy_Doherty: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Franklin_Pierce_Burnham: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Brad_Benjamin: {
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Piper_Gilles: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Acme_Aircraft_Corporation: {
+http://dbpedia.org/property/hqLocationCity: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2015–16_Chicago_State_Cougars_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/USS_Rockford_(PF-48): {
+http://dbpedia.org/property/shipNamesake: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2015_Minnesota_Golden_Gophers_football_team: {
+http://dbpedia.org/property/hometown: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Orville_Jorgens: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bela_S._Huntington: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford: {
+http://dbpedia.org/ontology/wikiPageDisambiguates: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bill_Erickson: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Henry_Manny: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Litesa_Wallace: {
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Skip_Thoren: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Evelyn_Lundeen: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Hal_Carlson: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Fred_Cone_(baseball): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Loyd_Wheaton: {
+http://dbpedia.org/property/placeofburial: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/restingPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Irene_Ruhnke: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/National_Weather_Service_Chicago,_Illinois: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2015–16_Northern_Illinois_Huskies_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bannered_routes_of_U.S._Route_20: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/U.S._Route_20_in_Illinois: {
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/1918–19_Wisconsin_Badgers_men's_basketball_team: {
+http://dbpedia.org/property/siteCityst: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Adeline_Kerrar: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/George_Nichols_(actor): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Road_Ranger: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ernie_Kent: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Berith_Melin: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kasey_James: {
+http://dbpedia.org/property/billed: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/billed: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WQFL-CA: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ange_Armato: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ginger_Lynn: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Helen_Armstrong_(violinist): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Silver_(Cheap_Trick_album): {
+http://dbpedia.org/property/recorded: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/recordedIn: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Thomas_Griffin_(baseball): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/John_Sall: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/OSF_Saint_Anthony_Medical_Center: {
+http://dbpedia.org/ontology/region: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/region: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WILV: {
+http://dbpedia.org/property/area: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/broadcastArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kurt_Stallmann: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/William_Bebb: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Natasha_Leggero: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Margaret_Cross_Norton: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/BMO_Harris_Bank_Center: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Kelly_Killoren_Bensimon: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Bengt_Sjostrom_Theatre: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ken_Hendricks: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_M._Ideman: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Elmer_Behnke: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/WCFC-CA: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Morning_Star_Building: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Frank_E._Bauer_Bridge: {
+http://dbpedia.org/property/locale: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/locatedInArea: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Memorial_Hall_(Rockford,_Illinois): {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Stewart_Brand: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Tinker_Swiss_Cottage: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Laurie_Walquist: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Chicago_Rockford_International_Airport: {
+http://dbpedia.org/property/cityServed: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/James_Seymour_(Iowa_politician): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Dick_Smith_(American_football_tackle): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Sheila_Butt: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Larry_Oltmanns: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Brian_Evans_(basketball): {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/1943_Michigan_Wolverines_football_team: {
+http://dbpedia.org/property/siteCityst: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/2001–02_Illinois_Fighting_Illini_men's_basketball_team: {
+http://dbpedia.org/property/home: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Interstate_90_in_Illinois: {
+http://dbpedia.org/property/junction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/routeJunction: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Stan_Stasica: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/William_Brown_(Illinois_politician): {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/residence: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Chad_Gallagher: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Harry_Englund: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Greenwood_Cemetery_(Rockford,_Illinois): {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Live_at_Charlotte's_Web: {
+http://dbpedia.org/ontology/recordedIn: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Jeremiah_Davis: {
+http://dbpedia.org/ontology/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/deathPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfDeath: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Neal_Howard: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/placeOfBirth: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Lewis_Lemon: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford,_IL: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford,_Il: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford,_Ill: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford,_Ill.: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_(IL): {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_IL: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Thatcher_Blake: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/UN/LOCODE:USRFD: {
+http://dbpedia.org/ontology/wikiPageRedirects: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/1871_Rockford_Forest_Citys_season: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/National_Register_of_Historic_Places_listings_in_Winnebago_County,_Illinois: {
+http://dbpedia.org/property/city: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Rockford_Elk's_Lodge_No._64: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Garrison_School_(Rockford,_Illinois): {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ziock_Building: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Lysander_Jacoby_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Haight_Village_Historic_District: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Peacock_Brewery: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Charles_Lundberg_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Valencia_Court_Apartments: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/William_Brown_Building: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Garrison–Coronado–Haskell_Historic_District: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Amos_Catlin_Spafford_House: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/East_Rockford_Historic_District: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Barber–Colman_Company: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Illinois_Route_70: {
+http://dbpedia.org/ontology/routeEnd: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Orville_H._Hampton: {
+http://dbpedia.org/ontology/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/property/birthPlace: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/Ingersoll_Machine_Tools: {
+http://dbpedia.org/property/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+],
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+},
+http://dbpedia.org/resource/West_Downtown_Rockford_Historic_District: {
+http://dbpedia.org/ontology/location: [
+{
+type: "uri",
+value: "http://dbpedia.org/resource/Rockford,_Illinois"
+}
+]
+}
+}

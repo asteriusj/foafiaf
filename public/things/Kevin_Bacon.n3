@@ -1,0 +1,8 @@
+@prefix dbp:	<http://dbpedia.org/property/> .
+@prefix dbr:	<http://dbpedia.org/resource/> .
+@prefix dbo:	<http://dbpedia.org/ontology/> .
+
+<http://dbpedia.org/resource/Sleepers_(film)>	dbp:starring	dbr:Kevin_Bacon .
+<http://dbpedia.org/resource/Sleepers_(film)>	dbp:starring	dbr:Brad_Pitt .
+<http://dbpedia.org/resource/True_Romance>	dbp:starring	dbr:Brad_Pitt .
+<http://dbpedia.org/resource/True_Romance>	dbp:starring	dbr:Patricia_Arquette .

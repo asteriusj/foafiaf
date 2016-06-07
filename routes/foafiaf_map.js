@@ -20,3 +20,4 @@ exports.foafiaf_map = function (req, res) {
         return res.render('foafiaf_map', viewData);
     });
 };
+

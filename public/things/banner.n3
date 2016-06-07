@@ -1,0 +1,11 @@
+<http://json-ld.org/playground/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/firstName> "David" <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/homepage> <http://www.davidbanner.com> <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/name> "David Banner" <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/nick> "hulk" <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/schoolHomepage> <http://www.mit.edu> <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/surname> "Banner" <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/title> "Mr" <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/weblog> <http://www.davidbanner.com/blog> <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/workInfoHomepage> <http://www.gamma-rays-r-us.com/~banner/crazy-experiments.html> <urn:x-arq:DefaultGraphNode> .
+<http://json-ld.org/playground/> <http://xmlns.com/foaf/0.1/workplaceHomepage> <http://www.gamma-rays-r-us.com> <urn:x-arq:DefaultGraphNode> .

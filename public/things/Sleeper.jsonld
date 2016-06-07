@@ -1,0 +1,167 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.linkedmdb.org/data/film/1121",
+    "comment" : "Contents of this file may include content from \n\t\t      FreeBase (http://www.freebase.com) or Wikipedia \n\t\t      (http://www.wikipedia.org) licensed under CC-BY\n\t\t      (http://www.freebase.com/view/common/license/cc_attribution_25)\n\t\t      or GFDL (http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License). \n\t\t      Refer to http://www.linkedmdb.org:8080/Main/Licensing for more details.",
+    "label" : "RDF Description of Sleeper",
+    "primaryTopic" : "db:film/1121"
+  }, {
+    "@id" : "db:director/8501",
+    "made" : "db:film/1121"
+  }, {
+    "@id" : "db:film/1121",
+    "@type" : "movie:film",
+    "actor" : [ "db:actor/31645", "db:actor/977", "db:actor/29679", "db:actor/545", "db:actor/30973", "db:actor/6540" ],
+    "director" : "db:director/8501",
+    "editor" : "db:editor/2888",
+    "film_cut" : "db:film_cut/5723",
+    "film_story_contributor" : "db:film_story_contributor/223",
+    "filmid" : "1121",
+    "initial_release_date" : "1973",
+    "language" : "http://www.lingvoj.org/lingvo/en",
+    "performance" : [ "db:performance/26762", "db:performance/77834", "db:performance/26764", "db:performance/77597", "db:performance/26765", "db:performance/26763" ],
+    "producer" : "db:producer/3395",
+    "runtime" : "88",
+    "story_contributor" : "db:film_story_contributor/223",
+    "writer" : [ "db:writer/13288", "db:writer/17991" ],
+    "hasPhotoCollection" : "http://www4.wiwiss.fu-berlin.de/flickrwrappr/photos/Sleeper_(film)",
+    "date" : "1973",
+    "title" : "Sleeper",
+    "label" : "Sleeper",
+    "sameAs" : [ "http://mpii.de/yago/resource/Sleeper_%28film%29", "http://dbpedia.org/resource/Sleeper_%28film%29" ],
+    "page" : [ "http://www.imdb.com/title/tt0070707", "http://www.rottentomatoes.com/alias?type=imdbid&s=0070707", "http://www.freebase.com/view/guid/9202a8c04000641f80000000002c5e49" ]
+  }, {
+    "@id" : "db:film_film_distributor_relationship/12800",
+    "film_of_distributor" : "db:film/1121"
+  }, {
+    "@id" : "db:interlink/134996",
+    "link_source" : "db:film/1121"
+  }, {
+    "@id" : "db:interlink/19127",
+    "link_source" : "db:film/1121"
+  }, {
+    "@id" : "db:interlink/37660",
+    "link_source" : "db:film/1121"
+  }, {
+    "@id" : "db:interlink/594",
+    "link_source" : "db:film/1121"
+  }, {
+    "@id" : "http://dbpedia.org/resource/Sleeper_%28film%29",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSleeper_%2528film%2529%3E"
+  }, {
+    "@id" : "http://mpii.de/yago/resource/Sleeper_%28film%29",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmpii.de%2Fyago%2Fresource%2FSleeper_%2528film%2529%3E"
+  }, {
+    "@id" : "http://www.freebase.com/view/guid/9202a8c04000641f80000000002c5e49",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.freebase.com%2Fview%2Fguid%2F9202a8c04000641f80000000002c5e49%3E"
+  }, {
+    "@id" : "http://www.imdb.com/title/tt0070707",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0070707%3E"
+  }, {
+    "@id" : "http://www.lingvoj.org/lingvo/en",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.lingvoj.org%2Flingvo%2Fen%3E"
+  }, {
+    "@id" : "http://www.rottentomatoes.com/alias?type=imdbid&s=0070707",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.rottentomatoes.com%2Falias%3Ftype%3Dimdbid%26s%3D0070707%3E"
+  }, {
+    "@id" : "http://www4.wiwiss.fu-berlin.de/flickrwrappr/photos/Sleeper_(film)",
+    "seeAlso" : "http://data.linkedmdb.org/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww4.wiwiss.fu-berlin.de%2Fflickrwrappr%2Fphotos%2FSleeper_%28film%29%3E"
+  } ],
+  "@id" : "urn:x-arq:DefaultGraphNode",
+  "@context" : {
+    "film_of_distributor" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/film_of_distributor",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "made" : {
+      "@id" : "http://xmlns.com/foaf/0.1/made",
+      "@type" : "@id"
+    },
+    "link_source" : {
+      "@id" : "http://data.linkedmdb.org/resource/oddlinker/link_source",
+      "@type" : "@id"
+    },
+    "story_contributor" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/story_contributor",
+      "@type" : "@id"
+    },
+    "performance" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/performance",
+      "@type" : "@id"
+    },
+    "writer" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/writer",
+      "@type" : "@id"
+    },
+    "actor" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/actor",
+      "@type" : "@id"
+    },
+    "director" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/director",
+      "@type" : "@id"
+    },
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "@id"
+    },
+    "film_cut" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/film_cut",
+      "@type" : "@id"
+    },
+    "language" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/language",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "editor" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/editor",
+      "@type" : "@id"
+    },
+    "hasPhotoCollection" : {
+      "@id" : "http://dbpedia.org/property/hasPhotoCollection",
+      "@type" : "@id"
+    },
+    "filmid" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/filmid",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "film_story_contributor" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/film_story_contributor",
+      "@type" : "@id"
+    },
+    "initial_release_date" : "http://data.linkedmdb.org/resource/movie/initial_release_date",
+    "label" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "producer" : {
+      "@id" : "http://data.linkedmdb.org/resource/movie/producer",
+      "@type" : "@id"
+    },
+    "date" : "http://purl.org/dc/terms/date",
+    "title" : "http://purl.org/dc/terms/title",
+    "runtime" : "http://data.linkedmdb.org/resource/movie/runtime",
+    "primaryTopic" : {
+      "@id" : "http://xmlns.com/foaf/0.1/primaryTopic",
+      "@type" : "@id"
+    },
+    "comment" : "http://www.w3.org/2000/01/rdf-schema#comment",
+    "oddlinker" : "http://data.linkedmdb.org/resource/oddlinker/",
+    "movie" : "http://data.linkedmdb.org/resource/movie/",
+    "d2r" : "http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "dbpedia" : "http://dbpedia.org/property/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "map" : "file:/C:/d2r-server-0.4/mapping.n3#",
+    "db" : "http://data.linkedmdb.org/resource/",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dc" : "http://purl.org/dc/terms/"
+  }
+}
