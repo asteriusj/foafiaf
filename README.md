@@ -141,6 +141,9 @@ Network analysis knowlwdge discovery methodology to analyze the relationship amo
 
 # Useful tools and references
 
+Linked Data
+https://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData
+
 RDF Validator and Converter
 http://rdfvalidator.mybluemix.net/
 
@@ -149,6 +152,9 @@ http://json-ld.org/playground/
 
 RDF Translator
 http://rdf-translator.appspot.com/
+
+RelFinder
+http://www.visualdataweb.org/relfinder/relfinder.php
 
 WebVowl
 http://vowl.visualdataweb.org/webvowl.html
@@ -159,3 +165,14 @@ http://visjs.org/
 https://d3js.org/
 http://cytoscape.org/
 http://graphalchemist.github.io/Alchemy/#/
+https://www.elastic.co/
+
+Others
+
+http://gog.orientdb.com/index.html
+https://www.visualthesaurus.com/app/view
+http://visuwords.com/graph
+http://graphwords.com/word#graph
+http://bacon.mybluemix.net/
+
+http://n3.restdesc.org/rules/generalized-rules/
