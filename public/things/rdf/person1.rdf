@@ -1,0 +1,75 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="sioc:"
+    xmlns:j.1="http://dbpedia.org/ontology/"
+    xmlns:j.2="geo:"
+    xmlns:j.3="foaf:"
+    xmlns:j.4="http://dbpedia.org/property/" > 
+  <rdf:Description rdf:about="">
+    <rdf:type rdf:resource="foaf:PersonalProfileDocument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_1">
+    <rdf:type rdf:resource="foaf:Person"/>
+    <j.1:birthPlace rdf:nodeID="A0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_2">
+    <rdf:type rdf:resource="foaf:Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_3">
+    <rdf:type rdf:resource="foaf:Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_company_1">
+    <rdf:type rdf:resource="foaf:Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Illinois">
+    <rdf:type rdf:resource="foaf:state"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Moline,_Illinois">
+    <rdf:type rdf:resource="foaf:city"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topic_1">
+    <rdf:type rdf:resource="sioc:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topic_3">
+    <rdf:type rdf:resource="sioc:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topic_2">
+    <rdf:type rdf:resource="sioc:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topic_5">
+    <rdf:type rdf:resource="sioc:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_4">
+    <rdf:type rdf:resource="foaf:Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_5">
+    <rdf:type rdf:resource="foaf:Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topic_4">
+    <rdf:type rdf:resource="sioc:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_person_6">
+    <rdf:type rdf:resource="foaf:Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Rockford,_Illinois">
+    <rdf:type rdf:resource="foaf:city"/>
+    <j.4:subdivisionName rdf:nodeID="A1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Byron,_Illinois">
+    <rdf:type rdf:resource="foaf:city"/>
+    <j.2:lat>42.127224 (xsd:float)</j.2:lat>
+    <j.2:long>-89.260834 (xsd:float)</j.2:long>
+  </rdf:Description>
+  <rdf:Description rdf:about="_company_2">
+    <rdf:type rdf:resource="foaf:Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_topics_0">
+    <rdf:type rdf:resource="foaf:topic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_company_3">
+    <rdf:type rdf:resource="foaf:Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="_group_1">
+    <rdf:type rdf:resource="foaf:Group"/>
+  </rdf:Description>
+</rdf:RDF>

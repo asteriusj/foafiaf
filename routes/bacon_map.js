@@ -13,7 +13,7 @@ exports.bacon_map = function (req, res) {
         }
         console.log('nodes[] edges[]: ', data);
         var viewData = {
-            title: 'Degrees of Kevin Bacon relationship sample map',
+            title: 'Degrees of Kevin Bacon relationship sample map (Erdős number)',
             data: data
         };
 

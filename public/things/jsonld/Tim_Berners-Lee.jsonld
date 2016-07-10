@@ -1,0 +1,552 @@
+{
+  "@graph" : [ {
+    "@id" : "dbr:Berners-Lee",
+    "wikiPageDisambiguates" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Conway_Berners-Lee",
+    "child" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Dr._Tim_Berners-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:ENQUIRE",
+    "inventor" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:History_of_the_World_Wide_Web",
+    "inventor" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Jon_Postel",
+    "influenced" : "dbr:Tim_Berners-Lee",
+    "dbp:influenced" : {
+      "@id" : "dbr:Tim_Berners-Lee"
+    }
+  }, {
+    "@id" : "dbr:Libwww",
+    "author" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Line_Mode_Browser",
+    "author" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Mary_Lee_Woods",
+    "child" : "dbr:Tim_Berners-Lee",
+    "children" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Notation3",
+    "owner" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Open_Data_Institute",
+    "founder" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Paul_Otlet",
+    "influenced" : "dbr:Tim_Berners-Lee",
+    "dbp:influenced" : {
+      "@id" : "dbr:Tim_Berners-Lee"
+    }
+  }, {
+    "@id" : "dbr:Shuji_Nakamura",
+    "before" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Sir_Tim_Berners-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Sir_Tim_Berners_Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Sir_Timothy_John_Berners-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Sir_Timothy_John_Berners-Lee,_OM,_KBE,_FRS,_FREng,_FRSA",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:TBL",
+    "wikiPageDisambiguates" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tabulator",
+    "dbo:author" : {
+      "@id" : "dbr:Tim_Berners-Lee"
+    },
+    "author" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim-Berners_Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:TimBL",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_Berners-Lee",
+    "@type" : [ "yago:CausalAgent100007347", "yago:PeopleFromLondon", "yago:EnglishComputerScientists", "yago:Person100007846", "yago:LivingPeople", "yago:Pioneer110434725", "yago:Colleague109935990", "yago:FellowsOfTheAmericanAcademyOfArtsAndSciences", "owl:Thing", "yago:PhysicalEntity100001930", "yago:YagoLegalActorGeo", "yago:ComputerScientist109951070", "yago:YagoLegalActor", "wikidata:Q5", "yago:LivingThing100004258", "yago:JapanPrizeLaureates", "yago:Scientist110560637", "ns9:Agent", "yago:ComputerPioneers", "yago:RoyalMedalWinners", "yago:Exile110071332", "wikidata:Q901", "yago:InternetPioneers", "yago:ComputerUser109951274", "yago:MacArthurFellows", "yago:EnglishExpatriatesInTheUnitedStates", "yago:Honoree110183757", "yago:Absentee109757653", "yago:PeopleFromBarnes,London", "yago:Laureate110249011", "yago:Intellectual109621545", "yago:Whole100003553", "yago:Medalist110304914", "yago:Player110439851", "ns9:NaturalPerson", "yago:Creator109614315", "yago:Golfer110136959", "yago:FellowsOfTheBritishComputerSociety", "yago:Associate109816771", "yago:Traveler109629752", "yago:FellowsOfTheRoyalSociety", "yago:Peer109626238", "yago:Alumnus109786338", "wikidata:Q215627", "yago:Inventor110214637", "schema:Person", "foaf:Person", "yago:FreeSoftwarePeople", "yago:Object100002684", "dbo:Person", "yago:Recipient109627906", "yago:FellowsOfTheRoyalAcademyOfEngineering", "yago:Organism100004475", "yago:AlumniOfTheQueen'sCollege,Oxford", "yago:Originator110383816", "dbo:Agent", "dbo:Scientist", "yago:Scholar110557854", "yago:EnglishInventors", "yago:Acquirer109764201", "yago:Contestant109613191", "yago:PeopleEducatedAtEmanuelSchool", "umbel-rc:PersonWithOccupation" ],
+    "abstract" : [ {
+      "@language" : "de",
+      "@value" : "Sir Timothy John Berners-Lee, OM, KBE, FRS, FRSA (* 8. Juni 1955 in London) ist ein britischer Physiker und Informatiker. Er ist der Erfinder der HTML (Hypertext Markup Language) und der Begründer des World Wide Web. Heute steht er dem World Wide Web Consortium (W3C) vor, ist Professor am Massachusetts Institute of Technology (MIT) und hat seit 2004 einen Lehrstuhl an der Universität Southampton."
+    }, {
+      "@language" : "en",
+      "@value" : "Professor Sir Timothy John Berners-Lee, OM, KBE, FRS, FREng, FRSA, DFBCS (born 8 June 1955), also known as TimBL, is an English computer scientist, best known as the inventor of the World Wide Web. He made a proposal for an information management system in March 1989, and he implemented the first successful communication between a Hypertext Transfer Protocol (HTTP) client and server via the Internet sometime around mid-November of that same year.Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the Web's continued development. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the Founders Chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL).He is a director of the Web Science Research Initiative (WSRI), and a member of the advisory board of the MIT Center for Collective Intelligence.  In 2011 he was named as a member the Board of Trustees of the Ford Foundation.In 2004, Berners-Lee was knighted by Queen Elizabeth II for his pioneering work. In April 2009, he was elected a foreign associate of the United States National Academy of Sciences. He was honoured as the \"Inventor of the World Wide Web\" during the 2012 Summer Olympics opening ceremony, in which he appeared in person, working with a vintage NeXT Computer at the London Olympic Stadium. He tweeted \"This is for everyone\", which instantly was spelled out in LCD lights attached to the chairs of the 80,000 people in the audience."
+    }, {
+      "@language" : "ja",
+      "@value" : "ティモシー・ジョン・バーナーズ＝リー（英語: Timothy John Berners-Lee、1955年6月8日 - ）は、イギリスの計算機科学者。ロバート・カイリューとともにWorld Wide Web(WWW)を考案し、ハイパーテキストシステムを実装・開発した人物である。また、URL、HTTP、HTML の最初の設計は彼によるものである。"
+    }, {
+      "@language" : "pt",
+      "@value" : "Timothy John Berners-Lee KBE, OM, FRS (TimBL ou TBL) (Londres, 8 de junho de 1955) é um físico britânico, cientista da computação e professor do MIT. É o criador da World Wide Web (Rede Mundial de Computadores - Internet), tendo feito a primeira proposta para sua criação a 25 de março de 1989. Em 25 de dezembro de 1990, com a ajuda de Robert Cailliau e um jovem estudante do CERN, implementou a primeira comunicação bem-sucedida entre um cliente HTTP e o servidor através da internet.Berners-Lee é o diretor do World Wide Web Consortium (W3C), que supervisiona o desenvolvimento continuado da web. Também é o fundador da Fundação World Wide Web e é um pesquisador sênior e titular e fundador da cadeira de 3Com no Laboratório de Inteligência Artificial e Ciência da Computação do MIT (CSAIL).É um diretor da The Web Science Research Initiative (WSRI) e um membro do conselho consultivo do Centro de Inteligência Coletiva do MIT.Em abril de 2009, foi eleito como membro da Academia Nacional de Ciências dos Estados Unidos, sediada em Washington, D.C.Em 2004, Timothy venceu o Millennium Technology Prize, o que lhe rendeu um milhão de euros."
+    }, {
+      "@language" : "ru",
+      "@value" : "Сэр Тимоти Джон Бернерс-Ли OM (англ. Sir Timothy John «Tim» Berners-Lee; род. 8 июня 1955 года) — английский учёный, изобретатель URI, URL, HTTP, HTML, создатель Всемирной паутины (совместно с Робертом Кайо) и действующий глава Консорциума Всемирной паутины. Автор концепции семантической паутины. Автор множества других разработок в области информационных технологий."
+    }, {
+      "@language" : "fr",
+      "@value" : "Timothy John Berners-Lee, KBE, né le 8 juin 1955 à Londres, est un citoyen britannique, principal inventeur du World Wide Web (WWW) au tournant des années 1990. En juillet 2004, il est anobli par la reine Élisabeth II pour ce travail et son nom officiel devient Sir Timothy John Berners-Lee. Depuis  1994, il préside le World Wide Web Consortium (W3C), organisme qu'il a fondé."
+    }, {
+      "@language" : "es",
+      "@value" : "Tim Berners-Lee gracias a el existe la internetSir Timothy \"Tim\" John Berners-Lee OM, KBE (TimBL o TBL) (Londres, Reino Unido, 8 de junio de 1955) es un científico de la computación británico, conocido por ser el padre de la Web. Estableció la primera comunicación entre un cliente y un servidor usando el protocolo HTTP en noviembre de 1989. En octubre de 1994 fundó el Consorcio de la World Wide Web (W3C) con sede en el MIT, para supervisar y estandarizar el desarrollo de las tecnologías sobre las que se fundamenta  la Web y que permiten el funcionamiento de Internet.Ante la necesidad de distribuir e intercambiar información acerca de sus investigaciones de una manera más efectiva, Berners-Lee desarrolló las ideas fundamentales que estructuran la web. Él y su grupo crearon lo que por sus siglas en inglés se denomina Lenguaje HTML (HyperText Markup Language) o lenguaje de etiquetas de hipertexto, el protocolo HTTP (HyperText Transfer Protocol) y el sistema de localización de objetos en la web URL (Uniform Resource Locator).Es posible encontrar muchas de las ideas plasmadas por Berners-Lee en el proyecto Xanadú (que propuso Ted Nelson) y el memex (de Vannevar Bush)."
+    }, {
+      "@language" : "nl",
+      "@value" : "Tim Berners-Lee (Londen, 8 juni 1955) is samen met zijn toenmalig manager, de Vlaming Robert Cailliau, de bedenker en grondlegger van het world wide web of wereldwijde web (www). Hieraan werkte hij toen hij consultant-software-engineer bij het CERN in Zwitserland was, van juni tot en met december 1990. Als directeur van het World Wide Web Consortium houdt hij toezicht op de ontwikkeling van webtalen en -protocollen als HTML, XML, CSS en HTTP. Berners-Lee schreef de eerste webbrowser en de eerste webserver.In 1999 publiceerde hij Weaving the Web, een boek over het ontstaan van het web. Het werd in het Nederlands vertaald als De wereld van het World Wide Web.Berners-Lee streeft naar een semantisch web, dat wil zeggen, een wereldwijd web waarin informatie inhoudelijk benoemd en ingedeeld is op een voor computers verwerkbare manier. Hoewel er in de academische wereld veel aandacht voor is, is het nog onduidelijk of het semantisch web eenzelfde succes zal worden als het www. Berners-Lee beschrijft het semantische web als een component van Web 3.0, de volgende fase van het wereldwijde web.Tijdens de opening van de Olympische Spelen van 2012 in Londen verscheen hij, geëerd als bedenker van het wereldwijde web.Berners-Lee heeft voor zijn werk verschillende prijzen gewonnen: de Japanprijs 2002 de Millennium Technology Prize 2004 een koninklijke onderscheiding: op 16 juli 2004 is hij tot ridder geslagen door de Britse koningin Elizabeth II. Hij kreeg hierbij de titel van Ridder Commandeur, de op één na hoogste rang in de Orde van het Britse Rijk. Op 20 oktober 2009 is hem een eredoctoraat toegekend door de Vrije Universiteit Amsterdam, voor zijn \"essentiële bijdrage aan de ontwikkeling, introductie en groei van het wereldwijde web, dat diepgaande invloed heeft op het sociale, economische, culturele en publieke leven\".  Hetzelfde jaar werd hij eredoctor van de Universiteit van Luik, samen met Robert Cailliau. In 2012 werd hij door de Internet Society geëerd voor zijn bijdrage aan het Internet door opgenomen te worden in de Internet Hall of Fame.In 2009 werd Berners-Lee door de Britse overheid ingehuurd om toezicht te houden over een nieuw project: een website met daarin publiek beschikbare Britse data. Op 21 januari 2010 heeft Berners-Lee de site geopend. De site, data.gov.uk, bevat onder meer gegevens over verkeer, criminaliteit, de gezondheidszorg, huizenprijzen, werkgelegenheid en belastingen. In totaal staan er meer dan 3.000 datasets op de site. De data mag door iedereen worden gebruikt voor commerciële en niet-commerciële toepassingen. Op de site staan enkele applicaties die gebruikmaken van de data. Gebruikers kunnen bijvoorbeeld een iPhone-app downloaden om de dichtstbijzijnde apotheek te bezoeken. Er is ook een programma gemaakt voor mensen die op zoek zijn naar een baan bij de overheid. Zodra er ergens een vacature verschijnt, krijgen ze bericht per e-mail. Wie niet zelf kan programmeren, kan ideeën voor programma's op de site achterlaten."
+    }, {
+      "@language" : "ar",
+      "@value" : "السير تيم بيرنرز لي مخترع الوِب."
+    } ],
+    "alias" : {
+      "@language" : "en",
+      "@value" : "TimBL"
+    },
+    "almaMater" : "dbr:University_of_Oxford",
+    "award" : [ "dbr:Order_of_Merit", "dbr:Order_of_the_British_Empire", "dbr:Royal_Academy_of_Engineering", "dbr:Royal_Society", "dbr:List_of_Fellows_of_the_Royal_Society_of_Arts", "dbr:Awards_and_honours_presented_to_Tim_Berners-Lee", "dbr:DFBCS" ],
+    "dbo:birthDate" : {
+      "@type" : "xsd:date",
+      "@value" : "1955-06-08"
+    },
+    "birthName" : {
+      "@language" : "en",
+      "@value" : "Timothy John Berners-Lee"
+    },
+    "birthPlace" : [ "dbr:England", "dbr:London" ],
+    "birthYear" : "1955",
+    "thumbnail" : "http://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee.jpg?width=300",
+    "wikiPageExternalLink" : [ "http://www.technologyreview.com/Infotech/13784/", "http://info.cern.ch/hypertext/WWW/TheProject.html,", "ns34:Berners-Lee", "http://computemagazine.com/man-who-invented-world-wide-web-gives-new-definition/", "http://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html", "http://news.bbc.co.uk/2/hi/technology/4132752.stm", "https://www.youtube.com/watch?v=OM6XIICm_qo", "ns34:Berners-Lee/", "http://videolectures.net/iswc06_lee_itbl/" ],
+    "dbo:wikiPageID" : 30034,
+    "dbo:wikiPageRevisionID" : 683279565,
+    "dbp:almaMater" : {
+      "@id" : "dbr:University_of_Oxford"
+    },
+    "alternativeNames" : {
+      "@language" : "en",
+      "@value" : "TimBL"
+    },
+    "awards" : [ "dbr:List_of_Fellows_of_the_Royal_Society_of_Arts", "dbr:Order_of_the_British_Empire", "dbr:Royal_Society", "dbr:DFBCS", "dbr:Order_of_Merit", "dbr:Awards_and_honours_presented_to_Tim_Berners-Lee", "dbr:Royal_Academy_of_Engineering" ],
+    "dbp:awards" : {
+      "@language" : "en",
+      "@value" : "*"
+    },
+    "birthDate" : "1955-06-08",
+    "dbp:birthName" : {
+      "@language" : "en",
+      "@value" : "Timothy John Berners-Lee"
+    },
+    "dbp:birthPlace" : [ {
+      "@id" : "dbr:London"
+    }, {
+      "@id" : "dbr:England"
+    } ],
+    "caption" : {
+      "@language" : "en",
+      "@value" : "Berners-Lee in 2014."
+    },
+    "dateOfBirth" : "1955-06-08",
+    "dbp:imageSize" : 220,
+    "dbp:name" : [ {
+      "@language" : "en",
+      "@value" : "Sir Tim Berners-Lee"
+    }, {
+      "@language" : "en",
+      "@value" : "Berners-Lee, Tim"
+    } ],
+    "occupation" : "dbr:Computer_scientist",
+    "otherNames" : {
+      "@language" : "en",
+      "@value" : "TimBL"
+    },
+    "parents" : [ {
+      "@language" : "en",
+      "@value" : "*"
+    }, {
+      "@id" : "dbr:Mary_Lee_Woods"
+    }, {
+      "@id" : "dbr:Conway_Berners-Lee"
+    } ],
+    "placeOfBirth" : {
+      "@language" : "en",
+      "@value" : "London, England"
+    },
+    "shortDescription" : {
+      "@language" : "en",
+      "@value" : "British computer scientist, best known as the inventor of the World Wide Web"
+    },
+    "spouse" : [ {
+      "@language" : "en",
+      "@value" : "Nancy Carlson"
+    }, {
+      "@language" : "en",
+      "@value" : "Rosemary Leith"
+    }, 1990, {
+      "@language" : "en",
+      "@value" : "*"
+    }, 2014 ],
+    "title" : {
+      "@language" : "en",
+      "@value" : "Millennium Technology Prize winner"
+    },
+    "workplaces" : [ "dbr:Plessey", "dbr:Massachusetts_Institute_of_Technology", "dbr:University_of_Southampton", "dbr:World_Wide_Web_Consortium" ],
+    "dbp:workplaces" : {
+      "@language" : "en",
+      "@value" : "*"
+    },
+    "dbp:years" : 2004,
+    "description" : [ "British computer scientist, best known as the inventor of the World Wide Web", {
+      "@language" : "en",
+      "@value" : "British computer scientist, best known as the inventor of the World Wide Web"
+    } ],
+    "subject" : [ "dbc:UNESCO_Niels_Bohr_Medal_recipients", "dbc:Royal_Medal_winners", "dbc:Unitarian_Universalists", "dbc:English_computer_scientists", "dbc:Hypertext_Transfer_Protocol", "dbc:Former_Anglicans", "dbc:Massachusetts_Institute_of_Technology_staff", "dbc:Living_people", "dbc:People_associated_with_CERN", "dbc:Members_of_the_United_States_National_Academy_of_Engineering", "dbc:Fellows_of_the_British_Computer_Society", "dbc:World_Wide_Web_Consortium", "dbc:People_from_Barnes,_London", "dbc:Internet_pioneers", "dbc:People_from_London", "dbc:MacArthur_Fellows", "dbc:Knights_Commander_of_the_Order_of_the_British_Empire", "dbc:English_Unitarians", "dbc:Alumni_of_The_Queen's_College,_Oxford", "dbc:Fellows_of_the_American_Academy_of_Arts_and_Sciences", "dbc:Members_of_the_United_States_National_Academy_of_Sciences", "dbc:1955_births", "dbc:Webby_Award_winners", "dbc:Academics_of_the_University_of_Southampton", "dbc:Members_of_the_Order_of_Merit", "dbc:History_of_the_Internet", "dbc:English_inventors", "dbc:Fellows_of_The_Queen's_College,_Oxford", "dbc:Fellows_of_the_Royal_Society", "dbc:Fellows_of_the_Royal_Academy_of_Engineering", "dbc:English_expatriates_in_the_United_States", "dbc:Japan_Prize_laureates", "dbc:People_educated_at_Emanuel_School" ],
+    "comment" : [ {
+      "@language" : "fr",
+      "@value" : "Timothy John Berners-Lee, KBE, né le 8 juin 1955 à Londres, est un citoyen britannique, principal inventeur du World Wide Web (WWW) au tournant des années 1990. En juillet 2004, il est anobli par la reine Élisabeth II pour ce travail et son nom officiel devient Sir Timothy John Berners-Lee. Depuis  1994, il préside le World Wide Web Consortium (W3C), organisme qu'il a fondé."
+    }, {
+      "@language" : "de",
+      "@value" : "Sir Timothy John Berners-Lee, OM, KBE, FRS, FRSA (* 8. Juni 1955 in London) ist ein britischer Physiker und Informatiker. Er ist der Erfinder der HTML (Hypertext Markup Language) und der Begründer des World Wide Web. Heute steht er dem World Wide Web Consortium (W3C) vor, ist Professor am Massachusetts Institute of Technology (MIT) und hat seit 2004 einen Lehrstuhl an der Universität Southampton."
+    }, {
+      "@language" : "ru",
+      "@value" : "Сэр Тимоти Джон Бернерс-Ли OM (англ. Sir Timothy John «Tim» Berners-Lee; род. 8 июня 1955 года) — английский учёный, изобретатель URI, URL, HTTP, HTML, создатель Всемирной паутины (совместно с Робертом Кайо) и действующий глава Консорциума Всемирной паутины. Автор концепции семантической паутины. Автор множества других разработок в области информационных технологий."
+    }, {
+      "@language" : "pt",
+      "@value" : "Timothy John Berners-Lee KBE, OM, FRS (TimBL ou TBL) (Londres, 8 de junho de 1955) é um físico britânico, cientista da computação e professor do MIT. É o criador da World Wide Web (Rede Mundial de Computadores - Internet), tendo feito a primeira proposta para sua criação a 25 de março de 1989."
+    }, {
+      "@language" : "nl",
+      "@value" : "Tim Berners-Lee (Londen, 8 juni 1955) is samen met zijn toenmalig manager, de Vlaming Robert Cailliau, de bedenker en grondlegger van het world wide web of wereldwijde web (www). Hieraan werkte hij toen hij consultant-software-engineer bij het CERN in Zwitserland was, van juni tot en met december 1990. Als directeur van het World Wide Web Consortium houdt hij toezicht op de ontwikkeling van webtalen en -protocollen als HTML, XML, CSS en HTTP."
+    }, {
+      "@language" : "ar",
+      "@value" : "السير تيم بيرنرز لي مخترع الوِب."
+    }, {
+      "@language" : "ja",
+      "@value" : "ティモシー・ジョン・バーナーズ＝リー（英語: Timothy John Berners-Lee、1955年6月8日 - ）は、イギリスの計算機科学者。ロバート・カイリューとともにWorld Wide Web(WWW)を考案し、ハイパーテキストシステムを実装・開発した人物である。また、URL、HTTP、HTML の最初の設計は彼によるものである。"
+    }, {
+      "@language" : "es",
+      "@value" : "Tim Berners-Lee gracias a el existe la internetSir Timothy \"Tim\" John Berners-Lee OM, KBE (TimBL o TBL) (Londres, Reino Unido, 8 de junio de 1955) es un científico de la computación británico, conocido por ser el padre de la Web. Estableció la primera comunicación entre un cliente y un servidor usando el protocolo HTTP en noviembre de 1989."
+    }, {
+      "@language" : "en",
+      "@value" : "Professor Sir Timothy John Berners-Lee, OM, KBE, FRS, FREng, FRSA, DFBCS (born 8 June 1955), also known as TimBL, is an English computer scientist, best known as the inventor of the World Wide Web."
+    } ],
+    "label" : [ {
+      "@language" : "ar",
+      "@value" : "تيم بيرنرز لي"
+    }, {
+      "@language" : "ja",
+      "@value" : "ティム・バーナーズ＝リー"
+    }, {
+      "@language" : "zh",
+      "@value" : "蒂姆·伯纳斯-李"
+    }, {
+      "@language" : "ru",
+      "@value" : "Бернерс-Ли, Тим"
+    }, {
+      "@language" : "en",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "pt",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "es",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "fr",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "nl",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "pl",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "it",
+      "@value" : "Tim Berners-Lee"
+    }, {
+      "@language" : "de",
+      "@value" : "Tim Berners-Lee"
+    } ],
+    "sameAs" : [ "dbr:Tim_Berners-Lee", "dbpedia-id:Tim_Berners-Lee", "yago-res:Tim_Berners-Lee", "wikidata:Q80", "dbpedia-nl:Tim_Berners-Lee", "opencyc:Mx4r3THFqbCtSyOa3bvfYXUhWg", "dbpedia-cs:Tim_Berners-Lee", "dbpedia-fr:Tim_Berners-Lee", "dbpedia-wikidata:Q80", "dbpedia-pl:Tim_Berners-Lee", "http://rdf.freebase.com/ns/m.07d5b", "dbpedia-it:Tim_Berners-Lee", "dbpedia-eu:Tim_Berners-Lee", "http://viaf.org/viaf/85312226", "dbpedia-de:Tim_Berners-Lee", "http://www4.wiwiss.fu-berlin.de/dblp/resource/person/100007", "dbpedia-ko:팀_버너스리", "dbpedia-el:Τιμ_Μπέρνερς_Λι", "dbpedia-es:Tim_Berners-Lee", "dbpedia-pt:Tim_Berners-Lee", "dbpedia-ja:ティム・バーナーズ＝リー" ],
+    "wasDerivedFrom" : "wikipedia-en:Tim_Berners-Lee?oldid=683279565",
+    "depiction" : "http://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee.jpg",
+    "givenName" : {
+      "@language" : "en",
+      "@value" : "Tim"
+    },
+    "isPrimaryTopicOf" : "wikipedia-en:Tim_Berners-Lee",
+    "name" : [ {
+      "@language" : "en",
+      "@value" : "Berners-Lee, Tim"
+    }, {
+      "@language" : "en",
+      "@value" : "Sir Tim Berners-Lee"
+    }, {
+      "@language" : "en",
+      "@value" : "Tim Berners-Lee"
+    } ],
+    "surname" : {
+      "@language" : "en",
+      "@value" : "Berners-Lee"
+    }
+  }, {
+    "@id" : "dbr:Tim_Berners_Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_Bernes-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_Bernes_Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_Burners_Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_berners-lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_berners_lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Tim_bl",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Timbl",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Timothy_Berners-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Timothy_John_Berners-Lee",
+    "wikiPageRedirects" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:Weaving_the_Web",
+    "dbo:author" : {
+      "@id" : "dbr:Tim_Berners-Lee"
+    },
+    "author" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:WorldWideWeb",
+    "developer" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:World_Wide_Web_Consortium",
+    "leaderName" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:World_Wide_Web_Consortium__1",
+    "person" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "dbr:World_Wide_Web_Foundation",
+    "foundedBy" : "dbr:Tim_Berners-Lee",
+    "keyPerson" : "dbr:Tim_Berners-Lee",
+    "founder" : "dbr:Tim_Berners-Lee",
+    "keyPeople" : "dbr:Tim_Berners-Lee"
+  }, {
+    "@id" : "wikipedia-en:Tim_Berners-Lee",
+    "primaryTopic" : "dbr:Tim_Berners-Lee"
+  } ],
+  "@id" : "urn:x-arq:DefaultGraphNode",
+  "@context" : {
+    "wikiPageRedirects" : {
+      "@id" : "http://dbpedia.org/ontology/wikiPageRedirects",
+      "@type" : "@id"
+    },
+    "author" : {
+      "@id" : "http://dbpedia.org/property/author",
+      "@type" : "@id"
+    },
+    "leaderName" : {
+      "@id" : "http://dbpedia.org/property/leaderName",
+      "@type" : "@id"
+    },
+    "before" : {
+      "@id" : "http://dbpedia.org/property/before",
+      "@type" : "@id"
+    },
+    "keyPerson" : {
+      "@id" : "http://dbpedia.org/ontology/keyPerson",
+      "@type" : "@id"
+    },
+    "keyPeople" : {
+      "@id" : "http://dbpedia.org/property/keyPeople",
+      "@type" : "@id"
+    },
+    "foundedBy" : {
+      "@id" : "http://dbpedia.org/ontology/foundedBy",
+      "@type" : "@id"
+    },
+    "founder" : {
+      "@id" : "http://dbpedia.org/property/founder",
+      "@type" : "@id"
+    },
+    "owner" : {
+      "@id" : "http://dbpedia.org/property/owner",
+      "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+      "@type" : "@id"
+    },
+    "subject" : {
+      "@id" : "http://purl.org/dc/terms/subject",
+      "@type" : "@id"
+    },
+    "almaMater" : {
+      "@id" : "http://dbpedia.org/ontology/almaMater",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "abstract" : "http://dbpedia.org/ontology/abstract",
+    "years" : {
+      "@id" : "http://dbpedia.org/property/years",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "wikiPageExternalLink" : {
+      "@id" : "http://dbpedia.org/ontology/wikiPageExternalLink",
+      "@type" : "@id"
+    },
+    "workplaces" : {
+      "@id" : "http://dbpedia.org/property/workplaces",
+      "@type" : "@id"
+    },
+    "label" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "awards" : {
+      "@id" : "http://dbpedia.org/property/awards",
+      "@type" : "@id"
+    },
+    "comment" : "http://www.w3.org/2000/01/rdf-schema#comment",
+    "award" : {
+      "@id" : "http://dbpedia.org/ontology/award",
+      "@type" : "@id"
+    },
+    "shortDescription" : "http://dbpedia.org/property/shortDescription",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "birthPlace" : {
+      "@id" : "http://dbpedia.org/ontology/birthPlace",
+      "@type" : "@id"
+    },
+    "birthDate" : {
+      "@id" : "http://dbpedia.org/property/birthDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "spouse" : "http://dbpedia.org/property/spouse",
+    "caption" : "http://dbpedia.org/property/caption",
+    "otherNames" : "http://dbpedia.org/property/otherNames",
+    "birthName" : "http://dbpedia.org/ontology/birthName",
+    "alternativeNames" : "http://dbpedia.org/property/alternativeNames",
+    "wasDerivedFrom" : {
+      "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction",
+      "@type" : "@id"
+    },
+    "birthYear" : {
+      "@id" : "http://dbpedia.org/ontology/birthYear",
+      "@type" : "http://www.w3.org/2001/XMLSchema#gYear"
+    },
+    "thumbnail" : {
+      "@id" : "http://dbpedia.org/ontology/thumbnail",
+      "@type" : "@id"
+    },
+    "surname" : "http://xmlns.com/foaf/0.1/surname",
+    "occupation" : {
+      "@id" : "http://dbpedia.org/property/occupation",
+      "@type" : "@id"
+    },
+    "parents" : "http://dbpedia.org/property/parents",
+    "alias" : "http://dbpedia.org/ontology/alias",
+    "placeOfBirth" : "http://dbpedia.org/property/placeOfBirth",
+    "wikiPageID" : {
+      "@id" : "http://dbpedia.org/ontology/wikiPageID",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "title" : "http://dbpedia.org/property/title",
+    "wikiPageRevisionID" : {
+      "@id" : "http://dbpedia.org/ontology/wikiPageRevisionID",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "imageSize" : {
+      "@id" : "http://dbpedia.org/property/imageSize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "dateOfBirth" : {
+      "@id" : "http://dbpedia.org/property/dateOfBirth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "givenName" : "http://xmlns.com/foaf/0.1/givenName",
+    "description" : "http://purl.org/dc/elements/1.1/description",
+    "influenced" : {
+      "@id" : "http://dbpedia.org/ontology/influenced",
+      "@type" : "@id"
+    },
+    "child" : {
+      "@id" : "http://dbpedia.org/ontology/child",
+      "@type" : "@id"
+    },
+    "children" : {
+      "@id" : "http://dbpedia.org/property/children",
+      "@type" : "@id"
+    },
+    "inventor" : {
+      "@id" : "http://dbpedia.org/property/inventor",
+      "@type" : "@id"
+    },
+    "person" : {
+      "@id" : "http://dbpedia.org/ontology/person",
+      "@type" : "@id"
+    },
+    "primaryTopic" : {
+      "@id" : "http://xmlns.com/foaf/0.1/primaryTopic",
+      "@type" : "@id"
+    },
+    "developer" : {
+      "@id" : "http://dbpedia.org/ontology/developer",
+      "@type" : "@id"
+    },
+    "wikiPageDisambiguates" : {
+      "@id" : "http://dbpedia.org/ontology/wikiPageDisambiguates",
+      "@type" : "@id"
+    },
+    "schema" : "http://schema.org/",
+    "dbpedia-cs" : "http://cs.dbpedia.org/resource/",
+    "dbpedia-eu" : "http://eu.dbpedia.org/resource/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "dbpedia-es" : "http://es.dbpedia.org/resource/",
+    "yago" : "http://dbpedia.org/class/yago/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dbpedia-ja" : "http://ja.dbpedia.org/resource/",
+    "dct" : "http://purl.org/dc/terms/",
+    "ns9" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#",
+    "ns34" : "http://www.w3.org/People/",
+    "opencyc" : "http://sw.opencyc.org/concept/",
+    "dbpedia-wikidata" : "http://wikidata.dbpedia.org/resource/",
+    "dbpedia-it" : "http://it.dbpedia.org/resource/",
+    "dbpedia-ko" : "http://ko.dbpedia.org/resource/",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dbpedia-el" : "http://el.dbpedia.org/resource/",
+    "umbel-rc" : "http://umbel.org/umbel/rc/",
+    "yago-res" : "http://yago-knowledge.org/resource/",
+    "dbc" : "http://dbpedia.org/resource/Category:",
+    "dbpedia-fr" : "http://fr.dbpedia.org/resource/",
+    "wikipedia-en" : "http://en.wikipedia.org/wiki/",
+    "dbpedia-id" : "http://id.dbpedia.org/resource/",
+    "dbo" : "http://dbpedia.org/ontology/",
+    "dbpedia-de" : "http://de.dbpedia.org/resource/",
+    "dbp" : "http://dbpedia.org/property/",
+    "dbpedia-pl" : "http://pl.dbpedia.org/resource/",
+    "dbr" : "http://dbpedia.org/resource/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dbpedia-nl" : "http://nl.dbpedia.org/resource/",
+    "dbpedia-pt" : "http://pt.dbpedia.org/resource/",
+    "wikidata" : "http://www.wikidata.org/entity/",
+    "dc" : "http://purl.org/dc/elements/1.1/"
+  }
+}

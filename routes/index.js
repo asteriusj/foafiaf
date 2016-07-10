@@ -1,5 +1,6 @@
 var FOAFIAF_MapRoutes = require('./foafiaf_map')
 var BACON_MapRoutes = require('./bacon_map')
+var PROJECTS_MapRoutes = require('./projects_map')
 
 /** Homepage *///
 exports.index = function(req, res) {
@@ -15,3 +16,5 @@ exports.index = function(req, res) {
 exports.foafiaf_map=  FOAFIAF_MapRoutes.foafiaf_map;
 
 exports.bacon_map=  BACON_MapRoutes.bacon_map;
+
+exports.projects_map=  PROJECTS_MapRoutes.projects_map;

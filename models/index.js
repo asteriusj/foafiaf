@@ -5,3 +5,5 @@ exports.Entity = require('./Tag').Entity;
 exports.Person = require('./Person');
 exports.Group = require('./Group');
 exports.Company = require('./Company');
+exports.Note = require('./Note');
+exports.StrategyMap = require('./Strategy#Map');
