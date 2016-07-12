@@ -1,5 +1,7 @@
 {
   "@graph" : [ 
+  
+  
    {
     "@id" : "_projects_0",
     "@type" : "schema:Projects"
@@ -39,7 +41,8 @@
     "name" : "Jane Doe",
     "telephone" : "(425) 123-4567",
     "url" : "http://www.janedoe.com"
-  }, {
+  }, 
+  {
     "@id" : "_:b3",
     "@type" : "pmbok:Project",
     "finishes" : "9/30/2016",
@@ -49,7 +52,8 @@
     "has_container": [
         "_projects_0"
       ]
-  } ],
+  }
+  ],
   "@id" : "urn:x-arq:DefaultGraphNode",
   "@context" : {
     "status" : "http://schema.org/status",

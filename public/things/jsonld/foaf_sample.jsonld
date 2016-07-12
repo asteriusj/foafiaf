@@ -420,6 +420,6 @@
     "v" : "http://rdf.data-vocabulary.org/#",
     "earl" : "http://www.w3.org/ns/earl#",
     "wdrs" : "http://www.w3.org/2007/05/powder-s#",
-    "ctag" : "http://commontag.org/ns#""
+    "ctag" : "http://commontag.org/ns#"
   }
 }

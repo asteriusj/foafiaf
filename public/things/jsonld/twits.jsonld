@@ -1,0 +1,376 @@
+{
+  "@graph": [
+    {
+      "@id": "_twit_collctions_0",
+      "@type": "schema:Twits"
+    },
+    {
+      "@id": "",
+      "@type": "schema:Twit",
+      "expanded_url": "",
+      "display_url": "",
+      "archived": "",
+      "title": "",
+      "summary": "",
+      "status": "OK",
+      "language": "english",
+      "category": "computer_internet",
+      "keywords": [
+        
+      ],
+      "taxonomy": [
+        
+      ],
+      "comments": [
+        
+      ],
+      "attached": [
+        
+      ],
+      "published": "2016-07-04 00:00",
+      "archived": "2016-07-07T03:52:28.158Z",
+      "has_container": [
+        "_twit_collctions_0"
+      ]
+    },
+    {
+      "@id": "750678519554932736",
+      "@type": "schema:Twit",
+      "@guid": "http://rdd.me/pmeemwlw",
+      "text": "Kevin Kelly | 12 Inevitable Tech Forces That Will Shape Our Future | SXSW Interactive 2016 https://t.co/yxZuSWKkrM",
+      "expanded_url": "http://buff.ly/29MR3EF",
+      "display_url": "buff.ly/29MR3EF",
+      "source": "<a href=\"http://bufferapp.com\" rel=\"nofollow\">Buffer</a>",
+      "created": "Wed Jul 06 13:11:20 +0000 2016",
+      "archived": "2016-07-07T03: 52: 28.158Z",
+      "title": "Kevin Kelly | 12 Inevitable Tech Forces That Will Shape Our Future | SXSW Interactive 2016",
+      "summary": "In a few years we’ll have artificial intelligence that can accomplish professional human tasks. There is nothing we can do to stop this. In addition our live...",
+      "description": "",
+      "status": "OK",
+      "language": "english",
+      "category": "computer_internet",
+      "keywords": [
+        {
+          "knowledgeGraph": {
+            "typeHierarchy": "/animals/humans/professional human tasks"
+          },
+          "relevance": "0.975065",
+          "text": "professional human tasks"
+        },
+        {
+          "knowledgeGraph": {
+            "typeHierarchy": "/fields/artificial intelligence"
+          },
+          "relevance": "0.729529",
+          "text": "artificial intelligence"
+        },
+        {
+          "knowledgeGraph": {
+            "typeHierarchy": "/concepts/numbers/factors/changes/addition"
+          },
+          "relevance": "0.581212",
+          "text": "addition"
+        },
+        {
+          "relevance": "0.480647",
+          "text": "live"
+        }
+      ],
+      "entities": [
+        {
+          "type": "FieldTerminology",
+          "relevance": "0.985953",
+          "knowledgeGraph": {
+            "typeHierarchy": "/fields/artificial intelligence"
+          },
+          "count": "1",
+          "text": "artificial intelligence"
+        }
+      ],
+      "concepts": [
+        {
+          "text": "Transhumanism",
+          "relevance": "0.886963",
+          "knowledgeGraph": {
+            "typeHierarchy": "/ideas/transhumanism"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Transhumanism",
+          "freebase": "http://rdf.freebase.com/ns/m.07g8l",
+          "yago": "http://yago-knowledge.org/resource/Transhumanism"
+        },
+        {
+          "text": "Intelligent agent",
+          "relevance": "0.815559",
+          "knowledgeGraph": {
+            "typeHierarchy": "/automated data mining techniques/intelligent agent"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Intelligent_agent",
+          "freebase": "http://rdf.freebase.com/ns/m.07zhjx",
+          "opencyc": "http://sw.opencyc.org/concept/Mx4rvVinb5wpEbGdrcN5Y29ycA"
+        },
+        {
+          "text": "Psychology",
+          "relevance": "0.796462",
+          "knowledgeGraph": {
+            "typeHierarchy": "/fields/psychology"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Psychology",
+          "freebase": "http://rdf.freebase.com/ns/m.05qfh",
+          "opencyc": "http://sw.opencyc.org/concept/Mx4rvZLWaJwpEbGdrcN5Y29ycA"
+        },
+        {
+          "text": "Artificial intelligence",
+          "relevance": "0.7832",
+          "knowledgeGraph": {
+            "typeHierarchy": "/fields/artificial intelligence"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Artificial_intelligence",
+          "freebase": "http://rdf.freebase.com/ns/m.0mkz",
+          "opencyc": "http://sw.opencyc.org/concept/Mx4rvVi4wJwpEbGdrcN5Y29ycA"
+        },
+        {
+          "text": "Sapience",
+          "relevance": "0.735135",
+          "dbpedia": "http://dbpedia.org/resource/Sapience"
+        }
+      ],
+      "relations": [
+        {
+          "sentence": "In a few years we’ll have artificial intelligence that can accomplish professional human tasks.",
+          "subject": {
+            "text": "we"
+          },
+          "predicate": {
+            "text": "have"
+          },
+          "object": {
+            "text": "artificial intelligence that can accomplish professional human tasks"
+          }
+        }
+      ],
+      "parser": {
+        "domain": "www.youtube.com",
+        "short_url": "http://rdd.me/pmeemwlw",
+        "excerpt": "In a few years we’ll have artificial intelligence that can accomplish professional human tasks. There is nothing we can do to stop this. In addition our live...",
+        "word_count": 26,
+        "total_pages": 0
+      },
+      "taxonomy": [
+        {
+          "label": "/science/computer science/artificial intelligence",
+          "score": "0.959823"
+        },
+        {
+          "label": "/art and entertainment/shows and events/festival",
+          "score": "0.76191"
+        }
+      ],
+      "comments": [
+        
+      ],
+      "attached": [
+        
+      ],
+      "published": "2016-07-04 00:00",
+      "archived": "2016-07-07T03:52:28.158Z",
+      "has_container": [
+        "_twit_collctions_0"
+      ]
+    },
+    {
+      "@id": "_750802001504661504",
+      "@type": "schema:Twit",
+      "expanded_url": "http: //buff.ly/29u9sbT",
+      "display_url": "buff.ly/29u9sbT",
+      "archived": "2016-07-07T03:52:28.158Z",
+      "title": "Marketing agencies are broken",
+      "summary": "Here&#x2019;s a secret no one wants you to hear: Marketing agencies are destined to die, and if you rely on one,       you&#x2019;ll die with it.This may sound like insanity coming from someone who&hellip;",
+      "status": "OK",
+      "language": "english",
+      "category": "computer_internet",
+      "keywords": [
+        {
+          "relevance": "0.999511",
+          "text": "clients"
+        },
+        {
+          "relevance": "0.898756",
+          "text": "agency"
+        },
+        {
+          "relevance": "0.775146",
+          "text": "relationship"
+        },
+        {
+          "relevance": "0.773025",
+          "text": "good reasons"
+        }
+      ],
+      "taxonomy": [
+        {
+          "label": "/business and industrial/advertising and marketing/marketing",
+          "score": "0.973058"
+        }
+      ],
+      "entities": [
+        {
+          "type": "Person",
+          "relevance": "0.729809",
+          "count": "2",
+          "text": "Mike Templeman"
+        },
+        {
+          "type": "JobTitle",
+          "relevance": "0.570927",
+          "count": "1",
+          "text": "VP of Marketing"
+        },
+        {
+          "type": "Company",
+          "relevance": "0.530502",
+          "count": "1",
+          "text": "Foxtail Marketing"
+        }
+      ],
+      "concepts": [
+        {
+          "text": "Marketing",
+          "relevance": "0.910921",
+          "knowledgeGraph": {
+            "typeHierarchy": "/products/tools/resources/materials/services/marketing"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Marketing",
+          "freebase": "http://rdf.freebase.com/ns/m.0g4gr"
+        },
+        {
+          "text": "Employment agency",
+          "relevance": "0.902051",
+          "knowledgeGraph": {
+            "typeHierarchy": "/organizations/businesses/employment agency"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Employment_agency",
+          "freebase": "http://rdf.freebase.com/ns/m.0d3fyv"
+        },
+        {
+          "text": "Agency",
+          "relevance": "0.782204",
+          "knowledgeGraph": {
+            "typeHierarchy": "/organizations/agency"
+          },
+          "dbpedia": "http://dbpedia.org/resource/Agency"
+        }
+      ],
+      "relations": [
+        {
+          "sentence": "Here’s a secret no one wants you to hear: Marketing agencies are destined to die, and if you rely on one, you’ll die with it.",
+          "subject": {
+            "text": "no one"
+          },
+          "action": {
+            "text": "wants",
+            "lemmatized": "want",
+            "verb": {
+              "text": "want",
+              "tense": "present"
+            }
+          },
+          "object": {
+            "text": "you to hear: Marketing agencies are destined to die"
+          }
+        }
+      ],
+      "parser": {
+        "domain": "venturebeat.com",
+        "next_page_id": null,
+        "url": "http://venturebeat.com/2016/07/04/marketing-agencies-are-broken/?utm_content=bufferb1c32&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer",
+        "short_url": "http://rdd.me/1oakeb7r",
+        "author": "Mike Templeman, Foxtail Marketing",
+        "excerpt": "Here&#x2019;s a secret no one wants you to hear: Marketing agencies are destined to die, and if you rely on one, you&#x2019;ll die with it. This may sound like insanity coming from someone who&hellip;",
+        "direction": "ltr",
+        "word_count": 1304,
+        "total_pages": 0
+      },
+      "feeds": [
+        {
+          "feed": "http://feeds.feedburner.com/venturebeat/SZYF"
+        },
+        {
+          "feed": "http://venturebeat.com/2016/07/04/marketing-agencies-are-broken/feed/"
+        }
+      ],
+      "tweet_text": "Marketingagenciesare brokenhttps: //t.co/tL4aDOsqSW",
+      "source": "<a href=\"http://bufferapp.com\" rel=\"nofollow\">Buffer</a>",
+      "author": "Mike Templeman, Foxtail Marketing",
+      "expanded_url": "http: //buff.ly/29u9sbT",
+      "display_url": "buff.ly/29u9sbT",
+      "tweeted": "Wed Jul 06 21:22",
+      "published": "2016-07-04 00:00",
+      "archived": "2016-07-07T03:52:28.158Z",
+      "comments": [
+        
+      ],
+      "attached": [
+        
+      ],
+      "has_container": [
+        "_twit_collctions_0"
+      ]
+    }
+  ],
+  "@id": "urn:x-arq:DefaultGraphNode",
+  "@context": {
+    "status": "http://schema.org/status",
+    "startdate": "http://schema.org/startdate",
+    "shortname": "http://schema.org/shortname",
+    "shortdesc": "http://schema.org/shortdesc",
+    "project": "http://schema.org/project",
+    "name": "http://schema.org/name",
+    "enddate": "http://schema.org/enddate",
+    "description": "http://schema.org/description",
+    "url": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    },
+    "telephone": "http://schema.org/telephone",
+    "jobTitle": "http://schema.org/jobTitle",
+    "finishes": "http://schema.org/finishes",
+    "schema": "http://schema.org/",
+    "rr": "http://www.w3.org/ns/r2rml#",
+    "gldp": "http://www.w3.org/ns/people#",
+    "grddl": "http://www.w3.org/2003/g/data-view#",
+    "wdr": "http://www.w3.org/2007/05/powder#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xhv": "http://www.w3.org/1999/xhtml/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ht": "http://www.w3.org/2006/http#",
+    "rif": "http://www.w3.org/2007/rif#",
+    "sd": "http://www.w3.org/ns/sparql-service-description#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "ma": "http://www.w3.org/ns/ma-ont#",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "og": "http://ogp.me/ns#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "sioc": "http://rdfs.org/sioc/ns#",
+    "cc": "http://creativecommons.org/ns#",
+    "rev": "http://purl.org/stuff/rev#",
+    "void": "http://rdfs.org/ns/void#",
+    "org": "http://www.w3.org/ns/org#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "cnt": "http://www.w3.org/2008/content#",
+    "gr": "http://purl.org/goodrelations/v1#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "ptr": "http://www.w3.org/2009/pointers#",
+    "ical": "http://www.w3.org/2002/12/cal/icaltzd#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "v": "http://rdf.data-vocabulary.org/#",
+    "earl": "http://www.w3.org/ns/earl#",
+    "wdrs": "http://www.w3.org/2007/05/powder-s#",
+    "ctag": "http://commontag.org/ns#"
+  }
+}
