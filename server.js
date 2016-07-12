@@ -44,8 +44,9 @@ app.get('/', routes.index);
 // the foafiaf/map path routes to the foafiaf_map.js in /routes folder
 app.get('/foafiaf/map', routes.foafiaf_map);
 
-
 app.get('/foafiaf/bacon', routes.bacon_map);
+
+app.get('/foafiaf/projects', routes.projects_map);
 
 
 app.listen(port, host);
