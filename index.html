@@ -64,7 +64,7 @@
       };
 
       var options = {
-        
+	  
         physics: {
           solver: 'forceAtlas2Based',
           maxVelocity: 10,
@@ -189,7 +189,7 @@
       var network = new vis.Network(container, data, options);
 	  
 		//***************************************************
-		
+
 		//  set nodes and edges count in title block
 		document.getElementById('nodeCount').innerHTML = nodes.length;
 		document.getElementById('edgeCount').innerHTML = edges.length;
@@ -205,7 +205,6 @@
 			var checkbox = document.createElement('input');
 			checkbox.type = 'checkbox';
 			checkbox.className = 'toggleOption';
-			checkbox.name = groupsList[i];
 			checkbox.value = groupsList[i];
 			checkbox.id = groupsList[i];
 			checkbox.checked = true;
@@ -233,31 +232,23 @@
 		var filterToggle = function() {
 			var filter = this.getAttribute('value');
 			for (var i = 0; i < nodes.length; i++) {
+				var connectedEdges = network.getConnectedEdges(nodes[i].id);
 				if (nodes[i].group == filter) {
 					if (this.checked) {
-						nodes[i].hidden = false;
+						nodes[i].hidden = false;				
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = false;
+						}
 					}
 					else {
 						nodes[i].hidden = true;
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = true;
+						}
 					}
 				}
 			}
-			for (var j = 0; j < edges.length; j++) {
-				var edgeNodes = [];
-				if(typeof(edges[j].to) === 'string') edgeNodes.push(findObjectById(edges[j].to, nodes));
-				if(typeof(edges[j].from) === 'string') edgeNodes.push(findObjectById(edges[j].from, nodes));	
-				for (var k = 0; k < edgeNodes.length; k++) {
-					if (edgeNodes[k].hidden == true) {
-						edges[j].hidden = true;
-						break;
-					}
-					else {
-						edges[j].hidden = false;
-					}
-				}
-			}
-			network.setData({nodes:nodes, edges:edges});
-			
+			network.setData({nodes:nodes, edges:edges});			
 		};
 		for (var i = 0; i < classname.length; i++) {
 			classname[i].addEventListener('click', filterToggle, false);
