@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wikibase: <http://wikiba.se/ontology-beta#> .
+@prefix wdata: <https://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+wdata:Q5273585 a schema:Dataset ;
+	schema:about wd:Q5273585 ;
+	cc:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+	schema:softwareVersion "0.0.2" ;
+	schema:version "7617576"^^xsd:integer ;
+	schema:dateModified "2013-02-24T18:37:06Z"^^xsd:dateTime .
+
+wd:Q5273585 a wikibase:Item ;
+	rdfs:label "Dick and Jane"@en ;
+	skos:prefLabel "Dick and Jane"@en ;
+	schema:name "Dick and Jane"@en .
+
+<https://en.wikipedia.org/wiki/Dick%20and%20Jane> a schema:Article ;
+	schema:about wd:Q5273585 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://en.wikipedia.org/> .
+
+<https://en.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+
+COntents
+
+Go, Go, Go
+Come
+See Jane Go
+Sally and Mother
+The Boats Go
+The Big Red Boats
+
+
+Go, Go, Go
+
+Come Spot.
+Come and go.
+Jump jump.
+Jump up, Spot.
+Jump up.
+
+Oh Jane.
+Look and see.
+See Sally go.
+See Tim go.
+See Spot and Puff go.
+
+Oh Dick.
+Look and see.
+See Spoy hump down.
+See Puff jump down.
+Down, down, down.
+
+Oh, oh, oh.

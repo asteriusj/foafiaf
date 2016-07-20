@@ -1,0 +1,309 @@
+<html>
+
+<head>
+	<title>Map of FOAF relationships</title>
+</head>
+
+<body>
+	<description></description>
+
+	<!--<script type="text/javascript" src="/js/vis.js"></script>-->
+	<!--<link href="/css/vis.css" rel="stylesheet" type="text/css" />-->
+
+	<script type="text/javascript" src="public/dist/vis.js"></script>
+	<link href="public/dist/vis.css" rel="stylesheet" type="text/css">
+   
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="public/css/styles.css" />
+  
+  <!--<script src="/js/nodes.js"></script>-->
+  <script>
+    var nodes = [{"typeOf":"foaf:Person","id":"_person_1","label":"Jeffrey Stewart","title":"foaf:Person: Jeffrey Stewart","name":"Jeffrey Stewart","group":"person"},{"typeOf":"foaf:Person","id":"_person_2","label":"Mike Schablaske","title":"foaf:Person: Mike Schablaske","name":"Mike Schablaske","group":"person"},{"typeOf":"foaf:Person","id":"_person_3","label":"Jake Wilson","title":"foaf:Person: Jake Wilson","name":"Jake Wilson","group":"person"},{"typeOf":"foaf:Person","id":"_person_4","label":"Dannette Holifield","title":"foaf:Person: Dannette Holifield","name":"Dannette Holifield","group":"person"},{"typeOf":"foaf:Person","id":"_person_5","label":"Patrick O'Keefe","title":"foaf:Person: Patrick O'Keefe","name":"Patrick O'Keefe","group":"person"},{"typeOf":"foaf:Person","id":"_person_6","label":"David Sidney","title":"foaf:Person: David Sidney","name":"David Sidney","group":"person"},{"typeOf":"foaf:Group","id":"_group_1","label":"Transform Rockford","title":"foaf:Group: Transform Rockford","name":"Transform Rockford","group":"group"},{"typeOf":"foaf:Organization","id":"_company_1","label":"Asterius Media LLC","title":"foaf:Organization: Asterius Media LLC","name":"Asterius Media LLC","group":"organization"},{"typeOf":"foaf:Organization","id":"_company_2","label":"Woodward","title":"foaf:Organization: Woodward","name":"Woodward","group":"organization"},{"typeOf":"foaf:Organization","id":"_company_3","label":"Danfoss","title":"foaf:Organization: Danfoss","name":"Danfoss","group":"organization"},{"typeOf":"foaf:city","id":"Moline,_Illinois","label":"City of Moline","title":"foaf:city: City of Moline","name":"City of Moline","group":"marker"},{"typeOf":"foaf:city","id":"Byron,_Illinois","label":"City of Byron","title":"foaf:city: City of Byron","name":"City of Byron","group":"marker"},{"typeOf":"foaf:city","id":"Rockford,_Illinois","label":"City of Rockford","title":"foaf:city: City of Rockford","name":"City of Rockford","group":"marker"},{"typeOf":"foaf:state","id":"Illinois","label":"Illinois","title":"foaf:state: Illinois","name":"Illinois","group":"globe"},{"typeOf":"foaf:topic","id":"_topics_0","label":"Topics","name":"","group":"tags"},{"typeOf":"sioc:topic","id":"_topic_1","label":"IT Management","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_2","label":"Project Management","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_3","label":"Software Development","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_4","label":"Cloud Computing","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_5","label":"Publishing and Printing","name":"","group":"tag"},{"typeOf":"schema:Projects","id":"_projects_0","label":"Projects","group":"projects"},{"typeOf":"pmbok:Project","id":"_:b0","label":"Blue Zones","title":"pmbok:Project: Blue Zone Community Project","name":"Community project to establish region as a Blue Zone","group":"project"},{"typeOf":"pmbok:Project","id":"_:b1","label":"Network Map Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Network Map tool(s)","name":null,"group":"project"},{"typeOf":"foaf:Person","id":"_:jd","label":"Jane Doe","title":"foaf:Person: Jane Doe","name":"Jane Doe","group":"person"},{"typeOf":"pmbok:Project","id":"_:b3","label":"Project Management Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Project Management tool(s)","name":null,"group":"project"}]
+    var edges = [{"from":"_person_1","to":"_person_4","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"_person_3","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"_person_2","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"Moline,_Illinois","arrows":{"to":true},"label":" < birthPlace >"},{"from":"_person_1","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":true},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"_person_1","to":"_group_1","arrows":{"to":true},"label":" < member >"},{"from":"_person_1","to":"_topic_5","arrows":{"to":true},"label":" < interest >"},{"from":"_person_1","to":"_topic_1","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_2","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_3","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_4","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_company_1","arrows":{"to":true},"label":" < owner >"},{"from":"_person_1","to":"_company_1","arrows":{"to":true},"label":" < ceo >"},{"from":"_person_4","to":"_topic_1","arrows":{"to":true},"label":" < skill >"},{"from":"_person_4","to":"_topic_2","arrows":{"to":true},"label":" < skill >"},{"from":"_person_5","to":"_group_1","arrows":{"to":true},"label":" < employedBy >"},{"from":"_person_6","to":"_group_1","arrows":{"to":true},"label":" < employedBy >"},{"from":"_group_1","to":"Rockford,_Illinois","arrows":{"to":true},"label":" < based_near >"},{"from":"_group_1","to":"_person_4","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_2","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_1","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":true},"label":" < employerOf >"},{"from":"_group_1","to":"_person_2","arrows":{"to":true},"label":" < employerOf >"},{"from":"_company_1","to":"Byron,_Illinois","arrows":{"to":true},"label":" < based_near >"},{"from":"_company_1","to":"_person_1","arrows":{"to":true},"label":" < owner >"},{"from":"_company_1","to":"_person_1","arrows":{"to":true},"label":" < employerOf >"},{"from":"_company_3","to":"_person_4","arrows":{"to":true},"label":" < employerOf >"},{"from":"Moline,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"Byron,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"Rockford,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Illinois"},"arrows":{"to":true},"label":" < http://dbpedia.org/property/subdivisionName >"},{"from":"Rockford,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_1","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_2","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_3","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_4","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_5","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b0","to":"_:jd","arrows":{"to":true},"label":" < stakeholder >"},{"from":"_:b0","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b1","to":"_:b3","arrows":{"to":true},"label":" < has_parent >"},{"from":"_:b1","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b3","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"}]
+  </script>
+  
+  <style type="text/css">
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }
+  </style>
+
+
+<script type="text/javascript">
+  var network;
+
+  function redrawAll() {
+    
+     var optionsFA = {
+
+      };
+      
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+	  
+        physics: {
+          solver: 'forceAtlas2Based',
+          maxVelocity: 10,
+          minVelocity: 1,
+        },
+        
+        
+        groups: {
+          property: {
+            shape: 
+              'box'
+            ,
+            size: 13,
+            color: 'pink'
+          },
+          group: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0c0',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          person: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          organization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf1ad',
+              size: 50,
+              color: '#f0a30a'
+            }
+          },
+          globe: {
+            shape: 'icon',
+            icon: {
+              face: 'Ionicons',
+              code: '\uf276',
+              size: 60,
+              color: '#6E6EFD'
+            }
+          },
+          marker: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf041',
+              size: 40,
+              color: '#FB7E81'
+            }
+          },
+          book: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02d',
+              size: 50,
+              color: '#C2FABC'
+            }
+          },
+          film: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf008',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+          
+          
+          tags: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02c',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          tag: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02b',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          
+          projects: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0ae',
+              size: 44,
+              color: '#800000'
+            }
+          },
+          project: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0ae',
+              size: 40,
+              color: 'maroon'
+            }
+          }
+          
+        }        
+        
+      };
+      var network = new vis.Network(container, data, options);
+	  
+		//***************************************************
+
+		//  set nodes and edges count in title block
+		document.getElementById('nodeCount').innerHTML = nodes.length;
+		document.getElementById('edgeCount').innerHTML = edges.length;
+	  
+		//  create filter checkbox for each unique group type
+		var groupsList = [];
+		for (var i = 0; i < nodes.length; i++) {
+			if(groupsList.indexOf(nodes[i].group) === -1) groupsList.push(nodes[i].group);
+		};
+	  
+		for (var i = 0; i < groupsList.length; i++) {
+			var div = document.createElement('div');
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.className = 'toggleOption';
+			checkbox.value = groupsList[i];
+			checkbox.id = groupsList[i];
+			checkbox.checked = true;
+
+			var label = document.createElement('label');
+			label.htmlFor = groupsList[i];
+			label.appendChild(document.createTextNode(groupsList[i]));
+
+			document.getElementById('filterOption').appendChild(div);
+			div.appendChild(checkbox);
+			div.appendChild(label);
+		};  
+	  
+		//   control visibility of accordion views
+		var acc = document.getElementsByClassName('accordion-trigger');
+		for (var i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				this.classList.toggle('accordion-trigger-active');
+				this.nextElementSibling.classList.toggle('hidden');
+			}
+		};
+
+		//  hide or display nodes and edges depending on filter selections
+		var classname = document.getElementsByClassName('toggleOption');
+		var filterToggle = function() {
+			var filter = this.getAttribute('value');
+			for (var i = 0; i < nodes.length; i++) {
+				var connectedEdges = network.getConnectedEdges(nodes[i].id);
+				if (nodes[i].group == filter) {
+					if (this.checked) {
+						nodes[i].hidden = false;				
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = false;
+						}
+					}
+					else {
+						nodes[i].hidden = true;
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = true;
+						}
+					}
+				}
+			}
+			network.setData({nodes:nodes, edges:edges});			
+		};
+		for (var i = 0; i < classname.length; i++) {
+			classname[i].addEventListener('click', filterToggle, false);
+		}
+	  
+		//  display node or edge data in the sidebar for selected element
+		network.on("click", function(selected){
+			var details = "";
+			var nodeId = selected.nodes.toString();
+			var edgeId = selected.edges.toString();
+			if(nodeId === "" && edgeId === "") details = "Select a node or edge in the graph.";
+			var object = (findObjectById(nodeId, nodes) || findObjectById(edgeId, edges));
+			for(var property in object) {
+				if (object.hasOwnProperty(property)) {
+					details += (property + ": " + object[property] + "<br>");
+				}
+			}
+			document.getElementById('propDetails').innerHTML = details;
+		});
+		
+		function findObjectById(objectId, objectArray){
+			for (var i=0; i < objectArray.length; i++) {
+				if (objectArray[i].id === objectId) {
+					return objectArray[i];
+				}
+			}
+		}
+		
+		//******************************************************
+		
+  }
+
+  redrawAll();
+</script>
+
+
+<main>
+	<section id="canvasArea">
+	    <h2>Semantics Tools</h2>
+	    <input type="text"> 
+	    <input type="">
+	    
+	    RelFinder
+	    WebVowl
+	    RDF Validator
+	    JSON-LD Playground
+	    
+		<div id="selectedContainer"></div>
+		
+		
+		
+		
+	</section>
+</main>
+
+
+
+</body></html>

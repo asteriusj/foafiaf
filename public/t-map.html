@@ -1,0 +1,943 @@
+<html>
+
+<head>
+	<title>Tranformation Map Playground</title>
+</head>
+
+<body>
+	<description></description>
+
+	<!--<script type="text/javascript" src="/js/vis.js"></script>-->
+	<!--<link href="/css/vis.css" rel="stylesheet" type="text/css" />-->
+
+	<script type="text/javascript" src="dist/vis.js"></script>
+	<link href="dist/vis.css" rel="stylesheet" type="text/css">
+   
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+  
+  <!--<script
+  src="/js/nodes.js"></script>-->
+  <script>
+  
+    var DIR = 'img/';
+      
+    var nodes =
+    [
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_MISSION",
+    "label": "Top 25 by 2025",
+    "title": "We are a top 25 community where our people are engaged, inspired and are leading successful and fulfilling lives.",
+    "name": "Top 25 by 2025",
+    "group": "mission",
+    "image": DIR + 'trlogo.jpg', 
+    "shape": 'image'
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_LeadershipYouth",
+    "label": "Leadership & Youth",
+    "title": "foafiaf:objective-eadershipYouth",
+    "name": "Leadership & Youth Segment",
+    "group": "LeadershipYouth",
+    "image": DIR + 'leadership-new-3-2.jpg', 
+    "shape": 'image'
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_Safety",
+    "label": "Safety",
+    "title": "foafiaf:objective-Safety",
+    "name": "Safety Segment",
+    "group": "Safety",
+    "image": DIR + 'safety-new-3-2.jpg', 
+    "shape": 'image'
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_Education",
+    "label": "Education",
+    "title": "foafiaf:objective-Education",
+    "name": "Education Segment",
+    "group": "Education",
+    "image": DIR + 'edu-new-3-2.jpg', 
+    "shape": 'image'
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_HealthyLifestyles",
+    "label": "Healthy Lifestyles",
+    "title": "Residents live healthy lifestyles and make informed choices. They have access to excellent, comprehensive services for health, wellness, and recreation.",
+    "name": "Healthy Lifestyles Segment",
+    "group": "Healthy Lifestyles",
+    "image": DIR + 'healthy-new-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_EatforHealth",
+    "label": "Eat for Health",
+    "title": "We are a community where healthy food choices are accessible to all and the easy choice.",
+    "name": "Eat for Health Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_MoveMore",
+    "label": "Move More",
+    "title": "We are a community of active living where all have access to recreational opportunities.",
+    "name": "Move More Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_LoveandBeLoved",
+    "label": "Love and Be Loved",
+    "title": "We have healthy social and emotional development for everyone at all stages of life.",
+    "name": "Love and Be Loved Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_PhysicalInfrastructure",
+    "label": "Physical Infrastructure",
+    "title": "foafiaf:objective-PhysicalInfrastructure",
+    "name": "Physical Infrastructure Segment",
+    "group": "Physical Infrastructure",
+    "image": DIR + 'physical-new-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_EconomyJobs",
+    "label": "Economy & Jobs",
+    "title": "The region has a skilled and sought-after workforce – enabling all families to improve their standard of living. Our people are employed and per capita income is above the national average.\nAs a hub of ideas and innovation, we nurture, grow and attract world-class industries and employers. We are recognized for leadership in advanced manufacturing, logistics and agribusiness.",
+    "name": "Economy & Jobs Segment",
+    "group": "Economy Jobs",
+    "image": DIR + 'economy-new-3-3.jpg', 
+    "shape": 'image'
+  }
+  
+  // 
+  // 
+  // 
+  // Array
+  //  
+  // Array
+  //  
+  // Array 
+  //  
+  // Array
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_UnifiedWorkforceDevelopmentNetwork",
+    "label": "Unified Workforce Development Network",
+    "title": "The region’s educators, trainers and employers operate as a single, effective network to connect and prepare residents for employment opportunities.Accounts",
+    "name": "Unified Workforce Development Network Strategy",
+    "group": "Planning"
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_Innovation",
+    "label": "Innovation",
+    "title": "Public and private collaboration fosters a world class business development ecosystem to launch innovation and entrepreneurship.",
+    "name": "Innovation Strategy",
+    "group": "Planning"
+  },
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_WorldClassIndustryClusters",
+    "label": "World-Class Industry Clusters",
+    "title": "Leading industries leverage regional assets, create high performing supply chains, and command national recognition.",
+    "name": "World-Class Industry Clusters Strategy",
+    "group": "Planning"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_StimulatingIncomeJobGrowth",
+    "label": "Stimulating Income & Job Growth",
+    "title": "Employers and civic entities stimulate career growth with jobs throughout the region.",
+    "name": "Stimulating Income & Job Growth Strategy",
+    "group": "Planning"
+  }
+   ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_BusinessAttractionRetention",
+    "label": "Business Attraction & Retention",
+    "title": "Economic development partners collaborate regionally for business retention, expansion and attraction.",
+    "name": "Business Attraction & Retention",
+    "group": "Planning"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_Quality",
+    "label": "Quality",
+    "title": "foafiaf:objective-Quality",
+    "name": "Quality Segment",
+    "group": "Quality",
+    "image": DIR + 'qualitynew-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+    {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_Communications",
+    "label": "Communications",
+    "title": "foafiaf:objective-Communications",
+    "name": "Communications Segment",
+    "group": "Communications",
+    "image": DIR + 'comm-new-3-3.jpg', 
+    "shape": 'image'
+  }
+    ,
+    {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_LivingtheBrand",
+    "label": "Living the Brand",
+    "title": "foafiaf:objective-LivingtheBrand",
+    "name": "Living the Brand Segment",
+    "group": "Living the Brand",
+    "image": DIR + 'livingbrand-new-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_Planning",
+    "label": "Planning",
+    "title": "We take a purposeful, transparent, and results-oriented approach to planning for growth and renewal.",
+    "name": "Planning Segment",
+    "group": "Planning",
+    "image": DIR + 'planning-new-3-2.jpg', 
+    "shape": 'image'
+  }
+
+    
+    ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_CommunityEnthusiasm",
+    "label": "Community Enthusiasm",
+    "title": "Our community uses proven practices that engage the community and enable the achievement of plan objectives.",
+    "name": "Community Enthusiasm Objective",
+    "group": "Planning"
+  }
+  ,
+
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_FullParticipationinGovernmentalElections",
+    "label": "Full Participation in Governmental Elections",
+    "title": "",
+    "name": "Full Participation in Governmental Elections Objective",
+    "group": "Planning"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_Reacheveryresident",
+    "label": "Reach every resident",
+    "title": "Every resident participates in the community planning process in their areas of interest.",
+    "name": "Reach every resident Objective",
+    "group": "Planning"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_EngagementPartnerships",
+    "label": "Engagement & Partnerships",
+    "title": "All segments of the community jointly plan, design, and share responsibility, accountability and decision-making by creating trust and partnership.",
+    "name": "Engagement & Partnerships Objective",
+    "group": "Planning"
+  }
+  
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_FundingAlignment",
+    "label": "Funding & Alignment",
+    "title": "Our local governments and not-for-profits are effective, properly supported and aligned with the community vision.",
+    "name": "Funding & Alignment Segment",
+    "group": "Funding & Alignment",
+    "image": DIR + 'funding-new-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_CommonAgenda",
+    "label": "Common Agenda",
+    "title": "Our community has a common agenda where information and resources are shared through open and frequent communication.",
+    "name": "Common Agenda Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_GoalSetting",
+    "label": "Goal Setting",
+    "title": "Our residents collaborate to set community-wide goals and ensure that our efforts to achieve them are aligned, effective, and efficient.",
+    "name": "Goal Setting Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Strategy_Createaccountability",
+    "label": "Create accountability",
+    "title": "Our community will maintain accountability and alignment through transparency, recognition and financial support.",
+    "name": "Create accountability Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_UnityPrideCulture",
+    "label": "Unity, Pride, Culture",
+    "title": "foafiaf:objective-UnityPrideCulture",
+    "name": "Unity, Pride, Culture Segment",
+    "group": "Unity, Pride, Culture",
+    "image": DIR + 'unity-new-3-2.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_FamilyNeigborhoods",
+    "label": "Family & Neigborhoods",
+    "title": "foafiaf:objective-FamilyNeigborhoods",
+    "name": "Family & Neigborhoods Segment",
+    "group": "Family & Neigborhoods",
+    "image": DIR + 'families-new-1.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:objective",
+    "id": "_Segment_ArtsReceation",
+    "label": "Arts & Receation",
+    "title": "Diverse forms of creative expression and recreation flourish and lead to self-fulfillment and national acclaim.",
+    "name": "Arts & Receation Segment",
+    "group": "Arts & Receation",
+    "image": DIR + 'arts-new-1.jpg', 
+    "shape": 'image'
+  }
+  ,
+  {
+    "typeOf": "foafiaf:project",
+    "id": "_Project_BlueZone",
+    "label": "Blue Zone Community",
+    "title": "We are becomong a Blue Zone community",
+    "name": "Blue Zone Community Project",
+    "group": "project"
+  }
+  
+]
+
+    var edges = 
+[
+  {
+    "from": "_MISSION",
+    "to": "_Segment_LeadershipYouth",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  },
+  {
+    "from": "_MISSION",
+    "to": "_Segment_Safety",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  },
+  {
+    "from": "_MISSION",
+    "to": "_Segment_Education",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_HealthyLifestyles",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  
+  ,
+  {
+    "from": "_Segment_HealthyLifestyles",
+    "to": "_Strategy_EatforHealth",
+    "arrows": {
+      "to": true
+    },
+    "label": " < objective >"
+  }
+    ,
+  {
+    "from": "_Strategy_EatforHealth",
+    "to": "_Project_BlueZone",
+    "arrows": {
+      "to": true
+    },
+    "label": " < project >"
+  }
+  ,
+  {
+    "from": "_Segment_HealthyLifestyles",
+    "to": "_Strategy_MoveMore",
+    "arrows": {
+      "to": true
+    },
+    "label": " < objective >"
+  }
+      ,
+  {
+    "from": "_Strategy_MoveMore",
+    "to": "_Project_BlueZone",
+    "arrows": {
+      "to": true
+    },
+    "label": " < project >"
+  }
+  ,
+  {
+    "from": "_Segment_HealthyLifestyles",
+    "to": "_Strategy_LoveandBeLoved",
+    "arrows": {
+      "to": true
+    },
+    "label": " < objective >"
+  }
+      ,
+  {
+    "from": "_Strategy_LoveandBeLoved",
+    "to": "_Project_BlueZone",
+    "arrows": {
+      "to": true
+    },
+    "label": " < project >"
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_EconomyJobs",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_EconomyJobs",
+    "to": "_Strategy_UnifiedWorkforceDevelopmentNetwork",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_EconomyJobs",
+    "to": "_Strategy_Innovation",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_EconomyJobs",
+    "to": "_Strategy_WorldClassIndustryClusters",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_EconomyJobs",
+    "to": "_Strategy_StimulatingIncomeJobGrowth",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_EconomyJobs",
+    "to": "_Strategy_BusinessAttractionRetention",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  
+   ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_PhysicalInfrastructure",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+   ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_Quality",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+     ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_Communications",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+     ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_LivingtheBrand",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_Planning",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_Planning",
+    "to": "_Strategy_CommunityEnthusiasm",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+    
+  
+  
+  {
+    "from": "_Segment_Planning",
+    "to": "_Strategy_FullParticipationinGovernmentalElections",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_Planning",
+    "to": "_Strategy_Reacheveryresident",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_Planning",
+    "to": "_Strategy_EngagementPartnerships",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_FundingAlignment",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_FundingAlignment",
+    "to": "_Strategy_CommonAgenda",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_FundingAlignment",
+    "to": "_Strategy_GoalSetting",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Segment_FundingAlignment",
+    "to": "_Strategy_Createaccountability",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_Strategy_MoveMore",
+    "to": "_Project_BlueZone",
+    "arrows": {
+      "to": true
+    },
+    "label": " < project >"
+  }
+       ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_UnityPrideCulture",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_FamilyNeigborhoods",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+  ,
+  {
+    "from": "_MISSION",
+    "to": "_Segment_ArtsReceation",
+    "arrows": {
+      "to": true
+    },
+    "label": " < strategy > "
+  }
+]
+  </script>
+  
+  <style type="text/css">
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }
+  </style>
+
+
+<script type="text/javascript">
+  var network;
+
+  function redrawAll() {
+    
+     var optionsFA = {
+
+      };
+      
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      
+      var options = {
+	  
+        physics: {
+          solver: 'forceAtlas2Based',
+          maxVelocity: 10,
+          minVelocity: 1,
+        },
+        
+        
+        groups: {
+
+          property: {
+            shape: 
+              'box'
+            ,
+            size: 13,
+            color: 'pink'
+          },
+          group: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0c0',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          person: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          organization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf1ad',
+              size: 50,
+              color: '#f0a30a'
+            }
+          },
+          globe: {
+            shape: 'icon',
+            icon: {
+              face: 'Ionicons',
+              code: '\uf276',
+              size: 60,
+              color: '#6E6EFD'
+            }
+          },
+          marker: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf041',
+              size: 40,
+              color: '#FB7E81'
+            }
+          },
+          book: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02d',
+              size: 50,
+              color: '#C2FABC'
+            }
+          },
+          film: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf008',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+          
+          
+          tags: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02c',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          tag: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02b',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          
+          projects: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0ae',
+              size: 44,
+              color: '#800000'
+            }
+          },
+          project: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0ae',
+              size: 40,
+              color: 'maroon'
+            }
+          },
+                    
+          ArtsReceation: {
+              shape: 'image',
+              size: 13,
+              image: "/img/arts-new-1.jpg"
+            }
+        }        
+        
+      };
+      var network = new vis.Network(container, data, options);
+	  
+		//***************************************************
+
+		//  set nodes and edges count in title block
+		document.getElementById('nodeCount').innerHTML = nodes.length;
+		document.getElementById('edgeCount').innerHTML = edges.length;
+	  
+		//  create filter checkbox for each unique group type
+		var groupsList = [];
+		for (var i = 0; i < nodes.length; i++) {
+			if(groupsList.indexOf(nodes[i].group) === -1) groupsList.push(nodes[i].group);
+		};
+	  
+		for (var i = 0; i < groupsList.length; i++) {
+			var div = document.createElement('div');
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.className = 'toggleOption';
+			checkbox.value = groupsList[i];
+			checkbox.id = groupsList[i];
+			checkbox.checked = true;
+
+			var label = document.createElement('label');
+			label.htmlFor = groupsList[i];
+			label.appendChild(document.createTextNode(groupsList[i]));
+
+			document.getElementById('filterOption').appendChild(div);
+			div.appendChild(checkbox);
+			div.appendChild(label);
+		};  
+	  
+		//   control visibility of accordion views
+		var acc = document.getElementsByClassName('accordion-trigger');
+		for (var i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				this.classList.toggle('accordion-trigger-active');
+				this.nextElementSibling.classList.toggle('hidden');
+			}
+		};
+
+		//  hide or display nodes and edges depending on filter selections
+		var classname = document.getElementsByClassName('toggleOption');
+		var filterToggle = function() {
+			var filter = this.getAttribute('value');
+			for (var i = 0; i < nodes.length; i++) {
+				var connectedEdges = network.getConnectedEdges(nodes[i].id);
+				if (nodes[i].group == filter) {
+					if (this.checked) {
+						nodes[i].hidden = false;				
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = false;
+						}
+					}
+					else {
+						nodes[i].hidden = true;
+						for(var j = 0; j < connectedEdges.length; j++) {
+							findObjectById(connectedEdges[j], edges).hidden = true;
+						}
+					}
+				}
+			}
+			network.setData({nodes:nodes, edges:edges});			
+		};
+		for (var i = 0; i < classname.length; i++) {
+			classname[i].addEventListener('click', filterToggle, false);
+		}
+	  
+		//  display node or edge data in the sidebar for selected element
+		network.on("click", function(selected){
+			var details = "";
+			var nodeId = selected.nodes.toString();
+			var edgeId = selected.edges.toString();
+			if(nodeId === "" && edgeId === "") details = "Select a node or edge in the graph.";
+			var object = (findObjectById(nodeId, nodes) || findObjectById(edgeId, edges));
+			for(var property in object) {
+				if (object.hasOwnProperty(property)) {
+					details += (property + ": " + object[property] + "<br>");
+				}
+			}
+			document.getElementById('propDetails').innerHTML = details;
+		});
+		
+		function findObjectById(objectId, objectArray){
+			for (var i=0; i < objectArray.length; i++) {
+				if (objectArray[i].id === objectId) {
+					return objectArray[i];
+				}
+			}
+		}
+		
+		//******************************************************
+		
+  }
+
+  redrawAll();
+</script>
+
+
+<main>
+	<section id="canvasArea">
+		<div id="selectedContainer"></div>
+		
+		<div id = "mynetwork" class="vis-network" tabindex="900" style="position: relative; overflow: hidden; touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;">
+			<canvas width="600" height="400" style="position: relative; touch-action: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;"></canvas>
+			<div class="vis-network-tooltip" style="left: 569px; top: 212px; visibility: hidden;"></div>
+		</div>
+		
+		<div id="optionsContainer"></div>
+
+		<div id="logo"></div>
+	</section>
+
+</main>
+
+
+<script>
+
+	redrawAll()
+
+</script>
+
+</body></html>
