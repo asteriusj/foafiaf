@@ -232,41 +232,72 @@
 		var filterToggle = function() {
 			var filter = this.getAttribute('value');
 			for (var i = 0; i < nodes.length; i++) {
-				var connectedEdges = network.getConnectedEdges(nodes[i].id);
 				if (nodes[i].group == filter) {
-					if (this.checked) {
-						nodes[i].hidden = false;				
-						for(var j = 0; j < connectedEdges.length; j++) {
-							findObjectById(connectedEdges[j], edges).hidden = false;
-						}
-					}
-					else {
-						nodes[i].hidden = true;
-						for(var j = 0; j < connectedEdges.length; j++) {
-							findObjectById(connectedEdges[j], edges).hidden = true;
-						}
-					}
+					if (this.checked) nodes[i].hidden = false;				
+					else nodes[i].hidden = true;
 				}
 			}
-			network.setData({nodes:nodes, edges:edges});			
+			toggleConnectedEdges();	
 		};
 		for (var i = 0; i < classname.length; i++) {
 			classname[i].addEventListener('click', filterToggle, false);
 		}
 	  
-		//  display node or edge data in the sidebar for selected element
+		//  network graph click event
+		var selectedNode = [];
 		network.on("click", function(selected){
 			var details = "";
 			var nodeId = selected.nodes.toString();
 			var edgeId = selected.edges.toString();
-			if(nodeId === "" && edgeId === "") details = "Select a node or edge in the graph.";
+			selectedNode = [];
+			selectedNode.push(nodeId);
+			//  display node or edge data in the sidebar for selected element
+			if(nodeId === "" && edgeId === "") {
+				details = "Select a node or edge in the graph.";
+				document.getElementById('separation').style.display = 'none';
+				document.getElementById('degreesOfSelectedNode').style.display = 'none';
+			}
 			var object = (findObjectById(nodeId, nodes) || findObjectById(edgeId, edges));
 			for(var property in object) {
-				if (object.hasOwnProperty(property)) {
+				if (object.hasOwnProperty(property) && property !== 'hidden') {
 					details += (property + ": " + object[property] + "<br>");
 				}
 			}
 			document.getElementById('propDetails').innerHTML = details;
+			
+			//  if a node is selected, hide any nodes outside the selected number N degrees
+			if(nodeId) {
+				hideNodesByDegree(nodeId);
+				document.getElementById('separation').style.display = 'block';
+				document.getElementById('degreesOfSelectedNode').style.display = 'block';				
+			}
+			//  clicking off the node will restore the complete graph
+			else {
+				for (var i = 0; i < nodes.length; i++) {		
+					if (document.getElementById(nodes[i].group).checked === true) {
+						nodes[i].hidden = false;
+					}
+				}
+				toggleConnectedEdges();		
+			}
+			
+			
+			
+			/*  if someone finds a way of hiding nodes and edges without redrawing the graph by using setData, this zoom function could be reinstated
+			//  zoom in on selected node
+			var moveToOptions = {
+				scale: 1.05,              // scale to animate to  (Number)
+				offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
+				animation: {             // animation object, can also be Boolean
+				  duration: 1000,                 // animation duration in milliseconds (Number)
+				  easingFunction: "easeInOutQuad" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
+				}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
+			}                                       // easeInQuint, easeOutQuint, easeInOutQuint
+			if(nodeId) network.focus(nodeId, moveToOptions);		
+			*/
+			
+			
+			
 		});
 		
 		function findObjectById(objectId, objectArray){
@@ -277,10 +308,53 @@
 			}
 		}
 		
-		//******************************************************
+		var hideNodesByDegree = function(nodeId) {
+			//  find the connected nodes within N degrees
+			var connectedNodes = [];
+			connectedNodes.push(nodeId);
+			var degrees = document.getElementById('degreesOfSelectedNode').value;
+			for(var i = 0; i < degrees; i++) {
+				var nextDegreeNodes = [];
+				for(var j = 0; j < connectedNodes.length; j++) {
+					nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
+				}
+				if (nextDegreeNodes.length > 0) {
+					console.log(nextDegreeNodes[i]);
+					for(var k = 0; k < nextDegreeNodes[i].length; k++) {
+						if(connectedNodes.indexOf(nextDegreeNodes[i][k]) === -1) connectedNodes.push(nextDegreeNodes[i][k]);
+					}
+				}
+			}
+			//  hide all nodes outside N degrees and their connected edges
+			for (var i = 0; i < nodes.length; i++) {			
+				if (connectedNodes.indexOf(nodes[i].id) !== -1) {
+					if (document.getElementById(nodes[i].group).checked === true) nodes[i].hidden = false;
+				}
+				else {
+					 nodes[i].hidden = true;			
+				}
+			}
+			toggleConnectedEdges();
+		}
 		
-  }
+		function toggleConnectedEdges() {
+			for (var x = 0; x < edges.length; x++) {
+				var toNode = findObjectById(edges[x].to, nodes) || false;
+				var fromNode = findObjectById(edges[x].from, nodes) || false;
+				if (toNode.hidden === true || fromNode.hidden === true) edges[x].hidden = true;
+				else edges[x].hidden = false;
+			}
+			network.setData({nodes:nodes, edges:edges});
+		}
+		
+		changeDegrees = function(newValue) {
+			hideNodesByDegree(selectedNode[0]);
+			document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
+		}
 
+
+  }
+  
   redrawAll();
 </script>
 
@@ -308,14 +382,16 @@
 			<h5 class="statisticDetails">Edges: <span id="edgeCount"></span></h5>
 
 			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
-			<div class="accordion-container scrollable" id="selection-details">
+			<div class="accordion-container" id="selection-details">
 				<div id="SelectionInformation">
 					<p class="propDetails"><span id="propDetails">Select a node or edge in the graph.</span></p>
+					<p id='separation' hidden>Degrees of Separation: 2</p>
+					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' hidden min='0' max='6' value='2' step='1' onchange='changeDegrees(this.value)'/></p>
 				</div>
 			</div>			
 			<h3 class="accordion-trigger">Filters</h3>	
 			<div id="filterOption" class="accordion-container filter hidden">
-						<!--<p class="slideOption" id="nodeDegreeFilteringOption"></p>-->
+				<!--<p><input type='range' id='degreesFilter' class='slideOption' hidden min='0' max='6' value='2' step='1' onchange='changeDegrees(this.value)'/></p>-->
 			</div>			
 		</section>
 	</aside>
@@ -323,7 +399,6 @@
 
 
 <script>
-
 	redrawAll()
 
 </script>
