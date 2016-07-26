@@ -1,0 +1,131 @@
+{
+      "@id": "_MISSION_0",
+      "@type": "foafiaf:objective",
+      "parentId": "_MISSION_0",
+      "keywords": "",
+      "categories": "",
+      "name": "Top 25 by 2025",
+      "description": "We are a top 25 community where our people are engaged, inspired and are leading successful and fulfilling lives.",
+      "owner": "",
+      "measures": [
+        
+      ],
+      "objectives": [
+        
+      ],
+      "initiatives": [
+        
+      ],
+      "from-to-gap": "",
+      "perspective": "",
+      "theme": "mission",
+      "document": "",
+      "image": "",
+      "shortname": ""
+    },
+}
+
+{
+  "kind": "strategy#objective",
+  "typeOf": "Strategy Objective",
+  "etag": "",
+  "uid": "",
+  "id": "212121",
+  "parentId": "",
+  "keywords": "",
+  "categories": "",
+  "name": " ",
+  "description": "",
+  "owner": "",
+  "measures": [],
+  "objectives": [],
+  "initiatives": [],
+  "from-to-gap": "",
+  "perspective": "",
+  "theme": "",
+  "document": "",
+  "image": "",
+  "shortname": ""
+}
+
+{
+      "kind": "strategy#measure",
+      "typeOf": "Performance Metric",
+      "uid": "",
+      "name": "",
+      "description": "",
+      "owner": "",
+      "polarity": "",
+      "timeperiod type": "",
+      "unitofmeasure": "",
+      "targetvalue": {
+
+      },
+      "datavalues": [
+ 
+   ],
+  "measures": [
+
+  ],
+  "initiatives": [
+
+  ],
+  "maintainers": [
+
+  ],
+  "userdefinedfields": [
+
+  ],
+  "attacheddocuments": [
+
+  ],
+  "shortname": ""
+}
+
+{
+  "kind": "strategy#initiative",
+  "typeOf": "Initiative",
+  "etag": "",
+  "id": "",
+  "parentId": "",
+  "keywords": "",
+  "categories": "",
+  "name": "",
+  "description": "",
+  "status": "N/A",
+  "statusupdate": "",
+  "statuscolor": "",
+  "startdate": "",
+  "enddata": "",
+  "percentcomplete": "0",
+  "activeflag": false,
+  "measures": [
+    
+  ],
+  "tasks": [
+    
+  ],
+  "subinitiatives": [
+    
+  ],
+  "userdefinedfields": [
+    {
+      "name": "Budget",
+      "value": ""
+    },
+    {
+      "name": "Remaining to Complete",
+      "value": ""
+    },
+    {
+      "name": "Spent to Date",
+      "value": ""
+    }
+  ],
+  "assignedto": "",
+  "assignedby": "",
+  "attacheddocuments": [
+    
+  ]
+  ,"shortname":""
+}

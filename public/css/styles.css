@@ -1,0 +1,21 @@
+
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 3px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }

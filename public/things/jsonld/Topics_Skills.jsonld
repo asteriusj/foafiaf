@@ -1,0 +1,181 @@
+{
+  "@graph": [
+    {
+      "@id": "",
+      "@type": "skos:Concept",
+      "uri": "",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "",
+      "rdfs:label": "",
+      "skos:definition": "",
+      "skos:inScheme": "",
+      "skos:broader": [
+        
+      ],
+      "skos:narrower": [
+        
+      ],
+      "skos:prefLabel": ""
+    },
+    {
+      "@id": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "@type": "skos:ConceptScheme",
+      "HasTopConcept": [
+        "skill:010000",
+        "skill:020000",
+        "skill:030000",
+        "topics:040000",
+        "skill:050000"
+      ]
+    },
+    {
+      "@id": "skill:010000",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "IT Management",
+      "rdfs:label": "IT Management",
+      "owl:sameAs": "",
+      "skos:exactMatch": "linkedin:01000000",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "skos:narrower": [
+        "skill:010100",
+        "skill:010200"
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-us"
+      },
+      "skos:prefLabel": {
+        "@value": "IT Management",
+        "@language": "en-us"
+      }
+    },
+    {
+      "@id": "skill:020000",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "Project Management",
+      "rdfs:label": "Project Management",
+      "owl:sameAs": "",
+      "skos:exactMatch": "",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "skos:narrower": [
+        
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-us"
+      },
+      "skos:prefLabel": {
+        "@value": "Project Management",
+        "@language": "en-us"
+      }
+    },
+    {
+      "@id": "skill:030000",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "Software Development",
+      "rdfs:labe": "Software Development",
+      "owl:sameAs": [
+        
+      ],
+      "skos:exactMatch": "",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "skos:narrower": [
+        
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-us"
+      },
+      "skos:prefLabel": {
+        "@value": "Software Development",
+        "@language": "en-us"
+      }
+    },
+    {
+      "@id": "skill:040000",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "Cloud Computing",
+      "rdfs:label": "Cloud Computing",
+      "owl:sameAs": [
+        
+      ],
+      "skos:exactMatch": "",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "skos:narrower": [
+        
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-us"
+      },
+      "skos:prefLabel": {
+        "@value": "Cloud Computing",
+        "@language": "en-us"
+      }
+    },
+    {
+      "@id": "skill:050000",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "Publishing and Printing",
+      "rdfs:label": "Publishing and Printing",
+      "owl:sameAs": "http://dmoz.org/Business/Publishing_and_Printing/",
+      "skos:exactMatch": "",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+      "skos:narrower": [
+        
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-us"
+      },
+      "skos:prefLabel": {
+        "@value": "Cloud Computing",
+        "@language": "en-us"
+      }
+    }
+  ],
+  "@id": "urn:x-arq:DefaultGraphNode",
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbp": "http://dbpedia.org/property/",
+    "dbr": "http://dbpedia.org/resource/",
+    "dct": "http://purl.org/dc/terms",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "url": "http://schema.org/url",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "vision": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Visions",
+    "segment": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values",
+    "spoke": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
+    "value": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
+    "sector": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors/",
+    "skill": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+    "interest": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests"
+  }
+}

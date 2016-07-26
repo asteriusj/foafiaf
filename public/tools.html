@@ -47,243 +47,6 @@
   </style>
 
 
-<script type="text/javascript">
-  var network;
-
-  function redrawAll() {
-    
-     var optionsFA = {
-
-      };
-      
-      // create a network
-      var container = document.getElementById('mynetwork');
-      var data = {
-        nodes: nodes,
-        edges: edges
-      };
-
-      var options = {
-	  
-        physics: {
-          solver: 'forceAtlas2Based',
-          maxVelocity: 10,
-          minVelocity: 1,
-        },
-        
-        
-        groups: {
-          property: {
-            shape: 
-              'box'
-            ,
-            size: 13,
-            color: 'pink'
-          },
-          group: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0c0',
-              size: 50,
-              color: '#57169a'
-            }
-          },
-          person: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf007',
-              size: 50,
-              color: '#aa00ff'
-            }
-          },
-          organization: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf1ad',
-              size: 50,
-              color: '#f0a30a'
-            }
-          },
-          globe: {
-            shape: 'icon',
-            icon: {
-              face: 'Ionicons',
-              code: '\uf276',
-              size: 60,
-              color: '#6E6EFD'
-            }
-          },
-          marker: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf041',
-              size: 40,
-              color: '#FB7E81'
-            }
-          },
-          book: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02d',
-              size: 50,
-              color: '#C2FABC'
-            }
-          },
-          film: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf008',
-              size: 55,
-              color: '#6E6EFD'
-            }
-          },
-          
-          
-          tags: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02c',
-              size: 40,
-              color: 'lime'
-            }
-          },
-          tag: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02b',
-              size: 40,
-              color: 'lime'
-            }
-          },
-          
-          projects: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0ae',
-              size: 44,
-              color: '#800000'
-            }
-          },
-          project: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0ae',
-              size: 40,
-              color: 'maroon'
-            }
-          }
-          
-        }        
-        
-      };
-      var network = new vis.Network(container, data, options);
-	  
-		//***************************************************
-
-		//  set nodes and edges count in title block
-		document.getElementById('nodeCount').innerHTML = nodes.length;
-		document.getElementById('edgeCount').innerHTML = edges.length;
-	  
-		//  create filter checkbox for each unique group type
-		var groupsList = [];
-		for (var i = 0; i < nodes.length; i++) {
-			if(groupsList.indexOf(nodes[i].group) === -1) groupsList.push(nodes[i].group);
-		};
-	  
-		for (var i = 0; i < groupsList.length; i++) {
-			var div = document.createElement('div');
-			var checkbox = document.createElement('input');
-			checkbox.type = 'checkbox';
-			checkbox.className = 'toggleOption';
-			checkbox.value = groupsList[i];
-			checkbox.id = groupsList[i];
-			checkbox.checked = true;
-
-			var label = document.createElement('label');
-			label.htmlFor = groupsList[i];
-			label.appendChild(document.createTextNode(groupsList[i]));
-
-			document.getElementById('filterOption').appendChild(div);
-			div.appendChild(checkbox);
-			div.appendChild(label);
-		};  
-	  
-		//   control visibility of accordion views
-		var acc = document.getElementsByClassName('accordion-trigger');
-		for (var i = 0; i < acc.length; i++) {
-			acc[i].onclick = function(){
-				this.classList.toggle('accordion-trigger-active');
-				this.nextElementSibling.classList.toggle('hidden');
-			}
-		};
-
-		//  hide or display nodes and edges depending on filter selections
-		var classname = document.getElementsByClassName('toggleOption');
-		var filterToggle = function() {
-			var filter = this.getAttribute('value');
-			for (var i = 0; i < nodes.length; i++) {
-				var connectedEdges = network.getConnectedEdges(nodes[i].id);
-				if (nodes[i].group == filter) {
-					if (this.checked) {
-						nodes[i].hidden = false;				
-						for(var j = 0; j < connectedEdges.length; j++) {
-							findObjectById(connectedEdges[j], edges).hidden = false;
-						}
-					}
-					else {
-						nodes[i].hidden = true;
-						for(var j = 0; j < connectedEdges.length; j++) {
-							findObjectById(connectedEdges[j], edges).hidden = true;
-						}
-					}
-				}
-			}
-			network.setData({nodes:nodes, edges:edges});			
-		};
-		for (var i = 0; i < classname.length; i++) {
-			classname[i].addEventListener('click', filterToggle, false);
-		}
-	  
-		//  display node or edge data in the sidebar for selected element
-		network.on("click", function(selected){
-			var details = "";
-			var nodeId = selected.nodes.toString();
-			var edgeId = selected.edges.toString();
-			if(nodeId === "" && edgeId === "") details = "Select a node or edge in the graph.";
-			var object = (findObjectById(nodeId, nodes) || findObjectById(edgeId, edges));
-			for(var property in object) {
-				if (object.hasOwnProperty(property)) {
-					details += (property + ": " + object[property] + "<br>");
-				}
-			}
-			document.getElementById('propDetails').innerHTML = details;
-		});
-		
-		function findObjectById(objectId, objectArray){
-			for (var i=0; i < objectArray.length; i++) {
-				if (objectArray[i].id === objectId) {
-					return objectArray[i];
-				}
-			}
-		}
-		
-		//******************************************************
-		
-  }
-
-  redrawAll();
-</script>
-
 
 <main>
 	<section id="canvasArea">
@@ -296,6 +59,34 @@
 	    RDF Validator
 	    JSON-LD Playground
 	    
+	    <h2>Ontologies</h2>
+	    An organization ontology 
+	    https://www.w3.org/TR/2012/WD-vocab-org-20120405/
+	    
+	    SKOS Simple Knowledge Organization System Namespace Document - HTML Variant
+	    https://www.w3.org/2009/08/skos-reference/skos.html#Concept
+	    
+	    http://vocab.ox.ac.uk/foaf
+	    
+	    https://iptc.org/standards/newscodes/
+	    
+	    Organization
+	    https://schema.org/Organization
+	    More specific Types
+        Airline
+        Corporation
+        EducationalOrganization
+        GovernmentOrganization
+        LocalBusiness
+        MedicalOrganization
+        NGO
+        PerformingGroup
+        SportsOrganization
+        
+      http://linkedmodel.org/vocab/industry-codes/VOCAB_sic.ttl
+
+      http://www.linkedmodel.org/doc/2015/SCHEMA_dtype-v1.2
+      
 		<div id="selectedContainer"></div>
 		
 		

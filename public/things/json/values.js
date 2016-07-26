@@ -1,13 +1,12 @@
 {
-  "@graph": [
+  "name": "OUR SHARED VALUES",
+  "description": "We, as community members of the Rockford Region, desire to achieve our vision for transformational change and will uphold the following shared values as the foundation for a civil and cultivating environment:",
+  "values": [
     {
       "@id": "",
-      "@type": "foaf:PersonalProfileDocument",
-      "errorReportsTo": "mailto:leigh@ldodds.com",
-      "generatorAgent": "http://www.ldodds.com/foaf/foaf-a-matic",
-      "label": "Person: Jeffrey Stewart",
-      "maker": "_person_1",
-      "primaryTopic": "_person_1"
+      "@type": "foafiaf:values",
+      "name": "Unity",
+      "description": "Place the greater good of all parts of our region and its transformation ahead of self or organizational interests."
     }
-    ]
+  ]
 }

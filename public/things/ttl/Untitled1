@@ -1,0 +1,141 @@
+
+{
+  "@graph" : [ 
+  
+  {
+    "@id" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "@type" : "skos:ConceptScheme",
+    "HasTopConcept" : [ "subj:10000000", "subj:07000000", "subj:09000000", "subj:03000000", "subj:13000000", "subj:02000000", "subj:11000000", "subj:14000000", "subj:08000000", "subj:01000000", "subj:05000000", "subj:15000000", "subj:16000000", "subj:04000000", "subj:17000000", "subj:06000000", "subj:12000000" ]
+  }, 
+  {
+    "@id" : "subj:01000000",
+    "@type" : "skos:Concept",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Matters pertaining to the advancement and refinement of the human mind, of interests, skills, tastes and emotions "
+    },
+    "exactMatch" : "medtop:01000000",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "narrower" : [ "subj:01003000", "subj:01013000", "subj:01012000", "subj:01018000", "subj:01008000", "subj:01028000", "subj:01006000", "subj:01026000", "subj:01022000", "subj:01010000", "subj:01014000", "subj:01007000", "subj:01002000", "subj:01001000", "subj:01017000", "subj:01015000", "subj:01020000", "subj:01004000", "subj:01021000", "subj:01027000", "subj:01024000", "subj:01019000", "subj:01025000", "subj:01023000", "subj:01016000", "subj:01009000", "subj:01011000", "subj:01005000" ],
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "arts, culture and entertainment"
+    }
+  }, 
+  {
+    "@id" : "subj:01001000",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01000000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Probing the past through ruins and artefacts "
+    },
+    "exactMatch" : "medtop:20000744",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "archaeology"
+    }
+  }, {
+    "@id" : "subj:01002000",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01000000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Designing of buildings, monuments and the spaces around them "
+    },
+    "exactMatch" : "medtop:20000032",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "architecture"
+    }
+  }, {
+    "@id" : "subj:01003000",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01000000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Classical contest pitting man against the bull "
+    },
+    "exactMatch" : "medtop:20000875",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "bullfighting"
+    }
+  }, {
+    "@id" : "subj:01004000",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01000000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Parades, parties, celebrations and the like not necessarily tied to a fixed occasion or date "
+    },
+    "exactMatch" : "medtop:20000041",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "festive event (including carnival)"
+    }
+  }, {
+    "@id" : "subj:01005000",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01000000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "Cinema as art and entertainment "
+    },
+    "exactMatch" : "medtop:20000005",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "narrower" : "subj:01005001",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "cinema"
+    }
+  }, {
+    "@id" : "subj:01005001",
+    "@type" : "skos:Concept",
+    "broader" : "subj:01005000",
+    "definition" : {
+      "@language" : "en-gb",
+      "@value" : "National and international motion pictures festivals, selections, festival juries, nominations, awards etc. "
+    },
+    "exactMatch" : "medtop:20000006",
+    "inScheme" : "http://cv.iptc.org/newscodes/subjectcode/",
+    "prefLabel" : {
+      "@language" : "en-gb",
+      "@value" : "film festival"
+    }
+  } ],
+  "@id" : "urn:x-arq:DefaultGraphNode",
+  "@context" : {
+    "broader" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#broader",
+      "@type" : "@id"
+    },
+    "exactMatch" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#exactMatch",
+      "@type" : "@id"
+    },
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#inScheme",
+      "@type" : "@id"
+    },
+    "definition" : "http://www.w3.org/2004/02/skos/core#definition",
+    "prefLabel" : "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "narrower" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#narrower",
+      "@type" : "@id"
+    },
+    "HasTopConcept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#HasTopConcept",
+      "@type" : "@id"
+    },
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "medtop" : "http://cv.iptc.org/newscodes/medtop/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "subj" : "http://cv.iptc.org/newscodes/subjectcode/"
+  }
+}

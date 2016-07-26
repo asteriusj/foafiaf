@@ -1,0 +1,328 @@
+    {
+      "@id": "_Segment_HealthyLifestyles",
+      "@type": "foafiaf:objective",
+      "parentId": "_MISSION_0",
+      "perspective": "Segment",
+      "name": "Healthy Lifestyles Segment",
+      "description": "Residents live healthy lifestyles and make informed choices. They have access to excellent, comprehensive services for health, wellness, and recreation.",
+      "keywords": "",
+      "categories": "",
+      
+      "theme": "",
+      "image": "",
+      "label": "Healthy Lifestyles"
+    }
+    
+    
+    
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_LeadershipYouth",
+    "label": "Leadership & Youth",
+    "description": "foafiaf:objective-eadershipYouth",
+    "name": "Leadership & Youth Segment",
+    "group": "LeadershipYouth",
+    "image":'leadership-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment","theme": ""
+  },
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_Safety",
+    "label": "Safety",
+    "description": "foafiaf:objective-Safety",
+    "name": "Safety Segment",
+    "group": "Safety",
+    "image":'safety-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  },
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_Education",
+    "label": "Education",
+    "description": "foafiaf:objective-Education",
+    "name": "Education Segment",
+    "group": "Education",
+    "image":'edu-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  },
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_HealthyLifestyles",
+    "label": "Healthy Lifestyles",
+    "description": "Residents live healthy lifestyles and make informed choices. They have access to excellent, comprehensive services for health, wellness, and recreation.",
+    "name": "Healthy Lifestyles Segment",
+    "group": "Healthy Lifestyles",
+    "image":'healthy-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_EatforHealth",
+    "label": "Eat for Health",
+    "description": "We are a community where healthy food choices are accessible to all and the easy choice.",
+    "name": "Eat for Health Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_MoveMore",
+    "label": "Move More",
+    "description": "We are a community of active living where all have access to recreational opportunities.",
+    "name": "Move More Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_LoveandBeLoved",
+    "label": "Love and Be Loved",
+    "description": "We have healthy social and emotional development for everyone at all stages of life.",
+    "name": "Love and Be Loved Objective",
+    "group": "Healthy Lifestyles"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_PhysicalInfrastructure",
+    "label": "Physical Infrastructure",
+    "description": "foafiaf:objective-PhysicalInfrastructure",
+    "name": "Physical Infrastructure Segment",
+    "group": "Physical Infrastructure",
+    "image":'physical-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_EconomyJobs",
+    "label": "Economy & Jobs",
+    "description": "The region has a skilled and sought-after workforce – enabling all families to improve their standard of living. Our people are employed and per capita income is above the national average.\nAs a hub of ideas and innovation, we nurture, grow and attract world-class industries and employers. We are recognized for leadership in advanced manufacturing, logistics and agribusiness.",
+    "name": "Economy & Jobs Segment",
+    "group": "Economy Jobs",
+    "image":'economy-new-3-3.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_UnifiedWorkforceDevelopmentNetwork",
+    "label": "Unified Workforce Development Network",
+    "description": "The region’s educators, trainers and employers operate as a single, effective network to connect and prepare residents for employment opportunities.Accounts",
+    "name": "Unified Workforce Development Network Strategy",
+    "group": "Planning"
+  },
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_Innovation",
+    "label": "Innovation",
+    "description": "Public and private collaboration fosters a world class business development ecosystem to launch innovation and entrepreneurship.",
+    "name": "Innovation Strategy",
+    "group": "Planning"
+  },
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_WorldClassIndustryClusters",
+    "label": "World-Class Industry Clusters",
+    "description": "Leading industries leverage regional assets, create high performing supply chains, and command national recognition.",
+    "name": "World-Class Industry Clusters Strategy",
+    "group": "Planning"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_StimulatingIncomeJobGrowth",
+    "label": "Stimulating Income & Job Growth",
+    "description": "Employers and civic entities stimulate career growth with jobs throughout the region.",
+    "name": "Stimulating Income & Job Growth Strategy",
+    "group": "Planning"
+  }
+   ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_BusinessAttractionRetention",
+    "label": "Business Attraction & Retention",
+    "description": "Economic development partners collaborate regionally for business retention, expansion and attraction.",
+    "name": "Business Attraction & Retention",
+    "group": "Planning"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_Quality",
+    "label": "Quality",
+    "description": "foafiaf:objective-Quality",
+    "name": "Quality Segment",
+    "group": "Quality",
+    "image":'qualitynew-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+    {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_Communications",
+    "label": "Communications",
+    "description": "foafiaf:objective-Communications",
+    "name": "Communications Segment",
+    "group": "Communications",
+    "image":'comm-new-3-3.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+    ,
+    {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_LivingtheBrand",
+    "label": "Living the Brand",
+    "description": "foafiaf:objective-LivingtheBrand",
+    "name": "Living the Brand Segment",
+    "group": "Living the Brand",
+    "image":'livingbrand-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_Planning",
+    "label": "Planning",
+    "description": "We take a purposeful, transparent, and results-oriented approach to planning for growth and renewal.",
+    "name": "Planning Segment",
+    "group": "Planning",
+    "image":'planning-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+
+    
+    ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_CommunityEnthusiasm",
+    "label": "Community Enthusiasm",
+    "description": "Our community uses proven practices that engage the community and enable the achievement of plan objectives.",
+    "name": "Community Enthusiasm Objective",
+    "group": "Planning"
+  }
+  ,
+
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_FullParticipationinGovernmentalElections",
+    "label": "Full Participation in Governmental Elections",
+    "description": "",
+    "name": "Full Participation in Governmental Elections Objective",
+    "group": "Planning"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_Reacheveryresident",
+    "label": "Reach every resident",
+    "description": "Every resident participates in the community planning process in their areas of interest.",
+    "name": "Reach every resident Objective",
+    "group": "Planning"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_EngagementPartnerships",
+    "label": "Engagement & Partnerships",
+    "description": "All segments of the community jointly plan, design, and share responsibility, accountability and decision-making by creating trust and partnership.",
+    "name": "Engagement & Partnerships Objective",
+    "group": "Planning"
+  }
+  
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_FundingAlignment",
+    "label": "Funding & Alignment",
+    "description": "Our local governments and not-for-profits are effective, properly supported and aligned with the community vision.",
+    "name": "Funding & Alignment Segment",
+    "group": "Funding & Alignment",
+    "image":'funding-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_CommonAgenda",
+    "label": "Common Agenda",
+    "description": "Our community has a common agenda where information and resources are shared through open and frequent communication.",
+    "name": "Common Agenda Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_GoalSetting",
+    "label": "Goal Setting",
+    "description": "Our residents collaborate to set community-wide goals and ensure that our efforts to achieve them are aligned, effective, and efficient.",
+    "name": "Goal Setting Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Strategy_Createaccountability",
+    "label": "Create accountability",
+    "description": "Our community will maintain accountability and alignment through transparency, recognition and financial support.",
+    "name": "Create accountability Objective",
+    "group": "Funding & Alignment"
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_UnityPrideCulture",
+    "label": "Unity, Pride, Culture",
+    "description": "foafiaf:objective-UnityPrideCulture",
+    "name": "Unity, Pride, Culture Segment",
+    "group": "Unity, Pride, Culture",
+    "image":'unity-new-3-2.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_FamilyNeigborhoods",
+    "label": "Family & Neigborhoods",
+    "description": "foafiaf:objective-FamilyNeigborhoods",
+    "name": "Family & Neigborhoods Segment",
+    "group": "Family & Neigborhoods",
+    "image":'families-new-1.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:objective",
+    "@id": "_Segment_ArtsReceation",
+    "label": "Arts & Receation",
+    "description": "Diverse forms of creative expression and recreation flourish and lead to self-fulfillment and national acclaim.",
+    "name": "Arts & Receation Segment",
+    "group": "Arts & Receation",
+    "image":'arts-new-1.jpg', 
+          "parentId": "_MISSION_0",
+      "perspective": "Segment", "theme": ""
+  }
+  ,
+  {
+    "@type": "foafiaf:project",
+    "@id": "_Project_BlueZone",
+    "label": "Blue Zone Community",
+    "description": "We are becomong a Blue Zone community",
+    "name": "Blue Zone Community Project",
+    "group": "project"
+  }

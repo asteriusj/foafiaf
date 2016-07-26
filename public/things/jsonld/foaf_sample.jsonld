@@ -1,11 +1,245 @@
 {
   "@graph": [
     {
+      "@id": "_sector_0",
+      "@type": "skos:ConceptScheme",
+      "rdf:type": "sic:IndustryGroup",
+      "rdf:type": "naics2007:All_NAICS2007_Codes",
+      "skos:altLabel": "8naics2007:All_NAICS2007_Codes",
+      "label": "Business Sectors",
+      "skos:topConceptOf": [
+        "_sector_10",
+        "_sector_20",
+        "_sector_30",
+        "_sector_40"
+      ]
+    },
+    {
+      "@id": "_sector_10",
+      "@type": "skos:Concept",
+      "rdf:type": "naics2007:BusinessSector",
+      "skos:altLabel": "81 Other Services (except Public Administration)",
+      "label": "Business",
+      "skos:altLabel": "8244 BUSINESS AND SECRETARIAL SCHOOLS",
+      "sic:code": "8244",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_0"
+
+      ]
+    },
+    
+    {
+      "@id": "_sector_11",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Chambers of Commerce",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_10"
+
+      ]
+    },
+    {
+      "@id": "_sector_12",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Largest Employers",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_10"
+
+      ]
+    },
+    {
+      "@id": "_sector_13",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Professional & Industry Groups",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_10"
+
+      ]
+    },
+    {
+      "@id": "_sector_14",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Rockford Area Economic Development Committee",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_10"
+
+      ]
+    },
+    
+    {
+      "@id": "_sector_20",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "rdf:type": "naics2007:BusinessSector",
+      "naics2007:code": "92",
+      "label": "Government & Agencies",
+      "skos:altLabel": "92 Public Administration",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_0"
+
+      ]
+    },
+    
+    {
+      "@id": "_sector_201",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Elected Officials",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_20"
+
+      ]
+    },
+    {
+      "@id": "_sector_202",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Counties & Municipalties",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_20"
+
+      ]
+    },
+    {
+      "@id": "_sector_203",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Councils & Boards",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_202"
+
+      ]
+    },
+    {
+      "@id": "_sector_204",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Senior Administrators",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_202"
+
+      ]
+    },
+    
+    {
+      "@id": "_sector_205",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "rdf:type": "naics2007:BusinessSector",
+      "naics2007:code": "61",
+      "skos:altLabel": "61 Educational Services",
+      "label": "Public Education",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_20"
+
+      ]
+    },
+    	
+    {
+      "@id": "_sector_206",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "rdf:type": "naics2007:BusinessSector",
+      "naics2007:code": "55",
+      "label": "Administrative Bodies",
+      
+      "skos:altLabel": "55 Management of Companies and Enterprises",
+      
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_20"
+
+      ]
+    },
+    {
+      "@id": "_sector_261",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Public Safety",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_206"
+
+      ]
+    },
+    {
+      "@id": "_sector_262",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Human Services",
+      
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_206"
+
+      ]
+    },
+    {
+      "@id": "_sector_263",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "skos:altLabel": "62 Health Care and Social Assistance",
+      "label": "Health",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_206"
+
+      ]
+    },
+    {
+      "@id": "_sector_264",
+      "@type": "skos:Concept",
+      "rdf:type": "sic:IndustryGroup",
+      "label": "Development",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_206"
+
+      ]
+    },
+    
+    {
+      "@id": "_sector_30",
+      "@type": "skos:Concept",
+      "label": "Non Profit",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_0"
+
+      ]
+    },
+    {
+      "@id": "_sector_40",
+      "@type": "skos:Concept",
+      "label": "Faith",
+      "skos:inScheme": "_sector_0",
+      "skos:broader": [
+        "_sector_0"
+
+      ]
+    },
+    
+    
+    {
       "@id": "",
       "@type": "foaf:PersonalProfileDocument",
       "errorReportsTo": "mailto:leigh@ldodds.com",
       "generatorAgent": "http://www.ldodds.com/foaf/foaf-a-matic",
-      "label": "Person: Jeffrey Stewart",
+      "name": "Person: Jeffrey Stewart",
       "maker": "_person_1",
       "primaryTopic": "_person_1"
     },
@@ -112,6 +346,9 @@
       "employerOf": [
         "_person_3",
         "_person_2"
+      ],
+      "classification": [
+        "_sector_30"
       ]
     },
     {
@@ -126,6 +363,9 @@
       ],
       "employerOf": [
         "_person_1"
+      ],
+      "classification": [
+        
       ]
     },
     {
@@ -134,6 +374,9 @@
       "name": "Woodward",
       "based_near": [
 
+      ],
+      "classification": [
+        "_sector_12"
       ]
     },
     {
@@ -145,6 +388,9 @@
       ],
       "employerOf": [
         "_person_4"
+      ],
+      "classification": [
+        "_sector_12"
       ]
     },
     {
@@ -155,7 +401,8 @@
       "region": "Rock Island County",
       "state": "Illinois",
       "has_container": [
-        "Illinois"
+        "Illinois",
+        "_sector_202"
       ]
     },
     {
@@ -170,7 +417,8 @@
       "geo:lat": "42.127224 (xsd:float)",
       "geo:long": "-89.260834 (xsd:float)",
       "has_container": [
-        "Illinois"
+        "Illinois",
+        "_sector_202"
       ]
     },
     {
@@ -190,7 +438,8 @@
         }
       ],
       "has_container": [
-        "Illinois"
+        "Illinois",
+        "_sector_202"
       ]
     },
     {
@@ -410,6 +659,9 @@
     "rev" : "http://purl.org/stuff/rev#",
     "void" : "http://rdfs.org/ns/void#",
     "org" : "http://www.w3.org/ns/org#",
+    "classification" : "https://www.w3.org/ns/org#classification",
+    "sic": "http://linkedmodel.org/vocab/industry-codes/VOCAB_sic.ttl",
+    "naics2007": "http://linkedmodel.org/vocab/industry-codes/naics-2007#",
     "skosxl" : "http://www.w3.org/2008/05/skos-xl#",
     "cnt" : "http://www.w3.org/2008/content#",
     "gr" : "http://purl.org/goodrelations/v1#",

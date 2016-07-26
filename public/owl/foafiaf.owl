@@ -13,7 +13,7 @@
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 @prefix foafiaf: <http://https://foafiaf-asteriusj.c9.io/owl/foafiaf#> .
 
-<http://foafiaf-asteriusj.c9.io/owl/arcmytwit_ontology.owl>
+<http://foafiaf-asteriusj.c9.io/owl/foafiaf.owl>
 	a   owl:Ontology;
 	dce:title """FOAFIAF"""@en;
 	dce:description """Formal general description of network map foaf entities and relationships."""@en;

@@ -1,0 +1,132 @@
+{
+  "@graph": [
+    {
+      "@id": "",
+      "@type": "skos:Concept",
+      "uri": "",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "",
+      "rdfs:label": "",
+      "skos:definition": "",
+      "skos:inScheme": "",
+      "skos:broader": [
+        
+      ],
+      "skos:narrower": [
+        
+      ],
+      "skos:prefLabel": ""
+    },
+    
+    {
+      "@id": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
+      "@type": "skos:ConceptScheme",
+      "skos:HasTopConcept": [
+        "segment:01",
+        "segment:02",
+        "segment:03",
+        "segment:04",
+        "segment:05"
+      ]
+    },
+    
+
+
+    {
+        "@id"               :   "segment:01" ,
+        "@type"             :   "skos:Concept" ,
+        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
+        "foaf:topic"        :   "Funding Our Future" ,
+        "rdfs:label"        :   "FUNDING OUR FUTURE" ,
+        "owl:sameAs"        :   "" ,
+        "skos:exactMatch"   :   "" ,
+        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
+        "skos:broader"      :   [ "segment:0" ] ,
+        "skos:narrower"     :   [] ,
+        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
+        "skos:prefLabel"    :   { "@value" : "FUNDING OUR FUTURE: ", "@language" : "en-gb" }
+    },
+    {
+        "@id"               :   "segment:02" ,
+        "@type"             :   "skos:Concept" ,
+        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
+        "foaf:topic"        :   "Reframing a 21st Century Community" ,
+        "rdfs:label"        :   "REFRAMING A 21ST CENTURY COMMUNITY" ,
+        "owl:sameAs"        :   "" ,
+        "skos:exactMatch"   :   "" ,
+        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
+        "skos:broader"      :   [ "segment:0" ] ,
+        "skos:narrower"     :   [] ,
+        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
+        "skos:prefLabel"    :   { "@value" : "REFRAMING A 21ST CENTURY COMMUNITY: ", "@language" : "en-gb" }
+    },
+    {
+        "@id"               :   "segment:03" ,
+        "@type"             :   "skos:Concept" ,
+        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
+        "foaf:topic"        :   "Renewal" ,
+        "rdfs:label"        :   "RENEWAL" ,
+        "owl:sameAs"        :   "" ,
+        "skos:exactMatch"   :   "" ,
+        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
+        "skos:broader"      :   [ "segment:0" ] ,
+        "skos:narrower"     :   [] ,
+        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
+        "skos:prefLabel"    :   { "@value" : "RENEWAL: ", "@language" : "en-gb" }
+    },
+    {
+        "@id"               :   "segment:04" ,
+        "@type"             :   "skos:Concept" ,
+        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
+        "foaf:topic"        :   "Revitalization" ,
+        "rdfs:label"        :   "REVITALIZATION" ,
+        "owl:sameAs"        :   "" ,
+        "skos:exactMatch"   :   "" ,
+        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
+        "skos:broader"      :   [ "segment:0" ] ,
+        "skos:narrower"     :   [] ,
+        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
+        "skos:prefLabel"    :   { "@value" : "REVITALIZATION: ", "@language" : "en-gb" }
+    },
+    {
+        "@id"               :   "segment:05" ,
+        "@type"             :   "skos:Concept" ,
+        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
+        "foaf:topic"        :   "Sense of Place" ,
+        "rdfs:label"        :   "SENSE OF PLACE" ,
+        "owl:sameAs"        :   "" ,
+        "skos:exactMatch"   :   "" ,
+        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
+        "skos:broader"      :   [ "segment:0" ] ,
+        "skos:narrower"     :   [] ,
+        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
+        "skos:prefLabel"    :   { "@value" : "SENSE OF PLACE: ", "@language" : "en-gb" }
+    }
+    
+    
+  ],
+  "@id": "urn:x-arq:DefaultGraphNode",
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbp": "http://dbpedia.org/property/",
+    "dbr": "http://dbpedia.org/resource/",
+    "dct": "http://purl.org/dc/terms",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "url": "http://schema.org/url",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "vision": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Visions",
+    "segment": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values",
+    "spoke": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
+    "value": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
+    "sector": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors/",
+    "skill": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+    "interest": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests"
+  }
+}

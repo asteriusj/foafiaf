@@ -1,0 +1,22 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix sm: <http://https://foafiaf-asteriusj.c9.io/owl/strategymaps#> .
+
+<http://foafiaf-asteriusj.c9.io/owl/strategymap.owl>
+	a   owl:Ontology;
+	dce:title """Strategy Maps"""@en;
+	dce:description """Formal general description of strategy map entities and relationships."""@en;
+	dce:creator """Asterius Media LLC"""@en;
+	dce:publisher """Asterius Media LLC"""@en;
+	dce:format """OWL-Full"""@en;
+	rdfs:comment """Copyright (c) 2016 Asterius Media LLC """@en;
+	rdfs:seeAlso <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl>, <http://www.ontologydesignpatterns.org/ont/web/irw.owl> .
+	
