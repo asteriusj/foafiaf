@@ -315,10 +315,10 @@
 			var degrees = document.getElementById('degreesOfSelectedNode').value;
 			for(var i = 0; i < degrees; i++) {
 				var nextDegreeNodes = [];
-				if (nextDegreeNodes.length > 0) {
-					for(var j = 0; j < connectedNodes.length; j++) {
-						nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
-					}
+				for(var j = 0; j < connectedNodes.length; j++) {
+					nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
+				}
+				if (nextDegreeNodes[0] != "") {
 					for(var k = 0; k < nextDegreeNodes[i].length; k++) {
 						if(connectedNodes.indexOf(nextDegreeNodes[i][k]) === -1) connectedNodes.push(nextDegreeNodes[i][k]);
 					}
