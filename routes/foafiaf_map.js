@@ -11,7 +11,7 @@ exports.foafiaf_map = function (req, res) {
             console.log('error', err);
             return res.send(err);
         }
-        console.log('nodes & edges: ', data);
+        //console.log('nodes & edges: ', JSON.stringify(data));
         var viewData = {
             title: 'Map of FOAF relationships',
             data: data

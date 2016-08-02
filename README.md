@@ -1,5 +1,5 @@
 # foafiaf
-__FOAFIAF__: Friend Of A Friend Is A Friend - A community network mapping capability levergaing RDF Datasets for Social Graph visualization and analysis
+__FOAFIAF__: Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis
 
 
 ## Network Map Vision
@@ -69,6 +69,9 @@ The information is summarized in order to take the essence of it.
 
 #### Flexible Reporting Tool
 
+### Information Access
+Make it easy for user cohorts to access, add to, and utiize community Linked Data
+
 #### Web and Mobile Assessibility
 Users have ability for the Website to be Accessible Both for People with Disabilities and for Users of Mobile Devices
 * Ability to use websites and applications more accessible to people with disabilities when they are using mobile phones including people using a broad range of devices by adherence and support of Mobile Web Best Practices (MWBP)
@@ -80,6 +83,8 @@ Users have ability to Extend to mobile devices is critical. Subscribing to publi
 * Ability to Subscribe to Calendar Events as iCal
 * Ability to Publish vCard for contacts and directories
 * Ability \Publish iCal for events and calendars
+* Ability to extend structured content to mobile devices as a reflection of managed Linked Data
+
 
 ### Information Analysis
 Information Analysis - the information is analyzed in order to find the relationships, redundancies and patterns.

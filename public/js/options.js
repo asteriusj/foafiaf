@@ -15,7 +15,7 @@
             shape: 
               'dot'
             ,
-            size: 13,
+            size: 18,
             color: 'pink'
           },
           
@@ -29,6 +29,15 @@
             }
           },
           
+          team: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: 'grey'
+            }
+          },
           person: {
             shape: 'icon',
             icon: {
@@ -39,13 +48,64 @@
             }
           },
           
+          role: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf21d',
+              size: 50,
+              color: '#6E6EFD'
+            }
+          },
+       
+       
           organization: {
             shape: 'icon',
             icon: {
               face: 'FontAwesome',
-              code: '\uf1ad',
+              code: '\uf0e8',
               size: 50,
-              color: '#f0a30a'
+              color: 'blue'
+            }
+          },   
+          orgbiz: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf069',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          
+          orggov: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf19c',
+              size: 50,
+              color: 'blue'
+            }
+          },
+          
+          orgnonprofit: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf069',
+              size: 50,
+              color: 'green'
+            }
+          },
+          
+          
+          orgfaith: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf004',
+              size: 50,
+              color: 'cyan'
             }
           },
           
@@ -54,7 +114,7 @@
             icon: {
               face: 'Ionicons',
               code: '\uf276',
-              size: 60,
+              size: 66,
               color: '#6E6EFD'
             }
           },
@@ -64,7 +124,7 @@
             icon: {
               face: 'FontAwesome',
               code: '\uf041',
-              size: 40,
+              size: 50,
               color: '#FB7E81'
             }
           },
@@ -166,7 +226,7 @@
           },
 
           
-        }        
+        }          
         
       }
       

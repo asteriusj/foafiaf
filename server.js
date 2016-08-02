@@ -46,7 +46,9 @@ app.get('/foafiaf/map', routes.foafiaf_map);
 
 app.get('/foafiaf/bacon', routes.bacon_map);
 
-app.get('/foafiaf/projects', routes.projects_map);
+app.get('/foafiaf/projects', routes.projects_map );
+
+app.get('/foafiaf/combine', routes.combine_JSONLDfiles );
 
 
 app.listen(port, host);

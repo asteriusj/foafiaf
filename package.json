@@ -22,6 +22,9 @@
   "dependencies": {
     "ejs": "^2.3.1",
     "express": "^4.12.4",
-    "request": "^2.57.0"
+    "request": "^2.57.0",
+    "n3": "^0.2.7",
+		"jsonld": "^0.2.17",
+		"csvtojson": "^1.0.0"
   }
 }

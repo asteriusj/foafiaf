@@ -22,7 +22,7 @@ function StrategyMapModel(args) {
     {
         if (args)
         {
-            SELF.kind = args.kind || 'strategy@map';
+            SELF.kind = args.kind || 'strategy#map';
             SELF.typeOf = args.typeOf || 'Strategy Map';
             SELF.id = args.id;
             SELF.guid = SELF.typeOf + '::' + args.id ;
@@ -150,7 +150,7 @@ function StrategyMeasureModel(args) {
     {
         if (args)
         {
-            SELF.kind = args.kind || 'strategy#measure';
+            SELF.kind = args.kind || 'strategymaps#measure';
             SELF.typeOf = args.typeOf || 'Strategy Measure';
             SELF.id = args.id;
             SELF.guid = SELF.typeOf + '::' + args.id ;
@@ -209,7 +209,7 @@ function StrategyInitiativeModel(args) {
     {
         if (args)
         {
-            SELF.kind = args.kind || 'strategy#initiative';
+            SELF.kind = args.kind || 'strategymaps#initiative';
             SELF.typeOf = args.typeOf || 'Strategy Initiative';
             SELF.id = args.id;
             SELF.guid = SELF.typeOf + '::' + args.id ;
