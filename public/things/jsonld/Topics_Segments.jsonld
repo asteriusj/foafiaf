@@ -20,93 +20,56 @@
       ],
       "skos:prefLabel": ""
     },
-    
     {
-      "@id": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
+      "@id": "segment:0",
       "@type": "skos:ConceptScheme",
+      "rdf:type": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
       "skos:HasTopConcept": [
         "segment:01",
         "segment:02",
         "segment:03",
         "segment:04",
-        "segment:05"
+        "_Segment_HealthyLifestyles",
+        "segment:05",
+        "segment:06",
+        "segment:07",
+        "segment:08",
+        "segment:09",
+        "segment:10",
+        "segment:11",
+        "segment:12",
+        "segment:13",
+        "segment:14"
       ]
     },
-    
-
-
     {
-        "@id"               :   "segment:01" ,
-        "@type"             :   "skos:Concept" ,
-        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
-        "foaf:topic"        :   "Funding Our Future" ,
-        "rdfs:label"        :   "FUNDING OUR FUTURE" ,
-        "owl:sameAs"        :   "" ,
-        "skos:exactMatch"   :   "" ,
-        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
-        "skos:broader"      :   [ "segment:0" ] ,
-        "skos:narrower"     :   [] ,
-        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
-        "skos:prefLabel"    :   { "@value" : "FUNDING OUR FUTURE: ", "@language" : "en-gb" }
-    },
-    {
-        "@id"               :   "segment:02" ,
-        "@type"             :   "skos:Concept" ,
-        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
-        "foaf:topic"        :   "Reframing a 21st Century Community" ,
-        "rdfs:label"        :   "REFRAMING A 21ST CENTURY COMMUNITY" ,
-        "owl:sameAs"        :   "" ,
-        "skos:exactMatch"   :   "" ,
-        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
-        "skos:broader"      :   [ "segment:0" ] ,
-        "skos:narrower"     :   [] ,
-        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
-        "skos:prefLabel"    :   { "@value" : "REFRAMING A 21ST CENTURY COMMUNITY: ", "@language" : "en-gb" }
-    },
-    {
-        "@id"               :   "segment:03" ,
-        "@type"             :   "skos:Concept" ,
-        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
-        "foaf:topic"        :   "Renewal" ,
-        "rdfs:label"        :   "RENEWAL" ,
-        "owl:sameAs"        :   "" ,
-        "skos:exactMatch"   :   "" ,
-        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
-        "skos:broader"      :   [ "segment:0" ] ,
-        "skos:narrower"     :   [] ,
-        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
-        "skos:prefLabel"    :   { "@value" : "RENEWAL: ", "@language" : "en-gb" }
-    },
-    {
-        "@id"               :   "segment:04" ,
-        "@type"             :   "skos:Concept" ,
-        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
-        "foaf:topic"        :   "Revitalization" ,
-        "rdfs:label"        :   "REVITALIZATION" ,
-        "owl:sameAs"        :   "" ,
-        "skos:exactMatch"   :   "" ,
-        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
-        "skos:broader"      :   [ "segment:0" ] ,
-        "skos:narrower"     :   [] ,
-        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
-        "skos:prefLabel"    :   { "@value" : "REVITALIZATION: ", "@language" : "en-gb" }
-    },
-    {
-        "@id"               :   "segment:05" ,
-        "@type"             :   "skos:Concept" ,
-        "rdf:type"          :   [ "sioc:topic", "foaf:topic" ] ,
-        "foaf:topic"        :   "Sense of Place" ,
-        "rdfs:label"        :   "SENSE OF PLACE" ,
-        "owl:sameAs"        :   "" ,
-        "skos:exactMatch"   :   "" ,
-        "skos:inScheme"     :   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ,
-        "skos:broader"      :   [ "segment:0" ] ,
-        "skos:narrower"     :   [] ,
-        "skos:definition"   :   { "@value" : "", "@language" : "en-gb" } ,
-        "skos:prefLabel"    :   { "@value" : "SENSE OF PLACE: ", "@language" : "en-gb" }
+      "@id": "_Segment_HealthyLifestyles",
+      "@type": "skos:Concept",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic"
+      ],
+      "foaf:topic": "Healthy Lifestyles",
+      "rdfs:label": "Healthy Lifestyles",
+      "owl:sameAs": "",
+      "skos:exactMatch": "",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
+      "skos:broader": [
+        "segment:0",
+        "spoke:03"
+      ],
+      "skos:narrower": [
+        
+      ],
+      "skos:definition": {
+        "@value": "",
+        "@language": "en-gb"
+      },
+      "skos:prefLabel": {
+        "@value": "HealthyLifestyles: ",
+        "@language": "en-gb"
+      }
     }
-    
-    
   ],
   "@id": "urn:x-arq:DefaultGraphNode",
   "@context": {

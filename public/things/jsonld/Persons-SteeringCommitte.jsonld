@@ -1,0 +1,41 @@
+{
+  "@graph": [
+      
+{ "@id": "Bill_Gorski", "@type": "foaf:Person", "rdfs:label": "Bill Gorski", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Bobbie_Holzwarth", "@type": "foaf:Person", "rdfs:label": "Bobbie Holzwarth", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Dave_Rydell", "@type": "foaf:Person", "rdfs:label": "Dave Rydell",  "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Dave_Schertz", "@type": "foaf:Person","rdfs:label": "Dave Schertz", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Jim_Keeling", "@type": "foaf:Person", "rdfs:label": "Jim Keeling", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:John_Holmstrom", "@type": "foaf:Person", "rdfs:label": "John Holmstrom", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Ken_Board", "@type": "foaf:Person", "rdfs:label": "Ken Board", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:LoRayne_Logan", "@type": "foaf:Person", "rdfs:label": "LoRayne Logan", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Paul_Logli", "@type": "foaf:Person", "rdfs:label": "Paul Logli", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Rob_Funderburg", "@type": "foaf:Person", "rdfs:label": "Rob  Funderburg", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+{ "@id": "Person:Tom_Gendron", "@type": "foaf:Person", "rdfs:label": "Tom Gendron", "foaf:member": ["TR_Steering_Committee", "Transform_Rockford"] },
+
+{
+"@id": "Person:Peter_Provenzano", 
+"@type": "foaf:Person", 
+"rdfs:label": "Peter Provenzano", 
+"foaf:name": "Provenzano, Peter",
+"foaf:member": ["TR_Steering_Committee", "Transform_Rockford"],
+"ambassadorOf": [
+    "Mayor_of_Rockford,_Illinois"    
+]
+}
+
+ 
+  ],
+  "@id": "urn:x-arq:DefaultGraphNode",
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbp": "http://dbpedia.org/property/",
+    "dbr": "http://dbpedia.org/resource/",
+    "dct": "http://purl.org/dc/terms",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "url": "http://schema.org/url"
+  }
+}

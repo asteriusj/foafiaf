@@ -1,0 +1,20 @@
+{
+  "@graph": [
+      
+{"@id":"Person_Mike_Schablaske","@type":"foaf:Person","rdfs:label":"Mike Schablaske","foaf:name":"Schablaske, Mike","foaf:surname":"Schablaske","foaf:givenName":"Mike","employedBy":["Transform_Rockford"],"org:hasRole":["Transform_Rockford_Executive_Director"]},{"@id":"Person_Jake_Wilson","@type":"foaf:Person","mbox_sha1sum":"11969ac02c777cc74ff3f5845f8f248df7539b20","rdfs:label":"Jake Wilson","employedBy":["Transform_Rockford"],"org:hasRole":["Transform_Rockford_Program_Director"]},{"@id":"Person_Patrick_O'Keefe","@type":"foaf:Person","rdfs:label":"Patrick O'Keefe","email":"patrick@transformrockford.org","employedBy":["Transform_Rockford"],"org:hasRole":["Transform_Rockford_Communication_Manager"]},{"@id":"Person_David Sidney","@type":"foaf:Person","rdfs:label":"David Sidney","email":"david@transformrockford.org","employedBy":["Transform_Rockford"],"org:hasRole":["Transform_Rockford_Project_Director"]},{"@id":"Person_Amy_Diaz","@type":"foaf:Person","rdfs:label":"Amy Diaz","email":"david@transformrockford.org","employedBy":["Transform_Rockford"],"org:hasRole":["Transform_Rockford_Office_Manager"]} 
+
+
+  ],
+  "@id": "urn:x-arq:DefaultGraphNode",
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbp": "http://dbpedia.org/property/",
+    "dbr": "http://dbpedia.org/resource/",
+    "dct": "http://purl.org/dc/terms",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "url": "http://schema.org/url"
+  }
+}

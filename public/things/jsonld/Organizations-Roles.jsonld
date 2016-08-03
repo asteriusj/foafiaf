@@ -1,0 +1,447 @@
+  {
+    "@graph": [
+      {
+        "@id": "",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "",
+        "rdfs:label": "",
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Mayor_of_Rockford,_Illinois",
+        "@type": "org:Role",
+        "iri": "http://dbpedia.org/page/Mayor_of_Rockford,_Illinois",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Mayor of Rockford",
+        "rdfs:label": "Mayor of Rockford, Illinois",
+        "org:Post": "Rockford,_Illinois",
+        "leaderTitleOf": [
+          "Rockford,_Illinois"
+        ],
+        "ambassador": [
+          "Person:Peter_Provenzano"
+        ],
+        "rdfs:comment": ""
+      },
+       {
+        "@id": "CityAdministratorofRockford, Illinois",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Rockford City Administrator",
+        "rdfs:label": "City Administrator of Rockford, Illinois",
+        "org:Post": "Rockford,_Illinois",
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Rockford_City_Council_Alderman",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Rockford City Council Alderman",
+        "rdfs:label": "Rockford City Council Alderman",
+        "org:Post": "Rockford_City_Council",
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Board_Chairman_of_Winnebago_County,_Illinois",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Winnebago County Board Chairman",
+        "rdfs:label": "Winnebago County Board Chairman",
+        "org:postIn": "Winnebago_County,_Illinois",
+        "ambassador": [
+          "Person:Jim_Keeling",
+          "Person:Bill_Gorski"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Board_Chairman_of_Boone_County,_Illinois",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Boone County:  Chairman",
+        "rdfs:label": "Boone County Board Chairman",
+        "org:postIn": "Boone_County,_Illinois",
+        "ambassador": [
+          "Person:Rob_Funderburg"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Mayor_of_Belvidere,_Illinois",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Mayor_of_Belvidere",
+        "rdfs:label": "Mayor_of_Belvidere,_Illinois",
+        "org:postIn": "Belvidere,_Illinois",
+        "ambassador": [
+          "Person:Rob_Funderburg"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Mayor_of_Loves_Park,_Illinois",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Mayor_of_Loves_Park",
+        "rdfs:label": "Mayor_of_Loves_Park,_Illinois",
+        "org:postIn": "Loves_Park,_Illinois",
+        "ambassador": [
+          "Person:Jim_Keeling"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      {
+        "@id": "ExecutiveDirectorof_Rockford_Illinois_Park_District",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Executive Director",
+        "rdfs:label": "Executive Director of Rockford Park District",
+        "org:postIn": "Rockford_Illinois_Park_District",
+        "ambassador": [
+          "Person:Jim_Keeling",
+          "Person:LoRayne_Logan"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "ExecutiveDirectorof_Rockford_Illinois_Housing_Authority",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Executive Director",
+        "rdfs:label": "Executive Director of Rockford Housing Authority",
+        "org:postIn": "Rockford_Illinois_Housing_Authority",
+        "ambassador": [
+          "Person:Paul_Logli",
+          "Person:LoRayne_Logan"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "ExecutiveDirectorof_Chicago_Rockford_International_Airport",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Executive Director",
+        "rdfs:label": "Executive Director of Chicago Rockford International Airport",
+        "org:postIn": "Chicago_Rockford_International_Airport",
+        "ambassador": [
+          "Person:Rob_Funderburg"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Executive Director",
+        "rdfs:label": "Executive Director of Winnebago County Housing Authority",
+        "org:postIn": "Winnebago_County_Illinois_Housing_Authority",
+        "ambassador": [
+          "Person:Paul_Logli"
+        ],
+        "rdfs:comment": ""
+      },
+      
+
+      {
+        "@id": "United_States_Senator",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "US Senator",
+        "rdfs:label": "United States Senator",
+        "org:postIn": "United_States_Senate",
+        "ambassador": [
+          "Person:Bill_Gorski"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "United_States_Senator_Staff",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "US Senator Aides",
+        "rdfs:label": "United States Senator Staff",
+        "org:postIn": "United_States_Senate",
+        "ambassador": [
+          "Person:Bill_Gorski"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      {
+        "@id": "United_States_Congressman",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "US Representative",
+        "rdfs:label": "United_States_Congressman",
+        "org:postIn": "United_States_House_of_Representatives",
+        "ambassador": [
+          "Person:Peter_Provenzano"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "United_States_Congressional_Staff",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "US Representative Aides",
+        "rdfs:label": "United_States_Congressional_Staff",
+        "org:postIn": "United_States_House_of_Representatives",
+        "ambassador": [
+          "Person:Peter_Provenzano"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      {
+        "@id": "Office_of_Congresswoman_Cheri_Bustos",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "",
+        "rdfs:label": "Office_of_Congresswoman_Cheri_Bustos",
+        "org:postIn": "United_States_House_of_Representatives",
+        "ambassador": [
+          "Person:Peter_Provenzano"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      {
+        "@id": "Office_of_Congressman_Kinzinger",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "",
+        "rdfs:label": "Office_of_Congressman_Kinzinger",
+        "org:postIn": "United_States_House_of_Representatives",
+        "ambassador": [
+          "Person:Peter_Provenzano"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      
+      {
+        "@id": "Illinois_Senator",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "State Senator",
+        "rdfs:label": "Illinois_Senator",
+        "org:postIn": "Illinois_Senate",
+        "ambassador": [
+          "Person:Bill_Gorski"
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Illinois_Representative",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "State Representative",
+        "rdfs:label": "Illinois_Representative",
+        "org:postIn": "Illinois_House_of_Representatives",
+        "ambassador": [
+          "Person:Bill_Gorski",
+          "LoRayne Logan"
+        ],
+        "rdfs:comment": ""
+      },
+      
+      
+      
+      
+      
+      
+      
+      {
+        "@id": "Transform_Rockford_Executive_Director",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Transform Rockford Executive Director",
+        "rdfs:label": "Executive Director",
+        "org:postIn": [
+          "Transform_Rockford"
+        ],
+        "org:reportsTo": ["TR_Steering_Committee"],
+        "org:heldBy": [
+          
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Transform_Rockford_Program_Director",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Transform Rockford Program Director",
+        "rdfs:label": "Program Director",
+        "org:postIn": [
+          "Transform_Rockford"
+        ],
+        "org:reportsTo": ["Transform_Rockford_Executive_Director"],
+        "org:heldBy": [
+          
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Transform_Rockford_Project_Director",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Transform Rockford Project Director",
+        "rdfs:label": "Project Director",
+        "org:postIn": [
+          "Transform_Rockford"
+        ],
+        "org:reportsTo": ["Transform_Rockford_Executive_Director"],
+        "org:heldBy": [
+          
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Transform_Rockford_Communication_Manager",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Transform Rockford Communication Manager",
+        "rdfs:label": "Communication Manager",
+        "org:postIn": [
+          "Transform_Rockford"
+        ],
+        "org:reportsTo": ["Transform_Rockford_Executive_Director"],
+        "org:heldBy": [
+          
+        ],
+        "rdfs:comment": ""
+      },
+      {
+        "@id": "Transform_Rockford_Office_Manager",
+        "@type": "org:Role",
+        "iri": "",
+        "rdf:type": [
+          "owl:Thing"
+        ],
+        "subClassOf": "skos:Concept",
+        "foaf:topic": "Transform Rockford Office Manager",
+        "rdfs:label": "Office Manager",
+        "org:postIn": [
+          "Transform_Rockford"
+        ],
+        "org:reportsTo": ["Transform_Rockford_Executive_Director"],
+        "org:heldBy": [
+          
+        ],
+        "rdfs:comment": ""
+      }
+    ],
+    "@id": "urn:x-arq:DefaultGraphNode",
+    "@context": {
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "org": "http://www.w3.org/ns/org#",
+      "prov": "http://www.w3.org/ns/prov#",
+      "dbo": "http://dbpedia.org/ontology/",
+      "dbp": "http://dbpedia.org/property/",
+      "dbr": "http://dbpedia.org/resource/",
+      "dct": "http://purl.org/dc/terms",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "url": {
+        "@id": "http://schema.org/url",
+        "@type": "@id"
+      }
+    }
+  }

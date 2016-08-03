@@ -4,6 +4,7 @@
       "@id": "",
       "@type": "foaf:Organization",
       "uri": "",
+      "equivalentClass": "org:Organization",
       "rdf:type": [
         
       ],
@@ -13,11 +14,18 @@
       "foaf:name": "",
       "faofhomepage": "",
       "dbo:abstract": "",
+      "org:OrganizationalUnit": "",
+      "org:hasUnit": "",
+      "org:hasPost": "",
+      "org:hasSite": "",
+      "org:hasPrimarySite": "",
+      "org:basedAt": "",
+      "org:location": "xsd:string",
       "dbo:areaCode": [
         
       ],
       "owl:sameAs": [
-        
+
       ],
       "dct:subject": "",
       "dbo:wikiPageID": "",
@@ -37,676 +45,782 @@
       "dbo:country": "http://dbpedia.org/resource/United_States",
       "dbp:leader": "",
       "dbp:leaderType": "http://dbpedia.org/resource/Mayor",
+      "org:hasMember": "",
       "has_container": [
         "Illinois"
       ]
     },
+    
     {
-      "@id": "Loves_Park,_Illinois",
+      "@id": "Arts",
       "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/resource/Loves_Park,_Illinois",
       "rdf:type": [
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/GeographicalArea108574314"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Location100027167"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Tract108673395"
-        },
-        {
-          "type": "uri",
-          "value": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/ontology/Location"
-        },
-        {
-          "type": "uri",
-          "value": "http://www.wikidata.org/entity/Q486972"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/PopulatedPlacesInBooneCounty,Illinois"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Object100002684"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/City108524735"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/PopulatedPlacesInWinnebagoCounty,Illinois"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Region108630985"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/ontology/Place"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/ontology/PopulatedPlace"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/YagoGeoEntity"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/YagoLegalActorGeo"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Municipality108626283"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/UrbanArea108675967"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/CitiesInIllinois"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/ontology/Settlement"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/AdministrativeDistrict108491826"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/Site108651247"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity"
-        },
-        {
-          "type": "uri",
-          "value": "http://www.w3.org/2002/07/owl#Thing"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/class/yago/District108552138"
-        },
-        {
-          "type": "uri",
-          "value": "http://schema.org/Place"
-        }
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_cities_in_Illinois",
-      "rdfs:label": "Loves Park, Illinois (en)",
-      "foaf:name": "Loves Park",
-      "faofhomepage": "http://www.loves-park.il.us/",
-      "dbo:abstract": "Loves Park is a city in Winnebago County, Illinois, United States. In recent years, the city has grown eastward to spread into Boone County. The population was 23,996 at the 2010 census, up from 20,044 in 2000.Loves Park is part of the Rockford, Illinois Metropolitan Statistical Area. (en)",
-      "dbo:areaCode": [
-        {
-          "type": "literal",
-          "value": "815"
-        }
-      ],
-      "owl:sameAs": [
-        "http://rdf.freebase.com/ns/m.0s34m",
-        "http://nl.dbpedia.org/resource/Loves_Park",
-        "http://wikidata.dbpedia.org/resource/Q578137",
-        "http://es.dbpedia.org/resource/Loves_Park",
-        "http://sws.geonames.org/4900579/",
-        "http://de.dbpedia.org/resource/Loves_Park",
-        "http://pl.dbpedia.org/resource/Loves_Park_(Illinois)",
-        "http://yago-knowledge.org/resource/Loves_Park,_Illinois",
-        "http://pt.dbpedia.org/resource/Loves_Park",
-        "http://www.wikidata.org/entity/Q578137"
-      ],
-      "dct:subject": [
-        "http://dbpedia.org/resource/Category:Cities_in_Illinois",
-        "http://dbpedia.org/resource/Category:Rockford_metropolitan_area",
-        "http://dbpedia.org/resource/Category:Cities_in_Boone_County,_Illinois",
-        "http://dbpedia.org/resource/Category:Cities_in_Winnebago_County,_Illinois"
-      ],
-      "dbo:wikiPageID": [
-        {
-          "type": "literal",
-          "value": 110822,
-          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-        }
-      ],
-      "dbo:wikiPageExternalLink": "http://www.loves-park.il.us/",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "georss:point": "42.32611111111111 -89.02583333333334",
-      "dbo:elevation": [
-        {
-          "type": "literal",
-          "value": 221.8944,
-          "datatype": "http://www.w3.org/2001/XMLSchema#double"
-        }
-      ],
-      "dbo:motto": [
-        {
-          "type": "literal",
-          "value": "The City with a Heart"
-        }
-      ],
-      "dbo:populationTotal": [
-        {
-          "type": "literal",
-          "value": "23,996"
-        }
-      ],
-      "dbo:postalCode": [
-        "61115",
-        "61131",
-        "61132",
-        "61111",
-        "61130"
-      ],
-      "dbp:region": "http://dbpedia.org/resource/Winnebago_County,_Illinois",
-      "dbp:regionType": "County",
-      "dbo:state": "Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": [
-        {
-          "type": "literal",
-          "value": "Darryl Lindberg"
-        }
-      ],
-      "hasLeader": ["Darryl_Lindberg_(mayor)"],
-      "dbp:leaderType": "http://dbpedia.org/resource/Mayor",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "/Machesney_Park,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/page/Machesney_Park,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/class/yago/PhysicalEntity100001930",
-        "http://www.wikidata.org/entity/Q486972",
-        "http://dbpedia.org/class/yago/VillagesInIllinois",
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Machesney Park, Illinois (en)",
-      "foaf:name": "Machesney Park",
-      "faofhomepage": "http://www.machesney-park.il.us/",
-      "dbo:abstract": "",
-      "dbo:areaCode": [
-        "815"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Machesney_Park_(Illinois)",
-        "http://sws.geonames.org/4900801/",
-        "http://wikidata.dbpedia.org/resource/Q1013494",
-        "http://linkedgeodata.org/triplify/node153341239",
-        "http://www.wikidata.org/entity/Q1013494"
-      ],
-      "dct:subject": "",
-      "dbo:wikiPageID": "",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "georss:point": "",
-      "dbo:elevation": "",
-      "dbo:motto": "",
-      "dbo:populationTotal": "23499",
-      "dbo:postalCode": [
-        "61103",
-        "61111",
-        "61115"
-      ],
-      "dbp:region": "http://dbpedia.org/resource/Winnebago_County,_Illinois",
-      "dbp:regionType": "County",
-      "dbo:state": "Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "Jerry D. Bolin (en)",
-      "hasLeader": ["Jerry_D._Bolin"],
-      "dbp:leaderType": "Village President (en)",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "Roscoe,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/Roscoe,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/class/yago/VillagesInIllinois",
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Roscoe, Illinois",
-      "foaf:name": "Roscoe",
-      "faofhomepage": "",
-      "dbo:abstract": "",
-      "dbo:areaCode": [
-        "815"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Roscoe,_Illinois"
-      ],
-      "dct:subject": "",
-      "dbo:wikiPageID": "",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "georss:point": "",
-      "dbo:elevation": "",
-      "dbo:motto": "",
-      "dbo:populationTotal": "10785",
-      "dbo:postalCode": [
         
       ],
-      "dbp:region": "http://dbpedia.org/resource/Winnebago_County,_Illinois",
-      "dbp:regionType": "County",
-      "dbo:state": "Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "David Krienke",
-      "hasLeader": ["David_Krienke"],
-      "dbp:leaderType": "Village President (en)",
+      "rdfs:label": "",
+      "foaf:name": "",
       "has_container": [
-        "Illinois"
+        
       ]
     },
     {
-      "@id": "South_Beloit,_Illinois",
+      "@id": "Better_Roads_Association",
       "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/South_Beloit,_Illinois",
       "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/South_Beloit,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_cities_in_Illinois",
-      "rdfs:label": "South Beloit, Illinois",
-      "foaf:name": "South Beloit",
-      "faofhomepage": "",
-      "dbo:abstract": "",
-      "dbo:areaCode": [
-        "815"
-      ],
-      "dct:subject": "",
-      "dbo:wikiPageID": "",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "georss:point": "",
-      "dbo:elevation": "",
-      "dbo:motto": "",
-      "dbo:populationTotal": "7892",
-      "dbo:postalCode": [
         
       ],
-      "dbp:region": "http://dbpedia.org/resource/Winnebago_County,_Illinois",
-      "dbp:regionType": "County",
-      "dbo:state": "Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "Ted Rehl",
-      "hasLeader": ["Teg_Rehl"],
-      "dbp:leaderType": "http://dbpedia.org/resource/Mayor",
+      "rdfs:label": "",
+      "foaf:name": "",
       "has_container": [
-        "Illinois"
+        "_sector_30"
       ]
     },
     {
-      "@id": "Rockton,_Illinois",
+      "@id": "College_of_Medicine",
       "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/Rockton,_Illinois",
       "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Rockton, Illinois",
-      "foaf:name": "Rockton",
-      "faofhomepage": "",
-      "dbo:abstract": "",
-      "dbo:areaCode": [
-        "815"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Rockton,_Illinois"
-      ],
-      "dct:subject": "",
-      "dbo:wikiPageID": "",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "georss:point": "",
-      "dbo:elevation": "",
-      "dbo:motto": "",
-      "dbo:populationTotal": "7,685",
-      "dbo:postalCode": [
         
       ],
-      "dbp:region": "http://dbpedia.org/resource/Winnebago_County,_Illinois",
-      "dbp:regionType": "County",
-      "dbo:state": "Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "Dale Adams ",
-      "hasLeader": ["Dale_Adams"],
-      "dbp:leaderType": "Village President (en)",
+      "rdfs:label": "",
+      "foaf:name": "",
       "has_container": [
-        "Illinois"
+        "Rockford,_Illinois",
+        "_sector_263"
       ]
     },
     {
-      "@id": "Cherry_Valley,_Illinois",
+      "@id": "Community_Action_Agency",
       "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/Cherry_Valley,_Illinois",
       "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Cherry_Valley,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Cherry Valley, Illinois",
-      "foaf:name": "Cherry Valley",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "Winnebago,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/Winnebago,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Winnebago,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Winnebago, Illinois",
-      "foaf:name": "Winnebago",
-      "name": "Winnebago (3,101)",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "Pecatonica,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/page/Pecatonica,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Pecatonica,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Pecatonica, Illinois",
-      "foaf:name": "Pecatonica",
-      "dbp:leader": "http://dbpedia.org/resource/Daniel_Barber_(village_president) ",
-      "hasLeader": ["Daniel_Barber_(village_president)"],
-      "dbp:leaderType": "Village President (en)",
-      "name": "Pecatonica (2,195)",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "Durand,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "hhttp://dbpedia.org/page/Durand,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/Durand,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "Durand, Illinois",
-      "name": "Durand (1,443)"
-    },
-    {
-      "@id": "New_Milford,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/page/New_Milford,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/New_Milford,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_towns_and_villages_in_Illinois",
-      "rdfs:label": "New Milford, Illinois",
-      "name": "New Milford (697)",
-      "has_container": [
-        "Illinois"
-      ]
-    },
-    {
-      "@id": "Rockford,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/resource/Rockford,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "owl:sameAs": [
-        "http://pl.dbpedia.org/resource/New_Milford,_Illinois"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_cities_in_Illinois",
-      "rdfs:label": "Rockford, Illinois",
-      "pop": "Rockford (152,871)",
-      "foaf:name": "City of Rockford",
-      "nick": "The Forest City",
-      "motto": "The Government Closest To The People",
-      "homepage": "cityofrockford.gov",
-      "region": "Winnebago County, Illinois",
-      "dbo:state": "http://dbpedia.org/resource/Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "http://dbpedia.org/page/Larry_Morrissey",
-      "hasLeader": ["Larry_Morrissey", "Jim_Ryan"],
-      "dbp:leaderType": "http://dbpedia.org/resource/Mayor",
-      "has_container": [
-        "Illinois",
-        "_sector_202"
-      ]
-    },
-    {
-      "@id": "Byron,_Illinois",
-      "@type": "foaf:Organization",
-      "uri": "http://dbpedia.org/page/Byron,_Illinois",
-      "rdf:type": [
-        "http://dbpedia.org/ontology/Place",
-        "http://dbpedia.org/ontology/PopulatedPlace",
-        "http://dbpedia.org/ontology/Settlement",
-        "http://www.w3.org/2002/07/owl#Thing",
-        "http://dbpedia.org/class/yago/YagoLegalActorGeo",
-        "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
-        "http://dbpedia.org/ontology/Location"
-      ],
-      "dbo:type": "http://dbpedia.org/resource/List_of_cities_in_Illinois",
-      "rdfs:label": "Byron, Illinois (en)",
-      "foaf:name": "Byron",
-      "faof:homepage": "http://byron.govoffice.com",
-      "dbo:abstract": "Byron is a city in Ogle County, Illinois, United States, probably best known as the location of the Byron Nuclear Generating Station, one of the last nuclear power plants commissioned in the United States. Byron is located in Byron Township, along the Rock River. The population was 3,753 at the 2010 census, up from 2,917 at the 2000 census. The town bills itself as the -Gateway to the Rock River Valley-. (en)",
-      "dbo:areaCode": [
-        "815"
-      ],
-      "owl:sameAs": [
-        {
-          "type": "uri",
-          "value": "http://wikidata.dbpedia.org/resource/Q575646"
-        },
-        {
-          "type": "uri",
-          "value": "http://www.wikidata.org/entity/Q575646"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Byron_(Illinois)"
-        },
-        {
-          "type": "uri",
-          "value": "http://sws.geonames.org/4886188/"
-        },
-        {
-          "type": "uri",
-          "value": "http://rdf.freebase.com/ns/m.0sf1_"
-        },
-        {
-          "type": "uri",
-          "value": "http://yago-knowledge.org/resource/Byron,_Illinois"
-        }
-      ],
-      "dct:subject": [
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Category:Cities_in_Ogle_County,_Illinois"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Category:Rockford_metropolitan_area"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Category:Populated_places_established_in_1835"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Category:Byron,_Illinois"
-        },
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Category:Cities_in_Illinois"
-        }
-      ],
-      "dbo:wikiPageID": "111751",
-      "foaf:isPrimaryTopicOf": [
-        {
-          "type": "uri",
-          "value": "http://en.wikipedia.org/wiki/Byron,_Illinois"
-        }
-      ],
-      "foaf:depiction": "http://commons.wikimedia.org/wiki/Special:FilePath/Byron,_IL_Post_Office_03.JPG",
-      "dbo:timeZone": "http://dbpedia.org/resource/Central_Time_Zone",
-      "geo:lat": [
-        {
-          "type": "literal",
-          "value": 42.12722396850586,
-          "datatype": "http://www.w3.org/2001/XMLSchema#float"
-        }
-      ],
-      "geo:long": [
-        {
-          "type": "literal",
-          "value": -89.26083374023438,
-          "datatype": "http://www.w3.org/2001/XMLSchema#float"
-        }
-      ],
-      "geo:geometry": [
-        {
-          "type": "literal",
-          "value": "POINT(-89.260833740234 42.127223968506)",
-          "datatype": "http://www.openlinksw.com/schemas/virtrdf#Geometry"
-        }
-      ],
-      "dbo:elevation": "221.894400 ",
-      "dbo:motto": "Gateway to the Rock River Valley.",
-      "dbo:populationTotal": "3753",
-      "islocationOf": "http://dbpedia.org/resource/Byron_High_School_(Byron,_Illinois)",
-      "foaf:based_near": [
         
       ],
-      "dbo:postalCode": [
-        "61010"
-      ],
-      "dbp:district": [
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Byron_Township,_Ogle_County,_Illinois"
-        }
-      ],
-      "dbp:districtType": [
-        {
-          "type": "literal",
-          "value": "Township",
-          "lang": "en"
-        }
-      ],
-      "dbp:region": [
-        {
-          "type": "uri",
-          "value": "http://dbpedia.org/resource/Ogle_County,_Illinois"
-        },
-        {
-          "type": "literal",
-          "value": "Ogle County, Illinois",
-          "lang": "en"
-        }
-      ],
-      "dbp:regionType": [
-        {
-          "type": "literal",
-          "value": "County",
-          "lang": "en"
-        }
-      ],
-      "dbo:state": "http://dbpedia.org/resource/Illinois",
-      "dbo:country": "http://dbpedia.org/resource/United_States",
-      "dbp:leader": "http://dbpedia.org/resource/Christopher_Millard",
-      "hasLeader": ["Christopher_Millard"],
-      "dbp:leaderType": "http://dbpedia.org/resource/Mayor",
+      "rdfs:label": "",
+      "foaf:name": "",
       "has_container": [
-        "Illinois"
+        
+      ]
+    },
+    {
+      "@id": "Community_Foundation",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Crusader_Clinic",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30",
+        "_sector_263"
+      ]
+    },
+    
+    {
+      "@id": "IML_(NACO)",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Lifescape",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "NICNE",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Public_Health",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_263"
+      ]
+    },
+    {
+      "@id": "Remedies",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Rochelle_EDC",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Rockford_Health_Council",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+                "Rockford,_Illinois",
+        "_sector_263",
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Rockford_Public_Schools",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_205",
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Rockford_Rescue_Mission",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+                "Rockford,_Illinois",
+        "_sector_263",
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Rockford_Health_System",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+                "Rockford,_Illinois",
+        "_sector_263"
+      ]
+    },
+    {
+      "@id": "Rosecrance",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_263",
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "State_Representative",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201"
+      ]
+    },
+    {
+      "@id": "Swedish_American_Hospital",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_263"
+      ]
+    },
+    {
+      "@id": "SWIFT",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "United_Way",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    
+    {
+      "@id": "Workforce_Development_Board",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "Workforce_Development_Board",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "City_and_County_of_Denver",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Neighborhood_Network",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+   
+    {
+      "@id": "Rockford_Region_Economic_Development_District",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    
+    {
+      "@id": "North_End_Commons",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Rock_River_Training_Corporation",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_30"
+      ]
+    },
+    
+    {
+      "@id": "United_Way",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_30"
+      ]
+    },
+    
+   
+    {
+      "@id": "Zion__Development",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        "_sector_30"
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois"
+      ]
+    },
+    
+    {
+      "@id": "Strong_Cities_Strong_Communities_(SC2)",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    
+    {
+      "@id": "Rockford_Community_Partners",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Dept_of_Commerce_and_Economic_Opportunity",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Rock_River_Training_Corporation",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "RAEDC",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "Rockford,_Illinois",
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Growth_Dimensions",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "NIDA",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Rockford_Community_Partners",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "County_Boards",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201",
+        "_sector_202",
+        "_sector_206"
+      ]
+    },
+    
+    {
+      "@id": "NIWA",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Federal_Elected_Officials",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201"
+      ]
+    },
+    {
+      "@id": "City_Elected_Officials",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201"
+      ]
+    },
+    {
+      "@id": "County_Elected_Officials",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201"
+      ]
+    },
+    {
+      "@id": "State_Elected_Officials",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_201"
+      ]
+    },
+    {
+      "@id": "DCEO",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Deptpartment_of_Employment_Security",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Staffing_Businesses",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "DCEO",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Religious_Organizations",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_40"
+      ]
+    },
+    {
+      "@id": "Ethnic_Organizations",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Business_Districts",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    
+    
+    {
+      "@id": "Education",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_205"
+      ]
+    },
+    {
+      "@id": "Logistics",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Health_Care",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Agribusiness",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Aerospace",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Airport",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_206"
+      ]
+    },
+    {
+      "@id": "Retail",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Advanced_Manufacturing",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        
+      ]
+    },
+    {
+      "@id": "Denver_Economic_Development",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "RAVEN",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
+      ]
+    },
+    {
+      "@id": "Tri-county_reentry_coalition",
+      "@type": "foaf:Organization",
+      "rdf:type": [
+        
+      ],
+      "rdfs:label": "",
+      "foaf:name": "",
+      "has_container": [
+        "_sector_30"
       ]
     }
+    
+
+    
   ],
   "@id": "urn:x-arq:DefaultGraphNode",
   "@context": {
     "foaf": "http://xmlns.com/foaf/0.1/",
     "org": "http://www.w3.org/ns/org#",
+    "prov": "http://www.w3.org/ns/prov#",
     "dbo": "http://dbpedia.org/ontology/",
     "dbp": "http://dbpedia.org/property/",
     "dbr": "http://dbpedia.org/resource/",

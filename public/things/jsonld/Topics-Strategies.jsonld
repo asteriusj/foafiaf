@@ -21,31 +21,31 @@
       "skos:prefLabel": ""
     },
     {
-      "@id": "spoke:0",
+      "@id": "strategy:0",
+      "rdf:type": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies",
       "@type": "skos:ConceptScheme",
-      "rdt:type": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
       "skos:HasTopConcept": [
-        "spoke:01",
-        "spoke:02",
-        "spoke:03",
-        "spoke:04",
-        "spoke:05"
+        "_Strategy_EatforHealth",
+        "_Strategy_MoveMore",
+        "_Strategy_LoveandBeLoved"
       ]
     },
     {
-      "@id": "spoke:01",
+      "@id": "_Strategy_EatforHealth",
       "@type": "skos:Concept",
       "rdf:type": [
         "sioc:topic",
         "foaf:topic"
       ],
-      "foaf:topic": "Funding Our Future",
-      "rdfs:label": "FUNDING OUR FUTURE",
+      "foaf:topic": "Eat for Health Objective",
+      "rdfs:label": "Eat for Health",
+      "title": "We are a community where healthy food choices are accessible to all and the easy choice.",
       "owl:sameAs": "",
       "skos:exactMatch": "",
-      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies",
       "skos:broader": [
-        "spoke:0"
+        "strategy:0",
+        "_Segment_HealthyLifestyles"
       ],
       "skos:narrower": [
         
@@ -55,24 +55,26 @@
         "@language": "en-gb"
       },
       "skos:prefLabel": {
-        "@value": "FUNDING OUR FUTURE: ",
+        "@value": "Eat for Health ",
         "@language": "en-gb"
       }
     },
     {
-      "@id": "spoke:02",
+      "@id": "_Strategy_MoveMore",
       "@type": "skos:Concept",
       "rdf:type": [
         "sioc:topic",
         "foaf:topic"
       ],
-      "foaf:topic": "Reframing a 21st Century Community",
-      "rdfs:label": "REFRAMING A 21ST CENTURY COMMUNITY",
+      "foaf:topic": "Move More Objective",
+      "rdfs:label": "Move More",
+      "title": "We are a community of active living where all have access to recreational opportunities.",
       "owl:sameAs": "",
       "skos:exactMatch": "",
-      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies",
       "skos:broader": [
-        "spoke:0"
+        "strategy:0",
+        "_Segment_HealthyLifestyles"
       ],
       "skos:narrower": [
         
@@ -82,24 +84,26 @@
         "@language": "en-gb"
       },
       "skos:prefLabel": {
-        "@value": "REFRAMING A 21ST CENTURY COMMUNITY: ",
+        "@value": "Move More ",
         "@language": "en-gb"
       }
     },
     {
-      "@id": "spoke:03",
+      "@id": "_Strategy_LoveandBeLoved",
       "@type": "skos:Concept",
       "rdf:type": [
         "sioc:topic",
         "foaf:topic"
       ],
-      "foaf:topic": "Renewal",
-      "rdfs:label": "RENEWAL",
+      "foaf:topic": "Love and Be Loved Objective",
+      "rdfs:label": "Love and Be Loved",
+      "title": "We have healthy social and emotional development for everyone at all stages of life.",
       "owl:sameAs": "",
       "skos:exactMatch": "",
-      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
+      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies",
       "skos:broader": [
-        "spoke:0"
+        "strategy:0",
+        "_Segment_HealthyLifestyles"
       ],
       "skos:narrower": [
         
@@ -109,64 +113,11 @@
         "@language": "en-gb"
       },
       "skos:prefLabel": {
-        "@value": "RENEWAL: ",
-        "@language": "en-gb"
-      }
-    },
-    {
-      "@id": "spoke:04",
-      "@type": "skos:Concept",
-      "rdf:type": [
-        "sioc:topic",
-        "foaf:topic"
-      ],
-      "foaf:topic": "Revitalization",
-      "rdfs:label": "REVITALIZATION",
-      "owl:sameAs": "",
-      "skos:exactMatch": "",
-      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
-      "skos:broader": [
-        "spoke:0"
-      ],
-      "skos:narrower": [
-        
-      ],
-      "skos:definition": {
-        "@value": "",
-        "@language": "en-gb"
-      },
-      "skos:prefLabel": {
-        "@value": "REVITALIZATION: ",
-        "@language": "en-gb"
-      }
-    },
-    {
-      "@id": "spoke:05",
-      "@type": "skos:Concept",
-      "rdf:type": [
-        "sioc:topic",
-        "foaf:topic"
-      ],
-      "foaf:topic": "Sense of Place",
-      "rdfs:label": "SENSE OF PLACE",
-      "owl:sameAs": "",
-      "skos:exactMatch": "",
-      "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
-      "skos:broader": [
-        "spoke:0"
-      ],
-      "skos:narrower": [
-        
-      ],
-      "skos:definition": {
-        "@value": "",
-        "@language": "en-gb"
-      },
-      "skos:prefLabel": {
-        "@value": "SENSE OF PLACE: ",
+        "@value": "Love and Be Loved",
         "@language": "en-gb"
       }
     }
+    
   ],
   "@id": "urn:x-arq:DefaultGraphNode",
   "@context": {
@@ -181,6 +132,7 @@
     "url": "http://schema.org/url",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "strategy": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies",
     "vision": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Visions",
     "segment": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values",
     "spoke": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",

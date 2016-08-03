@@ -37,7 +37,8 @@
       "rdfs:label": "Illinois",
       "dbo:name": "Illinois",
       "abstract": "",
-      "dbo:country": ""
+      "dbo:state": "http://dbpedia.org/resource/Illinois",
+      "dbo:country": "http://dbpedia.org/resource/United_States"
     }
   ],
   "@id": "urn: x-arq: DefaultGraphNode",

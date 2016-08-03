@@ -18,16 +18,19 @@
       "skos:narrower": [
         
       ],
-      "skos:prefLabel": ""
+      "skos:preffoaf:topic": ""
     },
- 
-
     {
       "@id": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "@type": "skos:ConceptScheme",
-      "rdf:type": [ "sioc:topic", "foaf:topic", "sic:IndustryGroup", "naics2007:All_NAICS2007_Codes" ],
-      "skos:altLabel": "8naics2007:All_NAICS2007_Codes"
-      "label": "Business Sectors",
+      "rdf:type": [
+        "sioc:topic",
+        "foaf:topic",
+        "sic:IndustryGroup",
+        "naics2007:All_NAICS2007_Codes"
+      ],
+      "skos:altfoaf:topic": "8naics2007:All_NAICS2007_Codes",
+      "foaf:topic": "Business Sectors",
       "skos:HasTopConcept": [
         "_sector_10",
         "_sector_20",
@@ -35,230 +38,198 @@
         "_sector_40"
       ]
     },
-    
-    
-     {
+    {
       "@id": "_sector_10",
       "@type": "skos:Concept",
       "rdf:type": "naics2007:BusinessSector",
-      "skos:altLabel": "81 Other Services (except Public Administration)",
-      "label": "Business",
-      "skos:altLabel": "8244 BUSINESS AND SECRETARIAL SCHOOLS",
+      "skos:altfoaf:topic": "81 Other Services (except Public Administration)",
+      "foaf:topic": "Business",
+      "skos:altfoaf:topic": "8244 BUSINESS AND SECRETARIAL SCHOOLS",
       "sic:code": "8244",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors"
-
       ]
     },
-    
     {
       "@id": "_sector_11",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Chambers of Commerce",
+      "foaf:topic": "Chambers of Commerce",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_10"
-
       ]
     },
     {
       "@id": "_sector_12",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Largest Employers",
+      "foaf:topic": "Largest Employers",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_10"
-
       ]
     },
     {
       "@id": "_sector_13",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Professional & Industry Groups",
+      "foaf:topic": "Professional & Industry Groups",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_10"
-
       ]
     },
     {
       "@id": "_sector_14",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Rockford Area Economic Development Committee",
+      "foaf:topic": "Rockford Area Economic Development Committee",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_10"
-
       ]
     },
-    
     {
       "@id": "_sector_20",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
       "rdf:type": "naics2007:BusinessSector",
       "naics2007:code": "92",
-      "label": "Government & Agencies",
-      "skos:altLabel": "92 Public Administration",
+      "foaf:topic": "Government & Agencies",
+      "skos:altfoaf:topic": "92 Public Administration",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_0"
-
       ]
     },
-    
     {
       "@id": "_sector_201",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Elected Officials",
+      "foaf:topic": "Elected Officials",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_20"
-
       ]
     },
     {
       "@id": "_sector_202",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Counties & Municipalties",
+      "foaf:topic": "Counties & Municipalties",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_20"
-
       ]
     },
     {
       "@id": "_sector_203",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Councils & Boards",
+      "foaf:topic": "Councils & Boards",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_202"
-
       ]
     },
     {
       "@id": "_sector_204",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Senior Administrators",
+      "foaf:topic": "Senior Administrators",
       "skos:inScheme": "_https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_202"
-
       ]
     },
-    
     {
       "@id": "_sector_205",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
       "rdf:type": "naics2007:BusinessSector",
       "naics2007:code": "61",
-      "skos:altLabel": "61 Educational Services",
-      "label": "Public Education",
+      "skos:altfoaf:topic": "61 Educational Services",
+      "foaf:topic": "Public Education",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_20"
-
       ]
     },
-    	
     {
       "@id": "_sector_206",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
       "rdf:type": "naics2007:BusinessSector",
       "naics2007:code": "55",
-      "label": "Administrative Bodies",
-      
-      "skos:altLabel": "55 Management of Companies and Enterprises",
-      
+      "foaf:topic": "Administrative Bodies",
+      "skos:altfoaf:topic": "55 Management of Companies and Enterprises",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors0",
       "skos:broader": [
         "_sector_20"
-
       ]
     },
     {
       "@id": "_sector_261",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Public Safety",
+      "foaf:topic": "Public Safety",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_206"
-
       ]
     },
     {
       "@id": "_sector_262",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Human Services",
-      
+      "foaf:topic": "Human Services",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_206"
-
       ]
     },
     {
       "@id": "_sector_263",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "skos:altLabel": "62 Health Care and Social Assistance",
-      "label": "Health",
+      "skos:altfoaf:topic": "62 Health Care and Social Assistance",
+      "foaf:topic": "Health",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_206"
-
       ]
     },
     {
       "@id": "_sector_264",
       "@type": "skos:Concept",
       "rdf:type": "sic:IndustryGroup",
-      "label": "Development",
+      "foaf:topic": "Development",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_206"
-
       ]
     },
-    
     {
       "@id": "_sector_30",
       "@type": "skos:Concept",
-      "label": "Non Profit",
+      "foaf:topic": "Non Profit",
       "skos:inScheme": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_0"
-
       ]
     },
     {
       "@id": "_sector_40",
       "@type": "skos:Concept",
-      "label": "Faith",
+      "foaf:topic": "Faith",
       "skos:inScheme": "_https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors",
       "skos:broader": [
         "_sector_0"
-
       ]
-    },
-    
-    
-    
-     ],
+    }
+  ],
   "@id": "urn:x-arq:DefaultGraphNode",
   "@context": {
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -278,7 +249,7 @@
     "spoke": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments",
     "value": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes",
     "sector": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors/",
-    "skill" : "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
-    "interest" : "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests"
+    "skill": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills",
+    "interest": "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests"
   }
 }

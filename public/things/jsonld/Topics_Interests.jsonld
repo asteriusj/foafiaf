@@ -27,10 +27,8 @@
         "interest:010000",
         "interest:020000",
         "interest:030000"
-      ],
-      
-    },
-    
+      ]
+    }
   ],
   "@id": "urn:x-arq:DefaultGraphNode",
   "@context": {
