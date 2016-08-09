@@ -32,7 +32,7 @@
         "rdfs:comment": ""
       },
        {
-        "@id": "CityAdministratorofRockford, Illinois",
+        "@id": "CityAdministratorofRockford,_Illinois",
         "@type": "org:Role",
         "iri": "",
         "rdf:type": [

@@ -1,0 +1,1800 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix j.1:   <faof:> .
+@prefix j.0:   <linkedin:> .
+@prefix j.3:   <rdt:> .
+@prefix j.2:   <http://www.w3.org/1999/02/22-rdf-syntax-ns# > .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbo:   <http://dbpedia.org/ontology/> .
+@prefix j.5:   <georss:> .
+@prefix j.4:   <http://www.w3.org/2004/02/skos/core#altfoaf:> .
+@prefix j.7:   <http://purl.org/dc/> .
+@prefix dbp:   <http://dbpedia.org/property/> .
+@prefix j.6:   <https://foafiaf-asteriusj.c9users.io/owl/foafiaf#> .
+@prefix j.10:  <foAF:> .
+@prefix j.9:   <naics2007:> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr:   <http://dbpedia.org/resource/> .
+@prefix j.8:   <sic:> .
+@prefix sector: <https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<Mark_Peterson>  a  foaf:Person ;
+        rdfs:label  "Mark Peterson" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Segments02  a        "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "REFRAMING A 21ST CENTURY COMMUNITY" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" ;
+        skos:prefLabel   "REFRAMING A 21ST CENTURY COMMUNITY: "@en-gb ;
+        foaf:topic       "Reframing a 21st Century Community" .
+
+j.6:Spokes09  a          "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Interconnectedness" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Interconnectedness Won’t compromise any jurisdiction’s or organization’s identity or decision authority, but rather look to partner and integrate shared values, goals and philosophies." ;
+        skos:definition  "Won’t compromise any jurisdiction’s or organization’s identity or decision authority, but rather look to partner and integrate shared values, goals and philosophies." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Interconnectedness" ;
+        foaf:topic       "Interconnectedness" .
+
+<John_Duncan>  a    foaf:Person ;
+        rdfs:label  "John Duncan" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person:Paul_Logli>  a  foaf:Person ;
+        rdfs:label   "Paul Logli" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<_Segment_HealthyLifestyles>
+        a                "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Healthy Lifestyles" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:03" , "segment:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ;
+        skos:prefLabel   "HealthyLifestyles: "@en-gb ;
+        foaf:topic       "Healthy Lifestyles" .
+
+<Roscoe,_Illinois>  a        "http://dbpedia.org/ontology/Location" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/class/yago/VillagesInIllinois" , "http://dbpedia.org/ontology/Place" ;
+        a                    foaf:Organization ;
+        rdfs:label           "Roscoe, Illinois" ;
+        j.5:point            "" ;
+        dbo:abstract         "" ;
+        dbo:areaCode         "815" ;
+        dbo:country          "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation        "" ;
+        dbo:motto            "" ;
+        dbo:populationTotal  "10785" ;
+        dbo:state            "Illinois" ;
+        dbo:timeZone         "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type             "dbo:Village" ;
+        dbo:wikiPageID       "" ;
+        dbp:leader           "David Krienke" ;
+        dbp:leaderType       "Village President (en)" ;
+        dbp:region           "http://dbpedia.org/resource/Winnebago_County,_Illinois" ;
+        dbp:regionType       "County" ;
+        j.7:termssubject     "" ;
+        owl:sameAs           "http://pl.dbpedia.org/resource/Roscoe,_Illinois" ;
+        foaf:name            "Roscoe" .
+
+<Judy_Barnard>  a   foaf:Person ;
+        rdfs:label  "Judy Barnard" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Darcy_Busholz>  a  foaf:Person ;
+        rdfs:label  "Darcy Busholz" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<ExecutiveDirectorof_Rockford_Illinois_Park_District>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Executive Director of Rockford Park District" ;
+        org:postIn    "Rockford_Illinois_Park_District" ;
+        foaf:topic    "Executive Director" .
+
+<ExecutiveDirectorof_Rockford_Illinois_Housing_Authority>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Executive Director of Rockford Housing Authority" ;
+        org:postIn    "Rockford_Illinois_Housing_Authority" ;
+        foaf:topic    "Executive Director" .
+
+<_sector_205>  a       "naics2007:BusinessSector" ;
+        a              skos:Concept ;
+        j.4:topic      "61 Educational Services" ;
+        skos:broader   "_sector_20" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Public Education" ;
+        j.9:code       "61" .
+
+<Wendy_Young>  a    foaf:Person ;
+        rdfs:label  "Wendy Young" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "President" .
+
+<Asterius_Media_LLC>  a  foaf:Organization ;
+        rdfs:label  "" ;
+        dbo:type    "dbo:Company" ;
+        foaf:name   "" .
+
+<David_Young>  a    foaf:Person ;
+        rdfs:label  "David Young" ;
+        foaf:mbox   "Lynnette.McRae@hud.gov" ;
+        foaf:phone  "779-348-7328" ;
+        foaf:title  "" .
+
+<Darryl_Lindberg_(mayor)>
+        a               "http://xmlns.com/foaf/0.1/Person" , "http://dbpedia.org/ontology/OfficeHolder" , "http://schema.org/Person" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Agent" ;
+        a               foaf:Person ;
+        rdfs:label      "Darryl Lindberg" ;
+        dbo:office      "Mayor of Loves Park, Illinois" ;
+        dbp:title       "" ;
+        owl:sameAs      "https://www.linkedin.com/in/darryl-lindberg-03b53112" ;
+        foaf:givenName  "Darryl" ;
+        foaf:name       "Lindberg, Darryl" ;
+        foaf:surname    "Lindberg" ;
+        foaf:title      "Mayor at City of Loves Park" ;
+        j.0:Profile     "https://www.linkedin.com/in/darryl-lindberg-03b53112" .
+
+<Tom_Austin>  a     foaf:Person ;
+        rdfs:label  "Tom Austin" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Patrick_DeGrave>  a  foaf:Person ;
+        rdfs:label  "Patrick DeGrave" ;
+        foaf:mbox   "" ;
+        foaf:title  "Village Administrator" .
+
+<Lynnette_McRae>  a  foaf:Person ;
+        rdfs:label  "Lynnette McRae" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Skills030000  a      "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:labe        "Software Development" ;
+        skos:definition  ""@en-us ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills" ;
+        skos:prefLabel   "Software Development"@en-us ;
+        foaf:topic       "Software Development" .
+
+<Machesney_Park,_Illinois>
+        a                    "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Location" , "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/class/yago/PhysicalEntity100001930" , "http://www.wikidata.org/entity/Q486972" , "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/class/yago/VillagesInIllinois" ;
+        a                    foaf:Organization ;
+        rdfs:label           "Machesney Park, Illinois (en)" ;
+        j.5:point            "" ;
+        dbo:abstract         "" ;
+        dbo:areaCode         "815" ;
+        dbo:country          "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation        "" ;
+        dbo:motto            "" ;
+        dbo:populationTotal  "23499" ;
+        dbo:postalCode       "61103" , "61115" , "61111" ;
+        dbo:state            "Illinois" ;
+        dbo:timeZone         "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type             "dbo:Village" ;
+        dbo:wikiPageID       "" ;
+        dbp:leader           "Jerry D. Bolin (en)" ;
+        dbp:leaderType       "Village President (en)" ;
+        dbp:region           "http://dbpedia.org/resource/Winnebago_County,_Illinois" ;
+        dbp:regionType       "County" ;
+        j.7:termssubject     "" ;
+        owl:sameAs           "http://www.wikidata.org/entity/Q1013494" , "http://pl.dbpedia.org/resource/Machesney_Park_(Illinois)" , "http://linkedgeodata.org/triplify/node153341239" , "http://sws.geonames.org/4900801/" , "http://wikidata.dbpedia.org/resource/Q1013494" ;
+        foaf:name            "Machesney Park" .
+
+<Winnebago_County_Illinois_Health_Department>
+        a                foaf:Organization ;
+        rdfs:label       "Winnebago_County_Illinois_Health_Department" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "ExecutiveDirectorof_Winnebago_County_Illinois_Health_Department" ;
+        foaf:based_near  "Winnebago_County,_Illinois" ;
+        foaf:name        "" .
+
+<Alberto_Altamore>  a  foaf:Person ;
+        rdfs:label  "Alberto Altamore" ;
+        foaf:mbox   "" ;
+        foaf:phone  "815-968-5555" ;
+        foaf:title  "President" .
+
+<Woodward>  a       foaf:Organization ;
+        rdfs:label  "Woodward" ;
+        dbo:type    "dbo:Company" ;
+        foaf:name   "" .
+
+<Larry_Morrissey>  a           "http://xmlns.com/foaf/0.1/Person" , "http://dbpedia.org/ontology/Agent" , "http://dbpedia.org/ontology/OfficeHolder" , "http://schema.org/Person" , "http://www.w3.org/2002/07/owl#Thing" ;
+        a                      foaf:Person ;
+        rdfs:label             "Larry Morrissey" ;
+        dbo:office             "Mayor of Rockford, Illinois" ;
+        dbo:type               "" ;
+        dbp:title              "http://dbpedia.org/resource/List_of_mayors_of_Rockford,_Illinois" ;
+        j.7:termssubject       "http://dbpedia.org/resource/Category:Illinois_Independents" , "http://dbpedia.org/resource/Category:Living_people" , "http://dbpedia.org/resource/Category:Illinois_lawyers" , "http://dbpedia.org/resource/Category:1969_births" , "http://dbpedia.org/resource/Category:Mayors_of_Rockford,_Illinois" ;
+        owl:sameAs             "http://wikidata.dbpedia.org/resource/Q6490834" , "http://www.wikidata.org/entity/Q6490834" , "https://www.linkedin.com/in/lawrence-morrissey-b922137" , "http://yago-knowledge.org/resource/Larry_Morrissey" , "http://rdf.freebase.com/ns/m.078761" ;
+        foaf:givenName         "Larwence" ;
+        foaf:homepage          "http://www.ci.rockford.il.us/government/mayor/index.cfm?id=370" ;
+        foaf:isPrimaryTopicOf  "http://en.wikipedia.org/wiki/Larry_Morrissey" ;
+        foaf:knows             "Darryl_Lindberg_(mayor)" , "Person_Jeffrey_A_Stewart" , "Person_Mike_Schablaske" ;
+        foaf:name              "Morrissey, Larry" ;
+        foaf:surname           "Morrissey" ;
+        foaf:title             "Mayor, City of Rockford" ;
+        j.0:Connections        "https://www.linkedin.com/in/jim-ryan-60b2a8" , "https://www.linkedin.com/in/bridgetfrench" , "https://www.linkedin.com/in/davesyverson" , "https://www.linkedin.com/in/emily-hartzog-4a50378" , "https://www.linkedin.com/in/jeffreyastewart" , "https://www.linkedin.com/in/lorayne-logan-163b943" , "https://www.linkedin.com/in/amy-m-ott-a-a-e-285a037" , "https://www.linkedin.com/in/david-anderson-a045b17" , "https://www.linkedin.com/in/darryl-lindberg-03b53112" , "https://www.linkedin.com/in/johngroh" , "https://www.linkedin.com/in/ronclewer" , "https://www.linkedin.com/in/scott-anderson-6a3217a" , "https://www.linkedin.com/in/tim-dimke-2545749" ;
+        j.0:DISC               "DSC: Lawrence is a straight-shooter in communication and appreciates consistency, stability, and loyalty in relationships. " ;
+        j.0:Profile            "https://www.linkedin.com/in/lawrence-morrissey-b922137" ;
+        j.0:Thumbnail          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/006/031/3be143d.jpg" .
+
+<Pecatonica,_Illinois>
+        a               "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Location" , "http://www.w3.org/2002/07/owl#Thing" ;
+        a               foaf:Organization ;
+        rdfs:label      "Pecatonica, Illinois" ;
+        dbo:type        "dbo:Village" ;
+        dbp:leader      "http://dbpedia.org/resource/Daniel_Barber_(village_president) " ;
+        dbp:leaderType  "Village President (en)" ;
+        owl:sameAs      "http://pl.dbpedia.org/resource/Pecatonica,_Illinois" ;
+        foaf:name       "Pecatonica" .
+
+j.6:Spokes04  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Transparency" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Transparency: Foster an open process for maximum participant input and access to all information to enhance understanding and community ownership." ;
+        skos:definition  "Foster an open process for maximum participant input and access to all information to enhance understanding and community ownership." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Transparency" ;
+        foaf:topic       "Transparency" .
+
+<Tom_McNamara>  a   foaf:Person ;
+        rdfs:label  "Tom McNamara" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "Aldermen" .
+
+j.6:Strategies0  a          "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies" ;
+        a                   skos:ConceptScheme ;
+        skos:HasTopConcept  "_Strategy_LoveandBeLoved" , "_Strategy_MoveMore" , "_Strategy_EatforHealth" .
+
+<TR_Process_Analysis_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Process Analysis Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Process Analysis Support Team" .
+
+<Dan_Jacobson>  a   foaf:Person ;
+        rdfs:label  "Dan Jacobson" ;
+        foaf:mbox   "danjacobson@loves-park.il.us" ;
+        foaf:title  "Director of Public Works and Development" .
+
+<Luz_Ramirez>  a    foaf:Person ;
+        rdfs:label  "Luz Ramirez" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Mayor_of_Belvidere,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Mayor_of_Belvidere,_Illinois" ;
+        org:postIn    "Belvidere,_Illinois" ;
+        foaf:topic    "Mayor_of_Belvidere" .
+
+<Jamie_Walter>  a   foaf:Person ;
+        rdfs:label  "Jamie Walter" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person:Ken_Board>  a  foaf:Person ;
+        rdfs:label   "Ken Board" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Person_Jake_Wilson>  a  foaf:Person ;
+        rdfs:label   "Jake Wilson" ;
+        org:hasRole  "Transform_Rockford_Program_Director" .
+
+<Board_Chairman_of_Boone_County,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Boone County Board Chairman" ;
+        org:postIn    "Boone_County,_Illinois" ;
+        foaf:topic    "Boone County:  Chairman" .
+
+<_sector_263>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        j.4:topic      "62 Health Care and Social Assistance" ;
+        skos:broader   "_sector_206" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Health" .
+
+j.6:Segments05  a        "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "SENSE OF PLACE" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" ;
+        skos:prefLabel   "SENSE OF PLACE: "@en-gb ;
+        foaf:topic       "Sense of Place" .
+
+<Rockford_Chamber>  a  foaf:Organization ;
+        rdfs:label  "Rockford_Chamber" ;
+        foaf:name   "" .
+
+j.6:Skills  a   skos:ConceptScheme .
+
+j.6:Sectors  a              "sic:IndustryGroup" , "naics2007:All_NAICS2007_Codes" , "foaf:topic" , "sioc:topic" ;
+        a                   skos:ConceptScheme ;
+        skos:HasTopConcept  "_sector_30" , "_sector_40" , "_sector_20" , "_sector_10" ;
+        j.4:topic           "8naics2007:All_NAICS2007_Codes" ;
+        foaf:topic          "Business Sectors" .
+
+<_sector_10>  a        "naics2007:BusinessSector" ;
+        a              skos:Concept ;
+        j.4:topic      "8244 BUSINESS AND SECRETARIAL SCHOOLS" ;
+        skos:broader   "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Business" ;
+        j.8:code       "8244" .
+
+<Paula_Carynski>  a  foaf:Person ;
+        rdfs:label  "Paula Carynski" ;
+        foaf:mbox   "Paula.A.Carynski@osfhealthcare.org" ;
+        foaf:phone  "815-395-5343" ;
+        foaf:title  "President" .
+
+<Loves_Park,_Illinois>
+        a                         foaf:Organization ;
+        a                         [ j.6:Spokes  "http://www.w3.org/2002/07/owl#Thing" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/City108524735" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity" ] ;
+        a                         [ j.6:Spokes  "http://schema.org/Place" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Tract108673395" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/PhysicalEntity100001930" ] ;
+        a                         [ j.6:Spokes  "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Object100002684" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Site108651247" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/ontology/Settlement" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/PopulatedPlacesInWinnebagoCounty,Illinois" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/YagoGeoEntity" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/AdministrativeDistrict108491826" ] ;
+        a                         [ j.6:Spokes  "http://www.wikidata.org/entity/Q486972" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/YagoLegalActorGeo" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/PopulatedPlacesInBooneCounty,Illinois" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Location100027167" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/ontology/Location" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/CitiesInIllinois" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/GeographicalArea108574314" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/District108552138" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/UrbanArea108675967" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Region108630985" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/ontology/PopulatedPlace" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/ontology/Place" ] ;
+        a                         [ j.6:Spokes  "http://dbpedia.org/class/yago/Municipality108626283" ] ;
+        rdfs:label                "Loves Park, Illinois (en)" ;
+        j.5:point                 "42.32611111111111 -89.02583333333334" ;
+        dbo:abstract              "Loves Park is a city in Winnebago County, Illinois, United States. In recent years, the city has grown eastward to spread into Boone County. The population was 23,996 at the 2010 census, up from 20,044 in 2000.Loves Park is part of the Rockford, Illinois Metropolitan Statistical Area. (en)" ;
+        dbo:areaCode              [ j.6:Spokes  "815" ] ;
+        dbo:country               "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation             [ j.6:Spokes  2.218944E2 ] ;
+        dbo:motto                 [ j.6:Spokes  "The City with a Heart" ] ;
+        dbo:populationTotal       [ j.6:Spokes  "23,996" ] ;
+        dbo:postalCode            "61115" , "61130" , "61132" , "61111" , "61131" ;
+        dbo:state                 "Illinois" ;
+        dbo:timeZone              "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type                  "dbo:City" ;
+        dbo:wikiPageExternalLink  "http://www.loves-park.il.us/" ;
+        dbo:wikiPageID            [ j.6:Spokes  110822 ] ;
+        dbp:leader                [ j.6:Spokes  "Darryl Lindberg" ] ;
+        dbp:leaderType            "http://dbpedia.org/resource/Mayor" ;
+        dbp:region                "http://dbpedia.org/resource/Winnebago_County,_Illinois" ;
+        dbp:regionType            "County" ;
+        j.7:termssubject          "http://dbpedia.org/resource/Category:Cities_in_Illinois" , "http://dbpedia.org/resource/Category:Rockford_metropolitan_area" , "http://dbpedia.org/resource/Category:Cities_in_Winnebago_County,_Illinois" , "http://dbpedia.org/resource/Category:Cities_in_Boone_County,_Illinois" ;
+        owl:sameAs                "http://pl.dbpedia.org/resource/Loves_Park_(Illinois)" , "http://sws.geonames.org/4900579/" , "http://de.dbpedia.org/resource/Loves_Park" , "http://yago-knowledge.org/resource/Loves_Park,_Illinois" , "http://nl.dbpedia.org/resource/Loves_Park" , "http://es.dbpedia.org/resource/Loves_Park" , "http://wikidata.dbpedia.org/resource/Q578137" , "http://www.wikidata.org/entity/Q578137" , "http://pt.dbpedia.org/resource/Loves_Park" , "http://rdf.freebase.com/ns/m.0s34m" ;
+        foaf:name                 "Loves Park" .
+
+<Person_David_Sidney>
+        a            foaf:Person ;
+        rdfs:label   "David Sidney" ;
+        org:hasRole  "Transform_Rockford_Project_Director" .
+
+<Gary_Haughton>  a  foaf:Person ;
+        rdfs:label  "Gary Haughton" ;
+        foaf:mbox   "ghaughton@durandil.com" ;
+        foaf:title  "Village President" .
+
+<Transform_Rockford>  a  foaf:Organization ;
+        rdfs:label       "Transform Rockford" ;
+        dbo:type         "dbo:Non-ProfitOrganisation" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "Transform Rockford" .
+
+<Illinois_House_of_Representatives>
+        a            foaf:Organization ;
+        rdfs:label   "Illinois House of Representatives" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "Illinois_Representative" ;
+        foaf:name    "" .
+
+<TR_Technology_Team>  a  foaf:Organization ;
+        rdfs:label  "Technology Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Technology Support Team" .
+
+<Heartland_Community_Church>
+        a                foaf:Organization ;
+        rdfs:label       "Heartland Community Church" ;
+        dbo:type         "dbo:ReligiousOrganisation" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "Heartland Community Church" .
+
+<June_Hazzard>  a   foaf:Person ;
+        rdfs:label  "June Hazzard" ;
+        foaf:mbox   "june.hazzard@woodward.com" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<TR_Staff_Team>  a   foaf:Organization ;
+        rdfs:label   "Transform Rockford Staff Team" ;
+        dbo:type     "dbo:Non-ProfitOrganisation" ;
+        org:hasPost  "Transform_Rockford_Executive_Director" , "Transform_Rockford_Program_Director" , "Transform_Rockford_Project_Director" , "Transform_Rockford_Communication_Manager" , "Transform_Rockford_Office_Manager" ;
+        foaf:name    "Staff Team" .
+
+<Rockford_City_Council>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford City Council" ;
+        dbo:type         "dbo:GovernmentAgency" ;
+        org:hasPost      "Rockford_City_Council_Alderman" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Person:Bobbie_Holzwarth>
+        a            foaf:Person ;
+        rdfs:label   "Bobbie Holzwarth" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Winnebago_County,_Illinois>
+        a            foaf:Organization ;
+        rdfs:label   "Winnebago County, Illinois" ;
+        dbo:type     "dbo:Municipality" ;
+        org:hasPost  "Board_Chairman_of_Winnebago_County,_Illinois" ;
+        foaf:name    "" .
+
+j.6:Skills040000  a      "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Cloud Computing" ;
+        skos:definition  ""@en-us ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills" ;
+        skos:prefLabel   "Cloud Computing"@en-us ;
+        foaf:topic       "Cloud Computing" .
+
+<ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Executive Director of Winnebago County Housing Authority" ;
+        org:postIn    "Winnebago_County_Illinois_Housing_Authority" ;
+        foaf:topic    "Executive Director" .
+
+<Sherry_Pitney>  a  foaf:Person ;
+        rdfs:label  "Sherry Pitney" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person:Peter_Provenzano>
+        a            foaf:Person ;
+        rdfs:label   "Peter Provenzano" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" ;
+        foaf:name    "Provenzano, Peter" .
+
+<Person:Rob_Funderburg>
+        a            foaf:Person ;
+        rdfs:label   "Rob  Funderburg" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+j.6:Skills010000  a      "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "IT Management" ;
+        owl:sameAs       "" ;
+        skos:definition  ""@en-us ;
+        skos:exactMatch  "linkedin:01000000" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills" ;
+        skos:narrower    "skill:010200" , "skill:010100" ;
+        skos:prefLabel   "IT Management"@en-us ;
+        foaf:topic       "IT Management" .
+
+<Rockford,_Illinois>  a  "http://dbpedia.org/ontology/PopulatedPlace" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/ontology/Location" ;
+        a               foaf:Organization ;
+        rdfs:label      "Rockford, Illinois" ;
+        dbo:country     "http://dbpedia.org/resource/United_States" ;
+        dbo:state       "http://dbpedia.org/resource/Illinois" ;
+        dbo:type        "dbo:City" ;
+        dbp:leader      "http://dbpedia.org/page/Larry_Morrissey" ;
+        dbp:leaderType  "http://dbpedia.org/resource/Mayor" ;
+        org:hasPost     "Mayor_of_Rockford,_Illinois" ;
+        foaf:name       "City of Rockford" .
+
+j.6:Spokes07  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Ideation" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Ideation: Balance our brainstorming and decision-making process with all points of view and measurable information." ;
+        skos:definition  "Balance our brainstorming and decision-making process with all points of view and measurable information." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Ideation" ;
+        foaf:topic       "Ideation" .
+
+<Matthew_J._Simpson>  a  foaf:Person ;
+        rdfs:label  "Matthew J. Simpson" ;
+        foaf:mbox   "Matthews@unitedwayrrv.org" ;
+        foaf:phone  "815.986.4802" ;
+        foaf:title  "Community Impact Manager" .
+
+<Bill_Gorski>  a     foaf:Person ;
+        rdfs:label   "Bill Gorski" ;
+        foaf:member  "TR_Steering_Committee" , "Transform_Rockford" .
+
+<United_States_Congressional_Staff>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "United_States_Congressional_Staff" ;
+        org:postIn    "United_States_House_of_Representatives" ;
+        foaf:topic    "US Representative Aides" .
+
+<Person:Tom_Gendron>  a  foaf:Person ;
+        rdfs:label   "Tom Gendron" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+j.6:Interests  a            skos:ConceptScheme ;
+        skos:HasTopConcept  "interest:030000" , "interest:020000" , "interest:010000" .
+
+<_sector_203>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_202" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Councils & Boards" .
+
+<_sector_13>  a        "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_10" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Professional & Industry Groups" .
+
+<Bob_Wahlberg>  a   foaf:Person ;
+        rdfs:label  "Bob Wahlberg" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<TR_Support_Teams>  a  foaf:Organization ;
+        rdfs:label  "Support Teams" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Support Teams" .
+
+<Daniel_Barber_(village_president)>
+        a                "http://www.w3.org/2002/07/owl#Thing" , "http://schema.org/Person" , "http://dbpedia.org/ontology/Agent" , "http://xmlns.com/foaf/0.1/Person" , "http://dbpedia.org/ontology/OfficeHolder" ;
+        a                foaf:Person ;
+        rdfs:label       "Daniel Barber" ;
+        dbo:office       "Village President of Pecatonica, Illinois" ;
+        dbp:title        "" ;
+        foaf:givenName   "Daniel" ;
+        foaf:name        "Barber, Daniel" ;
+        foaf:surname     "Barber" ;
+        foaf:title       "" ;
+        j.0:Connections  "https://www.linkedin.com/in/davesyverson" ;
+        j.0:DISC         "DS: Daniel is goal-oriented, loyal, and prefers working with people much more than ideas or process." ;
+        j.0:Interests    "Education" , "Human Rights" , "Animal Welfare" , "Economic Empowerment" , "Children" , "Environment" ;
+        j.0:Profile      "https://www.linkedin.com/in/daniel-barber-830bb7b7" ;
+        j.0:Skills       "Research" , "Management" ;
+        j.0:Thumbnail    "" .
+
+<L.C._Wilson>  a    foaf:Person ;
+        rdfs:label  "L.C. Wilson" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Spokes02  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Caring" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Caring: Show concern for the welfare of each person and foster a community culture that thinks and acts as one interactive and interdependent region." ;
+        skos:definition  "Show concern for the welfare of each person and foster a community culture that thinks and acts as one interactive and interdependent region." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Caring" ;
+        foaf:topic       "Caring" .
+
+<TR_Segment_Teams>  a  foaf:Organization ;
+        rdfs:label  "Segment Teams" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Segment Teams" .
+
+<Boone_County,_Illinois>
+        a            foaf:Organization ;
+        rdfs:label   "Boone County, Illinois" ;
+        dbo:type     "dbo:Municipality" ;
+        org:hasPost  "Board_Chairman_of_Boone_County,_Illinois" ;
+        foaf:name    "" .
+
+<Nick_Morgan>  a    foaf:Person ;
+        rdfs:label  "Nick Morgan" ;
+        foaf:mbox   "nick.morgan@mail.house.gov" ;
+        foaf:phone  "" ;
+        foaf:title  "Field Representative" .
+
+<Belvidere,_Illinois>
+        a                foaf:Organization ;
+        rdfs:label       "Mayor of Belvidere, Illinois" ;
+        dbo:country      "http://dbpedia.org/resource/United_States" ;
+        dbo:region       "Boone_County,_Illinois" ;
+        dbo:state        "http://dbpedia.org/resource/Illinois" ;
+        dbo:type         "dbo:Municipality" ;
+        dbp:leaderType   "http://dbpedia.org/resource/Mayor" ;
+        org:hasPost      "Mayor_of_Belvidere,_Illinois" ;
+        foaf:based_near  "Winnebago_County,_Illinois" ;
+        foaf:name        "" .
+
+<Mike_Mastrioanni>  a  foaf:Person ;
+        rdfs:label  "Mike Mastrioanni" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Mayor_of_Rockford,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Mayor of Rockford, Illinois" ;
+        org:Post      "Rockford,_Illinois" ;
+        foaf:topic    "Mayor of Rockford" .
+
+<CityAdministratorofRockford,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "City Administrator of Rockford, Illinois" ;
+        org:Post      "Rockford,_Illinois" ;
+        foaf:topic    "Rockford City Administrator" .
+
+<TR_Steering_Committee>
+        a           foaf:Organization ;
+        rdfs:label  "Steering Committee" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "ransform Rockford Steering Committee" .
+
+<Einar_Forsman>  a  foaf:Person ;
+        rdfs:label  "Einar Forsman" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<TR_Renewal_Team>  a  foaf:Organization ;
+        rdfs:label  "Renewal Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Renewal Segment Team" .
+
+<TR_Communications_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Communications Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Communications Support Team" .
+
+j.6:Skills050000  a      "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Publishing and Printing" ;
+        owl:sameAs       "http://dmoz.org/Business/Publishing_and_Printing/" ;
+        skos:definition  ""@en-us ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills" ;
+        skos:prefLabel   "Cloud Computing"@en-us ;
+        foaf:topic       "Publishing and Printing" .
+
+<_sector_261>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_206" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Public Safety" .
+
+<Michael_Williams>  a  foaf:Person ;
+        rdfs:label  "Michael Williams" ;
+        foaf:mbox   "mwilliams@rockrivertraining.org" ;
+        foaf:phone  "815-847-7570" ;
+        foaf:title  "Executive Director" .
+
+<Person_Mike_Schablaske>
+        a               foaf:Person ;
+        rdfs:label      "Mike Schablaske" ;
+        org:hasRole     "Transform_Rockford_Executive_Director" ;
+        foaf:givenName  "Mike" ;
+        foaf:name       "Schablaske, Mike" ;
+        foaf:surname    "Schablaske" .
+
+<Jim_Dolan>  a      foaf:Person ;
+        rdfs:label  "Jim Dolan" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Segments03  a        "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "RENEWAL" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" ;
+        skos:prefLabel   "RENEWAL: "@en-gb ;
+        foaf:topic       "Renewal" .
+
+<Rockford_Public_School_District_205>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford_Public_School_District_205" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Superintendent_Rockford_Public_School_District_205" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<University_of_Illinois_College_of_Medicine>
+        a                foaf:Organization ;
+        rdfs:label       "University_of_Illinois_College_of_Medicine" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Dean_University_of_Illinois_College_of_Medicine" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Steve_Chapman>  a  foaf:Person ;
+        rdfs:label  "Steve Chapman" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person_Patrick_O'Keefe>
+        a            foaf:Person ;
+        rdfs:label   "Patrick O'Keefe" ;
+        org:hasRole  "Transform_Rockford_Communication_Manager" .
+
+<Ted_Rehl>  a       foaf:Person ;
+        rdfs:label  "Ted Rehl" ;
+        foaf:mbox   "t.rehl@southbeloit.org" ;
+        foaf:title  "Mayor" .
+
+<United_States_Senator_Staff>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "United States Senator Staff" ;
+        org:postIn    "United_States_Senate" ;
+        foaf:topic    "US Senator Aides" .
+
+<United_States_Senate>
+        a            foaf:Organization ;
+        rdfs:label   "United States Senate" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "United_States_Senator" , "United_States_Senator_Staff" ;
+        foaf:name    "" .
+
+<Byron,_Illinois>  a           "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Place" , "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" , "http://dbpedia.org/class/yago/YagoLegalActorGeo" , "http://dbpedia.org/ontology/Location" ;
+        a                      foaf:Organization ;
+        rdfs:label             "Byron, Illinois (en)" ;
+        j.1:homepage           "http://byron.govoffice.com" ;
+        dbo:abstract           "Byron is a city in Ogle County, Illinois, United States, probably best known as the location of the Byron Nuclear Generating Station, one of the last nuclear power plants commissioned in the United States. Byron is located in Byron Township, along the Rock River. The population was 3,753 at the 2010 census, up from 2,917 at the 2000 census. The town bills itself as the -Gateway to the Rock River Valley-. (en)" ;
+        dbo:areaCode           "815" ;
+        dbo:country            "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation          "221.894400 " ;
+        dbo:motto              "Gateway to the Rock River Valley." ;
+        dbo:populationTotal    "3753" ;
+        dbo:postalCode         "61010" ;
+        dbo:state              "http://dbpedia.org/resource/Illinois" ;
+        dbo:timeZone           "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type               "dbo:Municipality" ;
+        dbo:wikiPageID         "111751" ;
+        dbp:district           [ j.6:Spokes  "http://dbpedia.org/resource/Byron_Township,_Ogle_County,_Illinois" ] ;
+        dbp:districtType       [ j.6:Spokes  "Township" ] ;
+        dbp:leader             "http://dbpedia.org/resource/Christopher_Millard" ;
+        dbp:leaderType         "http://dbpedia.org/resource/Mayor" ;
+        dbp:region             [ j.6:Spokes  "http://dbpedia.org/resource/Ogle_County,_Illinois" ] ;
+        dbp:region             [ j.6:Spokes  "Ogle County, Illinois" ] ;
+        dbp:regionType         [ j.6:Spokes  "County" ] ;
+        j.7:termssubject       [ j.6:Spokes  "http://dbpedia.org/resource/Category:Cities_in_Illinois" ] ;
+        j.7:termssubject       [ j.6:Spokes  "http://dbpedia.org/resource/Category:Cities_in_Ogle_County,_Illinois" ] ;
+        j.7:termssubject       [ j.6:Spokes  "http://dbpedia.org/resource/Category:Byron,_Illinois" ] ;
+        j.7:termssubject       [ j.6:Spokes  "http://dbpedia.org/resource/Category:Populated_places_established_in_1835" ] ;
+        j.7:termssubject       [ j.6:Spokes  "http://dbpedia.org/resource/Category:Rockford_metropolitan_area" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://wikidata.dbpedia.org/resource/Q575646" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://dbpedia.org/resource/Byron_(Illinois)" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://yago-knowledge.org/resource/Byron,_Illinois" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://www.wikidata.org/entity/Q575646" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://rdf.freebase.com/ns/m.0sf1_" ] ;
+        owl:sameAs             [ j.6:Spokes  "http://sws.geonames.org/4886188/" ] ;
+        geo:geometry           [ j.6:Spokes  "POINT(-89.260833740234 42.127223968506)" ] ;
+        geo:lat                [ j.6:Spokes  4.212722396850586E1 ] ;
+        geo:long               [ j.6:Spokes  -8.926083374023438E1 ] ;
+        foaf:depiction         "http://commons.wikimedia.org/wiki/Special:FilePath/Byron,_IL_Post_Office_03.JPG" ;
+        foaf:isPrimaryTopicOf  [ j.6:Spokes  "http://en.wikipedia.org/wiki/Byron,_Illinois" ] ;
+        foaf:name              "Byron" .
+
+<Office_of_Congresswoman_Cheri_Bustos>
+        a            foaf:Organization ;
+        rdfs:label   "Office of Congresswoman Cheri Bustos" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "United_States_Congressman" ;
+        foaf:name    "" .
+
+<Frank_Eubank>  a   foaf:Person ;
+        rdfs:label  "Frank Eubank" ;
+        foaf:mbox   "feubank@villageofwinnebago.com" ;
+        foaf:title  "Village President" .
+
+<Beth_Howard>  a    foaf:Person ;
+        rdfs:label  "Beth Howard" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Cherry_Valley,_Illinois>
+        a           "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Location" , "http://dbpedia.org/ontology/Place" , "http://www.w3.org/2002/07/owl#Thing" ;
+        a           foaf:Organization ;
+        rdfs:label  "Cherry Valley, Illinois" ;
+        dbo:type    "dbo:Village" ;
+        owl:sameAs  "http://pl.dbpedia.org/resource/Cherry_Valley,_Illinois" ;
+        foaf:name   "Cherry Valley" .
+
+<Jim_Ryan>  a       foaf:Person ;
+        rdfs:label  "Jim Ryan" ;
+        foaf:mbox   "Jim.Ryan@rockfordil.gov" ;
+        foaf:title  "City Administrator" .
+
+<Transform_Rockford_Communication_Manager>
+        a              "owl:Thing" ;
+        a              org:Role ;
+        rdfs:comment   "" ;
+        rdfs:label     "Communication Manager" ;
+        org:postIn     "Transform_Rockford" ;
+        org:reportsTo  "Transform_Rockford_Executive_Director" ;
+        foaf:topic     "Transform Rockford Communication Manager" .
+
+<United_States_House_of_Representatives>
+        a            foaf:Organization ;
+        rdfs:label   "United States House of Representatives" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "United_States_Congressman" , "United_States_Congressional_Staff" ;
+        foaf:name    "" .
+
+<Dave_Krienke>  a   foaf:Person ;
+        rdfs:label  "Dave Krienke" ;
+        foaf:mbox   "dkrienke@villageofroscoe.com" ;
+        foaf:title  "Village President" .
+
+<_sector_206>  a       "naics2007:BusinessSector" ;
+        a              skos:Concept ;
+        j.4:topic      "55 Management of Companies and Enterprises" ;
+        skos:broader   "_sector_20" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors0" ;
+        foaf:topic     "Administrative Bodies" ;
+        j.9:code       "55" .
+
+<Person_Amy_Diaz>  a  foaf:Person ;
+        rdfs:label   "Amy Diaz" ;
+        org:hasRole  "Transform_Rockford_Office_Manager" .
+
+<Person:Dave_Rydell>  a  foaf:Person ;
+        rdfs:label   "Dave Rydell" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6>
+        a                foaf:Organization ;
+        rdfs:label       "Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6" ;
+        dbo:type         "" ;
+        org:hasPost      "Presidentof_Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6" , "VicePresidentof_Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Professional_Fire_Fighters_of_Rockford,_IAFF_413>
+        a                foaf:Organization ;
+        rdfs:label       "Professional_Fire_Fighters_of_Rockford,_IAFF_413" ;
+        dbo:type         "" ;
+        org:hasPost      "Presidentof_Professional_Fire_Fighters_of_Rockford,_IAFF_413" , "VicePresidentof_Professional_Fire_Fighters_of_Rockford,_IAFF_413" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+j.6:Segments0  a            skos:ConceptScheme ;
+        skos:HasTopConcept  "spoke:05" , "spoke:04" , "spoke:03" , "spoke:02" , "spoke:01" ;
+        j.3:type            "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" .
+
+<Rockford_Bank_and_Trust>
+        a           foaf:Organization ;
+        rdfs:label  "" ;
+        dbo:type    "dbo:Company" ;
+        foaf:name   "" .
+
+<Winnebago,_Illinois>
+        a           "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/Settlement" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Location" , "http://dbpedia.org/ontology/PopulatedPlace" ;
+        a           foaf:Organization ;
+        rdfs:label  "Winnebago, Illinois" ;
+        dbo:type    "dbo:Village" ;
+        owl:sameAs  "http://pl.dbpedia.org/resource/Winnebago,_Illinois" ;
+        foaf:name   "Winnebago" .
+
+<Cyndie_Hall>  a    foaf:Person ;
+        rdfs:label  "Cyndie Hall" ;
+        foaf:mbox   "cyndie.hall@rockfordil.gov" ;
+        foaf:phone  "779.348.7571" ;
+        foaf:title  "Executive Director" .
+
+<Person:Dave_Schertz>
+        a            foaf:Person ;
+        rdfs:label   "Dave Schertz" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Bob_Campbell>  a   foaf:Person ;
+        rdfs:label  "Bob Campbell" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "President" .
+
+<Tom_Budd>  a       foaf:Person ;
+        rdfs:label  "Tom Budd" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "President" .
+
+<Dan_Bowman>  a     foaf:Person ;
+        rdfs:label  "Dan Bowman" ;
+        foaf:mbox   "Dan.Bowman@woodward.com" ;
+        foaf:phone  "" ;
+        foaf:title  "Sales & Marketing VP" .
+
+j.6:Spokes05  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Trustworthiness" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Trustworthiness: Strive for integrity and reliable communication. Become committed to the highest levels of honesty and truthfulness." ;
+        skos:definition  "Strive for integrity and reliable communication. Become committed to the highest levels of honesty and truthfulness." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Trustworthiness" ;
+        foaf:topic       "Trustworthiness" .
+
+<Winnebago_County_Illinois_Housing_Authority>
+        a                foaf:Organization ;
+        rdfs:label       "Winnebago County Housing Authority" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority" ;
+        foaf:based_near  "Winnebago_County,_Illinois" , "Boone_County,_Illinois" ;
+        foaf:name        "" .
+
+<Dawna_Menke>  a    foaf:Person ;
+        rdfs:label  "Dawna Menke" ;
+        foaf:mbox   "dmenke@swedishamerican.org" ;
+        foaf:phone  "815-544-1390" ;
+        foaf:title  "Administrator" .
+
+<Jerry_Bolin>  a    foaf:Person ;
+        rdfs:label  "Jerry Bolin" ;
+        foaf:mbox   "jerryb@machesneypark.org" ;
+        foaf:title  "Mayor" .
+
+j.6:Values0  a              "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments" ;
+        a                   skos:ConceptScheme ;
+        skos:HasTopConcept  "segment:06" , "segment:04" , "segment:11" , "segment:09" , "segment:02" , "segment:12" , "segment:07" , "segment:13" , "segment:10" , "segment:14" , "segment:01" , "segment:05" , "segment:08" , "_Segment_HealthyLifestyles" , "segment:03" .
+
+<Transform_Rockford_Program_Director>
+        a              "owl:Thing" ;
+        a              org:Role ;
+        rdfs:comment   "" ;
+        rdfs:label     "Program Director" ;
+        org:postIn     "Transform_Rockford" ;
+        org:reportsTo  "Transform_Rockford_Executive_Director" ;
+        foaf:topic     "Transform Rockford Program Director" .
+
+<South_Beloit,_Illinois>
+        a                    "http://dbpedia.org/ontology/Location" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Settlement" , "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/PopulatedPlace" ;
+        a                    foaf:Organization ;
+        rdfs:label           "South Beloit, Illinois" ;
+        j.5:point            "" ;
+        dbo:abstract         "" ;
+        dbo:areaCode         "815" ;
+        dbo:country          "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation        "" ;
+        dbo:motto            "" ;
+        dbo:populationTotal  "7892" ;
+        dbo:state            "Illinois" ;
+        dbo:timeZone         "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type             "dbo:City" ;
+        dbo:wikiPageID       "" ;
+        dbp:leader           "Ted Rehl" ;
+        dbp:leaderType       "http://dbpedia.org/resource/Mayor" ;
+        dbp:region           "http://dbpedia.org/resource/Winnebago_County,_Illinois" ;
+        dbp:regionType       "County" ;
+        j.7:termssubject     "" ;
+        owl:sameAs           "http://pl.dbpedia.org/resource/South_Beloit,_Illinois" ;
+        foaf:name            "South Beloit" .
+
+<Matthew_Simpson>  a  foaf:Person ;
+        rdfs:label  "Matthew Simpson" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person_Jeffrey_A_Stewart>
+        a                  foaf:Person ;
+        rdfs:label         "Jeffrey Stewart" ;
+        j.10:phone         "tel:8552783748" ;
+        dbo:birthPlace     [ j.6:Spokes  "http://dbpedia.org/resource/Moline,_Illinois" ] ;
+        foaf:Knows         "Larry_Morrissey" , "_person_4" , "Person_Mike_Schablaske" ;
+        foaf:depiction     "https://media.licdn.com/media/p/5/005/093/01e/0426a71.jpg" ;
+        foaf:givenName     "Jeffrey" ;
+        foaf:homepage      "https://www.linkedin.com/in/jeffreyastewart" ;
+        foaf:mbox_sha1sum  "47af7e0b79ee24622a0543828a2eb51d7d75a407" ;
+        foaf:myersBriggs   "INTJ" ;
+        foaf:name          "Jeffrey Stewart" ;
+        foaf:nick          "Jeff" ;
+        foaf:surname       "Stewart" ;
+        j.6:Interests      "value:08" , "value:03" , "value:05" , "value:07" , "value:09" , "value:02" , "value:04" , "value:06" , "value:01" ;
+        j.6:Skills         "skill:040000" , "skill:010000" , "skill:050000" , "skill:030000" , "skill:020000" ;
+        j.0:DISC           "" .
+
+<_Strategy_LoveandBeLoved>
+        a                "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Love and Be Loved" ;
+        owl:sameAs       "" ;
+        skos:broader     "_Segment_HealthyLifestyles" , "strategy:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies" ;
+        skos:prefLabel   "Love and Be Loved"@en-gb ;
+        foaf:topic       "Love and Be Loved Objective" .
+
+<Rockford_Illinois_Park_District>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford Park District" ;
+        dbo:type         "dbo:GovernmentAgency" ;
+        org:hasPost      "ExecutiveDirectorof_Rockford_Illinois_Park_District" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<_sector_264>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_206" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Development" .
+
+<Rockton,_Illinois>  a       "http://dbpedia.org/ontology/Settlement" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/Location" , "http://dbpedia.org/ontology/PopulatedPlace" ;
+        a                    foaf:Organization ;
+        rdfs:label           "Rockton, Illinois" ;
+        j.5:point            "" ;
+        dbo:abstract         "" ;
+        dbo:areaCode         "815" ;
+        dbo:country          "http://dbpedia.org/resource/United_States" ;
+        dbo:elevation        "" ;
+        dbo:motto            "" ;
+        dbo:populationTotal  "7,685" ;
+        dbo:state            "Illinois" ;
+        dbo:timeZone         "http://dbpedia.org/resource/Central_Time_Zone" ;
+        dbo:type             "dbo:Village" ;
+        dbo:wikiPageID       "" ;
+        dbp:leader           "Dale Adams " ;
+        dbp:leaderType       "Village President (en)" ;
+        dbp:region           "http://dbpedia.org/resource/Winnebago_County,_Illinois" ;
+        dbp:regionType       "County" ;
+        j.7:termssubject     "" ;
+        owl:sameAs           "http://pl.dbpedia.org/resource/Rockton,_Illinois" ;
+        foaf:name            "Rockton" .
+
+<Ticomix>  a        foaf:Organization ;
+        rdfs:label  "" ;
+        dbo:type    "dbo:Company" ;
+        foaf:name   "" .
+
+j.6:Values  a               skos:ConceptScheme ;
+        rdfs:label          "OUR SHARED VALUES" ;
+        skos:HasTopConcept  "value:03" , "value:06" , "value:08" , "value:02" , "value:05" , "value:09" , "value:07" , "value:01" , "value:04" ;
+        skos:definition     "We, as community members of the Rockford Region, desire to achieve our vision for transformational change and will uphold the following shared values as the foundation for a civil and cultivating environment" ;
+        foaf:topic          "Our Shared values" .
+
+<_sector_201>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_20" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Elected Officials" .
+
+<Rockford_Illinois_Housing_Authority>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford Housing Authority" ;
+        dbo:type         "dbo:GovernmentAgency" ;
+        org:hasPost      "ExecutiveDirectorof_Rockford_Illinois_Housing_Authority" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<_sector_11>  a        "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_10" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Chambers of Commerce" .
+
+<Board_Chairman_of_Winnebago_County,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Winnebago County Board Chairman" ;
+        org:postIn    "Winnebago_County,_Illinois" ;
+        foaf:topic    "Winnebago County Board Chairman" .
+
+<Jeff_Polsean>  a   foaf:Person ;
+        rdfs:label  "Jeff Polsean" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Forest_City_Gear>  a  foaf:Organization ;
+        rdfs:label  "" ;
+        dbo:type    "dbo:Company" ;
+        foaf:name   "" .
+
+<TR_Revitalization_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Revitalization Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Revitalization Segment Team" .
+
+<Dale_Adams>  a     foaf:Person ;
+        rdfs:label  "Dale Adams" ;
+        foaf:mbox   "mayordadams@msn.com" ;
+        foaf:title  "Village President" .
+
+<Tim_Savage>  a     foaf:Person ;
+        rdfs:label  "Tim Savage" ;
+        foaf:mbox   "tims@machesneypark.org" ;
+        foaf:title  "City Administrator" .
+
+<Karen_Brown>  a    foaf:Person ;
+        rdfs:label  "Karen Brown" ;
+        foaf:mbox   "Karen.C.Brown@osfhealthcare.org" ;
+        foaf:phone  "815-227-2161" ;
+        foaf:title  "Cheif Operating Officer" .
+
+<John_Lucero>  a    foaf:Person ;
+        rdfs:label  "John Lucero" ;
+        foaf:mbox   "john.lucero@denvergov.org" ;
+        foaf:phone  "720.913.1621" ;
+        foaf:title  "Deputy Director" .
+
+<Wendy_Young_(FCG)>  a  foaf:Person ;
+        rdfs:label  "Wendy Young (FCG)" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Person:LoRayne_Logan>
+        a            foaf:Person ;
+        rdfs:label   "LoRayne Logan" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Steve_Nailor>  a   foaf:Person ;
+        rdfs:label  "Steve Nailor" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<_sector_40>  a        skos:Concept ;
+        skos:broader   "_sector_0" ;
+        skos:inScheme  "_https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Faith" .
+
+<Jen_Hall>  a       foaf:Person ;
+        rdfs:label  "Jen Hall" ;
+        foaf:mbox   "Jen@Catalystjenhall.com" ;
+        foaf:phone  "815.975.0466" ;
+        foaf:title  "" .
+
+<Todd_Cagnoni>  a   foaf:Person ;
+        rdfs:label  "Todd Cagnoni" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<TR_Funding_Our_Future_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Funding Our Future Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Funding Our Future Segment Team" .
+
+<Cindy_Hall>  a     foaf:Person ;
+        rdfs:label  "Cindy Hall" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Bridget_French>  a  foaf:Person ;
+        rdfs:label  "Bridget French" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Transform_Rockford_Project_Director>
+        a              "owl:Thing" ;
+        a              org:Role ;
+        rdfs:comment   "" ;
+        rdfs:label     "Project Director" ;
+        org:postIn     "Transform_Rockford" ;
+        org:reportsTo  "Transform_Rockford_Executive_Director" ;
+        foaf:topic     "Transform Rockford Project Director" .
+
+<Tim_Ancona>  a     foaf:Person ;
+        rdfs:label  "Tim Ancona" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "President" .
+
+<OSF_Saint_Anthony_Medical_Center>
+        a           foaf:Organization ;
+        rdfs:label  "" ;
+        foaf:name   "" .
+
+j.6:Segments01  a        "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "FUNDING OUR FUTURE" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" ;
+        skos:prefLabel   "FUNDING OUR FUTURE: "@en-gb ;
+        foaf:topic       "Funding Our Future" .
+
+j.6:Spokes08  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Responsibility" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Responsibility: Pursue excellence and accountability of self and others by not shifting blame or taking improper credit. Participate to the fullest of our ability." ;
+        skos:definition  "Pursue excellence and accountability of self and others by not shifting blame or taking improper credit. Participate to the fullest of our ability." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Responsibility" ;
+        foaf:topic       "Responsibility" .
+
+<Daniel_Barber>  a  foaf:Person ;
+        rdfs:label  "Daniel Barber" ;
+        foaf:mbox   "dbarber@villageofpecatonica.com" ;
+        foaf:title  "Village President" .
+
+<Steve_Stadelman>  a  foaf:Person ;
+        rdfs:label  "Steve Stadelman" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Transform_Rockford_Office_Manager>
+        a              "owl:Thing" ;
+        a              org:Role ;
+        rdfs:comment   "" ;
+        rdfs:label     "Office Manager" ;
+        org:postIn     "Transform_Rockford" ;
+        org:reportsTo  "Transform_Rockford_Executive_Director" ;
+        foaf:topic     "Transform Rockford Office Manager" .
+
+<_Strategy_MoveMore>  a  "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Move More" ;
+        owl:sameAs       "" ;
+        skos:broader     "_Segment_HealthyLifestyles" , "strategy:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies" ;
+        skos:prefLabel   "Move More "@en-gb ;
+        foaf:topic       "Move More Objective" .
+
+<Illinois_Representative>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Illinois_Representative" ;
+        org:postIn    "Illinois_House_of_Representatives" ;
+        foaf:topic    "State Representative" .
+
+<Rockford_Illinois_Public_Library>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford_Illinois_Public_Library" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "ExecutiveDirectorof_Rockford_Illinois_Public_Library" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Timothy_Ownes>  a  foaf:Person ;
+        rdfs:label  "Timothy Ownes" ;
+        foaf:mbox   "" ;
+        foaf:title  "Village President" .
+
+<Darryl_Lindberg>  a  foaf:Person ;
+        rdfs:label  "Darryl Lindberg" ;
+        foaf:mbox   "mayorlindberg@loves-park.il.us" ;
+        foaf:title  "Mayor" .
+
+<United_States_Senator>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "United States Senator" ;
+        org:postIn    "United_States_Senate" ;
+        foaf:topic    "US Senator" .
+
+<_sector_204>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_202" ;
+        skos:inScheme  "_https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Senior Administrators" .
+
+<_sector_14>  a        "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_10" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Rockford Area Economic Development Committee" .
+
+<TR_Engagement_Team>  a  foaf:Organization ;
+        rdfs:label  "Engagement Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Engagement Support Team" .
+
+<Person:John_Holmstrom>
+        a            foaf:Person ;
+        rdfs:label   "John Holmstrom" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Chicago_Rockford_International_Airport>
+        a                foaf:Organization ;
+        rdfs:label       "Chicago Rockford International Airport" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "ExecutiveDirectorof_Chicago_Rockford_International_Airport" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Thomas_Bona>  a    foaf:Person ;
+        rdfs:label  "Thomas Bona" ;
+        foaf:mbox   "tbona@myedd.org" ;
+        foaf:phone  "815-721-1889" ;
+        foaf:title  "" .
+
+<Northern_Illinois_University>
+        a            foaf:Organization ;
+        rdfs:label   "Northern_Illinois_University" ;
+        dbo:type     "dbo:Municipality" ;
+        org:hasPost  "Presidentof_Northern_Illinois_University" ;
+        foaf:name    "" .
+
+<_Strategy_EatforHealth>
+        a                "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Eat for Health" ;
+        owl:sameAs       "" ;
+        skos:broader     "strategy:0" , "_Segment_HealthyLifestyles" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Strategies" ;
+        skos:prefLabel   "Eat for Health "@en-gb ;
+        foaf:topic       "Eat for Health Objective" .
+
+<Illinois_Senate>  a  foaf:Organization ;
+        rdfs:label   "Illinois_Senator" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "Illinois_Senator" ;
+        foaf:name    "" .
+
+<Mark_Williams>  a  foaf:Person ;
+        rdfs:label  "Mark Williams" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Spokes03  a          "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Respect" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Respect: Embrace the knowledge and experiences of others by being attentive, listening well and celebrating diversity as a strength and source of shared learning." ;
+        skos:definition  "Embrace the knowledge and experiences of others by being attentive, listening well and celebrating diversity as a strength and source of shared learning." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Respect" ;
+        foaf:topic       "Respect" .
+
+<John_Walsh>  a     foaf:Person ;
+        rdfs:label  "John Walsh" ;
+        foaf:mbox   "john.walsh@mail.house.gov" ;
+        foaf:phone  "815.708.8032" ;
+        foaf:title  "Field Rep" .
+
+<TR_Leadership_Development_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Leadership Development Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Leadership Development Support Team" .
+
+<TR_Reframing_a_21st_Century_Community_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Reframing a 21st Century Community Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Reframing a 21st Century Community Segment Team" .
+
+<Paul_Logli>  a     foaf:Person ;
+        rdfs:label  "Paul Logli" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Phil_Eaton>  a     foaf:Person ;
+        rdfs:label  "Phil Eaton" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Swedish_American_Health_System>
+        a           foaf:Organization ;
+        rdfs:label  "" ;
+        foaf:name   "" .
+
+<Jim_E._Claeyssen>  a  foaf:Person ;
+        rdfs:label  "Jim E. Claeyssen" ;
+        foaf:mbox   "jclaeyssen@cherryvalley.org" ;
+        foaf:title  "Village President" .
+
+<Joe_Chiarelli>  a  foaf:Person ;
+        rdfs:label  "Joe Chiarelli" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<_sector_262>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_206" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Human Services" .
+
+<Terrance_Hall>  a  foaf:Person ;
+        rdfs:label  "Terrance Hall" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Joe_Sosnowski>  a  foaf:Person ;
+        rdfs:label  "Joe Sosnowski" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Segments04  a        "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "REVITALIZATION" ;
+        owl:sameAs       "" ;
+        skos:broader     "spoke:0" ;
+        skos:definition  ""@en-gb ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Spokes" ;
+        skos:prefLabel   "REVITALIZATION: "@en-gb ;
+        foaf:topic       "Revitalization" .
+
+<Illinois_Senator>  a  "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Illinois_Senator" ;
+        org:postIn    "Illinois_Senate" ;
+        foaf:topic    "State Senator" .
+
+<Rockford_University>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford_University" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Presidentof_Rockford_University" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<Michael_Baker>  a  foaf:Person ;
+        rdfs:label  "Michael Baker" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<_sector_30>  a        skos:Concept ;
+        skos:broader   "_sector_0" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Non Profit" .
+
+<Dan_Parod>  a      foaf:Person ;
+        rdfs:label  "Dan Parod" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Illinois>  a        dbo:Place ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns# type>
+                "owl:Thing" , "dbo:PopulatedPlace" , "geo:SpatialThing" , "dbo:Place" , "schema:Place" , "dbo:Location" ;
+        rdfs:label   "Illinois" ;
+        dbo:country  "http://dbpedia.org/resource/United_States" ;
+        dbo:name     "Illinois" ;
+        dbo:state    "http://dbpedia.org/resource/Illinois" ;
+        owl:sameAs   "freebase:Illinois" , "geodata:Illinois" , "wikidata:Illinois" .
+
+<Matthew_Johnson>  a  foaf:Person ;
+        rdfs:label  "Matthew Johnson" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<ExecutiveDirectorof_Chicago_Rockford_International_Airport>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Executive Director of Chicago Rockford International Airport" ;
+        org:postIn    "Chicago_Rockford_International_Airport" ;
+        foaf:topic    "Executive Director" .
+
+<Dick_Van_Evera>  a  foaf:Person ;
+        rdfs:label  "Dick Van Evera" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Mike_Baker>  a     foaf:Person ;
+        rdfs:label  "Mike Baker" ;
+        foaf:mbox   "Michael.Baker@illinois.gov" ;
+        foaf:phone  "217-558-6423" ;
+        foaf:title  "Planning Unit Manager" .
+
+<Chris_Black>  a    foaf:Person ;
+        rdfs:label  "Chris Black" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Durand,_Illinois>  a  "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Settlement" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Location" ;
+        a           foaf:Organization ;
+        rdfs:label  "Durand, Illinois" ;
+        dbo:type    "dbo:Village" ;
+        owl:sameAs  "http://pl.dbpedia.org/resource/Durand,_Illinois" .
+
+<Person:Jim_Keeling>  a  foaf:Person ;
+        rdfs:label   "Jim Keeling" ;
+        foaf:member  "Transform_Rockford" , "TR_Steering_Committee" .
+
+<Office_of_Congressman_Kinzinger>
+        a            foaf:Organization ;
+        rdfs:label   "Office of Congressman Kinzinger" ;
+        dbo:type     "dbo:Legislature" ;
+        org:hasPost  "United_States_Congressman" ;
+        foaf:name    "" .
+
+<Northern_Illinois_Workforce_Alliance>
+        a                foaf:Organization ;
+        rdfs:label       "Northern_Illinois_Workforce_Alliance" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "ExecutiveDirectorof_Northern_Illinois_Workforce_Alliance" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+j.6:Spokes06  a          "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Unity" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Unity: Place the greater good of all parts of our region and its transformation ahead of self or organizational interests." ;
+        skos:definition  "Place the greater good of all parts of our region and its transformation ahead of self or organizational interests." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Unity" ;
+        foaf:topic       "Unity" .
+
+<Alignment_Rockford>  a  foaf:Organization ;
+        rdfs:label  "" ;
+        foaf:name   "" .
+
+<Meggi_Tibbetts>  a  foaf:Person ;
+        rdfs:label  "Meggi Tibbetts" ;
+        foaf:mbox   "mtibbetts@rockfordha.org" ;
+        foaf:phone  "8154898750" ;
+        foaf:title  "Program Specialist" .
+
+<Dave_Peterson>  a  foaf:Person ;
+        rdfs:label  "Dave Peterson" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<New_Milford,_Illinois>
+        a           "http://dbpedia.org/ontology/Place" , "http://dbpedia.org/ontology/PopulatedPlace" , "http://dbpedia.org/ontology/Settlement" , "http://www.w3.org/2002/07/owl#Thing" , "http://dbpedia.org/ontology/Location" ;
+        a           foaf:Organization ;
+        rdfs:label  "New Milford, Illinois" ;
+        dbo:type    "dbo:Village" ;
+        owl:sameAs  "http://pl.dbpedia.org/resource/New_Milford,_Illinois" .
+
+<Rockford_First>  a      foaf:Organization ;
+        rdfs:label       "Rockford First" ;
+        dbo:type         "dbo:ReligiousOrganisation" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "Rockford First" .
+
+<Boone-Winnebago_Regional_Office_of_Education>
+        a                foaf:Organization ;
+        rdfs:label       "Boone-Winnebago_Regional_Office_of_Education" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Boone-Winnebago_Regional_Superintendent" ;
+        foaf:based_near  "Winnebago_County,_Illinois" , "Boone_County,_Illinois" ;
+        foaf:name        "" .
+
+<Mike_Williams>  a  foaf:Person ;
+        rdfs:label  "Mike Williams" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Harlem_School_District_122>
+        a                foaf:Organization ;
+        rdfs:label       "Harlem_School_District_122" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Superintendent_Harlem_School_District_122" ;
+        foaf:based_near  "Loves_Park,_Illinois" ;
+        foaf:name        "" .
+
+<Rock_Valley_College>
+        a                foaf:Organization ;
+        rdfs:label       "Rock_Valley_College" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Presidentof _Rock_Valley_College" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
+
+<United_Way>  a     foaf:Organization ;
+        rdfs:label  "" ;
+        foaf:name   "" .
+
+<Lucia_Matlock>  a  foaf:Person ;
+        rdfs:label  "Lucia Matlock" ;
+        foaf:mbox   "" ;
+        foaf:title  "Community Development Coordinator" .
+
+<United_States_Congressman>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "United_States_Congressman" ;
+        org:postIn    "United_States_House_of_Representatives" ;
+        foaf:topic    "US Representative" .
+
+<Mike_Mastroianni>  a  foaf:Person ;
+        rdfs:label  "Mike Mastroianni" ;
+        foaf:mbox   "m.mastroianni@rockvalleycollege.edu" ;
+        foaf:phone  "815-921-4001" ;
+        foaf:title  "President" .
+
+<TR_Spoke_Teams>  a  foaf:Organization ;
+        rdfs:label  "Spoke Teams" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Spoke Teams" .
+
+<_sector_202>  a       "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_20" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Counties & Municipalties" .
+
+<TR_Sense_of_Place_Team>
+        a           foaf:Organization ;
+        rdfs:label  "Sense of Place Team" ;
+        dbo:type    "dbo:Non-ProfitOrganisation" ;
+        foaf:name   "Transform Rockford Sense of Place Segment Team" .
+
+<_sector_12>  a        "sic:IndustryGroup" ;
+        a              skos:Concept ;
+        skos:broader   "_sector_10" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Largest Employers" .
+
+<Ron_Clewer>  a     foaf:Person ;
+        rdfs:label  "Ron Clewer" ;
+        foaf:mbox   "rclewer@rockfordha.org" ;
+        foaf:phone  "8159974353" ;
+        foaf:title  "CEO" .
+
+j.6:Skills020000  a      "sioc:topic" , "foaf:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Project Management" ;
+        owl:sameAs       "" ;
+        skos:definition  ""@en-us ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills" ;
+        skos:prefLabel   "Project Management"@en-us ;
+        foaf:topic       "Project Management" .
+
+<Darcy_Bucholz>  a  foaf:Person ;
+        rdfs:label  "Darcy Bucholz" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+<Paula_Capriola>  a  foaf:Person ;
+        rdfs:label  "Paula Capriola" ;
+        foaf:mbox   "" ;
+        foaf:phone  "" ;
+        foaf:title  "" .
+
+j.6:Spokes01  a          "foaf:topic" , "sioc:topic" ;
+        a                skos:Concept ;
+        rdfs:label       "Inclusion" ;
+        owl:sameAs       "" ;
+        skos:altLabel    "Inclusion: Cultivate and support an environment that fully engages our community’s differences and diversity to ensure that individuals and organizations are heard, valued and supported." ;
+        skos:definition  "Cultivate and support an environment that fully engages our community’s differences and diversity to ensure that individuals and organizations are heard, valued and supported." ;
+        skos:exactMatch  "" ;
+        skos:inScheme    "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values" ;
+        skos:prefLabel   "Inclusion" ;
+        foaf:topic       "Inclusion" .
+
+<Rockford_City_Council_Alderman>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Rockford City Council Alderman" ;
+        org:Post      "Rockford_City_Council" ;
+        foaf:topic    "Rockford City Council Alderman" .
+
+<_sector_20>  a        "naics2007:BusinessSector" ;
+        a              skos:Concept ;
+        j.4:topic      "92 Public Administration" ;
+        skos:broader   "_sector_0" ;
+        skos:inScheme  "https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors" ;
+        foaf:topic     "Government & Agencies" ;
+        j.9:code       "92" .
+
+<Mayor_of_Loves_Park,_Illinois>
+        a             "owl:Thing" ;
+        a             org:Role ;
+        rdfs:comment  "" ;
+        rdfs:label    "Mayor_of_Loves_Park,_Illinois" ;
+        org:postIn    "Loves_Park,_Illinois" ;
+        foaf:topic    "Mayor_of_Loves_Park" .
+
+<Transform_Rockford_Executive_Director>
+        a              "owl:Thing" ;
+        a              org:Role ;
+        rdfs:comment   "" ;
+        rdfs:label     "Executive Director" ;
+        org:postIn     "Transform_Rockford" ;
+        org:reportsTo  "TR_Steering_Committee" ;
+        foaf:topic     "Transform Rockford Executive Director" .
+
+<Rockford_Education_Association>
+        a                foaf:Organization ;
+        rdfs:label       "Rockford_Education_Association" ;
+        dbo:type         "dbo:Municipality" ;
+        org:hasPost      "Presidentof_Rockford_Education_Association" ;
+        foaf:based_near  "Rockford,_Illinois" ;
+        foaf:name        "" .
