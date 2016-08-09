@@ -18,10 +18,6 @@ p {
   border: 3px solid lightgray;
 }
 
-#optionsContainer {
-  height:280px;
-}
-
 iframe,img{
 	border:none
 }
@@ -57,7 +53,8 @@ body,main{
 
 #canvasArea,main{
 	position:relative;
-	max-height: 96%;
+	max-height: 98%;
+	height: 1100px;
 }
 
 #canvasArea{
@@ -70,7 +67,7 @@ body,main{
 #canvasArea #mynetwork{
 	margin:0 0 2px;
 	background-color:#ecf0f1;
-	width:100%
+	width:100%;
 }
 
 #canvasArea #mynetwork,#canvasArea svg{

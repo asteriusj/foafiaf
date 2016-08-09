@@ -1,459 +1,16 @@
+<!doctype html>
 <html>
-
 <head>
 	<title>Map of FOAF relationships</title>
-</head>
-
-<body>
-	<description></description>
-
-	<!--<script type="text/javascript" src="/js/vis.js"></script>-->
-	<!--<link href="/css/vis.css" rel="stylesheet" type="text/css" />-->
-
 	<script type="text/javascript" src="dist/vis.js"></script>
 	<link href="dist/vis.css" rel="stylesheet" type="text/css">
    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
-  
-  <!--<script src="/js/nodes.js"></script>-->
-  <script>
-  
-  var nodes=[{"typeOf":"skos:ConceptScheme","id":"_sector_0","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","group":"cubes"},{"typeOf":"skos:Concept","id":"_sector_10","label":"Business","title":"skos:Concept _sector_10 Business","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_11","label":"Chambers of Commerce","title":"skos:Concept _sector_11 Chambers of Commerce","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_12","label":"Largest Employers","title":"skos:Concept _sector_12 Largest Employers","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_13","label":"Professional & Industry Groups","title":"skos:Concept _sector_13 Professional & Industry Groups","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_14","label":"Rockford Area Economic Development Committee","title":"skos:Concept _sector_14 Rockford Area Economic Development Committee","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_20","label":"Government & Agencies","title":"skos:Concept _sector_20 Government & Agencies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_201","label":"Elected Officials","title":"skos:Concept _sector_201 Elected Officials","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_202","label":"Counties & Municipalties","title":"skos:Concept _sector_202 Counties & Municipalties","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_203","label":"Councils & Boards","title":"skos:Concept _sector_203 Councils & Boards","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_204","label":"Senior Administrators","title":"skos:Concept _sector_204 Senior Administrators","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_205","label":"Public Education","title":"skos:Concept _sector_205 Public Education","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_206","label":"Administrative Bodies","title":"skos:Concept _sector_206 Administrative Bodies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_261","label":"Public Safety","title":"skos:Concept _sector_261 Public Safety","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_262","label":"Human Services","title":"skos:Concept _sector_262 Human Services","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_263","label":"Health","title":"skos:Concept _sector_263 Health","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_264","label":"Development","title":"skos:Concept _sector_264 Development","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_30","label":"Non Profit","title":"skos:Concept _sector_30 Non Profit","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_40","label":"Faith","title":"skos:Concept _sector_40 Faith","group":"tag"},{"typeOf":"foaf:Person","id":"_person_1","title":"foaf:Person _person_1 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_2","title":"foaf:Person _person_2 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_3","title":"foaf:Person _person_3 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_4","title":"foaf:Person _person_4 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_5","title":"foaf:Person _person_5 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_6","title":"foaf:Person _person_6 undefined","name":null,"group":"person"},{"typeOf":"foaf:Group","id":"_group_1","label":"Transform Rockford","title":"foaf:Group _group_1 undefined","name":"Transform Rockford","group":"group"},{"typeOf":"foaf:Organization","id":"_company_1","title":"foaf:Organization _company_1 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_2","title":"foaf:Organization _company_2 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_3","title":"foaf:Organization _company_3","name":null,"group":"organization"},{"typeOf":"foaf:topic","id":"_topics_0","title":"foaf:topic _topics_0 undefined","group":"tags"},{"typeOf":"sioc:topic","id":"_topic_1","label":"IT Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_2","label":"Project Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_3","label":"Software Development","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_4","label":"Cloud Computing","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_5","label":"Publishing and Printing","title":"","group":"tag"},{"typeOf":"schema:Projects","id":"_projects_0","label":"Projects","group":"projects"},{"typeOf":"pmbok:Project","id":"_:b0","label":"Blue Zones","title":"pmbok:Project: Blue Zone Community Project","name":"Community project to establish region as a Blue Zone","group":"project"},{"typeOf":"pmbok:Project","id":"_:b1","label":"Network Map Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Network Map tool(s)","name":null,"group":"project"},{"typeOf":"foaf:Person","id":"_:jd","title":"foaf:Person _:jd undefined","name":null,"group":"person"},{"typeOf":"pmbok:Project","id":"_:b3","label":"Project Management Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Project Management tool(s)","name":null,"group":"project"}]
-  var edges=[{"from":"_sector_0","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_30","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_40","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_10","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_11","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_12","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_13","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_14","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_20","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_201","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_202","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_203","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_204","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_205","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_206","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_261","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_262","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_263","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_264","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_30","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_40","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_person_1","to":"_person_4","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_3","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_2","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"Moline,_Illinois","arrows":{"to":"true"},"label":" < birthPlace >"},{"from":"_person_1","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":"true"},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"_person_1","to":"_group_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_person_1","to":"_topic_5","arrows":{"to":"true"},"label":" < interest >"},{"from":"_person_1","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_3","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_4","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < ceo >"},{"from":"_person_4","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_4","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_5","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_person_6","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_group_1","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_group_1","to":"_person_4","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_sector_30","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_1","to":"Byron,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_2","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_3","to":"_person_4","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_3","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_topic_1","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_2","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_3","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_4","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_5","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b0","to":"_:jd","arrows":{"to":"true"},"label":" < stakeholder >"},{"from":"_:b0","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b1","to":"_:b3","arrows":{"to":"true"},"label":" < has_parent >"},{"from":"_:b1","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b3","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"}]
-  
-    //var nodes = [{"typeOf":"skos:ConceptScheme","id":"_sector_0","label":null,"title":"skos:ConceptScheme _sector_0 undefined","group":"cubes"},{"typeOf":"skos:Concept","id":"_sector_10","label":null,"title":"skos:Concept _sector_10 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_11","label":null,"title":"skos:Concept _sector_11 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_12","label":null,"title":"skos:Concept _sector_12 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_13","label":null,"title":"skos:Concept _sector_13 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_14","label":null,"title":"skos:Concept _sector_14 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_20","label":null,"title":"skos:Concept _sector_20 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_201","label":null,"title":"skos:Concept _sector_201 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_202","label":null,"title":"skos:Concept _sector_202 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_203","label":null,"title":"skos:Concept _sector_203 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_204","label":null,"title":"skos:Concept _sector_204 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_205","label":null,"title":"skos:Concept _sector_205 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_206","label":null,"title":"skos:Concept _sector_206 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_261","label":null,"title":"skos:Concept _sector_261 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_262","label":null,"title":"skos:Concept _sector_262 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_263","label":null,"title":"skos:Concept _sector_263 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_264","label":null,"title":"skos:Concept _sector_264 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_30","label":null,"title":"skos:Concept _sector_30 undefined","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_40","label":null,"title":"skos:Concept _sector_40 undefined","group":"tag"},{"typeOf":"foaf:Person","id":"_person_1","title":"foaf:Person _person_1 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_2","title":"foaf:Person _person_2 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_3","title":"foaf:Person _person_3 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_4","title":"foaf:Person _person_4 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_5","title":"foaf:Person _person_5 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_6","title":"foaf:Person _person_6 undefined","name":null,"group":"person"},{"typeOf":"foaf:Group","id":"_group_1","label":"Transform Rockford","title":"foaf:Group _group_1 undefined","name":"Transform Rockford","group":"group"},{"typeOf":"foaf:Organization","id":"_company_1","title":"foaf:Organization _company_1 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_2","title":"foaf:Organization _company_2 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_3","title":"foaf:Organization _company_3 undefined","name":null,"group":"organization"},{"typeOf":"foaf:topic","id":"_topics_0","title":"foaf:topic _topics_0 undefined","group":"tags"},{"typeOf":"sioc:topic","id":"_topic_1","label":"IT Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_2","label":"Project Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_3","label":"Software Development","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_4","label":"Cloud Computing","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_5","label":"Publishing and Printing","title":"","group":"tag"},{"typeOf":"schema:Projects","id":"_projects_0","label":"Projects","group":"projects"},{"typeOf":"pmbok:Project","id":"_:b0","label":"Blue Zones","title":"pmbok:Project: Blue Zone Community Project","name":"Community project to establish region as a Blue Zone","group":"project"},{"typeOf":"pmbok:Project","id":"_:b1","label":"Network Map Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Network Map tool(s)","name":null,"group":"project"},{"typeOf":"foaf:Person","id":"_:jd","title":"foaf:Person _:jd undefined","name":null,"group":"person"},{"typeOf":"pmbok:Project","id":"_:b3","label":"Project Management Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Project Management tool(s)","name":null,"group":"project"}]
-    //var edges = [{"from":"_sector_0","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_30","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_40","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_10","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_11","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_12","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_13","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_14","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_20","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_201","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_202","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_203","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_204","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_205","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_206","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_261","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_262","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_263","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_264","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_30","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_40","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_person_1","to":"_person_4","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_3","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_2","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"Moline,_Illinois","arrows":{"to":"true"},"label":" < birthPlace >"},{"from":"_person_1","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":"true"},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"_person_1","to":"_group_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_person_1","to":"_topic_5","arrows":{"to":"true"},"label":" < interest >"},{"from":"_person_1","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_3","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_4","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < ceo >"},{"from":"_person_4","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_4","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_5","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_person_6","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_group_1","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_group_1","to":"_person_4","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_sector_30","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_1","to":"Byron,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_2","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_3","to":"_person_4","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_3","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_topic_1","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_2","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_3","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_4","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_5","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b0","to":"_:jd","arrows":{"to":"true"},"label":" < stakeholder >"},{"from":"_:b0","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b1","to":"_:b3","arrows":{"to":"true"},"label":" < has_parent >"},{"from":"_:b1","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b3","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"}]
-    
-    //var nodes = [{"typeOf":"foaf:Person","id":"_person_1","label":"Jeffrey Stewart","title":"foaf:Person: Jeffrey Stewart","name":"Jeffrey Stewart","group":"person"},{"typeOf":"foaf:Person","id":"_person_2","label":"Mike Schablaske","title":"foaf:Person: Mike Schablaske","name":"Mike Schablaske","group":"person"},{"typeOf":"foaf:Person","id":"_person_3","label":"Jake Wilson","title":"foaf:Person: Jake Wilson","name":"Jake Wilson","group":"person"},{"typeOf":"foaf:Person","id":"_person_4","label":"Dannette Holifield","title":"foaf:Person: Dannette Holifield","name":"Dannette Holifield","group":"person"},{"typeOf":"foaf:Person","id":"_person_5","label":"Patrick O'Keefe","title":"foaf:Person: Patrick O'Keefe","name":"Patrick O'Keefe","group":"person"},{"typeOf":"foaf:Person","id":"_person_6","label":"David Sidney","title":"foaf:Person: David Sidney","name":"David Sidney","group":"person"},{"typeOf":"foaf:Group","id":"_group_1","label":"Transform Rockford","title":"foaf:Group: Transform Rockford","name":"Transform Rockford","group":"group"},{"typeOf":"foaf:Organization","id":"_company_1","label":"Asterius Media LLC","title":"foaf:Organization: Asterius Media LLC","name":"Asterius Media LLC","group":"organization"},{"typeOf":"foaf:Organization","id":"_company_2","label":"Woodward","title":"foaf:Organization: Woodward","name":"Woodward","group":"organization"},{"typeOf":"foaf:Organization","id":"_company_3","label":"Danfoss","title":"foaf:Organization: Danfoss","name":"Danfoss","group":"organization"},{"typeOf":"foaf:city","id":"Moline,_Illinois","label":"City of Moline","title":"foaf:city: City of Moline","name":"City of Moline","group":"marker"},{"typeOf":"foaf:city","id":"Byron,_Illinois","label":"City of Byron","title":"foaf:city: City of Byron","name":"City of Byron","group":"marker"},{"typeOf":"foaf:city","id":"Rockford,_Illinois","label":"City of Rockford","title":"foaf:city: City of Rockford","name":"City of Rockford","group":"marker"},{"typeOf":"foaf:state","id":"Illinois","label":"Illinois","title":"foaf:state: Illinois","name":"Illinois","group":"globe"},{"typeOf":"foaf:topic","id":"_topics_0","label":"Topics","name":"","group":"tags"},{"typeOf":"sioc:topic","id":"_topic_1","label":"IT Management","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_2","label":"Project Management","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_3","label":"Software Development","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_4","label":"Cloud Computing","name":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_5","label":"Publishing and Printing","name":"","group":"tag"},{"typeOf":"schema:Projects","id":"_projects_0","label":"Projects","group":"projects"},{"typeOf":"pmbok:Project","id":"_:b0","label":"Blue Zones","title":"pmbok:Project: Blue Zone Community Project","name":"Community project to establish region as a Blue Zone","group":"project"},{"typeOf":"pmbok:Project","id":"_:b1","label":"Network Map Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Network Map tool(s)","name":null,"group":"project"},{"typeOf":"foaf:Person","id":"_:jd","label":"Jane Doe","title":"foaf:Person: Jane Doe","name":"Jane Doe","group":"person"},{"typeOf":"pmbok:Project","id":"_:b3","label":"Project Management Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Project Management tool(s)","name":null,"group":"project"}]
-    //var edges = [{"from":"_person_1","to":"_person_4","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"_person_3","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"_person_2","arrows":{"to":true},"label":" < knows >"},{"from":"_person_1","to":"Moline,_Illinois","arrows":{"to":true},"label":" < birthPlace >"},{"from":"_person_1","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":true},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"_person_1","to":"_group_1","arrows":{"to":true},"label":" < member >"},{"from":"_person_1","to":"_topic_5","arrows":{"to":true},"label":" < interest >"},{"from":"_person_1","to":"_topic_1","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_2","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_3","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_topic_4","arrows":{"to":true},"label":" < skill >"},{"from":"_person_1","to":"_company_1","arrows":{"to":true},"label":" < owner >"},{"from":"_person_1","to":"_company_1","arrows":{"to":true},"label":" < ceo >"},{"from":"_person_4","to":"_topic_1","arrows":{"to":true},"label":" < skill >"},{"from":"_person_4","to":"_topic_2","arrows":{"to":true},"label":" < skill >"},{"from":"_person_5","to":"_group_1","arrows":{"to":true},"label":" < employedBy >"},{"from":"_person_6","to":"_group_1","arrows":{"to":true},"label":" < employedBy >"},{"from":"_group_1","to":"Rockford,_Illinois","arrows":{"to":true},"label":" < based_near >"},{"from":"_group_1","to":"_person_4","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_2","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_1","arrows":{"to":true},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":true},"label":" < employerOf >"},{"from":"_group_1","to":"_person_2","arrows":{"to":true},"label":" < employerOf >"},{"from":"_company_1","to":"Byron,_Illinois","arrows":{"to":true},"label":" < based_near >"},{"from":"_company_1","to":"_person_1","arrows":{"to":true},"label":" < owner >"},{"from":"_company_1","to":"_person_1","arrows":{"to":true},"label":" < employerOf >"},{"from":"_company_3","to":"_person_4","arrows":{"to":true},"label":" < employerOf >"},{"from":"Moline,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"Byron,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"Rockford,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Illinois"},"arrows":{"to":true},"label":" < http://dbpedia.org/property/subdivisionName >"},{"from":"Rockford,_Illinois","to":"Illinois","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_1","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_2","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_3","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_4","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_topic_5","to":"_topics_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b0","to":"_:jd","arrows":{"to":true},"label":" < stakeholder >"},{"from":"_:b0","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b1","to":"_:b3","arrows":{"to":true},"label":" < has_parent >"},{"from":"_:b1","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"},{"from":"_:b3","to":"_projects_0","arrows":{"to":true},"label":" < has_container >"}]
+</head>
 
-    //var nodes = [{"typeOf":"foaf:Person","id":"Bill_Gorski","label":"Bill Gorski","title":"foaf:Person Bill_Gorski undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Bobbie_Holzwarth","label":"Bobbie Holzwarth","title":"foaf:Person Person:Bobbie_Holzwarth undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Dave_Rydell","label":"Dave Rydell","title":"foaf:Person Person:Dave_Rydell undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Dave_Schertz","label":"Dave Schertz","title":"foaf:Person Person:Dave_Schertz undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Jim_Keeling","label":"Jim Keeling","title":"foaf:Person Person:Jim_Keeling undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:John_Holmstrom","label":"John Holmstrom","title":"foaf:Person Person:John_Holmstrom undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Ken_Board","label":"Ken Board","title":"foaf:Person Person:Ken_Board undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:LoRayne_Logan","label":"LoRayne Logan","title":"foaf:Person Person:LoRayne_Logan undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Paul_Logli","label":"Paul Logli","title":"foaf:Person Person:Paul_Logli undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Rob_Funderburg","label":"Rob  Funderburg","title":"foaf:Person Person:Rob_Funderburg undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Tom_Gendron","label":"Tom Gendron","title":"foaf:Person Person:Tom_Gendron undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Person:Peter_Provenzano","label":"Peter Provenzano","title":"foaf:Person Person:Peter_Provenzano Provenzano, Peter","name":"Provenzano, Peter","group":"person"},{"typeOf":"foaf:Organization","id":"Winnebago_County,_Illinois","label":"Winnebago County, Illinois","title":"foaf:Organization Winnebago_County,_Illinois Winnebago County, Illinois","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rockford,_Illinois","label":"Rockford, Illinois","title":"foaf:Organization Rockford,_Illinois Rockford, Illinois","name":"City of Rockford","group":"organization"},{"typeOf":"foaf:Organization","id":"Rockford_City_Council","label":"Rockford City Council","title":"foaf:Organization Rockford_City_Council Rockford City Council","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Rockford_Illinois_Park_District","label":"Rockford Park District","title":"foaf:Organization Rockford_Illinois_Park_District Rockford Park District","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Rockford_Illinois_Housing_Authority","label":"Rockford Housing Authority","title":"foaf:Organization Rockford_Illinois_Housing_Authority Rockford Housing Authority","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Loves_Park,_Illinois","label":"Loves Park, Illinois (en)","title":"foaf:Organization Loves_Park,_Illinois Loves Park, Illinois (en)","name":"Loves Park","group":"organization"},{"typeOf":"foaf:Organization","id":"Machesney_Park,_Illinois","label":"Machesney Park, Illinois (en)","title":"foaf:Organization Machesney_Park,_Illinois Machesney Park, Illinois (en)","name":"Machesney Park","group":"organization"},{"typeOf":"foaf:Organization","id":"Roscoe,_Illinois","label":"Roscoe, Illinois","title":"foaf:Organization Roscoe,_Illinois Roscoe, Illinois","name":"Roscoe","group":"organization"},{"typeOf":"foaf:Organization","id":"South_Beloit,_Illinois","label":"South Beloit, Illinois","title":"foaf:Organization South_Beloit,_Illinois South Beloit, Illinois","name":"South Beloit","group":"organization"},{"typeOf":"foaf:Organization","id":"Rockton,_Illinois","label":"Rockton, Illinois","title":"foaf:Organization Rockton,_Illinois Rockton, Illinois","name":"Rockton","group":"organization"},{"typeOf":"foaf:Organization","id":"Cherry_Valley,_Illinois","label":"Cherry Valley, Illinois","title":"foaf:Organization Cherry_Valley,_Illinois Cherry Valley, Illinois","name":"Cherry Valley","group":"organization"},{"typeOf":"foaf:Organization","id":"Winnebago,_Illinois","label":"Winnebago, Illinois","title":"foaf:Organization Winnebago,_Illinois Winnebago, Illinois","name":"Winnebago","group":"organization"},{"typeOf":"foaf:Organization","id":"Pecatonica,_Illinois","label":"Pecatonica, Illinois","title":"foaf:Organization Pecatonica,_Illinois Pecatonica, Illinois","name":"Pecatonica","group":"organization"},{"typeOf":"foaf:Organization","id":"Durand,_Illinois","label":"Durand, Illinois","title":"foaf:Organization Durand,_Illinois Durand, Illinois","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"New_Milford,_Illinois","label":"New Milford, Illinois","title":"foaf:Organization New_Milford,_Illinois New Milford, Illinois","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Winnebago_County_Illinois_Housing_Authority","label":"Winnebago County Housing Authority","title":"foaf:Organization Winnebago_County_Illinois_Housing_Authority Winnebago County Housing Authority","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Winnebago_County_Illinois_Health_Department","label":"Winnebago_County_Illinois_Health_Department","title":"foaf:Organization Winnebago_County_Illinois_Health_Department Winnebago_County_Illinois_Health_Department","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Chicago_Rockford_International_Airport","label":"Chicago Rockford International Airport","title":"foaf:Organization Chicago_Rockford_International_Airport Chicago Rockford International Airport","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Boone_County,_Illinois","label":"Boone County, Illinois","title":"foaf:Organization Boone_County,_Illinois Boone County, Illinois","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Belvidere,_Illinois","label":"Mayor of Belvidere, Illinois","title":"foaf:Organization Belvidere,_Illinois Mayor of Belvidere, Illinois","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"United_States_Senate","label":"United States Senate","title":"foaf:Organization United_States_Senate United States Senate","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"United_States_House_of_Representatives","label":"United States House of Representatives","title":"foaf:Organization United_States_House_of_Representatives United States House of Representatives","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Illinois_Senate","label":"Illinois_Senator","title":"foaf:Organization Illinois_Senate Illinois_Senator","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Illinois_House_of_Representatives","label":"Illinois House of Representatives","title":"foaf:Organization Illinois_House_of_Representatives Illinois House of Representatives","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Office_of_Congresswoman_Cheri_Bustos","label":"Office of Congresswoman Cheri Bustos","title":"foaf:Organization Office_of_Congresswoman_Cheri_Bustos Office of Congresswoman Cheri Bustos","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Office_of_Congressman_Kinzinger","label":"Office of Congressman Kinzinger","title":"foaf:Organization Office_of_Congressman_Kinzinger Office of Congressman Kinzinger","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Boone-Winnebago_Regional_Office_of_Education","label":"Boone-Winnebago_Regional_Office_of_Education","title":"foaf:Organization Boone-Winnebago_Regional_Office_of_Education Boone-Winnebago_Regional_Office_of_Education","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rockford_Public_School_District_205","label":"Rockford_Public_School_District_205","title":"foaf:Organization Rockford_Public_School_District_205 Rockford_Public_School_District_205","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Harlem_School_District_122","label":"Harlem_School_District_122","title":"foaf:Organization Harlem_School_District_122 Harlem_School_District_122","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rock_Valley_College","label":"Rock_Valley_College","title":"foaf:Organization Rock_Valley_College Rock_Valley_College","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rockford_University","label":"Rockford_University","title":"foaf:Organization Rockford_University Rockford_University","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"University_of_Illinois_College_of_Medicine","label":"University_of_Illinois_College_of_Medicine","title":"foaf:Organization University_of_Illinois_College_of_Medicine University_of_Illinois_College_of_Medicine","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Northern_Illinois_University","label":"Northern_Illinois_University","title":"foaf:Organization Northern_Illinois_University Northern_Illinois_University","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rockford_Education_Association","label":"Rockford_Education_Association","title":"foaf:Organization Rockford_Education_Association Rockford_Education_Association","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Rockford_Illinois_Public_Library","label":"Rockford_Illinois_Public_Library","title":"foaf:Organization Rockford_Illinois_Public_Library Rockford_Illinois_Public_Library","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","label":"Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","title":"foaf:Organization Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6 Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Professional_Fire_Fighters_of_Rockford,_IAFF_413","label":"Professional_Fire_Fighters_of_Rockford,_IAFF_413","title":"foaf:Organization Professional_Fire_Fighters_of_Rockford,_IAFF_413 Professional_Fire_Fighters_of_Rockford,_IAFF_413","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Northern_Illinois_Workforce_Alliance","label":"Northern_Illinois_Workforce_Alliance","title":"foaf:Organization Northern_Illinois_Workforce_Alliance Northern_Illinois_Workforce_Alliance","name":null,"group":"orggov"},{"typeOf":"foaf:Organization","id":"Byron,_Illinois","label":"Byron, Illinois (en)","title":"foaf:Organization Byron,_Illinois Byron, Illinois (en)","name":"Byron","group":"orggov"},{"typeOf":"foaf:Organization","id":"Woodward","label":"Woodward","title":"foaf:Organization Woodward Woodward","name":null,"group":"orgbiz"},{"typeOf":"foaf:Organization","id":"Ticomix","label":"","title":"foaf:Organization Ticomix ","name":null,"group":"orgbiz"},{"typeOf":"foaf:Organization","id":"Asterius_Media_LLC","label":"","title":"foaf:Organization Asterius_Media_LLC ","name":null,"group":"orgbiz"},{"typeOf":"foaf:Organization","id":"Forest_City_Gear","label":"","title":"foaf:Organization Forest_City_Gear ","name":null,"group":"orgbiz"},{"typeOf":"foaf:Organization","id":"Rockford_Bank_and_Trust","label":"","title":"foaf:Organization Rockford_Bank_and_Trust ","name":null,"group":"orgbiz"},{"typeOf":"foaf:Organization","id":"OSF_Saint_Anthony_Medical_Center","label":"","title":"foaf:Organization OSF_Saint_Anthony_Medical_Center ","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Swedish_American_Health_System","label":"","title":"foaf:Organization Swedish_American_Health_System ","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Heartland_Community_Church","label":"Heartland Community Church","title":"foaf:Organization Heartland_Community_Church Heartland Community Church","name":"Heartland Community Church","group":"orgfaith"},{"typeOf":"foaf:Organization","id":"Rockford_First","label":"Rockford First","title":"foaf:Organization Rockford_First Rockford First","name":"Rockford First","group":"orgfaith"},{"typeOf":"skos:ConceptScheme","id":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","label":"OUR SHARED VALUES","title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values OUR SHARED VALUES","group":"cubes"},{"typeOf":"skos:Concept","id":"value:01","label":"Inclusion","title":"skos:Concept value:01 Inclusion","group":"tag"},{"typeOf":"skos:Concept","id":"value:02","label":"Caring","title":"skos:Concept value:02 Caring","group":"tag"},{"typeOf":"skos:Concept","id":"value:03","label":"Respect","title":"skos:Concept value:03 Respect","group":"tag"},{"typeOf":"skos:Concept","id":"value:04","label":"Transparency","title":"skos:Concept value:04 Transparency","group":"tag"},{"typeOf":"skos:Concept","id":"value:05","label":"Trustworthiness","title":"skos:Concept value:05 Trustworthiness","group":"tag"},{"typeOf":"skos:Concept","id":"value:06","label":"Unity","title":"skos:Concept value:06 Unity","group":"tag"},{"typeOf":"skos:Concept","id":"value:07","label":"Ideation","title":"skos:Concept value:07 Ideation","group":"tag"},{"typeOf":"skos:Concept","id":"value:08","label":"Responsibility","title":"skos:Concept value:08 Responsibility","group":"tag"},{"typeOf":"skos:Concept","id":"value:09","label":"Interconnectedness","title":"skos:Concept value:09 Interconnectedness","group":"tag"},{"typeOf":"foaf:Organization","id":"Rockford_Chamber","label":"Rockford_Chamber","title":"foaf:Organization Rockford_Chamber Rockford_Chamber","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"United_Way","label":"","title":"foaf:Organization United_Way ","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Alignment_Rockford","label":"","title":"foaf:Organization Alignment_Rockford ","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"Transform_Rockford","label":"Transform Rockford","title":"foaf:Organization Transform_Rockford Transform Rockford","name":"Transform Rockford","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Steering_Committee","label":"Steering Committee","title":"foaf:Organization TR_Steering_Committee Steering Committee","name":"ransform Rockford Steering Committee","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Segment_Teams","label":"Segment Teams","title":"foaf:Organization TR_Segment_Teams Segment Teams","name":"Transform Rockford Segment Teams","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Funding_Our_Future_Team","label":"Funding Our Future Team","title":"foaf:Organization TR_Funding_Our_Future_Team Funding Our Future Team","name":"Transform Rockford Funding Our Future Segment Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Reframing_a_21st_Century_Community_Team","label":"Reframing a 21st Century Community Team","title":"foaf:Organization TR_Reframing_a_21st_Century_Community_Team Reframing a 21st Century Community Team","name":"Transform Rockford Reframing a 21st Century Community Segment Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Renewal_Team","label":"Renewal Team","title":"foaf:Organization TR_Renewal_Team Renewal Team","name":"Transform Rockford Renewal Segment Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Revitalization_Team","label":"Revitalization Team","title":"foaf:Organization TR_Revitalization_Team Revitalization Team","name":"Transform Rockford Revitalization Segment Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Sense_of_Place_Team","label":"Sense of Place Team","title":"foaf:Organization TR_Sense_of_Place_Team Sense of Place Team","name":"Transform Rockford Sense of Place Segment Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Spoke_Teams","label":"Spoke Teams","title":"foaf:Organization TR_Spoke_Teams Spoke Teams","name":"Transform Rockford Spoke Teams","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Support_Teams","label":"Support Teams","title":"foaf:Organization TR_Support_Teams Support Teams","name":"Transform Rockford Support Teams","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Technology_Team","label":"Technology Team","title":"foaf:Organization TR_Technology_Team Technology Team","name":"Transform Rockford Technology Support Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Process_Analysis_Team","label":"Process Analysis Team","title":"foaf:Organization TR_Process_Analysis_Team Process Analysis Team","name":"Transform Rockford Process Analysis Support Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Communications_Team","label":"Communications Team","title":"foaf:Organization TR_Communications_Team Communications Team","name":"Transform Rockford Communications Support Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Engagement_Team","label":"Engagement Team","title":"foaf:Organization TR_Engagement_Team Engagement Team","name":"Transform Rockford Engagement Support Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Leadership_Development_Team","label":"Leadership Development Team","title":"foaf:Organization TR_Leadership_Development_Team Leadership Development Team","name":"Transform Rockford Leadership Development Support Team","group":"orgnonprofit"},{"typeOf":"foaf:Organization","id":"TR_Staff_Team","label":"Transform Rockford Staff Team","title":"foaf:Organization TR_Staff_Team Transform Rockford Staff Team","name":"Staff Team","group":"orgnonprofit"},{"typeOf":"skos:ConceptScheme","id":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments undefined","group":"cubes"},{"typeOf":"skos:Concept","id":"segment:01","label":"Funding Our Future","title":"skos:Concept segment:01 Funding Our Future","group":"tag"},{"typeOf":"skos:Concept","id":"segment:02","label":"Reframing a 21st Century Community","title":"skos:Concept segment:02 Reframing a 21st Century Community","group":"tag"},{"typeOf":"skos:Concept","id":"segment:03","label":"Renewal","title":"skos:Concept segment:03 Renewal","group":"tag"},{"typeOf":"skos:Concept","id":"segment:04","label":"Revitalization","title":"skos:Concept segment:04 Revitalization","group":"tag"},{"typeOf":"skos:Concept","id":"segment:05","label":"Sense of Place","title":"skos:Concept segment:05 Sense of Place","group":"tag"},{"typeOf":"skos:ConceptScheme","id":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests undefined","group":"cubes"},{"typeOf":"foaf:Person","id":"Chris_Black","label":"Chris Black","title":"foaf:Person Chris_Black undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Todd_Cagnoni","label":"Todd Cagnoni","title":"foaf:Person Todd_Cagnoni undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Sherry_Pitney","label":"Sherry Pitney","title":"foaf:Person Sherry_Pitney undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dan_Parod","label":"Dan Parod","title":"foaf:Person Dan_Parod undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Phil_Eaton","label":"Phil Eaton","title":"foaf:Person Phil_Eaton undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Joe_Sosnowski","label":"Joe Sosnowski","title":"foaf:Person Joe_Sosnowski undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Paul_Logli","label":"Paul Logli","title":"foaf:Person Paul_Logli undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dave_Peterson","label":"Dave Peterson","title":"foaf:Person Dave_Peterson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Judy_Barnard","label":"Judy Barnard","title":"foaf:Person Judy_Barnard undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Steve_Chapman","label":"Steve Chapman","title":"foaf:Person Steve_Chapman undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Darcy_Bucholz","label":"Darcy Bucholz","title":"foaf:Person Darcy_Bucholz undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Tom_McNamara","label":"Tom McNamara","title":"foaf:Person Tom_McNamara undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Joe_Chiarelli","label":"Joe Chiarelli","title":"foaf:Person Joe_Chiarelli undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Bridget_French","label":"Bridget French","title":"foaf:Person Bridget_French undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Beth_Howard","label":"Beth Howard","title":"foaf:Person Beth_Howard undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Steve_Nailor","label":"Steve Nailor","title":"foaf:Person Steve_Nailor undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Ron_Clewer","label":"Ron Clewer","title":"foaf:Person Ron_Clewer undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Meggi_Tibbetts","label":"Meggi Tibbetts","title":"foaf:Person Meggi_Tibbetts undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"John_Lucero","label":"John Lucero","title":"foaf:Person John_Lucero undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Cyndie_Hall","label":"Cyndie Hall","title":"foaf:Person Cyndie_Hall undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Thomas_Bona","label":"Thomas Bona","title":"foaf:Person Thomas_Bona undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Nick_Morgan","label":"Nick Morgan","title":"foaf:Person Nick_Morgan undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Alberto_Altamore","label":"Alberto Altamore","title":"foaf:Person Alberto_Altamore undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Michael_Williams","label":"Michael Williams","title":"foaf:Person Michael_Williams undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"John_Walsh","label":"John Walsh","title":"foaf:Person John_Walsh undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Matthew_J._Simpson","label":"Matthew J. Simpson","title":"foaf:Person Matthew_J._Simpson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"June_Hazzard","label":"June Hazzard","title":"foaf:Person June_Hazzard undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dan_Bowman","label":"Dan Bowman","title":"foaf:Person Dan_Bowman undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mike_Mastroianni","label":"Mike Mastroianni","title":"foaf:Person Mike_Mastroianni undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Bob_Campbell","label":"Bob Campbell","title":"foaf:Person Bob_Campbell undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Tim_Ancona","label":"Tim Ancona","title":"foaf:Person Tim_Ancona undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Wendy_Young","label":"Wendy Young","title":"foaf:Person Wendy_Young undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Tom_Budd","label":"Tom Budd","title":"foaf:Person Tom_Budd undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"David_Young","label":"David Young","title":"foaf:Person David_Young undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Karen_Brown","label":"Karen Brown","title":"foaf:Person Karen_Brown undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Paula_Carynski","label":"Paula Carynski","title":"foaf:Person Paula_Carynski undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dawna_Menke","label":"Dawna Menke","title":"foaf:Person Dawna_Menke undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jen_Hall","label":"Jen Hall","title":"foaf:Person Jen_Hall undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mike_Baker","label":"Mike Baker","title":"foaf:Person Mike_Baker undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Terrance_Hall","label":"Terrance Hall","title":"foaf:Person Terrance_Hall undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dick_Van_Evera","label":"Dick Van Evera","title":"foaf:Person Dick_Van_Evera undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Lynnette_McRae","label":"Lynnette McRae","title":"foaf:Person Lynnette_McRae undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"L.C._Wilson","label":"L.C. Wilson","title":"foaf:Person L.C._Wilson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Einar_Forsman","label":"Einar Forsman","title":"foaf:Person Einar_Forsman undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Darcy_Busholz","label":"Darcy Busholz","title":"foaf:Person Darcy_Busholz undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mark_Williams","label":"Mark Williams","title":"foaf:Person Mark_Williams undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Bob_Wahlberg","label":"Bob Wahlberg","title":"foaf:Person Bob_Wahlberg undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Steve_Stadelman","label":"Steve Stadelman","title":"foaf:Person Steve_Stadelman undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"John_Duncan","label":"John Duncan","title":"foaf:Person John_Duncan undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Tom_Austin","label":"Tom Austin","title":"foaf:Person Tom_Austin undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Paula_Capriola","label":"Paula Capriola","title":"foaf:Person Paula_Capriola undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Michael_Baker","label":"Michael Baker","title":"foaf:Person Michael_Baker undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Matthew_Johnson","label":"Matthew Johnson","title":"foaf:Person Matthew_Johnson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Luz_Ramirez","label":"Luz Ramirez","title":"foaf:Person Luz_Ramirez undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Cindy_Hall","label":"Cindy Hall","title":"foaf:Person Cindy_Hall undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Matthew_Simpson","label":"Matthew Simpson","title":"foaf:Person Matthew_Simpson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mike_Mastrioanni","label":"Mike Mastrioanni","title":"foaf:Person Mike_Mastrioanni undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jim_Dolan","label":"Jim Dolan","title":"foaf:Person Jim_Dolan undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jamie_Walter","label":"Jamie Walter","title":"foaf:Person Jamie_Walter undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jeff_Polsean","label":"Jeff Polsean","title":"foaf:Person Jeff_Polsean undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mark_Peterson","label":"Mark Peterson","title":"foaf:Person Mark_Peterson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Wendy_Young_(FCG)","label":"Wendy Young (FCG)","title":"foaf:Person Wendy_Young_(FCG) undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Mike_Williams","label":"Mike Williams","title":"foaf:Person Mike_Williams undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Larry_Morrissey","label":"Larry Morrissey","title":"foaf:Person Larry_Morrissey Morrissey, Larry","name":"Morrissey, Larry","group":"person"},{"typeOf":"foaf:Person","id":"Darryl_Lindberg_(mayor)","label":"Darryl Lindberg","title":"foaf:Person Darryl_Lindberg_(mayor) Lindberg, Darryl","name":"Lindberg, Darryl","group":"person"},{"typeOf":"foaf:Person","id":"Daniel_Barber_(village_president)","label":"Daniel Barber","title":"foaf:Person Daniel_Barber_(village_president) Barber, Daniel","name":"Barber, Daniel","group":"person"},{"typeOf":"foaf:Person","id":"Person_Mike_Schablaske","label":"Mike Schablaske","title":"foaf:Person Person_Mike_Schablaske Schablaske, Mike","name":"Schablaske, Mike","group":"person"},{"typeOf":"foaf:Person","id":"Person_Jeffrey_A_Stewart","label":"Jeffrey Stewart","title":"foaf:Person Person_Jeffrey_A_Stewart Jeffrey Stewart","name":"Jeffrey Stewart","group":"person"},{"typeOf":"foaf:Person","id":"Jim_Ryan","label":"Jim Ryan","title":"foaf:Person Jim_Ryan undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Darryl_Lindberg","label":"Darryl Lindberg","title":"foaf:Person Darryl_Lindberg undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dan_Jacobson","label":"Dan Jacobson","title":"foaf:Person Dan_Jacobson undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jerry_Bolin","label":"Jerry Bolin","title":"foaf:Person Jerry_Bolin undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Tim_Savage","label":"Tim Savage","title":"foaf:Person Tim_Savage undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Lucia_Matlock","label":"Lucia Matlock","title":"foaf:Person Lucia_Matlock undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dave_Krienke","label":"Dave Krienke","title":"foaf:Person Dave_Krienke undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Patrick_DeGrave","label":"Patrick DeGrave","title":"foaf:Person Patrick_DeGrave undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Ted_Rehl","label":"Ted Rehl","title":"foaf:Person Ted_Rehl undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Dale_Adams","label":"Dale Adams","title":"foaf:Person Dale_Adams undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Jim_E._Claeyssen","label":"Jim E. Claeyssen","title":"foaf:Person Jim_E._Claeyssen undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Frank_Eubank","label":"Frank Eubank","title":"foaf:Person Frank_Eubank undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Daniel_Barber","label":"Daniel Barber","title":"foaf:Person Daniel_Barber undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Gary_Haughton","label":"Gary Haughton","title":"foaf:Person Gary_Haughton undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"Timothy_Ownes","label":"Timothy Ownes","title":"foaf:Person Timothy_Ownes undefined","name":null,"group":"person"},{"typeOf":"skos:ConceptScheme","id":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors undefined","group":"cubes"},{"typeOf":"skos:Concept","id":"_sector_10","label":"Business","title":"skos:Concept _sector_10 Business","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_11","label":"Chambers of Commerce","title":"skos:Concept _sector_11 Chambers of Commerce","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_12","label":"Largest Employers","title":"skos:Concept _sector_12 Largest Employers","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_13","label":"Professional & Industry Groups","title":"skos:Concept _sector_13 Professional & Industry Groups","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_14","label":"Rockford Area Economic Development Committee","title":"skos:Concept _sector_14 Rockford Area Economic Development Committee","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_20","label":"Government & Agencies","title":"skos:Concept _sector_20 Government & Agencies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_201","label":"Elected Officials","title":"skos:Concept _sector_201 Elected Officials","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_202","label":"Counties & Municipalties","title":"skos:Concept _sector_202 Counties & Municipalties","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_203","label":"Councils & Boards","title":"skos:Concept _sector_203 Councils & Boards","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_204","label":"Senior Administrators","title":"skos:Concept _sector_204 Senior Administrators","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_205","label":"Public Education","title":"skos:Concept _sector_205 Public Education","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_206","label":"Administrative Bodies","title":"skos:Concept _sector_206 Administrative Bodies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_261","label":"Public Safety","title":"skos:Concept _sector_261 Public Safety","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_262","label":"Human Services","title":"skos:Concept _sector_262 Human Services","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_263","label":"Health","title":"skos:Concept _sector_263 Health","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_264","label":"Development","title":"skos:Concept _sector_264 Development","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_30","label":"Non Profit","title":"skos:Concept _sector_30 Non Profit","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_40","label":"Faith","title":"skos:Concept _sector_40 Faith","group":"tag"},{"typeOf":"dbo:Place","id":"Illinois","label":"Illinois","title":"dbo:Place Illinois Illinois","name":null,"group":"globe"},{"typeOf":"skos:ConceptScheme","id":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills undefined","group":"cubes"},{"typeOf":"skos:Concept","id":"skill:010000","label":"IT Management","title":"skos:Concept skill:010000 IT Management","group":"tag"},{"typeOf":"skos:Concept","id":"skill:020000","label":"Project Management","title":"skos:Concept skill:020000 Project Management","group":"tag"},{"typeOf":"skos:Concept","id":"skill:030000","label":"Software Development","title":"skos:Concept skill:030000 Software Development","group":"tag"},{"typeOf":"skos:Concept","id":"skill:040000","label":"Cloud Computing","title":"skos:Concept skill:040000 Cloud Computing","group":"tag"},{"typeOf":"skos:Concept","id":"skill:050000","label":"Publishing and Printing","title":"skos:Concept skill:050000 Publishing and Printing","group":"tag"},{"typeOf":"org:Role","id":"Mayor_of_Rockford,_Illinois","label":"Mayor of Rockford, Illinois","title":"org:Role Mayor_of_Rockford,_Illinois Mayor of Rockford, Illinois","name":"Mayor of Rockford","group":"role"},{"typeOf":"org:Role","id":"CityAdministratorofRockford, Illinois","label":"City Administrator of Rockford, Illinois","title":"org:Role CityAdministratorofRockford, Illinois City Administrator of Rockford, Illinois","name":"Rockford City Administrator","group":"role"},{"typeOf":"org:Role","id":"Rockford_City_Council_Alderman","label":"Rockford City Council Alderman","title":"org:Role Rockford_City_Council_Alderman Rockford City Council Alderman","name":"Rockford City Council Alderman","group":"role"},{"typeOf":"org:Role","id":"Board_Chairman_of_Winnebago_County,_Illinois","label":"Winnebago County Board Chairman","title":"org:Role Board_Chairman_of_Winnebago_County,_Illinois Winnebago County Board Chairman","name":"Winnebago County Board Chairman","group":"role"},{"typeOf":"org:Role","id":"Board_Chairman_of_Boone_County,_Illinois","label":"Boone County Board Chairman","title":"org:Role Board_Chairman_of_Boone_County,_Illinois Boone County Board Chairman","name":"Boone County:  Chairman","group":"role"},{"typeOf":"org:Role","id":"Mayor_of_Belvidere,_Illinois","label":"Mayor_of_Belvidere,_Illinois","title":"org:Role Mayor_of_Belvidere,_Illinois Mayor_of_Belvidere,_Illinois","name":"Mayor_of_Belvidere","group":"role"},{"typeOf":"org:Role","id":"Mayor_of_Loves_Park,_Illinois","label":"Mayor_of_Loves_Park,_Illinois","title":"org:Role Mayor_of_Loves_Park,_Illinois Mayor_of_Loves_Park,_Illinois","name":"Mayor_of_Loves_Park","group":"role"},{"typeOf":"org:Role","id":"ExecutiveDirectorof_Rockford_Illinois_Park_District","label":"Executive Director of Rockford Park District","title":"org:Role ExecutiveDirectorof_Rockford_Illinois_Park_District Executive Director of Rockford Park District","name":"Executive Director","group":"role"},{"typeOf":"org:Role","id":"ExecutiveDirectorof_Rockford_Illinois_Housing_Authority","label":"Executive Director of Rockford Housing Authority","title":"org:Role ExecutiveDirectorof_Rockford_Illinois_Housing_Authority Executive Director of Rockford Housing Authority","name":"Executive Director","group":"role"},{"typeOf":"org:Role","id":"ExecutiveDirectorof_Chicago_Rockford_International_Airport","label":"Executive Director of Chicago Rockford International Airport","title":"org:Role ExecutiveDirectorof_Chicago_Rockford_International_Airport Executive Director of Chicago Rockford International Airport","name":"Executive Director","group":"role"},{"typeOf":"org:Role","id":"ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority","label":"Executive Director of Winnebago County Housing Authority","title":"org:Role ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority Executive Director of Winnebago County Housing Authority","name":"Executive Director","group":"role"},{"typeOf":"org:Role","id":"United_States_Senator","label":"United States Senator","title":"org:Role United_States_Senator United States Senator","name":"US Senator","group":"role"},{"typeOf":"org:Role","id":"United_States_Senator_Staff","label":"United States Senator Staff","title":"org:Role United_States_Senator_Staff United States Senator Staff","name":"US Senator Aides","group":"role"},{"typeOf":"org:Role","id":"United_States_Congressman","label":"United_States_Congressman","title":"org:Role United_States_Congressman United_States_Congressman","name":"US Representative","group":"role"},{"typeOf":"org:Role","id":"United_States_Congressional_Staff","label":"United_States_Congressional_Staff","title":"org:Role United_States_Congressional_Staff United_States_Congressional_Staff","name":"US Representative Aides","group":"role"},{"typeOf":"org:Role","id":"Illinois_Senator","label":"Illinois_Senator","title":"org:Role Illinois_Senator Illinois_Senator","name":"State Senator","group":"role"},{"typeOf":"org:Role","id":"Illinois_Representative","label":"Illinois_Representative","title":"org:Role Illinois_Representative Illinois_Representative","name":"State Representative","group":"role"},{"typeOf":"org:Role","id":"Transform_Rockford_Executive_Director","label":"Executive Director","title":"org:Role Transform_Rockford_Executive_Director Executive Director","name":"Transform Rockford Executive Director","group":"role"},{"typeOf":"org:Role","id":"Transform_Rockford_Program_Director","label":"Program Director","title":"org:Role Transform_Rockford_Program_Director Program Director","name":"Transform Rockford Program Director","group":"role"},{"typeOf":"org:Role","id":"Transform_Rockford_Project_Director","label":"Project Director","title":"org:Role Transform_Rockford_Project_Director Project Director","name":"Transform Rockford Project Director","group":"role"},{"typeOf":"org:Role","id":"Transform_Rockford_Communication_Manager","label":"Communication Manager","title":"org:Role Transform_Rockford_Communication_Manager Communication Manager","name":"Transform Rockford Communication Manager","group":"role"},{"typeOf":"org:Role","id":"Transform_Rockford_Office_Manager","label":"Office Manager","title":"org:Role Transform_Rockford_Office_Manager Office Manager","name":"Transform Rockford Office Manager","group":"role"}]
-    //var edges = [{"from":"Bill_Gorski","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Bill_Gorski","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Bobbie_Holzwarth","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Bobbie_Holzwarth","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Dave_Rydell","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Dave_Rydell","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Dave_Schertz","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Dave_Schertz","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Jim_Keeling","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Jim_Keeling","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:John_Holmstrom","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:John_Holmstrom","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Ken_Board","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Ken_Board","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:LoRayne_Logan","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:LoRayne_Logan","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Paul_Logli","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Paul_Logli","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Rob_Funderburg","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Rob_Funderburg","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Tom_Gendron","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Tom_Gendron","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Peter_Provenzano","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Peter_Provenzano","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < foaf:member >"},{"from":"Person:Peter_Provenzano","to":"Mayor_of_Rockford,_Illinois","arrows":{"to":"true"},"label":" < ambassadorOf >"},{"from":"Winnebago_County,_Illinois","to":"Board_Chairman_of_Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Winnebago_County,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Winnebago_County,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford,_Illinois","to":"Winnebago County, Illinois","arrows":{"to":"true"},"label":" < region >"},{"from":"Rockford,_Illinois","to":"Mayor_of_Rockford,_Illinois","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford,_Illinois","to":"Larry_Morrissey","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Rockford,_Illinois","to":"Jim_Ryan","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Rockford,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_City_Council","to":"Rockford_City_Council_Alderman","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_City_Council","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_City_Council","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Illinois_Park_District","to":"ExecutiveDirectorof_Rockford_Illinois_Park_District","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_Illinois_Park_District","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_Illinois_Park_District","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Illinois_Housing_Authority","to":"ExecutiveDirectorof_Rockford_Illinois_Housing_Authority","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_Illinois_Housing_Authority","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_Illinois_Housing_Authority","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/GeographicalArea108574314"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Location100027167"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/PhysicalEntity100001930"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Tract108673395"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/ontology/Location"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://www.wikidata.org/entity/Q486972"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/PopulatedPlacesInBooneCounty,Illinois"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Object100002684"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/City108524735"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/PopulatedPlacesInWinnebagoCounty,Illinois"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Region108630985"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/ontology/Place"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/ontology/PopulatedPlace"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/YagoGeoEntity"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/YagoLegalActorGeo"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Municipality108626283"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/UrbanArea108675967"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/CitiesInIllinois"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/ontology/Settlement"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/AdministrativeDistrict108491826"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/Site108651247"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://www.w3.org/2002/07/owl#Thing"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/class/yago/District108552138"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"uri","value":"http://schema.org/Place"},"arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":"815"},"arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"Loves_Park,_Illinois","to":"http://rdf.freebase.com/ns/m.0s34m","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://nl.dbpedia.org/resource/Loves_Park","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://wikidata.dbpedia.org/resource/Q578137","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://es.dbpedia.org/resource/Loves_Park","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://sws.geonames.org/4900579/","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://de.dbpedia.org/resource/Loves_Park","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://pl.dbpedia.org/resource/Loves_Park_(Illinois)","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://yago-knowledge.org/resource/Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://pt.dbpedia.org/resource/Loves_Park","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://www.wikidata.org/entity/Q578137","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Loves_Park,_Illinois","to":"http://dbpedia.org/resource/Category:Cities_in_Illinois","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Loves_Park,_Illinois","to":"http://dbpedia.org/resource/Category:Rockford_metropolitan_area","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Loves_Park,_Illinois","to":"http://dbpedia.org/resource/Category:Cities_in_Boone_County,_Illinois","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Loves_Park,_Illinois","to":"http://dbpedia.org/resource/Category:Cities_in_Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":110822,"datatype":"http://www.w3.org/2001/XMLSchema#integer"},"arrows":{"to":"true"},"label":" < dbo:wikiPageID >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":221.8944,"datatype":"http://www.w3.org/2001/XMLSchema#double"},"arrows":{"to":"true"},"label":" < dbo:elevation >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":"The City with a Heart"},"arrows":{"to":"true"},"label":" < dbo:motto >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":"23,996"},"arrows":{"to":"true"},"label":" < dbo:populationTotal >"},{"from":"Loves_Park,_Illinois","to":"61115","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Loves_Park,_Illinois","to":"61131","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Loves_Park,_Illinois","to":"61132","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Loves_Park,_Illinois","to":"61111","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Loves_Park,_Illinois","to":"61130","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Loves_Park,_Illinois","to":{"type":"literal","value":"Darryl Lindberg"},"arrows":{"to":"true"},"label":" < dbp:leader >"},{"from":"Loves_Park,_Illinois","to":"Darryl_Lindberg_(mayor)","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Loves_Park,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Loves_Park,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/class/yago/PhysicalEntity100001930","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://www.wikidata.org/entity/Q486972","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/class/yago/VillagesInIllinois","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Machesney_Park,_Illinois","to":"815","arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"Machesney_Park,_Illinois","to":"http://pl.dbpedia.org/resource/Machesney_Park_(Illinois)","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Machesney_Park,_Illinois","to":"http://sws.geonames.org/4900801/","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Machesney_Park,_Illinois","to":"http://wikidata.dbpedia.org/resource/Q1013494","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Machesney_Park,_Illinois","to":"http://linkedgeodata.org/triplify/node153341239","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Machesney_Park,_Illinois","to":"http://www.wikidata.org/entity/Q1013494","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Machesney_Park,_Illinois","to":"61103","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Machesney_Park,_Illinois","to":"61111","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Machesney_Park,_Illinois","to":"61115","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Machesney_Park,_Illinois","to":"Jerry_D._Bolin","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Machesney_Park,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Machesney_Park,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Roscoe,_Illinois","to":"http://dbpedia.org/class/yago/VillagesInIllinois","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Roscoe,_Illinois","to":"815","arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"Roscoe,_Illinois","to":"http://pl.dbpedia.org/resource/Roscoe,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Roscoe,_Illinois","to":"David_Krienke","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Roscoe,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Roscoe,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"South_Beloit,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"South_Beloit,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"South_Beloit,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"South_Beloit,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"South_Beloit,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"South_Beloit,_Illinois","to":"http://pl.dbpedia.org/resource/South_Beloit,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"South_Beloit,_Illinois","to":"815","arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"South_Beloit,_Illinois","to":"Teg_Rehl","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"South_Beloit,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"South_Beloit,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockton,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockton,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockton,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockton,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockton,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockton,_Illinois","to":"815","arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"Rockton,_Illinois","to":"http://pl.dbpedia.org/resource/Rockton,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Rockton,_Illinois","to":"Dale_Adams","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Rockton,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockton,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Cherry_Valley,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Cherry_Valley,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Cherry_Valley,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Cherry_Valley,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Cherry_Valley,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Cherry_Valley,_Illinois","to":"http://pl.dbpedia.org/resource/Cherry_Valley,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Cherry_Valley,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Cherry_Valley,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Winnebago,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Winnebago,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Winnebago,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Winnebago,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Winnebago,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Winnebago,_Illinois","to":"http://pl.dbpedia.org/resource/Winnebago,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Winnebago,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Winnebago,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Pecatonica,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Pecatonica,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Pecatonica,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Pecatonica,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Pecatonica,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Pecatonica,_Illinois","to":"http://pl.dbpedia.org/resource/Pecatonica,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Pecatonica,_Illinois","to":"Daniel_Barber_(village_president)","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Pecatonica,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Pecatonica,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Durand,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Durand,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Durand,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Durand,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Durand,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Durand,_Illinois","to":"http://pl.dbpedia.org/resource/Durand,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Durand,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"New_Milford,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"New_Milford,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"New_Milford,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"New_Milford,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"New_Milford,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"New_Milford,_Illinois","to":"http://pl.dbpedia.org/resource/New_Milford,_Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"New_Milford,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"New_Milford,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Winnebago_County_Illinois_Housing_Authority","to":"ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Winnebago_County_Illinois_Housing_Authority","to":"Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Winnebago_County_Illinois_Housing_Authority","to":"Boone_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Winnebago_County_Illinois_Housing_Authority","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Winnebago_County_Illinois_Health_Department","to":"ExecutiveDirectorof_Winnebago_County_Illinois_Health_Department","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Winnebago_County_Illinois_Health_Department","to":"Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Winnebago_County_Illinois_Health_Department","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Chicago_Rockford_International_Airport","to":"ExecutiveDirectorof_Chicago_Rockford_International_Airport","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Chicago_Rockford_International_Airport","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Chicago_Rockford_International_Airport","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Boone_County,_Illinois","to":"Board_Chairman_of_Boone_County,_Illinois","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Boone_County,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Boone_County,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Belvidere,_Illinois","to":"Boone_County,_Illinois","arrows":{"to":"true"},"label":" < dbo:region >"},{"from":"Belvidere,_Illinois","to":"Mayor_of_Belvidere,_Illinois","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Belvidere,_Illinois","to":"Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Belvidere,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Belvidere,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"United_States_Senate","to":"United_States_Senator","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"United_States_Senate","to":"United_States_Senator_Staff","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"United_States_Senate","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"United_States_House_of_Representatives","to":"United_States_Congressman","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"United_States_House_of_Representatives","to":"United_States_Congressional_Staff","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"United_States_House_of_Representatives","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Illinois_Senate","to":"Illinois_Senator","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Illinois_Senate","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Illinois_House_of_Representatives","to":"Illinois_Representative","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Illinois_House_of_Representatives","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Office_of_Congresswoman_Cheri_Bustos","to":"United_States_Congressman","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Office_of_Congresswoman_Cheri_Bustos","to":"United_States_House_of_Representatives","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Office_of_Congresswoman_Cheri_Bustos","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Office_of_Congressman_Kinzinger","to":"United_States_Congressman","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Office_of_Congressman_Kinzinger","to":"United_States_House_of_Representatives","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Office_of_Congressman_Kinzinger","to":"_sector_201","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Boone-Winnebago_Regional_Office_of_Education","to":"Boone-Winnebago_Regional_Superintendent","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Boone-Winnebago_Regional_Office_of_Education","to":"Winnebago_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Boone-Winnebago_Regional_Office_of_Education","to":"Boone_County,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Boone-Winnebago_Regional_Office_of_Education","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Public_School_District_205","to":"Superintendent_Rockford_Public_School_District_205","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_Public_School_District_205","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_Public_School_District_205","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Harlem_School_District_122","to":"Superintendent_Harlem_School_District_122","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Harlem_School_District_122","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Harlem_School_District_122","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rock_Valley_College","to":"Presidentof _Rock_Valley_College","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rock_Valley_College","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rock_Valley_College","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_University","to":"Presidentof_Rockford_University","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_University","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_University","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"University_of_Illinois_College_of_Medicine","to":"Dean_University_of_Illinois_College_of_Medicine","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"University_of_Illinois_College_of_Medicine","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"University_of_Illinois_College_of_Medicine","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Northern_Illinois_University","to":"Presidentof_Northern_Illinois_University","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Northern_Illinois_University","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Education_Association","to":"Presidentof_Rockford_Education_Association","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_Education_Association","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_Education_Association","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Illinois_Public_Library","to":"ExecutiveDirectorof_Rockford_Illinois_Public_Library","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Rockford_Illinois_Public_Library","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","to":"Presidentof_Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","to":"VicePresidentof_Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Policemen's_Benevolent_Protective_Association_of_Illinois_Unit_6","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Professional_Fire_Fighters_of_Rockford,_IAFF_413","to":"Presidentof_Professional_Fire_Fighters_of_Rockford,_IAFF_413","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Professional_Fire_Fighters_of_Rockford,_IAFF_413","to":"VicePresidentof_Professional_Fire_Fighters_of_Rockford,_IAFF_413","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Professional_Fire_Fighters_of_Rockford,_IAFF_413","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Northern_Illinois_Workforce_Alliance","to":"ExecutiveDirectorof_Northern_Illinois_Workforce_Alliance","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"Northern_Illinois_Workforce_Alliance","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Byron,_Illinois","to":"http://dbpedia.org/ontology/Place","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://dbpedia.org/ontology/PopulatedPlace","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://dbpedia.org/ontology/Settlement","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://dbpedia.org/class/yago/YagoLegalActorGeo","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"http://dbpedia.org/ontology/Location","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Byron,_Illinois","to":"815","arrows":{"to":"true"},"label":" < dbo:areaCode >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://wikidata.dbpedia.org/resource/Q575646"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://www.wikidata.org/entity/Q575646"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Byron_(Illinois)"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://sws.geonames.org/4886188/"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://rdf.freebase.com/ns/m.0sf1_"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://yago-knowledge.org/resource/Byron,_Illinois"},"arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Category:Cities_in_Ogle_County,_Illinois"},"arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Category:Rockford_metropolitan_area"},"arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Category:Populated_places_established_in_1835"},"arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Category:Byron,_Illinois"},"arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Category:Cities_in_Illinois"},"arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://en.wikipedia.org/wiki/Byron,_Illinois"},"arrows":{"to":"true"},"label":" < foaf:isPrimaryTopicOf >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":42.12722396850586,"datatype":"http://www.w3.org/2001/XMLSchema#float"},"arrows":{"to":"true"},"label":" < geo:lat >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":-89.26083374023438,"datatype":"http://www.w3.org/2001/XMLSchema#float"},"arrows":{"to":"true"},"label":" < geo:long >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":"POINT(-89.260833740234 42.127223968506)","datatype":"http://www.openlinksw.com/schemas/virtrdf#Geometry"},"arrows":{"to":"true"},"label":" < geo:geometry >"},{"from":"Byron,_Illinois","to":"61010","arrows":{"to":"true"},"label":" < dbo:postalCode >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Byron_Township,_Ogle_County,_Illinois"},"arrows":{"to":"true"},"label":" < dbp:district >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":"Township","lang":"en"},"arrows":{"to":"true"},"label":" < dbp:districtType >"},{"from":"Byron,_Illinois","to":{"type":"uri","value":"http://dbpedia.org/resource/Ogle_County,_Illinois"},"arrows":{"to":"true"},"label":" < dbp:region >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":"Ogle County, Illinois","lang":"en"},"arrows":{"to":"true"},"label":" < dbp:region >"},{"from":"Byron,_Illinois","to":{"type":"literal","value":"County","lang":"en"},"arrows":{"to":"true"},"label":" < dbp:regionType >"},{"from":"Byron,_Illinois","to":"Christopher_Millard","arrows":{"to":"true"},"label":" < hasLeader >"},{"from":"Byron,_Illinois","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Byron,_Illinois","to":"_sector_202","arrows":{"to":"true"},"label":" < has_container >"},{"from":"","to":"Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Woodward","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"Woodward","to":"_sector_12","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Ticomix","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"Asterius_Media_LLC","to":"Byron,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"Rockford_Bank_and_Trust","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"OSF_Saint_Anthony_Medical_Center","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"OSF_Saint_Anthony_Medical_Center","to":"_sector_263","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Swedish_American_Health_System","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"Swedish_American_Health_System","to":"_sector_263","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Heartland_Community_Church","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Heartland_Community_Church","to":"_sector_40","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Heartland_Community_Church","to":"dbo:ReligiousOrganisation","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_First","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Rockford_First","to":"_sector_40","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_First","to":"dbo:ReligiousOrganisation","arrows":{"to":"true"},"label":" < has_container >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:01","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:02","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:03","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:04","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:05","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:06","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:07","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:08","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Values","to":"value:09","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"value:01","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:01","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:02","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:02","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:03","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:03","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:04","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:04","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:05","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:05","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:06","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:06","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:07","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:07","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:08","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:08","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:09","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"value:09","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford_Chamber","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Chamber","to":"_sector_11","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Rockford_Chamber","to":"_sector_30","arrows":{"to":"true"},"label":" < has_container >"},{"from":"United_Way","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Alignment_Rockford","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Alignment_Rockford","to":"_sector_205","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Transform_Rockford","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < foaf:based_near >"},{"from":"Transform_Rockford","to":"_sector_30","arrows":{"to":"true"},"label":" < has_container >"},{"from":"Transform_Rockford","to":"dbo:Non-ProfitOrganisation","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Steering_Committee","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Segment_Teams","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Funding_Our_Future_Team","to":"TR_Segment_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Funding_Our_Future_Team","to":"segment:01","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Reframing_a_21st_Century_Community_Team","to":"TR_Segment_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Reframing_a_21st_Century_Community_Team","to":"segment:02","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Renewal_Team","to":"TR_Segment_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Renewal_Team","to":"segment:03","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Revitalization_Team","to":"TR_Segment_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Revitalization_Team","to":"segment:04","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Sense_of_Place_Team","to":"TR_Segment_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Sense_of_Place_Team","to":"segment:05","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Spoke_Teams","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Support_Teams","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Technology_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Process_Analysis_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Communications_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Engagement_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Leadership_Development_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"TR_Staff_Team","to":"Transform_Rockford_Executive_Director","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"TR_Staff_Team","to":"Transform_Rockford_Program_Director","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"TR_Staff_Team","to":"Transform_Rockford_Project_Director","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"TR_Staff_Team","to":"Transform_Rockford_Communication_Manager","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"TR_Staff_Team","to":"Transform_Rockford_Office_Manager","arrows":{"to":"true"},"label":" < org:hasPost >"},{"from":"TR_Staff_Team","to":"TR_Support_Teams","arrows":{"to":"true"},"label":" < has_container >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","to":"segment:01","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","to":"segment:02","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","to":"segment:03","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","to":"segment:04","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Segments","to":"segment:05","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"segment:01","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:01","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:01","to":"segment:0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"segment:02","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:02","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:02","to":"segment:0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"segment:03","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:03","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:03","to":"segment:0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"segment:04","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:04","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:04","to":"segment:0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"segment:05","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:05","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"segment:05","to":"segment:0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests","to":"interest:010000","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests","to":"interest:020000","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Interests","to":"interest:030000","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"Chris_Black","to":"City_of_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Todd_Cagnoni","to":"City_of_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Sherry_Pitney","to":"Rockford_Rescue_Mission","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dan_Parod","to":"Rockford_Health_System","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Phil_Eaton","to":"Rosecrance","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Joe_Sosnowski","to":"State_Representative","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Paul_Logli","to":"United_Way","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dave_Peterson","to":"Winnebago_County,Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Judy_Barnard","to":"Winnebago_County,Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Steve_Chapman","to":"Winnebago_County,Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Darcy_Bucholz","to":"Workforce_Development_Board","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Tom_McNamara","to":"City_of_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Joe_Chiarelli","to":"City_of_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Bridget_French","to":"Alignment_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Beth_Howard","to":"Arts","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Steve_Nailor","to":"Better_Roads_Association","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Ron_Clewer","to":"Rockford_Housing_Authority","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Meggi_Tibbetts","to":"Rockford_Housing_Authority","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"John_Lucero","to":"City_and_County_of_Denver","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Cyndie_Hall","to":"Neighborhood_Network","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Thomas_Bona","to":"Rockford_Region_Economic_Development_District","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Nick_Morgan","to":"Office_of_Congresswoman_Cheri_Bustos","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Alberto_Altamore","to":"North_End_Commons","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Michael_Williams","to":"Rock_River_Training_Corporation","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"John_Walsh","to":"Rep_Kinzinger","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Matthew_J._Simpson","to":"United_Way","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"June_Hazzard","to":"Alignment_Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dan_Bowman","to":"Woodward","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mike_Mastroianni","to":"Rockford_Valley_College","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Bob_Campbell","to":"Zion__Development","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Tim_Ancona","to":"Ticomix","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Wendy_Young","to":"Forest_City_Gear","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Tom_Budd","to":"Rockford_Bank_and_Trust","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"David_Young","to":"Strong_Cities_Strong_Communities_(SC2)","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Karen_Brown","to":"OSF_Saint_Anthony_Medical_Center","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Paula_Carynski","to":"OSF_Saint_Anthony_Medical_Center","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dawna_Menke","to":"Swedish_American_Health_System","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jen_Hall","to":"Rockford_Community_Partners","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mike_Baker","to":"Dept_of_Commerce_and_Economic_Opportunity","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Terrance_Hall","to":"RAEDC","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dick_Van_Evera","to":"Growth_Dimensions","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Lynnette_McRae","to":"SC2","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"L.C._Wilson","to":"County_Boards","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Einar_Forsman","to":"Rockford_Chamber","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Darcy_Busholz","to":"NIWA","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mark_Williams","to":"City_Elected_Officials","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Bob_Wahlberg","to":"County_Elected_Officials","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Steve_Stadelman","to":"State_Elected_Officials","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"John_Duncan","to":"DCEO","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Tom_Austin","to":"Dept._of_Employment_Security","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Paula_Capriola","to":"Staffing_Businesses","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Michael_Baker","to":"DCEO","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Matthew_Johnson","to":"Religious_Organizations","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Luz_Ramirez","to":"Ethnic_Organizations","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Cindy_Hall","to":"Business_Districts","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Matthew_Simpson","to":"United_Way","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mike_Mastrioanni","to":"Education","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jim_Dolan","to":"Logistics","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jamie_Walter","to":"Agribusiness","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jeff_Polsean","to":"Airport","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mark_Peterson","to":"Retail","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Wendy_Young_(FCG)","to":"Advanced_Manufacturing","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Mike_Williams","to":"RAVEN","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Larry_Morrissey","to":"http://xmlns.com/foaf/0.1/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/ontology/OfficeHolder","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Larry_Morrissey","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/ontology/Agent","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Larry_Morrissey","to":"http://schema.org/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Larry_Morrissey","to":"http://www.wikidata.org/entity/Q6490834","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Larry_Morrissey","to":"http://wikidata.dbpedia.org/resource/Q6490834","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Larry_Morrissey","to":"http://rdf.freebase.com/ns/m.078761","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Larry_Morrissey","to":"http://yago-knowledge.org/resource/Larry_Morrissey","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/lawrence-morrissey-b922137","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Category:Mayors_of_Rockford,_Illinois","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Category:Illinois_Independents","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Category:Illinois_lawyers","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Category:1969_births","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Category:Living_people","arrows":{"to":"true"},"label":" < dct:subject >"},{"from":"Larry_Morrissey","to":"http://dbpedia.org/resource/Rockford,_Illinois","arrows":{"to":"true"},"label":" < isLeaderOf >"},{"from":"Larry_Morrissey","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Larry_Morrissey","to":"Rockford","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Larry_Morrissey","to":"http://en.wikipedia.org/wiki/Larry_Morrissey","arrows":{"to":"true"},"label":" < foaf:isPrimaryTopicOf >"},{"from":"Larry_Morrissey","to":"Darryl_Lindberg_(mayor)","arrows":{"to":"true"},"label":" < foaf:knows >"},{"from":"Larry_Morrissey","to":"Person_Mike_Schablaske","arrows":{"to":"true"},"label":" < foaf:knows >"},{"from":"Larry_Morrissey","to":"Person_Jeffrey_A_Stewart","arrows":{"to":"true"},"label":" < foaf:knows >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/darryl-lindberg-03b53112","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/jim-ryan-60b2a8","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/davesyverson","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/ronclewer","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/lorayne-logan-163b943","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/bridgetfrench","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/johngroh","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/david-anderson-a045b17","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/amy-m-ott-a-a-e-285a037","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/emily-hartzog-4a50378","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/tim-dimke-2545749","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/scott-anderson-6a3217a","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Larry_Morrissey","to":"https://www.linkedin.com/in/jeffreyastewart","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://xmlns.com/foaf/0.1/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://dbpedia.org/ontology/OfficeHolder","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://dbpedia.org/ontology/Agent","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://schema.org/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Darryl_Lindberg_(mayor)","to":"https://www.linkedin.com/in/darryl-lindberg-03b53112","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Darryl_Lindberg_(mayor)","to":"http://dbpedia.org/resource/Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < isLeaderOf >"},{"from":"Darryl_Lindberg_(mayor)","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Daniel_Barber_(village_president)","to":"http://xmlns.com/foaf/0.1/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Daniel_Barber_(village_president)","to":"http://dbpedia.org/ontology/OfficeHolder","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Daniel_Barber_(village_president)","to":"http://www.w3.org/2002/07/owl#Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Daniel_Barber_(village_president)","to":"http://dbpedia.org/ontology/Agent","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Daniel_Barber_(village_president)","to":"http://schema.org/Person","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Daniel_Barber_(village_president)","to":"http://dbpedia.org/page/Pecatonica,_Illinois","arrows":{"to":"true"},"label":" < isLeaderOf >"},{"from":"Daniel_Barber_(village_president)","to":"Pecatonica,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Daniel_Barber_(village_president)","to":"Management","arrows":{"to":"true"},"label":" < linkedin:Skills >"},{"from":"Daniel_Barber_(village_president)","to":"Research","arrows":{"to":"true"},"label":" < linkedin:Skills >"},{"from":"Daniel_Barber_(village_president)","to":"Animal Welfare","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"Children","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"Economic Empowerment","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"Education","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"Environment","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"Human Rights","arrows":{"to":"true"},"label":" < linkedin:Interests >"},{"from":"Daniel_Barber_(village_president)","to":"https://www.linkedin.com/in/davesyverson","arrows":{"to":"true"},"label":" < linkedin:Connections >"},{"from":"Person_Mike_Schablaske","to":"value:01","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:02","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:03","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:04","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:05","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:06","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:07","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:08","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Mike_Schablaske","to":"value:09","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"_person_4","arrows":{"to":"true"},"label":" < foaf:Knows >"},{"from":"Person_Jeffrey_A_Stewart","to":"Larry_Morrissey","arrows":{"to":"true"},"label":" < foaf:Knows >"},{"from":"Person_Jeffrey_A_Stewart","to":"Person_Mike_Schablaske","arrows":{"to":"true"},"label":" < foaf:Knows >"},{"from":"Person_Jeffrey_A_Stewart","to":"Moline,_Illinois","arrows":{"to":"true"},"label":" < birthPlace >"},{"from":"Person_Jeffrey_A_Stewart","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":"true"},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"Person_Jeffrey_A_Stewart","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < member >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:01","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:02","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:03","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:04","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:05","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:06","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:07","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:08","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"value:09","arrows":{"to":"true"},"label":" < interest >"},{"from":"Person_Jeffrey_A_Stewart","to":"skill:010000","arrows":{"to":"true"},"label":" < skill >"},{"from":"Person_Jeffrey_A_Stewart","to":"skill:020000","arrows":{"to":"true"},"label":" < skill >"},{"from":"Person_Jeffrey_A_Stewart","to":"skill:030000","arrows":{"to":"true"},"label":" < skill >"},{"from":"Person_Jeffrey_A_Stewart","to":"skill:040000","arrows":{"to":"true"},"label":" < skill >"},{"from":"Person_Jeffrey_A_Stewart","to":"skill:050000","arrows":{"to":"true"},"label":" < skill >"},{"from":"Person_Jeffrey_A_Stewart","to":"Asterius_Media_LLC","arrows":{"to":"true"},"label":" < owner >"},{"from":"Person_Jeffrey_A_Stewart","to":"Asterius_Media_LLC","arrows":{"to":"true"},"label":" < ceo >"},{"from":"Jim_Ryan","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Darryl_Lindberg","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dan_Jacobson","to":"Loves_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jerry_Bolin","to":"Machesney_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Tim_Savage","to":"Machesney_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Lucia_Matlock","to":"Machesney_Park,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dave_Krienke","to":"Roscoe,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Patrick_DeGrave","to":"Roscoe,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Ted_Rehl","to":"South_Beloit,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Dale_Adams","to":"Rockton,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Jim_E._Claeyssen","to":"Cherry_Valley,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Frank_Eubank","to":"Winnebago,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Daniel_Barber","to":"Pecatonica,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Gary_Haughton","to":"Durand,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"Timothy_Ownes","to":"New_Milford,_Illinois","arrows":{"to":"true"},"label":" < isContactOf >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"sic:IndustryGroup","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"naics2007:All_NAICS2007_Codes","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"_sector_30","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","to":"_sector_40","arrows":{"to":"true"},"label":" < skos:HasTopConcept >"},{"from":"_sector_10","to":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_11","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_12","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_13","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_14","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_20","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_201","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_202","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_203","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_204","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_205","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_206","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_261","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_262","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_263","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_264","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_30","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_40","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"Illinois","to":"dbo:Place","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"dbo:Location","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"schema:Place","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"geo:SpatialThing","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"dbo:PopulatedPlace","arrows":{"to":"true"},"label":" < rdf: type >"},{"from":"Illinois","to":"freebase:Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Illinois","to":"wikidata:Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"Illinois","to":"geodata:Illinois","arrows":{"to":"true"},"label":" < owl:sameAs >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","to":"skill:010000","arrows":{"to":"true"},"label":" < HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","to":"skill:020000","arrows":{"to":"true"},"label":" < HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","to":"skill:030000","arrows":{"to":"true"},"label":" < HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","to":"skill:040000","arrows":{"to":"true"},"label":" < HasTopConcept >"},{"from":"https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Skills","to":"skill:050000","arrows":{"to":"true"},"label":" < HasTopConcept >"},{"from":"skill:010000","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:010000","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:010000","to":"skill:010100","arrows":{"to":"true"},"label":" < skos:narrower >"},{"from":"skill:010000","to":"skill:010200","arrows":{"to":"true"},"label":" < skos:narrower >"},{"from":"skill:020000","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:020000","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:030000","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:030000","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:040000","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:040000","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:050000","to":"sioc:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"skill:050000","to":"foaf:topic","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Mayor_of_Rockford,_Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Mayor_of_Rockford,_Illinois","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < leaderTitleOf >"},{"from":"Mayor_of_Rockford,_Illinois","to":"Person:Peter_Provenzano","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"CityAdministratorofRockford, Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Rockford_City_Council_Alderman","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Board_Chairman_of_Winnebago_County,_Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Board_Chairman_of_Winnebago_County,_Illinois","to":"Person:Jim_Keeling","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Board_Chairman_of_Winnebago_County,_Illinois","to":"Person:Bill_Gorski","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Board_Chairman_of_Boone_County,_Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Board_Chairman_of_Boone_County,_Illinois","to":"Person:Rob_Funderburg","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Mayor_of_Belvidere,_Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Mayor_of_Belvidere,_Illinois","to":"Person:Rob_Funderburg","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Mayor_of_Loves_Park,_Illinois","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Mayor_of_Loves_Park,_Illinois","to":"Person:Jim_Keeling","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Park_District","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Park_District","to":"Person:Jim_Keeling","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Park_District","to":"Person:LoRayne_Logan","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Housing_Authority","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Housing_Authority","to":"Person:Paul_Logli","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Rockford_Illinois_Housing_Authority","to":"Person:LoRayne_Logan","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Chicago_Rockford_International_Airport","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"ExecutiveDirectorof_Chicago_Rockford_International_Airport","to":"Person:Rob_Funderburg","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"ExecutiveDirectorof_Winnebago_County_Illinois_Housing_Authority","to":"Person:Paul_Logli","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"United_States_Senator","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"United_States_Senator","to":"Person:Bill_Gorski","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"United_States_Senator_Staff","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"United_States_Senator_Staff","to":"Person:Bill_Gorski","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"United_States_Congressman","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"United_States_Congressman","to":"Person:Peter_Provenzano","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"United_States_Congressional_Staff","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"United_States_Congressional_Staff","to":"Person:Peter_Provenzano","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Illinois_Senator","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Illinois_Senator","to":"Person:Bill_Gorski","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Illinois_Representative","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Illinois_Representative","to":"Person:Bill_Gorski","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Illinois_Representative","to":"LoRayne Logan","arrows":{"to":"true"},"label":" < ambassador >"},{"from":"Transform_Rockford_Executive_Director","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Transform_Rockford_Executive_Director","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < org:postIn >"},{"from":"Transform_Rockford_Executive_Director","to":"TR_Steering_Committee","arrows":{"to":"true"},"label":" < org:reportsTo >"},{"from":"Transform_Rockford_Program_Director","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Transform_Rockford_Program_Director","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < org:postIn >"},{"from":"Transform_Rockford_Program_Director","to":"Transform_Rockford_Executive_Director","arrows":{"to":"true"},"label":" < org:reportsTo >"},{"from":"Transform_Rockford_Project_Director","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Transform_Rockford_Project_Director","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < org:postIn >"},{"from":"Transform_Rockford_Project_Director","to":"Transform_Rockford_Executive_Director","arrows":{"to":"true"},"label":" < org:reportsTo >"},{"from":"Transform_Rockford_Communication_Manager","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Transform_Rockford_Communication_Manager","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < org:postIn >"},{"from":"Transform_Rockford_Communication_Manager","to":"Transform_Rockford_Executive_Director","arrows":{"to":"true"},"label":" < org:reportsTo >"},{"from":"Transform_Rockford_Office_Manager","to":"owl:Thing","arrows":{"to":"true"},"label":" < rdf:type >"},{"from":"Transform_Rockford_Office_Manager","to":"Transform_Rockford","arrows":{"to":"true"},"label":" < org:postIn >"},{"from":"Transform_Rockford_Office_Manager","to":"Transform_Rockford_Executive_Director","arrows":{"to":"true"},"label":" < org:reportsTo >"}]
-  </script>
-  
-<script type="text/javascript">
-  var network;
-
-  function redrawAll() {
-    
-     var optionsFA = {
-
-      };
-      
-      // create a network
-      var container = document.getElementById('mynetwork');
-      var data = {
-        nodes: nodes,
-        edges: edges
-      };
-
-      var options = {
-        
-		
-		layout: {
-			randomSeed: 10,
-			improvedLayout:false
-		},
-  
-        physics: {
-          solver: 'forceAtlas2Based',
-          maxVelocity: 10,
-          minVelocity: 1,
-        },
-        
-        
-        groups: {
-          property: {
-            shape: 
-              'dot'
-            ,
-            size: 18,
-            color: 'pink'
-          },
-          
-          group: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0c0',
-              size: 50,
-              color: '#57169a'
-            }
-          },
-          
-          team: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf007',
-              size: 50,
-              color: 'grey'
-            }
-          },
-          person: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf007',
-              size: 50,
-              color: '#aa00ff'
-            }
-          },
-          
-          role: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf21d',
-              size: 50,
-              color: '#6E6EFD'
-            }
-          },
-       
-       
-          organization: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0e8',
-              size: 50,
-              color: 'blue'
-            }
-          },   
-          orgbiz: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf069',
-              size: 50,
-              color: '#57169a'
-            }
-          },
-          
-          orggov: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf19c',
-              size: 50,
-              color: 'blue'
-            }
-          },
-          
-          orgnonprofit: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf069',
-              size: 50,
-              color: 'green'
-            }
-          },
-          
-          
-          orgfaith: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf004',
-              size: 50,
-              color: 'cyan'
-            }
-          },
-          
-          globe: {
-            shape: 'icon',
-            icon: {
-              face: 'Ionicons',
-              code: '\uf276',
-              size: 66,
-              color: '#6E6EFD'
-            }
-          },
-          
-          marker: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf041',
-              size: 50,
-              color: '#FB7E81'
-            }
-          },
-          
-          book: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02d',
-              size: 50,
-              color: '#C2FABC'
-            }
-          },
-          film: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf008',
-              size: 55,
-              color: '#6E6EFD'
-            }
-          },
-          
-          
-          tags: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02c',
-              size: 40,
-              color: 'lime'
-            }
-          },
-          tag: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf02b',
-              size: 40,
-              color: 'lime'
-            }
-          },
-          
-          projects: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf0ae',
-              size: 44,
-              color: '#800000'
-            }
-          },
-          project: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf03a',
-              size: 40,
-              color: 'maroon'
-            }
-          },
-          
-          bullseye: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf140',
-              size: 40,
-              color: 'red'
-            }
-          },
-          puzzle: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf12e',
-              size: 40,
-              color: 'yellow'
-            }
-          },
-          
-          cubes: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf1b3',
-              size: 44,
-              color: 'black'
-            }
-          },
-          cube: {
-            shape: 'icon',
-            icon: {
-              face: 'FontAwesome',
-              code: '\uf1b2',
-              size: 40,
-              color: 'black'
-            }
-          },
-
-          
-        }        
-      };
-      var network = new vis.Network(container, data, options);
-	    
-	  
-		//***************************************************
-
-		//  set nodes and edges count in title block
-		document.getElementById('nodeCount').innerHTML = nodes.length;
-		document.getElementById('edgeCount').innerHTML = edges.length;
-	  
-		//  create filter checkbox for each unique group type
-		var groupsList = [];
-		for (var i = 0; i < nodes.length; i++) {
-			if(groupsList.indexOf(nodes[i].group) === -1) groupsList.push(nodes[i].group);
-		};
-	  
-		for (var i = 0; i < groupsList.length; i++) {
-			var div = document.createElement('div');
-			var checkbox = document.createElement('input');
-			checkbox.type = 'checkbox';
-			checkbox.className = 'toggleOption';
-			checkbox.value = groupsList[i];
-			checkbox.id = groupsList[i];
-			checkbox.checked = true;
-
-			var label = document.createElement('label');
-			label.htmlFor = groupsList[i];
-			label.appendChild(document.createTextNode(groupsList[i]));
-
-			document.getElementById('filterOption').appendChild(div);
-			div.appendChild(checkbox);
-			div.appendChild(label);
-		};  
-	  
-		//   control visibility of accordion views
-		var acc = document.getElementsByClassName('accordion-trigger');
-		for (var i = 0; i < acc.length; i++) {
-			acc[i].onclick = function(){
-				this.classList.toggle('accordion-trigger-active');
-				this.nextElementSibling.classList.toggle('hidden');
-			}
-		};
-
-		//  hide or display nodes and edges depending on filter selections
-		var classname = document.getElementsByClassName('toggleOption');
-		var filterToggle = function() {
-			var filter = this.getAttribute('value');
-			for (var i = 0; i < nodes.length; i++) {
-				if (nodes[i].group == filter) {
-					if (this.checked) nodes[i].hidden = false;				
-					else nodes[i].hidden = true;
-				}
-			}
-			toggleConnectedEdges();	
-		};
-		for (var i = 0; i < classname.length; i++) {
-			classname[i].addEventListener('click', filterToggle, false);
-		}
-	  
-		//  network graph click event
-		var selectedNode = [];
-		network.on("click", function(selected){
-			var details = "";
-			var nodeId = selected.nodes.toString();
-			var edgeId = selected.edges.toString();
-			selectedNode = [];
-			selectedNode.push(nodeId);
-			//  display node or edge data in the sidebar for selected element
-			if(nodeId === "" && edgeId === "") {
-				details = "Select a node or edge in the graph.";
-				document.getElementById('separation').style.display = 'none';
-				document.getElementById('degreesOfSelectedNode').style.display = 'none';
-			}
-			var object = (findObjectById(nodeId, nodes) || findObjectById(edgeId, edges));
-			for(var property in object) {
-				if (object.hasOwnProperty(property) && property !== 'hidden') {
-					details += (property + ": " + object[property] + "<br>");
-				}
-			}
-			document.getElementById('propDetails').innerHTML = details;
-			
-			//  if a node is selected, hide any nodes outside the selected number N degrees
-			if(nodeId) {
-				hideNodesByDegree(nodeId);
-				document.getElementById('separation').style.display = 'block';
-				document.getElementById('degreesOfSelectedNode').style.display = 'block';				
-			}
-			//  clicking off the node will restore the complete graph
-			else {
-				for (var i = 0; i < nodes.length; i++) {		
-					if (document.getElementById(nodes[i].group).checked === true) {
-						nodes[i].hidden = false;
-					}
-				}
-				toggleConnectedEdges();		
-			}
-			
-			
-			
-			/*  if someone finds a way of hiding nodes and edges without redrawing the graph by using setData, this zoom function could be reinstated
-			//  zoom in on selected node
-			var moveToOptions = {
-				scale: 1.05,              // scale to animate to  (Number)
-				offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
-				animation: {             // animation object, can also be Boolean
-				  duration: 1000,                 // animation duration in milliseconds (Number)
-				  easingFunction: "easeInOutQuad" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
-				}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
-			}                                       // easeInQuint, easeOutQuint, easeInOutQuint
-			if(nodeId) network.focus(nodeId, moveToOptions);		
-			*/
-			
-			
-			
-		});
-		
-		function findObjectById(objectId, objectArray){
-			for (var i=0; i < objectArray.length; i++) {
-				if (objectArray[i].id === objectId) {
-					return objectArray[i];
-				}
-			}
-		}
-		
-		var hideNodesByDegree = function(nodeId) {
-			//  find the connected nodes within N degrees
-			var connectedNodes = [];
-			connectedNodes.push(nodeId);
-			var degrees = document.getElementById('degreesOfSelectedNode').value;
-			for(var i = 0; i < degrees; i++) {
-				var nextDegreeNodes = [];
-				for(var j = 0; j < connectedNodes.length; j++) {
-					nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
-				}
-				if (nextDegreeNodes[0] != "") {
-					for(var k = 0; k < nextDegreeNodes[i].length; k++) {
-						if(connectedNodes.indexOf(nextDegreeNodes[i][k]) === -1) connectedNodes.push(nextDegreeNodes[i][k]);
-					}
-				}
-			}
-			//  hide all nodes outside N degrees and their connected edges
-			for (var i = 0; i < nodes.length; i++) {			
-				if (connectedNodes.indexOf(nodes[i].id) !== -1) {
-					if (document.getElementById(nodes[i].group).checked === true) nodes[i].hidden = false;
-				}
-				else {
-					 nodes[i].hidden = true;			
-				}
-			}
-			toggleConnectedEdges();
-		}
-		
-		function toggleConnectedEdges() {
-			for (var x = 0; x < edges.length; x++) {
-				var toNode = findObjectById(edges[x].to, nodes) || false;
-				var fromNode = findObjectById(edges[x].from, nodes) || false;
-				if (toNode.hidden === true || fromNode.hidden === true) edges[x].hidden = true;
-				else edges[x].hidden = false;
-			}
-			network.setData({nodes:nodes, edges:edges});
-		}
-		
-		changeDegrees = function(newValue) {
-			hideNodesByDegree(selectedNode[0]);
-			document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
-		}
-
-
-  }
-  
-  redrawAll();
-</script>
-
+<body>
 
 <main>
 	<section id="canvasArea">
@@ -463,17 +20,15 @@
 			<canvas width="800" height="600" style="position: relative; touch-action: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;"></canvas>
 			<div class="vis-network-tooltip" style="left: 569px; top: 212px; visibility: hidden;">foaf:Person: Dannette Holifield</div>
 		</div>
-		
-		<div id="optionsContainer"></div>
 
 		<div id="logo"></div>
 	</section>
 	<aside id="detailsArea">
 		<section id="generalDetails">
-			<h1 id="title">Map of FOAFIAF relationships</h1>
+			<h1 id="title">Map of FOAF relationships</h1>
 			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafiaf</a></span>
 			<h5>Version: <span id="version">0.0.1</span></h5>
-			<h5>Author(s): <span id="authors">Transform Rockcord Technology Team</span></h5>
+			<h5>Author(s): <span id="authors">Jeffrey Stewart</span></h5>
 			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span></h5>
 			<h5 class="statisticDetails">Edges: <span id="edgeCount"></span></h5>
 
@@ -493,10 +48,441 @@
 	</aside>
 </main>
 
+<script type="text/javascript">
+  // create an array with nodes
+  var nodes = new vis.DataSet([{"typeOf":"skos:ConceptScheme","id":"_sector_0","label":null,"title":"skos:ConceptScheme https://foafiaf-asteriusj.c9users.io/owl/foafiaf#Sectors","group":"cubes"},{"typeOf":"skos:Concept","id":"_sector_10","label":"Business","title":"skos:Concept _sector_10 Business","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_11","label":"Chambers of Commerce","title":"skos:Concept _sector_11 Chambers of Commerce","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_12","label":"Largest Employers","title":"skos:Concept _sector_12 Largest Employers","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_13","label":"Professional & Industry Groups","title":"skos:Concept _sector_13 Professional & Industry Groups","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_14","label":"Rockford Area Economic Development Committee","title":"skos:Concept _sector_14 Rockford Area Economic Development Committee","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_20","label":"Government & Agencies","title":"skos:Concept _sector_20 Government & Agencies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_201","label":"Elected Officials","title":"skos:Concept _sector_201 Elected Officials","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_202","label":"Counties & Municipalties","title":"skos:Concept _sector_202 Counties & Municipalties","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_203","label":"Councils & Boards","title":"skos:Concept _sector_203 Councils & Boards","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_204","label":"Senior Administrators","title":"skos:Concept _sector_204 Senior Administrators","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_205","label":"Public Education","title":"skos:Concept _sector_205 Public Education","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_206","label":"Administrative Bodies","title":"skos:Concept _sector_206 Administrative Bodies","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_261","label":"Public Safety","title":"skos:Concept _sector_261 Public Safety","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_262","label":"Human Services","title":"skos:Concept _sector_262 Human Services","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_263","label":"Health","title":"skos:Concept _sector_263 Health","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_264","label":"Development","title":"skos:Concept _sector_264 Development","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_30","label":"Non Profit","title":"skos:Concept _sector_30 Non Profit","group":"tag"},{"typeOf":"skos:Concept","id":"_sector_40","label":"Faith","title":"skos:Concept _sector_40 Faith","group":"tag"},{"typeOf":"foaf:Person","id":"_person_1","title":"foaf:Person _person_1 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_2","title":"foaf:Person _person_2 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_3","title":"foaf:Person _person_3 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_4","title":"foaf:Person _person_4 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_5","title":"foaf:Person _person_5 undefined","name":null,"group":"person"},{"typeOf":"foaf:Person","id":"_person_6","title":"foaf:Person _person_6 undefined","name":null,"group":"person"},{"typeOf":"foaf:Group","id":"_group_1","label":"Transform Rockford","title":"foaf:Group _group_1 undefined","name":"Transform Rockford","group":"group"},{"typeOf":"foaf:Organization","id":"_company_1","title":"foaf:Organization _company_1 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_2","title":"foaf:Organization _company_2 undefined","name":null,"group":"organization"},{"typeOf":"foaf:Organization","id":"_company_3","title":"foaf:Organization _company_3","name":null,"group":"organization"},{"typeOf":"foaf:topic","id":"_topics_0","title":"foaf:topic _topics_0 undefined","group":"tags"},{"typeOf":"sioc:topic","id":"_topic_1","label":"IT Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_2","label":"Project Management","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_3","label":"Software Development","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_4","label":"Cloud Computing","title":"","group":"tag"},{"typeOf":"sioc:topic","id":"_topic_5","label":"Publishing and Printing","title":"","group":"tag"},{"typeOf":"schema:Projects","id":"_projects_0","label":"Projects","group":"projects"},{"typeOf":"pmbok:Project","id":"_:b0","label":"Blue Zones","title":"pmbok:Project: Blue Zone Community Project","name":"Community project to establish region as a Blue Zone","group":"project"},{"typeOf":"pmbok:Project","id":"_:b1","label":"Network Map Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Network Map tool(s)","name":null,"group":"project"},{"typeOf":"foaf:Person","id":"_:jd","title":"foaf:Person _:jd undefined","name":null,"group":"person"},{"typeOf":"pmbok:Project","id":"_:b3","label":"Project Management Technical Guidence","title":"pmbok:Project: Provide technical guidance on selecting / developing Project Management tool(s)","name":null,"group":"project"}]);
 
-<script>
-	redrawAll()
+  // create an array with edges
+  var edges = new vis.DataSet([{"from":"_sector_0","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_30","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_0","to":"_sector_40","arrows":{"to":"true"},"label":" < skos:topConceptOf >"},{"from":"_sector_10","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_11","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_12","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_13","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_14","to":"_sector_10","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_20","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_201","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_202","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_203","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_204","to":"_sector_202","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_205","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_206","to":"_sector_20","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_261","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_262","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_263","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_264","to":"_sector_206","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_30","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_sector_40","to":"_sector_0","arrows":{"to":"true"},"label":" < skos:broader >"},{"from":"_person_1","to":"_person_4","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_3","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"_person_2","arrows":{"to":"true"},"label":" < knows >"},{"from":"_person_1","to":"Moline,_Illinois","arrows":{"to":"true"},"label":" < birthPlace >"},{"from":"_person_1","to":{"type":"uri","value":"http://dbpedia.org/resource/Moline,_Illinois"},"arrows":{"to":"true"},"label":" < http://dbpedia.org/ontology/birthPlace >"},{"from":"_person_1","to":"_group_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_person_1","to":"_topic_5","arrows":{"to":"true"},"label":" < interest >"},{"from":"_person_1","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_3","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_topic_4","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_person_1","to":"_company_1","arrows":{"to":"true"},"label":" < ceo >"},{"from":"_person_4","to":"_topic_1","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_4","to":"_topic_2","arrows":{"to":"true"},"label":" < skill >"},{"from":"_person_5","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_person_6","to":"_group_1","arrows":{"to":"true"},"label":" < employedBy >"},{"from":"_group_1","to":"Rockford,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_group_1","to":"_person_4","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_1","arrows":{"to":"true"},"label":" < member >"},{"from":"_group_1","to":"_person_3","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_person_2","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_group_1","to":"_sector_30","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_1","to":"Byron,_Illinois","arrows":{"to":"true"},"label":" < based_near >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < owner >"},{"from":"_company_1","to":"_person_1","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_2","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_company_3","to":"_person_4","arrows":{"to":"true"},"label":" < employerOf >"},{"from":"_company_3","to":"_sector_12","arrows":{"to":"true"},"label":" < classification >"},{"from":"_topic_1","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_2","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_3","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_4","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_topic_5","to":"_topics_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b0","to":"_:jd","arrows":{"to":"true"},"label":" < stakeholder >"},{"from":"_:b0","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b1","to":"_:b3","arrows":{"to":"true"},"label":" < has_parent >"},{"from":"_:b1","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"},{"from":"_:b3","to":"_projects_0","arrows":{"to":"true"},"label":" < has_container >"}]);
+</script>
+
+<script type="text/javascript">
+	// create a network
+	var container = document.getElementById('mynetwork');
+	var data = {
+		nodes: nodes,
+		edges: edges
+	};
+	var options = {
+
+		layout: {
+			randomSeed: 10,
+			improvedLayout:false
+		},
+
+
+		physics: {
+		  solver: 'forceAtlas2Based',
+		  maxVelocity: 10,
+		  minVelocity: 1,
+		},
+
+
+		groups: {
+		  property: {
+			shape: 
+			  'dot'
+			,
+			size: 18,
+			color: 'pink'
+		  },
+		  
+		  group: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf0c0',
+			  size: 50,
+			  color: '#57169a'
+			}
+		  },
+		  
+		  team: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf007',
+			  size: 50,
+			  color: 'grey'
+			}
+		  },
+		  person: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf007',
+			  size: 50,
+			  color: '#aa00ff'
+			}
+		  },
+		  
+		  role: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf21d',
+			  size: 50,
+			  color: '#6E6EFD'
+			}
+		  },
+
+
+		  organization: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf0e8',
+			  size: 50,
+			  color: 'blue'
+			}
+		  },   
+		  orgbiz: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf069',
+			  size: 50,
+			  color: '#57169a'
+			}
+		  },
+		  
+		  orggov: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf19c',
+			  size: 50,
+			  color: 'blue'
+			}
+		  },
+		  
+		  orgnonprofit: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf069',
+			  size: 50,
+			  color: 'green'
+			}
+		  },
+		  
+		  
+		  orgfaith: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf004',
+			  size: 50,
+			  color: 'cyan'
+			}
+		  },
+		  
+		  globe: {
+			shape: 'icon',
+			icon: {
+			  face: 'Ionicons',
+			  code: '\uf276',
+			  size: 66,
+			  color: '#6E6EFD'
+			}
+		  },
+		  
+		  marker: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf041',
+			  size: 50,
+			  color: '#FB7E81'
+			}
+		  },
+		  
+		  book: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf02d',
+			  size: 50,
+			  color: '#C2FABC'
+			}
+		  },
+		  film: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf008',
+			  size: 55,
+			  color: '#6E6EFD'
+			}
+		  },
+		  
+		  
+		  tags: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf02c',
+			  size: 40,
+			  color: 'lime'
+			}
+		  },
+		  tag: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf02b',
+			  size: 40,
+			  color: 'lime'
+			}
+		  },
+		  
+		  projects: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf0ae',
+			  size: 44,
+			  color: '#800000'
+			}
+		  },
+		  project: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf03a',
+			  size: 40,
+			  color: 'maroon'
+			}
+		  },
+		  
+		  bullseye: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf140',
+			  size: 40,
+			  color: 'red'
+			}
+		  },
+		  puzzle: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf12e',
+			  size: 40,
+			  color: 'yellow'
+			}
+		  },
+		  
+		  cubes: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf1b3',
+			  size: 44,
+			  color: 'black'
+			}
+		  },
+		  cube: {
+			shape: 'icon',
+			icon: {
+			  face: 'FontAwesome',
+			  code: '\uf1b2',
+			  size: 40,
+			  color: 'black'
+			}
+		  },
+		}        
+	};
+	var network = new vis.Network(container, data, options);
+	
+	
+	var nodesObject = nodes._data;
+	var Nodes =[];
+	for(var i in nodesObject) {
+		if (nodesObject.hasOwnProperty(i)){
+			Nodes.push(nodesObject[i]);
+		}
+	}	
+	
+	var edgesObject = edges._data;
+	var Edges =[];
+	for(var i in edgesObject) {
+		if (edgesObject.hasOwnProperty(i)){
+			Edges.push(edgesObject[i]);
+		}
+	}		
+	 
+	//  set nodes and edges count in title block
+	document.getElementById('nodeCount').innerHTML = Nodes.length;
+	document.getElementById('edgeCount').innerHTML = Edges.length;
+
+	//  create filter checkbox for each unique group type
+	var groupsList = [];
+	for (var i = 0; i < Nodes.length; i++) {
+		if(groupsList.indexOf(Nodes[i].group) === -1) groupsList.push(Nodes[i].group);
+	};
+
+	for (var i = 0; i < groupsList.length; i++) {
+		var div = document.createElement('div');
+		var checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.className = 'toggleOption';
+		checkbox.value = groupsList[i];
+		checkbox.id = groupsList[i];
+		checkbox.checked = true;
+
+		var label = document.createElement('label');
+		label.htmlFor = groupsList[i];
+		label.appendChild(document.createTextNode(groupsList[i]));
+
+		document.getElementById('filterOption').appendChild(div);
+		div.appendChild(checkbox);
+		div.appendChild(label);
+	};  
+
+	//   control visibility of accordion views
+	var acc = document.getElementsByClassName('accordion-trigger');
+	for (var i = 0; i < acc.length; i++) {
+		acc[i].onclick = function(){
+			this.classList.toggle('accordion-trigger-active');
+			this.nextElementSibling.classList.toggle('hidden');
+		}
+	};
+
+	//  hide or display nodes and edges depending on filter selections
+	var classname = document.getElementsByClassName('toggleOption');
+	var filterToggle = function() {
+		var filter = this.getAttribute('value');
+		for (var i = 0; i < Nodes.length; i++) {
+			if (Nodes[i].group == filter) {
+				if (this.checked && Nodes[i].hiddenByDegree === false) {
+					Nodes[i].hidden = false;
+				}
+				else {
+					Nodes[i].hidden = true;
+				}
+				nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
+			}
+		}
+		toggleConnectedEdges();
+	};
+	for (var i = 0; i < classname.length; i++) {
+		classname[i].addEventListener('click', filterToggle, false);
+	}
+
+	//  network graph click event
+	var selectedNode = [];
+	network.on("click", function(selected){
+		var details = "";
+		var nodeId = selected.nodes.toString();
+		var edgeId = selected.edges.toString();
+		
+		selectedNode.push(selected.nodes);
+		//  display node or edge data in the sidebar for selected element
+		if(nodeId === "" && edgeId === "") {
+			details = "Select a node or edge in the graph.";
+			document.getElementById('separation').style.display = 'none';
+			document.getElementById('degreesOfSelectedNode').style.display = 'none';
+		}
+		var object = (findObjectById(nodeId, Nodes) || findObjectById(edgeId, Edges));
+		for(var property in object) {
+			if (object.hasOwnProperty(property) && property !== 'hidden') {
+				details += (property + ": " + object[property] + "<br>");
+			}
+		}
+		document.getElementById('propDetails').innerHTML = details;
+		
+		//  if a node is selected, hide any nodes outside the selected number N degrees
+		if(nodeId) {
+			hideNodesByDegree(nodeId);
+			document.getElementById('separation').style.display = 'block';
+			document.getElementById('degreesOfSelectedNode').style.display = 'block';				
+		}
+		//  clicking off the node will restore the complete graph
+		else {
+			for (var i = 0; i < Nodes.length; i++) {		
+				if (document.getElementById(Nodes[i].group).checked === true) {
+					Nodes[i].hiddenByDegree = false;
+					Nodes[i].hidden = false;
+					nodes.update({id:Nodes[i].id, hidden: false});
+				}
+			}
+			toggleConnectedEdges();		
+		}
+		
+		//  zoom in on selected node
+		var moveToOptions = {
+			scale: 1.05,              // scale to animate to  (Number)
+			offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
+			animation: {             // animation object, can also be Boolean
+			  duration: 1000,                 // animation duration in milliseconds (Number)
+			  easingFunction: "easeInOutQuad" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
+			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
+		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
+		if(nodeId) network.focus(nodeId, moveToOptions);
+	});
+
+	function findObjectById(objectId, objectArray){
+		for (var i=0; i < objectArray.length; i++) {
+			if (objectArray[i].id === objectId) {
+				return objectArray[i];
+			}
+		}
+	}
+
+	var hideNodesByDegree = function(nodeId) {
+		//  find the connected nodes within N degrees
+		var connectedNodes = [];
+		connectedNodes.push(nodeId);
+		var degrees = document.getElementById('degreesOfSelectedNode').value;
+		for(var i = 0; i < degrees; i++) {
+			var nextDegreeNodes = [];
+			for(var j = 0; j < connectedNodes.length; j++) {
+				nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
+			}
+			if (nextDegreeNodes[0] != "") {
+				for(var k = 0; k < nextDegreeNodes[i].length; k++) {
+					if(connectedNodes.indexOf(nextDegreeNodes[i][k]) === -1) connectedNodes.push(nextDegreeNodes[i][k]);
+				}
+			}
+		}
+		//  hide all nodes outside N degrees and their connected edges
+		for (var i = 0; i < Nodes.length; i++) {			
+			if (connectedNodes.indexOf(Nodes[i].id) !== -1) {
+				if (document.getElementById(Nodes[i].group).checked === true) {
+					Nodes[i].hiddenByDegree = false;
+				}
+			}
+			else {
+				Nodes[i].hiddenByDegree = true;	
+			}
+			Nodes[i].hidden = Nodes[i].hiddenByDegree;
+			nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
+		}
+		toggleConnectedEdges();
+	}
+
+	function toggleConnectedEdges() {
+		for (var x = 0; x < Edges.length; x++) {
+			var toNode = findObjectById(Edges[x].to, Nodes) || false;
+			var fromNode = findObjectById(Edges[x].from, Nodes) || false;
+			if (toNode.hidden === true || fromNode.hidden === true) {
+				Edges[x].hidden = true;
+			}
+			else {
+				Edges[x].hidden = false;
+			}
+			edges.update({id:Edges[x].id, hidden: Edges[x].hidden});
+		}
+	}
+	
+	changeDegrees = function(newValue) {
+		hideNodesByDegree(selectedNode[0]);
+		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
+	}  
 
 </script>
 
-</body></html>
+</body>
+</html>
