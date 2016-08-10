@@ -28,7 +28,7 @@
 			<h1 id="title">Map of FOAF relationships</h1>
 			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafiaf</a></span>
 			<h5>Version: <span id="version">0.0.1</span></h5>
-			<h5>Author(s): <span id="authors">Jeffrey Stewart</span></h5>
+			<h5>Author(s): <span id="authors">TR Technology Team</span></h5>
 			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span></h5>
 			<h5 class="statisticDetails">Edges: <span id="edgeCount"></span></h5>
 
@@ -313,13 +313,14 @@
 		}
 	}		
 	 
-	//  set nodes and edges count in title block
+	//  set initial nodes and edges count in title block
 	document.getElementById('nodeCount').innerHTML = Nodes.length;
 	document.getElementById('edgeCount').innerHTML = Edges.length;
 
 	//  create filter checkbox for each unique group type
 	var groupsList = [];
 	for (var i = 0; i < Nodes.length; i++) {
+		Nodes[i].hidden = false;
 		if(groupsList.indexOf(Nodes[i].group) === -1) groupsList.push(Nodes[i].group);
 	};
 
@@ -354,9 +355,10 @@
 	var classname = document.getElementsByClassName('toggleOption');
 	var filterToggle = function() {
 		var filter = this.getAttribute('value');
+		var visibleNodes = 0;
 		for (var i = 0; i < Nodes.length; i++) {
 			if (Nodes[i].group == filter) {
-				if (this.checked && Nodes[i].hiddenByDegree === false) {
+				if (this.checked && Nodes[i].hiddenByDegree !== true) {
 					Nodes[i].hidden = false;
 				}
 				else {
@@ -364,7 +366,9 @@
 				}
 				nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
 			}
+			if (Nodes[i].hidden === false) visibleNodes++;
 		}
+		document.getElementById('nodeCount').innerHTML = visibleNodes;
 		toggleConnectedEdges();
 	};
 	for (var i = 0; i < classname.length; i++) {
@@ -378,6 +382,7 @@
 		var nodeId = selected.nodes.toString();
 		var edgeId = selected.edges.toString();
 		
+		selectedNode = [];
 		selectedNode.push(selected.nodes);
 		//  display node or edge data in the sidebar for selected element
 		if(nodeId === "" && edgeId === "") {
@@ -385,10 +390,10 @@
 			document.getElementById('separation').style.display = 'none';
 			document.getElementById('degreesOfSelectedNode').style.display = 'none';
 		}
-		var object = (findObjectById(nodeId, Nodes) || findObjectById(edgeId, Edges));
-		for(var property in object) {
-			if (object.hasOwnProperty(property) && property !== 'hidden') {
-				details += (property + ": " + object[property] + "<br>");
+		var focalPoint = (findObjectById(nodeId, Nodes) || findObjectById(edgeId, Edges));
+		for(var property in focalPoint) {
+			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree') {
+				details += (property + ": " + focalPoint[property] + "<br>");
 			}
 		}
 		document.getElementById('propDetails').innerHTML = details;
@@ -408,6 +413,7 @@
 					nodes.update({id:Nodes[i].id, hidden: false});
 				}
 			}
+			document.getElementById('nodeCount').innerHTML = Nodes.length;
 			toggleConnectedEdges();		
 		}
 		
@@ -442,28 +448,35 @@
 				nextDegreeNodes.push(network.getConnectedNodes(connectedNodes[j]));
 			}
 			if (nextDegreeNodes[0] != "") {
-				for(var k = 0; k < nextDegreeNodes[i].length; k++) {
-					if(connectedNodes.indexOf(nextDegreeNodes[i][k]) === -1) connectedNodes.push(nextDegreeNodes[i][k]);
+				for(var k = 0; k < nextDegreeNodes.length; k++) {
+					for(var l = 0; l < nextDegreeNodes[k].length; l++) {
+						if(connectedNodes.indexOf(nextDegreeNodes[k][l]) === -1) connectedNodes.push(nextDegreeNodes[k][l]);
+					}
 				}
 			}
 		}
 		//  hide all nodes outside N degrees and their connected edges
-		for (var i = 0; i < Nodes.length; i++) {			
+		var visibleNodes = 0;
+		for (var i = 0; i < Nodes.length; i++) {	
 			if (connectedNodes.indexOf(Nodes[i].id) !== -1) {
 				if (document.getElementById(Nodes[i].group).checked === true) {
 					Nodes[i].hiddenByDegree = false;
+					Nodes[i].hidden = false;
 				}
 			}
 			else {
-				Nodes[i].hiddenByDegree = true;	
+				Nodes[i].hiddenByDegree = true;
+				Nodes[i].hidden = true;
 			}
-			Nodes[i].hidden = Nodes[i].hiddenByDegree;
 			nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
+			if (Nodes[i].hidden === false) visibleNodes++;
 		}
+		document.getElementById('nodeCount').innerHTML = visibleNodes;
 		toggleConnectedEdges();
 	}
 
 	function toggleConnectedEdges() {
+		var visibleEdges = 0;
 		for (var x = 0; x < Edges.length; x++) {
 			var toNode = findObjectById(Edges[x].to, Nodes) || false;
 			var fromNode = findObjectById(Edges[x].from, Nodes) || false;
@@ -472,13 +485,15 @@
 			}
 			else {
 				Edges[x].hidden = false;
+				visibleEdges ++;
 			}
 			edges.update({id:Edges[x].id, hidden: Edges[x].hidden});
 		}
+		document.getElementById('edgeCount').innerHTML = visibleEdges;
 	}
 	
 	changeDegrees = function(newValue) {
-		hideNodesByDegree(selectedNode[0]);
+		hideNodesByDegree(selectedNode[0].toString());
 		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
 	}  
 
