@@ -1,10 +1,9 @@
 # foafiaf
-__FOAFIAF__: Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis
-
+__FOAFIAF__: 
+Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis
 
 
 # Why this could be a good open source project for you
-
     1. Work on a civic data project
     2. Use graph data technology
     3. Get Node.js ecosystem experience
@@ -19,13 +18,8 @@ __FOAFIAF__: Friend Of A Friend Is A Friend - A community network mapping capabi
 ###[FIAFOAF Strategy Mission, Vision, Objectives](https://github.com/asteriusj/foafiaf/wiki/FIAFOAF-Strategy-Mission-and-Vision)
 
 
-## FOAFIAF Strategy Driven Development Intended Outcomes
-https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Strategy-Driven-Development-Intended-Outcomes
+###[FOAFIAF Strategy Driven Development Intended Outcomes] (https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Strategy-Driven-Development-Intended-Outcomes)
 
 
-
-
-
-### Useful Tools and Reference Material
-https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-reference-links
+### [Useful Tools and Reference Material](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-reference-links)
 
