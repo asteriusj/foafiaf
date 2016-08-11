@@ -471,18 +471,29 @@
 			}
 		}
 		//  hide all nodes outside N degrees and their connected edges
-		for (var i = 0; i < Nodes.length; i++) {	
+		for (var i = 0; i < Nodes.length; i++) {
+			var hiddenNodesIndexes = [];
+			var visibleNodesIndexes = [];		
 			if (connectedNodes.indexOf(Nodes[i].id) !== -1) {
 				if (document.getElementById(Nodes[i].group).checked === true) {
+					if (Nodes[i].hidden === true) visibleNodesIndexes.push(i);				
 					Nodes[i].hiddenByDegree = false;
 					Nodes[i].hidden = false;
 				}
 			}
 			else {
+				if (Nodes[i].hidden !== true) hiddenNodesIndexes.push(i);
 				Nodes[i].hiddenByDegree = true;
 				Nodes[i].hidden = true;
 			}
-			nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
+			for (var j = 0; j < hiddenNodesIndexes.length; j++) {
+				var nodesNumber = hiddenNodesIndexes[j];
+				nodes.update({id:Nodes[nodesNumber].id, hidden: true});
+			}
+			for (var k = 0; k < visibleNodesIndexes.length; k++) {
+				var nodesNumber = visibleNodesIndexes[k];
+				nodes.update({id:Nodes[nodesNumber].id, hidden: false});
+			}			
 		}
 		countVisibleNodes();
 		toggleConnectedEdges();
