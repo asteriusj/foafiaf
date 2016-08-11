@@ -296,7 +296,6 @@
 	};
 	var network = new vis.Network(container, data, options);
 	
-	
 	var nodesObject = nodes._data;
 	var Nodes =[];
 	for(var i in nodesObject) {
@@ -317,13 +316,14 @@
 	document.getElementById('nodeCount').innerHTML = Nodes.length;
 	document.getElementById('edgeCount').innerHTML = Edges.length;
 
-	//  create filter checkbox for each unique group type
+	//  create list of each unique group type
 	var groupsList = [];
 	for (var i = 0; i < Nodes.length; i++) {
 		Nodes[i].hidden = false;
 		if(groupsList.indexOf(Nodes[i].group) === -1) groupsList.push(Nodes[i].group);
 	};
-
+	var groups = [];
+	//  create filter checkbox for each unique group type	
 	for (var i = 0; i < groupsList.length; i++) {
 		var div = document.createElement('div');
 		var checkbox = document.createElement('input');
@@ -340,8 +340,18 @@
 		document.getElementById('filterOption').appendChild(div);
 		div.appendChild(checkbox);
 		div.appendChild(label);
+		
+		//    for better performance, presort nodes into group objects		
+		groups[i] = {};
+		groups[i].group = groupsList[i];
+		groups[i].nodeIndexes = [];
+		for (var j = 0; j < Nodes.length; j++) {
+			if (Nodes[j].group === groups[i].group) {
+				groups[i].nodeIndexes.push(j);
+			}
+		}		
 	};  
-
+	
 	//   control visibility of accordion views
 	var acc = document.getElementsByClassName('accordion-trigger');
 	for (var i = 0; i < acc.length; i++) {
@@ -355,20 +365,26 @@
 	var classname = document.getElementsByClassName('toggleOption');
 	var filterToggle = function() {
 		var filter = this.getAttribute('value');
-		var visibleNodes = 0;
-		for (var i = 0; i < Nodes.length; i++) {
-			if (Nodes[i].group == filter) {
-				if (this.checked && Nodes[i].hiddenByDegree !== true) {
-					Nodes[i].hidden = false;
-				}
-				else {
-					Nodes[i].hidden = true;
-				}
-				nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
+		var groupIndex;
+		for (var i = 0; i < groups.length; i++) {
+			if (groups[i].group === filter) {
+				groupIndex = i;
+				break;
 			}
-			if (Nodes[i].hidden === false) visibleNodes++;
 		}
-		document.getElementById('nodeCount').innerHTML = visibleNodes;
+		for (var j = 0; j < groups[groupIndex].nodeIndexes.length; j++) {
+			var nodeNumber = groups[groupIndex].nodeIndexes[j];
+			
+			if (this.checked && Nodes[nodeNumber].hiddenByDegree !== true) {
+				Nodes[nodeNumber].hidden = false;
+			}
+			else {
+				Nodes[nodeNumber].hidden = true;
+			}
+			
+			nodes.update({id:Nodes[nodeNumber].id, hidden: Nodes[nodeNumber].hidden});
+		}
+		countVisibleNodes();
 		toggleConnectedEdges();
 	};
 	for (var i = 0; i < classname.length; i++) {
@@ -381,7 +397,6 @@
 		var details = "";
 		var nodeId = selected.nodes.toString();
 		var edgeId = selected.edges.toString();
-		
 		selectedNode = [];
 		selectedNode.push(selected.nodes);
 		//  display node or edge data in the sidebar for selected element
@@ -407,8 +422,8 @@
 		//  clicking off the node will restore the complete graph
 		else {
 			for (var i = 0; i < Nodes.length; i++) {		
+				Nodes[i].hiddenByDegree = false;
 				if (document.getElementById(Nodes[i].group).checked === true) {
-					Nodes[i].hiddenByDegree = false;
 					Nodes[i].hidden = false;
 					nodes.update({id:Nodes[i].id, hidden: false});
 				}
@@ -456,7 +471,6 @@
 			}
 		}
 		//  hide all nodes outside N degrees and their connected edges
-		var visibleNodes = 0;
 		for (var i = 0; i < Nodes.length; i++) {	
 			if (connectedNodes.indexOf(Nodes[i].id) !== -1) {
 				if (document.getElementById(Nodes[i].group).checked === true) {
@@ -469,28 +483,46 @@
 				Nodes[i].hidden = true;
 			}
 			nodes.update({id:Nodes[i].id, hidden: Nodes[i].hidden});
-			if (Nodes[i].hidden === false) visibleNodes++;
 		}
-		document.getElementById('nodeCount').innerHTML = visibleNodes;
+		countVisibleNodes();
 		toggleConnectedEdges();
 	}
 
 	function toggleConnectedEdges() {
 		var visibleEdges = 0;
+		var hiddenEdgesIndexes = [];
+		var visibleEdgesIndexes = [];
 		for (var x = 0; x < Edges.length; x++) {
 			var toNode = findObjectById(Edges[x].to, Nodes) || false;
 			var fromNode = findObjectById(Edges[x].from, Nodes) || false;
 			if (toNode.hidden === true || fromNode.hidden === true) {
+				if (Edges[x].hidden !== true) hiddenEdgesIndexes.push(x);
 				Edges[x].hidden = true;
 			}
 			else {
+				if (Edges[x].hidden === true) visibleEdgesIndexes.push(x);
 				Edges[x].hidden = false;
-				visibleEdges ++;
 			}
-			edges.update({id:Edges[x].id, hidden: Edges[x].hidden});
+			if (Edges[x].hidden !== true) visibleEdges ++;
+		}
+		for (var y = 0; y < hiddenEdgesIndexes.length; y++) {
+			var edgesNumber = hiddenEdgesIndexes[y];
+			edges.update({id:Edges[edgesNumber].id, hidden: true});
+		}
+		for (var z = 0; z < visibleEdgesIndexes.length; z++) {
+			var edgesNumber = visibleEdgesIndexes[z];
+			edges.update({id:Edges[edgesNumber].id, hidden: false});
 		}
 		document.getElementById('edgeCount').innerHTML = visibleEdges;
 	}
+	
+	function countVisibleNodes() {
+		var visibleNodes = 0;
+		for (var x = 0; x < Nodes.length; x++) {
+			if (Nodes[x].hidden !== true) visibleNodes ++;
+		}
+		document.getElementById('nodeCount').innerHTML = visibleNodes;
+	}	
 	
 	changeDegrees = function(newValue) {
 		hideNodesByDegree(selectedNode[0].toString());
