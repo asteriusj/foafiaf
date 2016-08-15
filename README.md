@@ -22,5 +22,8 @@ Friend Of A Friend Is A Friend - A community network mapping capability leveragi
 
 ### [FOAFIAF Why Linked Data and RDF?](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF:-Why-Linked-Data-and-RDF%3F)
 
+### [FOAFIAF Onotology Visualizer] (http://vowl.visualdataweb.org/webvowl/index.html#iri=https://foafiaf-asteriusj.c9users.io/owl/foafiaf.rdf)
+
+
 ### [Useful Tools and Reference Material](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-reference-links)
 
