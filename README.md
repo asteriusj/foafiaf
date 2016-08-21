@@ -25,5 +25,5 @@ Friend Of A Friend Is A Friend - A community network mapping capability leveragi
 ### [FOAFIAF Onotology Visualizer] (http://vowl.visualdataweb.org/webvowl/index.html#iri=https://foafiaf-asteriusj.c9users.io/owl/foafiaf.rdf)
 
 
-### [Useful Tools and Reference Material](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-reference-links)
+### [Useful Tools and Reference Material](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-Tools-and-Reference-Material)
 
