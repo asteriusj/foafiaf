@@ -68,9 +68,9 @@ function dataReceived(data) {
 	rawNodes = data['@graph'];
 	for (var i = 0; i < rawNodes.length; i++) {
 		rawNodes[i].id = rawNodes[i]['@id'];
-		rawNodes[i].group = rawNodes[i]['@type'];
-		delete rawNodes[i]['@id'];
-		delete rawNodes[i]['@type'];
+		rawNodes[i].group = rawNodes[i]['@type'].substring(rawNodes[i]['@type'].indexOf(":") + 1).toLowerCase();
+		rawNodes[i].name = rawNodes[i]['foaf:name'];
+		rawNodes[i].title = rawNodes[i]['rdfs:label'];
 	};
 
 	// create an array of edges
@@ -127,11 +127,12 @@ function dataReceived(data) {
 
 	var visibleNodes = [];
 	var visibleEdges = [];
+	var selectedNode;
 	
 	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
 	for (var i = 0; i < rawNodes.length; i++) {
 		if (rawNodes[i].id === "Transform_Rockford") {
-			var selectedNode = [rawNodes[i].id];  
+			selectedNode = [rawNodes[i].id];  
 			displayData(rawNodes[i]);
 			hideNodesByDegree(selectedNode[0].toString());
 			break;
@@ -198,6 +199,10 @@ function dataReceived(data) {
 		}
 	});
 
+	network.on("afterDrawing", function(){
+		zoomToSelectedNode();
+	});
+	
 	function findObjectById(objectId, objectArray){
 		for (var i=0; i < objectArray.length; i++) {
 			if (objectArray[i].id === objectId) {
@@ -291,11 +296,23 @@ function dataReceived(data) {
 	function displayData(focalPoint) {
 		var details = "";
 		for(var property in focalPoint) {
-			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree') {
+			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' && property !== "@id") {
 				details += (property + ": " + focalPoint[property] + "<br>");
 			}
 		}
 		document.getElementById('propDetails').innerHTML = details;	
+	}
+	
+	function zoomToSelectedNode() {
+		var moveToOptions = {
+			scale: 1.10,              // scale to animate to  (Number)
+			offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
+			animation: {             // animation object, can also be Boolean
+			  duration: 1000,                 // animation duration in milliseconds (Number)
+			  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
+			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
+		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
+		if(selectedNode) network.focus(selectedNode, moveToOptions);		
 	}
 
 	changeDegrees = function(newValue) {
