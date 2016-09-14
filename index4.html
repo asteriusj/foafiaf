@@ -127,14 +127,13 @@ function dataReceived(data) {
 
 	var visibleNodes = [];
 	var visibleEdges = [];
-	var selectedNode;
 	
 	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
 	for (var i = 0; i < rawNodes.length; i++) {
 		if (rawNodes[i].id === "Transform_Rockford") {
-			selectedNode = [rawNodes[i].id];  
+			var selectedNode = rawNodes[i].id;
 			displayData(rawNodes[i]);
-			hideNodesByDegree(selectedNode[0].toString());
+			hideNodesByDegree(selectedNode.toString());
 			break;
 		}
 	}
@@ -184,22 +183,27 @@ function dataReceived(data) {
 	network.on("click", function(selected){
 		var nodeId = selected.nodes.toString();
 		var edgeId = selected.edges.toString();
-		if (nodeId !== "") {
-			selectedNode = selected.nodes;
-		}
+		var focalPoint;
 		
 		//  display node or edge data in the sidebar for selected element
-		var focalPoint = (findObjectById(nodeId, rawNodes) || findObjectById(edgeId, rawEdges) || findObjectById(selectedNode[0], rawNodes));
-		displayData(focalPoint);
-
+		if (nodeId !== "") {
+			selectedNode = selected.nodes;	
+			var focalPoint = findObjectById(nodeId, rawNodes);
+		}
+		else focalPoint = (findObjectById(edgeId, rawEdges) || findObjectById(selectedNode, rawNodes));
+		displayData(focalPoint);	
+			
 		//  if a node is selected, hide any nodes outside the selected number N degrees
 		if(nodeId) {
 			hideNodesByDegree(nodeId);
 			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+			network.once("afterDrawing", function(){
+				zoomToSelectedNode();
+			});
 		}
 	});
 
-	network.on("afterDrawing", function(){
+	network.once("afterDrawing", function(){
 		zoomToSelectedNode();
 	});
 	
@@ -312,7 +316,7 @@ function dataReceived(data) {
 			  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
 			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
 		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
-		if(selectedNode) network.focus(selectedNode, moveToOptions);		
+		if(selectedNode) network.focus(selectedNode, moveToOptions);	
 	}
 
 	changeDegrees = function(newValue) {
