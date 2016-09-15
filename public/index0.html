@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+<head>
+	<title>Map of FOAFIAF relationships</title>
+	
+	<script type="text/javascript" src="dist/vis.js"></script>
+	<link href="dist/vis.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/options.js"></script>
+	
+	<script type="application/ld+json" src="things/jsonld/combinedOutfile.jsonld"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />	
+</head>
+
+<body>
+
+<main>
+	<section id="canvasArea">
+		<div id="selectedContainer"></div>
+		<div id = "mynetwork" class="vis-network" tabindex="900"></div>
+	</section>
+	<aside id="detailsArea">
+		<section id="generalDetails">
+			<h1 id="title">Map of FOAFIAF relationships</h1>
+			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafiaf</a></span>
+			<h5>Version: <span id="version">0.0.4</span></h5>
+			<h5>Author(s): <span id="authors">TR Technology Team</span></h5>
+			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span></h5>
+			<h5 class="statisticDetails">Edges: <span id="edgeCount"></span></h5>
+
+			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
+			<div class="accordion-container" id="selection-details">
+				<div id="SelectionInformation">
+					<p class="propDetails"><span id="propDetails"></span></p>
+					<p id='separation'>Degrees of Separation: 2</p>
+					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' min='0' max='6' value='2' step='1' onchange='changeDegrees(this.value)'/></p>
+				</div>
+			</div>			
+			<h3 class="accordion-trigger">Filters</h3>	
+			<div id="filterOption" class="accordion-container filter hidden"></div>			
+		</section>
+	</aside>
+</main>
+
+<script type="text/javascript">
+// control visibility of accordion views
+var acc = document.getElementsByClassName('accordion-trigger');
+for (var i = 0; i < acc.length; i++) {
+	acc[i].onclick = function(){
+		this.classList.toggle('accordion-trigger-active');
+		this.nextElementSibling.classList.toggle('hidden');
+	}
+};
+
+//  retrieve graph data from jsonld file
+$.getJSON("things/jsonld/combinedOutfile.jsonld", function(data) {
+	dataReceived(data);
+});
+
+//  when the graph data upload is complete, process data
+function dataReceived(data) {
+	
+	var rawNodes = [];
+	var rawEdges = [];
+	
+	//  create an array of nodes
+	rawNodes = data['@graph'];
+	for (var i = 0; i < rawNodes.length; i++) {
+		rawNodes[i].id = rawNodes[i]['@id'];
+		rawNodes[i].type = rawNodes[i]['dbo:type'] || rawNodes[i]['@type'];
+		rawNodes[i].type = rawNodes[i].type.replace("-", "");
+		rawNodes[i].group = rawNodes[i].type.substring(rawNodes[i].type.indexOf(":") + 1);
+		rawNodes[i].label = rawNodes[i]['rdfs:label'];
+		rawNodes[i].title = rawNodes[i].type + ":: " + rawNodes[i].label ;
+		rawNodes[i].name = rawNodes[i]['foaf:name'];
+	};
+
+	// create an array of edges
+	for (var j = 0; j < rawNodes.length; j++) {
+		for (var property in rawNodes[j]) {
+			if (rawNodes[j].hasOwnProperty(property) && Array.isArray(rawNodes[j][property])) {
+				for (var k = 0; k < rawNodes[j][property].length; k++) {
+					newEdge = {};
+					newEdge.arrows = {"to":"true"};
+					newEdge.from = rawNodes[j].id;
+					newEdge.to = rawNodes[j][property][k];
+					newEdge.label = property;
+					
+					rawEdges.push(newEdge);
+				}
+			}
+		}	
+	};
+
+	//  create list of each unique group type
+	var groupsList = [];
+	for (var i = 0; i < rawNodes.length; i++) {
+		if(groupsList.indexOf(rawNodes[i].group) === -1) groupsList.push(rawNodes[i].group);
+	};
+	var groups = [];
+	//  create filter checkbox for each unique group type	
+	for (var i = 0; i < groupsList.length; i++) {
+		var div = document.createElement('div');
+		var checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.className = 'toggleOption';
+		checkbox.value = groupsList[i];
+		checkbox.id = groupsList[i];
+		checkbox.checked = true;
+
+		var label = document.createElement('label');
+		label.htmlFor = groupsList[i];
+		label.appendChild(document.createTextNode(groupsList[i]));
+
+		document.getElementById('filterOption').appendChild(div);
+		div.appendChild(checkbox);
+		div.appendChild(label);
+		
+		//    for better performance, presort nodes into group objects		
+		groups[i] = {};
+		groups[i].group = groupsList[i];
+		groups[i].nodeIndexes = [];
+		for (var j = 0; j < rawNodes.length; j++) {
+			if (rawNodes[j].group === groups[i].group) {
+				groups[i].nodeIndexes.push(j);
+			}
+		}		
+	};  
+
+	var visibleNodes = [];
+	var visibleEdges = [];
+	
+	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
+	for (var i = 0; i < rawNodes.length; i++) {
+		if (rawNodes[i].id === "Transform_Rockford") {
+			var selectedNode = rawNodes[i].id;
+			displayData(rawNodes[i]);
+			hideNodesByDegree(selectedNode.toString());
+			break;
+		}
+	}
+
+	var nodes = new vis.DataSet(rawNodes);
+	var edges = new vis.DataSet(visibleEdges);
+	
+	// create a network
+	var container = document.getElementById('mynetwork');
+	var data = {
+		nodes: nodes,
+		edges: edges
+	};
+	var options = getOptions();
+	var network = new vis.Network(container, data, options);
+
+	//  hide or display nodes and edges depending on filter selections
+	var classname = document.getElementsByClassName('toggleOption');
+	var filterToggle = function() {
+		var filter = this.getAttribute('value');
+		var groupIndex;
+		for (var i = 0; i < groups.length; i++) {
+			if (groups[i].group === filter) {
+				groupIndex = i;
+				break;
+			}
+		}
+		for (var j = 0; j < groups[groupIndex].nodeIndexes.length; j++) {
+			var nodeNumber = groups[groupIndex].nodeIndexes[j];
+			
+			if (this.checked && rawNodes[nodeNumber].hiddenByDegree !== true) {
+				rawNodes[nodeNumber].hidden = false;
+			}
+			else {
+				rawNodes[nodeNumber].hidden = true;
+			}
+		}
+		setVisibleNodes();
+		determineConnectedEdges();
+		network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+	};
+	for (var i = 0; i < classname.length; i++) {
+		classname[i].addEventListener('click', filterToggle, false);
+	}
+	
+	//  network graph click event
+	network.on("click", function(selected){
+		var nodeId = selected.nodes.toString();
+		var edgeId = selected.edges.toString();
+		var focalPoint;
+		
+		//  display node or edge data in the sidebar for selected element
+		if (nodeId !== "") {
+			selectedNode = selected.nodes;	
+			var focalPoint = findObjectById(nodeId, rawNodes);
+		}
+		else focalPoint = (findObjectById(edgeId, rawEdges) || findObjectById(selectedNode, rawNodes));
+		displayData(focalPoint);	
+			
+		//  if a node is selected, hide any nodes outside the selected number N degrees
+		if(nodeId) {
+			hideNodesByDegree(nodeId);
+			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+			network.once("afterDrawing", function(){
+				zoomToSelectedNode();
+			});
+		}
+	});
+
+	network.once("afterDrawing", function(){
+		zoomToSelectedNode();
+	});
+	
+	function findObjectById(objectId, objectArray){
+		for (var i=0; i < objectArray.length; i++) {
+			if (objectArray[i].id === objectId) {
+				return objectArray[i];
+			}
+		}
+	}
+
+	function hideNodesByDegree(nodeId) {
+		//  find the connected nodes within N degrees
+		var connectedNodes = [];
+		connectedNodes.push(nodeId);
+		var degrees = document.getElementById('degreesOfSelectedNode').value;
+		for(var i = 0; i < degrees; i++) {
+			var nextDegreeNodes = [];
+			for(var j = 0; j < connectedNodes.length; j++) {
+				var nextDegreeEdges = getConnectedEdges(connectedNodes[j]);
+				for(var x = 0; x < nextDegreeEdges.length; x++) {
+					nextDegreeNodes.push(getConnectedNodes(nextDegreeEdges[x]));
+				}
+			}
+			if (nextDegreeNodes[0] != "") {
+				for(var k = 0; k < nextDegreeNodes.length; k++) {
+					for(var l = 0; l < nextDegreeNodes[k].length; l++) {
+						if(connectedNodes.indexOf(nextDegreeNodes[k][l]) === -1) connectedNodes.push(nextDegreeNodes[k][l]);
+					}
+				}
+			}
+		}
+		//  hide all nodes outside N degrees and their connected edges
+		for (var i = 0; i < rawNodes.length; i++) {
+			if (connectedNodes.indexOf(rawNodes[i].id) !== -1) {
+				if (document.getElementById(rawNodes[i].group).checked === true) {
+					rawNodes[i].hiddenByDegree = false;
+					rawNodes[i].hidden = false;
+				}
+			}
+			else {
+				rawNodes[i].hiddenByDegree = true;
+				rawNodes[i].hidden = true;
+			}
+		}
+		setVisibleNodes();
+		determineConnectedEdges();
+	}
+
+	function getConnectedEdges(theNode) {
+		var indexesOfEdgesConnectedToNode = [];
+		for (var x = 0; x < rawEdges.length; x++) {
+			if (rawEdges[x].to === theNode || rawEdges[x].from === theNode) {
+				indexesOfEdgesConnectedToNode.push(x);
+			}
+		}
+		return indexesOfEdgesConnectedToNode;
+	}
+
+	function getConnectedNodes(theEdgeIndex) {
+		var nodesConnectedToEdge = [rawEdges[theEdgeIndex].to, rawEdges[theEdgeIndex].from];
+		return nodesConnectedToEdge;
+	}
+	
+	function determineConnectedEdges() {
+		var hiddenEdgesIndexes = [];
+		var visibleEdgesIndexes = [];
+		visibleEdges = [];
+		for (var x = 0; x < rawEdges.length; x++) {
+			var toNode = findObjectById(rawEdges[x].to, rawNodes) || false;
+			var fromNode = findObjectById(rawEdges[x].from, rawNodes) || false;
+			if (toNode.hidden === true || fromNode.hidden === true) {
+				if (rawEdges[x].hidden !== true) hiddenEdgesIndexes.push(x);
+				rawEdges[x].hidden = true;
+			}
+			else {
+				if (rawEdges[x].hidden === true) visibleEdgesIndexes.push(x);
+				rawEdges[x].hidden = false;
+			}
+			if (rawEdges[x].hidden !== true) visibleEdges.push(rawEdges[x]);
+		}
+		
+		document.getElementById('edgeCount').innerHTML = visibleEdges.length;
+	}
+	
+	function setVisibleNodes() {
+		visibleNodes = [];
+		for (var x = 0; x < rawNodes.length; x++) {
+			if (rawNodes[x].hidden !== true) visibleNodes.push(rawNodes[x]);
+		}
+		document.getElementById('nodeCount').innerHTML = visibleNodes.length;
+	}	
+
+	function displayData(focalPoint) {
+		var details = "";
+		for(var property in focalPoint) {
+			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' && property !== "@id") {
+				details += (property + ": " + focalPoint[property] + "<br>");
+			}
+		}
+		document.getElementById('propDetails').innerHTML = details;	
+	}
+	
+	function zoomToSelectedNode() {
+		var moveToOptions = {
+			scale: 1.10,              // scale to animate to  (Number)
+			offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
+			animation: {             // animation object, can also be Boolean
+			  duration: 1000,                 // animation duration in milliseconds (Number)
+			  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
+			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
+		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
+		if(selectedNode) network.focus(selectedNode, moveToOptions);	
+	}
+
+	changeDegrees = function(newValue) {
+		hideNodesByDegree(selectedNode[0].toString());
+		network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
+	}
+}
+</script>
+
+</body>
+</html>
