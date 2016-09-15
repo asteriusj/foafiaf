@@ -1,0 +1,773 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> . 
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bio:   <http://purl.org/vocab/bio/0.1/> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns_1_6: <http://xmlns.com/wordnet/1.6/> .
+@prefix cv_base: <http://rdfs.org/resume-rdf/base.rdfs#> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix personasonto: <http://blankdots.com/open/personasonto.owl>
+@prefix perse: <https://foafiaf-asteriusj.c9.io/owl/perseprofile.owl#> .
+
+@base <https://foafiaf-asteriusj.c9.io/owl/perseprofile#> .
+
+<http://foafiaf-asteriusj.c9.io/owl/perseprofile.owl>
+        a   owl:Ontology;
+        rdfs:label "Perse Personalizaion Profile Vocabulary Dataset Schema"@en ;
+	rdfs:description "Perse - def. by or in itself or themselves; intrinsically. Perse is a Greek mythological character... an abstraction. So too the Perse set of classes and for creating an publishing a personalization profile wil multiple facets or dimensions." ;
+        dc:title """Strategy Maps"""@en;
+        dc:description "This ontology contains a list of the classes and properties that can be used when for creating and publishing a Perse personalization profile."@en ;
+        dcterms:created "2016-08-18"^^xsd:date ;
+        dcterms:modified "2016-08-31"^^xsd:date ;
+        dc:creator """Asterius Media LLC"""@en;
+	dc:publisher """Asterius Media LLC"""@en;
+	vann:termGroup bio:termsLinkedInSkills   ;
+	rdfs:comment """Copyright (c) 2016 Asterius Media LLC """@en .
+	
+        
+        ##owl:imports       <http://foafiaf-asteriusj.c9.io/owl/perseprofile_DiSC.owl> .
+
+
+        
+        
+perse:Person 
+        a                   rdfs:Class ;
+        rdfs:label          "Person"@en ;
+        rdfs:comment        "An object representing a single person"@en ;
+        owl:equivalentClass foaf:Person , dbo:Person , <http://schema.org/Person> , <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+        rdfs:subClassOf     owl:Thing .
+
+perse:aboutPerson       
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "aboutPerson" ;
+        rdfs:range          foaf:Person .
+
+perse:gender
+        a               owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain     perse:Person ;
+        rdfs:range      rdfs:Literal ;
+        dc:description  "Gender of a person." .
+perse:age
+        a               owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain     perse:Person ;
+        rdfs:range      xs:float ;
+        dc:description  "Age of a person." .
+  
+perse:Name
+        a                         owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain               perse:Person ;
+        rdfs:range                xs:string ;
+        dc:description            "Full or formated name of a person." ;
+        owl:equivalentClass       foaf:name , vcard:fn .
+        
+perse:lastName
+        a                         owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain               perse:Person ;
+        rdfs:range                xs:string ;
+        dc:description            "Family or Last name of a person." ;
+        owl:propertyDisjointWith  perse:firstName ;
+        owl:equivalentClass       foaf:surname , vcard:family-name .
+        
+perse:firstName
+        a                         owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain               perse:Person ;
+        rdfs:range                xs:string ;
+        dc:description            "First or Given name of a person." ;
+        owl:propertyDisjointWith  perse:lastName ;
+        owl:equivalentClass       foaf:givenName , vcard:given-name .
+
+perse:nickName
+        a                         owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain               perse:Person ;
+        rdfs:range                xs:string ;
+        dc:description            "Nick name of a person." ;
+        owl:equivalentClass       foaf:nick , vcard:nickname .
+        
+perse:knows
+        a                       owl:ObjectProperty ;
+        rdfs:domain             perse:Person ;
+        rdfs:range              perse:Person ;
+        dc:description          "A person knows another person (similar to FOAF ontology)." ;
+        owl:equivalentClass     foaf:Knows .
+  
+perse:isMemberOf
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Person  ;
+        rdfs:range      perse:Organization ;
+        dc:description  "A person might be memeber of an organization." . 
+
+perse:hasAffiliation
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Person ;
+        rdfs:range      perse:Organization ;
+        dc:description  "A person might have a certain type of affiliation to an organization and might not be member of it." .
+
+        
+perse:Perse  
+        a                       rdfs:Class ;
+        rdfs:comment            "Perse is/can be a subclass of WordNet Curriculum Vitae" ;
+        rdfs:subClassOf         perse:Person ;
+        rdfs:label              "Perse Profile" ;
+        owl:equivalentClass     skos:ConceptScheme ;
+        owl:disjointWith        skos:Concept ;
+        skos:definition         "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+        skos:example            "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
+        skos:scopeNote          "A concept scheme may be defined to include concepts from different sources."@en .
+
+
+perse:prefLabel
+        a                       rdf:Property ;
+        rdfs:domain             perse:Perse ;
+        rdfs:label              "prefLabel" ;
+        owl:equivalentClass     skos:prefLabel .
+        
+perse:hasConcept
+        a                       rdf:Property ;
+        rdfs:domain             perse:Perse ;
+        rdfs:label              "hasInterest" ;
+        owl:equivalentClass     skos:HasTopConcept .
+        
+perse:hasInterest  
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "hasInterest" ;
+        rdfs:range          perse:Interest .
+
+perse:hasSkill  
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "hasSkill" ;
+        rdfs:range          perse:Skill .
+
+perse:hasKnowledge  
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "hasKnowledge" ;
+        rdfs:range          perse:Knowledge .
+        
+perse:hasExperience  
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "hasExperience" ;
+        rdfs:range          perse:Experience .
+        
+perse:hasPersonality  
+        a                   rdf:Property ;
+        rdfs:domain         perse:Perse ;
+        rdfs:label          "hasPersonality" ;
+        rdfs:range          perse:Personality .
+        
+        
+perse:Interest  
+        a                   rdfs:Class ;
+        rdfs:comment        "Perse entry for description of interests" ;
+        rdfs:label          "Interests" ;
+        owl:disjointWith    skos:Skill , perse:Experience , perse:Knowledge , perse:Personality ;
+        owl:equivalentClass skos:Concept ;
+        skos:definition     "An idea or notion; a unit of thought."@en .
+
+perse:hasInterestType  
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Interest ;
+        rdfs:label          "hasInterestType" ;
+        rdfs:range          perse:InterestType . 
+ 
+perse:InterestType  
+        a                   rdfs:Class ;
+        rdfs:comment        "Profile entry for interest" ;
+        rdfs:subClassOf     perse:Interest ;
+        rdfs:label          "InterestType" .
+   
+perse:LinkedIn_interest 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:InterestType ;
+        rdfs:label          "LinkedIn InterestType" .
+
+perse:Axciom_interest 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:InterestType ;
+        rdfs:label          "Axciom InterestType" . 
+
+perse:Traxion_interest 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:InterestType ;
+        rdfs:label          "Traxion InterestType" . 
+        
+perse:interestName  
+        a                   rdf:Property ;
+        rdfs:comment        "Name of the interest" ;
+        rdfs:domain         perse:Interest ;
+        rdfs:label          "interestName" ;
+        rdfs:range          rdfs:Literal .
+
+perse:interestScore  
+        a                   rdf:Property ;
+        rdfs:comment        "Level of the interest (0..5)" ;
+        rdfs:domain         perse:Interest ;
+        rdfs:label          "interestScore" ;
+        rdfs:range          rdfs:Literal .   
+        
+        
+perse:Skill  
+        a                   rdfs:Class ;
+        rdfs:comment        "Perse entry for  skills" ;
+        rdfs:label          "Skills" ;
+        owl:disjointWith    skos:Interest , perse:Experience , perse:Knowledge , perse:Personality ;
+        owl:equivalentClass skos:Concept ;
+        skos:definition     "An idea or notion; a unit of thought."@en .
+        
+perse:hasSkillType  
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Skill ;
+        rdfs:label          "hasSkillType" ;
+        rdfs:range          perse:SkillType .  
+   
+perse:SkillType  
+        a                   rdfs:Class ;
+        rdfs:comment        "Profile entry for skill" ;
+        rdfs:subClassOf     perse:Skill ;
+        rdfs:label          "SkillType" .
+
+perse:LinkedIn_skill 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:SkillType ;
+        rdfs:label          "LinkedIn SkillType" . 
+  
+     
+perse:Analysic_skill 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:SkillType ;
+        rdfs:label          "Analysic SkillType" .
+        
+perse:Delivery_skill 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:SkillType ;
+        rdfs:label          "Delivery SkillType" .
+        
+perse:skillName  
+        a                   rdf:Property ;
+        rdfs:comment        "Name of the skill" ;
+        rdfs:domain         perse:Skill ;
+        rdfs:label          "skillName" ;
+        rdfs:range          rdfs:Literal .
+
+perse:skillLevel  
+        a                   rdf:Property ;
+        rdfs:comment        "Level of the skill (0..5)" ;
+        rdfs:domain         perse:Skill ;
+        rdfs:label          "skillLevel" ;
+        rdfs:range          rdfs:Literal .   
+
+
+
+        
+        
+perse:Knowledge  
+        a                   rdfs:Class ;
+        rdfs:comment        "Perse entry for Knowledge" ;
+        rdfs:label          "Knowledge" ;
+        owl:disjointWith    skos:Skill , perse:Experience , perse:Interest , perse:Personality ;
+        owl:equivalentClass skos:Concept .
+
+perse:hasKnowledgeType 
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Knowledge ;
+        rdfs:label          "hasKnowledgeType" ;
+        rdfs:range          perse:KnowledgeType . 
+  
+perse:KnowledgeType  
+        a                   rdfs:Class ;
+        rdfs:comment        "Profile entry for Knowledge" ;
+        rdfs:subClassOf     perse:Knowledge ;
+        rdfs:label          "KnowledgeType" .
+ 
+perse:LinkedIn_knowledge 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:KnowledgeType ;
+        rdfs:label          "LinkedIn KnowledgeType" . 
+        
+perse:Certification_knowledge 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:KnowledgeType ;
+        rdfs:label          "Certification KnowledgeType" . 
+
+perse:hasCertification
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Certification_knowledge  ;
+        rdfs:range      perse:Certification ;
+        rdfs:label      "hasCertification" . 
+
+perse:Certification  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Certification_knowledge ;
+        rdfs:comment    "Perse entry for Certification" ;
+        rdfs:label      "Certification" .
+        
+perse:Leadership_knowledge 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:KnowledgeType ;
+        rdfs:label              "Leadership KnowledgeType" .
+
+perse:hasLeaderhip
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Leadership_knowledge  ;
+        rdfs:range      perse:Leaderhip ;
+        rdfs:label      "hasLeaderhip" . 
+
+perse:Leaderhip  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Leadership_knowledge ;
+        rdfs:comment    "Perse entry for Leaderhip" ;
+        rdfs:label      "Leaderhip" .
+        
+
+
+perse:Education_knowledge 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:KnowledgeType ;
+        rdfs:label              "Education KnowledgeType" .
+
+perse:hasEducation
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Education_knowledge  ;
+        rdfs:range      perse:Education ;
+        rdfs:label      "hasEducation" . 
+
+perse:Education  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Education_knowledge ;
+        rdfs:comment    "Perse entry for Education" ;
+        rdfs:label      "Education" .
+        
+perse:eduDescription
+        a               rdf:Property ;
+        rdfs:comment    "Description of the education info." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "eduDescription" ;
+        rdfs:range      rdfs:Literal .
+
+perse:eduMajor  
+        a               rdf:Property ;
+        rdfs:comment    "Major speciality graduated." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "eduMajor" ;
+        rdfs:range      rdfs:Literal .
+        
+perse:eduStartDate  
+        a               rdf:Property ;
+        rdfs:comment    "Education start date (YYYY-MM-DD)\nMay contain only year or year and month." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "eduStartDate" ;
+        rdfs:range      rdfs:Literal .
+
+perse:eduEndDate  
+        a               rdf:Property ;
+        rdfs:comment    "Education end date (YYYY-MM-DD)\nMay contain only year or year and month." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "eduendDate" ;
+        rdfs:range      rdfs:Literal .
+        
+perse:eduGradDate  
+        a               rdf:Property ;
+        rdfs:comment    "Education end (graducation) date (YYYY-MM-DD)\nMay contain only year or year and month." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "eduGradDate" ;
+        rdfs:range      rdfs:Literal .
+       
+perse:degreeType  
+        a               rdf:Property ;
+        rdfs:comment    "Type (title) of the degree." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "degreeType" ;
+        rdfs:range      cv_base:EduDegree .
+        
+perse:EducationalOrganization
+        a               rdfs:Class ;
+        rdfs:comment    "Educational organization (university, ...)" ;
+        rdfs:label      "EducationalOrganization" ;
+        owl:equivalentClass personasonto:EducationalOrganization ;
+        rdfs:subClassOf perse:Organization .
+   
+perse:studiedIn  
+        a               rdf:Property ;
+        rdfs:comment    "Educational organization where person studied." ;
+        rdfs:domain     perse:Education ;
+        rdfs:label      "studiedIn" ;
+        rdfs:range      perse:EducationalOrganization .
+        
+        
+perse:Reference_knowledge 
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:KnowledgeType ;
+        rdfs:label      "Reference KnowledgeType" .
+
+perse:hasReference
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Reference_knowledge  ;
+        rdfs:range      perse:Reference ;
+        rdfs:label      "has a reference." . 
+        
+perse:Reference  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Reference_knowledge ;
+        rdfs:comment    "Perse entry for references" ;
+        rdfs:label      "Reference"  .     
+  
+perse:referenceBy
+        a               owl:ObjectProperty ;
+        rdfs:comment    "Points to a person who provides the reference." ;
+        rdfs:domain     perse:Reference  ;
+        rdfs:range      perse:Person ;
+        rdfs:label      "referenceBy" . 
+        
+perse:PersonalReference
+        a                rdfs:Class ;
+        rdfs:comment     "Personal reference" ;
+        rdfs:label       "PersonalRefernece" ;
+        rdfs:subClassOf  perse:Reference .
+ 
+perse:Recomendation  
+        a               rdfs:Class ;
+        rdfs:comment    "Perse entry for recomendations" ;
+        rdfs:label      "Recomendation"  .      
+       
+       
+       
+perse:Experience  
+        a                   rdfs:Class ;
+        rdfs:comment        "Perse entry for experiences" ;
+        rdfs:label          "Experience"  ;
+        owl:disjointWith    skos:Skill , perse:Interest , perse:Knowledge , perse:Personality ;
+        owl:equivalentClass skos:Concept .
+
+perse:hasExperienceType  
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Experience ;
+        rdfs:label          "hasExperienceType" ;
+        rdfs:range          perse:ExperienceType . 
+  
+perse:ExperienceType  
+        a                   rdfs:Class ;
+        rdfs:comment        "Profile entry for experience" ;
+        rdfs:subClassOf     perse:Experience ;
+        rdfs:label          "ExperienceType" .
+
+perse:Project_experience 
+        a                   rdfs:Class ;
+        rdfs:subClassOf     perse:ExperienceType ;
+        rdfs:label          "Project ExperienceType" . 
+
+perse:hasProject       
+        a               rdf:ObjectProperty ;
+        rdfs:comment    "..." ;
+        rdfs:domain     perse:Project_experience ;
+        rdfs:label      "hasProject" ;
+        rdfs:range      perse:Project .
+
+perse:Project  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Project_experience ;
+        rdfs:comment     "CV entry for a project" ;
+        rdfs:label       "Project" . 
+    
+perse:Publication_experience
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:ExperienceType ;
+        rdfs:label      "Publication ExperienceType" . 
+
+perse:hasPublication       
+        a               rdf:ObjectProperty ;
+        rdfs:comment    "..." ;
+        rdfs:domain     perse:Publication_experience ;
+        rdfs:label      "hasPublication" ;
+        rdfs:range      perse:Publication .
+
+perse:Publication  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Publication_experience ;
+        rdfs:comment    "CV entry for a publication" ;
+        rdfs:label      "Publication" . 
+        
+        
+perse:Work_experience 
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:ExperienceType ;
+        dc:description  "" .
+   
+perse:hasWorkHistory  
+        a               rdf:ObjectProperty ;
+        rdfs:comment    "..." ;
+        rdfs:domain     perse:Work_experience ;
+        rdfs:label      "hasWorkHistory" ;
+        rdfs:range      perse:WorkHistory .
+
+perse:WorkHistory  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Work_experience ;
+        rdfs:comment    "perse entry for Work History" ;
+        rdfs:label      "WorkHistory"  .
+        
+perse:startDate  a  rdf:Property ;
+        rdfs:comment  "Start date of employment.\nFormat: YYYY-MM-DD\nMay containt only year or year and month." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "startDate" ;
+        rdfs:range    rdfs:Literal .
+
+perse:endDate  a    rdf:Property ;
+        rdfs:comment  "End date of employment.\nFormat: YYYY-MM-DD\nMay containt only year or year and month." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "endDate" ;
+        rdfs:range    rdfs:Literal .
+        
+perse:isCurrent  a  rdf:Property ;
+        rdfs:comment  "Indicates if this is a current workplace." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "isCurrent" ;
+        rdfs:range    cv_base:BooleanValue .
+        
+perse:jobTitle  a   rdf:Property ;
+        rdfs:comment  "Title in the job." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "jobTitle" ;
+        rdfs:range    rdfs:Literal .
+        
+perse:jobType  a    rdf:Property ;
+        rdfs:comment  "Type of the job: employee / contractor / intern" ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "jobType" ;
+        rdfs:range    perse:CVJobType .
+        
+perse:jobFunction  a   rdf:Property ;
+        rdfs:comment  "Function in the job." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "jobFunction" ;
+        rdfs:range    rdfs:Literal .
+        
+perse:jobDescription
+        a             rdf:Property ;
+        rdfs:comment  "Description of the job in company." ;
+        rdfs:domain   perse:WorkHistory ;
+        rdfs:label    "jobDescription" ;
+        rdfs:range    rdfs:Literal .   
+     
+     
+  
+perse:Personality  
+        a                   rdfs:Class ;
+        rdfs:comment        "Perse entry for personality" ;
+        rdfs:subClassOf     perse:Perse ;
+        rdfs:label          "Personality"  ;
+        owl:disjointWith    skos:Skill , perse:Experience , perse:Knowledge , perse:Interest ;
+        owl:equivalentClass skos:Concept .  
+
+perse:hasPersonalityType  
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Personality ;
+        rdfs:label          "hasPersonalityType" ;
+        rdfs:range          perse:PersonalityType .
+        
+perse:PersonalityType  
+        a                       rdfs:Class ;
+        rdfs:comment            "Type entry for personality" ;
+        rdfs:subClassOf         perse:Personality ;
+        dc:description          "Each Personality is classified by a Type and a Person might fit into several PersonaTypes." ;
+        owl:equivalentClass     personasonto:PersonaType ;
+        rdfs:label              "PersonalityType" .
+        
+perse:DiSC_profile 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:PersonalityType ;
+        dc:description          "" ;
+        rdfs:label              "DiSC_profile" .
+
+perse:hasDiSC
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:DiSC_profile  ;
+        rdfs:range      perse:DiSC ;
+        rdfs:label      "hasDiSC" . 
+        
+perse:DiSC  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:DiSC_profile ;
+        rdfs:comment    "Perse entry for DiSC" ;
+        rdfs:label      "DiSC" .
+        
+perse:MBTI_profile 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:PersonalityType ;
+        dc:description          "" ;
+        rdfs:label              "Myers-Briggs Type Indicator" .
+
+perse:hasMBTI
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:MBTI_profile  ;
+        rdfs:range      perse:MBTI ;
+        rdfs:label      "hasMBTI" . 
+        
+perse:MBTI  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:MBTI_profile ;
+        rdfs:comment    "Perse entry for MBTI" ;
+        rdfs:label      "MBTI" .
+        
+perse:SST_profile 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:PersonalityType ;
+        rdfs:comment            "I", "II", "III", "IV", "V", "VI", "VII" ;
+        dc:description          "" ;
+        rdfs:label              "(SST) Stratified Systems Theory" .
+
+perse:hasSST
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:SST_profile  ;
+        rdfs:range      perse:SST ;
+        rdfs:label      "hasSST" . 
+        
+perse:SST  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:SST_profile ;
+        rdfs:comment    "Perse entry for SST" ;
+        rdfs:label      "SST" .
+        
+perse:Traxion_profile 
+        a                       rdfs:Class ;
+        rdfs:subClassOf         perse:PersonalityType ;
+        dc:description          "" ;
+        rdfs:label              "Traxion Tempermant Profile" .
+
+perse:hasTraxion
+        a               owl:ObjectProperty ;
+        rdfs:domain     perse:Traxion_profile  ;
+        rdfs:range      perse:Traxion ;
+        rdfs:label      "hasTraxion" . 
+        
+perse:Traxion  
+        a               rdfs:Class ;
+        rdfs:subClassOf perse:Traxion_profile ;
+        rdfs:comment    "Perse entry for Traxion" ;
+        rdfs:label      "Traxion" .
+
+
+
+perse:Organization  
+        a                   rdfs:Class ;
+        rdfs:comment        "General class for organizations" ;
+        rdfs:label          "Organization" ;
+        owl:equivalentClass foaf:Organization , dbo:Organization , <http://schema.org/Organization> ;
+        rdfs:subClassOf     owl:Thing .
+
+perse:Name  a   rdf:Property ;
+        rdfs:comment  "Name of the company" ;
+        rdfs:domain   perse:Organization ;
+        rdfs:label    "Name" ;
+        rdfs:range    rdfs:Literal .
+
+perse:Locality  a   rdf:Property ;
+        rdfs:comment  "Region / state of the company." ;
+        rdfs:domain   perse:Organization ;
+        rdfs:label    "Locality" ;
+        rdfs:range    rdfs:Literal .
+        
+perse:URL  a        rdf:Property ;
+        rdfs:comment  "Company home page" ;
+        rdfs:domain   perse:Organization ;
+        rdfs:label    "URL" ;
+        rdfs:range    rdfs:Literal .
+
+perse:Notes  a      rdf:Property ;
+        rdfs:comment  "Notes about the company." ;
+        rdfs:domain   perse:Organization ;
+        rdfs:label    "Notes" ;
+        rdfs:range    rdfs:Literal .
+ 
+perse:hasMember  a            owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Indicates a member of an organization" ;
+        rdfs:domain       perse:Organization ;
+        rdfs:label        "member" ;
+        rdfs:range        perse:Person .
+   
+perse:hasRole  
+        a                   rdf:ObjectProperty ;
+        rdfs:comment        "..." ;
+        rdfs:domain         perse:Organization ;
+        rdfs:label          "hasRole" ;
+        rdfs:range          perse:Role .
+    
+perse:Role  
+        a                   rdfs:Class ;
+        rdfs:comment        "perse entry for roles" ;
+        rdfs:label          "Role"  .
+
+perse:roleTitle  
+        a               rdf:Property ;
+        rdfs:comment    "Title in the role." ;
+        rdfs:domain     perse:Role ;
+        rdfs:label      "roleTitle" ;
+        rdfs:range      rdfs:Literal .
+        
+perse:roleDescription
+        a               rdf:Property ;
+        rdfs:comment    "Description of the experience in organization." ;
+        rdfs:domain     perse:Role ;
+        rdfs:label      "roleDescription" ;
+        rdfs:range      rdfs:Literal .   
+        
+perse:roleResponsibility
+        a               rdf:Property ;
+        rdfs:comment    "The Responsibility of the role in organization." ;
+        rdfs:domain     perse:Role ;
+        rdfs:label      "roleResponsibility" ;
+        rdfs:range      rdfs:Literal .  
+    
+perse:Corporation
+        a                rdfs:Class ;
+        rdfs:comment     "Corporation organization" ;
+        rdfs:label       "Corporation" ;
+        owl:equivalentClass personasonto:Corporation ;
+        rdfs:subClassOf  perse:Organization .
+        
+perse:NonProfit  
+        a                       rdfs:Class ;
+        rdfs:comment            "A class for Non-Profit oerg information." ;
+        rdfs:label              "Non-Profit" ;
+        owl:equivalentClass     personasonto:NGO ;
+        rdfs:subClassOf         perse:Organization .
+        
+perse:Government  
+        a                       rdfs:Class ;
+        rdfs:comment            "A class for Government org information." ;
+        rdfs:label              "Government" ;
+        owl:equivalentClass     personasonto:GovernmentOrganization ;
+        rdfs:subClassOf         perse:Organization .
+        
+perse:Company  
+        a                       rdfs:Class ;
+        rdfs:comment            "A class for company information." ;
+        rdfs:label              "Company" ;
+        owl:equivalentClass     dbo:Company ;
+        rdfs:subClassOf         perse:Organization .
+
+perse:Industry  
+        a                       rdf:Property ;
+        rdfs:comment            "Industry of the company" ;
+        rdfs:domain             perse:Company ;
+        rdfs:label              "Industry" ;
+        rdfs:range              rdfs:Literal .
+        
+
