@@ -25,6 +25,387 @@
 				color: 'pink'
 			  },
 			  
+			    
+          Education: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-graduation-cap',
+              code: '\uf19d',
+              size: 50,
+              color: 'brown'
+            }
+          },
+          EducationalOrganization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-graduation-cap',
+              code: '\uf19d',
+              size: 50,
+              color: 'black'
+            }
+          },
+          Public_university: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-graduation-cap',
+              code: '\uf19d',
+              size: 50,
+              color: 'blue'
+            }
+          },
+          Job: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-magic',
+              code: '\uf0d0',
+              size: 50,
+              color: 'black'
+            }
+          },
+          WorkHistory: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-magic',
+              code: '\uf0d0',
+              size: 50,
+              color: 'YellowGreen'
+            }
+          },
+          
+          
+          Person: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          BusinessPerson: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          Group: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          Organization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 45,
+              color: 'blue'
+            }
+          },   
+          Company: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building-0',
+              code: '\uf0f7',
+              size: 50,
+              color: 'OrangeRed '
+            }
+          },
+          Government: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building',
+              code: '\uf1ad',
+              size: 45,
+              color: 'black'
+            }
+          },
+          GovernmentAgency: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building',
+              code: '\uf1ad',
+              size: 45,
+              color: 'black'
+            }
+          },
+          Municipality: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building',
+              code: '\uf1ad',
+              size: 40,
+              color: 'RoyalBlue'
+            }
+          },
+          Legislature: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf19c',
+              size: 45,
+              color: 'grey'
+            }
+          },
+          NonProfit: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: 'green'
+            }
+          },
+          NonProfitOrganisation: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: 'green'
+            }
+          },
+          NGO: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: 'pink'
+            }
+          },
+          Faith: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf004',
+              size: 40,
+              color: 'cyan'
+            }
+          },
+          ReligiousOrganisation: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf004',
+              size: 40,
+              color: 'cyan'
+            }
+          },
+          City: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 60,
+              color: 'black'
+            }
+          },
+          Village: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 50,
+              color: 'Grey'
+            }
+          },
+          Town: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 45,
+              color: 'LightGrey'
+            }
+          },
+          Role: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf21d',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+          
+          Place: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 55,
+              color: 'blue'
+            }
+          },
+          Tags: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tags',
+              code: '\uf02c',
+              size: 50,
+              color: 'YellowGreen'
+            }
+          },
+          Tag: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'YellowGreen'
+            }
+          },     
+          ConceptScheme: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tags',
+              code: '\uf02c',
+              size: 50,
+              color: 'YellowGreen'
+            }
+          },
+          Concept: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'YellowGreen'
+            }
+          },     
+          
+          Perse: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tags',
+              code: '\uf02c',
+              size: 40,
+              color: 'OrangeRed'
+            }
+          },
+          Personality: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'OrangeRed'
+            }
+          },
+          MBTI: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'Green'
+            }
+          },
+          MBTI_profile: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'Green'
+            }
+          },
+          DiSC: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'Green'
+            }
+          },
+          Traxion: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'Green'
+            }
+          },
+          
+          Interest: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-search',
+              code: '\uf002',
+              size: 50,
+              color: 'OrangeRed'
+            }
+          },
+          Skill: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'OrangeRed'
+            }
+          },
+          Knowledge: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'OrangeRed'
+            }
+          },
+          Experience: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'OrangeRed'
+            }
+          },
+          
 			  group: {
 				shape: 'icon',
 				icon: {
