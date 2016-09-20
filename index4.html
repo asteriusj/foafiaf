@@ -68,9 +68,12 @@ function dataReceived(data) {
 	rawNodes = data['@graph'];
 	for (var i = 0; i < rawNodes.length; i++) {
 		rawNodes[i].id = rawNodes[i]['@id'];
-		rawNodes[i].group = rawNodes[i]['@type'].substring(rawNodes[i]['@type'].indexOf(":") + 1).toLowerCase();
-		rawNodes[i].name = rawNodes[i]['foaf:name'];
-		rawNodes[i].title = rawNodes[i]['rdfs:label'];
+		rawNodes[i].type = rawNodes[i]['dbo:type'] || rawNodes[i]['@type'];
+		rawNodes[i].type = rawNodes[i].type.replace("-", "");
+		rawNodes[i].group = /[^:]*$/.exec(rawNodes[i].type)[0];
+		rawNodes[i].label = rawNodes[i]['rdfs:label'];
+		rawNodes[i].title = rawNodes[i].type + ":: " + rawNodes[i].label ;
+		rawNodes[i].name = rawNodes[i]['foaf:name'];		
 	};
 
 	// create an array of edges
@@ -130,18 +133,18 @@ function dataReceived(data) {
 	
 	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
 	for (var i = 0; i < rawNodes.length; i++) {
-		if (rawNodes[i].id === "Transform_Rockford") {
+		if (rawNodes[i].id.match(/Transform_Rockford/i)) {
 			var selectedNode = rawNodes[i].id;
 			displayData(rawNodes[i]);
 			hideNodesByDegree(selectedNode.toString());
 			break;
 		}
 	}
-
-	var nodes = new vis.DataSet(rawNodes);
-	var edges = new vis.DataSet(visibleEdges);
 	
 	// create a network
+	var nodes = new vis.DataSet(visibleNodes);
+	var edges = new vis.DataSet(visibleEdges);
+	
 	var container = document.getElementById('mynetwork');
 	var data = {
 		nodes: nodes,
