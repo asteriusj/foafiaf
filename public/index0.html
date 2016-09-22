@@ -35,8 +35,8 @@
 			<div class="accordion-container" id="selection-details">
 				<div id="SelectionInformation">
 					<p class="propDetails"><span id="propDetails"></span></p>
-					<p id='separation'>Degrees of Separation: 2</p>
-					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' min='0' max='6' value='2' step='1' onchange='changeDegrees(this.value)'/></p>
+					<p id='separation'>Degrees of Separation: 1</p>
+					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' min='0' max='6' value='1' step='1' onchange='changeDegrees(this.value)'/></p>
 				</div>
 			</div>			
 			<h3 class="accordion-trigger">Filters</h3>	
@@ -46,6 +46,17 @@
 </main>
 
 <script type="text/javascript">
+// collect URL query string parameters
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+}
+var startid = getUrlVars()["startid"] || null;
+var datalink = getUrlVars()["datalink"] || null;
+console.log(startid, datalink)
 // control visibility of accordion views
 var acc = document.getElementsByClassName('accordion-trigger');
 for (var i = 0; i < acc.length; i++) {
@@ -56,7 +67,9 @@ for (var i = 0; i < acc.length; i++) {
 };
 
 //  retrieve graph data from jsonld file
-$.getJSON("things/jsonld/combinedOutfile.jsonld", function(data) {
+var dataURL = datalink || "things/jsonld/combinedOutfile.jsonld";
+$.getJSON(dataURL, function(data) {
+	console.log('dataURL -> ', dataURL)
 	dataReceived(data);
 });
 
@@ -134,8 +147,20 @@ function dataReceived(data) {
 	var visibleEdges = [];
 	
 	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
+	// CHANGE BY ADDING additional selectors from JSON-LD doc and query string param
+	var defaultNode = data['@id'] || null;						
+	console.log('defaultNode - > ', defaultNode)
+	
+	if (startid) {
+		var selectedNodeID = startid;		// ADDED check for default @id in jsonld
+	} else if (defaultNode) {
+		var selectedNodeID = defaultNode;						// ADDED check for default @id in jsonld
+	} else {
+		var selectedNodeID = "foafiaf:Transform_Rockford";		// CHANGED from 'Transform_Rockford'
+	}
+	
 	for (var i = 0; i < rawNodes.length; i++) {
-		if (rawNodes[i].id === "Transform_Rockford") {
+		if (rawNodes[i].id === selectedNodeID) {				// changed to var value
 			var selectedNode = rawNodes[i].id;
 			displayData(rawNodes[i]);
 			hideNodesByDegree(selectedNode.toString());
