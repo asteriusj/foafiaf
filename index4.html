@@ -323,7 +323,7 @@ function dataReceived(data) {
 	}
 
 	changeDegrees = function(newValue) {
-		hideNodesByDegree(selectedNode[0].toString());
+		hideNodesByDegree(selectedNode.toString());
 		network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
 		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
 	}
