@@ -151,9 +151,11 @@ function dataReceived(data) {
 	};
 	var options = getOptions();
 	var network = new vis.Network(container, data, options);
+	document.body.style.cursor='wait';
 
 	network.once("afterDrawing", function(){
 		zoomToSelectedNode();
+		document.body.style.cursor='default';
 	});
 	
 	//  hide or display nodes and edges depending on filter selections
@@ -179,9 +181,16 @@ function dataReceived(data) {
 			
 			if (degrees > 2) nodes.update({id:rawNodes[nodeNumber].id, hidden: rawNodes[nodeNumber].hidden});
 		}
-		setVisibleNodesDisplayCount();
+		setVisibleNodesCountDisplay();
 		determineConnectedEdges();
-		if (degrees <= 2) network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+		if (degrees <= 2) {
+			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+			document.body.style.cursor='wait';
+			network.once("afterDrawing", function(){
+				zoomToSelectedNode();
+				document.body.style.cursor='default';
+			});			
+		}
 	};
 	for (var i = 0; i < classname.length; i++) {
 		classname[i].addEventListener('click', filterToggle, false);
@@ -205,8 +214,10 @@ function dataReceived(data) {
 		if(nodeId) {
 			hideNodesByDegree(nodeId);
 			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+			document.body.style.cursor='wait';
 			network.once("afterDrawing", function(){
 				zoomToSelectedNode();
+				document.body.style.cursor='default';
 			});
 		}
 	});
@@ -241,12 +252,12 @@ function dataReceived(data) {
 		}
 		//  hide all nodes outside N degrees and their connected edges	
 		var newlyHiddenNodesIndexes = [];
-		var newlyVisibleNodesIndexes = [];		
+		var newlyVisibleNodesIndexes = [];
 		for (var i = 0; i < rawNodes.length; i++) {	
 			if (connectedNodes.indexOf(rawNodes[i].id) !== -1) {
+				rawNodes[i].hiddenByDegree = false;
 				if (document.getElementById(rawNodes[i].group).checked === true) {
 					if (rawNodes[i].hidden === true) newlyVisibleNodesIndexes.push(i);
-					rawNodes[i].hiddenByDegree = false;
 					rawNodes[i].hidden = false;
 				}
 			}
@@ -257,7 +268,7 @@ function dataReceived(data) {
 			}
 		}
 		if (degrees > 2) {
-			for (var j = 0; j < newlyHiddenNodesIndexes.length; j++) {
+			for (var j = 0; j < newlyHiddenNodesIndexes.length; j++) {		
 				var nodesNumber = newlyHiddenNodesIndexes[j];
 				nodes.update({id:rawNodes[nodesNumber].id, hidden: true});
 			}
@@ -266,7 +277,7 @@ function dataReceived(data) {
 				nodes.update({id:rawNodes[nodesNumber].id, hidden: false});
 			}
 		}		
-		setVisibleNodesDisplayCount();
+		setVisibleNodesCountDisplay();
 		determineConnectedEdges();
 	}
 
@@ -316,7 +327,7 @@ function dataReceived(data) {
 		document.getElementById('edgeCount').innerHTML = visibleEdges.length;
 	}
 	
-	function setVisibleNodesDisplayCount() {
+	function setVisibleNodesCountDisplay() {
 		visibleNodes = [];
 		for (var x = 0; x < rawNodes.length; x++) {
 			if (rawNodes[x].hidden !== true) visibleNodes.push(rawNodes[x]);
@@ -351,8 +362,10 @@ function dataReceived(data) {
 		hideNodesByDegree(selectedNode.toString());
 		if (degrees <= 2) {
 			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+			document.body.style.cursor='wait';
 			network.once("afterDrawing", function(){
 				zoomToSelectedNode();
+				document.body.style.cursor='default';
 			});
 		}
 		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + degrees;
