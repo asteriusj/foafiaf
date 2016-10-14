@@ -13,11 +13,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />	
+	<script src="//cdn.jsdelivr.net/g/es6-promise@1.0.0"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jsonld/0.3.15/jsonld.js"></script>
+	<script src="js/spin.min.js"></script>
 </head>
 
 <body>
 
-<main>
+<main id="mainArea">
 	<section id="canvasArea">
 		<div id="selectedContainer"></div>
 		<div id = "mynetwork" class="vis-network" tabindex="900"></div>
@@ -26,19 +29,36 @@
 		<section id="generalDetails">
 			<h1 id="title">Map of FOAFIAF relationships</h1>
 			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafiaf</a></span>
-			<h5>Version: <span id="version">0.0.4</span></h5>
+			
+			<h5 style="display:none;">Version: <span id="version">0.0.4</span></h5>
+			
 			<h5>Author(s): <span id="authors">TR Technology Team</span></h5>
-			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span></h5>
-			<h5 class="statisticDetails">Edges: <span id="edgeCount"></span></h5>
+			
+			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span>    Edges: <span id="edgeCount"></span></h5>
+			
+			<h4 class="statisticDetails"> 
+				<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'mywin',
+'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >          SearchIt</a>  
+			</h4>
+		
 
 			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
+			
 			<div class="accordion-container" id="selection-details">
 				<div id="SelectionInformation">
 					<p class="propDetails"><span id="propDetails"></span></p>
+				</div>
+			</div>	
+			
+			<h3 class="accordion-trigger accordion-trigger-active" id="degrees-details-trigger">Degrees</h3>
+			
+			<div class="accordion-container" id="degrees-details">
+				<div id="DegreesInformation">
 					<p id='separation'>Degrees of Separation: 1</p>
 					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' min='0' max='6' value='1' step='1' onchange='changeDegrees(this.value)'/></p>
 				</div>
-			</div>			
+			</div>	
+			
 			<h3 class="accordion-trigger">Filters</h3>	
 			<div id="filterOption" class="accordion-container filter hidden"></div>			
 		</section>
@@ -46,6 +66,19 @@
 </main>
 
 <script type="text/javascript">
+var spinner = new Spinner().spin()
+function beginSpinner(){
+    console.log('beginSpinner')
+	var target = document.getElementById('mainArea')
+	target.appendChild(spinner.el)
+}
+function endSpinner() {
+    console.log('endSpinner')
+    if (spinner) spinner.stop() ;   
+}
+// start spinner
+beginSpinner();
+
 // collect URL query string parameters
 function getUrlVars() {
 	var vars = {};
@@ -57,6 +90,7 @@ function getUrlVars() {
 var startid = getUrlVars()["startid"] || null;
 var datalink = getUrlVars()["datalink"] || null;
 console.log(startid, datalink)
+
 // control visibility of accordion views
 var acc = document.getElementsByClassName('accordion-trigger');
 for (var i = 0; i < acc.length; i++) {
@@ -76,34 +110,246 @@ $.getJSON(dataURL, function(data) {
 //  when the graph data upload is complete, process data
 function dataReceived(data) {
 	
+// experiment with jsonld
+// console.log('experiment with jsonld')
+// jsonld.expand(data, function(err, expanded) {
+//             if (err) {
+//                   console.log('error', err);
+//                   cb(err);
+//             }
+//             //console.log('expanded', JSON.stringify(expanded))
+//             var theNode = expanded[0]
+//             var theGraph = theNode['@graph'];
+            	
+//             for (var i=0; i<theGraph.length;i++) {
+//             	var anItem = theGraph[i]
+//             	anItem.id = anItem['@id'];
+//             	console.log('anItem.id', anItem.id)
+
+//             	for (var propName in anItem) {
+//                     console.log(' propName', propName);
+                    
+//                 	if (anItem.hasOwnProperty(propName)) {
+                    	
+//                     	var propVal = anItem[propName]
+                    	
+//                     	if (!(propVal instanceof Array)) {
+                    		
+//                     		console.log('  propVal', JSON.stringify(propVal))
+                    		
+//                     	} else {
+                    	
+//                     		if (propName != '@id') {
+                    		
+// 	                    		for (var key in propVal) {
+// 		                    		var myElement = propVal[key]
+// 		                    		//console.log('myElement', myElement)
+		                    		
+// 									var _id = myElement['@id'] || null ;
+// 									var _value = myElement['@value'] || null ;
+// 									var _type = myElement['@type'] || null ;
+									
+// 									if (_id) console.log('   _id', _id)
+// 									if (_value) console.log('   _value', _value)
+// 									if (_type) console.log('   _type', _type)
+									
+// 		                    	}
+//                     		}
+//                     	}
+                    	
+//                 	}
+//             	}
+//             }
+            
+// })	
+	
+	// console.log('data', JSON.stringify(data))
+	
+	function htmlDetails (_entity) {
+		var _html
+		
+		var _id = _entity.id || null;
+		var _group = _entity.group || null;
+		var _label = _entity.label || null;
+		
+		var _topic = _entity['foaf:topic'] || null;
+		var _profile = _entity['linkedin:Profile'] || null;
+		var _sameas = _entity['owl:sameAs'] || null;
+		var _seealso = _entity['owl:seeAlso'] || null;
+		
+		var _strategy = _entity['foafiaf:Strategy'] || null;
+		var _project = _entity['foafiaf:Project'] || null;
+		var _measure = _entity['foafiaf:Measure'] || null;
+		var _status = _entity['foafiaf:status'] || null;
+		var _color = _entity['foafiaf:color'] || null;
+		
+		var _html = '<div>'
+		_html = _html + ' ' + _group + '</br>'
+		_html = _html + ' <b>' + _label + '</b></br></br>' 
+
+		if (_topic) _html = _html + 	' topic: '     + _topic + '</br>' 
+		
+		if (_description) _html = _html + 	' description: ' + _description + '</br>' 
+		
+		if (_strategy) _html = _html +  ' strategy: ' + _strategy + '</br>' 
+		
+		if (_project) _html = _html +  ' project: ' + _project + '</br>' 
+		
+		if (_measure) _html = _html +  ' measure: ' + _measure + '</br>' 
+		
+		if (_status) _html = _html +  ' status: ' + _status + '</br>' 
+		
+		if (_color) {
+			_html = _html + ' color: <b><font color="' + _color + '">' + _color + '</font></b></br>'
+		}
+		
+		if (_profile) {
+			_html = _html + ' profile: <a href="' + _profile + '">' + _profile + '</a></br>'
+		}
+		
+		if (_sameas) {
+			_html = _html + ' profile: <a target="_new" href="' + _sameas + '">' + _sameas + '</a></br>'
+		}
+		
+		if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br>'
+		
+		_html = _html + 	' id:    <em>' +  rawNodes[i].id   + '</em></br>' 
+		
+		
+		_html = _html + '</div>'
+		
+		
+		
+		
+		// var _html = '<div>' +
+		//     ' ' + _group + '</br>' +
+		// 	' <b>' + _label + '</b></br>' +
+
+		// 	' topic: '     + _topic + '</br>' +
+		// 	' description: <p>' + _description + '</p></br>' +
+  //          ' strategy: ' + _strategy + '</br>' +
+  //          ' project: ' + _project + '</br>' +
+  //          ' measure: ' + _measure + '</br>' +
+  //          ' status: ' + _status + '</br>' +
+  //          ' color: ' + _color + '</br>' +
+		// 	' id:    <em>' +  rawNodes[i].id   + '</em></br>' +
+		// 	 '</div>'  ;
+
+		//console.log('_html ', _html)
+		
+		// var data = '<svg xmlns="http://www.w3.org/2000/svg" width="390" height="65">' +
+  //          '<rect x="0" y="0" width="100%" height="100%" fill="#7890A7" stroke-width="20" stroke="#ffffff" ></rect>' +
+  //          '<foreignObject x="15" y="10" width="100%" height="100%">' +
+  //          '<div xmlns="http://www.w3.org/1999/xhtml" style="font-size:40px">' +
+  //          ' <em>I</em> am' +
+  //          '<span style="color:white; text-shadow:0 0 20px #000000;">' +
+  //          ' HTML in SVG!</span>' +
+  //          '</div>' +
+  //          '</foreignObject>' +
+  //          '</svg>';
+		
+		return _html ;
+	}
+	
 	var rawNodes = [];
 	var rawEdges = [];
 	
 	//  create an array of nodes
 	rawNodes = data['@graph'];
+	
 	for (var i = 0; i < rawNodes.length; i++) {
-		rawNodes[i].id = rawNodes[i]['@id'];
-		rawNodes[i].type = rawNodes[i]['dbo:type'] || rawNodes[i]['@type'];
-		rawNodes[i].type = rawNodes[i].type.replace("-", "");
-		rawNodes[i].group = rawNodes[i].type.substring(rawNodes[i].type.indexOf(":") + 1);
-		rawNodes[i].label = rawNodes[i]['rdfs:label'];
-		rawNodes[i].title = rawNodes[i].type + ":: " + rawNodes[i].label ;
-		rawNodes[i].name = rawNodes[i]['foaf:name'];
+		
+		var _id = rawNodes[i]['@id'];
+		rawNodes[i].id = _id;
+				//console.log("rawNodes[i].id", rawNodes[i].id)
+		
+		var _type = rawNodes[i]['@type'] || "";		
+				//console.log("rawNodes[i].type", rawNodes[i].type)
+		var _dbotype = rawNodes[i]['dbo:type'] || "";
+		
+				//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
+				if (  Array.isArray(_dbotype) ) {
+					_dbotype = null
+				} else {
+					_type = _dbotype.replace("-", "");
+				}
+		rawNodes[i].dbotype = _dbotype;		
+		_type = _type.replace("-", "");
+		rawNodes[i].type = _type;
+				//console.log("rawNodes[i].type", rawNodes[i].type)
+		
+		var _group = null;
+		if 	(_dbotype) {
+			_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
+		} else {
+			_group = _type.substring(_type.indexOf(":") + 1);
+		}
+		rawNodes[i].group = _group;
+			//console.log("rawNodes[i].group ", rawNodes[i].group)
+		
+		var _label = null;
+		_label = rawNodes[i]['rdfs:label'];
+		rawNodes[i].label = _label;
+		
+		var _topic = rawNodes[i]['foaf:topic'] || null;
+		var _description = rawNodes[i]['dc:description'] || null;
+		var _definition = rawNodes[i]['skos:definition'] || null;
+		
+		var _title = null;
+		_title = rawNodes[i].group + ":: " + rawNodes[i].label ;
+		rawNodes[i].title = _title
+		
+		// call function tp prepare html block for hover or popup
+		rawNodes[i].title = htmlDetails(rawNodes[i])
+	
+		//console.log(' rawNodes[i] ', rawNodes[i])	
 	};
 
 	// create an array of edges
 	for (var j = 0; j < rawNodes.length; j++) {
 		for (var property in rawNodes[j]) {
-			if (rawNodes[j].hasOwnProperty(property) && Array.isArray(rawNodes[j][property])) {
-				for (var k = 0; k < rawNodes[j][property].length; k++) {
-					newEdge = {};
-					newEdge.arrows = {"to":"true"};
-					newEdge.from = rawNodes[j].id;
-					newEdge.to = rawNodes[j][property][k];
-					newEdge.label = property;
+			//console.log("property ", property)
+			
+			if ( property != "@id" && property != "id") {				// do not show edge for id property							// do not show @id relationship to self
 					
-					rawEdges.push(newEdge);
+			  //if (rawNodes[j].hasOwnProperty(property) && true ) {
+				
+				if ( (typeof rawNodes[j][property]) === 'string') {		// check if property value is a string ie. a single entry
+				//if ( (typeof property) === 'string') {				// check if property value is a string ie. a single entry
+					var strProp = rawNodes[j][property] || ""
+					  //console.log("strProp", strProp)
+					  var relLabel = property.substring(property.indexOf(":") + 1);
+					  
+					  if ( strProp.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity reltionship
+						
+						newEdge = {};
+						newEdge.arrows = {"to":"true"};
+						newEdge.from = rawNodes[j].id;
+						newEdge.to = strProp;
+						newEdge.label = relLabel;
+						
+						rawEdges.push(newEdge);
+					  }
+					
 				}
+				
+				if ( Array.isArray(rawNodes[j][property]) ) {
+					for (var k = 0; k < rawNodes[j][property].length; k++) {
+						//console.log("[property][k]", rawNodes[j][property][k])
+						var relLabel = property.substring(property.indexOf(":") + 1);
+						
+						newEdge = {};
+						newEdge.arrows = {"to":"true"};
+						newEdge.from = rawNodes[j].id;
+						newEdge.to = rawNodes[j][property][k];
+						newEdge.label = relLabel;
+						//console.log(newEdge)
+						rawEdges.push(newEdge);
+					}
+				}
+				
+			  //}
+				
 			}
 		}	
 	};
@@ -151,13 +397,15 @@ function dataReceived(data) {
 	var defaultNode = data['@id'] || null;						
 	console.log('defaultNode - > ', defaultNode)
 	
+	
 	if (startid) {
 		var selectedNodeID = startid;		// ADDED check for default @id in jsonld
 	} else if (defaultNode) {
 		var selectedNodeID = defaultNode;						// ADDED check for default @id in jsonld
 	} else {
-		var selectedNodeID = "foafiaf:Transform_Rockford";		// CHANGED from 'Transform_Rockford'
+		var selectedNodeID = "foafiaf:transform-rockford";		// CHANGED from 'Transform_Rockford'
 	}
+	console.log('selectedNodeID - > ', selectedNodeID)
 	
 	for (var i = 0; i < rawNodes.length; i++) {
 		if (rawNodes[i].id === selectedNodeID) {				// changed to var value
@@ -169,17 +417,19 @@ function dataReceived(data) {
 	}
 
 	var nodes = new vis.DataSet(rawNodes);
+		//console.log(JSON.stringify(rawNodes))
 	var edges = new vis.DataSet(visibleEdges);
-	
+		//console.log(JSON.stringify(edges))
 	// create a network
 	var container = document.getElementById('mynetwork');
 	var data = {
 		nodes: nodes,
 		edges: edges
 	};
+	//console.log(JSON.stringify(data))
 	var options = getOptions();
 	var network = new vis.Network(container, data, options);
-
+	
 	//  hide or display nodes and edges depending on filter selections
 	var classname = document.getElementsByClassName('toggleOption');
 	var filterToggle = function() {
@@ -229,12 +479,16 @@ function dataReceived(data) {
 			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
 			network.once("afterDrawing", function(){
 				zoomToSelectedNode();
+				// stop spinner
+				endSpinner() 
 			});
 		}
 	});
 
 	network.once("afterDrawing", function(){
 		zoomToSelectedNode();
+		// stop spinner
+		endSpinner()
 	});
 	
 	function findObjectById(objectId, objectArray){
@@ -330,8 +584,17 @@ function dataReceived(data) {
 	function displayData(focalPoint) {
 		var details = "";
 		for(var property in focalPoint) {
-			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' && property !== "@id") {
-				details += (property + ": " + focalPoint[property] + "<br>");
+			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' ) {
+				
+				// control what properties get dislayed
+				
+				if (property !== "@type" && property !== "rdf:type" && property !== "rdfs:subClassOf:" ) {
+					if ( focalPoint[property] != "" ) {
+						var shortProp = property.substring(property.indexOf(":") + 1);
+						details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
+					}
+				}
+				
 			}
 		}
 		document.getElementById('propDetails').innerHTML = details;	
@@ -358,4 +621,3 @@ function dataReceived(data) {
 </script>
 
 </body>
-</html>
