@@ -39,14 +39,18 @@ app.configure(function(){
 */
 
 // the root maps to the index of routes in /routes folder
-app.get('/', routes.index);
+app.get('/foafiaf/', routes.index);
 
 // the foafiaf/map path routes to the foafiaf_map.js in /routes folder
 app.get('/foafiaf/map', routes.foafiaf_map);
 
 app.get('/foafiaf/bacon', routes.bacon_map);
 
+app.get('/foafiaf/megraph', routes.megraph_map );
+
 app.get('/foafiaf/projects', routes.projects_map );
+
+app.get('/foafiaf/importexport', routes.importexport );
 
 app.get('/foafiaf/combine', routes.combine_JSONLDfiles );
 
