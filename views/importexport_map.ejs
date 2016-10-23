@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= title %></title>
+  <description></description>
+  
+  <!--<script type="text/javascript" src="/js/vis.js"></script>-->
+  <!--<link href="/css/vis.css" rel="stylesheet" type="text/css" />-->
+  
+  <script type="text/javascript" src="/dist/vis.js"></script>
+  <link href="/dist/vis.css" rel="stylesheet" type="text/css" />
+   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  
+  <!--<script src="/js/nodes.js"></script>-->
+  <script>
+    var manifest = <%-JSON.stringify(data.manifest)%>
+    var nodes = <%-JSON.stringify(data.nodes)%>
+    var edges = <%-JSON.stringify(data.edges)%>
+  </script>
+  
+  <style type="text/css">
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }
+  </style>
+
+
+
+<script type="text/javascript">
+  var network;
+
+  function redrawAll() {
+    
+     var optionsFA = {
+
+      };
+      
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        manifest: manifest,
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+        
+        physics: {
+          solver: 'forceAtlas2Based',
+          maxVelocity: 10,
+          minVelocity: 1,
+        },
+        
+        
+        groups: {
+          property: {
+            shape: 
+              'dot'
+            ,
+            size: 18,
+            color: 'pink'
+          },
+          
+          Person: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          Group: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          Organization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 45,
+              color: 'blue'
+            }
+          },   
+          Company: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building-0',
+              code: '\uf0f7',
+              size: 50,
+              color: 'OrangeRed '
+            }
+          },
+          Government: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building',
+              code: '\uf1ad',
+              size: 45,
+              color: 'black'
+            }
+          },
+          Municipality: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building',
+              code: '\uf1ad',
+              size: 40,
+              color: 'RoyalBlue'
+            }
+          },
+          Legislature: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf19c',
+              size: 45,
+              color: 'grey'
+            }
+          },
+          NonProfit: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-users',
+              code: '\uf0c0',
+              size: 50,
+              color: 'green'
+            }
+          },
+          Faith: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf004',
+              size: 40,
+              color: 'cyan'
+            }
+          },
+          City: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 60,
+              color: 'black'
+            }
+          },
+          Village: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 50,
+              color: 'Grey'
+            }
+          },
+          Town: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 45,
+              color: 'LightGrey'
+            }
+          },
+          Role: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf21d',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+          Place: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map-marker ',
+              code: '\uf041',
+              size: 55,
+              color: 'blue'
+            }
+          },
+          Tags: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tags',
+              code: '\uf02c',
+              size: 50,
+              color: 'YellowGreen'
+            }
+          },
+          Tag: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-tag',
+              code: '\uf02b',
+              size: 40,
+              color: 'YellowGreen'
+            }
+          },       
+          
+       
+       
+       
+       
+          group: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0c0',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          
+          team: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: 'grey'
+            }
+          },
+          person: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf007',
+              size: 50,
+              color: '#aa00ff'
+            }
+          },
+          
+          role: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf21d',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+       
+       
+          organization: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0e8',
+              size: 50,
+              color: 'blue'
+            }
+          },   
+          orgbiz: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-industry',
+              code: '\uf275',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          industry: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf275',
+              size: 50,
+              color: '#57169a'
+            }
+          },
+          
+          orgcity: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-bus',
+              code: '\uf207',
+              size: 50,
+              color: 'black'
+            }
+          },
+          
+          orgvillage: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-car',
+              code: '\uf1b9',
+              size: 40,
+              color: 'black'
+            }
+          },
+          
+          gear: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-cog',
+              code: '\uf013',
+              size: 50,
+              color: 'black'
+            }
+          },
+          
+          orggov: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-building-o',
+              code: '\uf0f7',
+              size: 40,
+              color: 'blue'
+            }
+          },
+          
+          map: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf279',
+              size: 45,
+              color: 'blue'
+            }
+          },
+          
+          orgmuni: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              name: 'fa-map',
+              code: '\uf279',
+              size: 45,
+              color: 'blue'
+            }
+          },
+          orglegi: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf19c',
+              size: 45,
+              color: 'blue'
+            }
+          },
+          
+          orgnonprofit: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf069',
+              size: 50,
+              color: 'green'
+            }
+          },
+          
+          
+          orgfaith: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf004',
+              size: 50,
+              color: 'cyan'
+            }
+          },
+          
+          globe: {
+            shape: 'icon',
+            icon: {
+              face: 'Ionicons',
+              code: '\uf276',
+              size: 66,
+              color: '#6E6EFD'
+            }
+          },
+          
+          marker: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf041',
+              size: 50,
+              color: '#FB7E81'
+            }
+          },
+          
+          book: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02d',
+              size: 50,
+              color: '#C2FABC'
+            }
+          },
+          film: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf008',
+              size: 55,
+              color: '#6E6EFD'
+            }
+          },
+          
+          
+          tags: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02c',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          tag: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf02b',
+              size: 40,
+              color: 'lime'
+            }
+          },
+          
+          projects: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf0ae',
+              size: 44,
+              color: '#800000'
+            }
+          },
+          project: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf03a',
+              size: 40,
+              color: 'maroon'
+            }
+          },
+          
+          bullseye: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf140',
+              size: 40,
+              color: 'red'
+            }
+          },
+          puzzle: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf12e',
+              size: 40,
+              color: 'yellow'
+            }
+          },
+          
+          cubes: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf1b3',
+              size: 44,
+              color: 'black'
+            }
+          },
+          cube: {
+            shape: 'icon',
+            icon: {
+              face: 'FontAwesome',
+              code: '\uf1b2',
+              size: 40,
+              color: 'black'
+            }
+          },
+
+          
+        }        
+        
+      };
+      var network = new vis.Network(container, data, options);
+  }
+
+  redrawAll()
+
+</script>
+
+
+</head>
+
+<body >
+<p>
+
+<h1><%= title %></h1>
+manifest:  <%= data.manifest.graphName %>   <%= data.manifest.defaultNode %>
+nodes: <%= data.nodes.length %> 
+edges: <%= data.edges.length %>
+
+<div id="selectedContainer"><%= data.selected %></div>
+
+<div id="mynetwork"></div>
+
+<div id="optionsContainer"></div>
+
+
+
+<script>
+
+  redrawAll()
+
+</script>
+
+</body>
+</html>
