@@ -1,8 +1,9 @@
 //  when the graph data upload is complete, process data
 function dataReceived(data) {
-
+	console.log('dataReceived')
+	
 	if (spinner) spinner.spin() ;
-    // console.log('data', JSON.stringify(data))
+    //console.log('data', JSON.stringify(data))
     
 	var defaultNodeId = data['@id'] || null;						
 	console.log("defaultNodeId - > ", defaultNodeId )
@@ -192,22 +193,23 @@ function buildRawNodes(data) {
 	for (var i = 0; i < rawNodes.length; i++) {
 		var _id = rawNodes[i]['@id'];
 		rawNodes[i].id = _id;
-			//console.log("rawNodes[i].id", rawNodes[i].id)
+			console.log("rawNodes[i].id", rawNodes[i].id)
 		
-		var _type = rawNodes[i]['@type'] || "";		
-			//console.log("rawNodes[i].type", rawNodes[i].type)
-		var _dbotype = rawNodes[i]['dbo:type'] || "";
-			//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
-			if (  Array.isArray(_dbotype) ) {
-				_dbotype = null
-			} else {
-				_type = _dbotype.replace("-", "");
-			}
-		rawNodes[i].dbotype = _dbotype;		
+		var _type = rawNodes[i]['@type'] || "";	
 		_type = _type.replace("-", "");
-		rawNodes[i].type = _type;
-			//console.log("rawNodes[i].type", rawNodes[i].type)
-		
+		rawNodes[i].type = _dbotype || _type;	
+			//console.log("rawNodes[i].type", rawNodes[i].type
+			
+		var _dbotype = rawNodes[i]['dbo:type'] || "";
+		if (  Array.isArray(_dbotype) ) {
+				_dbotype = null
+		} else {
+				_dbotype = _dbotype.replace("-", "");
+		}
+		rawNodes[i].dbotype = _dbotype;
+			//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
+			
+			
 		var _group = null;
 		if 	(_dbotype) {
 			_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
@@ -221,19 +223,24 @@ function buildRawNodes(data) {
 		_label = rawNodes[i]['rdfs:label'];
 		rawNodes[i].label = _label;
 		
+		var _prefLabel = null;
+		_prefLabel = rawNodes[i]['skos:prefLabel'];
+		rawNodes[i].prefLabel = _prefLabel;
+		console.log('rawNodes[i].prefLabel', rawNodes[i].prefLabel)
+		
 		var _topic = rawNodes[i]['foaf:topic'] || null;
 		var _description = rawNodes[i]['dc:description'] || null;
 		var _definition = rawNodes[i]['skos:definition'] || null;
 		
 		var _title = null;
-		_title = rawNodes[i].group + ":: " + rawNodes[i].label ;
+		_title = _prefLabel || _label ;
 		rawNodes[i].title = _title
 		// call function tp prepare html block for hover or popup
 		// and overwrite plain title
 		
 		
 		//    rawNodes[i].title = htmlDetails(rawNodes[i])
-	
+		console.log('rawNodes[i].title', rawNodes[i].title)
 	
 	
 		//console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
@@ -249,6 +256,7 @@ function buildRawEdges(rawNodes) {
 	//
 	var rawEdges = []
 	for (var j = 0; j < rawNodes.length; j++) {
+		//if (rawNodes[j]['@id'] === 'perse:CampaignPersonalizationOptions') console.log(rawNodes[j])
 		for (var property in rawNodes[j]) {
 			//console.log("property ", property)
 			
