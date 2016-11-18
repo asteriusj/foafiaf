@@ -2,7 +2,7 @@
 
 # Windows IIS server
 iisnode/
-web.config
+#web.config
 
 # Build results
 [Dd]ebug/
