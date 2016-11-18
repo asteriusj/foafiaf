@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= title %></title>
+  <description></description>
+  
+  <script src="/dist/rdflib.js" type="text/javascript">
+    </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    
+  <script type="text/javascript" src="/dist/vis.js"></script>
+  <link href="/dist/vis.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="/js/options.js"></script>
+   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  
+  <!--<script src="/js/nodes.js"></script>-->
+  <script>
+    var manifest = <%-JSON.stringify(data.manifest)%>
+    var nodes = <%-JSON.stringify(data.nodes)%>
+    var edges = <%-JSON.stringify(data.edges)%>
+  </script>
+  
+  <style type="text/css">
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }
+  </style>
+
+<script type="text/javascript">
+//  reqUri MUST be your rdf URI ...
+var reqUri = 'https://foafiaf-asteriusj.c9users.io/things/jsonld/jas.rdf' ;
+var sourceContentType = 'application/rdf+xml';
+var targetContentType = 'text/n3';
+
+
+request_url = 'http://experiment.worldcat.org/oclc/7977212.rdf';
+$http({ 
+   method: 'GET', 
+   url: request_url, 
+   headers: { 
+       'Accept': 'application/rdf+xml' 
+   }, 
+}).then(function successCallback(response) { 
+   //create the graph and load the data
+}, function errorCallback(response) { 
+   alert('Failed'); 
+   console.log(response); 
+}); 
+
+
+// $({
+//     url: reqUri,
+//     headers: {
+//         'accept-encoding': 'utf-8',
+//         'content-type': sourceContentType
+//     }
+// }, function(err, res, body) {
+//     if (err) return err;
+//     if (res.statusCode == 200) {
+//         var graph = new rdflib.IndexedFormula();
+//         // request followed all redirects and res.request.href 
+//         // should be the final URI
+//         var baseUri = ((res) && res.request.hasOwnProperty('href')) ? res.request.href : reqUri;
+//         var srcData = rdflib.parse(body, graph, baseUri, sourceContentType);
+
+//         // the graph should contain the triplets ...
+//         // console.log(graph);
+
+//         // convert to targetContentType ...
+//         var targetData = rdflib.serialize(srcData, graph, baseUri, targetContentType);
+//         // do something with targetData ...
+//         // fs.writeFileSync('./TEST.n3', targetData);
+//     }
+// });
+</script>
+
+<script type="text/javascript">
+/* Demo application for Addressbook 
+ */
+// Some From http://brondsema.net/blog/index.php/2006/11/25/javascript_rdfparser_from_tabulator
+
+
+// For quick access to those namespaces:
+var FOAF = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
+var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#")
+var OWL = $rdf.Namespace("http://www.w3.org/2002/07/owl#")
+var DC = $rdf.Namespace("http://purl.org/dc/elements/1.1/")
+var RSS = $rdf.Namespace("http://purl.org/rss/1.0/")
+var XSD = $rdf.Namespace("http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dt-")
+var CONTACT = $rdf.Namespace("http://www.w3.org/2000/10/swap/pim/contact#")
+
+
+
+var card = function(who) {
+  console.log('who', JSON.stringify(who))
+    var snip = '<div>'
+    var image = kb.any(who, FOAF('img'));
+    if (!image) image = kb.any(who, FOAF('depiction'));
+    if (image) {
+        snip += '<img src="' + image.uri +'" align="right" height="100"/>';
+    }
+    var nam = kb.any(who, FOAF('name'));
+    if (!nam) { nam = "???";}
+    snip+="<h3>"+nam+"</h3>";
+
+    nam = kb.any(who, FOAF('phone'));
+    if (nam) {
+        snip+="<p>"+nam+"</p>";
+    }
+    snip += "</div>"
+    $("body").append(snip)
+};
+
+
+
+
+// TestStore implementation from dig.csail.mit.edu/2005/ajar/ajaw/test/rdf/rdfparser.test.html
+// RDFIndexedFormula from dig.csail.mit.edu/2005/ajar/ajaw/rdf/identity.js
+//  (extends RDFFormula from dig.csail.mit.edu/2005/ajar/ajaw/rdf/term.js which has no indexing and smushing)
+// for the real implementation used by Tabulator which uses indexing and smushing
+
+// var kb = new TestStore()
+
+var kb = $rdf.graph();
+
+var uri = 'http://bblfish.net/people/henry/card#me';
+//var uri = 'http://foafiaf-asteriusj.c9users.io/things/jsonld/jas.rdf_';
+
+var person = $rdf.sym(uri);
+//var docURI = uri.slice(0, uri.indexOf('#'));
+var fetch = $rdf.fetcher(kb);
+fetch.nowOrWhenFetched(uri,undefined,function(ok, body, xhr){ // @@ check ok
+    card(person)
+    console.log('card', JSON.stringify(card))
+});
+
+
+
+// document.write("<p><small>"+uri+ " Size: "+kb.statements.length+"</small></p>")
+
+var friends = kb.each(person, FOAF('knows'));
+console.log(friends)
+var i, n = friends.length, friend;
+document.write("<p>"+n+" acquaintainces</p>")
+for (i=0; i<n; i++) {
+    friend = friends[i];
+    furi = friend.uri
+    if (furi && (furi.indexOf('#') >= 0)) {
+//	document.write('<small>Loading:  '+furi+'</small>') 
+        furi = furi.slice(0, furi.indexOf('#'))
+        kb.load(furi)
+    }
+
+    sa = kb.any(friend, RDFS('seeAlso'))
+    if (sa) {
+//	document.write('<small>See also: '+sa.uri+'</small>') 
+        kb.load(sa.uri)
+    }
+
+    card(friend)
+} 
+</script>
+
+// <script type="text/javascript">
+// // For quick access to those namespaces:
+// var FOAF = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
+// var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+// var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#")
+// var OWL = $rdf.Namespace("http://www.w3.org/2002/07/owl#")
+// var DC = $rdf.Namespace("http://purl.org/dc/elements/1.1/")
+// var RSS = $rdf.Namespace("http://purl.org/rss/1.0/")
+// var XSD = $rdf.Namespace("http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dt-")
+// var CONTACT = $rdf.Namespace("http://www.w3.org/2000/10/swap/pim/contact#")
+
+// var url = 'http://foafiaf-asteriusj.c9users.io/things/jsonld/jas.rdf';
+// var store = $rdf.graph()
+// var timeout = 5000 // 5000 ms timeout
+// var fetcher = new $rdf.Fetcher(store, timeout)
+
+// //console.log('store',store)
+// fetcher.nowOrWhenFetched(url, function(ok, body, xhr) {
+//     if (!ok) {
+//         console.log("Oops, something happened and couldn't fetch data");
+//     } else {
+//         // do something with the data in the store (see below)
+//         console.log('store', store)
+//         // var stms = store.statementsMatching(undefined, undefined , undefined);
+//         // for (var i=0; i<stms.length;i++) {
+//         //     var stm = stms[i]
+//         //     console.log(JSON.stringify(stm)) 
+    
+//         // }
+
+        
+//         var foafname = FOAF('name')
+//         var name = store.any(undefined, foafname)  // Any one person
+//         console.log('name', JSON.stringify(name))
+        
+//         var friends = store.each(undefined, FOAF('knows'), undefined)
+//         console.log(friends)
+//         for (var i=0; i<friends.length;i++) {
+//             friend = friends[i]
+//             console.log('friend-',JSON.stringify(friend))
+        
+//         }
+        
+     
+        
+//     }
+// })
+
+
+</script>
+
+<!--
+
+Here is a simple query in SPARQL:
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+SELECT ?p ?c WHERE {
+    ?p a dbpedia-owl:Artist.
+    ?p dbpedia-owl:birthPlace ?c.
+    ?c <http://xmlns.com/foaf/0.1/name> "York"@en.
+}
+And here is the same query in JSON:
+
+{
+  "type": "query",
+  "prefixes": {
+    "dbpedia-owl": "http://dbpedia.org/ontology/"
+  },
+  "queryType": "SELECT",
+  "variables": [ "?p", "?c" ],
+  "where": [
+    {
+      "type": "bgp",
+      "triples": [
+        {
+          "subject": "?p",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://dbpedia.org/ontology/Artist"
+        },
+        {
+          "subject": "?p",
+          "predicate": "http://dbpedia.org/ontology/birthPlace",
+          "object": "?c"
+        },
+        {
+          "subject": "?c",
+          "predicate": "http://xmlns.com/foaf/0.1/name",
+          "object": "\"York\"@en"
+        }
+      ]
+    }
+  ]
+}
+The representation of triples is the same as that of the N3.js library.
+
+-->
+
+<script type="text/javascript">
+  var network;
+
+  function redrawAll() {
+    
+      
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        manifest: manifest,
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = getOptions();
+    
+      var network = new vis.Network(container, data, options);
+  }
+
+  redrawAll()
+
+</script>
+
+
+</head>
+
+<body >
+<p>
+
+<h1><%= title %></h1>
+manifest:  <%= data.manifest.graphName %>   <%= data.manifest.defaultNode %>
+nodes: <%= data.nodes.length %> 
+edges: <%= data.edges.length %>
+
+<div id="selectedContainer"><%= data.selected %></div>
+
+<div id="mynetwork"></div>
+
+<div id="optionsContainer"></div>
+
+
+
+<script>
+
+  redrawAll()
+
+</script>
+
+</body>
+</html>
