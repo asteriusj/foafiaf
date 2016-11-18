@@ -1,8 +1,8 @@
 var FOAFIAF_MapRoutes = require('./foafiaf_map')
-var BACON_MapRoutes = require('./bacon_map')
 var MEGRAPH_MapRoutes = require('./megraph_map')
 var PROJECTS_MapRoutes = require('./projects_map')
 var IMPORTEXPORT_MapRoutes = require('./importexport_map')
+
 
 /** Homepage *///
 exports.index = function(req, res) {
@@ -16,8 +16,6 @@ exports.index = function(req, res) {
 
 // foafiaf_map maps to  
 exports.foafiaf_map=  FOAFIAF_MapRoutes.foafiaf_map;
-
-exports.bacon_map=  BACON_MapRoutes.bacon_map;
 
 exports.importexport=  IMPORTEXPORT_MapRoutes.importexport;
 

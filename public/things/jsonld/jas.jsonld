@@ -1,821 +1,181 @@
 {
-	"@graph": [
-		{
-			"@id": "foafiaf:Jeffrey_A_Stewart",
-			"@type": "foaf:Person",
-			"rdfs:label": "Jeffrey Stewart",
-			"foaf:name": "Jeffrey Stewart",
-			"foaf:title": "",
-			"foaf:firstName": "Jeffrey",
-			"foaf:lastName": "Stewart",
-			"foaf:familyName": "Stewart",
-			"foaf:givenName": "Jeffrey",
-			"foaf:nick": "Jeff",
-			"foaf:gender": "M",
-			"foaf:age": "",
-			"foaf:mbox_sha1sum": "47af7e0b79ee24622a0543828a2eb51d7d75a407",
-			"foaf:mbox": "stewjeffrey@gmail.com",
-			"foaf:phone": "tel:8552783748",
-			"foaf:img": "",
-			"foaf:homepage": "",
-			"foaf:weblog": "",
-			"foaf:workplaceHomepage": "www.asteriusmedia.com",
-			"foaf:account": "https://www.linkedin.com/in/jeffreyastewart",
-			"foaf:depiction": "https://media.licdn.com/media/p/5/005/093/01e/0426a71.jpg",
-			"foaf:thumbnail": "https://media.licdn.com/media/p/5/005/093/01e/0426a71.jpg",
-			"birthPlace": [
-				"foafiafMoline,_Illinois"
-			],
-			"based_near": [
-				"foafiaf:Byron,_Illinois"
-			],
-			"bio:Employer": [
-				{
-					"@id": "foafiaf:asterius_media_llc",
-					"@type": "dbo:Company",
-					"rdfs:label": "Asterius Media LLC"
-				}
-			],
-			"foaf:knows": [
-				"foafiaf:Stefan_Agustsson",
-				"foafiaf:Larry_Morrissey",
-				"foafiaf:Mike_Schablaske"
-			],
-			"foaf:member": [
-				"foafiaf:transform_rockford",
-				"foafiaf:TR_Technology_Team"
-			],
-			"perse:hasConnection": [
-				"https://www.linkedin.com/in/jacobjwilson",
-		        "https://www.linkedin.com/in/david-sidney-05597814",
-		        "https://www.linkedin.com/in/joegranneman",
-		        "https://www.linkedin.com/in/steve-bartscher-6833102",
-		        "https://www.linkedin.com/in/meghanrichardson",
-		        "https://www.linkedin.com/in/scotthilchey",
-		        "https://www.linkedin.com/in/stefan-agustsson-597319",
-		        "https://www.linkedin.com/in/chriscanaday",
-		        "https://www.linkedin.com/in/scott-mayhew-mba-cpa-2b53498"
-			],
-			"perse:hasAffiliation": [
-			  "foafiaf:transform_rockford",
-			  "foafiaf:asterius_media_llc",
-			  "foafiaf:mpowr_a_supplycore_solution",
-			  "foafiaf:applaud_llc",
-			  "foafiaf:capgemini_consulting",
-			  "foafiaf:trekk",
-			  "foafiaf:rockford_area_ventures_inc",
-			  "foafiaf:rockford_chamber_of_commerce",
-			  "foafiaf:exelon_nuclear"
-			]
-		},
-		{
-			"@id": "Perse:Jeffrey_A_Stewart",
-			"@type": "perse:Perse",
-			"rdfs:label": "about Jeffrey_A_Stewart",
-			"perse:aboutPerson": [
-				"foafiaf:Jeffrey_A_Stewart"
-			],
-			"perse:hasConcepts": [
-				"Interest:Jeffrey_A_Stewart",
-				"Skill:Jeffrey_A_Stewart",
-				"Knowledge:Jeffrey_A_Stewart",
-				"Experience:Jeffrey_A_Stewart",
-				"Personality:Jeffrey_A_Stewart"
-			],
-			"perse:hasInterests": [
-				"Interest:Jeffrey_A_Stewart"
-			],
-			"perse:hasSkills": [
-				"Skill:Jeffrey_A_Stewart"
-			],
-			"perse:hasKnowledge": [
-				"Knowledge:Jeffrey_A_Stewart"
-			],
-			"perse:hasExperiences": [
-				"Experience:Jeffrey_A_Stewart"
-			],
-			"perse:hasPersonalities": [
-				"Personality:Jeffrey_A_Stewart"
-			],
-			"skos:prefLabel": "Perse Profile"
-		},
-		{
-			"@id": "Interest:Jeffrey_A_Stewart",
-			"@type": "perse:Interest",
-			"rdfs:label": "Interests of Jeffrey_A_Stewart",
-			"skos:inScheme": [
-				"Perse:Jeffrey_A_Stewart"
-			],
-			"hasInterestType": [
-				
-			],
-			"hasLinkedIn": [],
-			"hasAxiom": [],
-			"hasTraxion": [],
-			"skos:prefLabel": "Perse Interests"
-		},
-		
-		{
-			"@id": "Skill:Jeffrey_A_Stewart",
-			"@type": "perse:Skill",
-			"rdfs:label": "Skills of Jeffrey_A_Stewart",
-			"skos:inScheme": [
-				"Perse:Jeffrey_A_Stewart"
-			],
-			"hasSkillType": [],
-			"hasLinkedIn": [],
-			"hasAnalytic": [
-				"Analytic_Skills_Analysis",
-				"Analytic_Skills_Analysis_Problem_Solving",
-				"Analytic_Skills_Communication",
-				"Analytic_Skills_Communication_Presentation"
-			],
-			"hasDelivery": [],
-			"skos:prefLabel": "Perse Skills"
-		},
-			{
-	          "@id": "Analytic_Skills_Analysis",
-	          "@type": "perse:Analysic_skill",
-	          "dbo:type": "skos:Concept",
-	          "rdfs:label": "Analytic Skills / Analysis",
-	          "skos:broader": [
-	            "Analytic_Skills"
-	          ],
-	          "skos:prefLabel": "Analysis"
-	        },
-	        {
-	          "@id": "Analytic_Skills_Analysis_Problem_Solving",
-	          "@type": "perse:Analysic_skill",
-	          "dbo:type": "skos:Concept",
-	          "rdfs:label": "Analytic Skills / Analysis / Problem solving",
-	          "skos:broader": [
-	            "Analytic_Skills_Analysis"
-	          ],
-	          "skos:prefLabel": "Problem solving"
-	        },
-	        {
-	          "@id": "Analytic_Skills_Communication",
-	          "@type": "perse:Analysic_skill",
-	          "dbo:type": "skos:Concept",
-	          "rdfs:label": "Analytic Skills / Communication",
-	          "skos:broader": [
-	            "Analytic_Skills"
-	          ],
-	          "skos:prefLabel": "Communication"
-	        },
-	        {
-	          "@id": "Analytic_Skills_Communication_Presentation",
-	          "@type": "perse:Analysic_skill",
-	          "dbo:type": "skos:Concept",
-	          "rdfs:label": "Analytic Skills / Communication / Presentation",
-	          "dc:description": "Presentation / oral and written expression ",
-	          "skos:broader": [
-	            "Analytic_Skills_Communication"
-	          ],
-	          "skos:prefLabel": "Presentation"
-	        },
-		
-		
-		{
-			"@id": "Knowledge:Jeffrey_A_Stewart",
-			"@type": "perse:Knowledge",
-			"rdfs:label": "Knowledge of Jeffrey_A_Stewart",
-			"skos:inScheme": [
-				"Perse:Jeffrey_A_Stewart"
-			],
-			"hasKnowledgeType": [
-				"Education:Jeffrey_A_Stewart"
-			],
-			"hasLeadership:": [],
-			"hasEducation": [
-				"Education:Jeffrey_A_Stewart"
-			],
-			"hasCertification:": [],
-			"hasReference": [],
-			"hasRecommendation": [],
-			"skos:prefLabel": "Perse Knowledge"
-		},
-		
-		{
-			"@id": "Experience:Jeffrey_A_Stewart",
-			"@type": "perse:Experience",
-			"rdfs:label": "Experience of Jeffrey_A_Stewart",
-			"hasExperienceType": [
-				"Role:Asterius_Media_LLC_Owner",
-				"Role:Asterius_Media_LLC_CEO"
-			],
-			"Roles": [
-				"Role:Asterius_Media_LLC_Owner",
-				"Role:Asterius_Media_LLC_CEO"
-			],
-			"Projects": [],
-			"Publicatyions": [],
-			"WorkHistory": [
-				"Job:Asterius_Media_LLC_CEO"
-			],
-			"skos:inScheme": [
-				"Perse:Jeffrey_A_Stewart"
-			],
-			"skos:prefLabel": "Perse Experience"
-		},
-		
-		{
-			"@id": "Personality:Jeffrey_A_Stewart",
-			"@type": "perse:Personality",
-			"rdfs:label": "Personality profiles for Jeffrey_A_Stewart",
-			"skos:inScheme": [
-				"Perse:Jeffrey_A_Stewart"
-			],
-			"hasPersonalityType": [
-				"DiSC:Jeffrey_A_Stewart",
-				"MBTI:Jeffrey_A_Stewart",
-				"Traxion:Jeffrey_A_Stewart"
-			],
-			"hasDiSC": [
-				"DiSC:Jeffrey_A_Stewart"
-			],
-			"hasMBTI": [
-				"MBTI:Jeffrey_A_Stewart"
-			],
-			"hasSST": [],
-			"hasTraxion": [
-				"Traxion:Jeffrey_A_Stewart"
-			],
-			"skos:prefLabel": "Personality Profiles"
-		},
-		{
-			"@id": "DiSC:Jeffrey_A_Stewart",
-			"@type": "perse:DiSC",
-			"rdf:type": "perse:PersonalityType",
-			"rdfs:label": "DiSC profile for Jeffrey Stewart",
-			"disc:type": ["disc:DCI"],
-			"dc:description": "Person places emphasis on accomplishing results, the bottom line, confidence",
-			"disc:Scores": {
-	            "disc:Dominance": "26.0",
-	            "disc:Influence": "26.0",
-	            "disc:Steadiness": "22.0",
-	            "disc:Conscientiousness": "26.0"
-	          },
-			"skos:prefLabel": "disc:DCI"
-		},
-		{
-          "@id": "disc:DCI",
-          "@type": "perse:Personality",
-          "perse:PersonalityType": "perse:DiSC_profile",
-          "rdfs:label": "Chancellor",
-          "skos:definition": "as a Chancellor style, mixes fun with business in order to get things done. Chancellors are determined individuals who enjoy people but can also take care of the details. Since Chancellors want things to be taken care of correctly, they may finish projects to assure correctness and completeness. |firstname is outgoing by nature and enjoys people, but this does not necessarily indicate an allegiance. A Chancellor evaluates people  and tasks carefully. Their alliances will shift seemingly impulsively from one person or task to another. They often neglect careful planning and will jump into projects without thorough consideration. Chancellors may need to be more sensitive to the needs of others. They are spontaneous in business and pleasure, but not haphazardly. |firstname requires correctness and is very aware of deadlines. A Chancellor will initiate activity rather than waiting for someone else to do the job. They are driven by the bottom line and want quick results. They will work tenaciously to resolve problems. |firstname desires accuracy combined with quick thinking. Others may perceive Chancellors as opinionated. Under pressure, they may express their feelings without regard to allowing others’ opinions. They may also dominate projects and not permit others to participate. A Chancellor wants others to communicate clearly and concisely. They are forward thinking and creative. |firstname is always looking ahead to new and exciting adventures.",
-          "disc:Dominance": {
-            "disc:score": "",
-            "rdfs:label": "Dominance",
-            "disc:behavior": [
-              "Sees the big picture",
-              "Can be blunt",
-              "Accepts challenges",
-              "Gets straight to the point"
-            ],
-            "disc:style": [
-              "is motivated by winning, competition and success.",
-              "Commanding, Resolute, Pioneering"
-            ],
-            "disc:goals": [
-              "unique accomplishments",
-              "new opportunities",
-              "control of audience",
-              "independence"
-            ],
-            "disc:needs": [
-              "show patience",
-              "display sensitivity",
-              "get into the details",
-              "allow deliberation"
-            ],
-            "skos:definition": "Person places emphasis on accomplishing results, the bottom line, confidence"
-          },
-          "disc:Influence": {
-            "disc:score": "",
-            "rdfs:label": "Influence",
-            "disc:behavior": [
-              
-            ],
-            "disc:style": [
-              
-            ],
-            "disc:goals": [
-              
-            ],
-            "disc:needs": [
-              
-            ],
-            "skos:definition": ""
-          },
-          "disc:Steadiness": {
-            "disc:score": "",
-            "rdfs:label": "Steadiness",
-            "disc:behavior": [
-              
-            ],
-            "disc:style": [
-              
-            ],
-            "disc:goals": [
-              
-            ],
-            "disc:needs": [
-              
-            ],
-            "skos:definition": ""
-          },
-          "disc:Conscientiousness": {
-            "disc:score": "",
-            "rdfs:label": "Conscientiousness",
-            "disc:behavior": [
-              
-            ],
-            "disc:style": [
-              
-            ],
-            "disc:goals": [
-              
-            ],
-            "disc:needs": [
-              
-            ],
-            "skos:definition": ""
-          }
-        },
-		
-		
-		{
-			"@id": "MBTI:Jeffrey_A_Stewart",
-			"@type": "perse:MBTI",
-			"rdf:type": "perse:PersonalityType",
-			"rdfs:label": "MBTI profile for Jeffrey Stewart",
-			"mbti:type": ["mbti:INTJ"],
-			"skos:prefLabel": "MBTI"
-		},
-		{
-          "@id": "mbti:INTJ",
-          "@type": "perse:MBTI_profile",
-          "rdfs:label": "Myers-Briggs Type Indicator INTJ 'Archetect'",
-          "skos:prefLabel": "INTJ 'Archetect'",
-          "skos:definition": "Person places emphasis on accomplishing results, the bottom line, confidence"
-        },
+  "@graph": [
+    {
+      "@id": "foafiaf:Jeffrey_A_Stewart",
+      "@type": "foaf:Person",
+      "rdfs:label": "Jeffrey Stewart",
+      "foaf:name": "Jeffrey Stewart",
+      "foaf:title": "",
+      "foaf:firstName": "Jeffrey",
+      "foaf:lastName": "Stewart",
+      "foaf:familyName": "Stewart",
+      "foaf:givenName": "Jeffrey",
+      "foaf:nick": "Jeff",
+      "foaf:gender": "M",
+      "foaf:age": "",
+      "foaf:mbox_sha1sum": "47af7e0b79ee24622a0543828a2eb51d7d75a407",
+      "foaf:mbox": "stewjeffrey@gmail.com",
+      "foaf:phone": "tel:8552783748",
+      "foaf:img": "",
+      "foaf:homepage": "",
+      "foaf:weblog": "",
+      "foaf:workplaceHomepage": "www.asteriusmedia.com",
+      "foaf:account": "https://www.linkedin.com/in/jeffreyastewart",
+      "foaf:depiction": "https://media.licdn.com/media/p/5/005/093/01e/0426a71.jpg",
+      "foaf:thumbnail": "https://media.licdn.com/media/p/5/005/093/01e/0426a71.jpg",
+      "birthPlace": [
+        "foafiafMoline,_Illinois"
+      ],
+      "based_near": [
+        "foafiaf:Byron,_Illinois"
+      ],
+      "bio:Employer": [
+        {
+          "@id": "foafiaf:asterius_media_llc",
+          "@type": "dbo:Company",
+          "rdfs:label": "Asterius Media LLC"
+        }
+      ],
+      "foaf:knows": [
+        "foafiaf:Stefan_Agustsson",
+        "foafiaf:Larry_Morrissey",
+        "foafiaf:Mike_Schablaske"
+      ],
+      "foaf:member": [
+        "foafiaf:transform_rockford",
+        "foafiaf:TR_Technology_Team"
+      ],
+      "perse:hasVCard": [
+        "VCard:Jeffrey_A_Stewart"
+      ],
+      "perse:hasConnection": [
+        "https://www.linkedin.com/in/jacobjwilson",
+        "https://www.linkedin.com/in/david-sidney-05597814",
+        "https://www.linkedin.com/in/joegranneman",
+        "https://www.linkedin.com/in/steve-bartscher-6833102",
+        "https://www.linkedin.com/in/meghanrichardson",
+        "https://www.linkedin.com/in/scotthilchey",
+        "https://www.linkedin.com/in/stefan-agustsson-597319",
+        "https://www.linkedin.com/in/chriscanaday",
+        "https://www.linkedin.com/in/scott-mayhew-mba-cpa-2b53498"
+      ],
+      "perse:hasAffiliation": [
+        "foafiaf:transform_rockford",
+        "foafiaf:asterius_media_llc",
+        "foafiaf:mpowr_a_supplycore_solution",
+        "foafiaf:applaud_llc",
+        "foafiaf:capgemini_consulting",
+        "foafiaf:trekk",
+        "foafiaf:rockford_area_ventures_inc",
+        "foafiaf:rockford_chamber_of_commerce",
+        "foafiaf:exelon_nuclear"
+      ]
+    },
+    {
+    	
+    	
+      "@id": "VCard:Jeffrey_A_Stewart",
+      "@type": "perse:VCard",
+      "dbo:type": "dbo:VCard",
+      
+      "rdfs:label": "VCard of Jeffrey_A_Stewart",
+      "vcard:fn": "Stewart, Jeffrey A."
+    },
+    
+    
+    
+    {
+      "@id": "Perse:Jeffrey_A_Stewart",
+      "@type": "perse:Perse",
+      "rdfs:label": "about Jeffrey_A_Stewart",
+      "perse:aboutPerson": [
+        "foafiaf:Jeffrey_A_Stewart"
+      ],
+      "perse:hasConcepts": [
+        "Interest:Jeffrey_A_Stewart",
+        "Skill:Jeffrey_A_Stewart",
+        "Knowledge:Jeffrey_A_Stewart",
+        "Experience:Jeffrey_A_Stewart",
+        "Personality:Jeffrey_A_Stewart"
+      ],
+      "perse:hasInterests": [
+        "Interest:Jeffrey_A_Stewart"
+      ],
+      "perse:hasSkills": [
+        "Skill:Jeffrey_A_Stewart"
+      ],
+      "perse:hasKnowledge": [
+        "Knowledge:Jeffrey_A_Stewart"
+      ],
+      "perse:hasExperiences": [
+        "Experience:Jeffrey_A_Stewart"
+      ],
+      "perse:hasPersonalities": [
+        "Personality:Jeffrey_A_Stewart"
+      ],
+      "skos:prefLabel": "Perse Profile"
+    },
+    
+    
+    {"@id":"Interest:Jeffrey_A_Stewart","@type":"perse:Interest","rdfs:label":"Interests of Jeffrey_A_Stewart","skos:inScheme":["Perse:Jeffrey_A_Stewart"],"hasInterestType":[],"hasLinkedIn":[],"hasAxiom":[],"hasTraxion":[],"skos:prefLabel":"Perse Interests"}
+    ,
+    
+    {"@id":"Skill:Jeffrey_A_Stewart","@type":"perse:Skill","rdfs:label":"Skills of Jeffrey_A_Stewart","skos:inScheme":["Perse:Jeffrey_A_Stewart"],"hasSkillType":[],"hasLinkedIn":[],"hasAnalytic":["Analytic_Skills_Analysis","Analytic_Skills_Analysis_Problem_Solving","Analytic_Skills_Communication","Analytic_Skills_Communication_Presentation"],"hasDelivery":[],"skos:prefLabel":"Perse Skills"},{"@id":"Analytic_Skills_Analysis","@type":"perse:Analysic_skill","dbo:type":"skos:Concept","rdfs:label":"Analytic Skills / Analysis","skos:broader":["Analytic_Skills"],"skos:prefLabel":"Analysis"},{"@id":"Analytic_Skills_Analysis_Problem_Solving","@type":"perse:Analysic_skill","dbo:type":"skos:Concept","rdfs:label":"Analytic Skills / Analysis / Problem solving","skos:broader":["Analytic_Skills_Analysis"],"skos:prefLabel":"Problem solving"},{"@id":"Analytic_Skills_Communication","@type":"perse:Analysic_skill","dbo:type":"skos:Concept","rdfs:label":"Analytic Skills / Communication","skos:broader":["Analytic_Skills"],"skos:prefLabel":"Communication"},{"@id":"Analytic_Skills_Communication_Presentation","@type":"perse:Analysic_skill","dbo:type":"skos:Concept","rdfs:label":"Analytic Skills / Communication / Presentation","dc:description":"Presentation / oral and written expression ","skos:broader":["Analytic_Skills_Communication"],"skos:prefLabel":"Presentation"}
+    ,
+    
+    {"@id":"Knowledge:Jeffrey_A_Stewart","@type":"perse:Knowledge","rdfs:label":"Knowledge of Jeffrey_A_Stewart","skos:inScheme":["Perse:Jeffrey_A_Stewart"],"hasKnowledgeType":["Education:Jeffrey_A_Stewart"],"hasLeadership:":[],"hasEducation":["Education:Jeffrey_A_Stewart"],"hasCertification:":[],"hasReference":[],"hasRecommendation":[],"skos:prefLabel":"Perse Knowledge"}
+    ,
+    
+    {"@id":"Experience:Jeffrey_A_Stewart","@type":"perse:Experience","rdfs:label":"Experience of Jeffrey_A_Stewart","hasExperienceType":["Role:Asterius_Media_LLC_Owner","Role:Asterius_Media_LLC_CEO"],"Roles":["Role:Asterius_Media_LLC_Owner","Role:Asterius_Media_LLC_CEO"],"Projects":[],"Publicatyions":[],"WorkHistory":["Job:Asterius_Media_LLC_CEO"],"skos:inScheme":["Perse:Jeffrey_A_Stewart"],"skos:prefLabel":"Perse Experience"}
+    ,
+    
+    {"@id":"Personality:Jeffrey_A_Stewart","@type":"perse:Personality","rdfs:label":"Personality profiles for Jeffrey_A_Stewart","skos:inScheme":["Perse:Jeffrey_A_Stewart"],"hasPersonalityType":["DiSC:Jeffrey_A_Stewart","MBTI:Jeffrey_A_Stewart","Traxion:Jeffrey_A_Stewart"],"hasDiSC":["DiSC:Jeffrey_A_Stewart"],"hasMBTI":["MBTI:Jeffrey_A_Stewart"],"hasSST":[],"hasTraxion":["Traxion:Jeffrey_A_Stewart"],"skos:prefLabel":"Personality Profiles"}
+    ,
+    
+    {"@id":"DiSC:Jeffrey_A_Stewart","@type":"perse:DiSC","rdf:type":"perse:PersonalityType","rdfs:label":"DiSC profile for Jeffrey Stewart","disc:type":["disc:DCI"],"dc:description":"Person places emphasis on accomplishing results, the bottom line, confidence","disc:Scores":{"disc:Dominance":"26.0","disc:Influence":"26.0","disc:Steadiness":"22.0","disc:Conscientiousness":"26.0"},"skos:prefLabel":"disc:DCI"},{"@id":"disc:DCI","@type":"perse:Personality","perse:PersonalityType":"perse:DiSC_profile","rdfs:label":"Chancellor","skos:definition":"as a Chancellor style, mixes fun with business in order to get things done. Chancellors are determined individuals who enjoy people but can also take care of the details. Since Chancellors want things to be taken care of correctly, they may finish projects to assure correctness and completeness. |firstname is outgoing by nature and enjoys people, but this does not necessarily indicate an allegiance. A Chancellor evaluates people  and tasks carefully. Their alliances will shift seemingly impulsively from one person or task to another. They often neglect careful planning and will jump into projects without thorough consideration. Chancellors may need to be more sensitive to the needs of others. They are spontaneous in business and pleasure, but not haphazardly. |firstname requires correctness and is very aware of deadlines. A Chancellor will initiate activity rather than waiting for someone else to do the job. They are driven by the bottom line and want quick results. They will work tenaciously to resolve problems. |firstname desires accuracy combined with quick thinking. Others may perceive Chancellors as opinionated. Under pressure, they may express their feelings without regard to allowing others’ opinions. They may also dominate projects and not permit others to participate. A Chancellor wants others to communicate clearly and concisely. They are forward thinking and creative. |firstname is always looking ahead to new and exciting adventures.","disc:Dominance":{"disc:score":"","rdfs:label":"Dominance","disc:behavior":["Sees the big picture","Can be blunt","Accepts challenges","Gets straight to the point"],"disc:style":["is motivated by winning, competition and success.","Commanding, Resolute, Pioneering"],"disc:goals":["unique accomplishments","new opportunities","control of audience","independence"],"disc:needs":["show patience","display sensitivity","get into the details","allow deliberation"],"skos:definition":"Person places emphasis on accomplishing results, the bottom line, confidence"},"disc:Influence":{"disc:score":"","rdfs:label":"Influence","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""},"disc:Steadiness":{"disc:score":"","rdfs:label":"Steadiness","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""},"disc:Conscientiousness":{"disc:score":"","rdfs:label":"Conscientiousness","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""}}
+    ,
+    
+    {"@id":"MBTI:Jeffrey_A_Stewart","@type":"perse:MBTI","rdf:type":"perse:PersonalityType","rdfs:label":"MBTI profile for Jeffrey Stewart","mbti:type":["mbti:INTJ"],"skos:prefLabel":"MBTI"},{"@id":"mbti:INTJ","@type":"perse:MBTI_profile","rdfs:label":"Myers-Briggs Type Indicator INTJ 'Archetect'","skos:prefLabel":"INTJ 'Archetect'","skos:definition":"Person places emphasis on accomplishing results, the bottom line, confidence"}
+    ,
+    
+    {"@id":"Traxion:Jeffrey_A_Stewart","@type":"perse:Traxion","rdf:type":"perse:PersonalityType","rdfs:label":"Traxion profile for Jeffrey Stewart","type":["traxion:Expressive"],"traxion:Scores":{"traxion:Aggressive":"17.4452155490052","traxion:Expressive":"30.1453725128961","traxion:Analytical":"29.9164481392778","traxion:Passive":"22.4916748341931"},"skos:prefLabel":"Traxion"},{"@id":"traxion:Expressive","@type":"perse:Personality","perse:PersonalityType":"perse:Traxion_profile","rdfs:label":"Expressive Temperament","dc:description":"The Traxion Customer Insights Expressive Tempermant Profile.","skos:definition":"The extroverted Expressive temperament has been described by the temperament theory of the ancient Greeks as the 'Sanguine.' "},{"@id":"Job:Asterius_Media_LLC_CEO","@type":"perse:WorkHistory","rdf:type":"perse:ExperienceType","rdfs:label":"Asterius_Media_LLC_CEO","perse:startDate":"October 2011","perseendDate:":"","perse:isCurrent":true,"perse:jobTitle":"Chief Executive Officer","perse:jobType":"Executive","perse:jobFunction":"Startegy and day to day activites","perse:jobDescription":"The CEO manages day to day activites and defines stratgy","inRole":["foafiaf:Asterius_Media_LLC_CEO"],"skos:prefLabel":"CEO"},{"@id":"Job:Asterius_Media_LLC_Owner","@type":"perse:WorkHistory","rdf:type":"perse:ExperienceType","rdfs:label":"Asterius_Media_LLC_Owner","perse:startDate":"October 2011","perseendDate:":"","perse:isCurrent":true,"perse:jobTitle":"OWner","perse:jobType":"Owner","inRole":["foafiaf:Asterius_Media_LLC_Owner"],"skos:prefLabel":"Owner"},{"@id":"Education:Jeffrey_A_Stewart","@type":"perse:Education","rdf:type":"perse:Education_knowledge","hasEducation":[{"@id":"Undergrad","@type":"perse:Education_knowledge","rdfs:label":"Undergrad: BSEE","perse:eduDescription":"Computer and Electrctical Engineering","perse:eduMajor":"BSEE","perse:eduStartDate":"1981-01","perse:eduEndDate":"1985-05","perse:degreeType":"BS","perse:studiedIn":["foafiaf:University_of_Iowa"]},{"@id":"Graduate","@type":"perse:Education_knowledge","rdf:type":["perse:Education_knowledge"],"perse:eduDescription":"Electrctical Engineering and Computer Science","rdfs:label":"Graduate: MSEE studies"}]}
+    ,
         
-		{
-			"@id": "Traxion:Jeffrey_A_Stewart",
-			"@type": "perse:Traxion",
-			"rdf:type": "perse:PersonalityType",
-			"rdfs:label": "Traxion profile for Jeffrey Stewart",
-			"type": ["traxion:Expressive"],
-			"traxion:Scores": {
-	            "traxion:Aggressive": "17.4452155490052",
-	            "traxion:Expressive": "30.1453725128961",
-	            "traxion:Analytical": "29.9164481392778",
-	            "traxion:Passive": "22.4916748341931"
-	          },
-			"skos:prefLabel": "Traxion"
-		},
-		{
-          "@id": "traxion:Expressive",
-          "@type": "perse:Personality",
-          "perse:PersonalityType": "perse:Traxion_profile",
-          "rdfs:label": "Expressive Temperament",
-          "dc:description": "The Traxion Customer Insights Expressive Tempermant Profile.",
-          "skos:definition": "The extroverted Expressive temperament has been described by the temperament theory of the ancient Greeks as the 'Sanguine.' "
-        },
-        
-        
-		{
-			"@id": "Job:Asterius_Media_LLC_CEO",
-			"@type": "perse:WorkHistory",
-			"rdf:type": "perse:ExperienceType",
-			"rdfs:label": "Asterius_Media_LLC_CEO",
-			"perse:startDate": "October 2011",
-			"perseendDate:": "",
-			"perse:isCurrent": true,
-			"perse:jobTitle": "Chief Executive Officer",
-			"perse:jobType": "Executive",
-			"perse:jobFunction": "Startegy and day to day activites",
-			"perse:jobDescription": "The CEO manages day to day activites and defines stratgy",
-			"inRole": [
-				"foafiaf:Asterius_Media_LLC_CEO"
-			],
-			"skos:prefLabel": "CEO"
-		},
-		{
-			"@id": "Job:Asterius_Media_LLC_Owner",
-			"@type": "perse:WorkHistory",
-			"rdf:type": "perse:ExperienceType",
-			"rdfs:label": "Asterius_Media_LLC_Owner",
-			"perse:startDate": "October 2011",
-			"perseendDate:": "",
-			"perse:isCurrent": true,
-			"perse:jobTitle": "OWner",
-			"perse:jobType": "Owner",
-    		"inRole": [
-				"foafiaf:Asterius_Media_LLC_Owner"
-			],
-			"skos:prefLabel": "Owner"
-		},
-		{
-			"@id": "Education:Jeffrey_A_Stewart",
-			"@type": "perse:Education",
-			"rdf:type": "perse:Education_knowledge",
-			"hasEducation": [
-				{
-					"@id": "Undergrad",
-					"@type": "perse:Education_knowledge",
-					"rdfs:label": "Undergrad: BSEE",
-					"perse:eduDescription": "Computer and Electrctical Engineering",
-					"perse:eduMajor": "BSEE",
-					"perse:eduStartDate": "1981-01",
-					"perse:eduEndDate": "1985-05",
-					"perse:degreeType": "BS",
-					"perse:studiedIn": [
-						"foafiaf:University_of_Iowa"
-					]
-				},
-				{
-					"@id": "Graduate",
-					"@type": "perse:Education_knowledge",
-					"rdf:type": [
-						"perse:Education_knowledge"
-					],
-					"perse:eduDescription": "Electrctical Engineering and Computer Science",
-					"rdfs:label": "Graduate: MSEE studies"
-				}
-			]
-		},
-		{
-			"@id": "foafiaf:University_of_Iowa",
-			"@type": "foaf:Organization",
-			"dbo:type": "dbr:Public_university",
-			"rdfs:label": "University_of_Iowa"
-		},
-		{
-			"@id": "foafiaf:asterius_media_llc",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo: Organisation",
-				"schema: Organization",
-				"org: Organization"
-			],
-			"dbo:type": "dbo:Company",
-			"rdfs:label": "Asterius Media LLC",
-			"foaf:name": "ASTERIUS MEDIA, LLC",
-			"dbo:legalForm": "",
-			"foaf:homepage": "https://www.asteriusmedia.com",
-			"linkedin:Profile": "https://www.linkedin.com/company/asterius-media-llc",
-			"based_near": [
-				"foafiaf:Byron,_Illinois"
-			],
-			"dbp:headquarters": "dbr:Byron,_Illinois",
-			"dbo:country": "dbr:United_States",
-			"dbo:service": [
-				"dbr:Information_technology_consulting",
-				"dbr:Management_consulting"
-			],
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:Asterius_Media_LLC_CEO",
-					"@type": "org:Role",
-					"rdfs:label": "CEO of Asterius Media LLC"
-				},
-				{
-					"@id": "foafiaf:Asterius_Media_LLC_Owner",
-					"@type": "org:Role",
-					"rdfs:label": "Owner of Asterius Media LLC"
-				}
-			],
-			"has_container": []
-		},
-		{
-			"@id": "foafiaf:capgemini_consulting",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization",
-				"org:OrganizationalUnit"
-			],
-			"dbo:type": "dbo:Company",
-			"rdfs:label": "Capgemini Consulting",
-			"foaf:name": "Capgemini Consulting",
-			"linkedin:Profile": "https://www.linkedin.com/company/capgemini-consulting",
-			"org:unitOf": "dbr:Capgemini",
-			"dbo:service": "dbr:Management_consulting",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:Capgemini_Consulting_Managing_Consultant",
-					"@type": "org:Role",
-					"rdfs:label": "Manageing Consultant for Capgemini Consulting"
-				}
-			],
-			"based_near": [
-				"foafiaf:Chicago,_Illinois"
-			],
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:transform_rockford",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Non-ProfitOrganisation",
-			"rdfs:label": "Transform Rockford",
-			"foaf:name": "Transform Rockford",
-			"dbo:sameAs": [
-				"foafiaf:Transform_Rockford"
-			],
-			"dbo:legalForm": "",
-			"dbo:formationYear": "",
-			"dbo:headquarter": "dbr:Rockford,_Illinois",
-			"dbo:numberOfStaff": "",
-			"dbo:numberOfVolunteers": "",
-			"dbo:locationCity": "dbr:Rockford,_Illinois",
-			"linkedin:Profile": "https://www.linkedin.com/company/transform-rockford",
-			"linkedin:type": "Civic & Social Organization",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:TR_Technology_Team_Co-Lead",
-					"@type": "org:Role",
-					"rdfs:label": "Co-Lead of TR Tachnology Team"
-				}
-			],
-			"based_near": [
-				"foafiaf:Rockford,_Illinois"
-			],
-			"dbp:headquarters": "dbr:Rockford,_Illinois",
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:exelon_nuclear",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Company",
-			"rdfs:label": "Exelon Nuclear",
-			"foaf:name": "Exelon Nuclear",
-			"linkedin:Profile": "https://www.linkedin.com/company/exelon-nuclear",
-			"linkedin:type": "Utilities",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:Excelon_Nuclear_Principle_Engineer",
-					"@type": "org:Role",
-					"rdfs:label": "Principle Engineer for Byron Nuclear Power Plant"
-				}
-			],
-			"based_near": [
-				"foafiaf:Byron,_Illinois"
-			],
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:rockford_chamber_of_commerce",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Non-ProfitOrganisation",
-			"rdfs:label": "Rockford Area Chamber of Commerce",
-			"foaf:name": "Rockford Area Chamber of Commerce",
-			"linkedin:Profile": "https://www.linkedin.com/company/rockford-chamber-of-commerce",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:Rockford_Chamber_of_Commerce_Member",
-					"@type": "org:Role",
-					"rdfs:label": "Member of Rockford Chamber of Commerce"
-				},
-				{
-					"@id": "foafiaf:Rockford_Chamber_of_Commerce_Board_Member",
-					"@type": "org:Role",
-					"rdfs:label": "Board of Directors Member of Rockford Chamber of Commerce"
-				},
-				{
-					"@id": "foafiaf:Rockford_Chamber_of_Commerce_Board_Chairman",
-					"@type": "org:Role",
-					"rdfs:label": "Chairman of the Board of Directors of Rockford Chamber of Commerce"
-				}
-			],
-			"based_near": [
-				"foafiaf:Rockford,_Illinois"
-			],
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:rockford_area_ventures_inc",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Non-ProfitOrganisation",
-			"rdfs:label": "Rockford Area Ventures, Inc.",
-			"foaf:name": "Rockford Area Ventures, Inc.",
-			"linkedin:Profile": "https://www.linkedin.com/company/rockford-area-ventures-inc",
-			"based_near": [
-				"foafiaf:Rockford,_Illinois"
-			],
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:mpowr_a_supplycore_solution",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Company",
-			"rdfs:label": "MPOWR, A Supplycore Solution",
-			"foaf:name": "",
-			"org:unitOf": "https://www.linkedin.com/company/supplycore-inc.",
-			"linkedin:type": "Computer Software",
-			"linkedin:Profile": "https://www.linkedin.com/company/mpowr-a-supplycore-solution",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:MPOWR_Product_Manager",
-					"@type": "org:Role",
-					"rdfs:label": "Product Manager for MPOWR Software"
-				}
-			],
-			"based_near": [
-				"foafiaf:Rockford,_Illinois"
-			],
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:trekk",
-			"@type": "foaf:Organization",
-			"rdf:type": [
-				"dbo:Organisation",
-				"schema:Organization",
-				"org:Organization"
-			],
-			"dbo:type": "dbo:Company",
-			"rdfs:label": "Trekk, Inc.",
-			"foaf:name": "TREKK DESIGN, INC.",
-			"linkedin:Profile": "https://www.linkedin.com/company/trekk",
-			"org:hasPost": [
-				{
-					"@id": "foafiaf:TREKK_CTO",
-					"@type": "org:Role",
-					"rdfs:label": "CTO of Trekk, Inc."
-				}
-			],
-			"based_near": [
-				"foafiaf:Rockford,_Illinois"
-			],
-			"dbp:headquarters": "dbr:Rockford,_Illinois",
-			"dbo:country": "dbr:United_States"
-		},
-		{
-			"@id": "foafiaf:Moline,_Illinois",
-			"@type": "dbo:Place",
-			"rdf: type": [
-				"dbo:Place",
-				"dbo:Location",
-				"schema:Place",
-				"geo:SpatialThing",
-				"owl:Thing",
-				"dbo:PopulatedPlace"
-			],
-			"owl:sameAs": [
-				"dbr:Moline,_Illinois"
-			],
-			"rdfs:label": "Moline, Illinois",
-			"dbo:name": "Moline, Illinois",
-			"dbo:state": "http://dbpedia.org/resource/Illinois",
-			"dbo:country": "http://dbpedia.org/resource/United_States",
-			"sioc:has_container": [
-				"foafiaf:Illinois"
-			]
-		},
-		{
-			"@id": "foafiaf:Chicago,_Illinois",
-			"@type": "dbo:Place",
-			"rdf: type": [
-				"dbo:Place",
-				"dbo:Location",
-				"schema:Place",
-				"geo:SpatialThing",
-				"owl:Thing",
-				"dbo:PopulatedPlace"
-			],
-			"owl:sameAs": [
-				"dbr:Chicago,_Illinois"
-			],
-			"rdfs:label": "Chicago, Illinois",
-			"dbo:name": "Chicago, Illinois",
-			"dbo:state": "http://dbpedia.org/resource/Illinois",
-			"dbo:country": "http://dbpedia.org/resource/United_States",
-			"sioc:has_container": [
-				"foafiaf:Illinois"
-			]
-		},
-		{
-			"@id": "foafiaf:Byron,_Illinois",
-			"@type": "dbo:Place",
-			"rdf: type": [
-				"dbo:Place",
-				"dbo:Location",
-				"schema:Place",
-				"geo:SpatialThing",
-				"owl:Thing",
-				"dbo:PopulatedPlace"
-			],
-			"owl:sameAs": [
-				"dbr:Byron,_Illinois"
-			],
-			"rdfs:label": "Byron, Illinois",
-			"dbo:name": "Byron, Illinois",
-			"dbo:state": "http://dbpedia.org/resource/Illinois",
-			"dbo:country": "http://dbpedia.org/resource/United_States",
-			"sioc:has_container": [
-				"foafiaf:Illinois"
-			]
-		},
-		{
-			"@id": "foafiaf:Rockford,_Illinois",
-			"@type": "dbo:Place",
-			"rdf: type": [
-				"dbo:Place",
-				"dbo:Location",
-				"schema:Place",
-				"geo:SpatialThing",
-				"owl:Thing",
-				"dbo:PopulatedPlace"
-			],
-			"owl:sameAs": [
-				"dbr:Rockford,_Illinois"
-			],
-			"rdfs:label": "Rockford, Illinois",
-			"dbo:name": "Rockford, Illinois",
-			"dbo:state": "http://dbpedia.org/resource/Illinois",
-			"dbo:country": "http://dbpedia.org/resource/United_States",
-			"sioc:has_container": [
-				"foafiaf:Illinois"
-			]
-		},
-		{
-			"@id": "foafiaf:Illinois",
-			"@type": "dbo:Place",
-			"uri": "http: //dbpedia.org/resource/Illinois",
-			"rdf: type": [
-				"dbo:Place",
-				"dbo:Location",
-				"schema:Place",
-				"geo:SpatialThing",
-				"owl:Thing",
-				"dbo:PopulatedPlace"
-			],
-			"owl:sameAs": [
-				"dbr:Illinois",
-				"freebase:Illinois",
-				"wikidata:Illinois",
-				"geodata:Illinois"
-			],
-			"rdfs:label": "Illinois",
-			"dbo:name": "Illinois",
-			"abstract": "",
-			"dbo:state": "http://dbpedia.org/resource/Illinois",
-			"dbo:country": "http://dbpedia.org/resource/United_States"
-		}
-	],
-	"@id": "urn:x-arq:DefaultGraphNode",
-	"@context": {
-		"owl": "http://www.w3.org/2002/07/owl#",
-		"org": "http://www.w3.org/ns/org#",
-		"dce": "http://purl.org/dc/",
-		"xsd": "http://www.w3.org/2001/XMLSchema#",
-		"bio": "http://purl.org/vocab/bio/0.1/",
-		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-		"pto": "http://www.productontology.org/id/",
-		"foafiaf": "http://foafiaf-asteriusj.c9users.io/owl/foafiaf.owl#",
-		"geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-		"dbo": "http://dbpedia.org/ontology/",
-		"dbp": "http://dbpedia.org/property/",
-		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-		"dbr": "http://dbpedia.org/resource/",
-		"perse": "https://foafiaf-asteriusj.c9.io/owl/perseprofile.owl#",
-		"rel": "http://purl.org/vocab/relationship/",
-		"traxion": "https://foafiaf-asteriusj.c9.io/perseprofile_Traxion#",
-		"mbti": "https://foafiaf-asteriusj.c9.io/persamodel_MBTI#",
-		"disc": "https://foafiaf-asteriusj.c9.io/persamodel_DiSC#",
-		"wot": "http://xmlns.com/wot/0.1/",
-		"prov": "http://www.w3.org/ns/prov#",
-		"vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
-		"foaf": "http://xmlns.com/foaf/0.1/",
-		"sioc": "http://rdfs.org/sioc/ns#",
-		"dc": "http://purl.org/dc/elements/1.1/"
-	}
+    {"@id":"foafiaf:University_of_Iowa","@type":"foaf:Organization","dbo:type":"dbr:Public_university","rdfs:label":"University_of_Iowa"},{"@id":"foafiaf:asterius_media_llc","@type":"foaf:Organization","rdf:type":["dbo: Organisation","schema: Organization","org: Organization"],"dbo:type":"dbo:Company","rdfs:label":"Asterius Media LLC","foaf:name":"ASTERIUS MEDIA, LLC","dbo:legalForm":"","foaf:homepage":"https://www.asteriusmedia.com","linkedin:Profile":"https://www.linkedin.com/company/asterius-media-llc","based_near":["foafiaf:Byron,_Illinois"],"dbp:headquarters":"dbr:Byron,_Illinois","dbo:country":"dbr:United_States","dbo:service":["dbr:Information_technology_consulting","dbr:Management_consulting"],"org:hasPost":[{"@id":"foafiaf:Asterius_Media_LLC_CEO","@type":"org:Role","rdfs:label":"CEO of Asterius Media LLC"},{"@id":"foafiaf:Asterius_Media_LLC_Owner","@type":"org:Role","rdfs:label":"Owner of Asterius Media LLC"}],"has_container":[]},{"@id":"foafiaf:capgemini_consulting","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization","org:OrganizationalUnit"],"dbo:type":"dbo:Company","rdfs:label":"Capgemini Consulting","foaf:name":"Capgemini Consulting","linkedin:Profile":"https://www.linkedin.com/company/capgemini-consulting","org:unitOf":"dbr:Capgemini","dbo:service":"dbr:Management_consulting","org:hasPost":[{"@id":"foafiaf:Capgemini_Consulting_Managing_Consultant","@type":"org:Role","rdfs:label":"Manageing Consultant for Capgemini Consulting"}],"based_near":["foafiaf:Chicago,_Illinois"],"dbo:country":"dbr:United_States"},{"@id":"foafiaf:transform_rockford","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Non-ProfitOrganisation","rdfs:label":"Transform Rockford","foaf:name":"Transform Rockford","dbo:sameAs":["foafiaf:Transform_Rockford"],"dbo:legalForm":"","dbo:formationYear":"","dbo:headquarter":"dbr:Rockford,_Illinois","dbo:numberOfStaff":"","dbo:numberOfVolunteers":"","dbo:locationCity":"dbr:Rockford,_Illinois","linkedin:Profile":"https://www.linkedin.com/company/transform-rockford","linkedin:type":"Civic & Social Organization","org:hasPost":[{"@id":"foafiaf:TR_Technology_Team_Co-Lead","@type":"org:Role","rdfs:label":"Co-Lead of TR Tachnology Team"}],"based_near":["foafiaf:Rockford,_Illinois"],"dbp:headquarters":"dbr:Rockford,_Illinois","dbo:country":"dbr:United_States"},{"@id":"foafiaf:exelon_nuclear","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Company","rdfs:label":"Exelon Nuclear","foaf:name":"Exelon Nuclear","linkedin:Profile":"https://www.linkedin.com/company/exelon-nuclear","linkedin:type":"Utilities","org:hasPost":[{"@id":"foafiaf:Excelon_Nuclear_Principle_Engineer","@type":"org:Role","rdfs:label":"Principle Engineer for Byron Nuclear Power Plant"}],"based_near":["foafiaf:Byron,_Illinois"],"dbo:country":"dbr:United_States"},{"@id":"foafiaf:rockford_chamber_of_commerce","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Non-ProfitOrganisation","rdfs:label":"Rockford Area Chamber of Commerce","foaf:name":"Rockford Area Chamber of Commerce","linkedin:Profile":"https://www.linkedin.com/company/rockford-chamber-of-commerce","org:hasPost":[{"@id":"foafiaf:Rockford_Chamber_of_Commerce_Member","@type":"org:Role","rdfs:label":"Member of Rockford Chamber of Commerce"},{"@id":"foafiaf:Rockford_Chamber_of_Commerce_Board_Member","@type":"org:Role","rdfs:label":"Board of Directors Member of Rockford Chamber of Commerce"},{"@id":"foafiaf:Rockford_Chamber_of_Commerce_Board_Chairman","@type":"org:Role","rdfs:label":"Chairman of the Board of Directors of Rockford Chamber of Commerce"}],"based_near":["foafiaf:Rockford,_Illinois"],"dbo:country":"dbr:United_States"},{"@id":"foafiaf:rockford_area_ventures_inc","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Non-ProfitOrganisation","rdfs:label":"Rockford Area Ventures, Inc.","foaf:name":"Rockford Area Ventures, Inc.","linkedin:Profile":"https://www.linkedin.com/company/rockford-area-ventures-inc","based_near":["foafiaf:Rockford,_Illinois"],"dbo:country":"dbr:United_States"},{"@id":"foafiaf:mpowr_a_supplycore_solution","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Company","rdfs:label":"MPOWR, A Supplycore Solution","foaf:name":"","org:unitOf":"https://www.linkedin.com/company/supplycore-inc.","linkedin:type":"Computer Software","linkedin:Profile":"https://www.linkedin.com/company/mpowr-a-supplycore-solution","org:hasPost":[{"@id":"foafiaf:MPOWR_Product_Manager","@type":"org:Role","rdfs:label":"Product Manager for MPOWR Software"}],"based_near":["foafiaf:Rockford,_Illinois"],"dbo:country":"dbr:United_States"},{"@id":"foafiaf:trekk","@type":"foaf:Organization","rdf:type":["dbo:Organisation","schema:Organization","org:Organization"],"dbo:type":"dbo:Company","rdfs:label":"Trekk, Inc.","foaf:name":"TREKK DESIGN, INC.","linkedin:Profile":"https://www.linkedin.com/company/trekk","org:hasPost":[{"@id":"foafiaf:TREKK_CTO","@type":"org:Role","rdfs:label":"CTO of Trekk, Inc."}],"based_near":["foafiaf:Rockford,_Illinois"],"dbp:headquarters":"dbr:Rockford,_Illinois","dbo:country":"dbr:United_States"}
+    ,
+    
+    {"@id":"foafiaf:Moline,_Illinois","@type":"dbo:Place","rdf: type":["dbo:Place","dbo:Location","schema:Place","geo:SpatialThing","owl:Thing","dbo:PopulatedPlace"],"owl:sameAs":["dbr:Moline,_Illinois"],"rdfs:label":"Moline, Illinois","dbo:name":"Moline, Illinois","dbo:state":"http://dbpedia.org/resource/Illinois","dbo:country":"http://dbpedia.org/resource/United_States","sioc:has_container":["foafiaf:Illinois"]},{"@id":"foafiaf:Chicago,_Illinois","@type":"dbo:Place","rdf: type":["dbo:Place","dbo:Location","schema:Place","geo:SpatialThing","owl:Thing","dbo:PopulatedPlace"],"owl:sameAs":["dbr:Chicago,_Illinois"],"rdfs:label":"Chicago, Illinois","dbo:name":"Chicago, Illinois","dbo:state":"http://dbpedia.org/resource/Illinois","dbo:country":"http://dbpedia.org/resource/United_States","sioc:has_container":["foafiaf:Illinois"]},{"@id":"foafiaf:Byron,_Illinois","@type":"dbo:Place","rdf: type":["dbo:Place","dbo:Location","schema:Place","geo:SpatialThing","owl:Thing","dbo:PopulatedPlace"],"owl:sameAs":["dbr:Byron,_Illinois"],"rdfs:label":"Byron, Illinois","dbo:name":"Byron, Illinois","dbo:state":"http://dbpedia.org/resource/Illinois","dbo:country":"http://dbpedia.org/resource/United_States","sioc:has_container":["foafiaf:Illinois"]},{"@id":"foafiaf:Rockford,_Illinois","@type":"dbo:Place","rdf: type":["dbo:Place","dbo:Location","schema:Place","geo:SpatialThing","owl:Thing","dbo:PopulatedPlace"],"owl:sameAs":["dbr:Rockford,_Illinois"],"rdfs:label":"Rockford, Illinois","dbo:name":"Rockford, Illinois","dbo:state":"http://dbpedia.org/resource/Illinois","dbo:country":"http://dbpedia.org/resource/United_States","sioc:has_container":["foafiaf:Illinois"]},{"@id":"foafiaf:Illinois","@type":"dbo:Place","uri":"http: //dbpedia.org/resource/Illinois","rdf: type":["dbo:Place","dbo:Location","schema:Place","geo:SpatialThing","owl:Thing","dbo:PopulatedPlace"],"owl:sameAs":["dbr:Illinois","freebase:Illinois","wikidata:Illinois","geodata:Illinois"],"rdfs:label":"Illinois","dbo:name":"Illinois","abstract":"","dbo:state":"http://dbpedia.org/resource/Illinois","dbo:country":"http://dbpedia.org/resource/United_States"}
+    
+    ,
+    {"@id":"perse:CampaignPersonalizationOptions","@type":"perse:Personalization","disc":[{"@id":"disc:Isd","@type":"perse:Personality","perse:PersonalityType":"perse:DiSC_profile","dc:description":"thrives in an unstructured environment, loves exploring new ideas, and occasionally makes gut-driven decisions that might seem risky.","personality":[{"description":"likes to work in pleasant, creative places that may encourage a bit of socializing while at work. He is a naturally positive person, and may not know what to do with conflict or pressure.","nature ":["Exaggerate details when telling a story","Enjoy a story more than a list of facts","Seek a personal connection in new business relationships","Feel sad if an accomplishment goes unrecognized"]},{"description":"likes to work in pleasant, creative places that may encourage a bit of socializing while at work. He is a naturally positive person, and may not know what to do with conflict or pressure.","motivation":["New relationships","Feeling accepted","Peer recognition","Fun & excitement"]}],"communicating":[{"description":"naturally relates to people that share his positive outlook and happy-go-lucky approach. Be cheerful and encouraging, and leave room for side conversations when working with him. ","speaking":["Talk about abstract philosophies or ideas","Tell a few jokes","Emphasize the future","Use self-deprecating humor (don't act like you take yourself too seriously)"]},{"emailing":["Use an emoticon ","Appeal to his feelings to drive him to action","Useemotionallyexpressivelanguage","Writewithshortcasuallanguageandabbreviations"]},{"keywords":["Colorful, descriptive words","Don't forget...","I'll send a reminder","Personal questions","How do you feel about..."]}]},{"@id":"disc:DCI","@type":"perse:Personality","perse:PersonalityType":"perse:DiSC_profile","rdfs:label":"Chancellor","skos:definition":"as a Chancellor style, mixes fun with business in order to get things done. Chancellors are determined individuals who enjoy people but can also take care of the details. Since Chancellors want things to be taken care of correctly, they may finish projects to assure correctness and completeness. {{firstname}} is outgoing by nature and enjoys people, but this does not necessarily indicate an allegiance. A Chancellor evaluates people  and tasks carefully. Their alliances will shift seemingly impulsively from one person or task to another. They often neglect careful planning and will jump into projects without thorough consideration. Chancellors may need to be more sensitive to the needs of others. They are spontaneous in business and pleasure, but not haphazardly. {{firstname}} requires correctness and is very aware of deadlines. A Chancellor will initiate activity rather than waiting for someone else to do the job. They are driven by the bottom line and want quick results. They will work tenaciously to resolve problems. {{firstname}} desires accuracy combined with quick thinking. Others may perceive Chancellors as opinionated. Under pressure, they may express their feelings without regard to allowing others’ opinions. They may also dominate projects and not permit others to participate. A Chancellor wants others to communicate clearly and concisely. They are forward thinking and creative. {{firstname}} is always looking ahead to new and exciting adventures.","disc:Dominance":{"disc:score":"","rdfs:label":"Dominance","disc:behavior":["Sees the big picture","Can be blunt","Accepts challenges","Gets straight to the point"],"disc:style":["is motivated by winning, competition and success.","Commanding, Resolute, Pioneering"],"disc:goals":["unique accomplishments","new opportunities","control of audience","independence"],"disc:needs":["show patience","display sensitivity","get into the details","allow deliberation"],"skos:definition":"Person places emphasis on accomplishing results, the bottom line, confidence"},"disc:Influence":{"disc:score":"","rdfs:label":"Influence","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""},"disc:Steadiness":{"disc:score":"","rdfs:label":"Steadiness","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""},"disc:Conscientiousness":{"disc:score":"","rdfs:label":"Conscientiousness","disc:behavior":[],"disc:style":[],"disc:goals":[],"disc:needs":[],"skos:definition":""}}]},{"@id":"perse:CampaignSegmentationOptions","@type":"perse:Segmentation","traxion:age":"","traxion:consumerProminenceIndicator":"","traxion:education":"","traxion:employmentStatus":"","traxion:gender":"","traxion:lengthOfResidence":"","traxion:maritalStatus":"","traxion:occupation":"","traxion:ownerRenter":"","traxion:politicalParty":""},{"@id":"perse:CampaignEmotionalizationOptions","@type":"perse:Emotionalization"},{"@id":"perse:CampaignOptions","@type":"perse:CampaignOptions","skos:TopCOncept":["perse:CampaignSegmentationOptions","perse:CampaignPersonalizationOptions","perse:EmotionalizationOptions"]}
+    
+    
+  ],
+  "@id": "Perse:Jeffrey_A_Stewart",
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "org": "http://www.w3.org/ns/org#",
+    "dce": "http://purl.org/dc/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "bio": "http://purl.org/vocab/bio/0.1/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "pto": "http://www.productontology.org/id/",
+    "foafiaf": "http://foafiaf-asteriusj.c9users.io/owl/foafiaf.owl#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbp": "http://dbpedia.org/property/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dbr": "http://dbpedia.org/resource/",
+    "perse": "https://foafiaf-asteriusj.c9.io/owl/perseprofile.owl#",
+    "rel": "http://purl.org/vocab/relationship/",
+    "traxion": "https://foafiaf-asteriusj.c9.io/perseprofile_Traxion#",
+    "mbti": "https://foafiaf-asteriusj.c9.io/persamodel_MBTI#",
+    "disc": "https://foafiaf-asteriusj.c9.io/persamodel_DiSC#",
+    "wot": "http://xmlns.com/wot/0.1/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "sioc": "http://rdfs.org/sioc/ns#",
+    "dc": "http://purl.org/dc/elements/1.1/"
+  }
 }
