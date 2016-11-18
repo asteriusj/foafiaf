@@ -6,16 +6,42 @@
 	<script type="text/javascript" src="dist/vis.js"></script>
 	<link href="dist/vis.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/options.js"></script>
+	<script type="text/javascript" src="js/ne.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	
 	<script type="application/ld+json" src="things/jsonld/combinedOutfile.jsonld"></script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />	
+	
 	<script src="//cdn.jsdelivr.net/g/es6-promise@1.0.0"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jsonld/0.3.15/jsonld.js"></script>
 	<script src="js/spin.min.js"></script>
+	
+	<style type="text/css">
+    #mynetworkFA,
+    #mynetworkIO {
+      height: 300px;
+      width: 700px;
+      border:1px solid lightgrey;
+    }
+
+    p {
+      max-width:700px;
+    }
+    
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+    
+    #optionsContainer {
+      height:280px;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -52,12 +78,14 @@
 			
 			<h3 class="accordion-trigger accordion-trigger-active" id="degrees-details-trigger">Degrees</h3>
 			
-			<div class="accordion-container" id="degrees-details">
+			<!--
+			<div class="accordion-container hidden" id="degrees-details">
 				<div id="DegreesInformation">
 					<p id='separation'>Degrees of Separation: 1</p>
 					<p><input type='range' id='degreesOfSelectedNode' class='slideOption' min='0' max='6' value='1' step='1' onchange='changeDegrees(this.value)'/></p>
 				</div>
 			</div>	
+			-->
 			
 			<h3 class="accordion-trigger">Filters</h3>	
 			<div id="filterOption" class="accordion-container filter hidden"></div>			
@@ -66,18 +94,24 @@
 </main>
 
 <script type="text/javascript">
-var spinner = new Spinner().spin()
-function beginSpinner(){
-    console.log('beginSpinner')
-	var target = document.getElementById('mainArea')
-	target.appendChild(spinner.el)
-}
-function endSpinner() {
-    console.log('endSpinner')
-    if (spinner) spinner.stop() ;   
-}
-// start spinner
-beginSpinner();
+
+var target = document.getElementById('mainArea')
+var spinner = new Spinner().spin(target);
+
+// var spinner = new Spinner().spin()
+// function beginSpinner(){
+//     console.log('beginSpinner')
+// 	var target = document.getElementById('mainArea')
+// 	console.log('target', target)
+// 	console.log('spinner', spinner)
+// 	target.appendChild(spinner.el)
+// }
+// function endSpinner() {
+//     console.log('endSpinner')
+//     if (spinner) spinner.stop() ;   
+// }
+// // start spinner
+// beginSpinner();
 
 // collect URL query string parameters
 function getUrlVars() {
@@ -88,8 +122,10 @@ function getUrlVars() {
 	return vars;
 }
 var startid = getUrlVars()["startid"] || null;
+console.log('startid', startid)
 var datalink = getUrlVars()["datalink"] || null;
-console.log(startid, datalink)
+console.log('datalink', datalink)
+
 
 // control visibility of accordion views
 var acc = document.getElementsByClassName('accordion-trigger');
@@ -100,6 +136,7 @@ for (var i = 0; i < acc.length; i++) {
 	}
 };
 
+
 //  retrieve graph data from jsonld file
 var dataURL = datalink || "things/jsonld/combinedOutfile.jsonld";
 $.getJSON(dataURL, function(data) {
@@ -107,517 +144,8 @@ $.getJSON(dataURL, function(data) {
 	dataReceived(data);
 });
 
-//  when the graph data upload is complete, process data
-function dataReceived(data) {
-	
-// experiment with jsonld
-// console.log('experiment with jsonld')
-// jsonld.expand(data, function(err, expanded) {
-//             if (err) {
-//                   console.log('error', err);
-//                   cb(err);
-//             }
-//             //console.log('expanded', JSON.stringify(expanded))
-//             var theNode = expanded[0]
-//             var theGraph = theNode['@graph'];
-            	
-//             for (var i=0; i<theGraph.length;i++) {
-//             	var anItem = theGraph[i]
-//             	anItem.id = anItem['@id'];
-//             	console.log('anItem.id', anItem.id)
 
-//             	for (var propName in anItem) {
-//                     console.log(' propName', propName);
-                    
-//                 	if (anItem.hasOwnProperty(propName)) {
-                    	
-//                     	var propVal = anItem[propName]
-                    	
-//                     	if (!(propVal instanceof Array)) {
-                    		
-//                     		console.log('  propVal', JSON.stringify(propVal))
-                    		
-//                     	} else {
-                    	
-//                     		if (propName != '@id') {
-                    		
-// 	                    		for (var key in propVal) {
-// 		                    		var myElement = propVal[key]
-// 		                    		//console.log('myElement', myElement)
-		                    		
-// 									var _id = myElement['@id'] || null ;
-// 									var _value = myElement['@value'] || null ;
-// 									var _type = myElement['@type'] || null ;
-									
-// 									if (_id) console.log('   _id', _id)
-// 									if (_value) console.log('   _value', _value)
-// 									if (_type) console.log('   _type', _type)
-									
-// 		                    	}
-//                     		}
-//                     	}
-                    	
-//                 	}
-//             	}
-//             }
-            
-// })	
-	
-	// console.log('data', JSON.stringify(data))
-	
-	function htmlDetails (_entity) {
-		var _html
-		
-		var _id = _entity.id || null;
-		var _group = _entity.group || null;
-		var _label = _entity.label || null;
-		
-		var _topic = _entity['foaf:topic'] || null;
-		var _profile = _entity['linkedin:Profile'] || null;
-		var _sameas = _entity['owl:sameAs'] || null;
-		var _seealso = _entity['owl:seeAlso'] || null;
-		
-		var _strategy = _entity['foafiaf:Strategy'] || null;
-		var _project = _entity['foafiaf:Project'] || null;
-		var _measure = _entity['foafiaf:Measure'] || null;
-		var _status = _entity['foafiaf:status'] || null;
-		var _color = _entity['foafiaf:color'] || null;
-		
-		var _html = '<div>'
-		_html = _html + ' ' + _group + '</br>'
-		_html = _html + ' <b>' + _label + '</b></br></br>' 
-
-		if (_topic) _html = _html + 	' topic: '     + _topic + '</br>' 
-		
-		if (_description) _html = _html + 	' description: ' + _description + '</br>' 
-		
-		if (_strategy) _html = _html +  ' strategy: ' + _strategy + '</br>' 
-		
-		if (_project) _html = _html +  ' project: ' + _project + '</br>' 
-		
-		if (_measure) _html = _html +  ' measure: ' + _measure + '</br>' 
-		
-		if (_status) _html = _html +  ' status: ' + _status + '</br>' 
-		
-		if (_color) {
-			_html = _html + ' color: <b><font color="' + _color + '">' + _color + '</font></b></br>'
-		}
-		
-		if (_profile) {
-			_html = _html + ' profile: <a href="' + _profile + '">' + _profile + '</a></br>'
-		}
-		
-		if (_sameas) {
-			_html = _html + ' profile: <a target="_new" href="' + _sameas + '">' + _sameas + '</a></br>'
-		}
-		
-		if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br>'
-		
-		_html = _html + 	' id:    <em>' +  rawNodes[i].id   + '</em></br>' 
-		
-		
-		_html = _html + '</div>'
-		
-		
-		
-		
-		// var _html = '<div>' +
-		//     ' ' + _group + '</br>' +
-		// 	' <b>' + _label + '</b></br>' +
-
-		// 	' topic: '     + _topic + '</br>' +
-		// 	' description: <p>' + _description + '</p></br>' +
-  //          ' strategy: ' + _strategy + '</br>' +
-  //          ' project: ' + _project + '</br>' +
-  //          ' measure: ' + _measure + '</br>' +
-  //          ' status: ' + _status + '</br>' +
-  //          ' color: ' + _color + '</br>' +
-		// 	' id:    <em>' +  rawNodes[i].id   + '</em></br>' +
-		// 	 '</div>'  ;
-
-		//console.log('_html ', _html)
-		
-		// var data = '<svg xmlns="http://www.w3.org/2000/svg" width="390" height="65">' +
-  //          '<rect x="0" y="0" width="100%" height="100%" fill="#7890A7" stroke-width="20" stroke="#ffffff" ></rect>' +
-  //          '<foreignObject x="15" y="10" width="100%" height="100%">' +
-  //          '<div xmlns="http://www.w3.org/1999/xhtml" style="font-size:40px">' +
-  //          ' <em>I</em> am' +
-  //          '<span style="color:white; text-shadow:0 0 20px #000000;">' +
-  //          ' HTML in SVG!</span>' +
-  //          '</div>' +
-  //          '</foreignObject>' +
-  //          '</svg>';
-		
-		return _html ;
-	}
-	
-	var rawNodes = [];
-	var rawEdges = [];
-	
-	//  create an array of nodes
-	rawNodes = data['@graph'];
-	
-	for (var i = 0; i < rawNodes.length; i++) {
-		
-		var _id = rawNodes[i]['@id'];
-		rawNodes[i].id = _id;
-				//console.log("rawNodes[i].id", rawNodes[i].id)
-		
-		var _type = rawNodes[i]['@type'] || "";		
-				//console.log("rawNodes[i].type", rawNodes[i].type)
-		var _dbotype = rawNodes[i]['dbo:type'] || "";
-		
-				//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
-				if (  Array.isArray(_dbotype) ) {
-					_dbotype = null
-				} else {
-					_type = _dbotype.replace("-", "");
-				}
-		rawNodes[i].dbotype = _dbotype;		
-		_type = _type.replace("-", "");
-		rawNodes[i].type = _type;
-				//console.log("rawNodes[i].type", rawNodes[i].type)
-		
-		var _group = null;
-		if 	(_dbotype) {
-			_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
-		} else {
-			_group = _type.substring(_type.indexOf(":") + 1);
-		}
-		rawNodes[i].group = _group;
-			//console.log("rawNodes[i].group ", rawNodes[i].group)
-		
-		var _label = null;
-		_label = rawNodes[i]['rdfs:label'];
-		rawNodes[i].label = _label;
-		
-		var _topic = rawNodes[i]['foaf:topic'] || null;
-		var _description = rawNodes[i]['dc:description'] || null;
-		var _definition = rawNodes[i]['skos:definition'] || null;
-		
-		var _title = null;
-		_title = rawNodes[i].group + ":: " + rawNodes[i].label ;
-		rawNodes[i].title = _title
-		
-		// call function tp prepare html block for hover or popup
-		rawNodes[i].title = htmlDetails(rawNodes[i])
-	
-		//console.log(' rawNodes[i] ', rawNodes[i])	
-	};
-
-	// create an array of edges
-	for (var j = 0; j < rawNodes.length; j++) {
-		for (var property in rawNodes[j]) {
-			//console.log("property ", property)
-			
-			if ( property != "@id" && property != "id") {				// do not show edge for id property							// do not show @id relationship to self
-					
-			  //if (rawNodes[j].hasOwnProperty(property) && true ) {
-				
-				if ( (typeof rawNodes[j][property]) === 'string') {		// check if property value is a string ie. a single entry
-				//if ( (typeof property) === 'string') {				// check if property value is a string ie. a single entry
-					var strProp = rawNodes[j][property] || ""
-					  //console.log("strProp", strProp)
-					  var relLabel = property.substring(property.indexOf(":") + 1);
-					  
-					  if ( strProp.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity reltionship
-						
-						newEdge = {};
-						newEdge.arrows = {"to":"true"};
-						newEdge.from = rawNodes[j].id;
-						newEdge.to = strProp;
-						newEdge.label = relLabel;
-						
-						rawEdges.push(newEdge);
-					  }
-					
-				}
-				
-				if ( Array.isArray(rawNodes[j][property]) ) {
-					for (var k = 0; k < rawNodes[j][property].length; k++) {
-						//console.log("[property][k]", rawNodes[j][property][k])
-						var relLabel = property.substring(property.indexOf(":") + 1);
-						
-						newEdge = {};
-						newEdge.arrows = {"to":"true"};
-						newEdge.from = rawNodes[j].id;
-						newEdge.to = rawNodes[j][property][k];
-						newEdge.label = relLabel;
-						//console.log(newEdge)
-						rawEdges.push(newEdge);
-					}
-				}
-				
-			  //}
-				
-			}
-		}	
-	};
-
-	//  create list of each unique group type
-	var groupsList = [];
-	for (var i = 0; i < rawNodes.length; i++) {
-		if(groupsList.indexOf(rawNodes[i].group) === -1) groupsList.push(rawNodes[i].group);
-	};
-	var groups = [];
-	//  create filter checkbox for each unique group type	
-	for (var i = 0; i < groupsList.length; i++) {
-		var div = document.createElement('div');
-		var checkbox = document.createElement('input');
-		checkbox.type = 'checkbox';
-		checkbox.className = 'toggleOption';
-		checkbox.value = groupsList[i];
-		checkbox.id = groupsList[i];
-		checkbox.checked = true;
-
-		var label = document.createElement('label');
-		label.htmlFor = groupsList[i];
-		label.appendChild(document.createTextNode(groupsList[i]));
-
-		document.getElementById('filterOption').appendChild(div);
-		div.appendChild(checkbox);
-		div.appendChild(label);
-		
-		//    for better performance, presort nodes into group objects		
-		groups[i] = {};
-		groups[i].group = groupsList[i];
-		groups[i].nodeIndexes = [];
-		for (var j = 0; j < rawNodes.length; j++) {
-			if (rawNodes[j].group === groups[i].group) {
-				groups[i].nodeIndexes.push(j);
-			}
-		}		
-	};  
-
-	var visibleNodes = [];
-	var visibleEdges = [];
-	
-	//  set a default focus node for first graph render and display data in sidepanel, then determine which nodes to display
-	// CHANGE BY ADDING additional selectors from JSON-LD doc and query string param
-	var defaultNode = data['@id'] || null;						
-	console.log('defaultNode - > ', defaultNode)
-	
-	
-	if (startid) {
-		var selectedNodeID = startid;		// ADDED check for default @id in jsonld
-	} else if (defaultNode) {
-		var selectedNodeID = defaultNode;						// ADDED check for default @id in jsonld
-	} else {
-		var selectedNodeID = "foafiaf:transform-rockford";		// CHANGED from 'Transform_Rockford'
-	}
-	console.log('selectedNodeID - > ', selectedNodeID)
-	
-	for (var i = 0; i < rawNodes.length; i++) {
-		if (rawNodes[i].id === selectedNodeID) {				// changed to var value
-			var selectedNode = rawNodes[i].id;
-			displayData(rawNodes[i]);
-			hideNodesByDegree(selectedNode.toString());
-			break;
-		}
-	}
-
-	var nodes = new vis.DataSet(rawNodes);
-		//console.log(JSON.stringify(rawNodes))
-	var edges = new vis.DataSet(visibleEdges);
-		//console.log(JSON.stringify(edges))
-	// create a network
-	var container = document.getElementById('mynetwork');
-	var data = {
-		nodes: nodes,
-		edges: edges
-	};
-	//console.log(JSON.stringify(data))
-	var options = getOptions();
-	var network = new vis.Network(container, data, options);
-	
-	//  hide or display nodes and edges depending on filter selections
-	var classname = document.getElementsByClassName('toggleOption');
-	var filterToggle = function() {
-		var filter = this.getAttribute('value');
-		var groupIndex;
-		for (var i = 0; i < groups.length; i++) {
-			if (groups[i].group === filter) {
-				groupIndex = i;
-				break;
-			}
-		}
-		for (var j = 0; j < groups[groupIndex].nodeIndexes.length; j++) {
-			var nodeNumber = groups[groupIndex].nodeIndexes[j];
-			
-			if (this.checked && rawNodes[nodeNumber].hiddenByDegree !== true) {
-				rawNodes[nodeNumber].hidden = false;
-			}
-			else {
-				rawNodes[nodeNumber].hidden = true;
-			}
-		}
-		setVisibleNodes();
-		determineConnectedEdges();
-		network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
-	};
-	for (var i = 0; i < classname.length; i++) {
-		classname[i].addEventListener('click', filterToggle, false);
-	}
-	
-	//  network graph click event
-	network.on("click", function(selected){
-		var nodeId = selected.nodes.toString();
-		var edgeId = selected.edges.toString();
-		var focalPoint;
-		
-		//  display node or edge data in the sidebar for selected element
-		if (nodeId !== "") {
-			selectedNode = selected.nodes;	
-			var focalPoint = findObjectById(nodeId, rawNodes);
-		}
-		else focalPoint = (findObjectById(edgeId, rawEdges) || findObjectById(selectedNode, rawNodes));
-		displayData(focalPoint);	
-			
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(nodeId) {
-			hideNodesByDegree(nodeId);
-			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
-			network.once("afterDrawing", function(){
-				zoomToSelectedNode();
-				// stop spinner
-				endSpinner() 
-			});
-		}
-	});
-
-	network.once("afterDrawing", function(){
-		zoomToSelectedNode();
-		// stop spinner
-		endSpinner()
-	});
-	
-	function findObjectById(objectId, objectArray){
-		for (var i=0; i < objectArray.length; i++) {
-			if (objectArray[i].id === objectId) {
-				return objectArray[i];
-			}
-		}
-	}
-
-	function hideNodesByDegree(nodeId) {
-		//  find the connected nodes within N degrees
-		var connectedNodes = [];
-		connectedNodes.push(nodeId);
-		var degrees = document.getElementById('degreesOfSelectedNode').value;
-		for(var i = 0; i < degrees; i++) {
-			var nextDegreeNodes = [];
-			for(var j = 0; j < connectedNodes.length; j++) {
-				var nextDegreeEdges = getConnectedEdges(connectedNodes[j]);
-				for(var x = 0; x < nextDegreeEdges.length; x++) {
-					nextDegreeNodes.push(getConnectedNodes(nextDegreeEdges[x]));
-				}
-			}
-			if (nextDegreeNodes[0] != "") {
-				for(var k = 0; k < nextDegreeNodes.length; k++) {
-					for(var l = 0; l < nextDegreeNodes[k].length; l++) {
-						if(connectedNodes.indexOf(nextDegreeNodes[k][l]) === -1) connectedNodes.push(nextDegreeNodes[k][l]);
-					}
-				}
-			}
-		}
-		//  hide all nodes outside N degrees and their connected edges
-		for (var i = 0; i < rawNodes.length; i++) {
-			if (connectedNodes.indexOf(rawNodes[i].id) !== -1) {
-				if (document.getElementById(rawNodes[i].group).checked === true) {
-					rawNodes[i].hiddenByDegree = false;
-					rawNodes[i].hidden = false;
-				}
-			}
-			else {
-				rawNodes[i].hiddenByDegree = true;
-				rawNodes[i].hidden = true;
-			}
-		}
-		setVisibleNodes();
-		determineConnectedEdges();
-	}
-
-	function getConnectedEdges(theNode) {
-		var indexesOfEdgesConnectedToNode = [];
-		for (var x = 0; x < rawEdges.length; x++) {
-			if (rawEdges[x].to === theNode || rawEdges[x].from === theNode) {
-				indexesOfEdgesConnectedToNode.push(x);
-			}
-		}
-		return indexesOfEdgesConnectedToNode;
-	}
-
-	function getConnectedNodes(theEdgeIndex) {
-		var nodesConnectedToEdge = [rawEdges[theEdgeIndex].to, rawEdges[theEdgeIndex].from];
-		return nodesConnectedToEdge;
-	}
-	
-	function determineConnectedEdges() {
-		var hiddenEdgesIndexes = [];
-		var visibleEdgesIndexes = [];
-		visibleEdges = [];
-		for (var x = 0; x < rawEdges.length; x++) {
-			var toNode = findObjectById(rawEdges[x].to, rawNodes) || false;
-			var fromNode = findObjectById(rawEdges[x].from, rawNodes) || false;
-			if (toNode.hidden === true || fromNode.hidden === true) {
-				if (rawEdges[x].hidden !== true) hiddenEdgesIndexes.push(x);
-				rawEdges[x].hidden = true;
-			}
-			else {
-				if (rawEdges[x].hidden === true) visibleEdgesIndexes.push(x);
-				rawEdges[x].hidden = false;
-			}
-			if (rawEdges[x].hidden !== true) visibleEdges.push(rawEdges[x]);
-		}
-		
-		document.getElementById('edgeCount').innerHTML = visibleEdges.length;
-	}
-	
-	function setVisibleNodes() {
-		visibleNodes = [];
-		for (var x = 0; x < rawNodes.length; x++) {
-			if (rawNodes[x].hidden !== true) visibleNodes.push(rawNodes[x]);
-		}
-		document.getElementById('nodeCount').innerHTML = visibleNodes.length;
-	}	
-
-	function displayData(focalPoint) {
-		var details = "";
-		for(var property in focalPoint) {
-			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' ) {
-				
-				// control what properties get dislayed
-				
-				if (property !== "@type" && property !== "rdf:type" && property !== "rdfs:subClassOf:" ) {
-					if ( focalPoint[property] != "" ) {
-						var shortProp = property.substring(property.indexOf(":") + 1);
-						details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
-					}
-				}
-				
-			}
-		}
-		document.getElementById('propDetails').innerHTML = details;	
-	}
-	
-	function zoomToSelectedNode() {
-		var moveToOptions = {
-			scale: 1.10,              // scale to animate to  (Number)
-			offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
-			animation: {             // animation object, can also be Boolean
-			  duration: 1000,                 // animation duration in milliseconds (Number)
-			  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
-			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
-		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
-		if(selectedNode) network.focus(selectedNode, moveToOptions);	
-	}
-
-	changeDegrees = function(newValue) {
-		hideNodesByDegree(selectedNode[0].toString());
-		network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
-		document.getElementById('separation').innerHTML = 'Degrees of Separation: ' + newValue;
-	}
-}
 </script>
 
 </body>
+</html>
