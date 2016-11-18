@@ -128,62 +128,85 @@ function setNetwork(visibleNodes, visibleEdges ){
 	return network
 }
 
+
 function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId) {	
 	console.log('getVisibleNodes')
 	console.log(' _selectedNodeId',_selectedNodeId)
+	console.log('rawNodes.length',rawNodes.length)
+	
+	var allNodes = false;
 	
 	var _visibleNodes = []
-	var nd = getNodeById(rawNodes, _selectedNodeId) || null ;
+	var _id = _selectedNodeId;
+	var nd = getNodeById(rawNodes, _id) || null ;
 	if (_visibleNodes.indexOf(nd) < 0 ) _visibleNodes.push(nd) ;
-
-	// select visible edges and visible nodes
-	// loop over edges, add edges that have from selected node, add to node
-	console.log('rawEdges.length',rawEdges.length)
-	for (var v = 0; v < rawEdges.length; v++) {
-		var eg = rawEdges[v];
-		//console.log('eg',eg)
+	  		
+	// loop over nodes, onky us selected if chosen
+	for (var i = 0; i < rawNodes.length; i++) {
+		var _nd = rawNodes[i];
 		
-		// if fromId is selectedID, then select toId as visibleNode (add edge as well)
-		var fromId = eg.from;
-		if (fromId === _selectedNodeId) {
-			var toId = eg.to;
-			//console.log('fromId',fromId)
-			//console.log('toId',toId)
-			var nd = getNodeById(rawNodes, toId) || null ;
-			if (nd) {
-				if (_visibleNodes.indexOf(nd) < 0 )  {
-					//console.log('fromId',fromId)
-					//console.log('toId',toId)
-					console.log('nd', nd.id)
-					_visibleNodes.push(nd) ;
-					
-				}
-			}
-		} // end if fromId
-		// if toId is selectedID, then select fromId as visibleNode (add edge as well)
-		var toId = eg.to;
-		if (toId === _selectedNodeId) {
+		if (allNodes) {
+	  		var _id = _nd['@id'];    // if all nodes set selected to item, else do nothing
+		} else {
+	  		
+		}
+		//console.log('_id', _id)
+
+		// select visible edges and visible nodes
+		// loop over edges, add edges that have from selected node, add to node
+		console.log('rawEdges.length',rawEdges.length)
+		for (var v = 0; v < rawEdges.length; v++) {
+			var eg = rawEdges[v];
+			//console.log('eg',eg)
+			
+			// if fromId is selectedID, then select toId as visibleNode (add edge as well)
 			var fromId = eg.from;
-			//console.log('toId',toId)
-			//console.log('fromId',fromId)
-			//if ( toId.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity reltionship
-			var nd = getNodeById(rawNodes, fromId) || null ;
-			if (nd) {
-				if (_visibleNodes.indexOf(nd) < 0 )  {
-					//console.log('toId',toId)
-					//console.log('fromId',fromId)
-					console.log('nd', nd.id)
-					_visibleNodes.push(nd) ;
+			if (fromId === _id) {
+				var toId = eg.to;
+				//console.log('fromId',fromId)
+				//console.log('toId',toId)
+				var nd = getNodeById(rawNodes, toId) || null ;
+				if (nd) {
+					if (_visibleNodes.indexOf(nd) < 0 )  {
+						//console.log('fromId',fromId)
+						//console.log('toId',toId)
+						console.log('nd', nd.id)
+						_visibleNodes.push(nd) ;
+						
+					}
 				}
-			}
-			//}
-		} // end if fromId
-	} // end for edges
+			} // end if fromId
+			// if toId is selectedID, then select fromId as visibleNode (add edge as well)
+			var toId = eg.to;
+			if (toId === _id) {
+				var fromId = eg.from;
+				//console.log('toId',toId)
+				//console.log('fromId',fromId)
+				//if ( toId.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity reltionship
+				var nd = getNodeById(rawNodes, fromId) || null ;
+				if (nd) {
+					if (_visibleNodes.indexOf(nd) < 0 )  {
+						//console.log('toId',toId)
+						//console.log('fromId',fromId)
+						console.log('nd', nd.id)
+						_visibleNodes.push(nd) ;
+					}
+				}
+				//}
+			} // end if fromId
+		} // end for edges
+
+	} // end for nodes
+	
+	console.log('_visibleNodes.length',_visibleNodes.length)
 	return _visibleNodes
 } // set visibles
 
+
 function buildRawNodes(data) {
 	console.log('buildRawNodes')
+
+	var propNodes = false;
 	//
 	//  Create an array of raw nodes
 	//
@@ -193,7 +216,7 @@ function buildRawNodes(data) {
 	for (var i = 0; i < rawNodes.length; i++) {
 		var _id = rawNodes[i]['@id'];
 		rawNodes[i].id = _id;
-			console.log("rawNodes[i].id", rawNodes[i].id)
+			//console.log("rawNodes[i].id", rawNodes[i].id)
 		
 		var _type = rawNodes[i]['@type'] || "";	
 		_type = _type.replace("-", "");
@@ -226,7 +249,7 @@ function buildRawNodes(data) {
 		var _prefLabel = null;
 		_prefLabel = rawNodes[i]['skos:prefLabel'];
 		rawNodes[i].prefLabel = _prefLabel;
-		console.log('rawNodes[i].prefLabel', rawNodes[i].prefLabel)
+		//console.log('rawNodes[i].prefLabel', rawNodes[i].prefLabel)
 		
 		var _topic = rawNodes[i]['foaf:topic'] || null;
 		var _description = rawNodes[i]['dc:description'] || null;
@@ -240,17 +263,103 @@ function buildRawNodes(data) {
 		
 		
 		//    rawNodes[i].title = htmlDetails(rawNodes[i])
-		console.log('rawNodes[i].title', rawNodes[i].title)
+		// 	console.log('rawNodes[i].title', rawNodes[i].title)
 	
-	
-		//console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
+		//  console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
+		
+		//
+		// Now loop over properties of the node and add nodes of group 'property'
+		//
+		if (propNodes) {
+			var propNodes = getPropertyNodes(rawNodes[i])
+		}
+		
+		
 		
 	}; // end loop over nodes
 	return rawNodes
 } // end build raw nodes
 	
+// is this right?
+// {
+//   "@id": "perse:VolunteerPostings_",
+//   "@type": "perse:OpportunityType",
+//   "rdfs:type": "skos:Concept",
+//   "rdfs:label": "Volunteer Opportunites",
+//   "skos:related": [
+    
+//   ],
+//   "perse:Opportunities": [
+    
+//   ],
+//   "skos:prefLabel": "Perse MatchMaker Volunteer Opportunites"
+// },
+// {
+//   "@id": "perse:VolunteerPostings_@id",
+//   "@type": "property",
+//   "rdfs:label": "perse:VolunteerPostings_",
+//   "@id": [
+//     "perse:VolunteerPostings_"
+//   ],
+//   "group": "property",
+//   "label": "",
+//   "title": ""
+// },
+// {
+//   "@id": "perse:VolunteerPostings_rdfs:type",
+//   "@type": "property",
+//   "rdfs:type": [
+//     "perse:VolunteerPostings_"
+//   ],
+//   "group": "property",
+//   "label": "skos:Concept",
+//   "title": ""
+// },
+// {
+//   "@id": "perse:VolunteerPostings_rdfs:label",
+//   "@type": "property",
+//   "rdfs:label": [
+//     "perse:VolunteerPostings_"
+//   ],
+//   "group": "property",
+//   "label": "Volunteer Opportunites",
+//   "title": ""
+// }
+
+function getPropertyNodes(rawNode) {
+	console.log('getPropertyNodes')
+	var propertyNodes = [];
+	
+	for (var property in rawNode) {
+		if ( (typeof rawNode[property]) === 'string') {		// check if property value is a string ie. a single entry
+			console.log("property", property)
+			var _id = rawNode.id + '_' + property;
+			var strProp = rawNode[property] || ""
+			console.log("strProp", strProp)
+			var relLabel = property.substring(property.indexOf(":") + 1);
+			  
+			if ( strProp.indexOf("foafiaf:") === -1 ) {		// check to see of value does not start with foafiaf: therefore NOT an entity relationship
+				var newProperty = {};
+				newProperty.id = _id;
+				newProperty.value = strProp;
+				newProperty.label = relLabel;
+				newProperty.title = '';
+				newProperty.group = 'property';
+				
+				console.log('newProperty', newProperty)	
+				propertyNodes.push(newProperty);
+			} // end if foafiaf
+		} // end if string
+	} // end for property	
+	
+		console.log('propertyNodes', propertyNodes)
+	return propertyNodes;
+} // end get property nodes
+
+
 function buildRawEdges(rawNodes) {
 	console.log('buildRawEdges')
+
 	//
 	// Create an array of raw edges
 	//

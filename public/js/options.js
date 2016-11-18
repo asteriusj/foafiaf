@@ -534,6 +534,26 @@ function  getOptions() {
           color: 'Pink'
         }
       },
+      PersonalityType: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-tags',
+          code: '\uf02c',
+          size: 42,
+          color: 'LightPink'
+        }
+      },
+      PersonalityType_profile: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-tag',
+          code: '\uf02b',
+          size: 38,
+          color: 'HotPink'
+        }
+      },
       SST: {
         shape: 'icon',
         icon: {
@@ -594,36 +614,7 @@ function  getOptions() {
           color: 'DeepPink'
         }
       },
-      Personicx: {
-        shape: 'icon',
-        icon: {
-          face: 'FontAwesome',
-          name: 'fa-tags',
-          code: '\uf02c',
-          size: 40,
-          color: 'LightPink'
-        }
-      },
-      Personicx_profile: {
-        shape: 'icon',
-        icon: {
-          face: 'FontAwesome',
-          name: 'fa-tag',
-          code: '\uf02b',
-          size: 40,
-          color: 'HotPink'
-        }
-      },
-      Personicx_facet: {
-        shape: 'icon',
-        icon: {
-          face: 'FontAwesome',
-          name: 'fa-tag',
-          code: '\uf02b',
-          size: 35,
-          color: 'DeepPink'
-        }
-      },
+      
       KTS: {
         shape: 'icon',
         icon: {
@@ -651,6 +642,36 @@ function  getOptions() {
           name: 'fa-tag',
           code: '\uf02b',
           size: 35,
+          color: 'DeepPink'
+        }
+      },
+      DiSC: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-tags',
+          code: '\uf02c',
+          size: 40,
+          color: 'LightPink'
+        }
+      },
+      DiSC_profile: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-folder-open-o',
+          code: '\uf115',
+          size: 45,
+          color: 'HotPink'
+        }
+      },
+      DiSC_facet: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-file-text-o',
+          code: '\uf0f6',
+          size: 40,
           color: 'DeepPink'
         }
       },
@@ -720,10 +741,20 @@ function  getOptions() {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
-          face: 'FontAwesome',
-          name: 'fa-file-text-o',
-          size: 40,
+          name: 'fa-hand-rock-o',
+          code: '\uf255',
+          size: 42,
           color: 'DodgerBlue'
+        }
+      },
+      DemographyType_facet: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-thumbs-up',
+          code: '\uf164',
+          size: 38,
+          color: 'LightSteelBlue'
         }
       },
       Card: {
@@ -740,8 +771,8 @@ function  getOptions() {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
-          name: 'fa-id-card-o',
-          code: '\uf2c3',
+          name: 'fa-th-list ',
+          code: '\uf00b',
           size: 45,
           color: 'LightSteelBlue'
         }
@@ -766,24 +797,34 @@ function  getOptions() {
           color: 'DodgerBlue'
         }
       },
-      DiSC: {
+      Personicx: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
-          name: 'fa-folder-open-o',
-          code: '\uf115',
-          size: 45,
-          color: 'CornflowerBlue'
+          name: 'fa-tags',
+          code: '\uf02c',
+          size: 40,
+          color: 'LightPink'
         }
       },
-      DiSC_profile: {
+      Personicx_cluster: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
-          name: 'fa-file-text-o',
-          code: '\uf0f6',
+          name: 'fa-tag',
+          code: '\uf02b',
           size: 40,
-          color: 'DodgerBlue'
+          color: 'HotPink'
+        }
+      },
+      Personicx_facet: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-tag',
+          code: '\uf02b',
+          size: 35,
+          color: 'DeepPink'
         }
       },
       
@@ -904,37 +945,36 @@ function  getOptions() {
       },
       
       
-      OpportunityOptions: {
+      OfferingOptions: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
           name: 'fa-tags',
           code: '\uf02c',
-          size: 40,
-          color: 'SlateGray'
+          size: 45,
+          color: 'BurlyWood'
         }
       },
-      JobPosting: {
+      OfferingType: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
           name: 'fa-tag',
           code: '\uf02b',
           size: 40,
-          color: 'Silver'
+          color: 'DarkGoldenrod'
         }
       },
-      VolunteerRole: {
+      Offering: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
           name: 'fa-tag',
           code: '\uf02b',
-          size: 40,
-          color: 'Silver'
+          size: 36,
+          color: 'SaddleBrown'
         }
       },
-      
       
       OpportunityOptions: {
         shape: 'icon',
@@ -966,7 +1006,28 @@ function  getOptions() {
           color: 'Fuchsia'
         }
       },
-      
+
+      JobPosting: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-bullhorn',
+          code: '\uf0a1',
+          size: 40,
+          color: 'DarkMagenta'
+        }
+      },
+      VolunteerRole: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-tag',
+          code: '\uf02b',
+          size: 40,
+          color: 'DarkViolet'
+        }
+      },
+     
       
       CampaignOptions: {
         shape: 'icon',
@@ -1018,7 +1079,37 @@ function  getOptions() {
           size: 55,
           color: 'Black'
         }
-      },	  
+      },
+      MatchMakercompress: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-compress',
+          code: '\uf066',
+          size: 40,
+          color: 'Black'
+        }
+      },
+        MatchMakermatch: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-link ',
+          code: '\uf0c1',
+          size: 36,
+          color: 'MidnightBlue'
+        }
+      },
+        MatchMakerconn: {
+          shape: 'icon',
+          icon: {
+            face: 'FontAwesome',
+            name: 'fa-connectdevelop',
+            code: '\uf20e',
+            size: 45,
+            color: 'Black'
+          }
+        },
 
   
   		group: {
