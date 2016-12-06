@@ -66,6 +66,16 @@ function  getOptions() {
           color: 'Navy'
         }
       },
+      Note: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-file-o',
+          code: '\uf016',
+          size: 55,
+          color: 'Navy'
+        }
+      },
       
       Education: {
         shape: 'icon',
@@ -1090,7 +1100,7 @@ function  getOptions() {
           color: 'Black'
         }
       },
-        MatchMakermatch: {
+      MatchMakermatch: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
@@ -1111,7 +1121,83 @@ function  getOptions() {
           }
         },
 
-  
+        
+        
+      Perspectives: {
+  				shape: 'icon',
+  				icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf1b3',
+  				  size: 50,
+  				  color: 'MidnightBlue'
+  				}
+  		},
+      Perspective: {
+  				shape: 'icon',
+  				icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf1b2',
+  				  size: 45,
+  				  color: 'MidnightBlue'
+  				}
+  		},
+  		Theme: {
+  				shape: 'icon',
+  				icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf12e',
+  				  size: 40,
+  				  color: 'DarkViolet'
+  				}
+  		},
+      Objective: {
+        shape: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-arrows',
+          code: '\uf047',
+          size: 40,
+          color: 'blue'
+        }
+      },
+      Measure: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'green'
+        }
+      },
+      Initiative: {
+        shape: 'icon',
+        icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf02c',
+  				  size: 40,
+  				  color: 'cyan'
+        }
+      },
+      Task: {
+        shape: 'icon',
+        icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf02b',
+  				  size: 40,
+  				  color: 'lime'
+        }
+      },
+      Pyramid: {
+  				shape: 'icon',
+  				icon: {
+  				  face: 'FontAwesome',
+  				  code: '\uf12e',
+  				  size: 40,
+  				  color: 'yellow'
+  				}
+  		},
+  		
   		group: {
   				shape: 'icon',
   				icon: {
