@@ -32,15 +32,24 @@ function dataReceived(data) {
 	//console.log('rawEdges', JSON.stringify(rawEdges))
 	
 	
-	visibleNodes = getVisibleNodes(rawNodes, rawEdges, selectedNodeID)
-	visibleEdges = rawEdges;
+
 	
 	//
 	// Find selected node, display details and determine nodes within n degrees
 	//
 	var selectedNode = getNodeById(rawNodes, selectedNodeID) || null ;
 	console.log('selectedNode',selectedNode)
-	displayData(selectedNode);
+	
+	if (selectedNode) {
+		visibleNodes = getVisibleNodes(rawNodes, rawEdges, selectedNodeID)
+	} else {
+		var showAll = true
+		visibleNodes = rawNodes
+	}
+	visibleEdges = rawEdges;
+	
+	
+	if (selectedNode) displayData(selectedNode);
 	
 
 	//console.log('visibleNodes', JSON.stringify(visibleNodes) )
@@ -76,7 +85,7 @@ function dataReceived(data) {
 			selectedNode = getNodeById(rawNodes, nodeId)
 			console.log('from nodeId selectedNode', selectedNode)
 			//  display node or edge data in the sidebar for selected element
-			displayData(selectedNode);
+			if (selectedNode) displayData(selectedNode);
 			
 			visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
 			visibleEdges = rawEdges
@@ -135,6 +144,12 @@ function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId) {
 	console.log('rawNodes.length',rawNodes.length)
 	
 	var allNodes = false;
+	if (typeof showAll !== "undefined") {
+		if (showAll) {
+			allNodes = true;
+		}
+	}
+	
 	
 	var _visibleNodes = []
 	var _id = _selectedNodeId;
@@ -258,12 +273,13 @@ function buildRawNodes(data) {
 		var _title = null;
 		_title = _prefLabel || _label ;
 		rawNodes[i].title = _title
-		// call function tp prepare html block for hover or popup
+		// call function to prepare html block for hover or popup
 		// and overwrite plain title
+		rawNodes[i].html = htmlDetails(rawNodes[i])
+		console.log('rawNodes[i].html', rawNodes[i].html)
 		
-		
-		//    rawNodes[i].title = htmlDetails(rawNodes[i])
-		// 	console.log('rawNodes[i].title', rawNodes[i].title)
+		    rawNodes[i].title = htmlDetails(rawNodes[i])
+			console.log('rawNodes[i].title', rawNodes[i].title)
 	
 		//  console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
 		
@@ -516,19 +532,23 @@ function determineConnectedEdges() {
 	
 function displayData(focalPoint) {
 		console.log('displayData')
+		console.log('focalPoint', focalPoint)
 		var details = "";
-		for(var property in focalPoint) {
-			if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' ) {
-				
-				// control what properties get dislayed
-				
-				if (property !== "@type" && property !== "rdf:type" && property !== "rdfs:subClassOf:" ) {
-					if ( focalPoint[property] != "" ) {
-						var shortProp = property.substring(property.indexOf(":") + 1);
-						details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
+		
+		if (focalPoint) {
+			for(var property in focalPoint) {
+				if (focalPoint.hasOwnProperty(property) && property !== 'hidden' && property !== 'hiddenByDegree' ) {
+					
+					// control what properties get dislayed
+					console.log('property', property)
+					if (property !== "@type" && property !== "rdf:type" && property !== "rdfs:subClassOf:" ) {
+						if ( focalPoint[property] != "" ) {
+							var shortProp = property.substring(property.indexOf(":") + 1);
+							details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
+						}
 					}
+					
 				}
-				
 			}
 		}
 		//console.log(details)
@@ -552,58 +572,145 @@ function zoomToSelectedNode(_selectedNodeId, _network) {
 }
 
 
-	function htmlDetails (_entity) {
-		var _html
+function htmlDetails (_entity) {
+	console.log('htmlDetails')
+	
+	var _html
+	
+	var _id = _entity.id || null;
+	var _group = _entity.group || null;
+	var _label = _entity.label || null;
+	
+	var _topic = _entity['foaf:topic'] || null;
+	var _profile = _entity['linkedin:Profile'] || null;
+	var _sameas = _entity['owl:sameAs'] || null;
+	var _seealso = _entity['owl:seeAlso'] || null;
+	var _prefLabel = _entity['skos:prefLabel'] || null;
+	
+	var _description = _entity['dc:description'] || null;
+	var _title = _entity['dc:title'] || null;
+	var _comment = _entity['rdfs:comment'] || null;
+	var _based_near = _entity['foaf:based_near'] || null;
+
+
+	switch(_entity.group) {
 		
-		var _id = _entity.id || null;
-		var _group = _entity.group || null;
-		var _label = _entity.label || null;
+	    case "Note":
+
+			var _timestamp = _entity['foafoaf:timestamp'] || null;
+			var _Person = _entity['foafiaf:Person'] || null;
+			var _Role = _entity['foafiaf:Role'] || null;
+			var _assignedBy = _entity['foafiaf:assignedBy'] || null;
+			var _assignedTo = _entity['foafiaf:assignedTo'] || null;
+			var _dueDate = _entity['foafiaf:dueDate'] || null;
+
+			var _html = '<div>'
+			_html = _html + ' ' + _group + ' '
+			_html = _html + ' <b>' + _prefLabel + '</b>'  + '</br>'
+			_html = _html + '</br>'
+
+			if (_Role) _html = _html + 	' role: '     + _Role + '</br>'			
+			if (_Person) _html = _html + 	' person: '     + _Person + '</br>'
+			_html = _html + '</br>'
+			
+			if (_title) _html = _html + 	' title: '     + _title + '</br></br>' 
+			
+			if (_description) _html = _html + 	' description: ' + _description + '</br></br>' 
+			
+			if (_dueDate) _html = _html + 	' due: '     + _dueDate + '</br></br>'
+			
+			if (_assignedTo) _html = _html + 	' assigned: '     + _assignedTo + '</br></br>'
+			
+			if (_assignedBy) _html = _html + 	' by: '     + _assignedBy + '</br></br>'
+			
+			if (_timestamp) _html = _html + 	' timestamp:    <em>' +  _timestamp   + '</em></br>' 
+			
+			_html = _html + '</div>'
+
+	        break;
+	        
+	        
+	    case "Strategy":
+	    case "Project":
+	    case "Measure":
+	    	
+			var _strategy = _entity['foafiaf:Strategy'] || null;
+			var _project = _entity['foafiaf:Project'] || null;
+			var _measure = _entity['foafiaf:Measure'] || null;
+			var _status = _entity['foafiaf:status'] || null;
+			var _color = _entity['foafiaf:color'] || null;
+			
+			var _html = '<div>'
+			_html = _html + ' ' + _group + ' '
+			_html = _html + ' <b>' + _label + '</b></br></br>' 
+			
+			if (_topic) _html = _html + 	' topic: '     + _topic + '</br></br>' 
+			
+			if (_description) _html = _html + 	' description: ' + _description + '</br></br>' 
+			
+			if (_strategy) _html = _html +  ' strategy: ' + _strategy + '</br></br>' 
+			
+			if (_project) _html = _html +  ' project: ' + _project + '</br></br>' 
+			
+			if (_measure) _html = _html +  ' measure: ' + _measure + '</br></br>' 
+			
+			if (_status) _html = _html +  ' status: ' + _status + '</br></br>' 
+			
+			if (_color) {
+				_html = _html + ' color: <b><font color="' + _color + '">' + _color + '</font></b></br>'
+			}
+			
+			if (_profile) {
+				_html = _html + ' profile: <a href="' + _profile + '">' + _profile + '</a></br>'
+			}
+			
+			if (_sameas) _html = _html +   ' _sameas: ' + _sameas + '</a></br>'
+			
+			if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br>'
+			
+			_html = _html + 	' id:    <em>' +  _id   + '</em></br>' 
+			
+			_html = _html + '</div>'	
+
+	        break;
+	        
+	    default:
+	        
+	        var _html = '<div>'
+			_html = _html + ' ' + _group + ' '
+			
+			var _header = null;
+			if (_prefLabel) {
+				_header = _prefLabel;
+			} else if (_title) {
+				_header = _title;
+			} else {
+				_header = _label;
+			}
+			if (_header) _html = _html + ' <b>' + _header + '</b>'  + '</br></br>'
+			
+			
+			if (_title) _html = _html + 	' title: '     + _title + '</br></br>' 
+			
+			if (_description) _html = _html + 	' description: ' + _description + '</br></br>' 
+			
+			if (_based_near) _html = _html + 	' based_near: ' + _based_near + '</br></br>'
+					
+			if (_sameas) _html = _html +   ' sameas: ' + _sameas + '</a></br></br>'
 		
-		var _topic = _entity['foaf:topic'] || null;
-		var _profile = _entity['linkedin:Profile'] || null;
-		var _sameas = _entity['owl:sameAs'] || null;
-		var _seealso = _entity['owl:seeAlso'] || null;
+			if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br></br>'
+			
+			if (_comment) _html = _html +  ' comment: ' + _comment + '</br></br>'
+			
+			_html = _html + 	' id:    <em>' +  _id   + '</em></br>' 
 		
-		var _strategy = _entity['foafiaf:Strategy'] || null;
-		var _project = _entity['foafiaf:Project'] || null;
-		var _measure = _entity['foafiaf:Measure'] || null;
-		var _status = _entity['foafiaf:status'] || null;
-		var _color = _entity['foafiaf:color'] || null;
-		
-		var _html = '<div>'
-		_html = _html + ' ' + _group + '</br>'
-		_html = _html + ' <b>' + _label + '</b></br></br>' 
-		if (_topic) _html = _html + 	' topic: '     + _topic + '</br>' 
-		
-		//if (_description) _html = _html + 	' description: ' + _description + '</br>' 
-		
-		if (_strategy) _html = _html +  ' strategy: ' + _strategy + '</br>' 
-		
-		if (_project) _html = _html +  ' project: ' + _project + '</br>' 
-		
-		if (_measure) _html = _html +  ' measure: ' + _measure + '</br>' 
-		
-		if (_status) _html = _html +  ' status: ' + _status + '</br>' 
-		
-		if (_color) {
-			_html = _html + ' color: <b><font color="' + _color + '">' + _color + '</font></b></br>'
-		}
-		
-		if (_profile) {
-			_html = _html + ' profile: <a href="' + _profile + '">' + _profile + '</a></br>'
-		}
-		
-		if (_sameas) {
-			_html = _html + ' profile: <a target="_new" href="' + _sameas + '">' + _sameas + '</a></br>'
-		}
-		
-		if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br>'
-		
-		_html = _html + 	' id:    <em>' +  _id   + '</em></br>' 
-		
-		_html = _html + '</div>'
-		
-		return _html ;
-	}
+			_html = _html + '</div>'
+			
+	} // end switch
+
+	return _html ;
+
+}
+
 	
 }
