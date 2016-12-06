@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>FOAFIAF Search Form</title>
+	<meta name="description" content="This is a JSONLD search form">
+	<style>
+		* {
+			font-family:Arial;
+		}
+		
+		div {
+			margin: 10px;
+		}
+		
+		legend {
+			margin:5 auto;
+		}	
+		
+		#propertyContainsLabel {
+			margin-left: 5px;
+		}
+		
+		button {
+			margin: 5px 0;
+		}			
+	</style>
+</head>
+<body>
+<div>
+	<form>
+		<fieldset>
+			<legend>FOAFIAF Search</legend>
+			<div>
+				<label for="entitySelector">Find Entity:</label>
+				<select class="form-control" id="entitySelector" onchange="changeEntity(this.value)"></select>	
+			</div>
+			<div  style="display:none;"  >
+				<label for="propertySelector">With Property:</label>
+				<select class="form-control" id="propertySelector" onchange="changeProperty(this.value)"></select>	
+			</div>
+			<div>
+				<label for="propertyContains" id="propertyContainsLabel">Contains:</label>
+				<input type="text" id="propertyContains" size="12">
+			</div>
+			<div><button type="button" onclick="searchData()">Search</button></div>
+			
+		</fieldset>
+	</form>
+</div>
+<div id="resultBox">
+	Results:
+</div>
+
+<script type="application/ld+json" src="things/jsonld/combinedOutfile.jsonld"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+var myData;
+$(function(){
+  $.getJSON("things/jsonld/combinedOutfile.jsonld", function(data) {
+      dataReceived(data);
+      myData = data;
+      //searchData("");
+  });
+});
+
+function changeEntity(){
+	
+}
+function changeProperty(){
+	
+}
+
+document.onkeypress = enter;
+function enter(e){
+	if (e.which == 13){searchData()}
+}
+
+function dataReceived(data) {
+	rawNodes = data['@graph'];
+		console.log('rawNodes ', JSON.stringify(rawNodes))
+	
+	//  populate entity dropdown with known @types
+	var typesList = [];
+	for (var i = 0; i < rawNodes.length; i++) {
+		if(typesList.indexOf(rawNodes[i]['@type']) === -1) typesList.push(rawNodes[i]['@type']);
+	};
+	//  create option for each unique node type	
+	for (var i = 0; i < typesList.length; i++) {
+		var option = document.createElement('option');
+		option.setAttribute('value', typesList[i]);
+		var textNode = document.createTextNode(typesList[i]);
+		option.appendChild(textNode);
+		document.getElementById("entitySelector").appendChild(option);		
+	};
+	
+	//  populate property dropdown with known properties
+	var propertyList = ["*"];
+	for (var i = 0; i < rawNodes.length; i++) {
+		for(var property in rawNodes[i]) {
+			if (rawNodes[i].hasOwnProperty(property)) {
+				if(propertyList.indexOf(property) === -1 && property !== "@type") propertyList.push(property);
+			}
+		}
+	};
+	propertyList.sort();
+	//  create option for each unique node property	
+	for (var i = 0; i < propertyList.length; i++) {
+		var option = document.createElement('option');
+		option.setAttribute('value', propertyList[i]);
+		var textNode = document.createTextNode(propertyList[i]);
+		option.appendChild(textNode);
+		document.getElementById("propertySelector").appendChild(option);	
+	};	
+}
+
+function searchData() {
+	data = myData;
+	//console.log(JSON.stringify(data))
+
+	var entitySelector = document.getElementById('entitySelector').value;
+	var propertySelector = document.getElementById('propertySelector').value;
+	var propertyContains = document.getElementById('propertyContains').value;
+	console.log(JSON.stringify(entitySelector))
+	console.log(JSON.stringify(propertySelector))
+	console.log(JSON.stringify(propertyContains))
+	
+	var searchStr = propertyContains;
+	
+	var myId = data['@id'];
+	console.log(JSON.stringify(myId))
+	document.getElementById('resultBox').innerHTML = 'Graph Id: ' + myId;
+	
+	rawNodes = data['@graph'];
+
+	
+	var idList = [];
+	for (var i = 0; i < rawNodes.length; i++) {
+		var rawId = rawNodes[i]["@id"] || null;
+		var rawType = rawNodes[i]["@type"] || null;
+		var rawLabel = rawNodes[i]["rdfs:label"] || null;
+		console.log(JSON.stringify(rawLabel))
+		if (rawId && rawType && rawLabel) {				// if not null
+		  if ( rawType === entitySelector) {		// if type equals selected
+			if ( rawLabel.toLowerCase().indexOf(searchStr.toLowerCase()) != -1 ) {
+				console.log('rawId ', JSON.stringify(rawId) )
+				idList.push(rawId);
+			}	
+		  }
+		}
+	};
+	
+	var baseUrl = "https://foafiaf-asteriusj.c9users.io/index0.html?startid=";
+	var txtIds = "";
+	for (var i = 0; i < idList.length; i++) {
+		var id = idList[i] ;
+		var url = baseUrl + id ;
+		txtIds += "<a href='" + url + "' target='_parent' >" + id + "</a>" + "<br/>" ;	
+	};
+	console.log('idList ', JSON.stringify(idList))
+	document.getElementById('resultBox').innerHTML = txtIds;
+	
+}
+</script>
+
+
+</body>
+</html>
