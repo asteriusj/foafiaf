@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Project Sequence Sunburst</title>
+<meta name="description" content="A visualisation of project timelines">
+
+	<script type="text/javascript" src="/js/pt.js"></script>
+	
+	<script type="application/ld+json" src="/things/jsonld/combinedJSONLD.jsonld"></script>
+
+<script src="../dist/d3.min.js"></script>
+<script src="timeline.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	
+	<script type="text/javascript">
+// collect URL query string parameters
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+}
+var startid = getUrlVars()["startid"] || null;
+console.log('startid', startid)
+var datalink = getUrlVars()["datalink"] || null;
+console.log('datalink', datalink)
+var showall = getUrlVars()["showall"] || null;
+console.log('showall', showall)
+if (showall) {
+	var showAll = showall;
+}
+
+
+//  retrieve graph data from jsonld file
+var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
+$.getJSON(dataURL, function(data) {
+  
+  console.log('dataURL -> ', dataURL)
+  /*global dataReceived*/
+  dataReceived(data, function(wheelJS) {
+    
+    /*global whenready*/
+    whenready();    
+  });
+});
+
+  </script>
+  
+
+
+<style>
+@import url(../css/style.css);
+path {
+  stroke: #000;
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+text {
+  font: 11px sans-serif;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  margin: .5em 0;
+}
+
+.wrapper {
+  margin-left: 120px;
+}
+
+blockquote {
+  width: 720px;
+}
+
+p#intro {
+  margin-left: 120px;
+}
+
+</style>
+
+<h1>Project Sequence Sunburst</h1>
+<div id="vis"></div>
+
+
+<div class="wrapper">
+<blockquote>
+</blockquote>
+
+<script>
+  if (top != self) top.location.replace(location);
+</script>
+
+
+
