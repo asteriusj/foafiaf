@@ -52,13 +52,13 @@
 	Results:
 </div>
 
-<script type="application/ld+json" src="things/jsonld/combinedOutfile.jsonld"></script>
+<script type="application/ld+json" src="things/jsonld/combinedJSONLD.jsonld"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script type="text/javascript">
 var myData;
 $(function(){
-  $.getJSON("things/jsonld/combinedOutfile.jsonld", function(data) {
+  $.getJSON("things/jsonld/combinedJSONLD.jsonld", function(data) {
       dataReceived(data);
       myData = data;
       //searchData("");
@@ -151,19 +151,37 @@ function searchData() {
 		}
 	};
 	
-	var baseUrl = "https://foafiaf-asteriusj.c9users.io/index0.html?startid=";
+	var baseUrl = "/index.html?startid=";
 	var txtIds = "";
+	var txtLinks = "";
+	
 	for (var i = 0; i < idList.length; i++) {
 		var id = idList[i] ;
 		var url = baseUrl + id ;
-		txtIds += "<a href='" + url + "' target='_parent' >" + id + "</a>" + "<br/>" ;	
+		txtIds += "<a href='#' startid='"+ id + "' onclick='return CloseMySelf(this)' id='"+ id + "'>" + id + "</a>" + "<br/>" ;
+		//txtIds += "<a href='" + url + "' target='_parent' >" + id + "</a>" + "<br/>" ;
+		//txtIds += "<li>" + id + "</li>" + "" ;
+		//<a href="#" result="allow" onclick="return CloseMySelf(this);">Allow</a>
 	};
-	console.log('idList ', JSON.stringify(idList))
+	
+	console.log('idList ', JSON.stringify(txtIds))
 	document.getElementById('resultBox').innerHTML = txtIds;
 	
 }
 </script>
 
+<script type="text/javascript">
+    
+    function CloseMySelf(sender) {
+	    try {
+	        window.opener.HandlePopupResult(sender.getAttribute("startid"));
+	    }
+	    catch (err) {}
+	    //window.close();
+	    return false;
+	}
+
+</script>
 
 </body>
 </html>
