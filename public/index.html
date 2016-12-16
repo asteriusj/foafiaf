@@ -63,10 +63,16 @@
 			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span>    Edges: <span id="edgeCount"></span></h5>
 			
 			<h4 class="statisticDetails"> 
-				<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'mywin',
-'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >          SearchIt</a>  
+				<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'searchit',
+'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >          SearchIt</a> 
+<text
 			</h4>
-		
+		<script>
+			function HandlePopupResult(startid) {
+			    //alert("result of popup is: " + startid);
+			    window.location = "/index.html?startid=" + startid;
+			}
+		</script>
 
 			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
 			
