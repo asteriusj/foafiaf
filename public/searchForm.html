@@ -103,6 +103,10 @@ function dataReceived(data) {
 				if(propertyList.indexOf(property) === -1 && property !== "@type") propertyList.push(property);
 			}
 		}
+		
+		// PUT IN dbo:type as well
+		
+		
 	};
 	propertyList.sort();
 	//  create option for each unique node property	
@@ -145,7 +149,10 @@ function searchData() {
 		  if ( rawType === entitySelector) {		// if type equals selected
 			if ( rawLabel.toLowerCase().indexOf(searchStr.toLowerCase()) != -1 ) {
 				console.log('rawId ', JSON.stringify(rawId) )
-				idList.push(rawId);
+				var item = {}
+				item.id = rawId;
+				item.label = rawLabel
+				idList.push(item);
 			}	
 		  }
 		}
@@ -154,11 +161,12 @@ function searchData() {
 	var baseUrl = "/index.html?startid=";
 	var txtIds = "";
 	var txtLinks = "";
-	
+	console.log('idList.length ', idList.length)
 	for (var i = 0; i < idList.length; i++) {
-		var id = idList[i] ;
+		var id = idList[i].id ;
+		var label = idList[i].label ;
 		var url = baseUrl + id ;
-		txtIds += "<a href='#' startid='"+ id + "' onclick='return CloseMySelf(this)' id='"+ id + "'>" + id + "</a>" + "<br/>" ;
+		txtIds += "<a href='#' startid='"+ id + "' onclick='return CloseMySelf(this)' id='"+ id + "'>" + label + "</a>" + "<br/>" ;
 		//txtIds += "<a href='" + url + "' target='_parent' >" + id + "</a>" + "<br/>" ;
 		//txtIds += "<li>" + id + "</li>" + "" ;
 		//<a href="#" result="allow" onclick="return CloseMySelf(this);">Allow</a>
