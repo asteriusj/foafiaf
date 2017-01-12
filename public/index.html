@@ -2,7 +2,15 @@
 <html>
 <head>
 	<title>Map of FOAFIAF relationships</title>
+	<meta property="description" content="Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis" />
 	
+	<meta property="og:title" content="FOAFIAF relationships" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis" />
+	<meta property="og:url" content="http://foafiaf.transformrockford.org/" />
+	<meta property="og:image" content="http://foafiaf.transformrockford.org/favicon.ico" />
+	<meta property="og:locale" content="en_US" />
+
 	<script type="text/javascript" src="dist/vis.js"></script>
 	<link href="dist/vis.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/options.js"></script>
@@ -40,11 +48,89 @@
     #optionsContainer {
       height:280px;
     }
+    
   </style>
+  
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 66%; /* 2/3 width */
+    height: 66%; /* 2/3 height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-link {text-align: center;}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
   
 </head>
 
 <body>
+
+
 
 <main id="mainArea">
 	<section id="canvasArea">
@@ -62,26 +148,73 @@
 			
 			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span>    Edges: <span id="edgeCount"></span></h5>
 			
-			<h4 class="statisticDetails"> 
+			<h4 class="SearchIt"> 
 				<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'searchit',
-'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >          SearchIt</a> 
-<text
+'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >  SearchIt  </a> 
+
 			</h4>
-		<script>
-			function HandlePopupResult(startid) {
-			    //alert("result of popup is: " + startid);
-			    window.location = "/index.html?startid=" + startid;
-			}
-		</script>
+			<script>
+				function HandlePopupResult(startid) {
+				    //alert("result of popup is: " + startid);
+				    window.location = "/index.html?startid=" + startid;
+				}
+			</script>
 
 			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
-			<!--<button type="button">Details</button>-->
+
 			<div class="accordion-container" id="selection-details">
+				
+				<!-- Trigger/Open The Modal -->
+				<div class="modal-link"><a id="myBtn" >Details Popup</a></div>
+				<br>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <!-- Modal content -->
+				  <div class="modal-content">
+				    <div class="modal-header">
+				      <span class="close">&times;</span>
+				      <h2>Entity Details</h2>
+				    </div>
+				    <div class="modal-body">
+				      <p class="popupDetails"><span id="popupDetails"></span></p>
+				    </div>
+				    <div class="modal-footer">
+				      <h3></h3>
+				    </div>
+				  </div>
+				</div>
+				
 				<div id="SelectionInformation">
 					<p class="propDetails"><span id="propDetails"></span></p>
 				</div>
 			</div>	
-			
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 			<!--
 			<h3 class="accordion-trigger accordion-trigger-active" id="degrees-details-trigger">Degrees</h3>
 			<div class="accordion-container hidden" id="degrees-details">
