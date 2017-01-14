@@ -4,16 +4,16 @@
 	<title>Map of FOAFIAF relationships</title>
 	<meta property="description" content="Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis" />
 	
-	<meta property="og:title" content="FOAFIAF relationships" />
+	<meta property="og:title" content="Map of FOAFIAF relationships" />
 	<meta property="og:type" content="website" />
 	<meta property="og:description" content="Friend Of A Friend Is A Friend - A community network mapping capability leveraging RDF Datasets for Social Graph visualization and analysis" />
-	<meta property="og:url" content="http://foafiaf.transformrockford.org/" />
-	<meta property="og:image" content="http://foafiaf.transformrockford.org/favicon.ico" />
+	<meta property="og:url" content="http://foafiaf.transformrockford.org/index.html/" />
+	<meta property="og:image" content="http://foafiaf.transformrockford.org//favicon.ico" />
 	<meta property="og:locale" content="en_US" />
-	
+
 	<link rel="apple-touch-icon" href="/favicon.ico">
 	<meta name="viewport" content="width=500, initial-scale=1">
-
+	
 	<script type="text/javascript" src="dist/vis.js"></script>
 	<link href="dist/vis.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/options.js"></script>
@@ -29,111 +29,11 @@
 	<script src="//cdn.jsdelivr.net/g/es6-promise@1.0.0"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jsonld/0.3.15/jsonld.js"></script>
 	<script src="js/spin.min.js"></script>
-	
-	<style type="text/css">
-    #mynetworkFA,
-    #mynetworkIO {
-      height: 300px;
-      width: 700px;
-      border:1px solid lightgrey;
-    }
-
-    p {
-      max-width:700px;
-    }
-    
-    #mynetwork {
-      width: 800px;
-      height: 600px;
-      border: 1px solid lightgray;
-    }
-    
-    #optionsContainer {
-      height:280px;
-    }
-    
-  </style>
-  
-<style>
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 66%; /* 2/3 width */
-    height: 66%; /* 2/3 height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-link {text-align: center;}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-</style>
 
   
 </head>
 
 <body>
-
-
 
 <main id="mainArea">
 	<section id="canvasArea">
@@ -143,32 +43,44 @@
 	<aside id="detailsArea">
 		<section id="generalDetails">
 			<h1 id="title">Map of FOAFIAF relationships</h1>
-			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafiaf</a></span>
+			<span><a id="about" href="https://github.com/asteriusj/foafiaf" target="_blank">https://github.com/asteriusj/foafia</a></span>
 			
-			<h5 style="display:none;">Version: <span id="version">0.0.4</span></h5>
+			<h5 style="display:none;">Version: <span id="version">0.0.5</span></h5>
 			
-			<h5>Author(s): <span id="authors">TR Technology Team</span></h5>
+			<h5>Author(s): <span id="authors">Asterius Media LLC</span></h5>
 			
 			<h5 class="statisticDetails">Nodes: <span id="nodeCount"></span>    Edges: <span id="edgeCount"></span></h5>
 			
-			<h4 class="SearchIt"> 
-				<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'searchit',
-'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >  SearchIt  </a> 
+			
+			<h3 class="accordion-trigger accordion-trigger-active" id="selection-search-trigger">Search</h3>
+			<div class="accordion-container" id="selection-search">
+				
+				<div class="modal-link">
+					<h4 class="SearchIt"> 
+						<a href="searchForm.html" title="Search the FOAFIAF dataset" onclick="window.open(this.href, 'searchit',
+		'left=20,top=10,width=500,height=600,toolbar=0,resizable=1'); return false;" >  SearchIt Popup  </a> 
+		
+					</h4>
+				</div>
+				<script>
+					function HandlePopupResult(startid) {
+					    //alert("result of popup is: " + startid);
+					    window.location = "/index.html?startid=" + startid;
+					}
+				</script>
 
-			</h4>
-			<script>
-				function HandlePopupResult(startid) {
-				    //alert("result of popup is: " + startid);
-				    window.location = "/index.html?startid=" + startid;
-				}
-			</script>
-
+			</div>
+			
+			
 			<h3 class="accordion-trigger accordion-trigger-active" id="selection-details-trigger">Details</h3>
-
 			<div class="accordion-container" id="selection-details">
 				
 				<!-- Trigger/Open The Modal -->
-				<div class="modal-link"><a id="myBtn" >Details Popup</a></div>
+				<div class="modal-link">
+					<h4 class="SearchIt"> 
+						<a id="myBtn" >Details Popup</a>
+					</h4>
+				</div>
 				<br>
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
@@ -188,7 +100,10 @@
 				</div>
 				
 				<div id="SelectionInformation">
-					<p class="propDetails"><span id="propDetails"></span></p>
+					<h4 class="statisticDetails">Entity Properties</h4>
+					<div class="propDetails">
+						<span id="propDetails"></span>
+					</div>
 				</div>
 			</div>	
 <script>
@@ -218,8 +133,10 @@ window.onclick = function(event) {
     }
 }
 </script>
+			
 			<!--
 			<h3 class="accordion-trigger accordion-trigger-active" id="degrees-details-trigger">Degrees</h3>
+
 			<div class="accordion-container hidden" id="degrees-details">
 				<div id="DegreesInformation">
 					<p id='separation'>Degrees of Separation: 1</p>
@@ -227,12 +144,10 @@ window.onclick = function(event) {
 				</div>
 			</div>	
 			-->
-			
 			<!--
 			<h3 class="accordion-trigger">Filters</h3>	
-			<div id="filterOption" class="accordion-container filter hidden"></div>			
+			<div id="filterOption" class="accordion-container filter hidden"></div>	
 			-->
-			
 		</section>
 	</aside>
 </main>
@@ -269,11 +184,6 @@ var startid = getUrlVars()["startid"] || null;
 console.log('startid', startid)
 var datalink = getUrlVars()["datalink"] || null;
 console.log('datalink', datalink)
-var showall = getUrlVars()["showall"] || null;
-console.log('showall', showall)
-if (showall) {
-	var showAll = showall;
-}
 
 
 // control visibility of accordion views
@@ -288,8 +198,9 @@ for (var i = 0; i < acc.length; i++) {
 
 //  retrieve graph data from jsonld file
 var dataURL = datalink || "things/jsonld/combinedJSONLD.jsonld";
+console.log('dataURL -> ', dataURL)
 $.getJSON(dataURL, function(data) {
-	console.log('dataURL -> ', dataURL)
+	
 	dataReceived(data);
 });
 
