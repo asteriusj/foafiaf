@@ -545,9 +545,18 @@ function displayData(focalPoint) {
 					// control what properties get dislayed
 					//console.log('property', property)
 					if (property !== "@type" && property !== "rdf:type" && property !== "rdfs:subClassOf:" ) {
-						if ( focalPoint[property] != "" ) {
-							var shortProp = property.substring(property.indexOf(":") + 1);
-							details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
+						var prefix = property.substring(0, property.indexOf(":"));
+						console.log('prefix', prefix)
+						if ( prefix != "foafiaf" && prefix != "perse"){
+							
+							if ( focalPoint[property] != "" ) {
+								console.log('property', property)
+								if (property != "html") {
+									var shortProp = property.substring(property.indexOf(":") + 1);
+									details += (shortProp + "::  " + focalPoint[property] + "<br><br>");
+								}
+							}
+						
 						}
 					}
 					
@@ -555,7 +564,10 @@ function displayData(focalPoint) {
 			}
 		}
 		//console.log(details)
+	
 		document.getElementById('propDetails').innerHTML = details;	
+
+		document.getElementById('popupDetails').innerHTML = htmlDetails(focalPoint);
 }
 	
 function zoomToSelectedNode(_selectedNodeId, _network) {
@@ -591,11 +603,47 @@ function htmlDetails (_entity) {
 	var _prefLabel = _entity['skos:prefLabel'] || null;
 	
 	var _description = _entity['dc:description'] || null;
+
 	var _title = _entity['dc:title'] || null;
-	var _comment = _entity['rdfs:comment'] || null;
+	var _dcabstract = _entity['dc:abstract'] || null;
+	var _dboabstract = _entity['dbo:abstract'] || null;
+		
+	
+	var _name = _entity['foaf:name'] || null;
+	var _givenName = _entity['foaf:givenName'] || null;
+	var _surname = _entity['foaf:surname'] || null;
+	var _nick = _entity['foaf:nick'] || null;
+	var _mbox = _entity['foaf:mbox'] || null;
+	var _phone = _entity['foaf:phone'] || null;
+	var _motto = _entity['foaf:motto'] || null;
+	var _homepage = _entity['foaf:homepage'] || null;
+	var _depiction = _entity['foaf:depiction'] || null;
+	var _knows = _entity['foaf:knows'] || null;
+	var _member = _entity['foaf:member'] || null;
 	var _based_near = _entity['foaf:based_near'] || null;
+	
+	var _locationCity = _entity['dbo:locationCity'] || null;
+	var _state = _entity['dbo:state'] || null;
+	var _country = _entity['dbo:country'] || null;
+	var _georss = _entity['georss:point'] || null;
 
+	var _has_container = _entity['sioc:has_container'] || null;
+	var _hasPost = _entity['org:hasPost'] || null;
+	var _unitOf = _entity['org:unitOf'] || null;
+	var _hasUnit = _entity['org:hasUnit'] || null;
+	var _linkedin = _entity['linkedin:Profile'] || null;	
+	var _comment = _entity['rdfs:comment'] || null;
 
+	var _aboutPerson = _entity['perse:aboutPerson'] || null;
+	var _hasGeography = _entity['perse:hasGeography'] || null;
+	var _hasDemography = _entity['perse:hasDemography'] || null;
+	var _hasKnowledge= _entity['perse:hasKnowledge'] || null;
+	var _hasExperience  = _entity['perse:hasExperience'] || null;
+	var _hasSkill = _entity['perse:hasSkill'] || null;
+	var _hasInterest = _entity['perse:hasInterest'] || null;
+	var _hasPersonality  = _entity['perse:hasPersonality'] || null;
+
+	
 	switch(_entity.group) {
 		
 	    case "Note":
@@ -697,14 +745,49 @@ function htmlDetails (_entity) {
 			
 			if (_description) _html = _html + 	' description: ' + _description + '</br></br>' 
 			
-			if (_based_near) _html = _html + 	' based_near: ' + _based_near + '</br></br>'
-					
-			if (_sameas) _html = _html +   ' sameas: ' + _sameas + '</a></br></br>'
-		
-			if (_seealso) _html = _html +  ' seeAlso: ' + _seealso + '</br></br>'
+			if (_based_near) _html = _html + 	' based near: ' + _based_near + '</br></br>'
+			if (_locationCity) _html = _html + 	' location City: ' + _locationCity + '</br></br>'
+			if (_state) _html = _html + 	' state: ' + _state + '</br></br>'
+			if (_country) _html = _html + 	' country: ' + _country + '</br></br>'
+			if (_georss) _html = _html + 	' georss: ' + _georss + '</br></br>'
+			
+			if (_name) _html = _html + 	' name:  ' + _name + '</br>'
+			if (_givenName) _html = _html + 	' givenName:  ' + _givenName + '</br>'
+			if (_surname) _html = _html + 	' surname: ' + _surname + '</br>'
+			if (_nick) _html = _html + 	' nick:  ' + _nick + '</br>'
+			if (_mbox) _html = _html + 	' mbox:  ' + _mbox + '</br>'
+			if (_phone) _html = _html + 	' phone:  ' + _phone + '</br>'
+			if (_motto) _html = _html + 	' motto:  ' + _motto + '</br>'
+			if (_homepage) _html = _html + 	' homepage:  ' + _homepage + '</br>'
+			if (_depiction) _html = _html + 	' depiction:  ' + '<img src="' + _depiction + '" >' + '</br>'
+			if (_member) _html = _html + 	' member:  ' + _member + '</br>'
+			if (_knows) _html = _html + 	' knows:  ' + _knows + '</br>'
+			if (_motto) _html = _html + 	' motto:  ' + _motto + '</br>'
+	
+			if (_has_container) _html = _html +   ' has container: ' + _has_container + '</a></br></br>'
+			if (_hasUnit) _html = _html +   ' has Unit: ' + _hasUnit + '</a></br></br>'
+			if (_unitOf) _html = _html +   ' unit Of: ' + _unitOf + '</a></br></br>'
+			if (_hasPost) _html = _html +   ' has Post: ' + _hasPost + '</a></br></br>'
+			
+			if (_sameas) _html = _html +   ' same As: ' + _sameas + '</a></br></br>'
+			if (_seealso) _html = _html +  ' see Also: ' +'<a href="' + _seealso + '"  target="_blank" >' + _seealso + '</a>' + '</br></br>'
+			if (_profile) _html = _html +  ' profile: '+ '<a href="' + _profile + '"  target="_blank" >' + _profile + '</a>' + '</br></br>'
 			
 			if (_comment) _html = _html +  ' comment: ' + _comment + '</br></br>'
+			if (_dcabstract) _html = _html +  ' _dcabstract: ' + _dcabstract + '</br></br>'
 			
+			if (_aboutPerson) _html = _html +  ' _aboutPerson: ' + _aboutPerson + '</br></br>'
+			if (_hasGeography) _html = _html +  ' _hasGeography: ' + _hasGeography + '</br></br>'
+			if (_hasDemography) _html = _html +  ' _hasDemography: ' + _hasDemography + '</br></br>'
+			if (_hasKnowledge) _html = _html +  ' _hasKnowledge: ' + _hasKnowledge + '</br></br>'
+			if (_hasExperience) _html = _html +  ' _hasExperience: ' + _hasExperience + '</br></br>'
+			if (_hasSkill) _html = _html +  ' _hasSkill: ' + _hasSkill + '</br></br>'
+			if (_hasInterest) _html = _html +  ' _hasInterest: ' + _hasInterest + '</br></br>'
+			if (_hasPersonality) _html = _html +  ' _hasPersonality: ' + _hasPersonality + '</br></br>'
+			
+			
+	
+	
 			_html = _html + 	' id:    <em>' +  _id   + '</em></br>' 
 		
 			_html = _html + '</div>'
