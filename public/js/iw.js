@@ -216,7 +216,7 @@ function dataReceived(data, cb) {
                 
                 if (_dbotype === 'foafiaf:Project') {
                     if ( (skosBroader === _strategy) ) {
-                        if ( (_priority === "Yes" ) || (_priority === "yes" ) ) {
+                        if ( (_priority === "Yes" ) || (_priority === "yes" )  || (_priority === "YES" ) ) {
                             addNode = true;
                             //console.log(_dbotype, skosBroader, addNode)
                         }
