@@ -119,7 +119,7 @@ function dataReceived(data, cb) {
             var _type = theNodes[i]['@type'];
         	var _dbotype = theNodes[i]['dbo:type'] || null;
         	var _label = theNodes[i]['rdfs:label'] || null;
-        	var _name = theNodes[i]['foafiaf:shortname'] || null;
+        	var _shortname = theNodes[i]['foafiaf:shortname'] || null;
         	var _description = theNodes[i]['dc:description'] || null;
         	//var _definition = theNodes[i]['skos:definition'] || null;
         	
@@ -149,7 +149,7 @@ function dataReceived(data, cb) {
         	newChild.id = _id;
         	newChild.dbotype = _dbotype;
         	newChild.label = _label;
-        	newChild.name = _name || _label;
+        	newChild.name = _shortname || _label;
         	newChild.description = _description;
         	//newChild.definition = _definition;
         	newChild.status = _status;
