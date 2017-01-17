@@ -121,7 +121,7 @@ function whenready() {
                 return "rotate(" + r + ")translate(" + (u(t.y) + c) + ")rotate(" + (e > 90 ? -180 : 0) + ")"
             }).on("click", l);
         
-        y.append("title").text(function(t) { return t.dbotype + "\n" + t.label + "\n" + t.description + "\n" + t.id + "\n" });
+        y.append("title").text(function(t) { return t.dbotype + "\n" + t.label + "\n" + t.description + "\n"  + t.id + "\n" });
         
         y.append("tspan").attr("x", 0).text(function(t) {
             return t.depth ? t.name.split(" ")[0] : ""
