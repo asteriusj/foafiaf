@@ -28,37 +28,45 @@
 </head>
 <body>
 <div>
-	<form>
+	<form id="searchForm"  action="#" > 
 		<fieldset>
-			<legend>FOAFIAF Search</legend>
+			<legend>FOAFIAF SearchIt</legend>
 			<div>
 				<label for="entitySelector">Find Entity:</label>
 				<select class="form-control" id="entitySelector" onchange="changeEntity(this.value)"></select>	
 			</div>
-			<div  style="display:none;"  >
-				<label for="propertySelector">With Property:</label>
+			<div style="display:none;" >
+			<!--<div >-->
+				<label for="propertySelector">has Property:</label>
+				<select class="form-control" id="propertySelector" onchange="changeProperty(this.value)"></select>	
+			</div>
+			<div style="display:none;" >
+			<!--<div >-->
+				<label for="propertySelector">has Relation:</label>
 				<select class="form-control" id="propertySelector" onchange="changeProperty(this.value)"></select>	
 			</div>
 			<div>
 				<label for="propertyContains" id="propertyContainsLabel">Contains:</label>
 				<input type="text" id="propertyContains" size="12">
 			</div>
-			<div><button type="button" onclick="searchData()">Search</button></div>
+			<div><button type="button" id="searchButton" onclick="searchData()">Search It</button></div>
 			
 		</fieldset>
 	</form>
 </div>
+
 <div id="resultBox">
 	Results:
 </div>
 
-<script type="application/ld+json" src="things/jsonld/combinedJSONLD.jsonld"></script>
+
+<script type="application/ld+json" src="https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script type="text/javascript">
 var myData;
 $(function(){
-  $.getJSON("things/jsonld/combinedJSONLD.jsonld", function(data) {
+  $.getJSON("https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld", function(data) {
       dataReceived(data);
       myData = data;
       //searchData("");
@@ -72,101 +80,177 @@ function changeProperty(){
 	
 }
 
+$("#searchForm").submit(function() {
+    search($("#searchText").get(0));
+    return false;
+});
+
 document.onkeypress = enter;
 function enter(e){
-	if (e.which == 13){searchData()}
+	if (e.which == 13){
+		searchData()
+		console.log('key detected')
+	}
 }
+// document.getElementById('searchButton').addEventListener("keydown",function(e){
+//   if(e.keyCode == 13){
+//   //doSomething()
+//   console.log('key detected')
+//   searchData()
+//   } 
+// });
+// $('#searchButton').on('keydown',function(e){
+//   if(e.which == '13'){
+//     //doSomething();
+//     console.log('key detected')
+// 	searchData()
+//   } 
+// });
+
 
 function dataReceived(data) {
-	rawNodes = data['@graph'];
+	/* global rawNodes */
+	var rawNodes = data['@graph'];
 		//console.log('rawNodes ', JSON.stringify(rawNodes))
 	
+	
+	
+	
+	//  **
 	//  populate entity dropdown with known @types
-	var typesList = [];
+	//  **
+	var entityTypesList = [];
 	var typeitem = {
 			id: "",
 			val: "",
 			txt: ""
 		}
-	typesList.push(typeitem);
-	for (var i = 0; i < rawNodes.length; i++) {
+	entityTypesList.push(typeitem);
+	console.log('rawNodes.length', rawNodes.length)
+	for (var i = 0; i < rawNodes.length; i++) {				// walk through all raw nodes
 		var node = rawNodes[i];
-		var _type = node['@type'];
+		var _type = node['@type'];							// eval the node type
 		var _dbo = node['dbo:type'];
 		
 		var type = null;
 		if (_type) {
-			//console.log('typesList.indexOf(_type)', JSON.stringify(typesList).indexOf(_type))
-			if ( (JSON.stringify(typesList).indexOf(_type) === -1) ) {
+			//console.log('entityTypesList.indexOf(_type)', JSON.stringify(entityTypesList).indexOf(_type))
+			if ( (JSON.stringify(entityTypesList).indexOf(_type) === -1) ) {
 				type = {
 					id: _type,
 					val:_type,
 					txt:_type.substring(_type.indexOf(":")+1, _type.length)
 				}
+				console.log(type.txt)
 			}	
 		}
-		
-		
-		// if(typesList.indexOf(rawNodes[i]['dbo:type']) === -1) {
-		// 	type = {
-		// 		id: node['@type'],
-		// 		val: node['@type'].substring(node['@type'].indexOf(":")+1, node['@type'].length)
-		// 	}
-		// }
-		if (type) {
-			typesList.push(type);
-			//console.log('type', type)
+
+		if (type) {											// if unique type add to list
+			entityTypesList.push(type);
+			console.log('type', JSON.stringify(type))
+
 		}
-	};
-	typesList.sort();
+	}; //end rawnodes
+	console.log('entityTypesList.length', entityTypesList.length)
+	
+	entityTypesList.sort(function(a, b) {
+	    var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
+		//console.log(a.txt, b.txt, result)
+	    return result  ;
+	});
+	//entityTypesList.sort();
+	console.log('entityTypesList', JSON.stringify(entityTypesList))
+	
 	//  create option for each unique node type	
-	for (var i = 0; i < typesList.length; i++) {
-		if (typesList[i].id !== "./") {
+	for (var i = 0; i < entityTypesList.length; i++) {
+		if (entityTypesList[i].id !== "./") {
 			var option = document.createElement('option');
-			option.setAttribute('id', typesList[i].id);
-			option.setAttribute('value', typesList[i].val);
-			
-			var textNode = document.createTextNode(typesList[i].val);
+			option.setAttribute('id', entityTypesList[i].id);
+			option.setAttribute('value', entityTypesList[i].val);
+			var textNode = document.createTextNode(entityTypesList[i].txt);
 			option.appendChild(textNode);
 			document.getElementById("entitySelector").appendChild(option);	
 		}
 	};
 	
-	//  populate property dropdown with known properties
-	// var propertyList = ["*"];
-	// for (var i = 0; i < rawNodes.length; i++) {
-	// 	for(var property in rawNodes[i]) {
-	// 		if (rawNodes[i].hasOwnProperty(property)) {
-	// 			var propitem = {
-	// 				id: "",
-	// 				val: " "
-	// 			}
-	// 			propertyList.push(property);
-	// 			if( propertyList.indexOf(property) === -1 && property !== "@type" && property !== "dbo:type") {
-	// 				var propitem = {
-	// 				id: "property",
-	// 				val: "property"
-	// 			}
-	// 				propertyList.push(propitem);
-	// 				console.log('property', propitem)
-	// 			}
-	// 		}
+	
+	
+	
+	// // **
+	// // populate property dropdown with known properties
+	// // **
+	// var propertyTypesList = [];
+	// var typeitem = {
+	// 		id: "",
+	// 		val: "",
+	// 		txt: ""
 	// 	}
-		
+	// 	typeitem = " ";  // removd struct
+	// propertyTypesList.push(typeitem);
+	// console.log('rawNodes.length', rawNodes.length)
+	// for (var i = 0; i < rawNodes.length; i++) {							// walk through all raw nodes
+	// 	for(var property in rawNodes[i]) {								// walk through each property in node
+	// 		  //console.log(property)
+	// 		if (rawNodes[i].hasOwnProperty(property)) {
+	// 			var _type = property
+	// 			_type = _type.substring(_type.indexOf(":")+1, _type.length)
+				
+	// 			var type = null;
+	// 			if (_type) {											// check to see if _type in list
+	// 				if ( (JSON.stringify(propertyTypesList).indexOf(_type) === -1) ) {
+	// 					if( property !== "@id" && property !== "@type" && property !== "dbo:type") {
+	// 						type = {
+	// 							id: _type,
+	// 							val:_type,
+	// 							txt:_type.substring(_type.indexOf(":")+1, _type.length)
+	// 						}
+	// 						type = _type
+	// 						//console.log(type.txt)
+	// 					}
+	// 				}	
+	// 			}
+				
+	// 			if (type) {											// if unique type add to list
+	// 				propertyTypesList.push(type);
+	// 				//console.log('type', JSON.stringify(type))
+	// 			}
+				
+	// 		} // end hasOwnProperty
+	// 	}; // end property
+	// }; //end rawnodes
+	// console.log('propertyTypesList.length', propertyTypesList.length)
+	
+	// propertyTypesList.sort(function(a, b) {
+	//     //var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
+	// 	//console.log(a.txt, b.txt, result)
+	// 	var result = ( a.toLowerCase() > b.toLowerCase() );
+	// 	//console.log(a.toLowerCase(), b.toLowerCase(), result)
+	//     return result  ;
+	// });
+	// propertyTypesList.sort();
+	// console.log('propertyTypesList', JSON.stringify(propertyTypesList))
+	
+	// //  create option for each unique property type	
+	// for (var i = 0; i < propertyTypesList.length; i++) {
+	// 	//if (propertyTypesList[i].id !== "./") {
+	// 		var option = document.createElement('option');
+	// 		// option.setAttribute('id', propertyTypesList[i].id);
+	// 		// option.setAttribute('value', propertyTypesList[i].val);
+	// 		// var textNode = document.createTextNode(propertyTypesList[i].txt);
+	// 		option.setAttribute('id', propertyTypesList[i]);
+	// 		option.setAttribute('value', propertyTypesList[i]);
+	// 		var textNode = document.createTextNode(propertyTypesList[i]);
+	// 		option.appendChild(textNode);
+	// 		document.getElementById("propertySelector").appendChild(option);	
+	// 	//}
 	// };
-	// propertyList.sort();
-	// //  create option for each unique node property	
-	// for (var i = 0; i < propertyList.length; i++) {
-	// 	var option = document.createElement('option');
-	// 	option.setAttribute('value', propertyList[i]);
-	// 	var textNode = document.createTextNode(propertyList[i]);
-	// 	option.appendChild(textNode);
-	// 	document.getElementById("propertySelector").appendChild(option);	
-	// };	
+
+	
 }
 
 function searchData() {
-	data = myData;
+	console.log('searchData ')
+	var data = myData;
 	//console.log(JSON.stringify(data))
 
 	var entitySelector = document.getElementById('entitySelector').value;
@@ -177,6 +261,7 @@ function searchData() {
 	console.log(JSON.stringify(propertyContains))
 	
 	var searchStr = propertyContains;
+	console.log('searchStr',searchStr)
 	
 	var myId = data['@id'];
 	//console.log(JSON.stringify(myId))
