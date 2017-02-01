@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="/js/pt.js"></script>
 	
 	<script type="application/ld+json" src="/things/jsonld/combinedJSONLD.jsonld"></script>
+	<script type="application/ld+json" src="https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld"></script>
 
 <script src="../dist/d3.min.js"></script>
 <script src="timeline.js"></script>
@@ -34,7 +35,8 @@ if (showall) {
 
 
 //  retrieve graph data from jsonld file
-var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
+//var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
+var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
 $.getJSON(dataURL, function(data) {
   
   console.log('dataURL -> ', dataURL)
@@ -93,6 +95,3 @@ p#intro {
 <script>
   if (top != self) top.location.replace(location);
 </script>
-
-
-
