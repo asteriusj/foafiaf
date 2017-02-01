@@ -2,6 +2,8 @@
 function whenready() {
     console.log('whenready')
     
+    var color = d3.scale.category20c();
+    
     function t(n, e) {
         //console.log('t')
         return n === e ? !0 : n.children ? n.children.some(function(n) {
@@ -17,7 +19,8 @@ function whenready() {
                 a = d3.hsl(e[1]);
             return d3.hsl((r.h + a.h) / 2, 1.2 * r.s, r.l / 1.2)
         }
-        return t.colour || "#fff"
+        //return t.colour || "#fff"
+        return color((t.children ? t : d.parent))
     }
 
     function e(t) {
