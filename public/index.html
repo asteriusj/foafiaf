@@ -21,6 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	
 	<script type="application/ld+json" src="things/jsonld/combinedJSONLD.jsonld"></script>
+	<script type="application/ld+json" src="https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld"></script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -197,7 +198,8 @@ for (var i = 0; i < acc.length; i++) {
 
 
 //  retrieve graph data from jsonld file
-var dataURL = datalink || "things/jsonld/combinedJSONLD.jsonld";
+//var dataURL = datalink || "things/jsonld/combinedJSONLD.jsonld";
+var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
 console.log('dataURL -> ', dataURL)
 $.getJSON(dataURL, function(data) {
 	
