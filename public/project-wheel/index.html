@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ 
+     <title>T-Map Project Sunburst Diagram</title>
+     <meta name="description" content="A visualisation of projects">
+     <script src="../dist/d3.min.js"></script>
+     <script type="text/javascript" src="/js/iw.js"></script>
+     <script type="text/javascript" src="sunburst1.js"></script>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<style>
+@import url(../css/style.css);
+path {
+  stroke: #000;
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+text {
+  font: 11px sans-serif;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  margin: .5em 0;
+}
+
+.wrapper {
+  margin-left: 120px;
+}
+
+blockquote {
+  width: 720px;
+}
+
+p#intro {
+  margin-left: 120px;
+}
+
+</style>
+
+</head>
+<body>
+  
+<script type="text/javascript">
+let datalink = null;
+ //const dataURL = datalink || "things/jsonld/combinedJSONLD.jsonld";
+const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+ //const dataURL = "json/mcpherTreeData.json";
+ //const dataURL = "json/flare.json";
+ //const dataURL = "json/milestonetest.json";
+
+function getTheData(dataURL, cb) {
+    console.log('getTheData') //  retrieve graph data from jsonld file
+    //var dataPromise = $.Deferred();
+    console.log('dataURL -> ', dataURL)
+    
+    $.getJSON(dataURL, function(data) {
+        console.log('getJSON')
+        console.log(data)
+        let treeData = data
+        console.log('treeData',treeData)
+        
+        if (cb) cb(null, treeData )
+
+    });
+
+}  
+</script>
+
+  
+<script type="text/javascript">
+function SunBurstDiagram1() {
+    console.log('SunBurstDiagram1')
+    
+    var result =  getTheData(dataURL, function(err, json) {
+    
+        let data = json;
+        dataReceived(data, function(wheelJS) {
+            //console.log('wheelJS', wheelJS)
+            /*global whenready*/
+            whenready();    
+      });
+
+          
+    });
+}
+SunBurstDiagram1()
+  
+</script>
+
+
+<h1>Project Inventory Wheel</h1>
+
+<div id="sunburst1">
+      
+</div>
+
+
+</body>
+</html> 
