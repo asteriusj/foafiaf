@@ -46,7 +46,17 @@ p#intro {
 
 </head>
 <body>
-  
+<script language="javascript" type="text/javascript">
+  document.oncontextmenu=RightMouseDown;
+  document.onmousedown = mouseDown; 
+
+  function mouseDown(e) {
+      if (e.which==3) {//righClick
+      //alert("Disabled - do whatever you like here..");
+     }
+  }
+  function RightMouseDown() { return false;}
+</script>
 <script type="text/javascript">
 let datalink = null;
  //const dataURL = datalink || "things/jsonld/combinedJSONLD.jsonld";
