@@ -109,6 +109,16 @@ function whenready() {
                 d3.select(this).style("visibility", t(n, e) ? null : "hidden")
             })
         }
+        function dblclick(d) {
+            console.log('dblclick', d)
+            window.alert("dblclick")
+            //modal.style.display = "block";
+        }
+        function contextmenu(d) {
+              console.log('contextmenu', d)
+              let msg = getTitle(d)
+              window.confirm(msg)
+        }
         
         var o = p.nodes({
                 children: i
@@ -140,10 +150,12 @@ function whenready() {
                     e = 180 * d(t.x + t.dx / 2) / Math.PI - 90,
                     r = e + (n ? -.5 : 0);
                 return "rotate(" + r + ")translate(" + (u(t.y) + c) + ")rotate(" + (e > 90 ? -180 : 0) + ")"
-            }).on("click", l);
-        
-        y.append("title")
-            .text(function(t) { return getTitle(t)}) ;
+            })
+            .on("click", l)
+            .on("dblclick", dblclick)
+            .on("contextmenu", contextmenu)
+            .append("title")
+                .text(function(t) { return getTitle(t)}) ;
         
         y.append("tspan")
             .attr("x", 0)
