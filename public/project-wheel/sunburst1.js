@@ -116,7 +116,7 @@ function whenready() {
         }
         function contextmenu(d) {
               console.log('contextmenu', d)
-              let msg = getTitle(d)
+              let msg = getDetails(d)
               window.confirm(msg)
         }
         
@@ -153,8 +153,9 @@ function whenready() {
             })
             .on("click", l)
             .on("dblclick", dblclick)
-            .on("contextmenu", contextmenu)
-            .append("title")
+            .on("contextmenu", contextmenu);
+            
+        y.append("title")
                 .text(function(t) { return getTitle(t)}) ;
         
         y.append("tspan")
@@ -193,7 +194,26 @@ function whenready() {
         //let _colour = t.colour || "";
         //let _color = getColor(t) ;
         let _id = t.id || "";
-        let _title =  _dbotype + "\n" + _label + "\n" + _name + "\n" + _description + "\n" + _startdate + "\n" + _status  + "\n" + _id + "\n" ;
+        let _title =  _dbotype + "\n" + _label + "\n" + _name + "\n" + _description + _id + "\n" ;
+        //console.log('_title', _title)
+        return _title
+    }
+    
+    // prep dialog box details 
+    function getDetails(t){
+        //console.log(t)
+        // title content for mouseover
+
+        let _dbotype = t.dbotype || "";
+        let _name = t.name || "";
+        let _label = t.label || "";
+        let _description = t.description || "";
+        let _startdate = t.startdate || "";
+        let _status = t.status || "";
+        //let _colour = t.colour || "";
+        //let _color = getColor(t) ;
+        let _id = t.id || "";
+        let _title =  _dbotype + "\n\n" + _label + "\n" + _name + "\n" + _description + "\n" + _startdate + "\n" + _status  + "\n" + _id + "\n" ;
         //console.log('_title', _title)
         return _title
     }
