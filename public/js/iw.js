@@ -118,6 +118,12 @@ function dataReceived(data, cb) {
         	var _id = theNodes[i]['@id'];
             var _type = theNodes[i]['@type'];
         	var _dbotype = theNodes[i]['dbo:type'] || null;
+        	var _group = null;
+    		if 	(_dbotype) {
+    			_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
+    		} else {
+    			_group = _type.substring(_type.indexOf(":") + 1);
+    		}
         	var _label = theNodes[i]['rdfs:label'] || null;
         	var _shortname = theNodes[i]['foafiaf:shortname'] || null;
         	var _description = theNodes[i]['dc:description'] || null;
@@ -152,6 +158,7 @@ function dataReceived(data, cb) {
         	newChild.i = i;
         	newChild.id = _id;
         	newChild.dbotype = _dbotype;
+        	newChild.group = _group;
         	newChild.label = _label;
         	newChild.name = _shortname || _label;
         	newChild.description = _description;
