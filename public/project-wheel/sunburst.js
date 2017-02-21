@@ -111,8 +111,8 @@ function whenready() {
         }
         function dblclick(d) {
             console.log('dblclick', d)
-            window.alert("dblclick")
-            //modal.style.display = "block";
+            let msg = getDetails(d)
+              window.confirm(msg)
         }
         function contextmenu(d) {
               console.log('contextmenu', d)
