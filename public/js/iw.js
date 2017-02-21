@@ -127,6 +127,10 @@ function dataReceived(data, cb) {
             var _priority = theNodes[i]['foafiaf:priority'] || null;
             var _percent = theNodes[i]['foafiaf:percent'] || null;
             var _startdate = theNodes[i]['foafiaf:startdate'] || null;
+            var _startdate = theNodes[i]['foafiaf:startdate'] || null;
+            var _enddate = theNodes[i]['foafiaf:enddate'] || null;
+            var _projectoutputs = theNodes[i]['foafiaf:projectoutputs'] || null;
+            
             
             var _team = theNodes[i]['foafiaf:group'] || null;
             var _strategy = theNodes[i]['foafiaf:Strategy'] || null;
@@ -156,6 +160,8 @@ function dataReceived(data, cb) {
         	newChild.priority = _priority;
         	newChild.percent = _percent;
         	newChild.startdate = _startdate;
+        	newChild.enddate = _enddate;
+        	newChild.projectoutputs = _projectoutputs;
         	newChild.team = _team;
         	newChild.strategy = _strategy;
         	newChild.measure = _measure;
