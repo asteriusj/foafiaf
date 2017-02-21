@@ -65,46 +65,144 @@ function dataReceived(data) {
 		console.log('spinner',spinner)
 	});
 	
+	
+	
+	
+	//  network graph click events
+
+	var doubleClickTime = 0;
+	var threshold = 200;
+	
 	//  network graph click event
 	network.on("click", function(selected){
-		console.log('')
-		console.log('network.on click')
-		console.log('')
-		// start spinner
-		var target = document.getElementById('mainArea')
-		var spinner = new Spinner().spin(target);
-		console.log('spinner',spinner)
-		//console.log('selected', selected)
-		
-		var nodeId = selected.nodes.toString();
-		var edgeId = selected.edges.toString();
-		
-		//console.log('nodeId', nodeId)
-		//console.log('edgeId', edgeId)
+			console.log('')
+			console.log('network.on click')
+			console.log('')
+			// start spinner
+			var target = document.getElementById('mainArea')
+			var spinner = new Spinner().spin(target);
+			console.log('spinner',spinner)
 			
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(nodeId) {
-			selectedNode = getNodeById(rawNodes, nodeId)
-			//console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
-			if (selectedNode) displayData(selectedNode);
+			var t0 = new Date();
+		    if (t0 - doubleClickTime > threshold) {
+		        setTimeout(function () {
+		            if (t0 - doubleClickTime > threshold) {
+		                doOnClick();
+		                
+		            }
+		        },threshold);
+		    }
 			
-			visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
-			visibleEdges = rawEdges
-			//console.log('new visibleNodes',visibleNodes)
-			//console.log('new visibleEdges',visibleEdges)
+			function doOnClick() {
+			    console.log("execute onClick function");
+			    
+				console.log('selected', selected)
+				
+				var nodeId = selected.nodes.toString();
+				var edgeId = selected.edges.toString();
+				let event = selected.event;
+				let pointer = selected.pointer;
+				
+				console.log('nodeId', nodeId)
+				console.log('edgeId', edgeId)
+				console.log('pointer', pointer)
+				console.log('event', event)
+					
+				//  if a node is selected, hide any nodes outside the selected number N degrees
+				if(nodeId) {
+					selectedNode = getNodeById(rawNodes, nodeId)
+					//console.log('from nodeId selectedNode', selectedNode)
+					//  display node or edge data in the sidebar for selected element
+					if (selectedNode) displayData(selectedNode);
+					
+					visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
+					visibleEdges = rawEdges
+					//console.log('new visibleNodes',visibleNodes)
+					//console.log('new visibleEdges',visibleEdges)
+					
+					network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+					//network = setNetwork(visibleNodes, visibleEdges)
+					
+					network.once("afterDrawing", function(){
+						zoomToSelectedNode(nodeId, network);
+						// stop spinner
+						if (spinner) spinner.stop() ; 
+					});
+				}
+				if (spinner) spinner.stop() ;
+			}
 			
-			network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
-			//network = setNetwork(visibleNodes, visibleEdges)
 			
-			network.once("afterDrawing", function(){
-				zoomToSelectedNode(nodeId, network);
-				// stop spinner
-				if (spinner) spinner.stop() ; 
-			});
-		}
-	});
+			
+	}); // end on click
 	
+	network.on('doubleClick', function(selected){
+	
+		console.log('')
+		 console.log('network.on doubleClick')
+		 console.log('')
+	
+	    doubleClickTime = new Date();
+	    console.log("execute onDoubleClick function");
+	    
+			var nodeId = selected.nodes.toString();
+			var edgeId = selected.edges.toString();
+			let event = selected.event;
+			let pointer = selected.pointer;
+			
+			console.log('nodeId', nodeId)
+			console.log('edgeId', edgeId)
+			console.log('pointer', pointer)
+			console.log('event', event)
+		
+			//  if a node is selected, hide any nodes outside the selected number N degrees
+			if(nodeId) {
+				selectedNode = getNodeById(rawNodes, nodeId)
+				//console.log('from nodeId selectedNode', selectedNode)
+				//  display node or edge data in the sidebar for selected element
+				if (selectedNode) displayData(selectedNode);
+			}
+			
+		//window.alert("doubleClick")
+		modal.style.display = "block";
+	    if (spinner) spinner.stop() ;
+	    
+			
+	}); // end on double click
+	
+
+
+	// network.on("oncontext", function(selected){
+	// 	console.log('')
+	// 	console.log('network.on oncontext')
+	// 	console.log('')
+	// 	//window.alert("oncontext")
+	// 	console.log('selected', selected)		// object from oncontext event
+			
+	// 	var nodeId = selected.nodes.toString();
+	// 	var edgeId = selected.edges.toString();
+	// 	let event = selected.event;
+	// 	let pointer = selected.pointer;
+		
+	// 	console.log('nodeId', nodeId)
+	// 	console.log('edgeId', edgeId)
+	// 	console.log('pointer', pointer)
+	// 	console.log('event', event)
+	
+	// 	//  if a node is selected, hide any nodes outside the selected number N degrees
+	// 	if(nodeId) {
+	// 		selectedNode = getNodeById(rawNodes, nodeId)
+	// 		//console.log('from nodeId selectedNode', selectedNode)
+	// 		//  display node or edge data in the sidebar for selected element
+	// 		if (selectedNode) displayData(selectedNode);
+	// 	}
+		
+		
+	// 	contextMenuShowing = false;
+		
+	// 	modal.style.display = "block";
+		
+	// }); // end on oncontext
 	
 	
 	
@@ -275,13 +373,13 @@ function buildRawNodes(data) {
 		
 		var _title = null;
 		_title = _prefLabel || _label ;
-		rawNodes[i].title = _title
+		rawNodes[i].title = _group + ": " + _title
 		// call function to prepare html block for hover or popup
 		// and overwrite plain title
 		rawNodes[i].html = htmlDetails(rawNodes[i])
 		//console.log('rawNodes[i].html', rawNodes[i].html)
 		
-		    rawNodes[i].title = htmlDetails(rawNodes[i])
+		    //rawNodes[i].title = htmlDetails(rawNodes[i])
 			//console.log('rawNodes[i].title', rawNodes[i].title)
 	
 		//  console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
