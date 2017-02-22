@@ -145,64 +145,48 @@ function dataReceived(data) {
 	    doubleClickTime = new Date();
 	    console.log("execute onDoubleClick function");
 	    
-			var nodeId = selected.nodes.toString();
-			var edgeId = selected.edges.toString();
-			let event = selected.event;
-			let pointer = selected.pointer;
-			
-			console.log('nodeId', nodeId)
-			console.log('edgeId', edgeId)
-			console.log('pointer', pointer)
-			console.log('event', event)
+	    var selection = network.getNodeAt(selected.pointer.DOM);
+		console.log('selection', selection)
 		
-			//  if a node is selected, hide any nodes outside the selected number N degrees
-			if(nodeId) {
-				selectedNode = getNodeById(rawNodes, nodeId)
-				//console.log('from nodeId selectedNode', selectedNode)
-				//  display node or edge data in the sidebar for selected element
-				if (selectedNode) displayData(selectedNode);
-			}
-			
+			// var nodeId = selected.nodes.toString();
+			// var edgeId = selected.edges.toString();
+			// let event = selected.event;
+			// let pointer = selected.pointer;
+
+		
+		//  if a node is selected, hide any nodes outside the selected number N degrees
+		if(selection) {
+			selectedNode = getNodeById(rawNodes, selection)
+			//console.log('from nodeId selectedNode', selectedNode)
+			//  display node or edge data in the sidebar for selected element
+			if (selectedNode) displayData(selectedNode);
+		}
+		
 		//window.alert("doubleClick")
 		modal.style.display = "block";
 	    if (spinner) spinner.stop() ;
-	    
 			
 	}); // end on double click
 	
-
-
-	// network.on("oncontext", function(selected){
-	// 	console.log('')
-	// 	console.log('network.on oncontext')
-	// 	console.log('')
-	// 	//window.alert("oncontext")
-	// 	console.log('selected', selected)		// object from oncontext event
+	network.on("oncontext", function(selected){
+		console.log('')
+		console.log('network.on oncontext')
+		console.log('')
+		//window.alert("oncontext")
+		
+		var selection = network.getNodeAt(selected.pointer.DOM);
+		console.log('selection', selection)
+		
+		if (selection) {
+			selectedNode = getNodeById(rawNodes, selection)
+			//console.log('from nodeId selectedNode', selectedNode)
+			//  display node or edge data in the sidebar for selected element
+			if (selectedNode) displayData(selectedNode);
+		}
 			
-	// 	var nodeId = selected.nodes.toString();
-	// 	var edgeId = selected.edges.toString();
-	// 	let event = selected.event;
-	// 	let pointer = selected.pointer;
+		modal.style.display = "block";
 		
-	// 	console.log('nodeId', nodeId)
-	// 	console.log('edgeId', edgeId)
-	// 	console.log('pointer', pointer)
-	// 	console.log('event', event)
-	
-	// 	//  if a node is selected, hide any nodes outside the selected number N degrees
-	// 	if(nodeId) {
-	// 		selectedNode = getNodeById(rawNodes, nodeId)
-	// 		//console.log('from nodeId selectedNode', selectedNode)
-	// 		//  display node or edge data in the sidebar for selected element
-	// 		if (selectedNode) displayData(selectedNode);
-	// 	}
-		
-		
-	// 	contextMenuShowing = false;
-		
-	// 	modal.style.display = "block";
-		
-	// }); // end on oncontext
+	});
 	
 	
 	
