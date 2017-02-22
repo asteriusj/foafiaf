@@ -35,7 +35,17 @@
 </head>
 
 <body>
+<script language="javascript" type="text/javascript">
+  document.oncontextmenu=RightMouseDown;
+  document.onmousedown = mouseDown; 
 
+  function mouseDown(e) {
+      if (e.which==3) {//righClick
+      //alert("Disabled - do whatever you like here..");
+     }
+  }
+  function RightMouseDown() { return false;}
+</script>
 <main id="mainArea">
 	<section id="canvasArea">
 		<div id="selectedContainer"></div>
