@@ -106,7 +106,7 @@ function dataReceived(data, cb) {
         	        var subprojectNodes = getNodesByParent(graph, 'foafiaf:Project', 'foafiaf:Project', _projectid)  // get subproject nodes where broader = project
         	        var subprojectChilds = prepChildNodes(subprojectNodes);
         	        
-        	        console.log('p subprojectChilds.length', p, subprojectChilds.length)
+        	        //console.log('p subprojectChilds.length', p, subprojectChilds.length)
     	            if (subprojectChilds.length > 0) wheelJS[i+1].children[k].children[g].children[p].children = subprojectChilds;
 
     	            // end subprojectChilds
@@ -165,6 +165,8 @@ function dataReceived(data, cb) {
         	newChild.name = _shortname || _label;
         	newChild.description = _description || _definition;
         	
+
+        	
         	newChild.segment = _segment;
         	newChild.spoke = _spoke;
         	newChild.strategy = _strategy;
@@ -186,12 +188,12 @@ function dataReceived(data, cb) {
         	newChild.broader = _broader;
         	newChild.color = _color;
         	
-        	if (_startdate === "2016") newChild.color = "Blue"
-        	if (_startdate === "2017") newChild.color = "Cyan"
-        	if (_startdate === "2018") newChild.color = "Green"
-        	if (_startdate === "2019") newChild.color = "Yellow"
-        	if (_startdate === "2019") newChild.color = "Red"
-        	
+        	if (_startdate === 2016) newChild.color = "Blue"
+        	if (_startdate === 2017) newChild.color = "Cyan"
+        	if (_startdate === 2018) newChild.color = "Green"
+        	if (_startdate === 2019) newChild.color = "Yellow"
+        	if (_startdate === 2020) newChild.color = "Red"
+        	        	
             //console.log(newChild)
         	children.push(newChild);
         }
@@ -311,7 +313,7 @@ function dataReceived(data, cb) {
                     
                     if (  (_priority === "Yes") || (_priority === "yes")  || (_priority === "YES")  ) {
                             addNode = true;
-                            console.log(_dbotype, parent_type, parent_id, addNode)
+                            //console.log(_dbotype, parent_type, parent_id, addNode)
                     } else {
                         addNode = false;
                     }
