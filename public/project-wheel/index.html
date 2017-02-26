@@ -8,9 +8,11 @@
      <meta name="description" content="A visualisation of projects">
      <script src="../dist/d3.min.js"></script>
      <script type="text/javascript" src="/js/iw.js"></script>
+	 <script type="text/javascript" src="/js/utils.js"></script>
      <script type="text/javascript" src="sunburst.js"></script>
      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="/js/spin.min.js"></script>
 
 <style>
 @import url(../css/style.css);
@@ -105,12 +107,21 @@ SunBurstDiagram1()
 </script>
 
 
-<h1>Project Inventory Wheel</h1>
+<main id="mainArea">
+    <h1>Project Inventory Wheel</h1>
+    
+    <div id="sunburst1">
+          
+    </div>
+</main>
 
-<div id="sunburst1">
-      
-</div>
 
+<script type="text/javascript">
+  const target = document.getElementById('mainArea')
+  console.log('target',target)
+  var spinner = new Spinner().spin(target);
+  console.log('start spinner',spinner)
+</script>
 
 </body>
 </html> 
