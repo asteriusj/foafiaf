@@ -30,7 +30,7 @@ function getTitle(t){
     // let _startdate = t.startdate || "";
     // let _status = t.status || "";
     //let _colour = t.colour || "";
-    let _color = getCol(t) ;
+    let _color = t.color || getCol(t) ;
     let _id = t.id || "";
     
     let _title =  _group + ": " + _label + "\n" + _description + _color + "\n" ;
@@ -56,7 +56,7 @@ function getDetails(t){
     let _actual = t.actual || "";
     let _units = t.units || "";
     let _colour = t.colour || "";
-    let _color = getCol(t) ;
+    let _color = t.color || getCol(t) ;
     let _segment = t.segment || "";
     let _spoke = t.spoke || "";
     let _strategy = t.strategy || "";
@@ -70,12 +70,14 @@ function getDetails(t){
     if (_dbotype === 'foafiaf:Project') {
     	
         details = details + "Status: " + _status +  _colour + "\n\n" + 
+        					"Color: " + _color +  "\n\n" +
                             "Start: " + _startdate + " " + _enddate + " " + _color + "\n\n"  +
                             "Output: " + _projectoutputs + "\n\n"
                             
     } else if (_dbotype === 'foafiaf:Measure') {
     	
-        details = details + "Status: " + _status + " " + _colour + " " + _color +  "\n\n" +
+        details = details + "Status: " + _status + " " + _colour + " " +  "\n\n" +
+        					"Color: " + _color +  "\n\n" +
                             "Target: " + _target + "Actual: " + _actual + " " + _units + "\n\n"  
                               
     }
