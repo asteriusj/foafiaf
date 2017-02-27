@@ -1,4 +1,4 @@
-
+'use strict';
 var colours = ["#FF0000","#FFFF00","#008000","#0000FF","#800080"]
 var wheelJS = [
   {
@@ -89,7 +89,7 @@ function dataReceived(data, cb) {
 	        if (strategyChilds.length > 0) wheelJS[i+1].children[k].children = strategyChilds;
 	        
 	        
-	        for (var g = 0; g < strategyNodes.length; g++) {    // loop over strategy childrennof spoke parent
+	        for (var g = 0; g < strategyNodes.length; g++) {    // loop over strategy children of spoke parent
 
     	        var _strategyid = strategyNodes[g]['@id'];
     	        var projectNodes = getNodesByParent(graph, 'foafiaf:Project', 'foafiaf:Strategy', _strategyid)  // get project nodes where broader = strategy
@@ -99,19 +99,19 @@ function dataReceived(data, cb) {
     	        //console.log('g projectChilds.length', g, projectChilds.length)
 	            if (projectChilds.length > 0) wheelJS[i+1].children[k].children[g].children = projectChilds;
 
-
-    	        for (var p = 0; p < projectNodes.length; p++) {     // loop over project children of strategy parent
+        // Remove second layer of projects
+    	       // for (var p = 0; p < projectNodes.length; p++) {     // loop over project children of strategy parent
     
-        	        var _projectid = projectNodes[p]['@id'];
-        	        var subprojectNodes = getNodesByParent(graph, 'foafiaf:Project', 'foafiaf:Project', _projectid)  // get subproject nodes where broader = project
-        	        var subprojectChilds = prepChildNodes(subprojectNodes);
+        	   //     var _projectid = projectNodes[p]['@id'];
+        	   //     var subprojectNodes = getNodesByParent(graph, 'foafiaf:Project', 'foafiaf:Project', _projectid)  // get subproject nodes where broader = project
+        	   //     var subprojectChilds = prepChildNodes(subprojectNodes);
         	        
-        	        //console.log('p subprojectChilds.length', p, subprojectChilds.length)
-    	            if (subprojectChilds.length > 0) wheelJS[i+1].children[k].children[g].children[p].children = subprojectChilds;
+        	   //     //console.log('p subprojectChilds.length', p, subprojectChilds.length)
+    	       //     if (subprojectChilds.length > 0) wheelJS[i+1].children[k].children[g].children[p].children = subprojectChilds;
 
-    	            // end subprojectChilds
+    	       //     // end subprojectChilds
     	        
-	            } // end projectNodes
+	           // } // end projectNodes
 	           
 	        } // end strategynodes
 	    } // end spokenodes
@@ -189,10 +189,15 @@ function dataReceived(data, cb) {
         	newChild.color = _color;
         	
         	if (_startdate === 2016) newChild.color = "Blue"
-        	if (_startdate === 2017) newChild.color = "Cyan"
+        	if (_startdate === 2017) {
+            	    newChild.color = "Cyan"
+            	    console.log('newChild.color', _id, _startdate, newChild.color)
+            	}
         	if (_startdate === 2018) newChild.color = "Green"
         	if (_startdate === 2019) newChild.color = "Yellow"
         	if (_startdate === 2020) newChild.color = "Red"
+        	
+        	        	//if(_group === 'Project') console.log('newChild.color', _id, _startdate, newChild.color)
         	        	
             //console.log(newChild)
         	children.push(newChild);
@@ -287,14 +292,10 @@ function dataReceived(data, cb) {
             var _priority = graph[i]['foafiaf:priority'] || null;
             
             var addNode = false;
-            if ( (_dbotype === type) && (_type === 'skos:Concept') ) {           // filter all but nodes of dbotype
+            if ( (_dbotype === type) && (_type === 'skos:Concept') ) {              // filter all but nodes of dbotype
                 
-                if (_broader === parent_id) {                                       // if broader == parent then add node
-                    
-                    addNode = true;
-                    //console.log(_dbotype, _broader, addNode)
-            
-                } else if ( (_broader === null) && (_dbotype === 'foafiaf:Project') ) {     // else if Project and broader null and strategy parent
+                
+                if ( (_dbotype === 'foafiaf:Project') ) {                           // if Project and strategy parent
                     
                     if ( _strategy === parent_id ) {
                         
@@ -302,10 +303,30 @@ function dataReceived(data, cb) {
    
                     }
                     
-                } else {
+                } else if (_broader === parent_id) {                                // else if broader == parent then add node
                     
-                    //console.log('graph[i] ptype pid', graph[i], parent_type, parent_id)
+                    addNode = true;
+                    //console.log(_dbotype, _broader, addNode)
+            
                 }
+                
+                // if (_broader === parent_id) {                                       // if broader == parent then add node
+                    
+                //     addNode = true;
+                //     //console.log(_dbotype, _broader, addNode)
+            
+                // } else if ( (_broader === null) && (_dbotype === 'foafiaf:Project') ) {     // else if Project and broader null and strategy parent
+                    
+                //     if ( _strategy === parent_id ) {
+                        
+                //         addNode = true;
+   
+                //     }
+                    
+                // } else {
+                    
+                //     //console.log('graph[i] ptype pid', graph[i], parent_type, parent_id)
+                // }
               
                 if ( addNode && _dbotype === 'foafiaf:Project' ) {                               // filter projects that are not flagged priority
                     
