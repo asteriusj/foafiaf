@@ -1,3 +1,4 @@
+'use strict';
 // determin color of thing by ordinal scale per .name
 function getCol(d) {
 
@@ -50,6 +51,7 @@ function getDetails(t){
     let _description = t.description || "";
     let _startdate = t.startdate || "";
     let _enddate = t.enddate || "";
+    let _broader = t.broader || "";
     let _projectoutputs = t.projectoutputs || "";
     let _status = t.status || "";
     let _target = t.target || "";
@@ -72,6 +74,7 @@ function getDetails(t){
         details = details + "Status: " + _status +  _colour + "\n\n" + 
         					"Color: " + _color +  "\n\n" +
                             "Start: " + _startdate + " " + _enddate + " " + _color + "\n\n"  +
+                            "Parent: " + _broader + "\n\n"  +
                             "Output: " + _projectoutputs + "\n\n"
                             
     } else if (_dbotype === 'foafiaf:Measure') {
