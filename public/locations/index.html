@@ -1,0 +1,175 @@
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0&callback=myMap"></script>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    
+
+
+  </head>
+  <body>
+          
+    <div id="map"></div>
+    <!--<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>-->
+    <div id="locales"></div>
+    
+<script type="application/ld+json" src="things/jsonld/combinedJSONLD.jsonld"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+    var map;
+    var locales = null;
+    var myData;
+    $(function(){
+      $.getJSON("/things/jsonld/combinedJSONLD.jsonld", function(data) {
+          dataReceived(data);
+          myData = data;
+          initMap();
+          //refreshMap();
+      });
+    });
+
+    function dataReceived(data) {
+        console.log('dataReceived')
+    	rawNodes = data['@graph'];
+    		//console.log('rawNodes ', JSON.stringify(rawNodes))
+    		
+        var localeList = [];
+        //  ['Chicago', 41.83694444444444, -87.68472222222222, 4]
+    	//var locale = []
+    	//localeList.push(locale);
+    	var zIndex = 0
+    	for (var i = 0; i < rawNodes.length; i++) {
+    	    var node = rawNodes[i];
+    		var _type = node['@type'] || null;
+    		var _dbo = node['dbo:type'] || null;
+    		
+    		var _label = node['rdfs:label'] || null;
+    		var _point = node['georss:point'] || null;
+
+            if (_type) {
+              if ( _type.indexOf("dbo:Place") != -1 ) {
+                var locale = null;
+                //console.log('_label', _label)
+                //console.log('_point', _point)
+        		if (_point) {
+        		    
+        		    var _lat = _point.substring(0, _point.indexOf(" "));
+        		    var _lng = _point.substring(_point.indexOf(" ") + 1);
+        		       
+        		    locale = '[ ' + '"' + _label.substring(0, _label.indexOf(",")) + '", ' + _lat + ', ' +  _lng + ', ' + zIndex + ' ]';
+                    // locale = [
+                    //     _label.substring(0, _label.indexOf(",")),
+                    //     _lat,
+                    //     _lng,
+                    //     zIndex
+                    // ]
+                    
+                    locale - JSON.stringify(locale)
+                    //console.log('locale', locale)
+                    zIndex = zIndex + 1;
+        		}
+        	    
+        	    if (locale) {
+        			localeList.push(JSON.parse(locale));
+        			//console.log('locale', locale)
+        		}
+              } // end Place
+            } // end _type
+    	} // end for
+    	
+    	//console.log('localeList ', JSON.stringify(localeList))
+    	locales = localeList;
+    	document.getElementById('locales').innerHTML = locales;
+    	
+    	
+    //     var localeList = [
+    //         //['Chicago', 41.83694444444444, -87.68472222222222, 4],
+    //         ['Byron', 42.12722222222222, -89.26083333333334, 3],
+    //         //["Iowa City", 41.666666666666664, -91.53333333333333, 2],
+    //         ['Rockford', 42.25944444444445, -89.06444444444445, 1]
+    //     ];
+  
+    //   locales = document.getElementById('locales').value || localeList;
+  
+  } // end dataRecieved
+
+  function setMarkers(map) {
+      console.log('setMarkers')
+    // Adds markers to the map.
+
+    //locales = document.getElementById('locales').value 
+    console.log('locales', locales)
+    if(locales) {
+        for (var i = 0; i < locales.length; i++) {
+          var locale = locales[i];
+            //console.log(locale[0])
+          var marker = new google.maps.Marker({
+            position: {lat: locale[1], lng: locale[2]},
+            map: map,
+            //label: labels[i % labels.length],
+            //icon: image,
+            //shape: shape,
+            title: locale[0],
+            zIndex: locale[3]
+          });
+        }
+    } //end locales
+
+  }
+  
+  function initMap() {
+      console.log('initMap')
+        var myLatLng = {lat: 42.25944444444445, lng: -89.06444444444445};
+          
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          //center: {lat: 42.25944444444445, lng: -89.06444444444445}
+          center: myLatLng
+        });
+    
+        setMarkers(map);
+  }
+    
+  function refreshMap() {
+      console.log('refreshMap')
+        //trafficLayer.setMap(null);
+        //trafficLayer = null;
+        setMarkers(map);
+        //map.setZoom(map.getZoom()); // this renews the view and forces new data to be requested
+        setTimeout(function () {
+            marker = new google.maps.Marker();
+            marker.setMap(map)
+            //trafficLayer = new google.maps.TrafficLayer();
+            //trafficLayer.setMap(map);
+        }, 100);
+  }
+</script>
+    
+
+
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0">
+    </script>
+  
+    <!--<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0&callback=initMap">
+    </script>-->
+  </body>
+</html>
