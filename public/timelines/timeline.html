@@ -1,0 +1,98 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Timeline | Basic demo</title>
+
+  <style type="text/css">
+    body, html {
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="timeline.js"></script>
+  
+  <script src="../dist/vis.js"></script>
+  <link href="../dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+</head>
+<body>
+
+<p>
+  A basic timeline. You can move and zoom the timeline, and select items.
+</p>
+
+<div id="visualization"></div>
+
+
+<script type="text/javascript">
+  let datalink = null;
+  const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
+  
+  function getTheData(dataURL, cb) {
+    console.log('getTheData') //  retrieve graph data from jsonld file
+    //var dataPromise = $.Deferred();
+    console.log('dataURL -> ', dataURL)
+    
+    $.getJSON(dataURL, function(data) {
+        console.log('getJSON')
+        console.log(data)
+        let treeData = data
+        console.log('treeData',treeData)
+        
+        if (cb) cb(null, treeData )
+
+    });
+
+  }  
+</script>
+
+<script type="text/javascript">
+
+      
+      var result =  getTheData(dataURL, function(err, json) {
+      
+          let data = json;
+          dataReceived(data, function(wheelJS) {
+              //console.log('wheelJS', wheelJS)
+              /*global whenready*/
+              //whenready();    
+        });
+  
+            
+      });
+
+
+
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+  // var items = new vis.DataSet([
+  //   {id: 1, content: 'item 1', start: '2014-04-20'},
+  //   {id: 2, content: 'item 2', start: '2014-04-14'},
+  //   {id: 3, content: 'item 3', start: '2014-04-18'},
+  //   {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
+  //   {id: 5, content: 'item 5', start: '2014-04-25'},
+  //   {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'}
+  // ]);
+  
+   var items = new vis.DataSet(
+
+[{"id":0,"content":"##% Participation in Arts/Rec","start":"2025-01-01"},{"id":9,"content":"100% 3rd-Graders","start":"2022-01-01"},{"id":10,"content":"100% 9th-Graders","start":"2023-01-01"},{"id":11,"content":"100% Arts & Rec Student Participation","start":"2025-01-01"},{"id":12,"content":"100% College and Career Readiness","start":"2023-01-01"},{"id":13,"content":"100% Graduation","start":"2025-01-01"},{"id":14,"content":"1000 I-Read Volunteers","start":"2020-01-01"},{"id":16,"content":"85% Graduation","start":"2022-01-01"},{"id":17,"content":"Kindergarten Ready","start":"2022-01-01"},{"id":18,"content":"Arts Funding Increases by $##","start":"2017-01-01"},{"id":19,"content":"Arts Incubator Program","start":"2023-01-01"},{"id":20,"content":"CEANCI on ramp aligned with Pathways","start":"2021-01-01"},{"id":21,"content":"Collaborative Transportation","start":"2019-01-01"},{"id":22,"content":"Common Ground (Stories) Established","start":"2019-01-01"},{"id":23,"content":"Coordinated Child+Parent Services","start":"2021-01-01"},{"id":24,"content":"Early Childhood","start":"2018-01-01"},{"id":25,"content":"Creative Economy $##","start":"2025-01-01"},{"id":26,"content":"Cross Promotion Increases ##%","start":"2021-01-01"},{"id":27,"content":"Cultural Plan Completed","start":"2019-01-01"},{"id":28,"content":"Math Mentor/Tutors","start":"2020-01-01"},{"id":29,"content":"I-Read Volunteers","start":"2017-01-01"},{"id":30,"content":"Every Neighborhood has Group/Association","start":"2024-01-01"},{"id":31,"content":"Excel RFD serves 300 students","start":"2022-01-01"},{"id":32,"content":"Great-Lakes PBL","start":"2021-01-01"},{"id":33,"content":"Health Care Engagement on early EC","start":"2018-01-01"},{"id":34,"content":"Local Government Cultural Policies Enacted","start":"2019-01-01"},{"id":35,"content":"Love Your City 82% agree","start":"2021-01-01"},{"id":36,"content":"Love Your City 95% agree","start":"2025-01-01"},{"id":37,"content":"Net Promoter Score +10","start":"2021-01-01"},{"id":38,"content":"Net Promoter Score +35","start":"2023-01-01"},{"id":39,"content":"Net Promoter Score +50","start":"2025-01-01"},{"id":40,"content":"Net Promoter Score -7","start":"2019-01-01"},{"id":41,"content":"Pathways 2","start":"2019-01-01"},{"id":42,"content":"Pride Builder Network Established","start":"2018-01-01"},{"id":43,"content":"RAAC Funded to guide Cultural Plan","start":"2018-01-01"},{"id":44,"content":"RACVB Quality of Life Survey ##% strongly agree","start":"2025-01-01"},{"id":45,"content":"ROE Asset Database","start":"2018-01-01"},{"id":46,"content":"Region Wide MS Math Mentor/Tutor","start":"2022-01-01"},{"id":47,"content":"Riverfront Redevelopment Completed","start":"2025-01-01"},{"id":48,"content":"Rockford Promise Endowment","start":"2021-01-01"},{"id":49,"content":"Single Point of Entry Data System 1","start":"2021-01-01"},{"id":50,"content":"Title II PBL Across Region","start":"2022-01-01"},{"id":51,"content":"Web traffic for Arts/Rec increases by ##%","start":"2021-01-01"}]
+
+  );
+  
+  
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script>
+
+
+</body>
+</html>
