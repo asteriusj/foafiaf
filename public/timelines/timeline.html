@@ -13,9 +13,85 @@
   <script src="timeline.js"></script>
   
   <script src="../dist/vis.js"></script>
+  <!--<link href="../dist/vis.css" rel="stylesheet" type="text/css" />-->
   <link href="../dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+ <style type="text/css">
+    body, input {
+      font: 12pt verdana;
+    }
+
+    /* custom styles for individual items, load this after vis.css/vis-timeline-graph2d.min.css */
+
+    .vis-item.output {
+      background-color: #27a9e1;
+      border-color: grey;
+    }
+    
+    .vis-item.outcome {
+      background-color: #0099b5;
+      border-color: grey;
+    }
+    
+    
+    .vis-item.green {
+      background-color: greenyellow;
+      border-color: green;
+    }
+
+    /* create a custom sized dot at the bottom of the red item */
+    .vis-item.red {
+      background-color: red;
+      border-color: darkred;
+      color: white;
+      font-family: monospace;
+      box-shadow: 0 0 10px gray;
+    }
+    .vis-item.vis-dot.red {
+      border-radius: 10px;
+      border-width: 10px;
+    }
+    .vis-item.vis-line.red {
+      border-width: 5px;
+    }
+    .vis-item.vis-box.red {
+      border-radius: 0;
+      border-width: 2px;
+      font-size: 24pt;
+      font-weight: bold;
+    }
+
+    .vis-item.orange {
+      background-color: gold;
+      border-color: orange;
+    }
+    .vis-item.vis-selected.orange {
+      /* custom colors for selected orange items */
+      background-color: orange;
+      border-color: orangered;
+    }
+
+    .vis-item.magenta {
+      background-color: magenta;
+      border-color: purple;
+      color: white;
+    }
+
+    /* our custom classes overrule the styles for selected events,
+       so lets define a new style for the selected events */
+    .vis-item.vis-selected {
+      background-color: white;
+      border-color: black;
+      color: black;
+      box-shadow: 0 0 10px gray;
+    }
+  </style>
+    
   
+
+
+
 </head>
 <body>
 
@@ -24,6 +100,26 @@
 </p>
 
 <div id="visualization"></div>
+
+<!--<div id="Strategy_Access_for_All">-->
+<!--  <h3>Strategy_Access_for_All</h3>-->
+<!--</div>-->
+<div id="Spoke_Arts&Recreation">
+  <h3>Spoke_Arts</h3>
+</div>
+<div id="Spoke_Education">
+  <h3>Spoke_Education</h3>
+</div>
+<!--<div id="Spoke_EconomyJobs">-->
+<!--  <h3>Spoke_EconomyJobs</h3>-->
+<!--</div>-->
+<!--<div id="Spoke_HealthyLifestyles">-->
+<!--  <h3>Spoke_HealthyLifestyles</h3>-->
+<!--</div>-->
+<div id="Spoke_UnityPrideCulture">
+  <h3>Spoke_UnityPrideCulture</h3>
+</div>
+
 
 
 <script type="text/javascript">
@@ -54,43 +150,133 @@
       var result =  getTheData(dataURL, function(err, json) {
       
           let data = json;
-          dataReceived(data, function(wheelJS) {
-              //console.log('wheelJS', wheelJS)
+          dataReceived(data, function(datasets) {
+              console.log('datasets', datasets)
+              
               /*global whenready*/
-              //whenready();    
+              whenready(datasets);    
         });
   
             
       });
 
+</script>
+
+<script type="text/javascript">
+function whenready(datasets){
+    console.log('datasets', JSON.stringify(datasets))
+    console.log('datasets.length', datasets.length)
+    
+    for (let i=0; i<datasets.length; i++) {
+      var obj = datasets[i];
+      console.log('obj', obj)
+    }
+    
+let list = [
+    'Spoke_Strategy_Access_for_All',
+    'Spoke_Arts&Recreation',
+    'Spoke_Education',
+    'Spoke_EconomyJobs',
+    'Spoke_HealthyLifestyles',
+    'Spoke_UnityPrideCulture'
+];
+for (let i=0; i<list.length; i++) {
+        let _parentid = "foafiaf:" + list[i] ;
+} // end for
 
 
-  // DOM element where the Timeline will be attached
-  var container = document.getElementById('visualization');
-
-  // Create a DataSet (allows two way data-binding)
-  // var items = new vis.DataSet([
-  //   {id: 1, content: 'item 1', start: '2014-04-20'},
-  //   {id: 2, content: 'item 2', start: '2014-04-14'},
-  //   {id: 3, content: 'item 3', start: '2014-04-18'},
-  //   {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
-  //   {id: 5, content: 'item 5', start: '2014-04-25'},
-  //   {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'}
-  // ]);
+    // DOM element where the Timeline will be attached
+    var container = document.getElementById('visualization');
+    var container_1 = document.getElementById('Strategy_Access_for_All');
+    var container_2 = document.getElementById('Spoke_Arts&Recreation');
+    var container_3 = document.getElementById('Spoke_Education');
+    var container_4 = document.getElementById('Spoke_EconomyJobs');
+    var container_5 = document.getElementById('Spoke_HealthyLifestyles');
+    var container_6 = document.getElementById('Spoke_UnityPrideCulture');
   
-   var items = new vis.DataSet(
-
-[{"id":0,"content":"##% Participation in Arts/Rec","start":"2025-01-01"},{"id":9,"content":"100% 3rd-Graders","start":"2022-01-01"},{"id":10,"content":"100% 9th-Graders","start":"2023-01-01"},{"id":11,"content":"100% Arts & Rec Student Participation","start":"2025-01-01"},{"id":12,"content":"100% College and Career Readiness","start":"2023-01-01"},{"id":13,"content":"100% Graduation","start":"2025-01-01"},{"id":14,"content":"1000 I-Read Volunteers","start":"2020-01-01"},{"id":16,"content":"85% Graduation","start":"2022-01-01"},{"id":17,"content":"Kindergarten Ready","start":"2022-01-01"},{"id":18,"content":"Arts Funding Increases by $##","start":"2017-01-01"},{"id":19,"content":"Arts Incubator Program","start":"2023-01-01"},{"id":20,"content":"CEANCI on ramp aligned with Pathways","start":"2021-01-01"},{"id":21,"content":"Collaborative Transportation","start":"2019-01-01"},{"id":22,"content":"Common Ground (Stories) Established","start":"2019-01-01"},{"id":23,"content":"Coordinated Child+Parent Services","start":"2021-01-01"},{"id":24,"content":"Early Childhood","start":"2018-01-01"},{"id":25,"content":"Creative Economy $##","start":"2025-01-01"},{"id":26,"content":"Cross Promotion Increases ##%","start":"2021-01-01"},{"id":27,"content":"Cultural Plan Completed","start":"2019-01-01"},{"id":28,"content":"Math Mentor/Tutors","start":"2020-01-01"},{"id":29,"content":"I-Read Volunteers","start":"2017-01-01"},{"id":30,"content":"Every Neighborhood has Group/Association","start":"2024-01-01"},{"id":31,"content":"Excel RFD serves 300 students","start":"2022-01-01"},{"id":32,"content":"Great-Lakes PBL","start":"2021-01-01"},{"id":33,"content":"Health Care Engagement on early EC","start":"2018-01-01"},{"id":34,"content":"Local Government Cultural Policies Enacted","start":"2019-01-01"},{"id":35,"content":"Love Your City 82% agree","start":"2021-01-01"},{"id":36,"content":"Love Your City 95% agree","start":"2025-01-01"},{"id":37,"content":"Net Promoter Score +10","start":"2021-01-01"},{"id":38,"content":"Net Promoter Score +35","start":"2023-01-01"},{"id":39,"content":"Net Promoter Score +50","start":"2025-01-01"},{"id":40,"content":"Net Promoter Score -7","start":"2019-01-01"},{"id":41,"content":"Pathways 2","start":"2019-01-01"},{"id":42,"content":"Pride Builder Network Established","start":"2018-01-01"},{"id":43,"content":"RAAC Funded to guide Cultural Plan","start":"2018-01-01"},{"id":44,"content":"RACVB Quality of Life Survey ##% strongly agree","start":"2025-01-01"},{"id":45,"content":"ROE Asset Database","start":"2018-01-01"},{"id":46,"content":"Region Wide MS Math Mentor/Tutor","start":"2022-01-01"},{"id":47,"content":"Riverfront Redevelopment Completed","start":"2025-01-01"},{"id":48,"content":"Rockford Promise Endowment","start":"2021-01-01"},{"id":49,"content":"Single Point of Entry Data System 1","start":"2021-01-01"},{"id":50,"content":"Title II PBL Across Region","start":"2022-01-01"},{"id":51,"content":"Web traffic for Arts/Rec increases by ##%","start":"2021-01-01"}]
-
-  );
+    
+    // Create a DataSet (allows two way data-binding)
+    // var items = new vis.DataSet([
+    //   {id: 1, content: 'item 1', start: '2014-04-20'},
+    //   {id: 2, content: 'item 2', start: '2014-04-14'},
+    //   {id: 3, content: 'item 3', start: '2014-04-18'},
+    //   {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
+    //   {id: 5, content: 'item 5', start: '2014-04-25'},
+    //   {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'}
+    // ]);
+    
+  //   var items = new vis.DataSet(
   
+  // // [{"id":0,"content":"##% Participation in Arts/Rec","start":"2025-01-01"},{"id":9,"content":"100% 3rd-Graders","start":"2022-01-01"},{"id":10,"content":"100% 9th-Graders","start":"2023-01-01"},{"id":11,"content":"100% Arts & Rec Student Participation","start":"2025-01-01"},{"id":12,"content":"100% College and Career Readiness","start":"2023-01-01"},{"id":13,"content":"100% Graduation","start":"2025-01-01"},{"id":14,"content":"1000 I-Read Volunteers","start":"2020-01-01"},{"id":16,"content":"85% Graduation","start":"2022-01-01"},{"id":17,"content":"Kindergarten Ready","start":"2022-01-01"},{"id":18,"content":"Arts Funding Increases by $##","start":"2017-01-01"},{"id":19,"content":"Arts Incubator Program","start":"2023-01-01"},{"id":20,"content":"CEANCI on ramp aligned with Pathways","start":"2021-01-01"},{"id":21,"content":"Collaborative Transportation","start":"2019-01-01"},{"id":22,"content":"Common Ground (Stories) Established","start":"2019-01-01"},{"id":23,"content":"Coordinated Child+Parent Services","start":"2021-01-01"},{"id":24,"content":"Early Childhood","start":"2018-01-01"},{"id":25,"content":"Creative Economy $##","start":"2025-01-01"},{"id":26,"content":"Cross Promotion Increases ##%","start":"2021-01-01"},{"id":27,"content":"Cultural Plan Completed","start":"2019-01-01"},{"id":28,"content":"Math Mentor/Tutors","start":"2020-01-01"},{"id":29,"content":"I-Read Volunteers","start":"2017-01-01"},{"id":30,"content":"Every Neighborhood has Group/Association","start":"2024-01-01"},{"id":31,"content":"Excel RFD serves 300 students","start":"2022-01-01"},{"id":32,"content":"Great-Lakes PBL","start":"2021-01-01"},{"id":33,"content":"Health Care Engagement on early EC","start":"2018-01-01"},{"id":34,"content":"Local Government Cultural Policies Enacted","start":"2019-01-01"},{"id":35,"content":"Love Your City 82% agree","start":"2021-01-01"},{"id":36,"content":"Love Your City 95% agree","start":"2025-01-01"},{"id":37,"content":"Net Promoter Score +10","start":"2021-01-01"},{"id":38,"content":"Net Promoter Score +35","start":"2023-01-01"},{"id":39,"content":"Net Promoter Score +50","start":"2025-01-01"},{"id":40,"content":"Net Promoter Score -7","start":"2019-01-01"},{"id":41,"content":"Pathways 2","start":"2019-01-01"},{"id":42,"content":"Pride Builder Network Established","start":"2018-01-01"},{"id":43,"content":"RAAC Funded to guide Cultural Plan","start":"2018-01-01"},{"id":44,"content":"RACVB Quality of Life Survey ##% strongly agree","start":"2025-01-01"},{"id":45,"content":"ROE Asset Database","start":"2018-01-01"},{"id":46,"content":"Region Wide MS Math Mentor/Tutor","start":"2022-01-01"},{"id":47,"content":"Riverfront Redevelopment Completed","start":"2025-01-01"},{"id":48,"content":"Rockford Promise Endowment","start":"2021-01-01"},{"id":49,"content":"Single Point of Entry Data System 1","start":"2021-01-01"},{"id":50,"content":"Title II PBL Across Region","start":"2022-01-01"},{"id":51,"content":"Web traffic for Arts/Rec increases by ##%","start":"2021-01-01"}]
   
+  //   );
+    
+  //   var items_1 = new vis.DataSet(
+  
+  //   );
+     
+    var items_2 = new vis.DataSet(
+  [{"id":0,"content":"##% Participation in Arts/Rec","title":"Title: ##% Participation in Arts/Rec Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":1,"content":"100% Arts & Rec Student Participation","title":"Title: 100% Arts & Rec Student Participation Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":2,"content":"Arts Funding Increases by $##","title":"Title: Arts Funding Increases by $## Outcome","category":"Outcome","className":"outcome","start":"2017-01-01"},{"id":3,"content":"Arts Incubator Program","title":"Title: Arts Incubator Program Output","category":"Output","className":"output","start":"2023-01-01"},{"id":4,"content":"Creative Economy $##","title":"Title: Creative Economy $## Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":5,"content":"Cross Promotion Increases ##%","title":"Title: Cross Promotion Increases ##% Outcome","category":"Outcome","className":"outcome","start":"2021-01-01"},{"id":6,"content":"Cultural Plan Completed","title":"Title: Cultural Plan Completed Output","category":"Output","className":"output","start":"2019-01-01"},{"id":7,"content":"Local Government Cultural Policies Enacted","title":"Title: Local Government Cultural Policies Enacted Output","category":"Output","className":"output","start":"2019-01-01"},{"id":8,"content":"RAAC Funded to guide Cultural Plan","title":"Title: RAAC Funded to guide Cultural Plan Output","category":"Output","className":"output","start":"2018-01-01"},{"id":9,"content":"Riverfront Redevelopment Completed","title":"Title: Riverfront Redevelopment Completed Output","category":"Output","className":"output","start":"2025-01-01"},{"id":10,"content":"Web traffic for Arts/Rec increases by ##%","title":"Title: Web traffic for Arts/Rec increases by ##% Outcome","category":"Outcome","className":"outcome","start":"2021-01-01"}]
+    );
+  
+    var items_3 = new vis.DataSet(
+  [{"id":0,"content":"100% 3rd-Graders","title":"Title: 100% 3rd-Graders Outcome","category":"Outcome","className":"outcome","start":"2022-01-01"},{"id":1,"content":"100% 9th-Graders","title":"Title: 100% 9th-Graders Outcome","category":"Outcome","className":"outcome","start":"2023-01-01"},{"id":2,"content":"100% College and Career Readiness","title":"Title: 100% College and Career Readiness Outcome","category":"Outcome","className":"outcome","start":"2023-01-01"},{"id":3,"content":"100% Graduation","title":"Title: 100% Graduation Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":4,"content":"1000 I-Read Volunteers","title":"Title: 1000 I-Read Volunteers Output","category":"Output","className":"output","start":"2020-01-01"},{"id":5,"content":"85% Graduation","title":"Title: 85% Graduation Outcome","category":"Outcome","className":"outcome","start":"2022-01-01"},{"id":6,"content":"Kindergarten Ready","title":"Title: Kindergarten Ready Outcome","category":"Outcome","className":"outcome","start":"2022-01-01"},{"id":7,"content":"CEANCI on ramp aligned with Pathways","title":"Title: CEANCI on ramp aligned with Pathways Output","category":"Output","className":"output","start":"2021-01-01"},{"id":8,"content":"Collaborative Transportation","title":"Title: Collaborative Transportation Output","category":"Output","className":"output","start":"2019-01-01"},{"id":9,"content":"Coordinated Child+Parent Services","title":"Title: Coordinated Child+Parent Services Output","category":"Output","className":"output","start":"2021-01-01"},{"id":10,"content":"Early Childhood","title":"Title: Early Childhood Output","category":"Output","className":"output","start":"2018-01-01"},{"id":11,"content":"Math Mentor/Tutors","title":"Title: Math Mentor/Tutors Output","category":"Output","className":"output","start":"2020-01-01"},{"id":12,"content":"I-Read Volunteers","title":"Title: I-Read Volunteers Output","category":"Output","className":"output","start":"2017-01-01"},{"id":13,"content":"Excel RFD serves 300 students","title":"Title: Excel RFD serves 300 students Output","category":"Output","className":"output","start":"2022-01-01"},{"id":14,"content":"Great-Lakes PBL","title":"Title: Great-Lakes PBL Output","category":"Output","className":"output","start":"2021-01-01"},{"id":15,"content":"Health Care Engagement on early EC","title":"Title: Health Care Engagement on early EC Output","category":"Output","className":"output","start":"2018-01-01"},{"id":16,"content":"Pathways 2","title":"Title: Pathways 2 Output","category":"Output","className":"output","start":"2019-01-01"},{"id":17,"content":"ROE Asset Database","title":"Title: ROE Asset Database Output","category":"Output","className":"output","start":"2018-01-01"},{"id":18,"content":"Region Wide MS Math Mentor/Tutor","title":"Title: Region Wide MS Math Mentor/Tutor Output","category":"Output","className":"output","start":"2022-01-01"},{"id":19,"content":"Rockford Promise Endowment","title":"Title: Rockford Promise Endowment Output","category":"Output","className":"output","start":"2021-01-01"},{"id":20,"content":"Single Point of Entry Data System 1","title":"Title: Single Point of Entry Data System 1 Output","category":"Output","className":"output","start":"2021-01-01"},{"id":21,"content":"Title II PBL Across Region","title":"Title: Title II PBL Across Region Output","category":"Output","className":"output","start":"2022-01-01"}]
+    );
+  
+  //   var items_4 = new vis.DataSet(
+  // []
+  //   );
+    
+  //   var items_5 = new vis.DataSet(
+  // []
+  //   );
+    
+    var items_6 = new vis.DataSet(
+  
+  [{"id":0,"content":"Common Ground (Stories) Established","title":"Title: Common Ground (Stories) Established Output","category":"Output","className":"output","start":"2019-01-01"},{"id":1,"content":"Every Neighborhood has Group/Association","title":"Title: Every Neighborhood has Group/Association Output","category":"Output","className":"output","start":"2024-01-01"},{"id":2,"content":"Love Your City 82% agree","title":"Title: Love Your City 82% agree Outcome","category":"Outcome","className":"outcome","start":"2021-01-01"},{"id":3,"content":"Love Your City 95% agree","title":"Title: Love Your City 95% agree Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":4,"content":"Net Promoter Score +10","title":"Title: Net Promoter Score +10 Outcome","category":"Outcome","className":"outcome","start":"2021-01-01"},{"id":5,"content":"Net Promoter Score +35","title":"Title: Net Promoter Score +35 Outcome","category":"Outcome","className":"outcome","start":"2023-01-01"},{"id":6,"content":"Net Promoter Score +50","title":"Title: Net Promoter Score +50 Outcome","category":"Outcome","className":"outcome","start":"2025-01-01"},{"id":7,"content":"Net Promoter Score -7","title":"Title: Net Promoter Score -7 Outcome","category":"Outcome","className":"outcome","start":"2019-01-01"},{"id":8,"content":"Pride Builder Network Established","title":"Title: Pride Builder Network Established Output","category":"Output","className":"output","start":"2018-01-01"}]
+  
+    );
+    
 
-  // Configuration for the Timeline
-  var options = {};
 
-  // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+    
+    
+    // Configuration for the Timeline
+    var options = {
+      align: 'left',
+      start: '2017',
+      end: '2026'
+    };
+
+// for (let i=0; i<list.length; i++) {
+//         let _parentid = "foafiaf:" + list[i] ;
+//         console.log(_parentid)
+//         // let obj = list[i];
+//         // console.log('obj', obj)
+//         let ds = datasets[i];
+//         console.log('ds', i, ds)
+        
+//         var items = ds;
+//         if ( i ==1 ) { var timeline1 = new vis.Timeline(container_1, items, options); };
+//         if ( i ==2 ) { var timeline2 = new vis.Timeline(container_2, items, options); };
+//         if ( i ==3 ) { var timeline3 = new vis.Timeline(container_3, items, options); };
+//         if ( i ==4 ) { var timeline4 = new vis.Timeline(container_4, items, options); };
+//         if ( i ==5 ) { var timeline5 = new vis.Timeline(container_5, items, options); };
+//         if ( i ==6 ) { var timeline6 = new vis.Timeline(container_6, items, options); };
+// } // end for
+
+
+    // Create a Timeline
+    //var timeline = new vis.Timeline(container, items, options);
+    //var timeline1 = new vis.Timeline(container_1, items_1, options);
+    var timeline2 = new vis.Timeline(container_2, items_2, options);
+    var timeline3 = new vis.Timeline(container_3, items_3, options);
+    //var timeline4 = new vis.Timeline(container_4, items_4, options);
+    //var timeline5 = new vis.Timeline(container_5, items_5, options);
+    var timeline6 = new vis.Timeline(container_6, items_6, options);
+
+
+}
 </script>
 
 
