@@ -14,7 +14,6 @@ function dataReceived(data, cb) {
         rawDataSet = result;
         
     });
-
 	
 	//console.log('rawDataSet', JSON.stringify(rawDataSet))
 	//console.log('rawDataSet', rawDataSet)
@@ -37,33 +36,27 @@ function buildDataSet(graph, cb) {
 	for (let s=0; s<spokeNodes.length; s++) {
 	    var _spoke = spokeNodes[s]['@id'] || null;
 	    if (_spoke) _spoke = _spoke.replace('foafiaf:', '') ;
+	    if (_spoke) _spoke = _spoke.replace('&', '') ;
 	    
 	    if (!list.includes(_spoke)) list.push(_spoke)
 	}
-	
-// let list = [
-//     'Spoke_Strategy_Access_for_All',
-//     'Spoke_Arts&Recreation',
-//     'Spoke_Education',
-//     'Spoke_EconomyJobs',
-//     'Spoke_HealthyLifestyles',
-//     'Spoke_UnityPrideCulture'
-// ];
+
 	  
     let myDataSets = []
-  
-    console.log('list', list)
+    
+    //console.log('list', list)
     for (let i=0; i<list.length; i++) {
         let _parentid = "foafiaf:" + list[i] ;
         let _id = list[i] ;
         let _name = list[i].replace('_',' ') ;
         let measureNodes = getNodesByParent(graph, 'foafiaf:Measure', 'foafiaf:Spoke', _parentid)
-        //console.log('measureNodes', measureNodes)
         let dataset = prepNodes(measureNodes);
         
         if (dataset.length) {
             // add div with h3 tags
             var droot = setDiv(_id, _name)
+            
+            // var froot = setCbx(_id, _name)
             
             var tline = setTimeline(_id, dataset)
 
@@ -110,6 +103,39 @@ function setDiv(_id, _text){
     return(droot)
 }
 
+function setCbx(_id, _text){
+    
+    var node = document.createElement("input");
+    
+    var atr1 = document.createAttribute("type"); 
+    atr1.value = "checkbox";  
+    node.setAttributeNode(atr1);
+    
+    var att2 = document.createAttribute("name"); 
+    att2.value = "cbxspokes";  
+    node.setAttributeNode(att2);
+    
+    var attv = document.createAttribute("value"); 
+    attv.value = _id;  
+    node.setAttributeNode(attv);
+    
+    var att3 = document.createAttribute("onclick"); 
+    att3.value = "toggle(" + _id + ", this)";  
+    node.setAttributeNode(att3);
+    
+    var att4 = document.createAttribute("checked"); 
+    node.setAttributeNode(att4);
+
+    //var label = document.createElement("H3");
+    // var htext = document.createTextNode(_text);
+    // node.appendChild(htext);
+    
+    var droot = document.getElementById('selectors').appendChild(node);
+    //console.log('droot', droot)
+
+    return(droot)
+}
+
 function prepNodes(measureNodes) {
     //console.log('prepNodes', measureNodes)
 
@@ -118,28 +144,42 @@ function prepNodes(measureNodes) {
 	for (let i = 0; i < measureNodes.length; i++) {
 	    let item = {}; //console.log('measureNodes[i]', measureNodes[i])
 		let _id = measureNodes[i]['@id'];
-		let _spoke = measureNodes[i]["foafiaf:Spoke"];
+		let _segment = measureNodes[i]["foafiaf:Segment"];
+		let _spoke = measureNodes[i]["foafiaf:Spoke"] || '';
+		
+		if (_spoke.length >1)  _spoke = _spoke[1] ;
+        if (typeof _spoke == 'string' || _spoke instanceof String) _spoke = _spoke.replace('&', '') ;
+		
 		let _strategy = measureNodes[i]["foafiaf:Strategy"];
+		let _project = measureNodes[i]["foafiaf:Project"];
 		let _start = measureNodes[i]["foafiaf:startdate"] || null;
 		let _end = measureNodes[i]["foafiaf:enddate"] || null;
+		let _status = measureNodes[i]["foafiaf:status"] || "";
+		let _color = measureNodes[i]["foafiaf:color"] || "";
 		let _content = measureNodes[i]["foafiaf:shortname"] || measureNodes[i]["rdfs:label"];
 		let _category = measureNodes[i]["foafiaf:categories"] || null;
 		
 		item.id = i;
-		item.group = _strategy;
+		item.group = _spoke.substring(_spoke.indexOf(":") + 1);
+		item.segment = _segment;
 		item.spoke = _spoke;
 		item.strategy = _strategy;
+		item.project = _project;
+		
+		item.status = _status;
+		item.color = _color;
 		item.content = _content;
-		item.title =  _category + ": " + _content + " " ;
+		
+		item.title =  _category + ": " + _content + " " 
+		if (_project !== "")  item.title = item.title + "\n" + "Project: " + _project ;
+		if (_status !== "")  item.title =  item.title + "\n" + "Status: " + _status ;
+		if (_color !== "")  item.title =  item.title + "\n" + "Color: " + _color ;
+		              
 		item.category = _category;
 		if (item.category === 'Output') {
-		  //  item.color = '27a9e1';
-		  //  item.className = 'cyan';
-		   //item.style = "color: #27a9e1; background-color: pink;"
 		   item.className = 'output'
 		}
 		if (item.category === 'Outcome') {
-		    //item.color = '0099b5';
 		    item.className = 'outcome'
 		}
 		
@@ -174,7 +214,11 @@ function prepNodes(measureNodes) {
     		var _dbotype = graph[i]['dbo:type'] || null;
             var _broader = graph[i]['skos:broader'] || null;
             var _strategy = graph[i]['foafiaf:Strategy'] || null;
-            var _spoke = graph[i]['foafiaf:Spoke'] || null;
+            var _spoke = graph[i]['foafiaf:Spoke'] || '';
+            
+            if (_spoke.length >1)  _spoke = _spoke[1] ;
+            if (typeof _spoke == 'string' || _spoke instanceof String) _spoke = _spoke.replace('&', '') ;
+            
             var _priority = graph[i]['foafiaf:priority'] || null;
             
             var addNode = false;
@@ -212,14 +256,21 @@ function prepNodes(measureNodes) {
             var _broader = graph[i]['skos:broader'] || null;
             var _project = graph[i]['foafiaf:Project'] || null;
             var _strategy = graph[i]['foafiaf:Strategy'] || null;
-            var _spoke = graph[i]['foafiaf:Spoke'] || null;
+            var _spoke = graph[i]['foafiaf:Spoke'] || '';
+            
+            // if (_spoke.length >1)  _spoke = _spoke[1] ;
+            if (typeof _spoke == 'string' || _spoke instanceof String) _spoke = _spoke.replace('&', '') ;
+            
+            //// if (parent_id === 'foafiaf:Spoke_FamilyNeigborhoods') console.log('parent_id _spoke', parent_id, _spoke)
+            
             var _priority = graph[i]['foafiaf:priority'] || null;
             
             var addNode = false;
             if ( (_dbotype === type) && (_type === 'skos:Concept') ) {              // filter all but nodes of dbotype
                 
                 
-                if ( (_dbotype === 'foafiaf:Measure') ) {                           
+                if ( (_dbotype === 'foafiaf:Measure') ) { 
+
                     if ( _spoke === parent_id ) {
                         addNode = true;
    
