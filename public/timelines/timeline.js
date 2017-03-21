@@ -170,12 +170,23 @@ function prepNodes(measureNodes) {
 		item.color = _color;
 		item.content = _content;
 		
+		
+		console.log('_category', _category)
+		console.log('_content', _content)
+		console.log('_project', _project)
+		console.log('_status', _status)
+		console.log('_color', _color)
+		console.log('_start', _start)
+		console.log('_end', _end)
 		item.title =  _category + ": " + _content + " " 
 		if (_project !== "")  item.title = item.title + "\n" + "Project: " + _project ;
 		if (_status !== "")  item.title =  item.title + "\n" + "Status: " + _status ;
 		if (_color !== "")  item.title =  item.title + "\n" + "Color: " + _color ;
-		              
-		item.category = _category;
+		if (_start !== "")  item.title =  item.title + "\n" + "Start: " + _start ;
+		if (_end !== "")  item.title =  item.title + "\n" + "End: " + _end ;
+		console.log('.title', item.title)
+		
+		item.category = _category;          // Output or Outcome??
 		if (item.category === 'Output') {
 		   item.className = 'output'
 		}
