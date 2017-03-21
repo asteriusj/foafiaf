@@ -109,6 +109,19 @@
             console.log('hide', "#" + id)
         }
     }
+    function showhide(className, obj) {
+        var $input = $(obj);
+        console.log("$input.prop('checked')", $input.prop('checked'))
+        if ($input.prop('checked')) {
+            $(className).display = 'block';   
+            $(className).show("fast");
+            console.log('show', className)
+        } else {
+            $(className).hide("slow");
+            $(className).display = 'none';
+            console.log('hide', className)
+        }
+    }
   </script>
 
 
@@ -149,6 +162,12 @@
 
 </div>
 
+<div id="categories">
+  
+  <input type="checkbox" name="cbxoutput" value="output" onclick="showhide('.vis-item.output', this)" checked> Outputs
+  <input type="checkbox" name="cbxoutcome" value="outcome" onclick="showhide('.vis-item.outcome', this)" checked> Outcomes
+  
+</div>
 
 <script type="text/javascript">
   let datalink = null;
