@@ -88,7 +88,28 @@
     }
   </style>
     
-  
+  <script>
+    function toggle(id, obj) {
+        console.log('id',id)
+        //console.log('obj', obj)
+        var $input = $(obj);
+        console.log("$input.prop('checked')", $input.prop('checked'))
+        
+        if ($input.prop('checked')) {
+          
+            console.log('$(#id)',$("#" + id))
+            $("#" + id).display = 'block';   
+            $("#" + id).show("fast");
+            console.log('show', "#" + id)
+            
+        } else {
+            console.log('$(#id)',$("#" + id))
+            $("#" + id).hide("slow");
+            $("#" + id).display = 'none';
+            console.log('hide', "#" + id)
+        }
+    }
+  </script>
 
 
 
@@ -102,12 +123,37 @@
   You can move and zoom the timelines.
 </p>
 
+
 <div id="visualization"></div>
+
+
+<div id="selectors">
+  
+  <input type="checkbox" name="cbxspokes" value="Spoke_ArtsRecreation" onclick="toggle('Spoke_ArtsRecreation', this)" checked> Spoke_ArtsRecreation
+  <input type="checkbox" name="cbxspokes" value="Spoke_EconomyJobs" onclick="toggle('Spoke_EconomyJobs', this)" checked> EconomyJobs
+  
+  <input type="checkbox" name="cbxspokes" value="Spoke_Education" onclick="toggle('Spoke_Education', this)" checked> Education
+  <input type="checkbox" name="cbxspokes" value="Spoke_FamilyNeigborhoods" onclick="toggle('Spoke_FamilyNeigborhoods', this)" checked> FamilyNeigborhoods
+  
+  <input type="checkbox" name="cbxspokes" value="Spoke_FundingAlignment" onclick="toggle('Spoke_FundingAlignment', this)" checked>  FundingAlignment
+  <input type="checkbox" name="cbxspokes" value="Spoke_HealthyLifestyles" onclick="toggle('Spoke_HealthyLifestyles', this)" checked> HealthyLifestyles
+  
+  <input type="checkbox" name="cbxspokes" value="Spoke_LeadershipYouth" onclick="toggle('Spoke_LeadershipYouth', this)" checked> LeadershipYouth
+  <input type="checkbox" name="cbxspokes" value="Spoke_LivingtheBrand" onclick="toggle('Spoke_LivingtheBrand', this)" checked> LivingtheBrand
+  
+  <input type="checkbox" name="cbxspokes" value="Spoke_PhysicalInfrastructure" onclick="toggle('Spoke_PhysicalInfrastructure', this)" checked> PhysicalInfrastructure
+  <input type="checkbox" name="cbxspokes" value="Spoke_Planning" onclick="toggle('Spoke_Planning', this)" checked> Planning
+
+  <input type="checkbox" name="cbxspokes" value="Spoke_Quality" onclick="toggle('Spoke_Quality', this)" checked> Quality
+  <input type="checkbox" name="cbxspokes" value="Spoke_UnityPrideCulture" onclick="toggle('Spoke_UnityPrideCulture', this)" checked> UnityPrideCulture
+
+</div>
+
 
 <script type="text/javascript">
   let datalink = null;
-  //const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
-  const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+  const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
+  //const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
   
   function getTheData(dataURL, cb) {
     console.log('getTheData') //  retrieve graph data from jsonld file
@@ -133,6 +179,7 @@
       var result =  getTheData(dataURL, function(err, json) {
       
           let data = json;
+          // console.log('data', data)
           dataReceived(data, function(datasets) {
               console.log('datasets', datasets)
               
