@@ -5,29 +5,36 @@ var wheelJS = [
     "name": "SEGMENTS",
     "id": "foafiaf:Segments",
     "dbotype": "foafiaf:Segment",
+    "group": "Segment",
     "label": "SEGMENTS",
-    "name": "SEGMENTS",
+    "size": 10,
     "description": "",
     "children": [
       {
         "name": "SPOKES",
         "id": "foafiaf:Spokes",
         "dbotype": "foafiaf:Spoke",
+        "group": "Spoke",
         "label": "SPOKES",
+        "size": 100,
         "description": "",
         "children": [
           {
             "name": "STRATEGIES",
             "id": "foafiaf:Strategys",
-            "dbotype": "foafiaf:Stategy",
+            "dbotype": "foafiaf:Strategy",
+            "group": "Strategy",
             "label": "STRATEGIES",
+            "size": 1000,
             "description": "",
             "children": [
               {
                 "name": "PROJECTS",
                 "id": "foafiaf:Projects",
                 "dbotype": "foafiaf:Project",
+                "group": "Project",
                 "label": "PROJECTS",
+                "size": 10000,
                 "description": ""
               }
             ]
@@ -40,8 +47,8 @@ var wheelJS = [
     
 function getWheelJS(cb) {
 	console.log('getWheelJS')
-	//console.log(wheelJS)
-	console.log(JSON.stringify(wheelJS))
+	console.log(wheelJS)
+	//console.log(JSON.stringify(wheelJS))
 	if (cb) cb(null, wheelJS)
 	//return wheelJS
 }
@@ -65,7 +72,7 @@ function dataReceived(data, cb) {
     //wheelJS = segmentChilds;
     console.log(wheelJS)
     
-	for (var i = 0; i < segmentChilds.length; i++) {     // loop over all segments
+	for (var i = 0; i < segmentChilds.length; i++) {     // loop over all segments          
         //var segmentNode = segmentNodes[i]
         var segmentChild = segmentChilds[i]
         wheelJS[i+1] = segmentChild;                     // add segments next to default root branch
@@ -163,9 +170,10 @@ function dataReceived(data, cb) {
         	newChild.group = _group;
         	newChild.label = _label || _title;
         	newChild.name = _shortname || _label;
-        	newChild.description = _description || _definition;
         	
-
+        	newChild.size = 2220 + i ;                              // add to test partition.html
+        	
+        	newChild.description = _description || _definition;
         	
         	newChild.segment = _segment;
         	newChild.spoke = _spoke;
@@ -191,7 +199,7 @@ function dataReceived(data, cb) {
         	if (_startdate === 2016) newChild.color = "Blue"
         	if (_startdate === 2017) {
             	    newChild.color = "Cyan"
-            	    console.log('newChild.color', _id, _startdate, newChild.color)
+            	   // console.log('newChild.color', _id, _startdate, newChild.color)
             	}
         	if (_startdate === 2018) newChild.color = "Green"
         	if (_startdate === 2019) newChild.color = "Yellow"
