@@ -35,9 +35,17 @@ getWheelJS( function(err, root) {
     
     var g = vis.selectAll("g")
           .data(partition.nodes(root))
-        .enter().append("svg:g")
+        .enter()
+        .append("svg:g")
           .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
-          .on("click", click);
+        //   .on("click", click);
+          .on("click", click)
+          .on("dblclick", dblclick)
+          .on("contextmenu", contextmenu)
+          .on("mouseover", mouseover)
+          
+        //  .append("title")
+            // .text(function(t) { return getTitle(t)}) ;
     
     var kx = w / root.dx,
           ky = h / 1;
@@ -45,7 +53,13 @@ getWheelJS( function(err, root) {
     g.append("svg:rect")
           .attr("width", root.dy * kx)
           .attr("height", function(d) { return d.dx * ky; })
-          .attr("class", function(d) { return d.children ? "parent" : "child"; });
+          .attr("class", function(d) { return d.children ? "parent" : "child"; })
+          
+        //   .append("title")
+        //         .text(function(t) { return getTitle(t)}) 
+                
+        //   .on("dblclick", function() { dblclick(t); })
+        //   .on("contextmenu", function() { contextmenu(t); }) ;
     
     g.append("svg:text")
           .attr("transform", transform)
@@ -53,17 +67,22 @@ getWheelJS( function(err, root) {
           .style("opacity", function(d) { return d.dx * ky > 12 ? 1 : 0; })
           .text(function(d) { return d.name; })
           
-    g.append("title")
-                .text(function(t) { return getTitle(t)}) ;      
+        //   .append("title")
+        //         .text(function(t) { return getTitle(t)}) 
+                
+        //   .on("dblclick", function() { dblclick(t); })
+        //   .on("contextmenu", function() { contextmenu(t); }) ;      
           
     
     d3.select(window)
           .on("click", function() { click(root); })
+
     
     // .onclick handler
      function click(d) {
         if (!d.children) return;
     
+        console.log('onclick d', d)
         kx = (d.y ? w - 40 : w) / (1 - d.y);
         ky = h / d.dx;
         x.domain([d.y, 1]).range([d.y ? 40 : 0, w]);
@@ -87,23 +106,31 @@ getWheelJS( function(err, root) {
     // add
     // .ondblClick handler
     function dblclick(d) {
-            console.log('dblclick', d)
-            let msg = getDetails(d)
-              window.confirm(msg)
+        if (!d.children) return;
+
+        console.log('dblclick d', d)
+        let msg = getDetails(d)
+        window.confirm(msg)
     }
     // .contextmenu handler
     function contextmenu(d) {
-              console.log('contextmenu', d)
-              let msg = getDetails(d)
-              //window.confirm(msg)
-              let comments = window.prompt(msg, "Comments:")
-              if (comments !== "Comments:") {
-                console.log('comments', comments)
-                sendComment(comments)
-              }
-    }
+        if (!d.children) return;
         
-
+        console.log('contextmenu', d)
+        let msg = getDetails(d)
+        //window.confirm(msg)
+        let comments = window.prompt(msg, "Comments:")
+        if (comments !== "Comments:") {
+            console.log('comments', comments)
+            sendComment(comments)
+        }
+    }
+    // .hover handler
+    function mouseover(d) {
+        if (!d.children) return;
+        console.log('mouseover', d)
+        getDetails(d)   
+    }
   function transform(d) {
     return "translate(8," + d.dx * ky / 2 + ")";
   }
