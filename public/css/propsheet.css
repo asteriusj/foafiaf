@@ -1,0 +1,71 @@
+/* css styles for property sheet */
+
+#propsheet_data {
+    display: block;
+    position: fixed;
+    height: 300px;
+    width: 300px;
+    z-index: 30;
+    background-color:transparent;
+    padding: 5px;
+    border: 0 solid #000;
+    top: 50;
+    left: 50
+}
+.propsheet-content {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 7px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 7px
+}
+.propsheet-content {
+    *border: 1px solid;
+    *border-color: #CCC #DDD #CCC;
+    background: #FFF;
+    padding: 3px ;
+}
+.propsheet-content:nth-child(1n) {
+    border: none
+}
+.propsheet-content {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -khtml-border-radius: 10px
+}
+.propsheet-header {
+    padding: 2px 12px ;
+    color: navy;
+}
+.propsheet-body {padding: 2px 12px;}
+.propsheet-footer {
+    padding: 2px 12px;
+    background-color: transparent;
+    color: navy;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: navy;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.close:hover,
+.close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
