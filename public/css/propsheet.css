@@ -1,7 +1,7 @@
 /* css styles for property sheet */
 
 #propsheet_data {
-    display: block;
+    display: none;
     position: fixed;
     height: 300px;
     width: 300px;
@@ -34,11 +34,15 @@
 }
 .propsheet-header {
     padding: 2px 12px ;
+    font-size: larger;
+    font-style: bold;
     color: navy;
 }
 .propsheet-body {padding: 2px 12px;}
 .propsheet-footer {
     padding: 2px 12px;
+    font-size: smaller;
+    font-style: italic;
     background-color: transparent;
     color: navy;
 }
