@@ -8,74 +8,75 @@
     <meta name="description" content="A visualisation of projects">
     
     <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+    
     <script type="text/javascript" src="/dist/d3.js"></script>
     <script type="text/javascript" src="/dist/d3.layout.js"></script>
     <script type="text/javascript" src="/js/iw.js"></script>
 	  <script type="text/javascript" src="/js/utils.js"></script>
-	  <script type="text/javascript" src="partition.js"></script>
+	  
+	  <script type="text/javascript" src="/js/partition.js"></script>
+    <link rel="stylesheet" href="/css/partition.css">
+	  
 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     
 	   <script src="/js/smtp.js"></script>
      <script src="/js/spin.min.js"></script>
-    
-<style type="text/css">
-    /*view-source:http://mbostock.github.io/d3/talk/20111018/partition.html*/
+ 
 
-.chart {
-  display: block;
-  margin: auto;
-  margin-top: 60px;
-  font-size: 11px;
-}
 
-rect {
-  stroke: #eee;
-  fill: #aaa;
-  fill-opacity: .8;
-}
 
-rect.parent {
-  cursor: pointer;
-  fill: steelblue;
-}
-
-/*text {*/
-/*  pointer-events: none;*/
-/*}*/
-
-text {
-  font: 11px sans-serif;
-  cursor: pointer;
-}
-
-title {
-    display: block;
-}
-
-h1 {
-  text-align: center;
-  margin: .5em 0;
-}
-
-.wrapper {
-  margin-left: 120px;
-}
-
-blockquote {
-  width: 720px;
-}
-
-p#intro {
-  margin-left: 120px;
-}
-
-</style>
     
 </head>
 <body>
+
+<!-- PropSheet Data -->
+<div id="propsheet_data" class="content ui-widget-content">
+  <div class="propsheet-content">
+    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
+    <div class="propsheet-header">
+      <h2>PropSheet Header</h2>
+    </div>
+    <div class="propsheet-body">
+      <p>Some text in the PropSheet Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="propsheet-footer">
+      <h3>PropSheet Footer</h3>
+    </div>
+  </div>
+</div>
+<div id="propsheet_data_hide">
+  <a href="Javascript:closepropsheet();">
+  <img src="/img/icon/1/minus.png">
+  </a>
+</div>
+<div id="propsheet_data_show">
+  <a href="Javascript:openpropsheet();">
+  <img src="/img/icon/1/plus.png">
+  </a>
+</div>
+	
+<main id="mainArea">
+  <h1>Project Partition Diagram</h1>
+    
+    <div id="partition1">
+
+    <div id="body">
+      <div id="footer">
+        <!--<div class="hint">click or option-click to descend or ascend</div>-->
+        <a href="" title="title here">http://mbostock.github.io/d3/talk/20111018/partition.html</a>
+      </div>
+    </div>
+   
+  </div>
+</main>
+
 <script language="javascript" type="text/javascript">
   document.oncontextmenu=RightMouseDown;
   document.onmousedown = mouseDown; 
-
   function mouseDown(e) {
       if (e.which==3) {//righClick
       //alert("Disabled - do whatever you like here..");
@@ -83,6 +84,7 @@ p#intro {
   }
   function RightMouseDown() { return false;}
 </script>
+
 <script type="text/javascript">
 let datalink = null;
 //const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
@@ -108,6 +110,7 @@ function getTheData(dataURL, cb) {
     }
 }  
 </script>
+
 <script type="text/javascript">
 function PartitionDiagram1() {
     console.log('PartitionDiagram1')
@@ -127,27 +130,9 @@ function PartitionDiagram1() {
       });
     });
 }
+// call initiating function
 PartitionDiagram1()
-  
 </script>
-
-<main id="mainArea">
-  <h1>Project Partition Diagram</h1>
-    
-    <div id="partition1">
-
-
-    <div id="body">
-      <div id="footer">
-        <!--<div class="hint">click or option-click to descend or ascend</div>-->
-        <a href="" title="title here">http://mbostock.github.io/d3/talk/20111018/partition.html</a>
-      </div>
-    </div>
-   
-    
-          
-  </div>
-</main>
 
 <script type="text/javascript">
   const target = document.getElementById('mainArea')
@@ -156,5 +141,31 @@ PartitionDiagram1()
   console.log('start spinner',spinner)
 </script>
 
+<!-- Trigger/Open The Modal -->
+<!--<button id="panelBtn">Property Sheet</button>-->
+
+  <!-- The Modal -->
+  <!--<div id="pFloatingPanel" class="ui-widget-content modal">-->
+  <!--<div id="myModal" class="modal">-->
+    <!-- Modal content -->
+  <!--  <div class="modal-content">-->
+  <!--    <div class="modal-header">-->
+  <!--      <span class="close">&times;</span>-->
+  <!--      <h2>Modal Header</h2>-->
+  <!--    </div>-->
+  <!--    <div class="modal-body">-->
+  <!--      <p>Some text in the Modal Body</p>-->
+  <!--      <p>Some other text...</p>-->
+  <!--    </div>-->
+  <!--    <div class="modal-footer">-->
+  <!--      <h3>Modal Footer</h3>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+	    
+    <script type="text/javascript" src="/js/propsheet.js"></script>
+    <link rel="stylesheet" href="/css/propsheet.css">   
 </body>
 </html>
