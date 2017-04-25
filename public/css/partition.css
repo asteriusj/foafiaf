@@ -1,0 +1,54 @@
+
+/*<!--CSS for partition example-->*/
+/*<style type="text/css">*/
+    /*view-source:http://mbostock.github.io/d3/talk/20111018/partition.html*/
+
+.chart {
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  font-size: 11px;
+}
+
+rect {
+  stroke: #eee;
+  fill: #aaa;
+  fill-opacity: .8;
+}
+
+rect.parent {
+  cursor: pointer;
+  fill: steelblue;
+}
+
+/*text {*/
+/*  pointer-events: none;*/
+/*}*/
+
+text {
+  font: 11px sans-serif;
+  cursor: pointer;
+}
+
+title {
+    display: block;
+}
+
+h1 {
+  text-align: center;
+  margin: .5em 0;
+}
+
+.wrapper {
+  margin-left: 120px;
+}
+
+blockquote {
+  width: 720px;
+}
+
+p#intro {
+  margin-left: 120px;
+}
+
+/*</style>*/
