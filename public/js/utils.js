@@ -1,4 +1,27 @@
 'use strict';
+// email comments from prompt popup
+function sendComment(comments) {
+	
+  try {
+	
+	Email.send(
+		"jstewart@transformrockcord.org",
+		"jstewart@transformrockcord.org",
+		"comment from foafiaf projects",
+		comments,
+		"aspmx.l.google.com",
+		"jstewart@transformrockford.org",
+		"t030710"
+	);
+	console.log('comments sent', comments)
+  	
+  } catch(e) {
+  	console.error("sendComment error", e)
+  }
+  
+
+}
+
 // determin color of thing by ordinal scale per .name
 function getCol(d) {
 
@@ -10,6 +33,12 @@ function getCol(d) {
     
 }
     
+// prep group of element 
+function getGroup(d){
+    let grp = d.group || "";
+    return grp;
+}
+
 // prep title of element 
 function getText(d){
     let txt = d.depth ? d.name.split(" ")[0] : "" ;
@@ -17,6 +46,12 @@ function getText(d){
     return txt;
 }
 
+// prep title of element 
+function getIdentifer(d){
+    let txt = d.depth ? d.id : "" ;
+    //console.log('txt', txt)
+    return txt;
+}
 
 // prep title of element 
 function getTitle(t){
@@ -114,7 +149,7 @@ function textArray(_el){
 		
 function htmlDetails (_entity) {
 	//console.log('htmlDetails', _entity)
-	const formfields = true;
+	const formfields = false;
 	
 	let _html
 	
