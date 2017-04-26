@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict'; // strict causes issue with Safari
 function whenready() {
     console.log('whenready')
     
@@ -123,15 +123,15 @@ function whenready() {
         // .ondblClick handler
         function dblclick(d) {
             console.log('dblclick', d)
-            let msg = getDetails(d)
+            var msg = getDetails(d)
               window.confirm(msg)
         }
         // .contextmenu handler
         function contextmenu(d) {
               console.log('contextmenu', d)
-              let msg = getDetails(d)
+              var msg = getDetails(d)
               //window.confirm(msg)
-              let comments = window.prompt(msg, "Comments:")
+              var comments = window.prompt(msg, "Comments:")
               if (comments !== "Comments:") {
                 console.log('comments', comments)
                 sendComment(comments)
@@ -224,12 +224,12 @@ function whenready() {
 
     // determin color of thing by ordinal scale per .name
     function getColor(d) {
-        let idx = d.children                                // eval if children
+        var idx = d.children                                // eval if children
         ? d                                                 // if true return  current thing
         : d.parent                                          // if false return parent of thing
         idx = idx.name ;                                    // set idx to name of thing idx
         
-        let col = color(idx) ;
+        var col = color(idx) ;
         
         if (d.color) col = d.color;
         //console.log('idx col', idx, col)
@@ -240,7 +240,7 @@ function whenready() {
     // 
     function getClass(d) {
         //console.log('getClass', d)
-        let cls = 'cls' + d.group || '_' ;
+        var cls = 'cls' + d.group || '_' ;
         //console.log('getClass', cls)
         
         return cls;
