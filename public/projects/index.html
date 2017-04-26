@@ -66,8 +66,8 @@
 </div>
 
 <script type="text/javascript">
-let datalink = null;
- const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
+var datalink = null;
+var  dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
 //const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
  //const dataURL = "json/mcpherTreeData.json";
  //const dataURL = "json/flare.json";
@@ -81,7 +81,7 @@ function getTheData(dataURL, cb) {
     $.getJSON(dataURL, function(data) {
         console.log('getJSON')
         console.log(data)
-        let treeData = data
+        var treeData = data
         console.log('treeData',treeData)
         
         if (cb) cb(null, treeData )
@@ -98,7 +98,7 @@ function SunBurstDiagram1() {
     
     var result =  getTheData(dataURL, function(err, json) {
     
-        let data = json;
+        var data = json;
         dataReceived(data, function(wheelJS) {
             //console.log('wheelJS', wheelJS)
             /*global whenready*/
