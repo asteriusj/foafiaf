@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 function whenready() {
     console.log('whenready')
  
@@ -17,6 +17,7 @@ var vis = d3.select("#body").append("div")
     .attr("width", w)
     .attr("height", h);
 
+/*global d3*/
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; });
 
@@ -25,10 +26,16 @@ var partition = d3.layout.partition()
 // d3.json("/json/testpartition.1.json", function(root) {
 
 //console.log(' call getWheelJS ')
+/*global getWheelJS*/
 getWheelJS( function(err, root) {
+  if (err) {
+    }
     
+  try {
     console.log('getWheelJS root',root)
-    let spliced = { "name": "Top 25 by 2025", "children": root }
+   
+    var spliced = null;
+    spliced = { "name": "Top 25 by 2025", "children": root }
     console.log('spliced',spliced)
     root = spliced                                                          //insert wheel into outer parent
     // console.log('partition getWheelJSroot',JSON.stringify(root))
@@ -110,7 +117,7 @@ getWheelJS( function(err, root) {
         if (!d.children) return;
 
         console.log('dblclick d', d)
-        let msg = getDetails(d)
+        var msg = getDetails(d)
         //window.confirm(msg)
         document.getElementById('paneContents').innerHTML = msg
         pFloatingPane.show();
@@ -120,9 +127,9 @@ getWheelJS( function(err, root) {
         if (!d.children) return;
         
         console.log('contextmenu', d)
-        let msg = getDetails(d)
+        var msg = getDetails(d)
         //window.confirm(msg)
-        let comments = window.prompt(msg, "Comments:")
+        var comments = window.prompt(msg, "Comments:")
         if (comments !== "Comments:") {
             console.log('comments', comments)
             sendComment(comments)
@@ -155,6 +162,9 @@ getWheelJS( function(err, root) {
   function transform(d) {
     return "translate(8," + d.dx * ky / 2 + ")";
   }
+} catch (e) {
+    
+}
 });
 
     // </script>   
