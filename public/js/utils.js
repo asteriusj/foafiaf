@@ -1,7 +1,6 @@
 'use strict';
 // email comments from prompt popup
 function sendComment(comments) {
-	
   try {
 	
 	Email.send(
@@ -13,14 +12,12 @@ function sendComment(comments) {
 		"jstewart@transformrockford.org",
 		"t030710"
 	);
-	console.log('comments sent', comments)
+	// console.log('comments sent', comments)
   	
   } catch(e) {
   	console.error("sendComment error", e)
   }
-  
-
-}
+};
 
 // determin color of thing by ordinal scale per .name
 function getCol(d) {
@@ -31,75 +28,75 @@ function getCol(d) {
     	return 	;
     }
     
-}
+};
     
 // prep group of element 
 function getGroup(d){
-    let grp = d.group || "";
+    var grp = d.group || "" ;
     return grp;
-}
+};
 
 // prep title of element 
 function getText(d){
-    let txt = d.depth ? d.name.split(" ")[0] : "" ;
+    var txt = d.depth ? d.name.split(" ")[0] : "" ;
     //console.log('txt', txt)
     return txt;
-}
+};
 
 // prep title of element 
 function getIdentifer(d){
-    let txt = d.depth ? d.id : "" ;
+    var txt = d.depth ? d.id : "" ;
     //console.log('txt', txt)
     return txt;
-}
+};
 
 // prep title of element 
 function getTitle(t){
     //console.log(t)
     // title content for mouseover
 
-    let _dbotype = t.dbotype || "";
-    let _group = t.group || "";
-    let _name = t.name || "";
-    let _label = t.label || _name ;
-    let _description = t.description || "";
-    // let _startdate = t.startdate || "";
-    // let _status = t.status || "";
-    //let _colour = t.colour || "";
-    let _color = t.color || getCol(t) ;
-    let _id = t.id || "";
+    var _dbotype = t.dbotype || "";
+    var _group = t.group || "";
+    var _name = t.name || "";
+    var _label = t.label || _name ;
+    var _description = t.description || "";
+    // var _startdate = t.startdate || "";
+    // var _status = t.status || "";
+    //var _colour = t.colour || "";
+    var _color = t.color || getCol(t) ;
+    var _id = t.id || "";
     
-    let _title =  _group + ": " + _label + "\n" + _description + _color + "\n" ;
+    var _title =  _group + ": " + _label + "\n" + _description + _color + "\n" ;
     //console.log('_title', _title)
     return _title
-}
+};
 
 // prep dialog box details 
 function getDetails(t){
     console.log('getDetails', t)
     // details content for hover / popup
 
-    let _dbotype = t.dbotype || "";
-    let _group = t.group || "";
-    let _name = t.name || "";
-    let _label = t.label || _name ;
-    let _description = t.description || "";
-    let _startdate = t.startdate || "";
-    let _enddate = t.enddate || "";
-    let _broader = t.broader || "";
-    let _projectoutputs = t.projectoutputs || "";
-    let _status = t.status || "";
-    let _target = t.target || "";
-    let _actual = t.actual || "";
-    let _units = t.units || "";
-    let _colour = t.colour || "";
-    let _color = t.color || getCol(t) ;
-    let _segment = t.segment || "";
-    let _spoke = t.spoke || "";
-    let _strategy = t.strategy || "";
-    let _id = t.id || "";
+    var _dbotype = t.dbotype || "";
+    var _group = t.group || "";
+    var _name = t.name || "";
+    var _label = t.label || _name ;
+    var _description = t.description || "";
+    var _startdate = t.startdate || "";
+    var _enddate = t.enddate || "";
+    var _broader = t.broader || "";
+    var _projectoutputs = t.projectoutputs || "";
+    var _status = t.status || "";
+    var _target = t.target || "";
+    var _actual = t.actual || "";
+    var _units = t.units || "";
+    var _colour = t.colour || "";
+    var _color = t.color || getCol(t) ;
+    var _segment = t.segment || "";
+    var _spoke = t.spoke || "";
+    var _strategy = t.strategy || "";
+    var _id = t.id || "";
     
-    let details =  _group + ": " + _label + "\n\n" + 
+    var details =  _group + ": " + _label + "\n\n" + 
     			  "id: " + _id + "\n\n" + 
                   "Name: " + _name + "\n\n" + 
                   "Descrption: " + _description + "\n\n" 
@@ -125,16 +122,16 @@ function getDetails(t){
     					"Strategy: " + _strategy + "\n\n" 
     
     //console.log('details', details)
-    return details
-}
+    return details;
+}; // end getDetails
     
 function textArray(_el){
 	if (_el) {
 		//console.log('_el',_el)
 		if (_el.length > 0) {
-			let items = "\n"
-			for (let i=0; i<_el.length; i++) {
-				let el = _el[i];
+			var items = "\n"
+			for (var i=0; i<_el.length; i++) {
+				var el = _el[i];
 				el = el['@id'] || el;				//check to see if item has @id index
 				//console.log(el)
 				items = items + "\n" + el 
@@ -149,9 +146,9 @@ function textArray(_el){
 		
 function htmlDetails (_entity) {
 	//console.log('htmlDetails', _entity)
-	const formfields = false;
+	var formfields = true;
 	
-	let _html
+	var _html
 	
 	var _id = _entity.id || null;
 	var _group = _entity.group || null;
@@ -502,4 +499,4 @@ function htmlDetails (_entity) {
 	_html = _html + '</div>'
 
 	return _html ;
-}
+} // end htmlDetails
