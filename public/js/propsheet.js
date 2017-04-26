@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // JS for beahvor of property sheet
 //openpropsheet();
 function openpropsheet(a, b, c) {
@@ -6,7 +6,7 @@ function openpropsheet(a, b, c) {
     var d = "no";
     //console.log('document.getElementById("propsheet_data")',document.getElementById("propsheet_data"))
     
-    let panw = 445, panh = 420, panurl = "feedback.php?";
+    var panw = 445, panh = 420, panurl = "feedback.php?";
     
     // $("#darkenBackground").show();
     
