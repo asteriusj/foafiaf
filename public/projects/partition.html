@@ -67,7 +67,7 @@
     <div id="body">
       <div id="footer">
         <!--<div class="hint">click or option-click to descend or ascend</div>-->
-        <a href="" title="title here">http://mbostock.github.io/d3/talk/20111018/partition.html</a>
+        <!--<a href="" title="title here">http://mbostock.github.io/d3/talk/20111018/partition.html</a>-->
       </div>
     </div>
    
@@ -86,7 +86,7 @@
 </script>
 
 <script type="text/javascript">
-let datalink = null;
+const datalink = null;
 //const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
 const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
 function getTheData(dataURL, cb) {
@@ -99,7 +99,7 @@ function getTheData(dataURL, cb) {
     $.getJSON(dataURL, function(data) {
         console.log('getJSON')
         //console.log(data)
-        let treeData = data
+        var treeData = data
         //console.log('treeData',treeData)
         
         if (cb) cb(null, treeData )
@@ -115,9 +115,16 @@ function getTheData(dataURL, cb) {
 function PartitionDiagram1() {
     console.log('PartitionDiagram1')
     
+    /*global getTheData*/
+    /*global dataURL*/
     var result =  getTheData(dataURL, function(err, json) {
-        let data = json;
+        if (err) {
+          
+        }
+      
+        var data = json;
         console.log('PartitionDiagram1 data',data)
+        /*global dataReceived*/
         dataReceived(data, function(wheelJS) {
             console.log('PartitionDiagram1 wheelJS', wheelJS)
             
@@ -129,7 +136,8 @@ function PartitionDiagram1() {
             whenready();    
       });
     });
-}
+    return result;
+} // end PartitionDiagram1
 // call initiating function
 PartitionDiagram1()
 </script>
