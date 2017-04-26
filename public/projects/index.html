@@ -9,42 +9,20 @@
      <script src="../dist/d3.min.js"></script>
      <script type="text/javascript" src="/js/iw.js"></script>
 	 <script type="text/javascript" src="/js/utils.js"></script>
-     <script type="text/javascript" src="sunburst.js"></script>
+     
+     <script type="text/javascript" src="/js/sunburst.js"></script>
+     <link rel="stylesheet" href="/css/sunburst.css">
+    
      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     
+     <script src="/js/smtp.js"></script>
      <script src="/js/spin.min.js"></script>
 
-<style>
-@import url(../css/style.css);
-path {
-  stroke: #000;
-  stroke-width: 1.5;
-  cursor: pointer;
-}
-
-text {
-  font: 11px sans-serif;
-  cursor: pointer;
-}
-
-h1 {
-  text-align: center;
-  margin: .5em 0;
-}
-
-.wrapper {
-  margin-left: 120px;
-}
-
-blockquote {
-  width: 720px;
-}
-
-p#intro {
-  margin-left: 120px;
-}
-
-</style>
+    
 
 </head>
 <body>
@@ -59,10 +37,38 @@ p#intro {
   }
   function RightMouseDown() { return false;}
 </script>
+
+<!-- PropSheet Data -->
+<div id="propsheet_data" class="content ui-widget-content">
+  <div class="propsheet-content">
+    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
+    <div class="propsheet-header">
+      <h2>PropSheet Header</h2>
+    </div>
+    <div class="propsheet-body">
+      <p>Some text in the PropSheet Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="propsheet-footer">
+      <h3>PropSheet Footer</h3>
+    </div>
+  </div>
+</div>
+<div id="propsheet_data_hide">
+  <a href="Javascript:closepropsheet();">
+  <img src="/img/icon/1/minus.png">
+  </a>
+</div>
+<div id="propsheet_data_show">
+  <a href="Javascript:openpropsheet();">
+  <img src="/img/icon/1/plus.png">
+  </a>
+</div>
+
 <script type="text/javascript">
 let datalink = null;
- //const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
-const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+ const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
+//const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
  //const dataURL = "json/mcpherTreeData.json";
  //const dataURL = "json/flare.json";
  //const dataURL = "json/milestonetest.json";
@@ -123,5 +129,7 @@ SunBurstDiagram1()
   console.log('start spinner',spinner)
 </script>
 
+    <script type="text/javascript" src="/js/propsheet.js"></script>
+    <link rel="stylesheet" href="/css/propsheet.css"> 
 </body>
 </html> 
