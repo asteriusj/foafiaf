@@ -138,7 +138,7 @@ function whenready() {
               }
         }
         function mouseover(d) {
-            if (!d.children) return;
+            // if (!d.children) return;
             console.log('mouseover', d)
             //   d.dx
             //   d.dy
