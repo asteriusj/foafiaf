@@ -159,6 +159,18 @@ console.log('spin spinner on click',spinner)
 		console.log('')
 		 console.log('network.on showPopup')
 		 console.log('')
+		 console.log('selected', selected)
+
+		//  if a node is selected, hide any nodes outside the selected number N degrees
+		if (selected.node) {
+			selectedNode = getNodeById(rawNodes, selected.node)
+			console.log('from nodeId selectedNode', selectedNode)
+			//  display node or edge data in the sidebar for selected element
+			if (selectedNode) {
+				displayData(selectedNode);
+				mouseover(selectedNode);
+			}
+		}
 	
 	}); // end showPopup
 	network.on('hidePopup', function(selected){
@@ -213,27 +225,27 @@ console.log('spin spinner on click',spinner)
 	
 	
 	
-	network.on('hold', function(selected){
-		console.log('')
-		 console.log('network.on hold')
-		 console.log('')
+	// network.on('hold', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on hold')
+	// 	 console.log('')
 
-	    // console.log("execute hoverNode function");
+	//     // console.log("execute hoverNode function");
 	    
-	    console.log('selected', selected)
+	//     console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(selected.node) {
-			selectedNode = getNodeById(rawNodes, selected.node)
-			//console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
-			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
-			}
-		}
+	// 	//  if a node is selected, hide any nodes outside the selected number N degrees
+	// 	if(selected.node) {
+	// 		selectedNode = getNodeById(rawNodes, selected.node)
+	// 		//console.log('from nodeId selectedNode', selectedNode)
+	// 		//  display node or edge data in the sidebar for selected element
+	// 		if (selectedNode) {
+	// 			displayData(selectedNode);
+	// 			mouseover(selectedNode);
+	// 		}
+	// 	}
 
-	}); // end on hold
+	// }); // end on hold
 	
 	
 		
@@ -271,12 +283,12 @@ console.log('spin spinner on click',spinner)
 		console.log('')
 		//window.alert("oncontext")
 		
-		var selection = network.getNodeAt(selected.pointer.DOM);
-		console.log('selection', selection)
-		
-		if (selection) {
-			selectedNode = getNodeById(rawNodes, selection)
-			//console.log('from nodeId selectedNode', selectedNode)
+		console.log('selected', selected)
+
+		//  if a node is selected, hide any nodes outside the selected number N degrees
+		if (selected.node) {
+			selectedNode = getNodeById(rawNodes, selected.node)
+			console.log('from nodeId selectedNode', selectedNode)
 			//  display node or edge data in the sidebar for selected element
 			if (selectedNode) {
 				displayData(selectedNode);
