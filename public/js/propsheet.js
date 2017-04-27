@@ -1,6 +1,6 @@
 // 'use strict';
 // JS for beahvor of property sheet
-//openpropsheet();
+openpropsheet();
 function openpropsheet(a, b, c) {
     console.log('openpropsheet')
     var d = "no";
@@ -25,13 +25,7 @@ function openpropsheet(a, b, c) {
     document.getElementById("propsheet_data_show").style.left = h + panw - 6 + "px", 
     document.getElementById("propsheet_data_show").style.top = i - 13 + "px", 
     $("#propsheet_data_show").show()
-    
-    // console.log('opendatapanel f g h i px ', f, g, h, i)
-    // console.log('propsheet_data with left top', 
-    //     document.getElementById("propsheet_data").style.width, 
-    //     document.getElementById("propsheet_data").style.left, 
-    //     document.getElementById("propsheet_data").style.top),
-    // console.log('document.getElementById("propsheet_data")',document.getElementById("propsheet_data"))
+
 }
 function closepropsheet() {
      console.log('closepropsheet')
