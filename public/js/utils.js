@@ -30,6 +30,10 @@ function getCol(d) {
     
 };
     
+// function getEntity(id) {
+// 	var entity = getGraphEntity(id) || null;
+// }
+
 // prep group of element 
 function getGroup(d){
     var grp = d.group || "" ;
@@ -48,6 +52,15 @@ function getIdentifer(d){
     var txt = d.depth ? d.id : "" ;
     //console.log('txt', txt)
     return txt;
+};
+
+// prep title of element 
+function getLabel(t){
+    //console.log(t)
+
+    var _label = t.label || null ;
+
+    return _label
 };
 
 // prep title of element 
@@ -71,9 +84,30 @@ function getTitle(t){
     return _title
 };
 
-// prep dialog box details 
+// prep previw of element contents
 function getDetails(t){
     console.log('getDetails', t)
+    // title content for mouseover
+
+    var _dbotype = t.dbotype || "";
+    var _group = t.group || "";
+    var _name = t.name || "";
+    var _label = t.label || _name ;
+    var _description = t.description || "";
+    // var _startdate = t.startdate || "";
+    // var _status = t.status || "";
+    //var _colour = t.colour || "";
+    var _color = t.color || getCol(t) ;
+    var _id = t.id || "";
+    
+    var _preview =   "<h3>" + _label + "</h3>" + "\n\n<p>" + _description + _color + "</p>\n\n" ;
+    //console.log('_preview', _preview)
+    return _preview
+};
+
+// prep dialog box details 
+function getFullDetails(t){
+    console.log('getFullDetails', t)
     // details content for hover / popup
 
     var _dbotype = t.dbotype || "";
@@ -143,7 +177,101 @@ function textArray(_el){
 		return null;
 	}
 }; // end textArray
+
+
+function htmlPreview (_entity) {
+	console.log('htmlPreview', _entity)
+	var _html
+	
+	var _id = _entity.id || null;
+	var _group = _entity.group || null;
+	var _label = _entity.label || null;
+	
+	var _topic = _entity['foaf:topic'] || _entity['topic']  || null;
+	var _profile = _entity['linkedin:Profile']  || _entity['profile'] || null;
+	var _sameas = _entity['owl:sameAs']  || _entity['sameas'] || null;
+	var _seealso = _entity['owl:seeAlso'] || _entity['seealso']  || null;
+	var _comments = _entity['rdfs:comment'] || _entity['comments']  || null;
+	var _prefLabel = _entity['skos:prefLabel'] || _entity['prefLabel']  || null;
+	
+	var _name = _entity['foaf:name'] || _entity['name']  || null;
+	var _title = _entity['dc:title'] || _entity['title']  || null;
+	var _description = _entity['dc:description'] || _entity['description']  || null;
+	var _dcabstract = _entity['dc:abstract']  || _entity['dcabstract'] || null;
+	var _dboabstract = _entity['dbo:abstract']  || _entity['dboabstract'] || null;	
+	var _comment = _entity['rdfs:comment'] || _entity['comment']  || null;
+	
+	var _categories = _entity['foafiaf:categories'] || _entity['categories'] || null;
+	var _keywords = _entity['foafiaf:keywords'] || _entity['keywords'] || null;
+	
+	var _segment = _entity['foafiaf:Segment'] || _entity['segment']  || null;
+	var _spoke = _entity['foafiaf:Spoke'] || _entity['spoke']  || null;
+	var _strategy = _entity['foafiaf:Strategy'] || _entity['strategy']  || null;
+							
+	var _project = _entity['foafiaf:Project'] || _entity['project'] || null;
+	var _measure = _entity['foafiaf:Measure'] || _entity['measure']  || null;
+	var _status = _entity['foafiaf:status'] || _entity['status']  || null;
+	var _percent = _entity['foafiaf:percent'] || _entity['percent']  || null;
+	var _priority = _entity['foafiaf:priority'] || _entity['priority']  || null;
+	var _color = _entity['foafiaf:color'] || _entity['color']  || null;
+	
+	var _startdate = _entity['foafiaf:startdate'] || _entity['startdate']  || null;
+	var _enddate = _entity['foafiaf:enddate']  || _entity['enddate'] || "";
+	var _projectoutputs = _entity['foafiaf:projectoutputs'] || null;
+	var _target = _entity['foafiaf:targetvalue'] || _entity['target']  || null;
+	var _actual = _entity['foafiaf:datavalues'] || _entity['actual']  || null;
+	var _units = _entity['foafiaf:unitofmeasure'] || _entity['units']  || null;
+	var _colour = _entity['foafiaf:colour'] || _entity['colour']  || null;
+			
+	var _shortname = _entity['foafiaf:shortname'] || _entity['shortname']  || null;
+
+	// get label for related objects
+	// var seg = getEntity(_segment)  
+	// console.log('seg, seg')
+	// if (seg) _segment = getLabel(seg);
+	
 		
+	_html = '<div>'
+	// _html = _html + ' ' + _group + ': '
+	
+	var _header = null;
+	if (_prefLabel) {
+		_header = _prefLabel;
+	} else if (_title) {
+		_header = _title;
+	} else if (_title) {
+		_header = _label;
+	} else {
+		_header = _name;
+	}
+	if (_header) _html = _html + '<p>' + '<b>' + _header + '</b>'  + '</p>'
+	
+	if (_topic) _html = _html + _topic + '</br></br>' 
+	if (_title) _html = _html + _title + '</br></br>' 
+	if (_description) _html = _html + _description + '</br></br>' 
+
+	if (_projectoutputs) _html = _html + _projectoutputs + '</br></br>' 
+	
+	if (_startdate) _html = _html + _startdate + '  ' + _enddate + '</br></br>' 
+	if (_percent) _html = _html	+ ' complete: '  + _percent + ' %' + '</br></br>' 
+	
+
+	// if (_segment) _html = _html + 	_segment + '</br></br>'
+	// if (_spoke) _html = _html + 	 _spoke + '</br></br>'
+	// if (_strategy) _html = _html + 	_strategy + '</br></br>'
+	// if (_project) _html = _html + 	 _project + '</br></br>'
+	// if (_measure) _html = _html + 	_measure + '</br></br>'
+	
+	if (_comment) _html = _html +  _comment + '</br></br>'
+	if (_dcabstract) _html = _html +  _dcabstract + '</br></br>'
+	
+	// _html = _html + 	' id:    <em>' +  _id   + '</em></br>'
+	_html = _html + '</div>'
+
+	// console.log('_html', _html)
+	return _html ;
+}; // end htmlPreview
+
 function htmlDetails (_entity) {
 	//console.log('htmlDetails', _entity)
 	var formfields = true;
