@@ -1,4 +1,4 @@
-//  when the graph data upload is complete, process data
+//  when the graph data upload is compvare, process data
 function dataReceived(data) {
 	console.log('dataReceived')
 	
@@ -65,7 +65,7 @@ console.log('spinner spin on dataRecieved',spinner)
 	
 	if (selectedNode) {
 		displayData(selectedNode);
-		mouseover(selectedNode);
+		updatePropSheet(selectedNode);
 	}
 	
 
@@ -95,48 +95,39 @@ console.log('spinner spin on dataRecieved',spinner)
 			console.log('network.on click')
 			console.log('')
 			
-			var t0 = new Date();
-		    if (t0 - doubleClickTime > threshold) {
-		        setTimeout(function () {
-		            if (t0 - doubleClickTime > threshold) {
-		                doOnClick();
-		                
-		            }
-		        },threshold);
-		    }
+			// start spinner
+			var target = document.getElementById('mainArea')
+			var spinner = new Spinner().spin(target);
+			console.log('spinner',spinner)
+			console.log('selected', selected)
 			
+			// var t0 = new Date();
+		 //   if (t0 - doubleClickTime > threshold) {
+		 //       setTimeout(function () {
+		 //           if (t0 - doubleClickTime > threshold) {
+		 //           	console.log('t0 - doubleClickTime',t0 - doubleClickTime)
+		 //               doOnClick();
+		                
+		 //           }
+		 //       },threshold);
+		 //   }
+			doOnClick(); // bypass dbl click timer
 			function doOnClick() {
 			    console.log("execute onClick function");
 			    
-			    // spin spinner
-// const target = document.getElementById('canvasArea')
-//console.log('target',target)
-if (spinner) spinner.spin() ; 
-console.log('spin spinner on click',spinner)
 				
-				
-				console.log('selected', selected)
-				
-				var nodeId = selected.nodes.toString();
-				var edgeId = selected.edges.toString();
-				let event = selected.event;
-				let pointer = selected.pointer;
-				
-				console.log('nodeId', nodeId)
-				console.log('edgeId', edgeId)
-				console.log('pointer', pointer)
-				console.log('event', event)
+				var selectedNode = getSelectedNode(selected)
+				var nodeId =  selectedNode.id
+					
+				if (selectedNode) {
+						// displayData(selectedNode);
+						updatePropSheet(selectedNode);
+				}
 					
 				//  if a node is selected, hide any nodes outside the selected number N degrees
+				console.log('nodeId',nodeId)
 				if(nodeId) {
-					selectedNode = getNodeById(rawNodes, nodeId)
-					//console.log('from nodeId selectedNode', selectedNode)
-					//  display node or edge data in the sidebar for selected element
-					if (selectedNode) {
-						displayData(selectedNode);
-						mouseover(selectedNode);
-					}
-					
+
 					visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
 					visibleEdges = rawEdges
 					//console.log('new visibleNodes',visibleNodes)
@@ -149,87 +140,240 @@ console.log('spin spinner on click',spinner)
 						zoomToSelectedNode(nodeId, network);
 						// stop spinner
 						if (spinner) spinner.stop() ; 
-						console.log('spinner stopped', spinner)
 					});
 				}
-
+				if (spinner) spinner.stop() ;
 			}
+			if (spinner) spinner.stop() ;
 			
 	}); // end on click
-	
 
+
+	function getSelectedNode(selected) {
+		console.log('getSelectedNode', selected)
+				
+		if ( typeof selected === "string") {
+			var nodeId = selected
+		} else if ( typeof selected.node === "string") {
+			var nodeId = selected.node;
+		} else {
+			var nodeId = selected.nodes.toString();
+		}
+		console.log('nodeId', nodeId)
+		// console.log('nodeId', nodeId)
+		
+		
+		// var edge = selected.edges.toString();
+		// var event = selected.event;
+		// var pointer = selected.pointer;
+
+		// console.log('edgeId', edge)
+		// console.log('pointer', pointer)
+		// console.log('event', event)
+		
+		
+		var selectedNode = getNodeById(rawNodes, nodeId) || null ;
+		console.log('selectedNode', selectedNode)
+		
+		return selectedNode
+	}
+	
+	
+	//  network graph dblclick event
+	// network.on("dblclick", function(selected){
+	// 		console.log('')
+	// 		console.log('network.on dblclick')
+	// 		console.log('')
+	// 		// start spinner
+	// 		var target = document.getElementById('mainArea')
+	// 		var spinner = new Spinner().spin(target);
+	// 		console.log('spinner',spinner)
+			
+	// 		// var t0 = new Date();
+	// 	 //   if (t0 - doubleClickTime > threshold) {
+	// 	 //       setTimeout(function () {
+	// 	 //           if (t0 - doubleClickTime > threshold) {
+	// 	 //               doOnClick();
+		                
+	// 	 //           }
+	// 	 //       },threshold);
+	// 	 //   }
+			
+	// 		// function doOnClick() {
+	// 		    // console.log("execute onClick function");
+			    
+	// 			console.log('selected', selected)
+				
+	// 			var nodeId =  getSelectedNode(selected).id
+					
+	// 			//  if a node is selected, hide any nodes outside the selected number N degrees
+	// 			if(nodeId) {
+	// 				// selectedNode = getNodeById(rawNodes, nodeId)
+	// 				// //console.log('from nodeId selectedNode', selectedNode)
+	// 				// //  display node or edge data in the sidebar for selected element
+	// 				// if (selectedNode) {
+	// 				// 	displayData(selectedNode);
+	// 				// 	updatePropSheet(selectedNode);
+	// 				// }
+					
+	// 				visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
+	// 				visibleEdges = rawEdges
+	// 				//console.log('new visibleNodes',visibleNodes)
+	// 				//console.log('new visibleEdges',visibleEdges)
+					
+	// 				network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+	// 				//network = setNetwork(visibleNodes, visibleEdges)
+					
+	// 				network.once("afterDrawing", function(){
+	// 					zoomToSelectedNode(nodeId, network);
+	// 					// stop spinner
+	// 					if (spinner) spinner.stop() ; 
+	// 				});
+	// 			}
+	// 			if (spinner) spinner.stop() ;
+	// 		// }
+			
+			
+	// }); // end on dblclick
+	
+	// network.on('dblclick', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on dblclick')
+	// 	 console.log('')
+	
+	//     doubleClickTime = new Date();
+	//     //console.log("execute onDoubleClick function");
+
+	// 	console.log('selected', selected)
+		
+	// 	//  if a node is selected, hide any nodes outside the selected number N degrees
+		
+	// 		console.log('selected', selected)
+	// 		var selectedNode = getSelectedNode(selected)
+			
+	// 		dblClick(selected)
+			
+
+	//     // if (spinner) spinner.stop() ;
+			
+	// }); // end on double click
+	// // .ondblClick handler
+ //   function dblclick(selectedNode) {
+
+	//     console.log("execute onClick function");
+	    
+	//     // spin spinner
+	// 	if (spinner) spinner.spin() ; 
+	// 	console.log('spin spinner on click',spinner)
+		
+		
+	// 	console.log('selectedNode', selectedNode)
+		
+	// 	// var nodeId = selected.nodes.toString();
+	// 	// var edgeId = selected.edges.toString();
+	// 	// var event = selected.event;
+	// 	// var pointer = selected.pointer;
+		
+	// 	// console.log('nodeId', nodeId)
+	// 	// console.log('edgeId', edgeId)
+	// 	// console.log('pointer', pointer)
+	// 	// console.log('event', event)
+			
+	// 	// //  if a node is selected, hide any nodes outside the selected number N degrees
+	// 	// if(nodeId) {
+	// 		// selectedNode = getNodeById(rawNodes, nodeId)
+	// 		//console.log('from nodeId selectedNode', selectedNode)
+	// 		//  display node or edge data in the sidebar for selected element
+	// 		if (selectedNode) {
+	// 			displayData(selectedNode);
+	// 			updatePropSheet(selectedNode);
+	// 		}
+	// 		var nodeId = selectedNode.id
+	// 	visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
+	// 	visibleEdges = rawEdges
+	// 	//console.log('new visibleNodes',visibleNodes)
+	// 	//console.log('new visibleEdges',visibleEdges)
+		
+	// 	network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
+	// 	//network = setNetwork(visibleNodes, visibleEdges)
+		
+	// 	network.once("afterDrawing", function(){
+	// 		zoomToSelectedNode(nodeId, network);
+	// 		// stop spinner
+	// 		if (spinner) spinner.stop() ; 
+	// 		console.log('spinner stopped', spinner)
+	// 	});
+
+ //   }; // end dblclick
+    
 	network.on('showPopup', function(selected){
 		console.log('')
-		 console.log('network.on showPopup')
-		 console.log('')
+		console.log('network.on showPopup')
+		console.log('')
 		 
-		 console.log('selected', selected)
+		console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
 		if (selected) {
-			selectedNode = getNodeById(rawNodes, selected)
-			console.log('from nodeId selectedNode', selectedNode)
+			var selectedNode =  getSelectedNode(selected);
+			var nodeId =  selectedNode.id;
+			// selectedNode = getNodeById(rawNodes, selected)
+			// console.log('from nodeId selectedNode', selectedNode)
 			//  display node or edge data in the sidebar for selected element
 			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
+				// displayData(selectedNode);
+				updatePropSheet(selectedNode);
 			}
-			
 		}
 		
-		openpropsheet();
+		//openpropsheet();
 		
 	}); // end showPopup
 	
-	network.on('hidePopup', function(selected){
-		console.log('')
-		 console.log('network.on hidePopup')
-		 console.log('')
+	// network.on('hidePopup', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on hidePopup')
+	// 	 console.log('')
 	
-	}); // end hidePopup
+	// }); // end hidePopup
 	
 	
 	network.on('hoverNode', function(selected){
 		console.log('')
-		 console.log('network.on hoverNode')
-		 console.log('')
+		console.log('network.on hoverNode')
+		console.log('')
 
-	    // console.log("execute hoverNode function");
-	    
 	    console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if (selected.node) {
-			selectedNode = getNodeById(rawNodes, selected.node)
-			console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
+		if (selected) {
+			var selectedNode =  getSelectedNode(selected)
+
 			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
+				// displayData(selectedNode);
+				updatePropSheet(selectedNode);
 			}
 		}
 
 	}); // end on hoverNode
 	
-	network.on('blurNode', function(selected){
-		console.log('')
-		 console.log('network.on blurNode')
-		 console.log('')
+	// network.on('blurNode', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on blurNode')
+	// 	 console.log('')
 	
-	}); // end on blurNode
+	// }); // end on blurNode
 	
-	network.on('hoverEdge', function(selected){
-		console.log('')
-		 console.log('network.on hoverEdge')
-		 console.log('')
+	// network.on('hoverEdge', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on hoverEdge')
+	// 	 console.log('')
 	
-	}); // end on hoverEdge
-	network.on('blurEdge', function(selected){
-		console.log('')
-		 console.log('network.on blurEdge')
-		 console.log('')
+	// }); // end on hoverEdge
+	// network.on('blurEdge', function(selected){
+	// 	console.log('')
+	// 	 console.log('network.on blurEdge')
+	// 	 console.log('')
 	
-	}); // end on blurNode
+	// }); // end on blurNode
 	
 	
 	
@@ -249,7 +393,7 @@ console.log('spin spinner on click',spinner)
 	// 		//  display node or edge data in the sidebar for selected element
 	// 		if (selectedNode) {
 	// 			displayData(selectedNode);
-	// 			mouseover(selectedNode);
+	// 			updatePropSheet(selectedNode);
 	// 		}
 	// 	}
 
@@ -257,75 +401,45 @@ console.log('spin spinner on click',spinner)
 	
 	
 		
-	network.on('doubleClick', function(selected){
-		console.log('')
-		 console.log('network.on doubleClick')
-		 console.log('')
 	
-	    doubleClickTime = new Date();
-	    console.log("execute onDoubleClick function");
-	    
-	    var selection = network.getNodeAt(selected.pointer.DOM);
-		console.log('selection', selection)
-
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(selection) {
-			selectedNode = getNodeById(rawNodes, selection)
-			//console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
-			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
-			}
-		}
+        
+	// network.on("oncontext", function(selected){
+	// 	console.log('')
+	// 	console.log('network.on oncontext')
+	// 	console.log('')
+	// 	//window.alert("oncontext")
 		
-		//window.alert("doubleClick")
-		// modal.style.display = "block";
-	    if (spinner) spinner.stop() ;
-			
-	}); // end on double click
-	
-	network.on("oncontext", function(selected){
-		console.log('')
-		console.log('network.on oncontext')
-		console.log('')
-		//window.alert("oncontext")
-		
-		console.log('selected', selected)
+	// 	console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if (selected.node) {
-			selectedNode = getNodeById(rawNodes, selected.node)
-			console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
-			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
-			}
-		}
+	// 	//  if a node is selected, hide any nodes outside the selected number N degrees
+	// 	if (selected.node) {
+	// 		selectedNode = getNodeById(rawNodes, selected.node)
+	// 		console.log('from nodeId selectedNode', selectedNode)
+	// 		//  display node or edge data in the sidebar for selected element
+	// 		if (selectedNode) {
+	// 			displayData(selectedNode);
+	// 			updatePropSheet(selectedNode);
+	// 		}
+	// 	}
 			
-		modal.style.display = "block";
-		if (spinner) spinner.stop() ;
-	});
+	// 	modal.style.display = "block";
+	// 	if (spinner) spinner.stop() ;
+	// });
 
     
    network.on('mouseover', function(selected){
 		console.log('')
-		 console.log('network.on mouseover')
-		 console.log('')
+		console.log('network.on mouseover')
+		console.log('')
 
-	    // console.log("execute hoverNode function");
-	    
 	    console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(selected.node) {
-			selectedNode = getNodeById(rawNodes, selected.node)
-			//console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
+		if (selected) {
+			var selectedNode =  getSelectedNode(selected)
+
 			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
+				// displayData(selectedNode);
+				updatePropSheet(selectedNode);
 			}
 		}
 
@@ -337,18 +451,14 @@ console.log('spin spinner on click',spinner)
 		 console.log('network.on touch')
 		 console.log('')
 
-	    // console.log("execute hoverNode function");
-	    
 	    console.log('selected', selected)
 
-		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if(selected) {
-			selectedNode = getNodeById(rawNodes, selected)
-			//console.log('from nodeId selectedNode', selectedNode)
-			//  display node or edge data in the sidebar for selected element
+		if (selected) {
+			var selectedNode =  getSelectedNode(selected)
+
 			if (selectedNode) {
-				displayData(selectedNode);
-				mouseover(selectedNode);
+				// displayData(selectedNode);
+				updatePropSheet(selectedNode);
 			}
 		}
 
@@ -356,9 +466,9 @@ console.log('spin spinner on click',spinner)
 	
 	
 		
-	function mouseover(d) {
+	function updatePropSheet(d) {
         // if (!d.children) return;
-        console.log('mouseover', d)
+        console.log('updatePropSheet', d)
 
         var header = document.getElementsByClassName('propsheet-header');
         header[0].innerHTML = getGroup(d)
@@ -393,8 +503,8 @@ function setNetwork(visibleNodes, visibleEdges ){
 	/// SET NETWORK !!!
 	var options = getOptions();
 	//var options = getVisOptions();
-	//var options = {layout:{randomSeed:10,improvedLayout:false},interaction:{dragNodes:true,dragView:true,hideEdgesOnDrag:false,hideNodesOnDrag:false,hover:true,hoverConnectedEdges:true,keyboard:{enabled:true,speed:{x:10,y:10,zoom:0.02},bindToWindow:true},multiselect:false,navigationButtons:false,selectable:true,selectConnectedEdges:true,tooltipDelay:300,zoomView:true},physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Community_college:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViolet'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}}}}
-    //var options = {physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViolet'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},group:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0c0',size:50,color:'#57169a'}},team:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'grey'}},person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'#aa00ff'}},role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:50,color:'#6E6EFD'}},organization:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0e8',size:50,color:'blue'}},orgbiz:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'#57169a'}},orggov:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:50,color:'blue'}},orgnonprofit:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'green'}},orgfaith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:50,color:'cyan'}},globe:{shape:'icon',icon:{face:'Ionicons',code:'\uf276',size:66,color:'#6E6EFD'}},marker:{shape:'icon',icon:{face:'FontAwesome',code:'\uf041',size:50,color:'#FB7E81'}},book:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02d',size:50,color:'#C2FABC'}},film:{shape:'icon',icon:{face:'FontAwesome',code:'\uf008',size:55,color:'#6E6EFD'}},tags:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02c',size:40,color:'lime'}},tag:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02b',size:40,color:'lime'}},projects:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0ae',size:44,color:'#800000'}},project:{shape:'icon',icon:{face:'FontAwesome',code:'\uf03a',size:40,color:'maroon'}},bullseye:{shape:'icon',icon:{face:'FontAwesome',code:'\uf140',size:40,color:'red'}},puzzle:{shape:'icon',icon:{face:'FontAwesome',code:'\uf12e',size:40,color:'yellow'}},cubes:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b3',size:44,color:'black'}},cube:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b2',size:40,color:'black'}}}};
+	//var options = {layout:{randomSeed:10,improvedLayout:false},interaction:{dragNodes:true,dragView:true,hideEdgesOnDrag:false,hideNodesOnDrag:false,hover:true,hoverConnectedEdges:true,keyboard:{enabled:true,speed:{x:10,y:10,zoom:0.02},bindToWindow:true},multiselect:false,navigationButtons:false,selectable:true,selectConnectedEdges:true,tooltipDelay:300,zoomView:true},physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Community_college:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViovar'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}}}}
+    //var options = {physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViovar'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},group:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0c0',size:50,color:'#57169a'}},team:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'grey'}},person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'#aa00ff'}},role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:50,color:'#6E6EFD'}},organization:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0e8',size:50,color:'blue'}},orgbiz:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'#57169a'}},orggov:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:50,color:'blue'}},orgnonprofit:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'green'}},orgfaith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:50,color:'cyan'}},globe:{shape:'icon',icon:{face:'Ionicons',code:'\uf276',size:66,color:'#6E6EFD'}},marker:{shape:'icon',icon:{face:'FontAwesome',code:'\uf041',size:50,color:'#FB7E81'}},book:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02d',size:50,color:'#C2FABC'}},film:{shape:'icon',icon:{face:'FontAwesome',code:'\uf008',size:55,color:'#6E6EFD'}},tags:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02c',size:40,color:'lime'}},tag:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02b',size:40,color:'lime'}},projects:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0ae',size:44,color:'#800000'}},project:{shape:'icon',icon:{face:'FontAwesome',code:'\uf03a',size:40,color:'maroon'}},bullseye:{shape:'icon',icon:{face:'FontAwesome',code:'\uf140',size:40,color:'red'}},puzzle:{shape:'icon',icon:{face:'FontAwesome',code:'\uf12e',size:40,color:'yellow'}},cubes:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b3',size:44,color:'black'}},cube:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b2',size:40,color:'black'}}}};
 	
 	//console.log('container',container)
 	//console.log('options',options)
