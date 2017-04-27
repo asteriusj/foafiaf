@@ -1,97 +1,45 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Timeline | Transform Rockford Milestones</title>
-
-
-
-  <script src="timeline.js"></script>
-  
-  <script src="../dist/vis.js"></script>
-  <!--<link href="../dist/vis.css" rel="stylesheet" type="text/css" />-->
-  <link href="../dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  
-  <style type="text/css">
-    body, html {
-      font-family: sans-serif;
-    }
-  </style>
-
-  <style type="text/css">
-    body, input {
-      font: 12pt verdana;
-    }
-
-    /* custom styles for individual items, load this after vis.css/vis-timeline-graph2d.min.css */
-    .vis-item.vis-background.negative {
-      background-color: rgba(255, 0, 0, 0.2);
-    }
+  <head>
+    <meta charset="utf-8">
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ 
+     <title>Timeline | Transform Rockford Milestones</title>
+     <meta name="description" content="A visualisation of metrics">
+     
+     <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     
-    .vis-item.output {
-      /*background-color: #27a9e1;*/
-      /*border-color: grey;*/
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+     
+    <script src="../dist/vis.js"></script>
+    <link href="../dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
-    .vis-item.outcome {
-      /*background-color: #0099b5;*/
-      /*border-color: grey;*/
-    }
+    <!--<script type="text/javascript" src="/js/iw.js"></script>-->
+	  <script type="text/javascript" src="/js/utils.js"></script>
+     
+    <script type="text/javascript" src="/js/timeline.js"></script>
+    <link rel="stylesheet" href="/css/timeline.css">
     
     
-    .vis-item.green {
-      background-color: greenyellow;
-      border-color: green;
-    }
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+     
+    <script src="/js/smtp.js"></script>
+    <script src="/js/spin.min.js"></script>
 
-    /* create a custom sized dot at the bottom of the red item */
-    .vis-item.red {
-      background-color: red;
-      border-color: darkred;
-      color: white;
-      font-family: monospace;
-      box-shadow: 0 0 10px gray;
-    }
-    .vis-item.vis-dot.red {
-      border-radius: 10px;
-      border-width: 10px;
-    }
-    .vis-item.vis-line.red {
-      border-width: 5px;
-    }
-    .vis-item.vis-box.red {
-      border-radius: 0;
-      border-width: 2px;
-      font-size: 24pt;
-      font-weight: bold;
-    }
-
-    .vis-item.orange {
-      background-color: gold;
-      border-color: orange;
-    }
-    .vis-item.vis-selected.orange {
-      /* custom colors for selected orange items */
-      background-color: orange;
-      border-color: orangered;
-    }
-
-    .vis-item.magenta {
-      background-color: magenta;
-      border-color: purple;
-      color: white;
-    }
-
-    /* our custom classes overrule the styles for selected events,
-       so lets define a new style for the selected events */
-    .vis-item.vis-selected {
-      background-color: white;
-      border-color: black;
-      color: black;
-      box-shadow: 0 0 10px gray;
-    }
-  </style>
     
   <script>
   function checkCbx(id) {
@@ -121,56 +69,6 @@
         
         elem.trigger("change")
     }
-    // function toggle(id, obj) {
-    //     console.log('id',id)
-    //     //console.log('obj', obj)
-    //     var $input = $(obj);
-    //     console.log("$input.prop('checked')", $input.prop('checked'))
-        
-    //     if ($input.prop('checked')) {
-          
-    //         console.log('$(#id)',$("#" + id))
-    //         $("#" + id).display = 'block';   
-    //         $("#" + id).show("fast");
-    //         console.log('show', "#" + id)
-            
-    //     } else {
-    //         console.log('$(#id)',$("#" + id))
-    //         $("#" + id).hide("slow");
-    //         $("#" + id).display = 'none';
-    //         console.log('hide', "#" + id)
-    //     }
-    // }
-    // function showhide(className, obj) {
-    //   console.log('showhide className', className)
-    //     var $input = $(obj);
-    //     console.log("$input.prop('checked')", $input.prop('checked'))
-    //     if ($input.prop('checked')) {
-    //         $(className).display = 'block';   
-    //         $(className).show("fast");
-    //         console.log('show', className)
-    //     } else {
-    //         $(className).hide("slow");
-    //         $(className).display = 'none';
-    //         console.log('hide', className)
-    //     }
-    // }
-    // function showClass(className) {
-    //       console.log('showClass className', className)
-    //         $(className).display = 'block';   
-    //         $(className).show("fast");
-    //         console.log('show', className)
-
-    // }
-    // function hideClass(className) {
-    //       console.log('hideClass className', className)
-    //         $(className).hide("slow");
-    //         $(className).display = 'none';
-    //         console.log('hide', className)
-
-    // }
-    
-    
     
     function toggleClass(className, obj) {
         console.log('toggleClass className', className)
@@ -321,76 +219,106 @@
 
 
 </head>
-<body >
-<script language="javascript" type="text/javascript">
-  document.oncontextmenu=RightMouseDown;
-  document.onmousedown = mouseDown; 
+<body>
+    <script language="javascript" type="text/javascript">
+      // control right mouse click default behavior
+      document.oncontextmenu=RightMouseDown;
+      document.onmousedown = mouseDown; 
+      function mouseDown(e) {
+          if (e.which==3) {//righClick
+          //alert("Disabled - do whatever you like here..");
+         }
+      }
+      function RightMouseDown() { return false;}
+    </script>
+    
+    
+    <div>
+      <!-- PropSheet Data -->
+      <div id="propsheet_data" class="content ui-widget-content">
+        <div class="propsheet-content">
+          <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
+          <div class="propsheet-header">
+            <h2></h2>
+          </div>
+          <div class="propsheet-body">
+            <p></p>
+          </div>
+          <div class="propsheet-footer">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+      <div id="propsheet_data_hide">
+        <a href="Javascript:closepropsheet();">
+        <img src="/img/icon/1/minus.png">
+        </a>
+      </div>
+      <div id="propsheet_data_show">
+        <a href="Javascript:openpropsheet();">
+        <img src="/img/icon/1/plus.png">
+        </a>
+      </div>
+    </div>
 
-  function mouseDown(e) {
-      if (e.which==3) {//righClick
-      //alert("Disabled - do whatever you like here..");
-     }
-  }
-  function RightMouseDown() { return false;}
-</script>
 
-<h2>
-  Timeline | Transform Rockford Milestones
-</h2>
-<p>
-  You can move and zoom the timelines.
-</p>
-
-
-<div id="visualization" style="margin-left: 50px;margin-right:50px;width:90%;"></div>
-
-
-<div id="selectors">
+  <h2>
+    Timeline | Transform Rockford Milestones
+  </h2>
+  <p>
+    You can move and zoom the timelines.
+  </p>
   
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_ArtsRecreation" value="Spoke_ArtsRecreation" onchange="toggleID('Spoke_ArtsRecreation', this)" checked> ArtsRecreation
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_EconomyJobs" value="Spoke_EconomyJobs" onchange="toggleID('Spoke_EconomyJobs', this)"   checked> EconomyJobs
   
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_Education" onchange="toggleID('Spoke_Education', this)" checked> Education
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_FamilyNeigborhoods" onchange="toggleID('Spoke_FamilyNeigborhoods', this)" checked> FamilyNeigborhoods
+  <div id="visualization" style="margin-left: 50px;margin-right:50px;width:90%;"></div>
   
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_FundingAlignment" onchange="toggleID('Spoke_FundingAlignment', this)" checked>  FundingAlignment
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_HealthyLifestyles" onchange="toggleID('Spoke_HealthyLifestyles', this)" checked> HealthyLifestyles
   
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_LeadershipYouth" onchange="toggleID('Spoke_LeadershipYouth', this)" checked> LeadershipYouth
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_LivingtheBrand" onchange="toggleID('Spoke_LivingtheBrand', this)" checked> LivingtheBrand
+  <div id="selectors">
+    
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_ArtsRecreation" value="Spoke_ArtsRecreation" onchange="toggleID('Spoke_ArtsRecreation', this)" checked> ArtsRecreation
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_EconomyJobs" value="Spoke_EconomyJobs" onchange="toggleID('Spoke_EconomyJobs', this)"   checked> EconomyJobs
+    
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_Education" onchange="toggleID('Spoke_Education', this)" checked> Education
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_FamilyNeigborhoods" onchange="toggleID('Spoke_FamilyNeigborhoods', this)" checked> FamilyNeigborhoods
+    
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_FundingAlignment" onchange="toggleID('Spoke_FundingAlignment', this)" checked>  FundingAlignment
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_HealthyLifestyles" onchange="toggleID('Spoke_HealthyLifestyles', this)" checked> HealthyLifestyles
+    
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_LeadershipYouth" onchange="toggleID('Spoke_LeadershipYouth', this)" checked> LeadershipYouth
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_LivingtheBrand" onchange="toggleID('Spoke_LivingtheBrand', this)" checked> LivingtheBrand
+    
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_PhysicalInfrastructure" onchange="toggleID('Spoke_PhysicalInfrastructure', this)" checked> PhysicalInfrastructure
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_Planning" onchange="toggleID('Spoke_Planning', this)" checked> Planning
   
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_PhysicalInfrastructure" onchange="toggleID('Spoke_PhysicalInfrastructure', this)" checked> PhysicalInfrastructure
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_Planning" onchange="toggleID('Spoke_Planning', this)" checked> Planning
-
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_Quality" onchange="toggleID('Spoke_Quality', this)" checked> Quality
-  <input type="checkbox" name="cbxspokes" id="cbxSpoke_UnityPrideCulture" onchange="toggleID('Spoke_UnityPrideCulture', this)" checked> UnityPrideCulture
-
-</div>
-
-<div id="categories">
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_Quality" onchange="toggleID('Spoke_Quality', this)" checked> Quality
+    <input type="checkbox" name="cbxspokes" id="cbxSpoke_UnityPrideCulture" onchange="toggleID('Spoke_UnityPrideCulture', this)" checked> UnityPrideCulture
   
-  <input type="checkbox" name="cbxoutput" id="cbxoutput" value="output" onchange="toggleClass('.vis-item.output', this)" checked> Outputs
-  <input type="checkbox" name="cbxoutcome"id="cbxoutcome" value="outcome" onchange="toggleClass('.vis-item.outcome', this)"  checked> Outcomes
+  </div>
   
-</div>
-
-<div id="periods">
+  <div id="categories">
+    
+    <input type="checkbox" name="cbxoutput" id="cbxoutput" value="output" onchange="toggleClass('.vis-item.output', this)" checked> Outputs
+    <input type="checkbox" name="cbxoutcome"id="cbxoutcome" value="outcome" onchange="toggleClass('.vis-item.outcome', this)"  checked> Outcomes
+    
+  </div>
   
-  <input type="checkbox" name="cbxperiods" id="cbx2017" onchange="toggleClass('.cls2017', this)" checked> 2017
-  <input type="checkbox" name="cbxperiods" id="cbx2018" onchange="toggleClass('.cls2018', this)"   checked> 2018
-  <input type="checkbox" name="cbxperiods" id="cbx2019" onchange="toggleClass('.cls2019', this)" checked> 2019
-  <input type="checkbox" name="cbxperiods" id="cbx2020" onchange="toggleClass('.cls2020', this)"   checked> 2020
-  <input type="checkbox" name="cbxperiods" id="cbx2021" onchange="toggleClass('.cls2021', this)" checked> 2021
-  <input type="checkbox" name="cbxperiods" id="cbx2022" onchange="toggleClass('.cls2022', this)"   checked> 2022
-  <input type="checkbox" name="cbxperiods" id="cbx2023" onchange="toggleClass('.cls2023', this)" checked> 2023
-  <input type="checkbox" name="cbxperiods" id="cbx2024" onchange="toggleClass('.cls2024', this)"   checked> 2024
-  <input type="checkbox" name="cbxperiods" id="cbx2025" onchange="toggleClass('.cls2025', this)" checked> 2025
-  
-</div>  
+  <div id="periods">
+    
+    <input type="checkbox" name="cbxperiods" id="cbx2017" onchange="toggleClass('.cls2017', this)" checked> 2017
+    <input type="checkbox" name="cbxperiods" id="cbx2018" onchange="toggleClass('.cls2018', this)"   checked> 2018
+    <input type="checkbox" name="cbxperiods" id="cbx2019" onchange="toggleClass('.cls2019', this)" checked> 2019
+    <input type="checkbox" name="cbxperiods" id="cbx2020" onchange="toggleClass('.cls2020', this)"   checked> 2020
+    <input type="checkbox" name="cbxperiods" id="cbx2021" onchange="toggleClass('.cls2021', this)" checked> 2021
+    <input type="checkbox" name="cbxperiods" id="cbx2022" onchange="toggleClass('.cls2022', this)"   checked> 2022
+    <input type="checkbox" name="cbxperiods" id="cbx2023" onchange="toggleClass('.cls2023', this)" checked> 2023
+    <input type="checkbox" name="cbxperiods" id="cbx2024" onchange="toggleClass('.cls2024', this)"   checked> 2024
+    <input type="checkbox" name="cbxperiods" id="cbx2025" onchange="toggleClass('.cls2025', this)" checked> 2025
+    
+  </div>  
   
 
 <script type="text/javascript">
-  let datalink = null;
+  var datalink = null;
   //const dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
   const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
   
@@ -402,7 +330,7 @@
     $.getJSON(dataURL, function(data) {
         console.log('getJSON')
         console.log(data)
-        let treeData = data
+        var treeData = data
         console.log('treeData',treeData)
         
         if (cb) cb(null, treeData )
@@ -414,11 +342,10 @@
 
 <script type="text/javascript">
 
-      
       var result =  getTheData(dataURL, function(err, json) {
       
-          let data = json;
-          // console.log('data', data)
+          var data = json;
+          console.log('data', data)
           dataReceived(data, function(datasets) {
               console.log('datasets', datasets)
               
@@ -432,5 +359,7 @@
 </script>
 
 
+    <script type="text/javascript" src="/js/propsheet.js"></script>
+    <link rel="stylesheet" href="/css/propsheet.css"> 
 </body>
 </html>
