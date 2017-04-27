@@ -1,0 +1,26 @@
+
+text {
+  font: 11px sans-serif;
+  cursor: pointer;
+}
+
+title {
+    display: block;
+}
+
+h1 {
+  text-align: center;
+  margin: .5em 0;
+}
+
+.wrapper {
+  margin-left: 120px;
+}
+
+blockquote {
+  width: 720px;
+}
+
+p#intro {
+  margin-left: 120px;
+}
