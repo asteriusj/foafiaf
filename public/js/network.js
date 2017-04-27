@@ -95,10 +95,8 @@ console.log('spinner spin on dataRecieved',spinner)
 			console.log('network.on click')
 			console.log('')
 			
-			// start spinner
-			var target = document.getElementById('mainArea')
-			var spinner = new Spinner().spin(target);
-			console.log('spinner',spinner)
+			
+			
 			console.log('selected', selected)
 			
 			// var t0 = new Date();
@@ -128,6 +126,11 @@ console.log('spinner spin on dataRecieved',spinner)
 				console.log('nodeId',nodeId)
 				if(nodeId) {
 
+					// start spinner
+						var target = document.getElementById('mainArea')
+						var spinner = new Spinner().spin(target);
+						console.log('spinner',spinner)
+						
 					visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
 					visibleEdges = rawEdges
 					//console.log('new visibleNodes',visibleNodes)
@@ -137,14 +140,16 @@ console.log('spinner spin on dataRecieved',spinner)
 					//network = setNetwork(visibleNodes, visibleEdges)
 					
 					network.once("afterDrawing", function(){
+						
 						zoomToSelectedNode(nodeId, network);
 						// stop spinner
 						if (spinner) spinner.stop() ; 
+						console.log('spinner',spinner)
 					});
 				}
-				if (spinner) spinner.stop() ;
+				
 			}
-			if (spinner) spinner.stop() ;
+			
 			
 	}); // end on click
 
