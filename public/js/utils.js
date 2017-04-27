@@ -48,10 +48,10 @@ function getText(d){
 };
 
 // prep title of element 
-function getIdentifer(d){
-    var txt = d.depth ? d.id : "" ;
-    //console.log('txt', txt)
-    return txt;
+function getIdentifer(t){
+    var identifier = t.id || null ;
+    // console.log('identifier', identifier)
+    return identifier;
 };
 
 // prep title of element 
@@ -237,17 +237,17 @@ function htmlPreview (_entity) {
 	var _header = null;
 	if (_prefLabel) {
 		_header = _prefLabel;
+	} else if (_label) {
+		_header = _label;
 	} else if (_title) {
 		_header = _title;
-	} else if (_title) {
-		_header = _label;
 	} else {
 		_header = _name;
 	}
 	if (_header) _html = _html + '<p>' + '<b>' + _header + '</b>'  + '</p>'
 	
-	if (_topic) _html = _html + _topic + '</br></br>' 
-	if (_title) _html = _html + _title + '</br></br>' 
+	// if (_topic) _html = _html + _topic + '</br></br>' 
+	//if (_title) _html = _html + _title + '</br></br>' 
 	if (_description) _html = _html + _description + '</br></br>' 
 
 	if (_projectoutputs) _html = _html + _projectoutputs + '</br></br>' 
