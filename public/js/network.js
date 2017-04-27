@@ -63,7 +63,10 @@ console.log('spinner spin on dataRecieved',spinner)
 	visibleEdges = rawEdges;
 	
 	
-	if (selectedNode) displayData(selectedNode);
+	if (selectedNode) {
+		displayData(selectedNode);
+		mouseover(selectedNode);
+	}
 	
 
 	//console.log('visibleNodes', JSON.stringify(visibleNodes) )
