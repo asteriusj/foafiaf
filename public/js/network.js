@@ -162,11 +162,12 @@ console.log('spin spinner on click',spinner)
 		console.log('')
 		 console.log('network.on showPopup')
 		 console.log('')
+		 
 		 console.log('selected', selected)
 
 		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if ((selected.node) || (selected)) {
-			selectedNode = getNodeById(rawNodes, selected.node)
+		if (selected) {
+			selectedNode = getNodeById(rawNodes, selected)
 			console.log('from nodeId selectedNode', selectedNode)
 			//  display node or edge data in the sidebar for selected element
 			if (selectedNode) {
