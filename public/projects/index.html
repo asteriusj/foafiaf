@@ -12,70 +12,72 @@
     <![endif]-->
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
      
+    <script src="../dist/d3.min.js"></script>
+    <script type="text/javascript" src="/js/iw.js"></script>
+	<script type="text/javascript" src="/js/utils.js"></script>
      
-     <script src="../dist/d3.min.js"></script>
-     <script type="text/javascript" src="/js/iw.js"></script>
-	 <script type="text/javascript" src="/js/utils.js"></script>
-     
-     <script type="text/javascript" src="/js/sunburst.js"></script>
-     <link rel="stylesheet" href="/css/sunburst.css">
+    <script type="text/javascript" src="/js/sunburst.js"></script>
+    <link rel="stylesheet" href="/css/sunburst.css">
     
-     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
      
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
      
-     <script src="/js/smtp.js"></script>
-     <script src="/js/spin.min.js"></script>
+    <script src="/js/smtp.js"></script>
+    <script src="/js/spin.min.js"></script>
 
     
 
 </head>
 <body>
-<script language="javascript" type="text/javascript">
-  document.oncontextmenu=RightMouseDown;
-  document.onmousedown = mouseDown; 
-
-  function mouseDown(e) {
-      if (e.which==3) {//righClick
-      //alert("Disabled - do whatever you like here..");
-     }
-  }
-  function RightMouseDown() { return false;}
-</script>
-
-<!-- PropSheet Data -->
-<div id="propsheet_data" class="content ui-widget-content">
-  <div class="propsheet-content">
-    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
-    <div class="propsheet-header">
-      <h2>PropSheet Header</h2>
+    <script language="javascript" type="text/javascript">
+      // control right mouse click default behavior
+      document.oncontextmenu=RightMouseDown;
+      document.onmousedown = mouseDown; 
+      function mouseDown(e) {
+          if (e.which==3) {//righClick
+          //alert("Disabled - do whatever you like here..");
+         }
+      }
+      function RightMouseDown() { return false;}
+    </script>
+    
+    
+    <div>
+      <!-- PropSheet Data -->
+      <div id="propsheet_data" class="content ui-widget-content">
+        <div class="propsheet-content">
+          <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
+          <div class="propsheet-header">
+            <h2>Entity</h2>
+          </div>
+          <div class="propsheet-body">
+            <p></p>
+          </div>
+          <div class="propsheet-footer">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+      <div id="propsheet_data_hide">
+        <a href="Javascript:closepropsheet();">
+        <img src="/img/icon/1/minus.png">
+        </a>
+      </div>
+      <div id="propsheet_data_show">
+        <a href="Javascript:openpropsheet();">
+        <img src="/img/icon/1/plus.png">
+        </a>
+      </div>
     </div>
-    <div class="propsheet-body">
-      <p>Some text in the PropSheet Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="propsheet-footer">
-      <h3>PropSheet Footer</h3>
-    </div>
-  </div>
-</div>
-<div id="propsheet_data_hide">
-  <a href="Javascript:closepropsheet();">
-  <img src="/img/icon/1/minus.png">
-  </a>
-</div>
-<div id="propsheet_data_show">
-  <a href="Javascript:openpropsheet();">
-  <img src="/img/icon/1/plus.png">
-  </a>
-</div>
 
 <script type="text/javascript">
 var datalink = null;
@@ -126,7 +128,7 @@ SunBurstDiagram1()
 
 
 <main id="mainArea">
-    <h1>Project Inventory Wheel</h1>
+    <h1>Project Inventory View</h1>
     
     <div id="sunburst1">
           
