@@ -174,9 +174,13 @@ console.log('spin spinner on click',spinner)
 				displayData(selectedNode);
 				mouseover(selectedNode);
 			}
+			
 		}
-	
+		
+		openpropsheet();
+		
 	}); // end showPopup
+	
 	network.on('hidePopup', function(selected){
 		console.log('')
 		 console.log('network.on hidePopup')
