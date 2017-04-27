@@ -51,6 +51,7 @@ getWheelJS( function(err, root) {
           .on("contextmenu", contextmenu)
           .on("mouseover", mouseover)
           .on("mouseout", mouseout)
+          .on("touch", mouseover)
           
         //  .append("title")
             // .text(function(t) { return getTitle(t)}) ;
@@ -139,19 +140,16 @@ getWheelJS( function(err, root) {
     function mouseover(d) {
         // if (!d.children) return;
         console.log('mouseover', d)
-        //   d.dx
-        //   d.dy
-        // var panel = document.getElementById('pFloatingPanel');
+
         var header = document.getElementsByClassName('propsheet-header');
         header[0].innerHTML = getGroup(d)
-        var body = document.getElementsByClassName('propsheet-body');
-        body[0].innerHTML = getDetails(d)
         
-        // $("#panel_data").html(getDetails(d))
-        // $("#panel_data").html('<iframe src="' + panurl + "id=" + a + "&type=" + b + "&param=" + c + '" frameborder=0 height="100%" width="100%" scrolling=' + d + " id=frdata>Loading...</iframe>");
-
+        var body = document.getElementsByClassName('propsheet-body');
+        body[0].innerHTML = htmlPreview(d)
+        
         var footer = document.getElementsByClassName('propsheet-footer');
         footer[0].innerHTML = getIdentifer(d);
+        
     }
     function mouseout(d) {
         if (!d.children) return;
