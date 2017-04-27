@@ -165,7 +165,7 @@ console.log('spin spinner on click',spinner)
 		 console.log('selected', selected)
 
 		//  if a node is selected, hide any nodes outside the selected number N degrees
-		if (selected.node) {
+		if ((selected.node) || (selected)) {
 			selectedNode = getNodeById(rawNodes, selected.node)
 			console.log('from nodeId selectedNode', selectedNode)
 			//  display node or edge data in the sidebar for selected element
