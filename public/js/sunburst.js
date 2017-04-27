@@ -112,10 +112,10 @@ function whenready() {
                     return "rotate(" + r + ")translate(" + (u(t.y) + c) + ")rotate(" + (e > 90 ? -180 : 0) + ")"
                 }
             }).style("fill-opacity", function(e) {
-                                                                                console.log('"fill-opacity" t(n, e) ', t(n, e) )
+                                                                                //console.log('"fill-opacity" t(n, e) ', t(n, e) )
                 return t(n, e) ? 1 : 1e-6
-            }).each("end", function(e) {                        console.log('e', e)
-                                                                console.log('end d3.select "visibility" t(n, e) ', t(n, e) )
+            }).each("end", function(e) {                        //console.log('e', e)
+                                                                //console.log('end d3.select "visibility" t(n, e) ', t(n, e) )
                                                                 
                 d3.select(this).style("visibility", t(n, e) ? null : "hidden")
             })
@@ -140,17 +140,13 @@ function whenready() {
         function mouseover(d) {
             // if (!d.children) return;
             console.log('mouseover', d)
-            //   d.dx
-            //   d.dy
-            // var panel = document.getElementById('pFloatingPanel');
+
             var header = document.getElementsByClassName('propsheet-header');
             header[0].innerHTML = getGroup(d)
-            var body = document.getElementsByClassName('propsheet-body');
-            body[0].innerHTML = getDetails(d)
             
-            // $("#panel_data").html(getDetails(d))
-            // $("#panel_data").html('<iframe src="' + panurl + "id=" + a + "&type=" + b + "&param=" + c + '" frameborder=0 height="100%" width="100%" scrolling=' + d + " id=frdata>Loading...</iframe>");
-    
+            var body = document.getElementsByClassName('propsheet-body');
+            body[0].innerHTML = htmlPreview(d)
+
             var footer = document.getElementsByClassName('propsheet-footer');
             footer[0].innerHTML = getIdentifer(d);
         }
@@ -161,7 +157,7 @@ function whenready() {
             h = f.selectAll("path").data(o);
         h.enter()
             .append("path")
-            .attr("id", function(t, n) {            console.log('t', t) 
+            .attr("id", function(t, n) {            //console.log('t', t) 
                 return "path-" + n
             })
             .attr("d", x)
@@ -253,6 +249,9 @@ function whenready() {
         
         
     }
+    
+
+    
  // see utils.js for formated t functions
     
 }; // end whenready
