@@ -14,8 +14,8 @@ function openpropsheet(a, b, c) {
     
     var f = getSize("w"),
         g = getSize("h"),
-        h = (f - panw) / 4 - 0,             
-        i = (g - panh) / 4 - 1;
+        h = (f - panw) / 4 - 0, h=100,            
+        i = (g - panh) / 4 - 1, i=100;
     0 > i && (i = 0), 0 > h && (h = 0), 
     document.getElementById("propsheet_data").style.width = panw + "px", 
       // document.getElementById("propsheet_data").style.height = panh + "px", 
