@@ -6,7 +6,7 @@ function openpropsheet(a, b, c) {
     var d = "no";
     //console.log('document.getElementById("propsheet_data")',document.getElementById("propsheet_data"))
     
-    var panw = 445, panh = 420, panurl = "feedback.php?";
+    var panw = 420, panh = 280, panurl = "feedback.php?";
     
     // $("#darkenBackground").show();
     
@@ -14,8 +14,8 @@ function openpropsheet(a, b, c) {
     
     var f = getSize("w"),
         g = getSize("h"),
-        h = (f - panw) / 4 - 5,             
-        i = (g - panh) / 4 - 10;
+        h = (f - panw) / 4 - 0,             
+        i = (g - panh) / 4 - 1;
     0 > i && (i = 0), 0 > h && (h = 0), 
     document.getElementById("propsheet_data").style.width = panw + "px", 
       // document.getElementById("propsheet_data").style.height = panh + "px", 
@@ -32,6 +32,9 @@ function closepropsheet() {
     //  $("#propsheet_data").hide(), $("#propsheet_data_hide").hide(), $("#darkenBackground").hide(), $("input#city").focus()
      $("#propsheet_data").hide(), $("#darkenBackground").hide(), $("input#city").focus()
 }
+
+openpropsheet();
+
 function getSize(a) {
     var b = 0,
         c = 0;
