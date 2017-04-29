@@ -1,12 +1,12 @@
 // 'use strict';
 // JS for beahvor of property sheet
-openpropsheet();
+//openpropsheet();
 function openpropsheet(a, b, c) {
     console.log('openpropsheet')
     var d = "no";
     //console.log('document.getElementById("propsheet_data")',document.getElementById("propsheet_data"))
     
-    var panw = 420, panh = 280, panurl = "feedback.php?";
+    var panw = 420, panh = 240, panurl = "feedback.php?";
     
     // $("#darkenBackground").show();
     
@@ -32,8 +32,6 @@ function closepropsheet() {
     //  $("#propsheet_data").hide(), $("#propsheet_data_hide").hide(), $("#darkenBackground").hide(), $("input#city").focus()
      $("#propsheet_data").hide(), $("#darkenBackground").hide(), $("input#city").focus()
 }
-
-openpropsheet();
 
 function getSize(a) {
     var b = 0,
