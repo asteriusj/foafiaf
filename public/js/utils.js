@@ -193,12 +193,12 @@ function htmlPreview (_entity) {
 	var _seealso = _entity['owl:seeAlso'] || _entity['seealso']  || null;
 	var _comments = _entity['rdfs:comment'] || _entity['comments']  || null;
 	var _prefLabel = _entity['skos:prefLabel'] || _entity['prefLabel']  || null;
+	    // _prefLabel = _prefLabel.@value || _prefLabel ;
 	
 	var _name = _entity['foaf:name'] || _entity['name']  || null;
 	var _title = _entity['dc:title'] || _entity['title']  || null;
 	var _description = _entity['dc:description'] || _entity['description']  || null;
-	var _dcabstract = _entity['dc:abstract']  || _entity['dcabstract'] || null;
-	var _dboabstract = _entity['dbo:abstract']  || _entity['dboabstract'] || null;	
+	var _abstract = _entity['dc:abstract']  || _entity['dbo:abstract']  || _entity['dboabstract'] || _entity['abstract'] || null;	
 	var _comment = _entity['rdfs:comment'] || _entity['comment']  || null;
 	
 	var _categories = _entity['foafiaf:categories'] || _entity['categories'] || null;
@@ -252,8 +252,9 @@ function htmlPreview (_entity) {
 
 	if (_projectoutputs) _html = _html + _projectoutputs + '</br></br>' 
 	
-	if (_startdate) _html = _html + _startdate + '  ' + _enddate + '</br></br>' 
-	if (_percent) _html = _html	+ ' complete: '  + _percent + ' %' + '</br></br>' 
+	if (_startdate) _html = _html + ' year: '  + _startdate + '  ' + _enddate + '</br></br>' 
+	// if (_percent) _html = _html	+ ' complete: '  + _percent + ' %' + '</br></br>' 
+	if (_status) _html = _html	+ ' status: '  + _status + ' ' + '</br></br>' 
 	
 
 	// if (_segment) _html = _html + 	_segment + '</br></br>'
@@ -262,8 +263,8 @@ function htmlPreview (_entity) {
 	// if (_project) _html = _html + 	 _project + '</br></br>'
 	// if (_measure) _html = _html + 	_measure + '</br></br>'
 	
+	if (_abstract) _html = _html +  _abstract + '</br></br>'
 	if (_comment) _html = _html +  _comment + '</br></br>'
-	if (_dcabstract) _html = _html +  _dcabstract + '</br></br>'
 	
 	// _html = _html + 	' id:    <em>' +  _id   + '</em></br>'
 	_html = _html + '</div>'
