@@ -35,14 +35,22 @@
   <![endif]-->
     
     
-    
-    
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 100%;
+        z-index: 0;
       }
+      #capture {
+       height: 360px;
+       width: 480px;
+       overflow: hidden;
+       float: left;
+       background-color: #ECECFB;
+       border: thin solid #333;
+       border-left: none;
+       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
@@ -50,37 +58,36 @@
         padding: 0;
       }
     </style>
-    
-
 
 </head>
 <body>
   
   <!-- PropSheet Data -->
-  <div id="propsheet_data" class="content ui-widget-content">
-    <div class="propsheet-content">
-      <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
-      <div class="propsheet-header">
-        <h2>Places view</h2>
-      </div>
-      <div class="propsheet-body">
+  <!--<div id="propsheet_data" class="content ui-widget-content">-->
+  <!--  <div class="propsheet-content">-->
+  <!--    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>-->
+  <!--    <div class="propsheet-header">-->
+  <!--      <h2>Places view</h2>-->
+  <!--    </div>-->
+  <!--    <div class="propsheet-body">-->
   
-      </div>
-      <div class="propsheet-footer">
-        <h3></h3>
-      </div>
-    </div>
-  </div>
-  <div id="propsheet_data_hide">
-    <a href="Javascript:closepropsheet();">
-    <img src="/img/icon/1/minus.png">
-    </a>
-  </div>
-  <div id="propsheet_data_show">
-    <a href="Javascript:openpropsheet();">
-    <img src="/img/icon/1/plus.png">
-    </a>
-  </div>
+  <!--    </div>-->
+  <!--    <div class="propsheet-footer">-->
+  <!--      <h3></h3>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+  <!--<div id="propsheet_data_hide">-->
+  <!--  <a href="Javascript:closepropsheet();">-->
+  <!--  <img src="/img/icon/1/minus.png">-->
+  <!--  </a>-->
+  <!--</div>-->
+  <!--<div id="propsheet_data_show">-->
+  <!--  <a href="Javascript:openpropsheet();">-->
+  <!--  <img src="/img/icon/1/plus.png">-->
+  <!--  </a>-->
+  <!--</div>-->
+  
     <div id="map"></div>
     <!--<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>-->
@@ -190,18 +197,54 @@
 
   }
   
+  function showZipLayer(map) {
+      console.log('showZipLayer')
+      // Adds markers to the map.
+      var src = 'https://foafiaf-asteriusj.c9users.io/locations/regional-area-zipcodes.kml';
+      
+      // map = new google.maps.Map(document.getElementById('map'), {
+      //   center: new google.maps.LatLng(-19.257753, 146.823688),
+      //   zoom: 2,
+      //   mapTypeId: 'terrain'
+      // });
+      /*global google*/
+      var kmlLayer = new google.maps.KmlLayer(src, {
+          suppressInfoWindows: true,
+          preserveViewport: false,
+          map: map
+      });
+      kmlLayer.addListener('click', function(event) {
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
+          testimonial.innerHTML = content;
+      });
+      // https://developers.google.com/maps/documentation/javascript/kml
+        // var kmlLayer = new google.maps.KmlLayer();
+        // var src = 'regional-area-zipcodes.kml';
+        // var kmlLayer = new google.maps.KmlLayer(src, {
+        //   suppressInfoWindows: true,
+        //   preserveViewport: false,
+        //   map: map
+        // });
+  }
+  
   function initMap() {
       console.log('initMap')
         var myLatLng = {lat: 42.25944444444445, lng: -89.06444444444445};
-          
+        
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           //center: {lat: 42.25944444444445, lng: -89.06444444444445}
           center: myLatLng
         });
-    
+ 
+        
+        showZipLayer(map);
+           
         setMarkers(map);
   }
+  
+  
     
   function refreshMap() {
       console.log('refreshMap')
@@ -217,13 +260,17 @@
         }, 100);
   }
 </script>
-    
+<!--https://www.census.gov/geo/maps-data/data/tiger-kml.html-->
+<!--http://www.uis.edu/gis/projects/data/-->
+<!--http://stackoverflow.com/questions/13939634/need-help-finding-kml-data-for-specific-zip-code-->
+<!--http://ims.wingis.org/maps/POI.aspx-->
 
 
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0&callback=initMap">
     </script>
+
   
     <!--<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA_13ygGRUkO-nEZsgTHBSbaDnTCcLXi0&callback=initMap">
