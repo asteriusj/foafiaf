@@ -203,7 +203,7 @@
       // Adds layer to the map
       
       // Note: Google caches kml files for extended period - use fake / different url params to override
-      var zipkml = 'http://foafiaf-asteriusj.c9users.io/locations/regional-area-zipcodes.kml?v=4';
+      var zipkml = 'http://foafiaf-asteriusj.c9users.io/locations/regional-area-zipcodes_.kml';
 
       // map = new google.maps.Map(document.getElementById('map'), {
       //   center: new google.maps.LatLng(-19.257753, 146.823688),
@@ -283,7 +283,7 @@
         });
  
         
-        // showZipLayer(map);
+        showZipLayer(map);
         showCountyLayer(map);
            
         setMarkers(map);
