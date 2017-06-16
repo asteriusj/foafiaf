@@ -3,18 +3,40 @@ function  getOptions() {
       
   return {
 	
-  	layout: {
-  		randomSeed: 10,
-  		improvedLayout:false
-  	},
+
+    layout: {
+      randomSeed: undefined,
+      improvedLayout:true,
+    },
   
+    // interaction:{
+    //   dragNodes:  true,
+    //   dragView:  true,
+    //   hideEdgesOnDrag:  false,
+    //   hideNodesOnDrag:  false,
+    //   hover:  true,
+    //   hoverConnectedEdges:  true
+    // },
+    interaction:{hover:true},
+    
+      
+    // keyboard:{
+    //   enabled: true,
+    // //   speed: {x:10,y:10,zoom:0.02},
+    // //   bindToWindow: true,
+    //   // multiselect: false,
+    //   // navigationButtons: false,
+    //   // selectable: true,
+    //   // selectConnectedEdges: true,
+    //   tooltipDelay: 300,
+    //   zoomView: true
+    // },
   
   	physics: {
   	  solver: 'forceAtlas2Based',
   	  maxVelocity: 10,
   	  minVelocity: 1,
   	},
-
 
   	groups: {
   	  
@@ -74,6 +96,16 @@ function  getOptions() {
           code: '\uf016',
           size: 55,
           color: 'Navy'
+        }
+      },
+      Issue: {
+        Issue: 'icon',
+        icon: {
+          face: 'FontAwesome',
+          name: 'fa-file-o',
+          code: '\uf016',
+          size: 50,
+          color: 'FFFFA5'
         }
       },
       
@@ -441,6 +473,18 @@ function  getOptions() {
         }
       },
      
+      
+      Strategy: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'olive'
+        }
+      },
+
       Project: {
         shape: 'icon',
         icon: {
@@ -451,66 +495,103 @@ function  getOptions() {
           color: 'maroon'
         }
       },
-      Strategy: {
-        shape: 'icon',
-        icon: {
-          face: 'FontAwesome',
-          name: 'fa-arrows',
-          code: '\uf047',
-          size: 40,
-          color: 'maroon'
-        }
-      },
+      
       Measure: {
-        shape: 'icon',
-        icon: {
-          name: 'fa-bullseye',
-          face: 'FontAwesome',
-          code: '\uf140',
-          size: 40,
-          color: 'green'
-        }
-      },
-      MeasureGreen: {
-        shape: 'icon',
-        icon: {
-          name: 'fa-bullseye',
-          face: 'FontAwesome',
-          code: '\uf140',
-          size: 40,
-          color: 'green'
-        }
-      },
-      MeasureRed: {
-        shape: 'icon',
-        icon: {
-          name: 'fa-bullseye',
-          face: 'FontAwesome',
-          code: '\uf140',
-          size: 40,
-          color: 'red'
-        }
-      },
-      MeasureYellow: {
-        shape: 'icon',
-        icon: {
-          name: 'fa-bullseye',
-          face: 'FontAwesome',
-          code: '\uf140',
-          size: 40,
-          color: 'yellow'
-        }
-      },
-      Spoke: {
         shape: 'icon',
         icon: {
           name: 'fa-line-chart',
           face: 'FontAwesome',
           code: '\uf201',
           size: 40,
-          color: 'HotPink'
+          color: 'cyan'
         }
       },
+      
+      Scorecard: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-snowflake-o',
+          face: 'FontAwesome',
+          code: '\uf2dc',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+      
+linechart: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-line-chart',
+          face: 'FontAwesome',
+          code: '\uf201',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+areachart: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-area-chart',
+          face: 'FontAwesome',
+          code: '\uf1fe',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+barchart: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bar-chart',
+          face: 'FontAwesome',
+          code: '\uf080',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+piechart: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-pie-chart',
+          face: 'FontAwesome',
+          code: '\uf200',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+      
+      Certificate: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-certificat',
+          face: 'FontAwesome',
+          code: '\uf0a3',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+
+      Crosshairs: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-crosshairs',
+          face: 'FontAwesome',
+          code: '\uf05b',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+      
+      Comment: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-comment-o',
+          face: 'FontAwesome',
+          code: '\uf0e5 ',
+          size: 40,
+          color: 'cyan'
+        }
+      },
+  
       Segment: {
         shape: 'icon',
         icon: {
@@ -521,7 +602,29 @@ function  getOptions() {
           color: 'DeepPink'
         }
       },
-    
+      
+      Spoke: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'HotPink'
+        }
+      },
+      
+     Piechart: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-pie-chart',
+          face: 'FontAwesome',
+          code: '\uf200',
+          size: 40,
+          color: 'DeepPink'
+        }
+      },
+      
     
       Perse: {
         shape: 'icon',
@@ -1150,17 +1253,18 @@ function  getOptions() {
   				  color: 'DarkViolet'
   				}
   		},
-      Objective: {
+
+      Measure: {
         shape: 'icon',
         icon: {
           face: 'FontAwesome',
-          name: 'fa-arrows',
-          code: '\uf047',
+          name: 'fa-line-chart',
+          code: '\uf201',
           size: 40,
           color: 'blue'
         }
       },
-      Measure: {
+      Objective: {
         shape: 'icon',
         icon: {
           name: 'fa-bullseye',
