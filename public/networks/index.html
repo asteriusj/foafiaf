@@ -139,7 +139,7 @@
   <div class="propsheet-content">
     <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
     <div class="propsheet-header">
-      <h2>Relationships Graph</h2>
+      <h2>Propery Sheet</h2>
     </div>
     <div class="propsheet-body">
 
@@ -162,20 +162,20 @@
 
 
 <!-- EditForm Data -->
-<div id="editform_data" class="content ui-widget-content">
-  <div class="editform-content">
-    <a href="Javascript:closeeditform();"><span class="close">&times;</span></a>
-    <div class="editform-header">
-      <h2>Edit Entity</h2>
-    </div>
-    <div class="editform-body">
+<!--<div id="editform_data" class="content ui-widget-content">-->
+<!--  <div class="editform-content">-->
+<!--    <a href="Javascript:closeeditform();"><span class="close">&times;</span></a>-->
+<!--    <div class="editform-header">-->
+<!--      <h2>Edit Entity</h2>-->
+<!--    </div>-->
+<!--    <div class="editform-body">-->
 
-    </div>
-    <div class="editform-footer">
-      <h3></h3>
-    </div>
-  </div>
-</div>
+<!--    </div>-->
+<!--    <div class="editform-footer">-->
+<!--      <h3></h3>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 <!--<div id="editform_data_hide">-->
 <!--  <a href="Javascript:closeeditform();">-->
 <!--  <img src="/img/icon/1/minus.png">-->
@@ -242,8 +242,8 @@ console.log('start spinner',spinner)
 
 
 //  retrieve graph data from jsonld file
-var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
-// var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+// var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
+var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
 console.log('dataURL -> ', dataURL)
 var myData;
 $.getJSON(dataURL, function(data) {
