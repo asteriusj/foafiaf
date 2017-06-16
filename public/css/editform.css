@@ -1,0 +1,98 @@
+/* css styles for editor form */
+
+#editform_data {
+    display: none;
+    position: fixed;
+    height: 240px;
+    width: 480px;
+    z-index: 30;
+    background-color:transparent;
+    padding: 5px;
+    border: 0 solid #000;
+    top: 50;
+    left: 50
+}
+.editform-content {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 7px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 7px
+}
+.editform-content {
+    *border: 1px solid;
+    *border-color: #CCC #DDD #CCC;
+    background: #FFF;
+    padding: 3px ;
+    font-size: 12px;
+	color: #000;
+	font-family: "Gill Sans MT", "trebuchet ms", cambria;
+}
+.editform-content:nth-child(1n) {
+    border: none
+}
+.editform-content {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -khtml-border-radius: 10px
+}
+.editform-header {
+    padding: 2px 12px ;
+    font-size: large;
+    font-weight: bold;
+    color: navy;
+}
+.editform-body {
+    padding: 2px 12px;
+    font-size: medium;
+    font-weight: normal;
+}
+.editform-footer {
+    padding: 2px 12px;
+    font-size: smaller;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: transparent;
+    color: navy;
+}
+
+label, input, select {
+	display:block;
+}
+/*input, select {*/
+/*	margin-bottom: 1em;*/
+/*}*/
+fieldset {
+	margin-bottom: 2em;
+	padding: 1em;
+}
+fieldset fieldset {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: navy;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.close:hover,
+.close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
