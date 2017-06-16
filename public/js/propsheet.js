@@ -21,18 +21,29 @@ function openpropsheet(a, b, c) {
       // document.getElementById("propsheet_data").style.height = panh + "px", 
     document.getElementById("propsheet_data").style.left = h + "px", 
     document.getElementById("propsheet_data").style.top = i + "px", 
-    $("#propsheet_data").show(),
-    document.getElementById("propsheet_data_show").style.left = h + panw - 6 + "px", 
-    document.getElementById("propsheet_data_show").style.top = i - 13 + "px", 
-    $("#propsheet_data_show").show()
+    $("#propsheet_data").show()
+    // ,
+    // document.getElementById("propsheet_data_show").style.left = h + panw - 6 + "px", 
+    // document.getElementById("propsheet_data_show").style.top = i - 13 + "px", 
+    // $("#propsheet_data_show").show()
 
 }
 function closepropsheet() {
      console.log('closepropsheet')
     //  $("#propsheet_data").hide(), $("#propsheet_data_hide").hide(), $("#darkenBackground").hide(), $("input#city").focus()
-     $("#propsheet_data").hide(), $("#darkenBackground").hide(), $("input#city").focus()
+     $("#propsheet_data").hide(), $("#darkenBackground").hide()
 }
-
+function togglepropsheet() {
+     console.log('togglepropsheet')
+     var propSheetIs = document.getElementById("propsheet_data").style.display ;
+    //  alert(propSheetIs)
+    //  console.log('propSheetIs',propSheetIs)
+     if (propSheetIs === 'none') {
+         openpropsheet()
+     } else if (propSheetIs === 'block') {
+         closepropsheet()
+     }
+}
 function getSize(a) {
     var b = 0,
         c = 0;
@@ -44,7 +55,6 @@ function getSize(a) {
     $( "#propsheet_data" ).draggable();
   } );
 // </script>
-
 
 
 
