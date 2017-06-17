@@ -9,9 +9,6 @@ $("#searchForm").submit(function() {
     return false;
 });
 
-function changeNextId(){
-	
-}
 
 function changeEntity(){
 	
@@ -238,43 +235,22 @@ function enter(e){
 		console.log('key detected')
 	}
 }
-// document.getElementById('searchButton').addEventListener("keydown",function(e){
-//   if(e.keyCode == 13){
-//   //doSomething()
-//   console.log('key detected')
-//   searchData()
-//   } 
-// });
-// $('#searchButton').on('keydown',function(e){
-//   if(e.which == '13'){
-//     //doSomething();
-//     console.log('key detected')
-// 	searchData()
-//   } 
-// });
-
-// <script type="text/javascript">
     
- //   function CloseMySelf(sender) {
-	//     try {
-	//         window.opener.HandlePopupResult(sender.getAttribute("startid"));
-	//     }
-	//     catch (err) {}
-	//     //window.close();
-	//     return false;
-	// }
-    	
-	function HandleSearchResult(id) {
-		console.log('HandleSearchResult', id)
-		var element = document.getElementById('nextId')
-		element.style.display='none';
-		// Set element value
-		element.value = id;
-		// Create a new 'change' event
-		var event = new Event('change');
-		// Dispatch it.
-		element.dispatchEvent(event);
+    
+//
+// nextId input needs to be initialized in visulization specific JS routine
+//
+function HandleSearchResult(id) {
+	console.log('HandleSearchResult', id)
+	var element = document.getElementById('nextId')
+	element.style.display='none';
+	// Set element value
+	element.value = id;
+	// Create a new 'change' event
+	var event = new Event('change');
+	// Dispatch it.
+	element.dispatchEvent(event);
 
-	}
+}
 	
 // </script>
