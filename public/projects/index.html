@@ -7,7 +7,7 @@
   <meta http-equiv="content-language" content="en">
   <link rel="icon" type="image/png" href="/img/favicon32.png" sizes="32x32">
   
-  <title>Transform Rockford FOAFIAF Projects Sunburst Diagram</title>
+  <title>Transform Rockford FOAFIAF T-Map Sunburst Diagram</title>
   <meta name="description" content="FOAFIAF: Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering.">
   <meta name="description" content="The sunburst diagram shows...">
   <meta name="author" content="Transform Rockford LLC | Asterius Media LLC">
@@ -32,6 +32,8 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
      
     <script src="../dist/d3.min.js"></script>
     <script type="text/javascript" src="/js/iw.js"></script>
@@ -47,9 +49,9 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
      
-    <script src="/js/smtp.js"></script>
+    <!--<script src="/js/smtp.js"></script>-->
     <script src="/js/spin.min.js"></script>
-
+    <script src="/js/search.js"></script>
     
 
 </head>
@@ -66,85 +68,142 @@
       function RightMouseDown() { return false;}
     </script>
     
-    
-    <div>
-      <!-- PropSheet Data -->
-      <div id="propsheet_data" class="content ui-widget-content">
-        <div class="propsheet-content">
-          <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
-          <div class="propsheet-header">
-            <h2>Sunburst diagram</h2>
-          </div>
-          <div class="propsheet-body">
-            <p></p>
-          </div>
-          <div class="propsheet-footer">
-            <h3></h3>
-          </div>
-        </div>
-      </div>
-      <div id="propsheet_data_hide">
-        <a href="Javascript:closepropsheet();">
-        <img src="/img/icon/1/minus.png">
-        </a>
-      </div>
-      <div id="propsheet_data_show">
-        <a href="Javascript:openpropsheet();">
-        <img src="/img/icon/1/plus.png">
-        </a>
-      </div>
+<!-- Action icons data  -->
+<div id="actionIcons" style="position:fixed;z-index:99;">
+  <!--<div id="reload_data_toggle">-->
+  <!--  <a href="Javascript:togglereload();">-->
+  <!--  <img src="/img/icon/1/reload_icon.png" width="15" >-->
+  <!--  </a>-->
+  <!--</div>-->
+  <div id="searchform_data_toggle">
+    <a href="Javascript:togglesearchform();">
+    <img src="/img/icon/1/search_icon.png" width="15" >
+    </a>
+  </div>
+  <div id="propsheet_data_toggle">
+    <a href="Javascript:togglepropsheet();">
+    <img src="/img/icon/1/info_icon.png" width="15" >
+    </a>
+  </div>
+  <!--<div id="editform_data_toggle">-->
+  <!--  <a href="Javascript:toggleeditform();">-->
+  <!--  <img src="/img/icon/1/edit_icon.png" width="15" >-->
+  <!--  </a>-->
+  <!--</div>-->
+</div>
+
+<!-- SearchForm Data -->
+<div id="searchform_data" class="content ui-widget-content">
+  <div class="searchform-content">
+    <a href="Javascript:closesearchform();"><span class="close">&times;</span></a>
+    <div class="searchform-header">
+      <h2>Search It</h2>
     </div>
+    <div class="searchform-body">
+
+    </div>
+    <div class="searchform-footer">
+      <h3></h3>
+    </div>
+  </div>
+</div>
+
+
+<!-- PropSheet Data -->
+<div id="propsheet_data" class="content ui-widget-content">
+  <div class="propsheet-content">
+    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
+    <div class="propsheet-header">
+      <h2>Propery Sheet</h2>
+    </div>
+    <div class="propsheet-body">
+
+    </div>
+    <div class="propsheet-footer">
+      <h3></h3>
+    </div>
+  </div>
+</div>
+
 
 <script type="text/javascript">
-var datalink = null;
-var  dataURL = datalink || "../things/jsonld/combinedJSONLD.jsonld";
-//const dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
- //const dataURL = "json/mcpherTreeData.json";
- //const dataURL = "json/flare.json";
- //const dataURL = "json/milestonetest.json";
+// collect URL query string parameters
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+}
+var startid = getUrlVars()["startid"] || null;
+console.log('startid', startid)
+var datalink = getUrlVars()["datalink"] || null;
+console.log('datalink', datalink)
+var showall = getUrlVars()["showall"] || null;
+console.log('showall', showall)
+var nextid = getUrlVars()["nextid"] || null;
+console.log('nextid', nextid)
+
+
+//  retrieve graph data from jsonld file
+// var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
+var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+console.log('dataURL -> ', dataURL)
+var myData;
 
 function getTheData(dataURL, cb) {
     console.log('getTheData') //  retrieve graph data from jsonld file
+    
+    try {
     //var dataPromise = $.Deferred();
     console.log('dataURL -> ', dataURL)
     
     $.getJSON(dataURL, function(data) {
         console.log('getJSON')
-        console.log(data)
+        //console.log(data)
         var treeData = data
-        console.log('treeData',treeData)
+        //console.log('treeData',treeData)
         
         if (cb) cb(null, treeData )
 
     });
-
+    } catch(e) {
+      console.error('e',e)
+    }
 }  
 </script>
-
   
 <script type="text/javascript">
 function SunBurstDiagram1() {
     console.log('SunBurstDiagram1')
     
     var result =  getTheData(dataURL, function(err, json) {
-    
+        if (err) {
+          console.error(err)
+        }
+        
         var data = json;
         dataReceived(data, function(wheelJS) {
             //console.log('wheelJS', wheelJS)
-            /*global whenready*/
-            whenready();    
+               
+            dataLoaded(data);
+	          myData = data; console.log('myData', myData)
+	          
+	          /*global whenready*/
+            whenready(); 
       });
 
-          
     });
 }
+
+// call initiating function
 SunBurstDiagram1()
-  
 </script>
 
 
 <main id="mainArea">
-    <h1>Projects Sunburst View</h1>
+    <h2 style="text-align: center;"><strong><span style="color: #ff9933;">T-Map Sunburst View</span></strong></h2>
+    <div id="selectorContainer" style="display:none"></div>
     
     <div id="sunburst1">
           
@@ -159,9 +218,21 @@ SunBurstDiagram1()
   console.log('start spinner',spinner)
 </script>
 
+    <script type="text/javascript" src="/js/searchform.js"></script>
+    <link rel="stylesheet" href="/css/searchform.css">  
+    <script>opensearchform()</script>
+    <script>updateSearchForm()</script>
+    <script>closesearchform()</script>
+    
     <script type="text/javascript" src="/js/propsheet.js"></script>
-    <link rel="stylesheet" href="/css/propsheet.css"> 
+    <link rel="stylesheet" href="/css/propsheet.css">  
     <script>openpropsheet()</script>
+    <script>closepropsheet()</script>
+    
+    <!--<script type="text/javascript" src="/js/editform.js"></script>-->
+    <!--<link rel="stylesheet" href="/css/editform.css"> -->
+    <!--<script>openeditform()</script>-->
+    <!--<script>closeeditform()</script>-->
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
