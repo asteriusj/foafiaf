@@ -38,7 +38,7 @@
 	<script type="text/javascript" src="/js/options.js"></script>
 	<script type="text/javascript" src="/js/utils.js"></script>
 
-  
+  <!--<link rel="stylesheet" href="/css/style.css">-->
 	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
 	
 	<script type="text/javascript" src="/js/network.js"></script>
@@ -189,7 +189,7 @@
 
 
 <main id="mainArea">
-    <h1>Network Relationships View</h1>
+    <h2 style="text-align: center;"><strong><span style="color: #ff9933;">Network Relationships View</span></strong></h2>
     <div id="selectorContainer" style="display:none"></div>
     
 	<section id="canvasArea">
@@ -224,14 +224,14 @@ console.log('showall', showall)
 var nextid = getUrlVars()["nextid"] || null;
 console.log('nextid', nextid)
 
-// control visibility of accordion views
-var acc = document.getElementsByClassName('accordion-trigger');
-for (var i = 0; i < acc.length; i++) {
-	acc[i].onclick = function(){
-		this.classList.toggle('accordion-trigger-active');
-		this.nextElementSibling.classList.toggle('hidden');
-	}
-};
+// // control visibility of accordion views
+// var acc = document.getElementsByClassName('accordion-trigger');
+// for (var i = 0; i < acc.length; i++) {
+// 	acc[i].onclick = function(){
+// 		this.classList.toggle('accordion-trigger-active');
+// 		this.nextElementSibling.classList.toggle('hidden');
+// 	}
+// };
 
 
 const target = document.getElementById('canvasArea')
@@ -254,7 +254,6 @@ $.getJSON(dataURL, function(data) {
 	dataLoaded(data);
 	myData = data; console.log('myData', myData)
 });
-
 
 </script>
 	    
