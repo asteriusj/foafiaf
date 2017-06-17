@@ -23,8 +23,7 @@ function dataReceived(data) {
 
 function doNetwork(data) {
 	console.log('doNetwork')
-	
-	
+
 	
 	//const target = document.getElementById('canvasArea')
 	//console.log('target',target)
@@ -54,32 +53,25 @@ function doNetwork(data) {
 	console.log('showAll - > ', showAll)
 	
 	
-	
+		
+	//
 	// create placeholder for Next Id and fill wih query param if available
-	var nextId = nextid || null ;
-	console.log('nextId - > ', nextId)
-	document.getElementById('selectorContainer').innerHTML += "<input id='nextId' type='text' value='' onChange='myFunction()' style='display:none'/><br />";
+	// sets input element inside selectorContainer in HTML doc
+	// useed by search.js to put result of entity search
+	//
+	// create placeholder for Next Id and fill wih query param if available
+	// var nextId = nextid || null ;
+	// console.log('nextId - > ', nextId)
+	document.getElementById('selectorContainer').innerHTML += "<input id='nextId' type='text' value=''  style='display:none'/><br />";
 	// handle id seelcted as result of a search
-
-// document.getElementById("nextId").addEventListener("change", myFunction);
-
-// function myFunction() {
-//     var selectedId = document.getElementById('nextId').value;
-//     console.log('myFunction:', selectedId);
-//     gotoNode(getSelectedNode(selectedId));
-// }
-
-document.getElementById("nextId").addEventListener("change", function(){
-	var selectedId = document.getElementById('nextId').value;
-    console.log('nextId change:', selectedId);
-    gotoNode(getSelectedNode(selectedId));
-	// alert('selectedId',selectedId)
-    // document.getElementById("demo").innerHTML = "Hello World";
-});
-	// var mi = document.createElement("input");
-	// mi.setAttribute('id', 'nextId');
-	// mi.setAttribute('type', 'text');
-	// mi.setAttribute('value', nextId);
+	document.getElementById("nextId").addEventListener("change", function(){
+		var selectedId = document.getElementById('nextId').value;
+	    console.log('nextId change:', selectedId);
+	    gotoNode(getSelectedNode(selectedId));
+		// alert('selectedId',selectedId)
+	});
+	// end next id from search plug in
+	
 	
 	
 	//
