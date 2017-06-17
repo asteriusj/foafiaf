@@ -1,4 +1,14 @@
 // 'use strict';
+
+console.log('loading partition.js ...')
+
+
+var Network
+
+
+    
+
+
 function whenready() {
     console.log('whenready')
  
@@ -33,6 +43,99 @@ getWheelJS( function(err, root) {
     
   try {
     console.log('getWheelJS root',root)
+   
+   
+   
+    var myTree = root;
+	//
+	// create placeholder for Next Id and fill wih query param if available
+	// sets input element inside selectorContainer in HTML doc
+	// useed by search.js to put result of entity search
+	//
+	// create placeholder for Next Id and fill wih query param if available
+// 	var nextId = nextid || null ;
+// 	console.log('nextId - > ', nextId)
+	document.getElementById('selectorContainer').innerHTML += "<input id='nextId' type='text' value=''  style='display:none'/><br />";
+	// handle id seelcted as result of a search
+	document.getElementById("nextId").addEventListener("change", function(){
+		var selectedId = document.getElementById('nextId').value;
+	    console.log('nextId change:', selectedId);
+	    gotoNode(getSelectedNode(selectedId));
+		// alert('selectedId',selectedId)
+	});
+
+    //
+    // take id and find node object that matches then return
+    //
+    function getSelectedNode(id) {
+        console.log('getSelectedNode', id)
+        console.log('myTree', myTree)
+        
+        var _node = _findInTree(id,myTree,0) || null;
+        
+        console.log('_node',_node)
+        return _node;
+    } // end getSelectedNode
+    //
+    // Do deep traversal of tree to find id that macthes
+    //
+    function _findInTree(id, _tree, lc) {
+        // console.log('_findInTree',id,_tree, lc)
+        
+        let found = false;
+        let _obj = null
+            
+        while (!found) {
+            
+            // console.log('_tree.length',_tree.length)
+            for (var i in _tree) {
+                // console.log('_tree[i]',_tree[i])
+                
+                let _node = _tree[i] || null;
+                // console.log('_node',_node)
+                
+                if (_node.id === id) {
+                        found = true;
+                        _obj = _node;
+                        break;
+                } else {
+                    // console.log('_node.children',_node.children) 
+                    var _kids = _node.children || null;
+                    // console.log('_kids',_kids) 
+                    if (_kids) {
+                        let tmp = _findInTree(id, _kids, lc+1);
+                        // console.log('tmp',tmp)
+                        if (tmp) {
+                            found = true;
+                            _obj = tmp;
+                            break;
+                        } else {
+                            found = false;
+                        }
+                    }
+                    found = false;
+                } // end if === else
+                
+            } // end i in tree
+            break;
+        
+        } // end while
+        
+        // console.log('_findInTree return', _obj)
+        return _obj;
+    } // end findInTree
+    //
+	// call go to function for selected node
+	//
+    function gotoNode(d) {
+        if (d) click(d)
+    } // end gotoNode
+    // end next id from search plug in
+       
+   
+   
+   
+   
    
     var spliced = null;
     spliced = { "name": "Top 25 by 2025", "children": root }
@@ -97,8 +200,14 @@ getWheelJS( function(err, root) {
         x.domain([d.y, 1]).range([d.y ? 40 : 0, w]);
         y.domain([d.x, d.x + d.dx]);
     
+        if (d3.event.altKey) {                                                  // added handler for altKey for faking click for search results
+            var altKey = d3.event.altKey
+        } else {
+            var altKey =  false
+        }
+        console.log('altKey',altKey)
         var t = g.transition()
-            .duration(d3.event.altKey ? 7500 : 750)
+            .duration(altKey ? 7500 : 750)
             .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; });
     
         t.select("rect")
