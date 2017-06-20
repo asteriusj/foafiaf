@@ -1,400 +1,1062 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix dce: <http://purl.org/dc/elements/1.1/>.
-@prefix dct: <http://purl.org/dc/terms/>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix ir: <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#>.
-@prefix irw: <http://www.ontologydesignpatterns.org/ont/web/irw.owl#>.
+@prefix : <http://foafiaf.transformrockford.org/owl/foafiaf#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix schema: <http://topbraid.org/schema/schema.rdf> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dce: <http://purl.org/dc/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dul: <http://www.loa.istc.cnr.it/ontologies/DUL.owl> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/dul/d0.owl> .
+@prefix wikidata: <http://www.w3.org/2002/07/owl> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix embel: <http://umbel.org/umbel/sc/> .
+@prefix cyc: <http://sw.cyc.com/> .
+@prefix opencyc: <http://sw.opencyc.org/concept/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix participation: <http://purl.org/vocab/participation/schema#> .
+@prefix gr: <http://www.heppnetz.de/ontologies/goodrelations/v1.owl> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pto: <http://www.productontology.org/id/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix con: <https://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix doc: <https://www.w3.org/2000/10/swap/pim/doc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix naics2007: <http://linkedmodel.org/vocab/industry-codes/VOCAB_naics-2007.ttl> .
+@prefix sic: <http://linkedmodel.org/vocab/industry-codes/VOCAB_sic.ttl> .
 @prefix wot:   <http://xmlns.com/wot/0.1/> .
-@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix dc:    <http://purl.org/dc/elements/1.1/> .
-@prefix foafiaf: <http://https://foafiaf-asteriusj.c9.io/owl/foafiaf#> .
+@prefix strategymaps: <http://https://foafiaf-asteriusj.c9.io/owl/strategymaps#> .
+@prefix foafiaf: <http://foafiaf.transformrockford.org/owl/foafiaf#> .
 
-<http://foafiaf-asteriusj.c9.io/owl/foafiaf.owl>
-	a   owl:Ontology;
-	dce:title """FOAFIAF"""@en;
-	dce:description """Formal general description of network map foaf entities and relationships."""@en;
-	dce:creator """Asterius Media LLC"""@en;
-	dce:publisher """Asterius Media LLC"""@en;
-	dce:format """OWL-Full"""@en;
-	rdfs:comment """Copyright (c) 2016 Asterius Media LLC - Transform Rockford """@en;
-	rdfs:seeAlso <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl>, <http://www.ontologydesignpatterns.org/ont/web/irw.owl> .
-	
+<http://foafiaf.transformrockford.org/owl/foafiaf#>  a owl:Ontology ;
+    owl:versionInfo "x.01" ;
+    dc:title "(FOAFIAF) Friend of a Friend is a Friend vocabulary" ;
+    dct:description "Formal general description of network map foaf entities and relationships.";
+    dct:contributor  "Tranform Rockford Technology Team" ;
+	dct:creator "Asterius Media LLC";
+	dct:publisher "Asterius Media LLC";
+	dct:format "OWL-Full";
+	rdfs:label "Friend of a Friend is a Friend (FOAFIAF) OWL" ;
+	rdfs:comment " Copyright (c) 2016-2017 Asterius Media LLC , Transform Rockford LLC ";
+    dc:date "2017-06-20" ;
+	dc:rights <http://creativecommons.org/licenses/by/4.0/> .
 
+
+owl:Thing  
+        rdfs:label  "Thing" .
+        
+rdfs:Class  
+        a  owl:Class .
+        
+vs:term_status  
+        a  owl:AnnotationProperty .   
+        
+wot:assurance  
+        a  owl:AnnotationProperty .
+        
+wot:src_assurance  
+        a  owl:AnnotationProperty .
+        
+dc:date  
+        a  owl:AnnotationProperty .
+        
+geo:SpatialThing
+        a  owl:Class ;
+        rdfs:label  "Spatial Thing" .
+
+skos:Concept  a           owl:Class ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept"@en ;
+        skos:definition   "An idea or notion; a unit of thought."@en .
+
+acl:Authorization
+	a   					owl:Class , rdfs:Class ;
+	rdfs:comment			"An element of access control, allowing agent to agents access of some kind to resources or classes of resources" ;
+	rdfs:isDefinedBy        foafiaf: ;
+    rdfs:label  			"Authorization" ;
+    skos:seeAlso			"https://www.w3.org/wiki/WebAccessControl" ;
+    vs:term_status  		"" .
+    
+    
 #
-# CLASSES
+# ENTITIES
 #
+
+
+:Entities  a       owl:Class , rdfs:Class ;
+        rdfs:comment         "An entity (eg. person, organization, thing or physical artifact)." ;
+        rdfs:isDefinedBy     : ;
+        rdfs:label           "Entities" ;
+        owl:equivalentClass  skos:Concept , rdfs:Resource ;
+        vs:term_status       "" ;
+        skos:definition      "Strategy maps identified entity(s)." .
+
+
+:Concept  a          rdfs:Class , owl:Class ;
+        rdfs:comment        "An idea or notion; a unit of thought." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Concept" ;
+        rdfs:subClassOf     foafiaf:Entities ;
+        owl:disjointWith    foafiaf:Event, foafiaf:Organization , foafiaf:Role , foafiaf:Person , foafiaf:Place  ;
+        owl:equivalentClass skos:Concept ;
+        vs:term_status      "" .
+
+        
+:Event  a            rdfs:Class , owl:Class ;
+        rdfs:comment        "An event." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Event" ;
+        rdfs:subClassOf     foafiaf:Entities ;
+        owl:disjointWith    foafiaf:Concept, foafiaf:Organization , foafiaf:Role , foafiaf:Person , foafiaf:Place  ;
+        owl:equivalentClass dbo:Event , schema:Event , org:Event , bio:Event , opencyc:Event , dct:Event , embel:Event , dul:Event , wikidata:Q1656682  ;
+        vs:term_status      "" .
+
+
+:Organization  a     rdfs:Class , owl:Class ;
+        rdfs:comment        "An organization." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Organization" ;
+        rdfs:subClassOf     foafiaf:Entities ;
+        owl:disjointWith    foafiaf:Concept, foafiaf:Event , foafiaf:Role , foafiaf:Person , foafiaf:Place  ;
+        owl:equivalentClass foaf:Organization , dbo:Organisation , schema:Organization , dul:SocialPerson , wikidata:Q43229 , bio:Organization ;
+        vs:term_status    "" .
+
+
+:Person  a            rdfs:Class , owl:Class ;
+        rdfs:comment        "A place." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Person" ;
+        rdfs:subClassOf     foafiaf:Entities , geo:SpatialThing ;
+        owl:disjointWith    foafiaf:Concept , foafiaf:Event , foafiaf:Organization , foafiaf:Role  , foafiaf:Person ;
+        owl:equivalentClass foaf:Person , dbo:Person , schema:Person , con:Person  ;
+        vs:term_status      "" .  
+
+
+:Place  a            rdfs:Class , owl:Class ;
+        rdfs:comment        "A place." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Place" ;
+        rdfs:subClassOf     foafiaf:Entities , geo:SpatialThing ;
+        owl:disjointWith    foafiaf:Concept , foafiaf:Event , foafiaf:Organization , foafiaf:Role  , foafiaf:Person ;
+        owl:equivalentClass dbo:Place , schema:Place  ;
+        vs:term_status      "" .  
+
+
+:Role  a            rdfs:Class , owl:Class ;
+        rdfs:comment        "A role." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "role" ;
+        rdfs:subClassOf     geo:SpatialThing ;
+        rdfs:subClassOf     foafiaf:Entities ; 
+        owl:disjointWith    foafiaf:Concept , foafiaf:Event , foafiaf:Organization , foafiaf:Place  , foafiaf:Person ;
+        owl:equivalentClass dbo:Place , schema:Place  ;        
+        vs:term_status      "" .  
+  
+    
+#
+# Sub-Entities
+#
+
+:Stakeholder    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Stakeholder" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    vs:term_status    "" .
+    
+:BusinessPerson    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Business Person" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:BusinessPerson  ;
+    vs:term_status    "" .
+        
+:Engineer    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Engineer" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:Engineer  ;
+    vs:term_status    "" .
+        
+:Journalist    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Journalist" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:Journalist  ;
+    vs:term_status    "" .
+          
+:OfficeHolder    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Office Holder" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:OfficeHolder  ;
+    vs:term_status    "" .  
+ 
+:SeniorAdministrator    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Senior Administrator" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:OrganisationLeader  ;
+    vs:term_status    "" .  
+    
+:ElectedOfficial    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Elected Official" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:Politician  ;
+    vs:term_status    "" .      
+          
+:FaithLeader    a       rdfs:Class , owl:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Faith Leader" ;
+    rdfs:subClassOf   foafiaf:Person  ;
+    owl:equivalentClass dbo:Religious  ;
+    vs:term_status    "" .        
+
+
+:Area  
+    a        owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Area" ;
+    rdfs:subClassOf   foafiaf:Place ;
+    vs:term_status    "" .
+    
+:Location  
+    a        owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Location" ;
+    rdfs:subClassOf   foafiaf:Place ;
+    owl:equivalentClass  org:Locality , dbo:Location ;
+    vs:term_status    "" .
+    
+:Country  
+    a        owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Country" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass org:Country , schema:Country ;
+    vs:term_status    "" .
+    
+:State  
+    a        owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "State" ;
+    rdfs:subClassOf   foafiaf:Place ;
+    owl:equivalentClass org:State, schema:State ;
+    vs:term_status    "" .
+  
+:Region  
+    a        owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Region" ;
+    rdfs:subClassOf   foafiaf:Place ;
+    owl:equivalentClass org:Region , org:PopulatedPlace ;
+    vs:term_status    "" .  
+    
+foafiaf:City    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  org:City ;
+    rdfs:label        "City" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass org:City , schema:City ;
+    vs:term_status    "" .
+        
+foafiaf:Village    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  org:Village ;
+    rdfs:label        "Village" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass org:Village ;
+    
+    vs:term_status    "" .
+        
+foafiaf:Town    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Town" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass org:Town  ;
+    vs:term_status    "" .
+
+foafiaf:Business    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Business" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass schema:LocalBusiness  ;
+    vs:term_status    "" .
+            
+foafiaf:Govenment    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Govenment" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass schema:GovernmentOffice ;
+    vs:term_status    "" .
+            
+foafiaf:Community    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Community" ;
+    rdfs:subClassOf   foafiaf:Place  ;
+    owl:equivalentClass org:Community  ;
+    vs:term_status    "" .
+
+
+
+:Topic  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "" ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Topic" ;
+    rdfs:subClassOf     foafiaf:Concept , dul:Concept  ;
+
+    vs:term_status      "" .
+
+:Scorecard  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "A Scorecard is a..." ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Strategy" ;
+    rdfs:subClassOf     foafiaf:Concept ;
+    owl:disjointWith    foafiaf:Measure , foafiaf:Strategy ;
+    owl:equivalentClass strategymaps:Scorecard ;
+    vs:term_status      "" .
+    
+:Strategy  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "An Strategy our anticiapted outcome of a strategy (a collective endeavour monitored by measure(s))." ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Strategy" ;
+    rdfs:subClassOf     foafiaf:Concept ;
+    owl:disjointWith    foafiaf:Measure , foafiaf:Project ;
+    owl:equivalentClass strategymaps:Objective ;
+    vs:term_status      "" .
+
+:Measure  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "A measurement or metric of a strategy (a indicator affected by project(s))." ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Measure" ;
+    rdfs:subClassOf     foafiaf:Concept  ;
+    owl:disjointWith    foafiaf:Strategy , foafiaf:Project ;
+    owl:equivalentClass strategymaps:Measure ;
+    vs:term_status      "" .
+    
+:Project  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "A project or initiative of a strategy (a collective endeavour driven by objective(s))." ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Project" ;
+    rdfs:subClassOf     foafiaf:Concept  ;
+    owl:disjointWith    foafiaf:Strategy , foafiaf:Measure ;
+	owl:equivalentClass strategymaps:Initiative , org:Project , foaf:Project ;
+    vs:term_status      "" .
+
+:Task  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "Any action or task, planned or executed by an agent intentionally causing and participating in it. E.g. swimming, shopping, communicating, etc. " ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Task" ;
+    rdfs:subClassOf     foafiaf:Concept  ;
+	owl:equivalentClass	strategymaps:Task , foafiaf:Activity , d0:Activity , wikidata:Q1914636 ;
+    vs:term_status      "" .
+    
+:Activity  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "Any action or task, planned or executed by an agent intentionally causing and participating in it. E.g. swimming, shopping, communicating, etc. " ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Activity" ;
+    rdfs:subClassOf     foafiaf:Concept  ;
+	owl:equivalentClass	foafiaf:Task , d0:Activity , wikidata:Q1914636 ;
+    vs:term_status      "" .
+
+:Role  
+    a                   owl:Class , rdfs:Class;
+    rdfs:comment        "A Role.. " ;
+    rdfs:isDefinedBy    foafiaf: ;
+    rdfs:label          "Role" ;
+    rdfs:subClassOf     foafiaf:Organization ;
+	owl:equivalentClass	participation:Role , org:Role  ;
+    vs:term_status      "" .
+
+:Post  
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "A Post.. " ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Post" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass	 org:Post  ;
+    vs:term_status    "" .
+
+
+            
+foafiaf:BusinessOrganization    
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Business Organization" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass schema:Corporation  ;
+    sic:code   "8244" ;
+    vs:term_status    "" .
+            
+foafiaf:GovernmentOrganization    
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Government Organization" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass schema:GovernmentOrganization , org:GovernmentAgency , sic:IndustryGroup ;
+    naics2007:code "92" ;
+    vs:term_status    "" .
+            
+foafiaf:Non-ProfitOrganization    
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Non-Profit Organization" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass schema:NGO , org:Non-ProfitOrganisation  ;
+    vs:term_status    "" .
+            
+foafiaf:EducationOrganization    
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Education Organization" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass schema:EducationalOrganization , org:EducationalInstitution  ;
+    naics2007:code "61" ;
+    vs:term_status    "" .
+            
+foafiaf:FaithOrganization    
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "" ;
+    rdfs:isDefinedBy  foafiaf: ;
+    rdfs:label        "Faith Organization" ;
+    rdfs:subClassOf   foafiaf:Organization  ;
+    owl:equivalentClass org:ReligiousOrganisation  ;
+    vs:term_status    "" .
+
+
+foafiaf:Document  a         owl:Class , rdfs:Class ;
+        rdfs:comment        "A document." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Document" ;
+        rdfs:subClassOf     owl:Thing ;
+        owl:equivalentClass <http://schema.org/CreativeWork> , foaf:Document ;
+        vs:term_status      "" .
+
+foafiaf:Image  a             owl:Class , rdfs:Class ;
+        rdfs:comment        "A image." ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "Image" ;
+        rdfs:subClassOf     foafiaf:Document  ;
+        owl:equivalentClass <http://schema.org/ImageObject> , foaf:Image ;
+        vs:term_status      "" .
+
 
 foafiaf:PersonalProfileDocument
         a                owl:Class ;
         rdfs:comment     "A personal profile RDF document." ;
         rdfs:label       "Personal Profile" ;
-        rdfs:subClassOf  foaf:Document ;
+        rdfs:subClassOf  foafiaf:Document ;
         vs:term_status   "" .
         
-foafiaf:OragnizationalProfileDocument
+foafiaf:OrganizationalProfileDocument
         a                owl:Class ;
         rdfs:comment     "An organization profile RDF document." ;
         rdfs:label       "Organization Profile" ;
-        rdfs:subClassOf  foaf:Document ;
+        rdfs:subClassOf  foafiaf:Document ;
         vs:term_status   "" .
-        
-foafiaf:Taxonomy
-	    a       rdfs:Class;
-	    rdfs:isDefinedBy    <http://foafiaf-asteriusj.c9.io/owl/foafiaf#>;
-	    rdfs:label          """Taxonomy Classifications"""@en;
-	    skos:definition     """Classification information with focus on knowledge graph."""@en;
-	    rdfs:subClassOf     foaf:Thing ;
-	    vs:term_status   "" .
 
-foafiaf:Tags
-	    a       rdfs:Class;
-	    rdfs:isDefinedBy    <http://foafiaf-asteriusj.c9.io/owl/foafiaf#>;
-	    rdfs:label          """Keyword Tags"""@en;
-	    skos:definition     """Keywords incontaining the essentials of something."""@en;
-	    rdfs:subClassOf     foaf:Thing ;
-	    vs:term_status      "" .
 
-foafiaf:Entities
-	    a       rdfs:Class;
-	    rdfs:isDefinedBy    <http://foafiaf-asteriusj.c9.io/owl/foafiaf#>;
-	    rdfs:label          """Entity Collection"""@en;
-	    skos:definition     """FOAF content identified entity(s)."""@en;
-	    rdfs:subClassOf     foaf:Thing ;
-	    vs:term_status      "" .
+foafiaf:Product  
+        a       owl:Class ;
+        rdfs:comment      "A product." ;
+        rdfs:isDefinedBy  schema:Product ;
+        rdfs:label        "Product" ;
+        rdfs:subClassOf   owl:Thing ;
+        vs:term_status    "" . 
+    
+foafiaf:Service  
+        a       owl:Class ;
+        rdfs:comment      "A service." ;
+        rdfs:isDefinedBy  gr:ProductOrService ;
+        rdfs:label        "Service" ;
+        rdfs:subClassOf   owl:Thing ;
+        vs:term_status    "" . 
+
+
+
+#
+# Properties
+#
+
+:id  
+	a						owl:ObjectProperty  , rdf:Property ;
+    rdfs:comment			"" ;
+    rdfs:domain 			foafiaf:Entities ;
+    rdfs:label  			"@id" ;
+    rdfs:range  			rdfs:Literal ; 
+    vs:term_status  		"" .
+
+:type  
+	a						owl:ObjectProperty  , rdf:Property ;
+    rdfs:comment			"" ;
+    rdfs:isDefinedBy        foafiaf: ;
+    rdfs:domain 			foafiaf:Entities ;
+    rdfs:label  			"@type" ;
+    rdfs:range  			rdfs:Class ;      
+    owl:equivalentProperty	rdf:type ;
+    vs:term_status  		"" .
+
+
+rdf:type 
+    a                       owl:ObjectProperty , rdf:Property ;
+    rdfs:comment            "The subject is an instance of a class." ;
+	rdfs:isDefinedBy        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	rdfs:isDefinedBy        foafiaf: ;
+	rdfs:label              "type" ;
 	
-foafiaf:Person  
-    a       owl:Class;
-    rdfs:comment        "A person." ;
-    rdfs:isDefinedBy    foafiaf: ;
-    rdfs:label          "Person" ;
-    rdfs:subClassOf     foaf:Agents ;
-    vs:term_status      "" .
+	rdfs:range              rdfs:Class ;
+	rdfs:domain             :Entities  .
+	
+dbo:type  
+	a						owl:ObjectProperty , rdf:Property ;
+    rdfs:comment			"" ;
+    rdfs:isDefinedBy        foafiaf: ;
+    rdfs:domain 			foafiaf:Entities ;
+    rdfs:label  			"type";
+    rdfs:range  			rdfs:Class ;
+    vs:term_status  		"" .
+ 
+:authorization
+    a						owl:ObjectProperty , rdf:Property ;
+    rdfs:comment			" has authorization ..." ;
+    rdfs:isDefinedBy        foafiaf: ;
+    rdfs:domain 			foafiaf:Entities ;
+    rdfs:label  			"authorization";
+    rdfs:range  			acl:Authorization ;
+    vs:term_status  		"" .
 
-foafiaf:Group  
-    a       owl:Class ;
-    rdfs:comment        "A class of Agents." ;
-    rdfs:isDefinedBy    foafiaf: ;
-    rdfs:label          "Group" ;
-    rdfs:subClassOf     foaf:Agents ;
-    vs:term_status      "stable" .
-    
-foafiaf:Team  
-    a      owl:Class ;
-    rdfs:comment      "An team, sub-team, committe or group." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "Team" ;
-    rdfs:subClassOf   foafiaf:Agents ;
-    vs:term_status    "" .
-    
-foafiaf:Organization  
-    a      owl:Class ;
-    rdfs:comment      "An organization of defined in an industry or sector." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "Organization" ;
-    rdfs:subClassOf   foafiaf:Agents ;
-    vs:term_status    "" .
+rdfs:comment 
+	a						owl:DatatypeProperty , rdf:Property ;
+	rdfs:comment			"A description of the subject resource." ;
+	rdfs:isDefinedBy        foafiaf: ;
+	rdfs:label				"comment" ;
+	rdfs:domain 			foafiaf:Entities  ;
+	rdfs:range				rdfs:Literal .
 
 
+rdfs:label 
+	a						owl:DatatypeProperty , rdf:Property ;
+	rdfs:comment			"A human-readable name for the subject." ;
+	rdfs:isDefinedBy        foafiaf: ;
+	rdfs:label				"label" ;
+	rdfs:domain 			foafiaf:Entities ;
+	rdfs:range				rdfs:Literal .
+
+foaf:topic  
+    a                       owl:ObjectProperty , rdf:Property ;
+    rdfs:comment            "A topic of some page or document." ;
+    rdfs:isDefinedBy        foafiaf: ;
+    rdfs:domain             foaf:Document ;
+    rdfs:label              "topic" ;
+    rdfs:range              owl:Thing ;
+    owl:inverseOf           foaf:page ;
+    vs:term_status          "" .
         
-foafiaf:Project  
-    a       owl:Class ;
-    rdfs:comment      "A project or initiative of a strategy (a collective endeavour driven by objective(s))." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "Project" ;
-    rdfs:subClassOf   foaf:Document ;
-    owl:disjointWith  foafiaf:Objective , foafiaf:Measure ;
-    vs:term_status    "" .
 
-foafiaf:Objective  
-    a       owl:Class ;
-    rdfs:comment      "An objective our anticiapted outcome of a strategy (a collective endeavour monitored by measure(s))." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "Objective" ;
-    rdfs:subClassOf   foaf:Document ;
-    owl:disjointWith  foafiaf:Project , foafiaf:Measure ;
-    vs:term_status    "" .
-
-foafiaf:Measure  
-    a       owl:Class ;
-    rdfs:comment      "A measurement or metric of a strategy (a indicator affected by project(s))." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "Measure" ;
-    rdfs:subClassOf   foaf:Document ;
-    owl:disjointWith  foafiaf:Objective , foafiaf:Project ;
-    vs:term_status    "" .
-    
-foafiaf:Image  
-    a       owl:Class ;
-    rdfs:comment      "An image." ;
-    rdfs:isDefinedBy  foaf:Image ;
-    rdfs:label        "Image" ;
-    vs:term_status    "testing" .
+dc:title
+    a                       owl:ObjectProperty , rdf:Property ;
+    rdfs:comment            "A name given to the resource." ;
+    rdfs:isDefinedBy	    foafiaf: ;
+    rdfs:domain         	foafiaf:Entities ;
+    rdfs:label              "Title"@en ;
+    rdfs:range              rdfs:Literal ;
+    rdfs:subPropertyOf      <http://purl.org/dc/elements/1.1/title> ;
+    vs:term_status      	"" .
 
 
-#
-# PROPERTIES
-#
+dc:description  
+	a       	            owl:DatatypeProperty , rdf:Property ;
+    rdfs:comment            "Plain text description of a project, of 2-4 sentences in length."@en ;
+    rdfs:isDefinedBy	    foafiaf: ;
+    rdfs:domain         	foafiaf:Entities ;
+    rdfs:label      	    "description"@en  ;
+    rdfs:range      	    rdfs:Literal ;
+    owl:equivalentProperty	dc:description , doap:description ;
+    rdfs:subPropertyOf      <http://purl.org/dc/elements/1.1/description> ;
+    vs:term_status      	"" .
 
-foafiaf:affects  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nA metric or measuremet that project activity changes .\n" ;
-    rdfs:domain       foafiaf:Project ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "affects" ;
-    rdfs:range        foafiaf:Measure ;
-    vs:term_status    "" .
 
-foafiaf:monitors  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nAn objective or desired state that measure is associated with.\n" ;
-    rdfs:domain       foafiaf:Measure ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "monitors" ;
-    rdfs:range        foafiaf:Objective ;
-    vs:term_status    "" .
+schema:name  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A name is ...." ;
+        rdfs:domain       foafiaf:Entities ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "name" ;
+        rdfs:range        rdfs:Literal ;
+        owl:equivalentClass schema:name ;
+        vs:term_status    "" .      
 
-foafiaf:drives  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nA project that is driven or directed by objective.\n" ;
-    rdfs:domain       foafiaf:Objective ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "drives" ;
-    rdfs:range        foafiaf:Project ;
-    vs:term_status    "" .
 
-foafiaf:responsible  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nRACI element of R or Responsible.\n" ;
-    rdfs:domain       foafiaf:Person , foafiaf:Team , foafiaf:Organization ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "responsible" ;
-    rdfs:range        foafiaf:Project, foafiaf:Measure, foafiaf:Objective ;
-    vs:term_status    "" .
-
-foafiaf:accountable  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nRACI element of A or Accountable.\n" ;
-    rdfs:domain       foafiaf:Person , foafiaf:Team , foafiaf:Organization ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "accountable" ;
-    rdfs:range        foafiaf:Project, foafiaf:Measure, foafiaf:Objective ;
-    vs:term_status    "" .
-
-foafiaf:contribute  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nRACI element of C or Contribute.\n" ;
-    rdfs:domain       foafiaf:Person, foafiaf:Team, foafiaf:Organization ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "accountable" ;
-    rdfs:range        foafiaf:Project, foafiaf:Measure, foafiaf:Objective ;
-    vs:term_status    "" .
-
-foafiaf:informed  
-    a       owl:ObjectProperty ;
-    rdfs:comment      "\nRACI element of I or Inform.\n" ;
-    rdfs:domain       foafiaf:Person, foafiaf:Team, foafiaf:Organization ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "informed" ;
-    rdfs:range        foafiaf:Project, foafiaf:Measure, foafiaf:Objective ;
-    vs:term_status    "" .
-    
-foafiaf:knows  
-    a             owl:ObjectProperty ;
-    rdfs:comment      "\nA person known by this person (indicating some level of reciprocated interaction between the parties).\n" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "knows" ;
-    rdfs:domain       foafiaf:Person ;
-    rdfs:range        foafiaf:Person ;
-    owl:inverseOf     foafiaf:knownBy ;
-    vs:term_status    "" .
-
-foafiaf:knownBy  
-    a             owl:ObjectProperty ;
-    rdfs:comment      "\nA person known by this person (indicating some level of reciprocated interaction between the parties).\n" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "known by" ;
-    rdfs:domain       foafiaf:Person ;
-    rdfs:range        foafiaf:Person ;
-    owl:inverseOf     foafiaf:knows ;
-    vs:term_status    "" .
-    
-foafiaf:member  
-    a   owl:ObjectProperty ;
-    rdfs:comment      "Indicates a member of a Group" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "member" ;
-    rdfs:domain       foafiaf:Team , foafiaf:Group ;
-    rdfs:range        foafiaf:Person ;
-    owl:inverseOf     foafiaf:memberOf ;
-    vs:term_status    "" .
-
-foafiaf:memberOf  
-    a owl:ObjectProperty ;
-    rdfs:comment      "Indicates membership in a Group" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "member of" ;
-    rdfs:domain       foafiaf:Person ;
-    rdfs:range        foafiaf:Team , foafiaf:Group ;
-    owl:inverseOf     foafiaf:member ;
-    vs:term_status    "" .
-        
-foafiaf:leader  a            owl:ObjectProperty ;
-    rdfs:comment      "Indicates a leader of a Group" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "leader" ;
-    rdfs:domain       foafiaf:Team , foafiaf:Group ;
-    rdfs:range        foafiaf:Person ;
-    owl:inverseOf     foafiaf:leads ;
-    vs:term_status    "" .
-
-foafiaf:leads  a            owl:ObjectProperty ;
-    rdfs:comment      "Indicates a leader of a Group" ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "leads" ;
-    rdfs:domain       foafiaf:Person ;
-    rdfs:range        foafiaf:Team , foafiaf:Group  ;
-    owl:inverseOf     foafiaf:leader ;
-    vs:term_status    "" .
-        
-foafiaf:sha1  
-    a              owl:DatatypeProperty ;
-    rdfs:comment      "A sha1sum hash, in hex." ;
-    rdfs:domain       foafiaf:Document ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "sha1sum (hex)" ;
-    vs:term_status      "" .
-
-foafiaf:maker  
-        a             owl:ObjectProperty ;
-        rdfs:comment      "An agent that made this thing." ;
+foafiaf:page  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A page or document about this thing." ;
+        rdfs:domain       foafiaf:Entities ;
         rdfs:isDefinedBy  foafiaf: ;
-        rdfs:label        "maker" ;
-        rdfs:domain          rdfs:Literal ;
-        rdfs:range        foafiaf:Person, foafiaf:Organization ;
-        owl:inverseOf     foafiaf:made ;
+        rdfs:label        "page" ;
+        rdfs:range        foafiaf:Document ;
+        owl:inverseOf     foafiaf:topic ;
         vs:term_status    "" .
-        
-foafiaf:made  
-        a              owl:ObjectProperty ;
-        rdfs:comment      "Something that was made by this agent." ;
-        rdfs:domain       foafiaf:Person, foafiaf:Organization ;
-        rdfs:isDefinedBy  foafiaf: ;
-        rdfs:label        "made" ;
-        owl:inverseOf     foafiaf:maker ;
-        rdfs:range          rdfs:Literal ;
-        vs:term_status    "" .
-
-foafiaf:hasSkill  a             owl:ObjectProperty ;
-        rdfs:comment      "A person that has this skill." ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "hasSkill" ;
-        rdfs:domain       foafiaf:Taxonomy ;
-        rdfs:range        foaf:Person ;
-        owl:inverseOf     foaf:skill ;
-        vs:term_status    "" .
-        
-foafiaf:skill  a              owl:ObjectProperty ;
-        rdfs:comment      "Skill possed or aquired by this person." ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "skill" ;
-        rdfs:domain       foaf:Person ;
-        rdfs:range        foafiaf:Taxonomy ;
-        owl:inverseOf     foaf:hasSkill ;
-        vs:term_status    "" .
-
-foafiaf:hasService  a             owl:ObjectProperty ;
-        rdfs:comment      "An organization that has this service." ;
-        rdfs:isDefinedBy  foafiaf: ;
-        rdfs:label        "hasService" ;
-        rdfs:domain       foafiaf:Taxonomy ;
-        rdfs:range        foafiaf:Organization ;
-        owl:inverseOf     foafiaf:service ;
-        vs:term_status    "" .
-        
-foafiaf:service  a              owl:ObjectProperty ;
-        rdfs:comment      "Serive available or provided by this oerganization." ;
-        rdfs:domain       foafiaf:Organization ;
-        rdfs:range        foafiaf:Taxonomy ;
-        rdfs:isDefinedBy  foafiaf: ;
-        rdfs:label        "service" ;
-        owl:inverseOf     foafiaf:hasService ;
-        vs:term_status    "" .
-        
-        
-foafiaf:hasName  
-    a   owl:ObjectProperty ;
-    rdfs:comment        "\nName of the object).\n" ;
-    rdfs:isDefinedBy    foafiaf: ;
-    rdfs:label          "name" ;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
-        
-foafiaf:hasLabel  
-    a   owl:ObjectProperty ;
-    rdfs:comment        "\nLabel for the object).\n" ;
-    rdfs:isDefinedBy    foafiaf: ;
-    rdfs:label          "label" ;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
     
-foaf:hasTitle
-	a   rdf:Property;
-	rdfs:isDefinedBy    <http://arcmytwit-asteriusj.c9.io/owl/document#>;
-	skos:definition     """Specifying a title of a entity."""@en;
-	rdfs:subPropertyOf  dct:title;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
+foafiaf:topic  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A topic of some page or document." ;
+        rdfs:domain       foafiaf:Document ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "topic" ;
+        rdfs:range        foafiaf:Entities ;
+        owl:inverseOf     foafiaf:page ;
+        vs:term_status    "" .
+        
+skos:inScheme  a          rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "is in scheme"@en ;
+        rdfs:range        skos:ConceptScheme ;
+        skos:definition   "Relates a resource (for example a concept) to a concept scheme in which it is included."@en ;
+        skos:scopeNote    "A concept may be a member of more than one concept scheme."@en .
 
-foaf:hasSummary
-	a   rdf:Property;
-	rdfs:isDefinedBy    <http://arcmytwit-asteriusj.c9.io/owl/document#>;
-	skos:definition     """Specifying a summary of a entity."""@en;
-	rdfs:subPropertyOf  dct:summary;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
+skos:ConceptScheme  a     owl:Class ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept Scheme"@en ;
+        owl:disjointWith  skos:Concept ;
+        skos:definition   "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+        skos:example      "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
+        skos:scopeNote    "A concept scheme may be defined to include concepts from different sources."@en .
 
-foaf:hasDescription
-	a rdf:Property;
-	rdfs:isDefinedBy    <http://arcmytwit-asteriusj.c9.io/owl/document#>;
-	skos:definition     """Specifying a summary of a entity."""@en;
-	rdfs:subPropertyOf  dct:description;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
+skos:topConceptOf  a        rdf:Property , owl:ObjectProperty ;
+        rdfs:domain         skos:Concept ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "is top concept in scheme"@en ;
+        rdfs:range          skos:ConceptScheme ;
+        rdfs:subPropertyOf  skos:inScheme ;
+        owl:inverseOf       skos:hasTopConcept ;
+        skos:definition     "Relates a concept to the concept scheme that it is a top level concept of."@en .
 
-foafiaf:thumbnail  
-    a   owl:ObjectProperty ;
-    rdfs:comment      "A derived thumbnail image." ;
-    rdfs:domain       foafiaf:Image ;
-    rdfs:isDefinedBy  foaf: ;
-    rdfs:label        "thumbnail" ;
-    rdfs:range        foaf:Image ;
-    vs:term_status    "testing" .
+      
+skos:prefLabel  a           rdf:Property , owl:AnnotationProperty ;
+        rdfs:comment        "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise\n      disjoint properties."@en , "The range of skos:prefLabel is the class of RDF plain literals."@en , "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "preferred label"@en ;
+        rdfs:subPropertyOf  rdfs:label ;
+        skos:definition     "The preferred lexical label for a resource, in a given language."@en .
+        
+skos:related  a             rdf:Property , owl:SymmetricProperty , owl:ObjectProperty ;
+        rdfs:comment        "skos:related is disjoint with skos:broaderTransitive"@en ;
+        rdfs:domain         foafiaf:Concept ;
+        rdfs:isDefinedBy    foafiaf: ;
+        rdfs:label          "has related"@en ;
+        rdfs:subPropertyOf  skos:semanticRelation ;
+        rdfs:range          foafiaf:Concept ;
+        skos:definition     "Relates a concept to a concept with which there is an associative semantic relationship."@en .
 
+skos:broader  a             rdf:Property , owl:ObjectProperty ;
+        rdfs:comment        "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."@en ;
+        rdfs:domain         foafiaf:Concept ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "has broader"@en ;
+        rdfs:subPropertyOf  skos:broaderTransitive ;
+        owl:inverseOf       skos:narrower ;
+        skos:definition     "Relates a concept to a concept that is more general in meaning."@en ;
+        skos:scopeNote      "By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources."@en .
+
+foafiaf:note  a              rdf:Property , owl:AnnotationProperty ;
+        rdfs:comment        "A note is ..." ;
+        rdfs:domain         foafiaf:Concept ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "note"@en ;
+        rdfs:range        rdfs:Literal ;
+        skos:definition   "A general note, for any purpose."@en ;
+        skos:scopeNote    "This property may be used directly, or as a super-property for more specific note types."@en .
+
+skos:notation  a          rdf:Property , owl:DatatypeProperty ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "notation"@en ;
+        skos:definition   "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en ;
+        skos:scopeNote    "By convention, skos:notation is used with a typed literal in the object position of the triple."@en .
+
+
+skos:definition  a          rdf:Property , owl:AnnotationProperty ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "definition"@en ;
+        rdfs:subPropertyOf  skos:note ;
+        skos:definition     "A statement or formal explanation of the meaning of a concept."@en .
+
+skos:narrower  a            rdf:Property , owl:ObjectProperty ;
+        rdfs:comment        "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
+        rdfs:domain         foafiaf:Concept ;
+        rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label          "has narrower"@en ;
+        rdfs:subPropertyOf  skos:narrowerTransitive ;
+        owl:inverseOf       skos:broader ;
+        skos:definition     "Relates a concept to a concept that is more specific in meaning."@en ;
+        skos:scopeNote      "By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources."@en .
+
+
+foafiaf:focus  a          owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "The underlying or 'focal' entity associated with some SKOS-described concept." ;
+        rdfs:domain       foafiaf:Concept ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "focus" ;
+        rdfs:subPropertyOf  foaf:focus ;
+        rdfs:range        owl:Thing ;
+        vs:term_status    "testing" .   
+ 
+doap:category  a          rdf:Property ;
+        rdfs:comment      "Kategorie projektu."@cs , "Eine Kategorie eines Projektes."@de , "A category of project."@en , "Una categoría de proyecto."@es , "Uma categoría de projeto."@pt , "Une catégorie de projet."@fr ;
+        rdfs:domain       doap:Project ;
+        rdfs:isDefinedBy  doap: ;
+        rdfs:label        "category"@en , "categoría"@es , "kategorie"@cs , "Kategorie"@de , "catégorie"@fr , "categoria"@pt .
+
+doc:creator  a     rdf:Property ;
+        rdfs:comment  "The person (not string) who created this." ;
+        rdfs:domain   doc:Work ;
+        rdfs:label    "creator" ;
+        rdfs:range    <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> .
+        
+doap:created  a           rdf:Property ;
+        rdfs:comment      "Erstellungsdatum von Irgendwas, angegeben im YYYY-MM-DD Format, z.B. 2004-04-05."@de , "Datum, kdy bylo něco vytvořeno ve formátu RRRR-MM-DD, např. 2004-04-05"@cs , "Fecha en la que algo fue creado, en formato AAAA-MM-DD. e.g. 2004-04-05"@es , "Date when something was created, in YYYY-MM-DD form. e.g. 2004-04-05"@en , "Date à laquelle a été créé quelque chose, au format AAAA-MM-JJ (par ex. 2004-04-05)"@fr , "Data em que algo foi criado, no formato AAAA-MM-DD. e.g. 2004-04-05"@pt ;
+        rdfs:isDefinedBy  doap: ;
+        rdfs:label        "created"@en , "erstellt"@de , "vytvořeno"@cs , "criado"@pt , "creado"@es , "créé"@fr ;
+        rdfs:range        rdfs:Literal .
+
+
+doap:maintainer  a        rdf:Property ;
+        rdfs:comment      "Správce projektu, vedoucí projektu."@cs , "Développeur principal d'un projet, un meneur du projet."@fr , "Hauptentwickler eines Projektes, der Projektleiter"@de , "Desarrollador principal de un proyecto, un líder de proyecto."@es , "Programador principal de um projeto, um líder de projeto."@pt , "Maintainer of a project, a project leader."@en ;
+        rdfs:domain       doap:Project ;
+        rdfs:isDefinedBy  doap: ;
+        rdfs:label        "Projektverantwortlicher"@de , "développeur principal"@fr , "správce"@cs , "maintainer"@en , "desarrollador principal"@es , "programador principal"@pt ;
+        rdfs:range        foaf:Person .
   
-foafiaf:topic  
-    a   owl:ObjectProperty ;
-    rdfs:comment      "A topic of some page or document or other entity." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "topic" ;
-    rdfs:range        foafiaf:Tags ;
-    vs:term_status    "" .
+
+
+
+ :hasScorecard  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to Scorecard(s)" ;
+        rdfs:domain       foafiaf:Strategy  ;
+        rdfs:isDefinedBy  : ;
+        rdfs:label        "hasMeasure" ;
+        rdfs:range        foafiaf:Scorecard  ;
+        owl:inverseOf     foafiaf:isScorecardOf ;
+        vs:term_status    "" .  
         
-foafiaf:topic_interest  a    owl:ObjectProperty ;
-    rdfs:comment      "A thing of interest to this person." ;
-    rdfs:isDefinedBy  foafiaf: ;
-    rdfs:label        "interest_topic" ;
-    rdfs:domain       foaf:Person ;
-    rdfs:range        foafiaf:topic ;
-    vs:term_status    "" .
+ :hasStrategy   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to Strategy(s)" ;
+        rdfs:domain       foafiaf:Strategy ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "hasObjective" ;
+        rdfs:range        foafiaf:Strategy  ;
+        owl:inverseOf     foafiaf:isStrategyOf ;
+        vs:term_status    "" .  
         
-foafiaf:theme  
-    a   owl:ObjectProperty ;
-    rdfs:comment        "A theme." ;
-    rdfs:isDefinedBy    foafiaf: ;
-    rdfs:label          "theme" ;
-    rdfs:range          rdfs:Literal ;
-    vs:term_status      "" .
+ :hasMeasure   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to measure(s)" ;
+        rdfs:domain       foafiaf:Strategy , foafiaf:Project  ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "hasMeasure" ;
+        rdfs:range        foafiaf:Measure  ;
+        owl:inverseOf     foafiaf:isMeasureOf ;
+        vs:term_status    "" .  
+        
+ :hasProject   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to measure(s)" ;
+        rdfs:domain       foafiaf:Measure , foafiaf:Project  ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "hasProject" ;
+        rdfs:range        foafiaf:Project  ;
+        owl:inverseOf     foafiaf:isProjectOf ;
+        vs:term_status    "" .  
+        
+ :hasTask   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to tasks(s)" ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:domain       foafiaf:Project ;
+        rdfs:label        "hasTask" ;
+        rdfs:range        foafiaf:Task  ;
+        owl:inverseOf     foafiaf:isTaskOf ;
+        vs:term_status    "" .  
+        
+        
+        
+schema:startDate  a         rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "start date" ;
+        rdfs:range        xsd:dateTime ;
+        vs:term_status    "" .
+  
+schema:endDate  a         rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "end date" ;
+        rdfs:range        xsd:dateTime ;
+        vs:term_status    "" .
+ 
+schema:duration  a         rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "duration" ;
+        rdfs:range        schema:duration ;
+        vs:term_status    "" .
+               
+schema:eventStatus  a             rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "event status" ;
+        rdfs:range        schema:EventStatusType ;
+        vs:term_status    "" .
+        
+schema:name  a             rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "name" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+        
+schema:description  a         owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment      "The name of an event" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "description" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+
+schema:location  a         rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event , foafiaf:Organization ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "location" ;
+        rdfs:range        foafiaf:Place , schema:PostalAddress  ;
+        vs:term_status    "" .
+        
+schema:organizer  a         owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "organizer" ;
+        rdfs:range        foafiaf:Person , foafiaf:Organization ;
+        vs:term_status    "" .
+
+schema:attendee  a          rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "attendee" ;
+        rdfs:range        foafiaf:Person , foafiaf:Organization ;
+        vs:term_status    "" .        
+
+schema:subEvent  a          rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  schema: ;
+        rdfs:label        "subEvent" ;
+        rdfs:range        foafiaf:Event ;
+        vs:term_status    "" .
+
+schema:superEvent  a          rdf:Property ;
+        rdfs:comment      "" ;
+        rdfs:domain       foafiaf:Event ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "superEvent" ;
+        rdfs:range        foafiaf:Event ;
+        vs:term_status    "" .
+        
+schema:address  a     rdf:Property ;
+        rdfs:comment  "Physical address of the item." ;
+        rdfs:domain   [ a            owl:Class ;
+                        owl:unionOf  ( schema:GeoCoordinates schema:GeoShape schema:Organization schema:Person schema:Place )
+                      ] ;
+        rdfs:label    "address"^^xsd:string ;
+        rdfs:range    [ a            owl:Class ;
+                        owl:unionOf  ( schema:PostalAddress xsd:string )
+                      ] .
+                
+schema:GeoCoordinates
+        a                owl:Class ;
+        rdfs:comment     "The geographic coordinates of a place or event." ;
+        rdfs:label       "Geo coordinates"^^xsd:string ;
+        rdfs:subClassOf  schema:StructuredValue .
+
+schema:GeoShape  a       owl:Class ;
+        rdfs:comment     "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points." ;
+        rdfs:label       "Geo shape"^^xsd:string ;
+        rdfs:subClassOf  schema:StructuredValue .
+        
+schema:PostalAddress  a  owl:Class ;
+        rdfs:comment     "The mailing address." ;
+        rdfs:label       "Postal address"^^xsd:string ;
+        rdfs:subClassOf  schema:ContactPoint .
+        
+schema:ContactPoint  a   owl:Class ;
+        rdfs:comment     "A contact point&#x2014;for example, a Customer Complaints department." ;
+        rdfs:label       "Contact point"^^xsd:string ;
+        rdfs:subClassOf  schema:StructuredValue .
+        
+
+schema:Organization  a   owl:Class ;
+        rdfs:comment     "An organization such as a school, NGO, corporation, club, etc." ;
+        rdfs:label       "Organization"^^xsd:string ;
+        rdfs:subClassOf  owl:Thing .
+        
+schema:subOrganization
+        a                 owl:ObjectProperty ;
+        rdfs:comment      "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property." ;
+        rdfs:domain       schema:Organization ;
+        rdfs:label        "sub organization"^^xsd:string ;
+        rdfs:range        schema:Organization ;
+        schema:inverseOf  schema:parentOrganization .
+       
+schema:Person  a             owl:Class ;
+        rdfs:comment         "A person (alive, dead, undead, or fictional)." ;
+        rdfs:label           "Person"^^xsd:string ;
+        rdfs:subClassOf      owl:Thing ;
+        owl:equivalentClass  <http://xmlns.com/foaf/0.1/Person> .
+        
+
+schema:Place  a          owl:Class ;
+        rdfs:comment     "Entities that have a somewhat fixed, physical extension." ;
+        rdfs:label       "Place"^^xsd:string ;
+        rdfs:subClassOf  owl:Thing .
+
+        
+        
+schema:memberOf  a        owl:ObjectProperty ;
+        rdfs:comment      "An Organization (or ProgramMembership) to which this Person or Organization belongs." ;
+        rdfs:domain       [ a            owl:Class ;
+                            owl:unionOf  ( schema:Organization schema:Person )
+                          ] ;
+        rdfs:label        "member of"^^xsd:string ;
+        rdfs:range        [ a            owl:Class ;
+                            owl:unionOf  ( schema:Organization schema:ProgramMembership )
+                          ] ;
+        schema:inverseOf  schema:member .
+        
+
+
+foafiaf:myersBriggs  a       owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment      "A Myers Briggs (MBTI) personality classification." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "myersBriggs" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+        
+foafiaf:based_near  a        owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A location that something is based near, for some broadly human notion of near." ;
+        rdfs:domain       foafiaf:Person , foafiaf:Organization , geo:SpatialThing ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "based near" ;
+        rdfs:range        geo:SpatialThing ;
+        vs:term_status    "" .
+        
+foaf:knows  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A person known by this person (indicating some level of reciprocated interaction between the parties)." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "knows" ;
+        rdfs:range        foafiaf:Person ;
+        dc:description "A person knows another person (similar to FOAF ontology)." .
+
+foaf:name  a         owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment      "The name of a person." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Name" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+
+foaf:title  a             owl:DatatypeProperty ;
+        rdfs:comment      "Title (Mr, Mrs, Ms, Dr. etc)" ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "title" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+        
+foaf:firstName  a         owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment      "The first name of a person." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "firstName" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+        
+foaf:lastName  a         owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment      "The last name of a person." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foafiaf: ;
+        rdfs:label        "lastName" ;
+        rdfs:range        rdfs:Literal ;
+        vs:term_status    "" .
+        
+foaf:mbox  a              owl:InverseFunctionalProperty , owl:ObjectProperty ;
+        rdfs:comment      "\nA personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.\n" ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "personal mailbox" ;
+        vs:term_status    "" .
+
+
+foaf:thumbnail  a         owl:ObjectProperty ;
+        rdfs:comment      "A derived thumbnail image." ;
+        rdfs:domain       foafiaf:Image ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "thumbnail" ;
+        rdfs:range        foafiaf:Image ;
+        vs:term_status    "testing" .
+        
+foaf:publications  a      owl:ObjectProperty ;
+        rdfs:comment      "A link to the publications of this person." ;
+        rdfs:domain       foafiaf:Person ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "publications" ;
+        rdfs:range        foafiaf:Document ;
+        vs:term_status    "unstable" .
+        
+foaf:made  a              owl:ObjectProperty ;
+        rdfs:comment      "Something that was made by this agent." ;
+        rdfs:domain       foafiaf:Person , foafiaf:Organization ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "made" ;
+        owl:inverseOf     foaf:maker ;
+        vs:term_status    "stable" .
