@@ -1,22 +1,284 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix :      <http://foafiaf.transformrockford.org/owl/strategymaps#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix dce: <http://purl.org/dc/elements/1.1/>.
 @prefix dct: <http://purl.org/dc/terms/>.
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dce: <http://purl.org/dc/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dul: <http://www.loa.istc.cnr.it/ontologies/DUL.owl> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/dul/d0.owl> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix schema: <http://topbraid.org/schema/schema.rdf> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix dc:    <http://purl.org/dc/elements/1.1/> .
-@prefix sm: <http://https://foafiaf-asteriusj.c9.io/owl/strategymaps#> .
+@prefix foafiaf: <http://foafiaf-asteriusj.c9users.io/owl/foafiaf#> .
+@prefix strategymaps: <http://foafiaf.transformrockford.org/owl/strategymaps#> .
 
-<http://foafiaf-asteriusj.c9.io/owl/strategymap.owl>
-	a   owl:Ontology;
-	dce:title """Strategy Maps"""@en;
-	dce:description """Formal general description of strategy map entities and relationships."""@en;
-	dce:creator """Asterius Media LLC"""@en;
-	dce:publisher """Asterius Media LLC"""@en;
-	dce:format """OWL-Full"""@en;
-	rdfs:comment """Copyright (c) 2016 Asterius Media LLC """@en;
-	rdfs:seeAlso <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl>, <http://www.ontologydesignpatterns.org/ont/web/irw.owl> .
+
+<https://github.com/asteriusj/strategymapss/blob/master/owl/strategymapss.owl>
+        a                owl:Ontology ;
+        rdfs:comment     "Copyright (c) 2016-2017 Asterius Media LLC "@en ;
+        rdfs:seeAlso     <http://www.ontologydesignpatterns.org/ont/web/irw.owl> , <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl> ;
+        dce:creator      "Asterius Media LLC"@en ;
+        dce:description  "Formal general description of strategy map entities and relationships."@en ;
+        dce:format       "OWL-Full"@en ;
+        dce:publisher    "Asterius Media LLC"@en ;
+        dce:title        "Strategy Maps"@en .
+
+owl:Thing  rdfs:label  "Thing" .
+
+skos:Concept  a           owl:Class ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept"@en ;
+        skos:definition   "An idea or notion; a unit of thought."@en .
+        
+dc:description  a  owl:AnnotationProperty .
+
+#
+# ENTITIES
+#
+
+
+strategymaps:Entities  a       owl:Class , rdfs:Class ;
+        rdfs:comment         "An entity (eg. person, organization, thing or physical artifact)." ;
+        rdfs:label           "Entities" ;
+        owl:equivalentClass  skos:Concept , rdfs:Resource ;
+        vs:term_status       "" ;
+        skos:definition      "Strategy maps identified entity(s)." .
+        
+        
+strategymaps:Map  a          owl:Class , rdfs:Class ;
+        rdfs:comment         "A Strategy Map is.\n" ;
+        rdfs:label           "Stratgy Map" ;
+        rdfs:subClassOf      strategymaps:Entities , skos:Concept ;
+        owl:equivalentClass  foafiaf:Map ;
+        vs:term_status       "" ;
+        skos:definition      "Strategy maps identified entity(s)." .
+        
+
+strategymaps:Scorecard
+        a                    rdfs:Class , owl:Class ;
+        rdfs:comment         "A Scorecard." ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Scorecard" ;
+        rdfs:subClassOf      strategymaps:Entities , skos:Concept ;
+        owl:disjointWith     strategymaps:Map , strategymaps:Objective ;
+        vs:term_status       "" .
+        
+strategymaps:Initiative
+        a                    owl:Class , rdfs:Class ;
+        rdfs:comment         "An initiative, program or project (a collective endeavour of some kind)." ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Initiative" ;
+        rdfs:subClassOf      strategymaps:Entities , skos:Concept ;
+        owl:disjointWith     strategymaps:Objective , strategymaps:Task;
+        owl:equivalentClass  org:Project , doap:Project , foaf:Project , foafiaf:Project ;
+        vs:term_status       "" .
+
+
+strategymaps:Objective
+        a                    rdfs:Class , owl:Class ;
+        rdfs:comment         "An objective our anticiapted outcome of a strategy (a collective endeavour monitored by measure(s))." ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Objective" ;
+        rdfs:subClassOf      skos:Concept , strategymaps:Entities ;
+        owl:disjointWith     strategymaps:Map , strategymaps:Initiative , strategymaps:Measure ;
+        owl:equivalentClass  foafiaf:Strategy ;
+        vs:term_status       "" .
+
+strategymaps:Measure  a      rdfs:Class , owl:Class ;
+        rdfs:comment         "A measurement or metric of a strategy (a indicator affected by project(s))." ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Measure" ;
+        rdfs:subClassOf      strategymaps:Entities , skos:Concept ;
+        owl:disjointWith     strategymaps:Objective , strategymaps:Initiative ,  strategymaps:Task ;
+        owl:equivalentClass  foafiaf:Measure ;
+        vs:term_status       "" .
+
+strategymaps:Task  a         rdfs:Class , owl:Class ;
+        rdfs:comment         "An Task is an action or step of an Initiative" ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Task" ;
+        rdfs:subClassOf      skos:Concept , strategymaps:Entities ;
+        owl:disjointWith     strategymaps:Initiative ;
+        owl:equivalentClass  schema:Action , foafiaf:Task ;
+        vs:term_status       "" .
+
+strategymaps:Perspective
+        a                    rdfs:Class , owl:Class ;
+        rdfs:comment         "A Perspective " ;
+        rdfs:isDefinedBy     strategymaps: ;
+        rdfs:label           "Perspective" ;
+        rdfs:subClassOf      strategymaps:Entities , skos:Concept ;
+        owl:disjointWith     strategymaps:Objective , strategymaps:Initiative , strategymaps:Map ;
+        vs:term_status       "" .
+      
+      
+ 
+acl:Authorization
+	a   		        owl:Class , rdfs:Class ;
+	rdfs:comment		"An element of access control, allowing agent to agents access of some kind to resources or classes of resources" ;
+	rdfs:isDefinedBy        foafiaf: ;
+        rdfs:label  		"Authorization" ;
+        skos:seeAlso		"https://www.w3.org/wiki/WebAccessControl" ;
+        vs:term_status  	"" .
+        
+#
+# Properties
+#
+
+strategymaps:id  
+		a						owl:ObjectProperty  , rdf:Property ;
+        rdfs:comment			"" ;
+        rdfs:domain 			strategymaps:Entities ;
+        rdfs:label  			"@id" ;
+        rdfs:range  			rdfs:Literal ; 
+        vs:term_status  		"" .
+
+strategymaps:type  
+		a						owl:ObjectProperty  , rdf:Property ;
+        rdfs:comment			"" ;
+        rdfs:domain 			strategymaps:Entities ;
+        rdfs:label  			"@type" ;
+        rdfs:range  			rdfs:Class ;      
+        owl:equivalentProperty	rdf:type ;
+        vs:term_status  		"" .
+
+
+rdf:type a owl:ObjectProperty  , rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	rdfs:label "type" ;
+	rdfs:comment "The subject is an instance of a class." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain strategymaps:Entities  .
 	
+dbo:type  
+		a						owl:ObjectProperty  , rdf:Property ;
+        rdfs:comment			"" ;
+        rdfs:domain 			strategymaps:Entities ;
+        rdfs:label  			"type";
+        rdfs:range  			rdfs:Class ;
+        vs:term_status  		"" .
+ 
+:authorization
+    a						owl:ObjectProperty , rdf:Property ;
+    rdfs:comment			" has authorization ..." ;
+    rdfs:isDefinedBy        foafiaf: ;
+    rdfs:domain 			foafiaf:Entities ;
+    rdfs:label  			"authorization";
+    rdfs:range  			acl:Authorization ;
+    vs:term_status  		"" .
+
+rdfs:comment 
+		a						owl:DatatypeProperty , rdf:Property ;
+		rdfs:isDefinedBy		<http://www.w3.org/2000/01/rdf-schema#> ;
+		rdfs:label				"comment" ;
+		rdfs:comment			"A description of the subject resource." ;
+		rdfs:domain 			strategymaps:Entities  ;
+		rdfs:range				rdfs:Literal .
+
+
+rdfs:label 
+		a							owl:DatatypeProperty , rdf:Property ;
+		rdfs:isDefinedBy			<http://www.w3.org/2000/01/rdf-schema#> ;
+		rdfs:label					"label" ;
+		rdfs:comment				"A human-readable name for the subject." ;
+		rdfs:domain 				strategymaps:Entities ;
+		rdfs:range					rdfs:Literal .
+
+foaf:topic  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "A topic of some page or document." ;
+        rdfs:domain       foaf:Document ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "topic" ;
+        rdfs:range        owl:Thing ;
+        owl:inverseOf     foaf:page ;
+        vs:term_status    "" .
+        
+
+dc:title
+    a                           rdf:Property ;
+    rdfs:comment                "A name given to the resource." ;
+    rdfs:domain         	strategymaps:Entities ;
+    rdfs:isDefinedBy            strategymaps: ;
+    rdfs:label                  "Title"@en ;
+    rdfs:range                  rdfs:Literal ;
+    rdfs:subPropertyOf          <http://purl.org/dc/elements/1.1/title> ;
+    vs:term_status      	"" .
+
+
+dc:description  
+	a       	        owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment    	"Plain text description of a project, of 2-4 sentences in length."@en ;
+        rdfs:domain         	strategymaps:Entities ;
+        rdfs:isDefinedBy	strategymaps: ;
+        rdfs:label      	"description"@en  ;
+        rdfs:range      	rdfs:Literal ;
+        owl:equivalentProperty	dc:description , doap:description ;
+        rdfs:subPropertyOf          <http://purl.org/dc/elements/1.1/description> ;
+        vs:term_status      	"" .
+        
+        
+:name  a            owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment        	"A name for some thing." ;
+        rdfs:domain         	strategymaps:Entities ;
+        rdfs:isDefinedBy    	strategymaps: ;
+        rdfs:label          	"name" ;
+        rdfs:range          	rdfs:Literal ;
+        rdfs:subPropertyOf  	rdfs:label ;
+        owl:equivalentProperty	foaf:name ;
+        vs:term_status      	"" .
+        
+
+ :hasScorecard  a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to Scorecard(s)" ;
+        rdfs:domain       strategymaps:Map , strategymaps:Objective  ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "hasMeasure" ;
+        rdfs:range        strategymaps:Scorecard  ;
+        owl:inverseOf     strategymaps:isScorecardOf ;
+        vs:term_status    "" .  
+        
+ :hasObjective   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to objective(s)" ;
+        rdfs:domain       strategymaps:Map , strategymaps:Objective ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "hasObjective" ;
+        rdfs:range        strategymaps:Objective  ;
+        owl:inverseOf     strategymaps:isObjectiveOf ;
+        vs:term_status    "" .  
+        
+ :hasMeasure   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to measure(s)" ;
+        rdfs:domain       strategymaps:Objective , strategymaps:Initiative  ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "hasMeasure" ;
+        rdfs:range        strategymaps:Measure  ;
+        owl:inverseOf     strategymaps:isMeasureOf ;
+        vs:term_status    "" .  
+        
+ :hasInitiative   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to measure(s)" ;
+        rdfs:domain       strategymaps:Measure , strategymaps:Initiative  ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "hasMInitiative" ;
+        rdfs:range        strategymaps:Initiative  ;
+        owl:inverseOf     strategymaps:isInitiativeOf ;
+        vs:term_status    "" .  
+        
+ :hasTask   a             owl:ObjectProperty , rdf:Property ;
+        rdfs:comment      "Related to tasks(s)" ;
+        rdfs:domain       strategymaps:Initiative  ;
+        rdfs:isDefinedBy  strategymaps: ;
+        rdfs:label        "hasTask" ;
+        rdfs:range        strategymaps:Task  ;
+        owl:inverseOf     strategymaps:isTaskOf ;
+        vs:term_status    "" .  
