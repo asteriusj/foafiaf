@@ -25,7 +25,7 @@ http://foafiaf.transformrockford.org/
 
 ### [FOAFIAF Why Linked Data and RDF?](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF:-Why-Linked-Data-and-RDF%3F)
 
-### [FOAFIAF Onotology Visualizer] (http://vowl.visualdataweb.org/webvowl/index.html#iri=https://foafiaf-asteriusj.c9users.io/owl/foafiaf.rdf)
+### [FOAFIAF Ontology Visualizer] (http://foafiaf.transformrockford.org/owl/foafiaf.owl)
 
 
 ### [Useful Tools and Reference Material](https://github.com/asteriusj/foafiaf/wiki/FOAFIAF-Useful-Tools-and-Reference-Material)
