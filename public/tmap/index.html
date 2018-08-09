@@ -16,16 +16,49 @@
 
   <body>
     <div id="visualization"></div>
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+    "@type": "MobileApplication",
+    "image": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+    "name": "Tranfsform Rockford Interactive Transformation Map (T-Map)",
+    "author": {
+      "@type": "Organization",
+      "url": "https://github.com/asteriusj",
+      "name": "asteriusj - Jeffrey Stewart"
+    },
+  "url": "http://foafiaf.transformrockford.org/tmap/index.html",
+  "datePublished": "2018-08-08",
+  "operatingSystem": "Web",
+  "fileSize" : "0",
+  "interactionCount" : "",
+  "contentRating" : "",
+  "description" : "HTML 5 SVG Interactive Sunburst Diagram for Tranfsform Rockford Community Transformation Map (T-Map)",
+  "applicationCategory" : "Interactive Diagram"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NGO",
+  "name": "Transform Rockford",
+  "legalName": "Transform Rockford LLC",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 N Main, Suite 110",
+    "addressLocality": "Rockford",
+    "addressRegion": "Illinois",
+    "postalCode": "61101"
+  },
+  "description": "TRANSFORMING OUR REGION FROM WITHIN - The Transform Rockford mission is to facilitate the creation and implementation of a strategic plan by the community for the purposes of dramatically improving the social and economic well-being of the community and its residents.",
+  "telephone": "+1 815.977.5840",
+  "logo": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+  "url": "http://transformrockford.org/"
+}
+</script>
 
     <script>
-// require('isomorphic-fetch') // or whatwg-fetch or node-fetch if you prefer
-
-// // ES6 Imports
-// import zlFetch from 'zl-fetch';
-
-// // CommonJS Imports
-// const fetch = require('zl-fetch');
-      
       function embed() {
         // We respin until the visualization container has non-zero area (there are race 
         // conditions on Chrome which permit that) and the visualization class is loaded.
