@@ -3,7 +3,12 @@
   <head>
     <link rel="stylesheet" href="assets/css/reset.css" />
     <style type="text/css"> 
-      html, body, #visualization {
+      html, body {
+        height: 100%;
+      }
+      #visualization {
+        margin: 10px;
+        padding: 5px;
         height: 100%;
       }
     </style>
@@ -15,6 +20,48 @@
   </head>
 
   <body>
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+    "@type": "MobileApplication",
+    "image": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+    "name": "Tranfsform Rockford Regional Indicator Interactive Scorecard",
+    "author": {
+      "@type": "Organization",
+      "url": "https://github.com/asteriusj",
+      "name": "asteriusj - Jeffrey Stewart"
+    },
+  "url": "http://foafiaf.transformrockford.org/tmap/indicators.html",
+  "datePublished": "2018-08-08",
+  "operatingSystem": "Web",
+  "fileSize" : "0",
+  "interactionCount" : "",
+  "contentRating" : "",
+  "description" : "HTML 5 SVG Interactive Sunburst Diagram for Tranfsform Rockford Community Regional Indicator Scorecard",
+  "applicationCategory" : "Interactive Diagram"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NGO",
+  "name": "Transform Rockford",
+  "legalName": "Transform Rockford LLC",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 N Main, Suite 110",
+    "addressLocality": "Rockford",
+    "addressRegion": "Illinois",
+    "postalCode": "61101"
+  },
+  "description": "TRANSFORMING OUR REGION FROM WITHIN - The Transform Rockford mission is to facilitate the creation and implementation of a strategic plan by the community for the purposes of dramatically improving the social and economic well-being of the community and its residents.",
+  "telephone": "+1 815.977.5840",
+  "logo": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+  "url": "http://transformrockford.org/"
+}
+</script>
+
     <div id="visualization"></div>
 
     <script>
