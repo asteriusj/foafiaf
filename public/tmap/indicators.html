@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <style type="text/css"> 
+      html, body, #visualization {
+        height: 100%;
+      }
+    </style>
+
+    <script src="./carrotsearch.circles.js"></script>
+    <script src="./carrotsearch.circles.asserts.js"></script>
+    <script src="assets/js/carrotsearch.examples.onresizehook.js"></script>
+    <script src="assets/js/carrotsearch.examples.viewport.js"></script>
+  </head>
+
+  <body>
+    <div id="visualization"></div>
+
+    <script>
+      function embed() {
+        // We respin until the visualization container has non-zero area (there are race 
+        // conditions on Chrome which permit that) and the visualization class is loaded.
+        var container = document.getElementById("visualization");
+        if (container.clientWidth <= 0 || container.clientHeight <= 0 || !window["CarrotSearchCircles"]) {
+          window.setTimeout(embed, 250);
+          return;
+        }
+
+        // Use the defaults for all parameters.
+        var circles = new CarrotSearchCircles({
+          id: "visualization",
+          captureMouseEvents: false,
+          pixelRatio: Math.min(1.5, window.devicePixelRatio || 1),
+          visibleGroupCount: 0,
+          onBeforeSelection: function(info) { 
+            this.set("zoom", {
+              groups: [info.group.id],
+              zoomed: !info.group.zoomed
+            });
+            return false;
+          },
+          onBeforeZoom: function(info) {
+            this.set("selection", {
+              groups:   [info.group.id],
+              selected: !info.group.selected
+            });
+            return false;
+          },
+          onGroupClick: function(info) {
+            console.log("Click.");
+          }, 
+          onGroupDoubleClick: function(info) {
+            console.log("Dbl Click.");
+          },
+          
+        //   dataObject: {}
+
+        });
+    
+circles.set({dataObject: {groups: [
+  {}, {label: "loading..." }, {},
+  {}, {label: "Please wait" }, {}
+]}});
+
+fetch('./indicators.json')
+    .then(function (response) {
+        
+      return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+      
+        var groups = data.groups;
+        
+        var customAttributes = function(opts, params, vars) {
+          console.log("Color decorator callback.", params, vars);
+          vars.groupColor = params.group.gcolor;
+          vars.labelColor = "auto";
+        };
+        
+        circles.set({
+          titleBar: "topbottom",
+          titleBarBackgroundColor: "rgba(0,0,0,.2)",
+          titleBarTextColor: "#fff",
+          titleBarTextPaddingTopBottom: 10,
+          
+          // onGroupClick: function(info) {
+          // // Zoom on single click.
+          // console.log('info',info)
+          // this.set("zoom", {
+          //     groups: [info.group.id],
+          //     zoomed: !info.group.zoomed
+          //   });
+          // },
+        
+          groupColorDecorator: customAttributes,
+          dataObject: {
+            groups
+          }
+        });
+        
+        
+        // var _dataObject = {}
+        // _dataObject.open =true
+        // _dataObject.groups = groups
+     
+        // circles.set("dataObject", _dataObject);      
+      
+      
+    });
+
+
+// $.ajax({
+//   url: "./census-raw.json",
+//   dataType: "json",
+//   success: function(data) {
+//     var groups = [ ];
+//     var states = data.groups;
+//     var pow = 0.7;
+//     for (var i = 0; i < states.length; i++) {
+//       var s = states[i];
+//       groups.push({
+//         label: s.Placename,
+//         weight: s.Pop,
+//         groups: [
+//           // Ethnic data is very varied, we rise it to the power of 0.8 to 
+//           // make the differences less pronounced.
+//           { label: "Hispanic", weight: Math.pow(s.PctHisp, pow) },
+//           { label: "White",    weight: Math.pow(s.PctNonHispWhite, pow) },
+//           { label: "Black",    weight: Math.pow(s.PctBlack, pow) },
+//           { label: "Indian",   weight: Math.pow(s.PctAmInd, pow) },
+//           { label: "Asian",    weight: Math.pow(s.PctAsian, pow) },
+//           { label: "Hawaiian", weight: Math.pow(s.PctNatHawOth, pow) }
+//         ]
+//       })
+//     }
+ 
+//     circles.set("dataObject", { open: true, groups: groups });
+//   }
+// });
+
+
+        installResizeHandlerFor(circles, 0);
+      }
+      embed();
+    </script>
+  </body>
+</html>
