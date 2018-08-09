@@ -1,0 +1,351 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "group": "StatusColors",
+      "gcolor": "#ffffff",
+      "label": "Status Colors",
+      "weight": 2,
+      "groups": [
+        {
+          "label": "Cyan",
+          "gcolor": "#00FFFF"
+        },
+        {
+          "label": "Green",
+          "gcolor": "#008000"
+        },
+        {
+          "label": "Yellow",
+          "gcolor": "#FFFF00"
+        },
+        {
+          "label": "Organge",
+          "gcolor": "#FFA500"
+        },
+        {
+          "label": "Red",
+          "gcolor": "#FF0000"
+        }
+      ]
+    },
+    {
+      "name": "Renew",
+      "id": "Renew",
+      "dbotype": "foafiaf:Segment",
+      "group": "Renew",
+      "gcolor": "#00FFFF",
+      "label": "Renewing Our People & Resiliency",
+      "weight": 19,
+      "description": "Informs us about our people; A key to growth and resilience of our community",
+      "groups": [
+        {
+          "name": "Education",
+          "id": "Education",
+          "group": "Renew",
+          "gcolor": "#FFA500",
+          "label": "Education",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "Safety",
+          "id": "Safety",
+          "gcolor": "#FF0000",
+          "label": "Safety",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Services",
+          "gcolor": "#00FFFF",
+          "label": "Services",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Wellness",
+          "gcolor": "#FFFF00",
+          "label": "Wellness",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reframe",
+      "id": "Reframe",
+      "dbotype": "foafiaf:Segment",
+      "group": "Reframe",
+      "gcolor": "#00FFFF",
+      "label": "Reframing Our Opportunity",
+      "weight": 17,
+      "description": "Informs us of our climate and hopes; A key to common vision for a better future",
+      "groups": [
+        {
+          "name": "",
+          "id": "Citizenship",
+          "gcolor": "#00FFFF",
+          "label": "Citizenship",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Pride",
+          "gcolor": "#00FFFF",
+          "label": "Pride",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Reputation",
+          "gcolor": "#00FFFF",
+          "label": "Reputation",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Entertainment",
+          "gcolor": "#00FFFF",
+          "label": "Entertainment",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Recreate",
+      "id": "Recreate",
+      "dbotype": "foafiaf:Segment",
+      "group": "Recreate",
+      "gcolor": "#FFA500",
+      "label": "Recreating Sense of Place",
+      "weight": 17,
+      "description": "Informs us of way we live and interact; A key to growing and sustaining our community",
+      "groups": [
+        {
+          "name": "",
+          "id": "Diversity",
+          "gcolor": "#00FFFF",
+          "label": "Diversity",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Equity",
+          "gcolor": "#00FFFF",
+          "label": "Equity",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Neighborhoods",
+          "gcolor": "#FFFF00",
+          "label": "Neighborhoods",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Quality",
+          "gcolor": "#00FFFF",
+          "label": "Quality",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Revitalize",
+      "id": "Revitalize",
+      "dbotype": "foafiaf:Segment",
+      "group": "Revitalize",
+      "gcolor": "#FFFF00",
+      "label": "Revitalizing Our Economy & Infrastructure",
+      "weight": 17,
+      "description": "Informs us of our economy and our infrastructure; A key support for successful and fulfilling lives",
+      "groups": [
+        {
+          "name": "",
+          "id": "Economy",
+          "gcolor": "#FFFF00",
+          "label": "Economy",
+          "weight": 5,
+          "description": "Informs us of the standard of living of people in our region and the ability of the economy to create prosperity for all.",
+          "groups": [
+            {
+              "label": "Median Household Income",
+              "gcolor": "#FFA500"
+            },
+            {
+              "label": "Productivity (output per worker)",
+              "gcolor": "#FFA500"
+            },
+            {
+              "label": "Regional Price Parity",
+              "gcolor": "#FFFF00"
+            },
+            {
+              "label": "Metropolitan GDP",
+              "gcolor": "#008000",
+              "description": "$14.8 billion in 2016 5-Year Trend: Better Peer Rank: 20 (1st Quartile) 5-Year Trend in Rank: Same"
+            },
+            {
+              "label": "Poverty Rate (% people)",
+              "gcolor": "#FFA500"
+            }
+          ]
+        },
+        {
+          "name": "",
+          "id": "Environment",
+          "gcolor": "#00FFFF",
+          "label": "Environment",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Infrastructure",
+          "gcolor": "#00FFFF",
+          "label": "Infrastructure",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        },
+        {
+          "name": "",
+          "id": "Employment",
+          "gcolor": "#FFA500",
+          "status": "orange",
+          "label": "Employment",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            {
+              "label": "Job Growth Rate",
+              "status": "red",
+              "gcolor": "#FF0000"
+            },
+            {
+              "label": "Unemployment Rate",
+              "status": "red",
+              "gcolor": "#FF0000"
+            },
+            {
+              "label": "Labor Force Participation Rate",
+              "status": "orange",
+              "gcolor": "#FFA500"
+            },
+            {
+              "label": "% with Post-Secondary Degree",
+              "status": "yellow",
+              "gcolor": "#FFFF00",
+              "description": ""
+            },
+            {
+              "label": "Career Readiness",
+              "status": "cyan",
+              "gcolor": "#00FFFF"
+            }
+          ]
+        },
+        {
+          "name": "",
+          "id": "Resilience",
+          "gcolor": "#FFFF00",
+          "label": "Resilience",
+          "weight": 5,
+          "description": "",
+          "groups": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Resource",
+      "id": "Resource",
+      "dbotype": "foafiaf:Segment",
+      "group": "Resource",
+      "gcolor": "#00FFFF",
+      "label": "Resourcing and Funding our Future",
+      "weight": 17,
+      "description": "Informs us of way we fund and support our community; A key to enabling our transformation",
+      "groups": [
+        {
+          "id": "Talent",
+          "gcolor": "#00FFFF",
+          "label": "Talent",
+          "weight": 5
+        },
+        {
+          "id": "Funding",
+          "gcolor": "#00FFFF",
+          "label": "Funding",
+          "weight": 5
+        },
+        {
+          "id": "Growth",
+          "gcolor": "#00FFFF",
+          "label": "Growth",
+          "weight": 5
+        },
+        {
+          "id": "Investment",
+          "gcolor": "#00FFFF",
+          "label": "Investment",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}
