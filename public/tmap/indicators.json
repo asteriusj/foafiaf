@@ -44,11 +44,38 @@
           "id": "Education",
           "group": "Renew",
           "gcolor": "#FFA500",
+          "status": "Organge",
           "label": "Education",
           "weight": 5,
-          "description": "",
+          "description": "Informs us on the evolution of educational attainments in our community and our capability of delivering Quality Education; A key to living fulfilling lives",
           "groups": [
-            
+
+           {
+              "label": "% with a bachelor’s degree",
+              "gcolor": "#FFFF00",
+              "status": "Yellow"
+            },
+            {
+              "label": "% High School Graduation Rate",
+              "gcolor": "#FFFF00",
+              "status": "Yellow"
+            },
+            {
+              "label": "% College or Career Ready",
+              "gcolor": "#FFA500",
+              "status": "Organge"
+            },
+            {
+              "label": "% 3rd Graders Read at Grade Level",
+              "gcolor": "#FF0000",
+              "status": "Red"
+            },
+            {
+              "label": "% 8th Grade Math at Grade Level",
+              "gcolor": "#FFA500",
+              "status": "Organge"
+            }
+           
           ]
         },
         {
