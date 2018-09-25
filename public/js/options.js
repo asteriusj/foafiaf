@@ -1335,16 +1335,16 @@ piechart: {
   				}
   		},
 
-      Measure: {
-        shape: 'icon',
-        icon: {
-          face: 'FontAwesome',
-          name: 'fa-line-chart',
-          code: '\uf201',
-          size: 40,
-          color: 'blue'
-        }
-      },
+//       Measure: {
+//         shape: 'icon',
+//         icon: {
+//           face: 'FontAwesome',
+//           name: 'fa-line-chart',
+//           code: '\uf201',
+//           size: 40,
+//           color: 'blue'
+//         }
+//       },
       Objective: {
         shape: 'icon',
         icon: {
