@@ -506,6 +506,16 @@ function  getOptions() {
           color: 'cyan'
         }
       },
+      Indicator: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-chart-bar',
+          face: 'FontAwesome',
+          code: '\uf080',
+          size: 40,
+          color: 'cyan'
+        }
+      },
       
       Scorecard: {
         shape: 'icon',
