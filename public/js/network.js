@@ -1368,16 +1368,30 @@ function buildRawNodes(data) {
 			var _status = rawNodes[i]['foafiaf:status'] || "";
 			var _color = rawNodes[i]['foafiaf:color'] || "";
 			if (_group === "Measure") {
-				if (_color = "#FF0000") {
-					_group = _group = "Red"
-				} else if (_color = "#FFA500") {
-					_group = _group = "Orange"
-				} else if (_color = "#FFFF00") {
-					_group = _group = "Yellow"
-				} else if (_color = "#008000") {
-					_group = _group = "Green"
+				// console.log("")
+				// console.log("rawNodes[i]", rawNodes[i])
+				console.log("_group _status _color", _status, _group,_color)
+				// console.log("")
+				
+				if ( (_color === "#FF0000") || (_status === "Red") ) {
+					_group = _group + "Red"
+					console.log("_group", _group)
+					
+				} else if ( (_color === "#FFA500") || (_status === "Orange") )  {
+					_group = _group + "Orange"
+					console.log("_group", _group)
+					
+				} else if ( (_color === "#FFFF00") || (_status === "Yellow") ) {
+					_group = _group + "Yellow"
+					console.log("_group", _group)
+					
+				} else if ( (_color === "#008000") || (_status === "Green") ) {
+					_group = _group + "Green"
+					console.log("_group", _group)
+					
 				}
 				rawNodes[i].group = _group;
+				
 			}
 			
 			
