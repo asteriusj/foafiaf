@@ -3,14 +3,103 @@ console.log('loading network.js ...')
 
 
 var Network
+var History = [];
+var RelPath = [];
 
 
-    
+function HandleSearchResult(id) {
+	console.log('HandleSearchResult', id)
+	var el = document.getElementById('nextId')
+	el.style.display='none';
+	// Set element value
+	el.value = id;
+	// Create a new 'change' event
+	var change_nextId = new Event('change_nextId');
+		console.log('change_nextId',change_nextId)
+	// Dispatch it.
+	el.dispatchEvent(change_nextId);
+}
+
+function HandlePreviousCall() {
+  console.log('HandlePreviousCall')
+  console.log('History',History)
+  var len = History.length
+  if (len > 1) {
+  	var nodeid = History[len-2]
+  	console.log(nodeid)
+  	var el = document.getElementById('nextId')
+	  el.style.display='none';
+	  // Set element value
+	  el.value = nodeid;
+	  // Create a new 'change' event
+	  var change_nextId = new Event('change_nextId');
+			console.log('change_nextId',change_nextId)
+	  // Dispatch it.
+	  el.dispatchEvent(change_nextId);
+  }
+}
+
+
+function HandleRelPathResult(path) {
+	console.log('HandleRelPathResult', path)
+	var el = document.getElementById('pathIds')
+
+	el.style.display='none';
+	// Set element value
+	el.value = JSON.stringify(path);
+
+	// Create a new 'change' event
+	var change_pathIds = new Event('change_pathIds');
+		console.log('change_pathIds',change_pathIds)
+	// Dispatch it.
+	el.dispatchEvent(change_pathIds);
+		console.log('el',el)
+}
 
 function gotoId (id) {
 	console.log('gotoId', id)
 	doNetwork.gotoNode(id)
 }
+
+function getRawNodes (data) {
+	console.log('getRawNodes', data)
+	return doNetwork.buildRawNodes(data)
+}
+
+
+function getDataWithTypes (_data, typeList) {
+	console.log('getDataWithTypes data typeList', _data, typeList)
+	
+	try {
+	    
+		var _oldNodes = _data['@graph'];
+		var _newNodes = [];
+		
+		// loop over nodes to determine if should be in filtered list
+		for (var i = 0; i < _oldNodes.length; i++) {
+			var _id = _oldNodes[i]['@id'];
+
+			var _type = _oldNodes[i]['@type'] || "";	
+			if (typeList.indexOf(_type) >= 0) {
+				_newNodes.push(_oldNodes[i])
+			}
+		}  // end for
+		// console.log('_newNodes',_newNodes)
+		
+		_data['@graph'] = _newNodes
+		console.log('_data',_data)
+		return _data;
+	}
+	catch(e) {
+	    //catchCode - Block of code to handle errors
+	    console.error(e)
+	} 
+	finally {
+	    //finallyCode - Block of code to be executed regardless of the try / catch result
+
+	}
+
+} // end getDataWithTypes
 
 
 
@@ -21,21 +110,37 @@ function dataReceived(data) {
 } // end dataRecieved
 
 
-function doNetwork(data) {
-	console.log('doNetwork')
-
+//
+// do network setup and event handling
+//
+function doNetwork(_data, _entityTypes) {
+	console.log('start doNetwork')
+	console.log('_data',_data)
 	
-	//const target = document.getElementById('canvasArea')
-	//console.log('target',target)
-	//var spinner = new Spinner().spin(target);
-	if (spinner) spinner.spin() ; 
-	console.log('spinner spin on dataRecieved',spinner)
-
-    //console.log('data', JSON.stringify(data))
+	// set spinner control
+	const target = document.getElementById('canvasArea')
+	console.log('target',target)
+	var spinner = new Spinner().spin(target);
+	console.log(Math.floor(Date.now() / 1000), 'new spinner control', spinner)
+	// // spinner.stop();
     
+  try {
+  	   
+  	var data = [];
+    if (_entityTypes) {
+		// get entity types
+		// var typeList = ["skos:ConceptScheme","foaf:Group","foaf:Organization","org:Role","schema:Service"]
+		//  typeList = ["skos:ConceptScheme","foaf:Group"]
+	    
+	    // update data with only seelcted types
+	    data = getDataWithTypes(_data, _entityTypes)
+    } else if (_data) {
+    	data = _data
+    }
+
 	var defaultNodeId = data['@id'] || null;						
 	console.log("defaultNodeId - > ", defaultNodeId )
-	
+
 	if (startid) {
 		var selectedNodeID = startid;		// ADDED check for default @id in jsonld
 	} else if (defaultNodeId) {
@@ -48,12 +153,49 @@ function doNetwork(data) {
 	console.log('selectedNodeID - > ', selectedNodeID)
 	
 	if (showall) {
-		showAll = showall
+		showAll = true
 	}
 	console.log('showAll - > ', showAll)
 	
+
 	
-		
+			
+	// //
+	// // create placeholder for Next Id and fill wih query param if available
+	// // sets input element inside selectorContainer in HTML doc
+	// // useed by search.js to put result of entity search
+	// //
+	// // create placeholder for Next Id and fill wih query param if available
+	// // var nextId = nextid || null ;
+	// // console.log('nextId - > ', nextId)
+	// document.getElementById('selectorContainer').innerHTML += "<input id='searchId' type='text' value=''  style='display:none'/><br />";
+	// // handle id seelcted as result of a search
+	// document.getElementById("searchId").addEventListener("change_searchId", function(){
+	// 	var selectedId = document.getElementById('searchId').value;
+	//     console.log('searchId change:', selectedId);
+	//     gotoNode(getSelectedNode(selectedId));
+	// 	// alert('selectedId',selectedId)
+	// });
+	// // end nextId id from search plug in
+	
+	
+	// //
+	// // create placeholder for Previous Id 
+	// // sets input element inside selectorContainer in HTML doc
+	// // useed by network.js to put result of previous History id
+	// //
+	// document.getElementById('selectorContainer').innerHTML += "<input id='prevId' type='text' value=''  style='display:none'/><br />";
+	// // handle id seelcted as result of a search
+	// document.getElementById("prevId").addEventListener("change_prevId", function(){
+	// 	var selectedId = document.getElementById('prevId').value;
+	//     console.log('prevId change:', selectedId);
+	    
+	//     gotoNode(getSelectedNode(selectedId));
+	// 	// alert('selectedId',selectedId)
+	// });
+	// // end previous id from icon plug in
+	
+	
 	//
 	// create placeholder for Next Id and fill wih query param if available
 	// sets input element inside selectorContainer in HTML doc
@@ -62,16 +204,76 @@ function doNetwork(data) {
 	// create placeholder for Next Id and fill wih query param if available
 	// var nextId = nextid || null ;
 	// console.log('nextId - > ', nextId)
-	document.getElementById('selectorContainer').innerHTML += "<input id='nextId' type='text' value=''  style='display:none'/><br />";
+	var inputNextId = document.createElement("input");            
+ 
+	var att0 = document.createAttribute("id");  
+	att0.value = "nextId";  
+	inputNextId.setAttributeNode(att0);
+	var att1 = document.createAttribute("type");  
+	att1.value = "text"; 
+	inputNextId.setAttributeNode(att1);
+	var att2 = document.createAttribute("style");  
+	att2.value = "display:none";
+	inputNextId.setAttributeNode(att2);
+	
+	document.getElementById("selectorContainer").appendChild(inputNextId); 
+	
+	
+	// document.getElementById('selectorContainer').innerHTML += 
+	// 	document.getElementById('selectorContainer').innerHTML +
+	// 	"<input id='nextId' type='text' value=''  style='display:none'/><br />";
+	console.log("document.getElementById('selectorContainer').innerHTML",document.getElementById('selectorContainer').innerHTML)
 	// handle id seelcted as result of a search
-	document.getElementById("nextId").addEventListener("change", function(){
+	document.getElementById("nextId").addEventListener("change_nextId", function(){
 		var selectedId = document.getElementById('nextId').value;
 	    console.log('nextId change:', selectedId);
 	    gotoNode(getSelectedNode(selectedId));
 		// alert('selectedId',selectedId)
 	});
-	// end next id from search plug in
+	// end nextId id from search and previous plug in
+
+
+	//
+	// create placeholder for relationship path steps
+	// sets input element inside selectorContainer in HTML doc
+	// useed by refinder.js to put result of entity path finder
+	//
+	var inputPathIds = document.createElement("input");            
+ 
+	var att0 = document.createAttribute("id");  
+	att0.value = "pathIds";  
+	inputPathIds.setAttributeNode(att0);
+	var att1 = document.createAttribute("type");  
+	att1.value = "text"; 
+	inputPathIds.setAttributeNode(att1);
+	var att2 = document.createAttribute("style");  
+	att2.value = "display:none";
+	inputPathIds.setAttributeNode(att2);
 	
+	document.getElementById("selectorContainer").appendChild(inputPathIds); 
+	// document.getElementById('selectorContainer').innerHTML += 
+	// 	document.getElementById('selectorContainer').innerHTML +
+	// 	"<input id='pathIds' type='text' value=''  style='display:none'/><br />";
+	console.log("document.getElementById('selectorContainer').innerHTML",document.getElementById('selectorContainer').innerHTML)
+	// handle ids selcted as result of a rel finder
+	document.getElementById("pathIds").addEventListener("change_pathIds", function(){
+		console.log('gogo pathIds')
+		var jsonPathIds = document.getElementById('pathIds').value;
+	    console.log('pathIds change:', jsonPathIds);
+	    
+	    var idList = JSON.parse(jsonPathIds);
+	    console.log('idList:', idList);
+	    
+	    gotoPath(rawNodes,idList)
+	    
+	    // var selectedId = idList[0] || "" ;
+	    // console.log('selectedId:', selectedId);
+	    
+	    // gotoNode(getSelectedNode(selectedId));
+
+	});
+	// end relationship path from relfinder plug in
+
 	
 	
 	//
@@ -95,7 +297,7 @@ function doNetwork(data) {
 	//selectedNode = null
 	console.log('selectedNode',selectedNode)
 	
-	if (selectedNode) {
+	if (selectedNode != null) {
 		visibleNodes = getVisibleNodes(rawNodes, rawEdges, selectedNodeID)
 	} else {
 		var showAll = true
@@ -119,11 +321,26 @@ function doNetwork(data) {
 	var network = setNetwork(visibleNodes, visibleEdges)
 	
 	network.once("afterDrawing", function(){
-		console.log('network.once')
-		zoomToSelectedNode(selectedNodeID, network);
-		// stop spinner
-		if (spinner) spinner.stop() ; 
-		console.log('spinner stop afterDrawing',spinner)
+		console.log(Math.floor(Date.now() / 1000), 'start network.once')
+		
+		try {
+			// const target = document.getElementById('canvasArea')
+			// console.log('target',target)
+			// var spinner = new Spinner().spin(target);
+			// if (spinner) spinner.spin() ; 
+			// console.log('spinner spin on doNetwork',spinner)
+			
+			zoomToSelectedNode(selectedNodeID, network);
+			// stop spinner
+			// if (spinner) spinner.stop() ; 
+			// console.log('spinner stop afterDrawing',spinner)
+		} 
+		catch(e) {
+		    console.error(Math.floor(Date.now() / 1000), e)
+		} 
+		finally {
+			console.log(Math.floor(Date.now() / 1000), 'finish network.once')
+		}
 	});
 	
 	
@@ -201,60 +418,55 @@ function doNetwork(data) {
 
 	// FUNCTIONS	
 	function setNetwork(visibleNodes, visibleEdges ){
-		
-		var nodes = new vis.DataSet(visibleNodes);
-		//console.log('nodes', JSON.stringify(nodes))
-		var edges = new vis.DataSet(visibleEdges);
-		//console.log('edges', JSON.stringify(edges))
+		console.log(Math.floor(Date.now() / 1000), 'start setNetwork');
+	    
+		try {
+
+			// start spinner
+			// if (spinner) spinner.spin() ; 
+			// console.log('spinner spin on doNetwork',spinner)
 			
+			var nodes = new vis.DataSet(visibleNodes);
+			//console.log('nodes', JSON.stringify(nodes))
+			var edges = new vis.DataSet(visibleEdges);
+			//console.log('edges', JSON.stringify(edges))
+				
+				
+			// create a network from nodes and edges
+			var container = document.getElementById('mynetwork');
+			var nodesedges = {
+		        manifest: '',
+		        nodes: nodes,
+		        edges: edges
+		      };
+			//console.log(JSON.stringify(nodesedges))
 			
-		// create a network from nodes and edges
-		var container = document.getElementById('mynetwork');
-		var data = {
-	        manifest: '',
-	        nodes: nodes,
-	        edges: edges
-	      };
-		//console.log(JSON.stringify(data))
-		
-		
-		/// SET NETWORK !!!
-		var options = getOptions();
-		
-		// options.improvedLayout = true;
-		
-		// options.physics = false
-		
-		// options.layout =  {
-	 //   randomSeed: undefined,
-	 //   improvedLayout:true,
-	 //   hierarchical: {
-		//       enabled:true,
-		//       levelSeparation: 150,
-		//       nodeSpacing: 100,
-		//       treeSpacing: 200,
-		//       blockShifting: true,
-		//       edgeMinimization: true,
-		//       parentCentralization: true,
-		//       direction: 'UD',        // UD, DU, LR, RL
-		//       sortMethod: 'directed'   // hubsize, directed
-		//     }
-		//   }
-		
-		//var options = getVisOptions();
-		//var options = {layout:{randomSeed:10,improvedLayout:false},interaction:{dragNodes:true,dragView:true,hideEdgesOnDrag:false,hideNodesOnDrag:false,hover:true,hoverConnectedEdges:true,keyboard:{enabled:true,speed:{x:10,y:10,zoom:0.02},bindToWindow:true},multiselect:false,navigationButtons:false,selectable:true,selectConnectedEdges:true,tooltipDelay:300,zoomView:true},physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Community_college:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViovar'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}}}}
-	    //var options = {physics:{solver:'forceAtlas2Based',maxVelocity:10,minVelocity:1,},groups:{property:{shape:'dot',size:18,color:'pink'},Education:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'brown'}},EducationalOrganization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'grey'}},EducationalInstitution:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'black'}},Public_university:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'blue'}},University:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Navy'}},College:{shape:'icon',icon:{face:'FontAwesome',name:'fa-graduation-cap',code:'\uf19d',size:50,color:'Blue'}},Library:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'brown'}},Job:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'black'}},WorkHistory:{shape:'icon',icon:{face:'FontAwesome',name:'fa-magic',code:'\uf0d0',size:50,color:'YellowGreen'}},Person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Crimson'}},BusinessPerson:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'IndianRed'}},Politician:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'DarkSalmon'}},OfficeHolder:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'LightSalmon'}},OrganisationMember:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'Magenta'}},Group:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'#57169a'}},Organization:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'blue'}},OrganizationalUnit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:45,color:'Teal'}},Company:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building-0',code:'\uf0f7',size:50,color:'OrangeRed '}},Government:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'SaddleBrown'}},GovernmentAgency:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:45,color:'Sienna'}},Municipality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-building',code:'\uf1ad',size:40,color:'RoyalBlue'}},Legislature:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:45,color:'grey'}},NonProfit:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'YellowGreen'}},NonProfitOrganisation:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'ForestGreen'}},NGO:{shape:'icon',icon:{face:'FontAwesome',name:'fa-users',code:'\uf0c0',size:50,color:'SpringGreen'}},Faith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'Chocolate'}},ReligiousOrganisation:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:40,color:'DarkGoldenrod'}},State:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},Region:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'Indigo'}},City:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:60,color:'DarkSlateGray'}},Village:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:50,color:'Gray'}},Town:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:45,color:'LightGrey'}},Role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:55,color:'BlueViovar'}},Place:{shape:'icon',icon:{face:'FontAwesome',name:'fa-map-marker ',code:'\uf041',size:55,color:'blue'}},Tags:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Tag:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},ConceptScheme:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:50,color:'YellowGreen'}},Concept:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'YellowGreen'}},Perse:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tags',code:'\uf02c',size:40,color:'OrangeRed'}},Personality:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},MBTI:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},MBTI_profile:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},DiSC:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Traxion:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'Green'}},Interest:{shape:'icon',icon:{face:'FontAwesome',name:'fa-search',code:'\uf002',size:50,color:'OrangeRed'}},Skill:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Knowledge:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},Experience:{shape:'icon',icon:{face:'FontAwesome',name:'fa-tag',code:'\uf02b',size:40,color:'OrangeRed'}},group:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0c0',size:50,color:'#57169a'}},team:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'grey'}},person:{shape:'icon',icon:{face:'FontAwesome',code:'\uf007',size:50,color:'#aa00ff'}},role:{shape:'icon',icon:{face:'FontAwesome',code:'\uf21d',size:50,color:'#6E6EFD'}},organization:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0e8',size:50,color:'blue'}},orgbiz:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'#57169a'}},orggov:{shape:'icon',icon:{face:'FontAwesome',code:'\uf19c',size:50,color:'blue'}},orgnonprofit:{shape:'icon',icon:{face:'FontAwesome',code:'\uf069',size:50,color:'green'}},orgfaith:{shape:'icon',icon:{face:'FontAwesome',code:'\uf004',size:50,color:'cyan'}},globe:{shape:'icon',icon:{face:'Ionicons',code:'\uf276',size:66,color:'#6E6EFD'}},marker:{shape:'icon',icon:{face:'FontAwesome',code:'\uf041',size:50,color:'#FB7E81'}},book:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02d',size:50,color:'#C2FABC'}},film:{shape:'icon',icon:{face:'FontAwesome',code:'\uf008',size:55,color:'#6E6EFD'}},tags:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02c',size:40,color:'lime'}},tag:{shape:'icon',icon:{face:'FontAwesome',code:'\uf02b',size:40,color:'lime'}},projects:{shape:'icon',icon:{face:'FontAwesome',code:'\uf0ae',size:44,color:'#800000'}},project:{shape:'icon',icon:{face:'FontAwesome',code:'\uf03a',size:40,color:'maroon'}},bullseye:{shape:'icon',icon:{face:'FontAwesome',code:'\uf140',size:40,color:'red'}},puzzle:{shape:'icon',icon:{face:'FontAwesome',code:'\uf12e',size:40,color:'yellow'}},cubes:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b3',size:44,color:'black'}},cube:{shape:'icon',icon:{face:'FontAwesome',code:'\uf1b2',size:40,color:'black'}}}};
-		
-		//console.log('container',container)
-		//console.log('options',options)
-		var network = new vis.Network(container, data, options);
-		Network = network
-		return network
+			/// SET NETWORK !!!
+			var options = getOptions();
+			
+	
+			var network = new vis.Network(container, nodesedges, options);
+			Network = network
+			
+			// stop spinner
+			// if (spinner) spinner.stop() ; 
+			// console.log('spinner stop afterDrawing',spinner)
+			
+			return network
+		} 
+		catch(e) {
+		    console.error(Math.floor(Date.now() / 1000), e)
+		} 
+		finally {
+			console.log(Math.floor(Date.now() / 1000), 'finish setNetwork')
+		}
 	}
 	
 	function getSelectedNode(selected) {
-		console.log('getSelectedNode', selected)
-				
+		console.log(Math.floor(Date.now() / 1000), 'start getSelectedNode', selected)
+	  
+	  try {
+	  	
 		if ( typeof selected === "string") {
 			var nodeId = selected
 		} else if ( typeof selected.node === "string") {
@@ -266,9 +478,16 @@ function doNetwork(data) {
 		// console.log('nodeId', nodeId)
 
 		var selectedNode = getNodeById(rawNodes, nodeId) || null ;
-		console.log('selectedNode', selectedNode)
+		console.log(Math.floor(Date.now() / 1000), 'selectedNode', selectedNode)
 		
 		return selectedNode
+	  } 
+	  catch(e) {
+	    	console.error(Math.floor(Date.now() / 1000), e)
+	  } 
+	  finally {
+			console.log(Math.floor(Date.now() / 1000), 'finish getSelectedNode')
+	  }
 	}
 	
 
@@ -361,37 +580,110 @@ function doNetwork(data) {
         console.log('blurEdge Event:', params);
     });
     
-	
-	
-	function gotoNode(selectedNode) {
-	    console.log("execute gotoNode function", selectedNode);
+    
+    //
+    // use pathids list to set new nodes and edges then got to first node
+    //
+	function gotoPath(rawNodes, pathList) {
+	    console.log(Math.floor(Date.now() / 1000), "start gotoPath", rawNodes, pathList);
 	    
 	    try {
-			// start spinner
-			var target = document.getElementById('mainArea')
-			var spinner = new Spinner().spin(target);
-			console.log('spinner spin',spinner)
+	    
+	      if (pathList) {
+
+			// use list to to generate new node graph
+			var pathNodes = []
+			for (var n=0; n<pathList.length; n++) {
+				var _id = pathList[n] ;
+				// console.log('_id',_id)
+				var _node = getNodeById(rawNodes,_id) ;
+				// console.log('_node',_node)
+				pathNodes.push(_node) ;
+			}
+			console.log('pathNodes',pathNodes,pathNodes.length)
+			
+			
+			// // create edges between path nodes - NEED TO MAKE MORE COMPLETE BY LOOP THROUGH PROPERTIES OF NODES
+			// var pathEdges = []
+			// if (pathNodes.length>0) {
+			//   for (var p=0; p<pathNodes.length-1; p++) {						// only loop length - 1 
+			// 	var _nd1 = pathNodes[p] ;					console.log('_nd1',_nd1)
+			// 	var _id1 = _nd1['@id']; ;					console.log('_id1',_id1)
+			// 	var _nd2 = pathNodes[p+1] ;					console.log('_nd2',_nd2)
+			// 	var _id2 = _nd2['@id'] ;					console.log('_id2',_id2)
 				
-			var nodeId =  selectedNode.id
-				
-			// if (selectedNode) {
-			// 		// displayData(selectedNode);
-			// 		updatePropSheet(selectedNode);
+			// 	var pathEdge = {};
+			// 	pathEdge.arrows = {"to":"true"};
+			// 	pathEdge.from = _id1;
+			// 	pathEdge.to = _id2;
+			// 	pathEdge.label = 'related to';
+						
+			// 	pathEdges.push(pathEdge);
+			//   }
 			// }
-				
-			//  if a node is selected, hide any nodes outside the selected number N degrees
-			console.log('nodeId',nodeId)
-			if(nodeId) {
+			// console.log('pathEdges',pathEdges)
+
+			// redrawn with path nodes and edges
+			// setNetwork(pathNodes, pathEdges)
+			var startId = pathNodes[0] ;
+			
+			gotoNode(startId,pathNodes)
+
+	      }
+	      
+	    }
+		catch(e) {
+		    console.error(Math.floor(Date.now() / 1000), e)
+		} 
+		finally {
+			// stop spinner
+			// if (spinner) spinner.stop() ; 
+			// console.log(Math.floor(Date.now() / 1000), 'spinner stop',spinner)
+			
+			console.log(Math.floor(Date.now() / 1000), 'finish gotoPath')
+		}
+	} // end gotoPath
+
+
 	
+	function gotoNode(selectedNode, pathNodes) {
+	    console.log(Math.floor(Date.now() / 1000), "start gotoNode",  selectedNode, pathNodes);
+	    
+	    // start spinner
+		// var target = document.getElementById('mainArea')
+		// var spinner = new Spinner().spin(target);
+		// if (spinner) { spinner.spin(); console.log('spinner', spinner) }; 
+		// console.log(Math.floor(Date.now() / 1000), 'spinner spin',spinner)
+			
+	    try {
+	    
+	      if (selectedNode) {
+	      	console.log('selectedNode',selectedNode)
+	      	showAll = false;							// trun off show all nodes
+	      	
+			var nodeId =  selectedNode.id
+
+			//  if a node is selected, hide any nodes outside the selected number N degrees
+			//  or show nodes in path
+			
+			if(nodeId) {
+				console.log('nodeId',nodeId)
+				
 				// // start spinner
 				// var target = document.getElementById('mainArea')
 				// var spinner = new Spinner().spin(target);
 				// console.log('spinner',spinner)
-					
-				visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
+				
+				// if pathNodes defined use instead of rawNoode
+				if (pathNodes) {
+					console.log('pathNodes',pathNodes)
+					visibleNodes = pathNodes
+				} else {
+					visibleNodes = getVisibleNodes(rawNodes, rawEdges, nodeId)
+				}
 				visibleEdges = rawEdges
-				//console.log('new visibleNodes',visibleNodes)
-				//console.log('new visibleEdges',visibleEdges)
+				console.log('new visibleNodes',visibleNodes)
+				console.log('new visibleEdges',visibleEdges)
 				
 				network.setData({nodes:new vis.DataSet(visibleNodes), edges:new vis.DataSet(visibleEdges)});
 				//network = setNetwork(visibleNodes, visibleEdges)
@@ -403,18 +695,23 @@ function doNetwork(data) {
 					// if (spinner) spinner.stop() ; 
 					// console.log('spinner',spinner)
 				});
+			} else {
+				console.log('note nodeId')
 			} // end if nodeId
-			    	
+	      } else {
+	      	console.log('not selectedNode')
+	      } // end if selectedNode	    
+	      
 	    }
 		catch(e) {
-		    //catchCode - Block of code to handle errors
-		    console.error(e)
+		    console.error(Math.floor(Date.now() / 1000), e)
 		} 
 		finally {
-		    //finallyCode - Block of code to be executed regardless of the try / catch result
-		    // stop spinner
-			if (spinner) spinner.stop() ; 
-			console.log('spinner stop',spinner)
+			// stop spinner
+			// if (spinner) spinner.stop() ; 
+			// console.log(Math.floor(Date.now() / 1000), 'spinner stop',spinner)
+			
+			console.log(Math.floor(Date.now() / 1000), 'finish gotoNode')
 		}
 	} // end gotoNode
 	exports = gotoNode()
@@ -423,19 +720,44 @@ function doNetwork(data) {
 	
 
 	function zoomToSelectedNode(_selectedNodeId, _network) {
-		console.log('zoomToSelectedNode')
+		console.log(Math.floor(Date.now() / 1000), 'start zoomToSelectedNode')
 		
-		var moveToOptions = {
-			scale: 1.10,              // scale to animate to  (Number)
-			offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
-			animation: {             // animation object, can also be Boolean
-			  duration: 1000,                 // animation duration in milliseconds (Number)
-			  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
-			}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
-		}                                       // easeInQuint, easeOutQuint, easeInOutQuint
-		//console.log('zoom to ',_selectedNodeId)
-		//console.log('moveToOptions',moveToOptions)
-		if(_selectedNodeId) _network.focus(_selectedNodeId, moveToOptions);	
+		// start spinner
+		// var target = document.getElementById('mainArea')
+		// var spinner = new Spinner().spin(target);
+		if (spinner) { console.log('before spinner spin', spinner); spinner.spin();  };   
+		console.log(Math.floor(Date.now() / 1000), 'spinner spin',spinner)
+			
+		try {
+			
+			var moveToOptions = {
+				scale: 1.10,              // scale to animate to  (Number)
+				offset: {x:0, y:0},      // offset from the center in DOM pixels (Numbers)
+				animation: {             // animation object, can also be Boolean
+				  duration: 1000,                 // animation duration in milliseconds (Number)
+				  easingFunction: "linear" // Animation easing function, available are:  linear, easeInQuad, easeOutQuad, easeInOutQuad,
+				}                                   // easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart,
+			}                                       // easeInQuint, easeOutQuint, easeInOutQuint
+			//console.log('zoom to ',_selectedNodeId)
+			//console.log('moveToOptions',moveToOptions)
+			if(_selectedNodeId) _network.focus(_selectedNodeId, moveToOptions);	
+
+		}
+		catch(e) {
+		    console.error(Math.floor(Date.now() / 1000), e)
+		} 
+		finally {
+			
+			// post to history
+			History.push(_selectedNodeId)
+			console.log('History',History)
+			
+			// stop spinner
+			if (spinner) { console.log('before spinner stop', spinner); spinner.stop(); };   
+			console.log(Math.floor(Date.now() / 1000), 'spinner stop',spinner)
+			
+			console.log(Math.floor(Date.now() / 1000), 'finish zoomToSelectedNode')
+		}
 	} // zoozoomToSelectedNode
 
 
@@ -478,16 +800,16 @@ function doNetwork(data) {
 
 
 
-function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId) {	
+function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId, _pathNodes) {	
 	console.log('getVisibleNodes')
 	//console.log(' _selectedNodeId',_selectedNodeId)
 	//console.log('rawNodes.length',rawNodes.length)
 	
 	var allNodes = false;
 	if (typeof showAll !== "undefined") {
-		if (showAll) {
+		if (showAll === true) {
 			allNodes = true;
-			console.log('allNodes', allNodes)
+			// console.log('allNodes', allNodes)
 		}
 	}
 	console.log('allNodes', allNodes)
@@ -509,7 +831,9 @@ function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId) {
 		//console.log('_id', _id)
 
 		// select visible edges and visible nodes
-		// loop over edges, add edges that have from selected node, add to node
+		// loop over edges, add edges that have from selected node, add to node 
+		// in otherwords directly connected, 1 degree of seperation
+		//
 		//console.log('rawEdges.length',rawEdges.length)
 		for (var v = 0; v < rawEdges.length; v++) {
 			var eg = rawEdges[v];
@@ -561,133 +885,9 @@ function getVisibleNodes(rawNodes, rawEdges, _selectedNodeId) {
 } // set visibles
 
 
-function buildRawNodes(data) {
-	console.log('buildRawNodes')
 
-	var propNodes = false;
-	//
-	//  Create an array of raw nodes
-	//
-	var rawNodes = data['@graph'];
-	
-	// loop over nodes to determine and add id, group, title, label
-	for (var i = 0; i < rawNodes.length; i++) {
-		var _id = rawNodes[i]['@id'];
-		rawNodes[i].id = _id;
-			//console.log("rawNodes[i].id", rawNodes[i].id)
-		
-		var _type = rawNodes[i]['@type'] || "";	
-		_type = _type.replace("-", "");
-		rawNodes[i].type = _dbotype || _type;	
-			//console.log("rawNodes[i].type", rawNodes[i].type
-			
-		var _dbotype = rawNodes[i]['dbo:type'] || "";
-		if (  Array.isArray(_dbotype) ) {
-				_dbotype = null
-		} else {
-				_dbotype = _dbotype.replace("-", "");
-		}
-		rawNodes[i].dbotype = _dbotype;
-			//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
-			
-			
-		var _group = null;
-		if 	(_dbotype) {
-			_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
-		} else {
-			_group = _type.substring(_type.indexOf(":") + 1);
-		}
-		rawNodes[i].group = _group;
-			//console.log("rawNodes[i].group ", rawNodes[i].group)
-		
-		var _label = null;
-		_label = rawNodes[i]['rdfs:label'];
-		rawNodes[i].label = _label;
-		
-		var _prefLabel = null;
-		_prefLabel = rawNodes[i]['skos:prefLabel'];
-		rawNodes[i].prefLabel = _prefLabel;
-		//console.log('rawNodes[i].prefLabel', rawNodes[i].prefLabel)
-		
-		var _topic = rawNodes[i]['foaf:topic'] || null;
-		var _description = rawNodes[i]['dc:description'] || null;
-		var _definition = rawNodes[i]['skos:definition'] || null;
-		
-		var _title = null;
-		_title = _prefLabel || _label ;
-		rawNodes[i].title = "<b>" + _group + ":</b> " + _title
-		// call function to prepare html block for hover or popup
-		// and overwrite plain title
-		rawNodes[i].html = htmlDetails(rawNodes[i])
-		//console.log('rawNodes[i].html', rawNodes[i].html)
-		
-		    //rawNodes[i].title = htmlDetails(rawNodes[i])
-			//console.log('rawNodes[i].title', rawNodes[i].title)
-	
-		//  console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
-		
-		//
-		// Now loop over properties of the node and add nodes of group 'property'
-		//
-		if (propNodes) {
-			var propNodes = getPropertyNodes(rawNodes[i])
-		}
-		
-		
-		
-	}; // end loop over nodes
-		
-		// var nodeCount = rawNodes.length
-		// console.log('nodeCount', nodeCount)
-		// document.getElementById('nodeCount').innerHTML = nodeCount;
-	return rawNodes
-} // end build raw nodes
-	
-// is this right?
-// {
-//   "@id": "perse:VolunteerPostings_",
-//   "@type": "perse:OpportunityType",
-//   "rdfs:type": "skos:Concept",
-//   "rdfs:label": "Volunteer Opportunites",
-//   "skos:related": [
-    
-//   ],
-//   "perse:Opportunities": [
-    
-//   ],
-//   "skos:prefLabel": "Perse MatchMaker Volunteer Opportunites"
-// },
-// {
-//   "@id": "perse:VolunteerPostings_@id",
-//   "@type": "property",
-//   "rdfs:label": "perse:VolunteerPostings_",
-//   "@id": [
-//     "perse:VolunteerPostings_"
-//   ],
-//   "group": "property",
-//   "label": "",
-//   "title": ""
-// },
-// {
-//   "@id": "perse:VolunteerPostings_rdfs:type",
-//   "@type": "property",
-//   "rdfs:type": [
-//     "perse:VolunteerPostings_"
-//   ],
-//   "group": "property",
-//   "label": "skos:Concept",
-//   "title": ""
-// },
-// {
-//   "@id": "perse:VolunteerPostings_rdfs:label",
-//   "@type": "property",
-//   "rdfs:label": [
-//     "perse:VolunteerPostings_"
-//   ],
-//   "group": "property",
-//   "label": "Volunteer Opportunites",
-//   "title": ""
-// }
+
+
 
 function getPropertyNodes(rawNode) {
 	console.log('getPropertyNodes')
@@ -720,75 +920,9 @@ function getPropertyNodes(rawNode) {
 } // end get property nodes
 
 
-function buildRawEdges(rawNodes) {
-	console.log('buildRawEdges')
 
-	//
-	// Create an array of raw edges
-	//
-	var rawEdges = []
-	for (var j = 0; j < rawNodes.length; j++) {
-		//if (rawNodes[j]['@id'] === 'perse:CampaignPersonalizationOptions') console.log(rawNodes[j])
-		for (var property in rawNodes[j]) {
-			//console.log("property ", property)
-			
-			if ( property != "@id" && property != "id") {				// do not show edge for id property							// do not show @id relationship to self
-				
-				if ( (typeof rawNodes[j][property]) === 'string') {		// check if property value is a string ie. a single entry
-					var strProp = rawNodes[j][property] || ""
-					  //console.log("strProp", strProp)
-					  var relLabel = property.substring(property.indexOf(":") + 1);
-					  
-					  if ( strProp.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity relationship
-						var newEdge = {};
-						newEdge.arrows = {"to":"true"};
-						newEdge.from = rawNodes[j].id;
-						newEdge.to = strProp;
-						newEdge.label = relLabel;
-						
-						rawEdges.push(newEdge);
-					  } // end if foafiaf
-				} // end if string
-				
-				if ( Array.isArray(rawNodes[j][property]) ) {
-					for (var k = 0; k < rawNodes[j][property].length; k++) {
-						//console.log("[property][k]", rawNodes[j][property][k])
-						var relLabel = property.substring(property.indexOf(":") + 1);
-						
-						var newEdge = {};
-						newEdge.arrows = {"to":"true"};
-						newEdge.from = rawNodes[j].id;
-						newEdge.to = rawNodes[j][property][k];
-						newEdge.label = relLabel;
-						//console.log(newEdge)
-						rawEdges.push(newEdge);
-					}
-				} // end if array
-				
-			} // end if id
-		}	
-		
-	}; // end of loop to create rawedges
-	
-		// edgeCount = rawEdges.length
-		// console.log('edgeCount', edgeCount)
-		// document.getElementById('edgeCount').innerHTML = edgeCount;
-	return rawEdges
-} // end build edges
 
-function findObjectById(objectId, objectArray){
-	  try {
-		for (var i=0; i < objectArray.length; i++) {
-			if (objectArray[i].id === objectId) {
-				return objectArray[i];
-			}
-		}
-	  } catch(e) {
-	  	console.log('e', e)
-	  	console.log('objectId', objectId )
-	  	console.log('objectArray', objectArray )
-	  }
-}
+
 function hideNodesByDegree(nodeId) {
 		//  find the connected nodes within N degrees
 		var connectedNodes = [];
@@ -850,13 +984,25 @@ function getConnectedNodes(theEdgeIndex) {
 		return nodesConnectedToEdge;
 }
 function getNodeById(_rawNodes, _id) {
+	// console.log('start getNodeById', _id)
+	
+	try {
 		var theNode = null;
 		for (var z = 0; z < _rawNodes.length; z++) {
 			if (_rawNodes[z].id === _id ) {
 				theNode = _rawNodes[z];
 			}
 		}
+		// console.log('theNode',theNode)
 		return theNode;
+	}
+	catch(e) {
+	    console.error(Math.floor(Date.now() / 1000), e)
+	} 
+	finally {
+		// finally
+		// console.log(Math.floor(Date.now() / 1000), 'finish getNodeById')
+	}
 }
 function determineConnectedEdges() {
 	console.log('determineConnectedEdges')
@@ -877,15 +1023,15 @@ function determineConnectedEdges() {
 			if (rawEdges[x].hidden !== true) visibleEdges.push(rawEdges[x]);
 		}
 
-	}
+}
 	
-	function setVisibleNodes() {
+function setVisibleNodes() {
 		visibleNodes = [];
 		for (var x = 0; x < rawNodes.length; x++) {
 			if (rawNodes[x].hidden !== true) visibleNodes.push(rawNodes[x]);
 		}
 
-	}	
+}	
 	
 function displayData(focalPoint) {
 		console.log('displayData')
@@ -1137,6 +1283,259 @@ function displayData(focalPoint) {
 
 // }
 
-	
+
+
+  }
+  catch(e) {
+    console.error(Math.floor(Date.now() / 1000), e)
+  } 
+  finally {
+	// stop spinner
+	// if (spinner) { console.log('spinner before stop', spinner); spinner.stop(); };   
+	// console.log(Math.floor(Date.now() / 1000), 'spinner stopped',spinner)
+	// finally
+	console.log(Math.floor(Date.now() / 1000), 'finish doNetwork')
+  }
 } // end doNetwork
 exports = doNetwork()
+
+
+// utility functions
+function findObjectById(objectId, objectArray){
+	  try {
+		for (var i=0; i < objectArray.length; i++) {
+			if (objectArray[i].id === objectId) {
+				return objectArray[i];
+			}
+		}
+	  } catch(e) {
+	  	console.log('e', e)
+	  	console.log('objectId', objectId )
+	  	console.log('objectArray', objectArray )
+	  }
+}
+exports = findObjectById()
+
+
+//
+// Sections for building nodes and edges
+//
+function buildRawNodes(data) {
+	console.log('buildRawNodes',data)
+
+	var propNodes = false;
+	//
+	//  Create an array of raw nodes
+	//
+
+	var rawNodes = data['@graph'] || [];
+	
+	// loop over nodes to determine and add id, group, title, label
+	for (var i = 0; i < rawNodes.length; i++) {
+		var _id = rawNodes[i]['@id'];
+		
+		if (_id != './') {
+		
+			rawNodes[i].id = _id;
+				// console.log("rawNodes[i].id", rawNodes[i].id)
+			
+			var _type = rawNodes[i]['@type'] || "";	
+			_type = _type.replace("-", "");
+			rawNodes[i].type = _dbotype || _type;	
+				//console.log("rawNodes[i].type", rawNodes[i].type
+				
+			var _dbotype = rawNodes[i]['dbo:type'] || "";
+			if (  Array.isArray(_dbotype) ) {
+					_dbotype = null
+			} else {
+					_dbotype = _dbotype.replace("-", "");
+			}
+			rawNodes[i].dbotype = _dbotype;
+				//console.log("rawNodes[i].dbotype", rawNodes[i].dbotype)
+				
+				
+			var _group = null;
+			if 	(_dbotype) {
+				_group = _dbotype.substring(_dbotype.indexOf(":") + 1);
+			} else {
+				_group = _type.substring(_type.indexOf(":") + 1);
+			}
+			rawNodes[i].group = _group;
+				//console.log("rawNodes[i].group ", rawNodes[i].group)
+			
+			
+			// check status and color and change to color specific icon
+			var _status = rawNodes[i]['foafiaf:status'] || "";
+			var _color = rawNodes[i]['foafiaf:color'] || "";
+			if (_group === "Measure") {
+				if (_color = "#FF0000") {
+					_group = _group = "Red"
+				} else if (_color = "#FFA500") {
+					_group = _group = "Orange"
+				} else if (_color = "#FFFF00") {
+					_group = _group = "Yellow"
+				} else if (_color = "#008000") {
+					_group = _group = "Green"
+				}
+				rawNodes[i].group = _group;
+			}
+			
+			
+			var _label = null;
+			_label = rawNodes[i]['rdfs:label'];
+			rawNodes[i].label = _label;
+			
+			var _prefLabel = null;
+			_prefLabel = rawNodes[i]['skos:prefLabel'];
+			rawNodes[i].prefLabel = _prefLabel;
+			//console.log('rawNodes[i].prefLabel', rawNodes[i].prefLabel)
+			
+			var _topic = rawNodes[i]['foaf:topic'] || null;
+			var _description = rawNodes[i]['dc:description'] || null;
+			var _definition = rawNodes[i]['skos:definition'] || null;
+			
+			var _title = null;
+			_title = _prefLabel || _label ;
+			rawNodes[i].title = "<b>" + _group + ":</b> " + _title
+			// call function to prepare html block for hover or popup
+			// and overwrite plain title
+			rawNodes[i].html = htmlDetails(rawNodes[i])
+			//console.log('rawNodes[i].html', rawNodes[i].html)
+			
+			    //rawNodes[i].title = htmlDetails(rawNodes[i])
+				//console.log('rawNodes[i].title', rawNodes[i].title)
+		
+			//  console.log(' rawNodes[i] ', JSON.stringify(rawNodes[i]) )	
+			
+			//
+			// Now loop over properties of the node and add nodes of group 'property'
+			//
+			if (propNodes) {
+				var propNodes = getPropertyNodes(rawNodes[i])
+			}
+		
+		} // end if _id
+		
+	}; // end loop over nodes
+		
+		// var nodeCount = rawNodes.length
+		// console.log('nodeCount', nodeCount)
+		// document.getElementById('nodeCount').innerHTML = nodeCount;
+	return rawNodes
+} // end build raw nodes
+exports = buildRawNodes()
+
+function buildRawEdges(rawNodes) {
+	console.log('buildRawEdges',rawNodes)
+
+	//
+	// Create an array of raw edges
+	//
+	var rawEdges = []
+	for (var j = 0; j < rawNodes.length; j++) {
+		//if (rawNodes[j]['@id'] === 'perse:CampaignPersonalizationOptions') console.log(rawNodes[j])
+		for (var property in rawNodes[j]) {
+
+			// check if properity value is array but is quoted
+			// if ( property == "sioc:has_container" ) console.log("rawNodes[j] ", rawNodes[j])
+			var propval = rawNodes[j][property]
+			
+		 if (propval != "") {
+
+			function isJSON(data) {
+			   var ret = true;
+			   try {
+			      JSON.parse(data);
+			   }catch(e) {
+			      ret = false;
+			   }
+			   return ret;
+			}
+
+// if ( property == "sioc:has_container" ) {
+	
+// 	console.log ('typeof property', typeof property)
+
+// 			if ( isJSON(propval) ) {
+// 				var parsed = JSON.parse(propval);
+// 				// console.log('propval is JSON', propval, parsed)
+// 			} else {
+// 				var stringified = JSON.stringify(propval)
+// 				// console.log('propval is not JSON', propval, stringified)
+// 			}
+// }
+
+			// if ( property == "sioc:has_container" ) console.log("propval ", propval)
+			
+
+			if ( property != "@id" && property != "id") {				// do not show edge for id property							// do not show @id relationship to self
+				
+				if ( (typeof rawNodes[j][property]) === 'string') {		// check if property value is a string ie. a single entry
+					  var strProp = rawNodes[j][property] || "";
+					  //if(strProp){
+					  //	strProp = strProp.replace("['", "");
+					  //	strProp = strProp.replace("']", "");
+					  //}
+					  //console.log("strProp", strProp)
+					  
+					  //if ( property == "sioc:has_container" ) console.log("strProp ", strProp)
+					  
+					  var relLabel = property.substring(property.indexOf(":") + 1);
+					  
+					  //if ( property == "sioc:has_container" ) console.log("relLabel ", relLabel)
+					  
+					  if ( strProp.indexOf("foafiaf:") != -1 ) {		// check to see of value starts with foafiaf: therefoe an entity relationship
+						var newEdge = {};
+						newEdge.arrows = {"to":"true"};
+						newEdge.from = rawNodes[j].id;
+						newEdge.to = strProp;
+						newEdge.label = relLabel;
+						
+						// if ( property == "sioc:has_container" ) console.log("newEdge ", newEdge)
+						
+						rawEdges.push(newEdge);
+					  } // end if foafiaf
+				} // end if string
+				
+				if ( Array.isArray(rawNodes[j][property]) ) {
+					
+					// if ( property == "sioc:has_container" ) console.log("rawNodes[j][property] ", rawNodes[j][property])
+					
+					for (var k = 0; k < rawNodes[j][property].length; k++) {
+						//console.log("[property][k]", rawNodes[j][property][k])
+						
+						if ( property == "sioc:has_container" ) console.log("rawNodes[j][property][k]", rawNodes[j][property][k])
+						
+						
+						var relLabel = property.substring(property.indexOf(":") + 1);
+						
+						if ( property == "sioc:has_container" ) console.log("relLabel ", relLabel)
+						
+						var newEdge = {};
+						newEdge.arrows = {"to":"true"};
+						newEdge.from = rawNodes[j].id;
+						newEdge.to = rawNodes[j][property][k];
+						newEdge.label = relLabel;
+						//console.log(newEdge)
+						
+						if ( property == "sioc:has_container" ) console.log("newEdge ", newEdge)
+						
+						rawEdges.push(newEdge);
+					}
+				} // end if array
+				
+			} // end if id
+			
+		 } // end if != ""
+		 
+		} // end for property
+		
+	}; // end of loop to create rawedges
+	
+		// edgeCount = rawEdges.length
+		// console.log('edgeCount', edgeCount)
+		// document.getElementById('edgeCount').innerHTML = edgeCount;
+	// console.log('rawEdges',JSON.stringify(rawEdges))
+	return rawEdges
+} // end build edges
+exports = buildRawEdges()
