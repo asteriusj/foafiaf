@@ -506,14 +506,45 @@ function  getOptions() {
           color: 'cyan'
         }
       },
-      Indicator: {
+      
+      MeasureGreen: {
         shape: 'icon',
         icon: {
-          name: 'fa-chart-bar',
+          name: 'fa-bullseye',
           face: 'FontAwesome',
-          code: '\uf080',
+          code: '\uf140',
           size: 40,
-          color: 'cyan'
+          color: 'green'
+        }
+      },
+      MeasureRed: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'red'
+        }
+      },
+      MeasureYellow: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'yellow'
+        }
+      },
+      MeasureOrange: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-bullseye',
+          face: 'FontAwesome',
+          code: '\uf140',
+          size: 40,
+          color: 'orange'
         }
       },
       
@@ -525,6 +556,46 @@ function  getOptions() {
           code: '\uf2dc',
           size: 40,
           color: 'cyan'
+        }
+      },
+      ScorecardGreen: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-snowflake-o',
+          face: 'FontAwesome',
+          code: '\uf2dc',
+          size: 40,
+          color: 'green'
+        }
+      },
+      ScorecardYellow: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-snowflake-o',
+          face: 'FontAwesome',
+          code: '\uf2dc',
+          size: 40,
+          color: 'yellow'
+        }
+      },
+      ScorecardOrange: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-snowflake-o',
+          face: 'FontAwesome',
+          code: '\uf2dc',
+          size: 40,
+          color: 'orange'
+        }
+      },
+      ScorecardRed: {
+        shape: 'icon',
+        icon: {
+          name: 'fa-snowflake-o',
+          face: 'FontAwesome',
+          code: '\uf2dc',
+          size: 40,
+          color: 'red'
         }
       },
       
