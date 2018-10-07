@@ -1,5 +1,3 @@
-/*based on view-source:http://skos.um.es/unescothes/CS000/html */
-
 html {
     min-height: 100%;
     position: relative
@@ -160,7 +158,7 @@ a:hover {
 
 #info {
     padding: 1em;
-    margin-left: 16em;
+    /*margin-left: 16em;*/
     min-height: 300px;
     position: relative
 }
