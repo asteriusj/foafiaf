@@ -9,69 +9,80 @@
       "groups": [
         {
           "label": "Cyan",
+          "full": "Color Cyan designates that data is not available or not updated",
           "gcolor": "#00FFFF"
         },
         {
           "label": "Green",
+          "full": "Green status indicates top 25 percent of 1st quartile",
           "gcolor": "#008000"
         },
         {
           "label": "Yellow",
+          "full": "Yellow status indicates top 50 percent of 2nd quartile",
           "gcolor": "#FFFF00"
         },
         {
           "label": "Organge",
+          "full": "Orange status indicates top 75 percent of 3rd quartile",
           "gcolor": "#FFA500"
         },
         {
           "label": "Red",
+          "full": "Red status indicates bottom 25 percent or 4th quartile",
           "gcolor": "#FF0000"
         }
       ]
     },
     {
-      "name": "Renew",
       "id": "Renew",
       "dbotype": "foafiaf:Segment",
       "group": "Renew",
       "gcolor": "#00FFFF",
-      "label": "Renewing Our People & Resiliency",
+      "status": "Cyan",
+      "label": "Renew",
+      "full": "Renewing Our People & Resiliency",
       "weight": 19,
       "description": "Informs us about our people; A key to growth and resilience of our community",
       "groups": [
         {
-          "name": "Education",
           "id": "Education",
           "group": "Renew",
           "gcolor": "#FFA500",
           "status": "Organge",
           "label": "Education",
+          "full": "Informs us on the evolution of educational attainments in our community and our capability of delivering Quality Education; A key to living fulfilling lives",
           "weight": 5,
           "description": "Informs us on the evolution of educational attainments in our community and our capability of delivering Quality Education; A key to living fulfilling lives",
           "groups": [
 
            {
               "label": "% with a bachelor’s degree",
+              "full": "% with a bachelor’s degree - Informs us of ..",
               "gcolor": "#FFFF00",
               "status": "Yellow"
             },
             {
               "label": "% High School Graduation Rate",
+              "full": "% High School Graduation Rate - Informs us of the percent of student who enroll have support and successfully complete requirements for high school graduation",
               "gcolor": "#FFFF00",
               "status": "Yellow"
             },
             {
               "label": "% College or Career Ready",
+              "full": "% College or Career Ready - Informs us of ACT designated students with an ACT score of 21 or higher as being college ready.",
               "gcolor": "#FFA500",
               "status": "Organge"
             },
             {
               "label": "% 3rd Graders Read at Grade Level",
+              "full": "% 3rd Graders Read at Grade Level - Informs us of the percentage of students at each performance level on the PARCC assessments.",
               "gcolor": "#FF0000",
               "status": "Red"
             },
             {
               "label": "% 8th Grade Math at Grade Level",
+              "full": "% 8th Grade Math  at Grade Level - Informs us of the percentage of students at each performance level on the PARCC assessments.",
               "gcolor": "#FFA500",
               "status": "Organge"
             }
@@ -101,25 +112,109 @@
           ]
         },
         {
-          "name": "",
+          "label": "",
           "id": "Wellness",
           "gcolor": "#FFFF00",
-          "label": "Wellness",
+          "status": "Yellow",
+          "unitofmeasure": "ROYG",
           "weight": 5,
-          "description": "",
+          "title": "Wellness",
+          "full": "Informs us of our lifestyles and access to education and services to have good physical and behavioral health; key to healthy outcomes, thriving and having superior quality of live",
           "groups": [
+            {
+              "label": "# County Health Ranking",
+              "title": "# / 102 IL county health outcome rank",
+              "description": "# County Health Ranking",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "85",
+              "definitiom": "",
+              "datatrend": "",
+              "rank": "85/102",
+              "ranktrend": "",
+              "related": "",
+              "gcolor": "#FF0000",
+              "status": "Red"
+            },
+            {
+              "label": "# Physical Environment",
+              "title": "# Physical Environment Ranking",
+              "description": "# Physical Environment Ranking",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "34",
+              "definitiom": "",
+              "datatrend": "",
+              "rank": "",
+              "ranktrend": "",
+              "related": "",
+              "gcolor": "#FFA500",
+              "status": "Organge"
+            },
+            {
+              "label": "% Obese adults",
+              "title": "% Obese adults",
+              "description": "Informs us of the percentage of adults that report BMI >= 30",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "69",
+              "datatrend": "Better",
+              "unitofmeasure": "Value 0 Percent",
+              "rank": "53/150",
+              "ranktrend": "",
+              "related": "http://www.countyhealthrankings.org/sites/default/files/trends/Graphsv011/17_201_11_2018.png",
+              "gcolor": "#FFA500",
+              "status": "Organge"
+            },
+            {
+              "label": "% Physical Inactivity",
+              "title": "% Physical Inactivity",
+              "description": "Percentage of adults age 20 and over reporting no leisure-time physical activity. ",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "27",
+              "datatrend": "Steady",
+              "rank": "27/150",
+              "ranktrend": "",
+              "related": "http://www.countyhealthrankings.org/sites/default/files/trends/Graphsv070/17_201_70_2018.png",
+              "gcolor": "#FFFF00",
+              "status": "Yellow"
+            },
+            {
+              "label": "% Uninsured Rate",
+              "title": "% Uninsured Rate",
+              "description": "Informs us of the percentage of community members do not have health insurance, a key to wellness.",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "7",
+              "datatrend": "Better",
+              "rank": "18/150",
+              "ranktrend": "",
+              "related": "http://www.countyhealthrankings.org/sites/default/files/trends/Graphsv085/17_201_85_2018.png",
+              "status": "Green",
+              "gcolor": "#008000"
+            },
+            {
+              "label": "% With Access",
+              "title": "% With Access to exercise opportunities",
+              "description": "Informs us of the percentage of the population with access to places for physical activity",
+              "definition": "http://www.countyhealthrankings.org/app/illinois/2018/rankings/winnebago/county/outcomes/overall/snapshot",
+              "datavalue": "93",
+              "definitiom": "",
+              "datatrend": "",
+              "rank": "",
+              "ranktrend": "",
+              "related": "",
+              "status": "Green",
+              "gcolor": "#008000"
+            }
             
           ]
         }
       ]
     },
     {
-      "name": "Reframe",
+      "label": "Reframe",
       "id": "Reframe",
       "dbotype": "foafiaf:Segment",
       "group": "Reframe",
       "gcolor": "#00FFFF",
-      "label": "Reframing Our Opportunity",
+      "full": "Reframing Our Opportunity",
       "weight": 17,
       "description": "Informs us of our climate and hopes; A key to common vision for a better future",
       "groups": [
@@ -170,13 +265,13 @@
       ]
     },
     {
-      "name": "Recreate",
+      "label": "Recreate",
       "id": "Recreate",
       "dbotype": "foafiaf:Segment",
       "group": "Recreate",
       "gcolor": "#FFA500",
-      "label": "Recreating Sense of Place",
       "weight": 17,
+      "full": "Recreating Sense of Place",
       "description": "Informs us of way we live and interact; A key to growing and sustaining our community",
       "groups": [
         {
@@ -226,12 +321,12 @@
       ]
     },
     {
-      "name": "Revitalize",
+      "label": "Revitalize",
       "id": "Revitalize",
       "dbotype": "foafiaf:Segment",
       "group": "Revitalize",
       "gcolor": "#FFFF00",
-      "label": "Revitalizing Our Economy & Infrastructure",
+      "full": "Revitalizing Our Economy & Infrastructure",
       "weight": 17,
       "description": "Informs us of our economy and our infrastructure; A key support for successful and fulfilling lives",
       "groups": [
@@ -289,13 +384,13 @@
           ]
         },
         {
-          "name": "",
           "id": "Employment",
           "gcolor": "#FFA500",
           "status": "orange",
           "label": "Employment",
+          "full": "Informs us on the evolution of educational attainment in our community and our capability of delivering Quality Education; A key to living filfilling lives",
           "weight": 5,
-          "description": "",
+          "description": "Informs us on the evolution of educational attainment in our community and our capability of delivering Quality Education; A key to living filfilling lives",
           "groups": [
             {
               "label": "Job Growth Rate",
@@ -339,12 +434,12 @@
       ]
     },
     {
-      "name": "Resource",
+      "label": "Resource",
       "id": "Resource",
       "dbotype": "foafiaf:Segment",
       "group": "Resource",
       "gcolor": "#00FFFF",
-      "label": "Resourcing and Funding our Future",
+      "full": "Resourcing and Funding our Future",
       "weight": 17,
       "description": "Informs us of way we fund and support our community; A key to enabling our transformation",
       "groups": [
