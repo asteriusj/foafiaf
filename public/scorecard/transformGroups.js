@@ -41,16 +41,16 @@
       	console.log('gnodes:',gnodes)
   	    // console.log('jsonNodes:',JSON.stringify(gnodes))
   	    
-  	   // let StatusColors = {"name":"","group":"StatusColors","gcolor":"#ffffff","label":"Status Colors","weight":2,"groups":[{"label":"Cyan","full":"Color Cyan designates that data is not available or not updated","gcolor":"#00FFFF"},{"label":"Green","full":"Green status indicates top 25 percent of 1st quartile","gcolor":"#008000"},{"label":"Yellow","full":"Yellow status indicates top 50 percent of 2nd quartile","gcolor":"#FFFF00"},{"label":"Organge","full":"Orange status indicates top 75 percent of 3rd quartile","gcolor":"#FFA500"},{"label":"Red","full":"Red status indicates bottom 25 percent or 4th quartile","gcolor":"#FF0000"}]}
-  	   // console.log('StatusColors:',StatusColors)
-  	   // // console.log('jsonStatusColors:',JSON.stringify(StatusColors))
+  	    let gtree = makeTreeOfNodes(gnodes,defaultNodeId)
+  	    console.log('gtree:',gtree)
   	    
-  	    let ngroups = makeGroupsFromNodes(gnodes)
-  	    console.log('ngroups:',ngroups)
-  	    // console.log('jsonGrps:',JSON.stringify(ngroups))
+  	    let StatusColors = {"group":"StatusColors","gcolor":"#ffffff","label":"Status Colors","weight":5,"groups":[{"label":"Cyan","full":"Color Cyan designates that data is not available or not updated","weight":1,"gcolor":"#00FFFF"},{"label":"Green","full":"Green status indicates top 25 percent of 1st quartile","weight":1,"gcolor":"#008000"},{"label":"Yellow","full":"Yellow status indicates top 50 percent of 2nd quartile","weight":1,"gcolor":"#FFFF00"},{"label":"Orange","full":"Orange status indicates top 75 percent of 3rd quartile","weight":1,"gcolor":"#FFA500"},{"label":"Red","full":"Red status indicates bottom 25 percent or 4th quartile","weight":1,"gcolor":"#FF0000"}]}
+  	    console.log('StatusColors:',StatusColors)
+  	    // console.log('jsonStatusColors:',JSON.stringify(StatusColors))
+  	    gtree[0].groups.push(StatusColors)
   	    
   	    GROUPS = {
-  	        groups: ngroups
+  	        groups: gtree
   	    }
   	    console.log('GROUPS:',GROUPS)
   	   // console.log('jsonGROUPS:',JSON.stringify(GROUPS))
@@ -75,83 +75,166 @@
    //
    // Processing functions
    //
-    	    
-  function makeGroupsFromNodes(nodes,cb) {
-    //   console.log('makeGroupsFromNodes')
-      //
-      // loop through nodes and organiza hierarchy of groups and child groups
-      // remove node from array as processed...
-      
+    	
+  function makeTreeOfNodes(_nodes,startid,cb) {
+      console.log('makeTreeOfNodes')
+    
+      let Tree = [] ;
       let Groups = [] ;
+      
       try {
-       
-          for (let x=0; x < nodes.length; x++) {
-	          let node = nodes[x] ;
-	       //   console.log('makeGroupsFromNodes node:', node)
-		          
-	          let myGroup = {}
+        
+        // let tmp = []
+        
+        // get starting id node first
+        let rootNode = getNodeById(_nodes,startid)
+        console.log('rootNode:',rootNode)
+        
+        // set root node of tree
+        Tree = rootNode
+        
+        // Make groups at same time as node procssing
+        let rootGroup = makeGroupFromNode(rootNode)
+        Groups.push(rootGroup)
+        
+        // FIRST LEVEL
+        // (a) level
+        rootNode.parentOf = [] ;
+        for (let n=0; n<rootNode.children.length; n++) {
+	          let aNodeId = rootNode.children[n] ;
+	         // console.log("aNodeId:",aNodeId)
+	          let aNode = getNodeById(_nodes,aNodeId)
+	         // console.log("aNode:",aNode)
+	          rootNode.parentOf.push(aNode)
+	          aNode.parentOf = [] ;
 	          
-	          let newGroup = makeGroupFromNode(node)
-	       //   console.log('newGroup:',newGroup)
-	          let groupID = newGroup.id
-	       //   console.log('groupID:',groupID)
-	          
-	          // find current group if exists
-	          let existingGroup = getNodeById(Groups,groupID) ;
-	          //
-	          // if group is already added to Groups.
-	          // do not add again, modify the exiting one
-	          //
-	          if (existingGroup != null) {
-	              myGroup = existingGroup
-	           //   console.log('myGroup existingGroup:', myGroup)
-	          } else {
-	              myGroup = newGroup
-		          Groups.push(myGroup)
-		          //console.log('myGroup newGroup',myGroup)
-	          }
-	          
-	          // develop hierarchy
-	          let childGroups = []
-	          if (node.children) {
-	            for (let y=0; y < node.children.length; y++) {
-  	              
-  	              let childId = node.children[y] ;
-  	              // console.log('makeGroupsFromNodes node[y] childId:', childId)
-  	              
-  	              let childNode = getNodeById(nodes,childId) ;
-  	              // console.log('makeGroupsFromNodes node childNode:', childNode)
-  	              
-  	              let childGroup = makeGroupFromNode(childNode) ;
-  	             // console.log('makeGroupsFromNodes node childGroup:', childGroup)
-  	              
-  	              childGroups.push(childGroup)
-  	              myGroup.groups.push(childGroup)
-  		           
-	            } // end for node.children.length
-	              
-	          } // if node.childeren
-		          
-		          
-		    
-          } // end for nodes.length
-       
-           
+            let aGroup = makeGroupFromNode(aNode)
+            rootGroup.groups.push(aGroup)
+            aGroup.groups = [] ;
+            
+            // then do next (b) level...
+            let aChilderen = aNode.children || []  // in case it does not exist
+            for (let p=0; p<aChilderen.length; p++) {
+  	          let bNodeId = aNode.children[p] ;
+  	          let bNode = getNodeById(_nodes,bNodeId)
+  	          aNode.parentOf.push(bNode)
+  	          bNode.parentOf = [] ;
+  	         // console.log("bNode:",bNode)
+  	          
+              let bGroup = makeGroupFromNode(bNode)
+              aGroup.groups.push(bGroup)
+              bGroup.groups = [] ;
+              
+              // then do next (c) level...
+              let bChilderen = bNode.children || []  // in case it does not exist
+              for (let p=0; p<bChilderen.length; p++) {
+    	          let cNodeId = bNode.children[p] ;
+    	          let cNode = getNodeById(_nodes,cNodeId)
+    	          bNode.parentOf.push(cNode)
+    	          cNode.parentOf = [] ;
+    	         // console.log("cNode:",cNode)
+    	          
+                let cGroup = makeGroupFromNode(cNode)
+                bGroup.groups.push(cGroup)
+                cGroup.groups = [] ;
+                
+              } // end for
+            } // end for
+            
+        } // end for
+        
+        
       } catch (e) {
-        console.error('makeGroupsFromNodes error',e)
+        console.error('makeTreeOfNodes error',e)
           	
       } finally {
+          
         
-    //   	console.log('returning Groups:',Groups)
+      	console.log('finished Tree:',Tree)
+      	console.log('finished Groups:',Groups)
       	if (cb) cb(Groups)
       	return Groups
           	
       } // end try catch    
-   } //end makeGroupsFromNodes
+  } //end makeTreeOfNodes
+  
+  // function makeGroupsFromNodes(nodes,cb) {
+  //   //   console.log('makeGroupsFromNodes')
+  //     //
+  //     // loop through nodes and organiza hierarchy of groups and child groups
+  //     // remove node from array as processed...
+      
+  //     let Groups = [] ;
+  //     try {
+       
+  //         for (let x=0; x < nodes.length; x++) {
+	 //         let node = nodes[x] ;
+	 //      //   console.log('makeGroupsFromNodes node:', node)
+		          
+	 //         let myGroup = {}
+	          
+	 //         let newGroup = makeGroupFromNode(node)
+	 //      //   console.log('newGroup:',newGroup)
+	 //         let groupID = newGroup.id
+	 //      //   console.log('groupID:',groupID)
+	          
+	 //         // find current group if exists
+	 //         let existingGroup = getNodeById(Groups,groupID) ;
+	 //         //
+	 //         // if group is already added to Groups.
+	 //         // do not add again, modify the exiting one
+	 //         //
+	 //         if (existingGroup != null) {
+	 //             myGroup = existingGroup
+	 //            // console.log('myGroup existingGroup:', myGroup)
+	 //         } else {
+	 //             myGroup = newGroup
+		//             Groups.push(myGroup)
+		//             // console.log('myGroup newGroup',myGroup)
+	 //         }
+	          
+	          
+	 //         // develop hierarchy
+	 //         let childGroups = []
+	 //         if (node.children) {
+	 //           for (let y=0; y < node.children.length; y++) {
+  	              
+  // 	              let childId = node.children[y] ;
+  // 	              // console.log('makeGroupsFromNodes node[y] childId:', childId)
+  	              
+  // 	              let childNode = getNodeById(nodes,childId) ;
+  // 	              // console.log('makeGroupsFromNodes node childNode:', childNode)
+  	              
+  // 	              let childGroup = makeGroupFromNode(childNode) ;
+  // 	             // console.log('makeGroupsFromNodes node childGroup:', childGroup)
+  	              
+  // 	              childGroups.push(childGroup)
+  // 	              myGroup.groups.push(childGroup)
+  		           
+	 //           } // end for node.children.length
+	              
+	 //         } // if node.childeren
+		          
+		          
+		    
+  //         } // end for nodes.length
+       
+           
+  //     } catch (e) {
+  //       console.error('makeGroupsFromNodes error',e)
+          	
+  //     } finally {
+        
+  //   //   	console.log('returning Groups:',Groups)
+  //     	if (cb) cb(Groups)
+  //     	return Groups
+          	
+  //     } // end try catch    
+  // } //end makeGroupsFromNodes
    
       
    function makeGroupFromNode(node,cb) {
-    //   console.log('makeGroupFromNode', node)
+      // console.log('makeGroupFromNode', node)
       
       let Group = {} ;
       try {
@@ -166,6 +249,7 @@
               newGroup.label = node.label ;
               newGroup.full = node.full ;
               
+              newGroup.weight = 5 ;
               newGroup.status = node.status ;
               newGroup.gcolor = node.gcolor ;
               
@@ -173,7 +257,7 @@
               newGroup.target = node.target ;
               newGroup.value = node.value ;
               
-              newGroup.ingroup = node.parent ;
+              newGroup.ingroup = node.ingroup ;
               
               newGroup.groups = [] ;
             
@@ -214,8 +298,8 @@
             	let _title = node['dc:title'] || null;
             	let _description = node['dc:description'] || null;
             	
-            	let _parent = node['foafiaf:Parent'] || null;
-                let _broader = node['skos:broader'] || null;
+              let _broader = node['skos:broader'] || null;
+              let _parent = node['foafiaf:Parent'] || null;
             	let _monitors = node['foafiaf:monitors'] || null;
             // 	let _supports = node['foafiaf:supports'] || null;
             	
@@ -244,9 +328,19 @@
               Node.target = _targetvalue ;
               Node.value = _datavalues ;
               
-              Node.parent = _monitors|| _broader || _parent ;
+              // console.log('_label',_label)
+              // console.log('_monitors',_monitors)
+              // console.log('_parent',_parent)
+              // console.log('_broader',_broader)
+              Node.ingroup = _monitors || _parent || _broader ;
+              // console.log('Node.ingroup',Node.ingroup)
               // Node.groups = [] ;
-            
+              
+              // console.log('Node.parent',Node.parent)
+              // if (Node.ingroup = null) {
+              //   Node = null ;
+              //   return null ;
+              // }
             } // end if in list	
           } // end if in list
           
@@ -280,6 +374,7 @@
             // console.log('returned newNode:',newNode)
             
             if (newNode != null) {
+              // console.log('returned newNode.ingroup:',newNode.ingroup)
               
               var childIds = getChildren(graph, node)
               if (childIds.length>0) {
