@@ -111,44 +111,52 @@ function embed() {
         console.log('circles.get():',circles.get())
     });
     
-    
-
-
-
-// function popupDetails(group) {
-//     console.log('popupDetails(group)',group)
-    
-//   // var myDialog = document.getElementById ( "myDialog" ) ;
-//   // myDialog.style.visibility = "visible" ;
-
-// // showModal()
-//     // alert(group.description)
-// }
 
     // COMMENT OUT DATA FILE FOr teSTING
-    fetch('./indicators.json')
+    fetch('../things/jsonld/_Indicator_.jsonld')
         .then(function (response) {
             
           return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            console.log('data',data);
           
-            var groups = data.groups;
-            var _dataObject = {}
-            _dataObject.open =true
-            _dataObject.groups = groups
-            circles.set("dataObject", _dataObject); 
+            console.log('transforing Groups from data:',data)
             
-            var customAttributes = function(opts, params, vars) {
-              // console.log("    fetch Color decorator callback.", params, vars);
-              vars.groupColor = params.group.gcolor;
-              vars.labelColor = "auto";
-            };
+            var groups = transformGroups(data,"", function(transformed) {
+                
+                let d = new Date();
+              	let returned  = new Date().getTime();
+              	console.log('returned',returned)
+              	
+              	console.log('transformed:',transformed)
+              	
+              	var groups = transformed.groups;
+              	
+                console.log('transformed Groups:',groups)
+                
+                
+                var _dataObject = {}
+                _dataObject.open =true
+                _dataObject.groups = groups
+                circles.set("dataObject", _dataObject); 
+                
+                var customAttributes = function(opts, params, vars) {
+                  // console.log("    fetch Color decorator callback.", params, vars);
+                  vars.groupColor = params.group.gcolor;
+                  vars.labelColor = "auto";
+                };
+                
+                circles.set({
+                    groupColorDecorator: customAttributes,
+                }); 
             
-            circles.set({
-                groupColorDecorator: customAttributes,
-            }); 
+              
+            })
+            
+            
+            
+            
             
             
             
