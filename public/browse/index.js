@@ -46,7 +46,8 @@ function whenPageLoaded() {
     }
     
     
-    let mg = getMyGraph() || null ;
+    // let mg = getMyGraph() || null ;
+    let mg = null ;
     // console.log('mg', mg )
     // console.log('getMyGraph()',getMyGraph() )
     
