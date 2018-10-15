@@ -10,7 +10,7 @@
 		<!--based on http://skos.um.es/unescothes/CS000/html-->
 		<title>Linked Data Browser</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="Description" content="" />
+		<meta name="Description" content="Search and browsing of Linked Data JSON-LD data sets " />
 		<meta name="keywords" content="" />
 		<meta name="author" content="Jeff Stewart Asterius Media LLC"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,7 @@
 		<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="//skos.um.es/unesco6/css/unesco6.css" rel="stylesheet" type="text/css">
 
+		<script src="./graphUtils.js"></script>
 		<script src="./resolveGraph.js"></script>
 		
 		<link href="index.css" rel="stylesheet" type="text/css" />
@@ -26,25 +27,27 @@
 
 	</head>
 	<body onload="whenPageLoaded()">
+		
+<div id="jsonld">
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
     "@type": "WebApplication",
     "image": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
-    "name": "Tranfsform Rockford Interactive Transformation Map (T-Map)",
+    "name": "Tranform Rockford Interactive Semantic Data Searhing and Browsing",
     "author": {
       "@type": "Organization",
       "url": "https://github.com/asteriusj",
       "name": "asteriusj - Jeffrey Stewart"
     },
-  "url": "http://foafiaf.transformrockford.org/tmap/index.html",
+  "url": "http://foafiaf.transformrockford.org/brose/index.html",
   "datePublished": "2018-08-08",
   "operatingSystem": "Web",
   "fileSize" : "0",
   "interactionCount" : "",
   "contentRating" : "",
-  "description" : "HTML 5 SVG Interactive Sunburst Diagram for Tranfsform Rockford Community Transformation Map (T-Map)",
-  "applicationCategory" : "Interactive Diagram"
+  "description" : "Interactice Semantic Linked Data Search and Browse for Tranfsform Rockford Community Transformation Datasets",
+  "applicationCategory" : "Interactive Search and Browse"
 }
 </script>
 <script type="application/ld+json">
@@ -66,6 +69,8 @@
   "url": "http://transformrockford.org/"
 }
 </script>
+</div>
+
 		<script type="text/javascript">
 		// 	window.onbeforeunload = function() {
 		// 		document.getElementById('loader').style.display='block';
@@ -84,18 +89,30 @@
 			
 			<div id="cabecera">
 				<p>
-					<span class="tituloweb titleweb">Linked Data Browser</span> <span class="home"><a href=""><span class="material-icons">&#xE88A;</span> Homepage</a></span>
+					<span class="tituloweb titleweb" id="objName">Linked Data Browser</span> <span class="home"><a href=""><span class="material-icons">&#xE88A;</span> Homepage</a></span>
 				</p>
 			</div>
 
 		
-			<div id="contenido content">
+			<div id="contenido">
 				<h1>
-					<!--FOAFIAF is a nod to Friend of a Friend, or acronym FOAF (ontology).-->
+					<span id="objDescription">Search and browsing of Linked Data JSON-LD data sets </span>
 				</h1>
 				
+				<!--<div id="infocontenido">-->
+				<!--	<p id="infositenote">-->
+						<!--<font style="vertical-align: inherit;">-->
+				<!--			<p><span id="objId"></span></p>-->
+				<!--			<p><span id="objType"></span></p>-->
+				<!--			<p><span id="objUrl"></span></p>-->
+				<!--			<p><span id="objUpdated"></span></p>-->
+				<!--			<p><span id="objPublished"></span></p>-->
+						<!--</font>-->
+				<!--	</p>-->
+				<!--</div>-->
+				
 				<div id="info">
-					
+				
 					<div id="toolbar">
 						<!--<div id="searchform">-->
       <!--  	  					<form name="search" action="." method="post">-->
@@ -205,8 +222,9 @@
 		</div>	
 		
 		<div style="width:100%" id="pie">
-				<p>Contact: <a href="https://www.linkedin.com/in/jeffreyastewart/">J Stewart</a> - <a href="mailto:jstewart@tranformrockford.org">jstewart@tranformrockford.org</a></p>
+				<p>Contact: <span id="schema:author" property="schema:author"><a href="https://www.linkedin.com/in/jeffreyastewart/">J Stewart</a> - <a href="mailto:jstewart@tranformrockford.org">jstewart@tranformrockford.org</span></a></p>
 				
+				<p><span property="schema:isBasedOn">based on UNESCO Thesaurus <a target="blank" href="http://skos.um.es/unescothes/CS000/html">http://skos.um.es/unescothes/CS000/html</a></span></p>
 				<p>
 					<a rel="license" href="//creativecommons.org/licenses/by/3.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" height="25"></a>
 				</p>
