@@ -35,6 +35,9 @@ function embed() {
     
     var circles = new CarrotSearchCircles({
       id: "visualization",
+      diameter: "90%",
+      centerx: "45%",
+      centery: "55%",
       captureMouseEvents: false,
       pixelRatio: Math.min(1.5, window.devicePixelRatio || 1),
       visibleGroupCount: 0,
@@ -75,8 +78,9 @@ function embed() {
     ]}});
     
     circles.set({
+          // titleBar: "topbottom",
           titleBar: "inscribed",
-//           titleBarBackgroundColor: "rgba(0,0,0,.3)",
+          // titleBarBackgroundColor: "rgba(0,0,0,.3)",
           titleBarTextColor: "#000",
           titleBarTextPaddingTopBottom: 30,
           titleBarMaxFontSize: 40,
@@ -102,13 +106,15 @@ function embed() {
     circles.set("onGroupClick", function(info) {
         console.log("onGroupClick.", info );
         let group = info.group;
-        
+        setGroupDetails(group) 
     });
     
     circles.set("onGroupDoubleClick", function(info) {
         console.log("onGroupDoubleClick.", info );
         let group = info.group;
-        console.log('circles.get():',circles.get())
+        // console.log('circles.get():',circles.get())
+        // setGroupDetails(group) 
+        myPopupFunction(group)
     });
     
 
@@ -160,35 +166,6 @@ function embed() {
             
             
             
-            
-    //         circles.set({
-    //           titleBar: "topbottom",
-    //           titleBarBackgroundColor: "rgba(0,0,0,.2)",
-    //           titleBarTextColor: "#fff",
-    //           titleBarTextPaddingTopBottom: 10,
-              
-    //           // groupHoverOutlineColor: "#f00",
-    //           // groupHoverOutlineWidth: 3,
-    //           // groupHoverColor: "rgba(0,0,255,0.5)",
-    //           // groupHoverHierarchy: true,
-              
-    //           // onGroupClick: function(info) {
-    //           // // Zoom on single click.
-    //           // console.log('info',info)
-    //           // this.set("zoom", {
-    //           //     groups: [info.group.id],
-    //           //     zoomed: !info.group.zoomed
-    //           //   });
-    //           // },
-            
-    //           groupColorDecorator: customAttributes,
-    //           dataObject: {
-    //             groups
-    //           }
-    //         });
-        
-        
-             
         
       
     });
@@ -198,6 +175,5 @@ function embed() {
     installResizeHandlerFor(circles, 0);
 }
 embed();
-
 
 
