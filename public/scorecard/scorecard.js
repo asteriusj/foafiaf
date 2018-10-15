@@ -36,7 +36,7 @@ function embed() {
     var circles = new CarrotSearchCircles({
       id: "visualization",
       diameter: "90%",
-      centerx: "45%",
+      centerx: "50%",
       centery: "55%",
       captureMouseEvents: false,
       pixelRatio: Math.min(1.5, window.devicePixelRatio || 1),
