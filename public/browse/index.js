@@ -220,11 +220,12 @@ function processGraph(graph,cb) {
         //
         // else select first array element
         //
-        let firstEl = graph[0]["@id"]
-        let _elID = firstEl || null;
+        // let firstEl = graph[0]["@id"]
+        // let _elID = firstEl || null;
         // _elID =  "foafiaf:Spoke_Education" ; 
         // console.log('else _elID: ', _elID)
     }
+    if ( _elID === null ) _elID = graph[0]["@id"] || null
     console.log('_elID: ', _elID)
     
     let _eL = getElement(_elID) ;
