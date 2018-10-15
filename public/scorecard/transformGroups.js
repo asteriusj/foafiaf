@@ -249,13 +249,20 @@
               newGroup.label = node.label ;
               newGroup.full = node.full ;
               
+              newGroup.polarity = node.status ;
+              
               newGroup.weight = 5 ;
               newGroup.status = node.status ;
               newGroup.gcolor = node.gcolor ;
               
-              newGroup.units = node.units ;
-              newGroup.target = node.target ;
-              newGroup.value = node.value ;
+              newGroup.polarity = node.polarity ;
+              newGroup.units = node.unitofmeasure ;
+              newGroup.target = node.targetvalue ;
+              newGroup.value = node.datavalues ;
+              newGroup.year = node.datayear ;
+              newGroup.trend = node.datatrend ;
+              newGroup.rank = node.rank ;
+              newGroup.ranktrend = node.ranktrend ;
               
               newGroup.ingroup = node.ingroup ;
               
@@ -301,14 +308,16 @@
               let _broader = node['skos:broader'] || null;
               let _parent = node['foafiaf:Parent'] || null;
             	let _monitors = node['foafiaf:monitors'] || null;
-            // 	let _supports = node['foafiaf:supports'] || null;
             	
             	let _polarity = node['foafiaf:polarity'] || null;
             	let _timeperiodtype = node['foafiaf:timeperiodtype'] || null;
             	let _unitofmeasure = node['foafiaf:unitofmeasure'] || null;
             	let _targetvalue = node['foafiaf:targetvalue'] || null;
             	let _datavalues = node['foafiaf:datavalues'] || null;
-            	
+            	let _datayear = node['foafiaf:datayear'] || null;
+            	let _datatrend = node['foafiaf:datatrend'] || null;
+            	let _rank = node['foafiaf:rank'] || null;
+            	let _ranktrend = node['foafiaf:ranktrend'] || null;
             	let _status = node['foafiaf:status'] || null;
             	let _color = node['foafiaf:color'] || null;
      
@@ -320,13 +329,22 @@
               Node.name = _title || _label ;
               Node.full = Node.name ;
               if (_description) Node.full = Node.name + ' - ' + _description ;
-              // Node.weight = 5 ;
+              Node.weight = 10 ;
               
               Node.status = _status ;
               Node.gcolor = _color ;
-              Node.units = _unitofmeasure ;
-              Node.target = _targetvalue ;
-              Node.value = _datavalues ;
+              
+              Node.polarity = _polarity ;
+              Node.timeperiodtype = _timeperiodtype ;
+              Node.unitofmeasure = _unitofmeasure ;
+              Node.targetvalue = _targetvalue ;
+              
+              Node.datavalues = _datavalues ;
+              Node.datayear = _datayear
+              Node.datatrend = _datatrend ;
+              Node.rank = _rank ;
+              Node.ranktrend = _ranktrend ;
+              
               
               // console.log('_label',_label)
               // console.log('_monitors',_monitors)
