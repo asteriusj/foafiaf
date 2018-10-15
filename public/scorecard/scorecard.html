@@ -11,13 +11,16 @@
         height: 100%;
       }
       #visualization {
-        margin: 10px;
+        margin: 20 10 10 10px;
         padding: 5px;
-        height: 100%;
+        height: 90%;
       }
     </style>
 
-<script src="./transformGroups.js"></script>
+
+		<script src="./graphUtils.js"></script>
+		<script src="./transformGroups.js"></script>
+		
 
     <script src="./carrotsearch.circles.js"></script>
     <script src="./carrotsearch.circles.asserts.js"></script>
@@ -26,6 +29,31 @@
   </head>
 
   <body>
+
+
+
+<div id="myPopupBox" >
+ <div id="popup1" class="">
+  <!-- https://codepen.io/imprakash/pen/GgNMXO -->
+	<div class="popup">
+		<h2><span id="grpLabel" style="darker"></span></h2>
+		<a id="popup_close" class="close" onclick="myPopupFunction()" href="#">&times;</a>
+		<div class="content">
+		  <br/>
+			<span id="grpFull"></span>
+			<br/>
+			<br/>
+			<span id="grpStatus" ></span> <span id="grpUnits"></span>
+			<br/>
+			<br/>
+			<span id="grpValue"></span>
+			<br/>
+			
+		</div>
+	</div>
+ </div>
+</div>  
+      
 
 <script type="application/ld+json">
 {
@@ -206,24 +234,16 @@
     }
   </script>
   
-  
-<div id="myDialog">
-    <dialog>Hiya</dialog>
-</div>
-<style>
-dialog {
-    visibility: hidden;
-    transform: scale(0.1);
-    transition: transform 200ms;
-}
-</style>  
-  
+
+
+
+
+      
     <div id="visualization"></div>
-    
-
-
 
     
+    <link rel="stylesheet" href="./metricpopup.css" />
+    <script src="./metricpopup.js"></script>
     <link rel="stylesheet" href="./scorecard.css" />
     <script src="./scorecard.js"></script>
     
