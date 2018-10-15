@@ -75,9 +75,9 @@ function embed() {
     ]}});
     
     circles.set({
-          titleBar: "topbottom",
-          titleBarBackgroundColor: "rgba(0,0,0,.3)",
-          titleBarTextColor: "#fff",
+          titleBar: "inscribed",
+//           titleBarBackgroundColor: "rgba(0,0,0,.3)",
+          titleBarTextColor: "#000",
           titleBarTextPaddingTopBottom: 30,
           titleBarMaxFontSize: 40,
           titleBarLabelDecorator: function(attrs) {
