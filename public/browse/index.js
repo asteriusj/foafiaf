@@ -8,6 +8,7 @@ function dtstamp() {
     let dt  = new Date().getTime();
     return dt;
 } 
+
 //
 // After page loads get graph data and process selected element
 //
@@ -18,34 +19,50 @@ function whenPageLoaded() {
     var reset = getUrlVars()["reset"] || null;
     
     var datalink = getUrlVars()["datalink"] || 'https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld'
-    // // var datalink = getUrlVars()["datalink"] || '../things/jsonld/combinedJSONLD.jsonld' || null;
+    setElement('datalink', datalink);
 
-    // // 	var datalink = getUrlVars()["datalink"] || '../things/jsonld/combinedJSONLD.jsonld' || null;
-// 	localStorage.setItem('datalink', JSON.stringify(datalink));
-
-    
 	var startid = getUrlVars()["startid"] || null;
-// // 	localStorage.setItem('startid', JSON.stringify(startid));
+    setElement('startid', startid);
 	
 	var nextid = getUrlVars()["nextid"] || null;
-//     // localStorage.setItem('nextid', JSON.stringify(nextid));
     
     console.log('datalink: ',datalink)
     console.log('reset: ',reset)
     console.log('startid: ',startid)
     console.log('nextid: ',nextid)
     
+    if (getElement('datalink') != datalink ) {
+        console.log("getElement('datalink'): ",getElement('datalink'))
+        console.log(" != ")
+        console.log('datalink: ',datalink)
+    }
     
     // console.log('reset=true',reset=true)
     // console.log('reset==true',reset==true)
     // console.log('reset===true',reset===true)
-    if ( reset===true ){ 
-        console.log('clearing localStorage')
-        localStorage.clear();
-            
+    if ( ( reset != null ) ) { 
+    // if ( ( reset === true ) && ( reset == true ) ) { 
+        if (typeof(Storage) !== "undefined") {
+            // Code for localStorage/sessionStorage.
+            console.log('localStorage:',localStorage)
+            console.log('clearing localStorage')
+            localStorage.clear();
+            console.log('sessionStorage:',sessionStorage)
+            console.log('clearing sessionStorage')
+            sessionStorage.clear();
+        } else {
+            // Sorry! No Web Storage support..
+            console.log('Sorry! No Web Storage support..')
+        }
+        
+    } else {
+        console.log('localStorage:',sessionStorage)
+        console.log('sessionStorage:',sessionStorage)
     }
     
     
+    console.log("getElement('datalink'): ",getElement('datalink'))
+    console.log("getElement('startid'): ",getElement('startid'))
     // let mg = getMyGraph() || null ;
     let mg = null ;
     // console.log('mg', mg )
@@ -57,25 +74,85 @@ function whenPageLoaded() {
         fetchMyLinkedData(datalink, function(json) {
             console.log('after fetchMyLinkedData')
             let myLD = JSON.parse(json) || json ;
-            console.log('myLD',myLD)
+            // console.log('myLD',myLD)
             
             
             resolveLinkedData(myLD, function(_LD){
-                console.log('after resolveLinkedData')
+                // console.log('after resolveLinkedData')
                 
-                let defaultId = _LD["@id"] || startid || null ;
-                localStorage.setItem('defaultId', JSON.stringify(defaultId));
-                console.log('defaultId: ',defaultId)
+                // TODO: seelctively set innerHTML from obj
                 
+                // let objName = document.getElementById("objName").innerHTML = _LD["name"] || null ;
+                // let objDescription = document.getElementById("objDescription").innerHTML = _LD["description"] || null ;
+                
+                // let objId        = document.getElementById("objId").innerHTML        = _LD["@id"] || null ;
+                // let objType      = document.getElementById("objType").innerHTML      = _LD["@type"] || null ;
+                // let objUrl       = document.getElementById("objUrl").innerHTML       = _LD["url"] || null ;
+                // let objUpdated   = document.getElementById("objUpdated").innerHTML   = _LD["updated"] || null ;
+                // let objPublished = document.getElementById("objPublished").innerHTML = _LD["published"] || null ;
+                
+                // let objSameAs = _LD["sameAs"] || null ;
+                // let objIsBasedOn = _LD["isBasedOn"] || null ;
+                // let objCreator= _LD["keywords"] || null ;
+                
+                
+                let defaultId = _LD["startId"] || startid || null ;
+                
+                //
+                // TODO select info from LD to set LD Bwowser Title Description and Source URL
+                //
+                function makeSchemaJsonld () {
+                //   "@id": "_Indicator_",
+                //   "@type": "Dataset",
+                //   "startid": "foafiaf:Scorecard_Top_25",
+                //   "name": "Transform Rockford Scorecard Indicators",
+                //   "description": "A updated dataset of scorecard indicator relationships, values and metrics to provide insight into were the comminuty transformation process is at and where is it going",
+                //   "url": "",
+                //   "sameAs": "",
+                //   "keywords": [
+                    
+                //   ],
+                //   "creator": {
+                //     "@type": "Organization",
+                //     "url": "",
+                //     "name": "",
+                //     "contactPoint": {
+                //       "@type": "ContactPoint",
+                //       "contactType": "customer service",
+                //       "telephone": "",
+                //       "email": ""
+                //     }
+                //   },
+                //   "includedInDataCatalog": {
+                    
+                //   },
+                //   "distribution": [
+                    
+                //   ],
+                //   "temporalCoverage": "",
+                //   "spatialCoverage": {
+                    
+                //   },
+                //   "updated": "2018-12-25T12:34:56Z",
+                //   "published": "2018-12-25T12:34:56Z"
+                } // end 
                 
                 //
                 // TODO set graph storage name to form of path that unique identifies it
                 //
                 let myGraph = _LD["@graph"] || null ;
                 console.log('myGraph: ',myGraph)
-                
-                let localstoregraph = setMyGraph(myGraph);
+                let localgraph = setMyGraph(myGraph);
         
+            //     let gtree = makeTreeFromGraph(myGraph,defaultId)
+  	         //   console.log('gtree:',gtree)
+                
+            //     let bcrumbs = makeBreadCrumbs(myGraph)
+  	         //   console.log('bcrumbs:',bcrumbs)
+  	         
+  	         //   let bcrumb = getBreadCrumb(myGraph,startid)
+            //     console.log('myGraph,defaultId,bcrumb:',myGraph,startid,bcrumb)
+                
                 processGraph(myGraph);
                
                 
@@ -117,10 +194,10 @@ function processGraph(graph,cb) {
     try {
 
 //     var reset = getUrlVars()["reset"];
-// 	var datalink = getUrlVars()["datalink"] || localStorage.getItem('datalink');
-	var startid = getUrlVars()["startid"] || localStorage.getItem('startid');
-	var nextid = getUrlVars()["nextid"] || localStorage.getItem('nextid');
-	var defaultid = startid || localStorage.getItem('defaultid') || null ;
+// 	var datalink = getUrlVars()["datalink"] || sessionStorage.getItem('datalink');
+	var startid = getUrlVars()["startid"] || sessionStorage.getItem('startid');
+	var nextid = getUrlVars()["nextid"] || sessionStorage.getItem('nextid');
+	var defaultid = startid || sessionStorage.getItem('defaultid') || null ;
 // 	console.log('reset: ',reset)
 // 	console.log('datalink: ',datalink) 
 	console.log('startid: ',startid)
@@ -140,7 +217,12 @@ function processGraph(graph,cb) {
         _elID =  defaultid ; 
         // console.log('defaultid _elID: ', _elID)
     } else {
-        _elID =  "foafiaf:Spoke_Education" ; 
+        //
+        // else select first array element
+        //
+        let firstEl = graph[0]["@id"]
+        let _elID = firstEl || null;
+        // _elID =  "foafiaf:Spoke_Education" ; 
         // console.log('else _elID: ', _elID)
     }
     console.log('_elID: ', _elID)
@@ -172,12 +254,21 @@ function processElementData(element) {
     // save data element in local store by id
     // let _id = setElement(element) ;
     
-    let _nodeC = buildNodeContent(element)
-    console.log('_nodeC: ', _nodeC)
+    let _breadcrumb = buildNodeBreadcrumb(element)
+    // console.log('_breadcrumb: ', _breadcrumb)
+    //set node element breadcrumb
+    var container = document.getElementById("breadcrumb");
+    container.innerHTML = _breadcrumb;
     
+    
+    let _nodeC = buildNodeContent(element)
+    // console.log('_nodeC: ', _nodeC)
     //set node element content
     var container = document.getElementById("node");
     container.innerHTML = _nodeC; 
+    
+    
+    
 }
 //
 // Helper functions
@@ -185,7 +276,7 @@ function processElementData(element) {
 let myGraph= null;
 function getMyGraph(){
   console.log('getMyGraph')
-  myGraph = localStorage.getItem('myGraph');
+  myGraph = sessionStorage.getItem('myGraph');
 //   console.log('myGraph',myGraph)
   return myGraph
 }
@@ -197,25 +288,31 @@ function setMyGraph(data){
                 //
 
   
-//   localStorage.setItem('myGraph', JSON.stringify(myGraph));
+//   sessionStorage.setItem('myGraph', JSON.stringify(myGraph));
 //   console.log('myGraph',myGraph)
   return myGraph
 }
-function getElement(id){
-  console.log('getElement',id)
-  var _element = localStorage.getItem('id');
-  var element = JSON.parse(_element) || _element ;
-  console.log('element',element)
-  return element
+function getElement(identifier){
+  console.log('getElement identifier: ',identifier)
+  try {
+      var _element = localStorage.getItem('identifier');
+      console.log('getElement   _element: ',_element)
+      var element = JSON.parse(_element)  //|| _element ;
+      console.log('getElement    element: ',element)
+      return element
+  } catch (e) {
+      console.error('e',e)
+  }
 }
-function setElement(element,identifier){
-  console.log('setElement',element)
-//   let identifier = element["_id"] ;
-//   console.log('identifier',identifier)
-
-  localStorage.setItem(identifier, JSON.stringify(element));
-
-  return identifier
+function setElement(identifier,element){
+  console.log('setElement identifier: ',identifier)
+  try {
+      console.log('setElement    element: ',element)
+      localStorage.setItem(identifier, JSON.stringify(element));
+      return identifier
+  } catch (e) {
+      console.error('e',e)
+  }
 }
 // collect URL query string parameters
 function getUrlVars() {
@@ -294,7 +391,7 @@ function getElementData(_graph, _elID, cb) {
     let ed = {};
  
     let _el = getById(_graph,_elID) || null ;
-    console.log('_el: ', _el)
+    console.log('getElementData _el: ', _el)
     
     if (!isEmpty( _el )){
         
@@ -331,13 +428,45 @@ function getElementData(_graph, _elID, cb) {
         ed["tmo:PredecessorDependency"] =    _el["tmo:PredecessorDependency"] || "" ;
         ed["tmo:SuccessorDependency"]   =    _el["tmo:SuccessorDependency"] || "" ;
 
+        ed["CrumbTrail"] = _el["CrumbTrail"] || getBreadCrumb( _graph , _el )
        
     }    
-       
+    
+    console.log('getElementData ed: ',ed)
     if (cb) cb(ed) 
     return ed ; 
 } // end getElementData
 // build content html for node element
+function buildNodeBreadcrumb(_ed, cb) {
+    console.log('buildNodeBreadcrumb ...',_ed)
+    
+    // <!--<a href="foafiaf:Segment">Segments</a> -->
+    let breadcrumb = "/"
+    
+    var datalink = getUrlVars()["datalink"] || "";
+	var startid = getUrlVars()["startid"] || "";
+	
+    let baseUrl = "?datalink=" + datalink + "&startid=" + startid 
+    
+    let CrumbTrail = _ed["CrumbTrail"]
+    console.log('CrumbTrail.length',CrumbTrail.length)
+    
+    for (let i=0; i<CrumbTrail.length-1; i++) {
+        let item = CrumbTrail[i] ;
+        console.log('buildNodeBreadcrumb item: ', item)
+        
+        let qs = '&nextid=' + item.id ;
+        
+        breadcrumb += ' <a href="' + baseUrl + qs + '" title="'+ item.description + '" >' + item.label + "</a> / " 
+        
+        // https://preview.c9users.io/asteriusj/foafiaf/public/browse/index.html?datalink=../things/jsonld/_Indicator_.jsonld&startid=foafiaf:Scorecard_Diversity&nextid=foafiaf:Scorecard_Recreate
+    }
+    
+    
+    // console.log('breadcrumb:',breadcrumb)
+    if (cb) cb(breadcrumb) 
+    return breadcrumb ; 
+} // buildNodeBreadcrumb    
 function buildNodeContent(_ed, cb) {
     console.log('buildNodeContent ...',_ed)
     
@@ -608,7 +737,7 @@ function buildNodeContent(_ed, cb) {
     return content ; 
 } // buildNodeContent
 
-
+  
 
 (function() {
     console.log('loading index.js ...')
@@ -647,9 +776,9 @@ function buildNodeContent(_ed, cb) {
 
 
 // clear all local storage for domain
-// window.localStorage.clear();
+// window.sessionStorage.clear();
 
-//     console.log('localStorage',localStorage);
+//     console.log('sessionStorage',sessionStorage);
 
 //     // process LD while page is loading
 //     //
@@ -658,13 +787,13 @@ function buildNodeContent(_ed, cb) {
     
 //     var datalink = getUrlVars()["datalink"] || 'https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld'
 //     // var datalink = getUrlVars()["datalink"] || '../things/jsonld/combinedJSONLD.jsonld' || null;
-// 	localStorage.setItem('datalink', JSON.stringify(datalink));
+// 	sessionStorage.setItem('datalink', JSON.stringify(datalink));
 	
 // 	var startid = getUrlVars()["startid"] || null;
-// 	localStorage.setItem('startid', JSON.stringify(startid));
+// 	sessionStorage.setItem('startid', JSON.stringify(startid));
 	
 // 	var nextid = getUrlVars()["nextid"] || null;
-//     localStorage.setItem('nextid', JSON.stringify(nextid));
+//     sessionStorage.setItem('nextid', JSON.stringify(nextid));
     
 //     console.log('index reset: ',reset)
 //     console.log('index datalink: ',datalink)
@@ -675,8 +804,8 @@ function buildNodeContent(_ed, cb) {
 //     console.log('reset==true',reset==true)
 //     console.log('reset===true',reset===true)
 //     if ( reset===true ){ 
-//         console.log('clearing localStorage')
-//         localStorage.clear();
+//         console.log('clearing sessionStorage')
+//         sessionStorage.clear();
             
 //     }
     
