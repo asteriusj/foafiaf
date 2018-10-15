@@ -44,7 +44,7 @@ function setGroupDetails(group) {
     
     var grpTrend = document.getElementById("grpTrend");
     let _trend = group.trend  || null ;
-    if (_value == null) {
+    if (_trend != null) {
         let _ico = null
         if (_trend == 'Better') _ico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="Better" aria-hidden style="color: Green;"></i>'
         if (_trend == 'Steady') _ico = '&nbsp; <i class="fas fa-arrow-right fa-2x"  title="Steady" aria-hidden style="color: Cyan;"></i>'
