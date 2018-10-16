@@ -37,7 +37,7 @@ function setGroupDetails(group) {
     var grpValue = document.getElementById("grpValue");
     let _value = group.value  || null ;
     if (_value != null) {
-        grpValue.innerHTML = '<i>value:</i>  <span style="display: inline-block; width: 5px;"></span>' + group.value + ' in ' + group.year ;
+        grpValue.innerHTML = '<i>value:</i>  <span style="display: inline-block; width: 5px;"></span>' + group.value  ;
     } else {
         grpValue.innerHTML = ""
     }
