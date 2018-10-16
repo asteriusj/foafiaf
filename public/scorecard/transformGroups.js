@@ -259,7 +259,7 @@
               newGroup.units = node.unitofmeasure ;
               newGroup.target = node.targetvalue ;
               newGroup.value = node.datavalues ;
-              newGroup.year = node.datayear ;
+              // newGroup.year = node.datayear ;
               newGroup.trend = node.datatrend ;
               newGroup.rank = node.rank ;
               newGroup.ranktrend = node.ranktrend ;
@@ -314,7 +314,7 @@
             	let _unitofmeasure = node['foafiaf:unitofmeasure'] || null;
             	let _targetvalue = node['foafiaf:targetvalue'] || null;
             	let _datavalues = node['foafiaf:datavalues'] || null;
-            	let _datayear = node['foafiaf:datayear'] || null;
+            // 	let _datayear = node['foafiaf:datayear'] || null;
             	let _datatrend = node['foafiaf:datatrend'] || null;
             	let _rank = node['foafiaf:rank'] || null;
             	let _ranktrend = node['foafiaf:ranktrend'] || null;
@@ -340,7 +340,7 @@
               Node.targetvalue = _targetvalue ;
               
               Node.datavalues = _datavalues ;
-              Node.datayear = _datayear
+              // Node.datayear = _datayear
               Node.datatrend = _datatrend ;
               Node.rank = _rank ;
               Node.ranktrend = _ranktrend ;
