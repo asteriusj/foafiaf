@@ -22,15 +22,19 @@ span#grpRank {
 }
 
 div#myPopupBox {
-    /*position:absolute;*/
     position: fixed;
     width: 25%;
     float: left;
-    /*background-color:red;*/
     z-index:100;
-    /*display: none;*/
+    cursor: move;
 }
-
+#resizable { width: 150px; height: 150px; padding: 0.5em; }
+#resizable h3 { text-align: center; margin: 0; }
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+#draggable { width: 150px; height: 150px; padding: 0.5em; }
+  
 .popup {
   margin-top: 1%;
   margin-right: auto;
@@ -43,7 +47,7 @@ div#myPopupBox {
   border-radius: 5px;
   width: 99%;
   position: relative;
-  transition: all 5s ease-in-out;
+  /*transition: all 5s ease-in-out;*/
 }
 /*h1 {*/
 /*  text-align: center;*/

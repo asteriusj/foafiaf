@@ -44,10 +44,13 @@
   	    let gtree = makeTreeOfNodes(gnodes,defaultNodeId)
   	    console.log('gtree:',gtree)
   	    
-  	    let StatusColors = {"group":"StatusColors","gcolor":"#ffffff","label":"Status Colors","weight":5,"groups":[{"label":"Cyan","full":"Color Cyan designates that data is not available or not updated","weight":1,"gcolor":"#00FFFF"},{"label":"Green","full":"Green status indicates top 25 percent of 1st quartile","weight":1,"gcolor":"#008000"},{"label":"Yellow","full":"Yellow status indicates top 50 percent of 2nd quartile","weight":1,"gcolor":"#FFFF00"},{"label":"Orange","full":"Orange status indicates top 75 percent of 3rd quartile","weight":1,"gcolor":"#FFA500"},{"label":"Red","full":"Red status indicates bottom 25 percent or 4th quartile","weight":1,"gcolor":"#FF0000"}]}
-  	    console.log('StatusColors:',StatusColors)
-  	    // console.log('jsonStatusColors:',JSON.stringify(StatusColors))
-  	    gtree[0].groups.push(StatusColors)
+  	    //
+  	    // Remove Status Colors from wheel
+  	    //
+  	   // let StatusColors = {"group":"StatusColors","gcolor":"#ffffff","label":"Status Colors","weight":5,"groups":[{"label":"Cyan","full":"Color Cyan designates that data is not available or not updated","weight":1,"gcolor":"#00FFFF"},{"label":"Green","full":"Green status indicates top 25 percent of 1st quartile","weight":1,"gcolor":"#008000"},{"label":"Yellow","full":"Yellow status indicates top 50 percent of 2nd quartile","weight":1,"gcolor":"#FFFF00"},{"label":"Orange","full":"Orange status indicates top 75 percent of 3rd quartile","weight":1,"gcolor":"#FFA500"},{"label":"Red","full":"Red status indicates bottom 25 percent or 4th quartile","weight":1,"gcolor":"#FF0000"}]}
+  	   // console.log('StatusColors:',StatusColors)
+  	   // // console.log('jsonStatusColors:',JSON.stringify(StatusColors))
+  	   // gtree[0].groups.push(StatusColors)
   	    
   	    GROUPS = {
   	        groups: gtree
