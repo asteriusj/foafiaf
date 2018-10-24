@@ -71,12 +71,15 @@ function getGrpValue(group){
         return ""
     }
 }
+//
+// !!! add condition of increasing red and decresing green !!
+//
 function getGrpTrend(group){
     let _trend = group.trend  || null ;
-    if (_trend != null) {
+    if ((_trend != null) && (_trend != undefined)){
         let _ico = null
         if (_trend == 'Better') _ico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="Better" aria-hidden style="color: Green;"></i>'
-        if (_trend == 'Steady') _ico = '&nbsp; <i class="fas fa-arrow-right fa-2x"  title="Steady" aria-hidden style="color: Cyan;"></i>'
+        if (_trend == 'Steady') _ico = '&nbsp; <i class="far fa-arrow-alt-circle-right fa-2x"  title="Steady" aria-hidden style="color: Black;"></i>'
         if (_trend == 'Worse')  _ico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="Worse"  aria-hidden style="color: Red;"></i>'
         if (_ico != null) return '<em>5-year Trend:</em> ' + _ico ;
     } else {
@@ -93,10 +96,10 @@ function getGrpRank(group){
 }
 function getGrpTrendRank(group){
     let _ranktrend = group.ranktrend || null ;
-    if (_ranktrend != null) {
+    if ((_ranktrend != null) && (_ranktrend != undefined)) {
         let _rankico = null
         if (_ranktrend.includes('Better')) _rankico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="' +_ranktrend + '" aria-hidden style="color: Green;"></i>'
-        if (_ranktrend.includes('Steady')) _rankico = '&nbsp; <i class="fas fa-arrow-right fa-2x"  title="' +_ranktrend + '" aria-hidden style="color: Cyan;"></i>'
+        if (_ranktrend.includes('Steady')) _rankico = '&nbsp; <i class="far fa-arrow-alt-circle-right fa-2x"  title="' +_ranktrend + '" aria-hidden style="color: Black;"></i>'
         if (_ranktrend.includes('Worse'))  _rankico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="' +_ranktrend + '"  aria-hidden style="color: Red;"></i>'
         if (_rankico != null) return'<i>Trend in rank:</i> '  + _rankico ;
     } else {
@@ -108,12 +111,12 @@ function setGroupDetails(group) {
     var x = document.getElementById("myPopupBox");
     
     var grpLabel = document.getElementById("grpLabel");
-    grpLabel.innerHTML = group.label;
+    grpLabel.innerHTML = getGrpLabel(group);
     
     var grpFull = document.getElementById("grpFull");
     let _full = group.full  || null ;
     if (_full != null) {
-        grpFull.innerHTML = group.full;
+        grpFull.innerHTML = getGrpFull(group);
     } else {
         grpFull.innerHTML = ""
     }
@@ -121,7 +124,7 @@ function setGroupDetails(group) {
     var grpStatus = document.getElementById("grpStatus");
     let _status = group.status  || null ;
     if (_status != null) {
-        grpStatus.innerHTML = '<em>status:</em> <span style="display: inline-block; width: 10px;"></span>    <span id="statusText" ><font color="'+ group.status + '">' + group.status + '</font></span>';
+        grpStatus.innerHTML = getGrpStatus(group) ;
     } else {
         grpStatus.innerHTML = ""
     }
@@ -132,7 +135,7 @@ function setGroupDetails(group) {
     var grpValue = document.getElementById("grpValue");
     let _value = group.value  || null ;
     if (_value != null) {
-        grpValue.innerHTML = '<i>value:</i>  <span style="display: inline-block; width: 5px;"></span>' + group.value  ;
+        grpValue.innerHTML = getGrpValue(group) ;
     } else {
         grpValue.innerHTML = ""
     }
@@ -140,11 +143,7 @@ function setGroupDetails(group) {
     var grpTrend = document.getElementById("grpTrend");
     let _trend = group.trend  || null ;
     if (_trend != null) {
-        let _ico = null
-        if (_trend == 'Better') _ico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="Better" aria-hidden style="color: Green;"></i>'
-        if (_trend == 'Steady') _ico = '&nbsp; <i class="fas fa-arrow-right fa-2x"  title="Steady" aria-hidden style="color: Cyan;"></i>'
-        if (_trend == 'Worse')  _ico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="Worse"  aria-hidden style="color: Red;"></i>'
-        if (_ico != null) grpTrend.innerHTML = '<em>5-year Trend:</em> ' + _ico ;
+        grpTrend.innerHTML =  getGrpTrend(group) ;
     } else {
         grpTrend.innerHTML = ""
     }
@@ -152,7 +151,7 @@ function setGroupDetails(group) {
     var grpRank = document.getElementById("grpRank");
     let _rank = group.rank  || null ;
     if (_rank!== null) {
-        grpRank.innerHTML = '<em>rank:</em>  <span style="display: inline-block; width: 5px;"></span>' + group.rank ;
+        grpRank.innerHTML = getGrpRank(group) ;
     } else {
         grpRank.innerHTML = ""
     }
@@ -161,10 +160,7 @@ function setGroupDetails(group) {
     let _ranktrend = group.ranktrend || null ;
     if (_ranktrend != null) {
         let _rankico = null
-        if (_ranktrend.includes('Better')) _rankico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="' +_ranktrend + '" aria-hidden style="color: Green;"></i>'
-        if (_ranktrend.includes('Steady')) _rankico = '&nbsp; <i class="fas fa-arrow-right fa-2x"  title="' +_ranktrend + '" aria-hidden style="color: Cyan;"></i>'
-        if (_ranktrend.includes('Worse'))  _rankico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="' +_ranktrend + '"  aria-hidden style="color: Red;"></i>'
-        if (_rankico != null) grpTrendRank.innerHTML = '<i>Trend in rank:</i> '  + _rankico ;
+        grpTrendRank.innerHTML = getGrpTrendRank(group) ;
     } else {
         grpTrendRank.innerHTML = ""
     }
