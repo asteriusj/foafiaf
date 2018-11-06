@@ -6,7 +6,7 @@
   <meta http-equiv="content-language" content="en">
   <link rel="icon" type="image/png" href="/img/favicon32.png" sizes="32x32">
   
-  <title>Transform Rockford FOAFIAF T-Map Partition Diagram</title>
+  <title>Transform Rockford Scorecard Partition Diagram</title>
   <meta name="description" content="FOAFIAF: Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering.">
   <meta name="description" content="The partition diagram shows...">
   <meta name="author" content="Transform Rockford LLC | Asterius Media LLC">
@@ -32,25 +32,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
     
-    <link type="text/css" rel="stylesheet" href="/css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/styles.css"/>
     
-    <script type="text/javascript" src="/dist/d3.js"></script>
-    <script type="text/javascript" src="/dist/d3.layout.js"></script>
-    <script type="text/javascript" src="/js/iw.js"></script>
-	  <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript" src="../dist/d3.js"></script>
+    <script type="text/javascript" src="../dist/d3.layout.js"></script>
+    <script type="text/javascript" src="../js/iw.js"></script>
+	  <script type="text/javascript" src="../js/utils.js"></script>
 	  
-	  <script type="text/javascript" src="/js/partition.js"></script>
-    <link rel="stylesheet" href="/css/partition.css">
+	  <script type="text/javascript" src="../js/partition.js"></script>
+    <link rel="stylesheet" href="../css/partition.css">
 	  
-	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 	   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
      
 	   <!--<script src="/js/smtp.js"></script>-->
-     <script src="/js/spin.min.js"></script>
-     <script src="/js/search.js"></script>
+     <script src="../js/spin.min.js"></script>
+     <!--<script src="../js/search.js"></script>-->
  
 
 </head>
@@ -66,67 +66,10 @@
       }
       function RightMouseDown() { return false;}
     </script>
-    
-<!-- Action icons data  -->
-<div id="actionIcons" style="position:fixed;z-index:99;">
-  <!--<div id="reload_data_toggle">-->
-  <!--  <a href="Javascript:togglereload();">-->
-  <!--  <img src="/img/icon/1/reload_icon.png" width="15" >-->
-  <!--  </a>-->
-  <!--</div>-->
-  <div id="searchform_data_toggle">
-    <a href="Javascript:togglesearchform();">
-    <img src="/img/icon/1/search_icon.png" width="15" >
-    </a>
-  </div>
-  <div id="propsheet_data_toggle">
-    <a href="Javascript:togglepropsheet();">
-    <img src="/img/icon/1/info_icon.png" width="15" >
-    </a>
-  </div>
-  <!--<div id="editform_data_toggle">-->
-  <!--  <a href="Javascript:toggleeditform();">-->
-  <!--  <img src="/img/icon/1/edit_icon.png" width="15" >-->
-  <!--  </a>-->
-  <!--</div>-->
-</div>
 
-<!-- SearchForm Data -->
-<div id="searchform_data" class="content ui-widget-content">
-  <div class="searchform-content">
-    <a href="Javascript:closesearchform();"><span class="close">&times;</span></a>
-    <div class="searchform-header">
-      <h2>Search It</h2>
-    </div>
-    <div class="searchform-body">
-
-    </div>
-    <div class="searchform-footer">
-      <h3></h3>
-    </div>
-  </div>
-</div>
-
-
-<!-- PropSheet Data -->
-<div id="propsheet_data" class="content ui-widget-content">
-  <div class="propsheet-content">
-    <a href="Javascript:closepropsheet();"><span class="close">&times;</span></a>
-    <div class="propsheet-header">
-      <h2>Propery Sheet</h2>
-    </div>
-    <div class="propsheet-body">
-
-    </div>
-    <div class="propsheet-footer">
-      <h3></h3>
-    </div>
-  </div>
-</div>
-	
 	
 <main id="mainArea">
-    <h2 style="text-align: center;"><strong><span style="color: #ff9933;">T-Map Partition View</span></strong></h2>
+    <h2 style="text-align: center;"><strong><span style="color: #ff9933;">Scorecard Partition View</span></strong></h2>
     <div id="selectorContainer" style="display:none"></div>
     
     <div id="partition1">
@@ -162,8 +105,7 @@ console.log('nextid', nextid)
 
 
 //  retrieve graph data from jsonld file
-// var dataURL = datalink || "/things/jsonld/combinedJSONLD.jsonld";
-var dataURL = datalink || "/things/jsonld/_Indicator_.jsonld";
+var dataURL = datalink || "../things/jsonld/_Indicator_.jsonld";
 // var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
 console.log('dataURL -> ', dataURL)
 var myData;
@@ -223,6 +165,94 @@ function PartitionDiagram1() {
 PartitionDiagram1()
 </script>
 
+
+<script>
+  function dataLoaded(data) {
+	console.log('dataLoaded')
+	/* global rawNodes */
+	var rawNodes = data['@graph'];
+		console.log('rawNodes ', JSON.stringify(rawNodes))
+	
+	
+	//  **
+	//  populate entity dropdown with known @types
+	//  **
+	var entityTypesList = [];
+	var typeitem = {
+			id: "",
+			val: "",
+			txt: ""
+		}
+	entityTypesList.push(typeitem);
+	// console.log('rawNodes.length', rawNodes.length)
+	for (var i = 0; i < rawNodes.length; i++) {				// walk through all raw nodes
+		var node = rawNodes[i];
+		var _type = node['@type'];							// eval the node type
+		var _dbo = node['dbo:type'];
+		
+		var type = null;
+		if (_type) {
+			// console.log('entityTypesList.indexOf(_type)', JSON.stringify(entityTypesList).indexOf(_type))
+			// console.log('_type entityTypesList match', _type, JSON.stringify(entityTypesList), _type.match(JSON.stringify(entityTypesList)))
+			// console.log('_type entityTypesList.indexOf(_type)',_type, entityTypesList.indexOf(_type))
+			// if (entityTypesList.indexOf(_type) < 0) {
+			if ( (JSON.stringify(entityTypesList).indexOf(_type) === -1) ) {
+			// if ( _type.match(JSON.stringify(entityTypesList)) === false ) {
+
+				
+				if (  Array.isArray(_type) ) {
+					type = null
+				} else {
+					type = {
+						id: _type,
+						val:_type,
+						txt:_type.substring(_type.indexOf(":")+1, _type.length)
+					}
+				}
+
+				// console.log('type',type)
+			}	
+		}
+
+		if (type) {											// if unique type add to list
+			entityTypesList.push(type);
+			// console.log('type', JSON.stringify(type))
+
+		}
+	}; //end rawnodes
+	// console.log('entityTypesList.length', entityTypesList.length)
+	
+	entityTypesList.sort(function(a, b) {
+	    var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
+		//console.log(a.txt, b.txt, result)
+	    return result  ;
+	});
+	//entityTypesList.sort();
+	// console.log('entityTypesList', JSON.stringify(entityTypesList))
+	
+	//  create option for each unique node type	
+	for (var i = 0; i < entityTypesList.length; i++) {
+		if (entityTypesList[i].id !== "./") {
+			var option = document.createElement('option');
+			option.setAttribute('id', entityTypesList[i].id);
+			option.setAttribute('value', entityTypesList[i].val);
+			var textNode = document.createTextNode(entityTypesList[i].txt);
+			option.appendChild(textNode);
+			var es = document.getElementById("entitySelector") || null;
+			if (es) es.appendChild(option);	
+		}
+	};
+	
+	
+	
+}
+</script>
+
+
+
+
+
+
 <script type="text/javascript">
   const target = document.getElementById('mainArea')
   console.log('target',target)
@@ -231,21 +261,7 @@ PartitionDiagram1()
 </script>
 
 
-    <script type="text/javascript" src="/js/searchform.js"></script>
-    <link rel="stylesheet" href="/css/searchform.css">  
-    <script>opensearchform()</script>
-    <script>updateSearchForm()</script>
-    <script>closesearchform()</script>
     
-    <script type="text/javascript" src="/js/propsheet.js"></script>
-    <link rel="stylesheet" href="/css/propsheet.css">  
-    <script>openpropsheet()</script>
-    <script>closepropsheet()</script>
-    
-    <!--<script type="text/javascript" src="/js/editform.js"></script>-->
-    <!--<link rel="stylesheet" href="/css/editform.css"> -->
-    <!--<script>openeditform()</script>-->
-    <!--<script>closeeditform()</script>-->
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
