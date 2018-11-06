@@ -135,113 +135,113 @@ function getTheData(dataURL, cb) {
 
 
 <script type="text/javascript">
-function PartitionDiagram1() {
-    console.log('PartitionDiagram1')
+// function PartitionDiagram1() {
+//     console.log('PartitionDiagram1')
     
-    /*global getTheData*/
-    /*global dataURL*/
-    var result =  getTheData(dataURL, function(err, json) {
-        if (err) {
-          console.error(err)
-        }
+//     /*global getTheData*/
+//     /*global dataURL*/
+//     var result =  getTheData(dataURL, function(err, json) {
+//         if (err) {
+//           console.error(err)
+//         }
       
-        var data = json;
-        console.log('PartitionDiagram1 data',data)
-        /*global dataReceived*/
-        dataReceived(data, function(wheelJS) {
-            // console.log('PartitionDiagram1 wheelJS', wheelJS)
+//         var data = json;
+//         console.log('PartitionDiagram1 data',data)
+//         /*global dataReceived*/
+//         dataReceived(data, function(wheelJS) {
+//             // console.log('PartitionDiagram1 wheelJS', wheelJS)
 
-            dataLoaded(data);
-	          myData = data; console.log('myData', myData)
+//             dataLoaded(data);
+// 	          myData = data; console.log('myData', myData)
             
-            /*global whenready*/
-            whenready();    
-      });
-    });
-    return result;
-} // end PartitionDiagram1
+//             /*global whenready*/
+//             whenready();    
+//       });
+//     });
+//     return result;
+// } // end PartitionDiagram1
 
-// call initiating function
-PartitionDiagram1()
+// // call initiating function
+// PartitionDiagram1()
 </script>
 
 
 <script>
-  function dataLoaded(data) {
+function dataLoaded(data) {
 	console.log('dataLoaded')
 	/* global rawNodes */
 	var rawNodes = data['@graph'];
 		console.log('rawNodes ', JSON.stringify(rawNodes))
 	
 	
-	//  **
-	//  populate entity dropdown with known @types
-	//  **
-	var entityTypesList = [];
-	var typeitem = {
-			id: "",
-			val: "",
-			txt: ""
-		}
-	entityTypesList.push(typeitem);
-	// console.log('rawNodes.length', rawNodes.length)
-	for (var i = 0; i < rawNodes.length; i++) {				// walk through all raw nodes
-		var node = rawNodes[i];
-		var _type = node['@type'];							// eval the node type
-		var _dbo = node['dbo:type'];
+// 	//  **
+// 	//  populate entity dropdown with known @types
+// 	//  **
+// 	var entityTypesList = [];
+// 	var typeitem = {
+// 			id: "",
+// 			val: "",
+// 			txt: ""
+// 		}
+// 	entityTypesList.push(typeitem);
+// 	// console.log('rawNodes.length', rawNodes.length)
+// 	for (var i = 0; i < rawNodes.length; i++) {				// walk through all raw nodes
+// 		var node = rawNodes[i];
+// 		var _type = node['@type'];							// eval the node type
+// 		var _dbo = node['dbo:type'];
 		
-		var type = null;
-		if (_type) {
-			// console.log('entityTypesList.indexOf(_type)', JSON.stringify(entityTypesList).indexOf(_type))
-			// console.log('_type entityTypesList match', _type, JSON.stringify(entityTypesList), _type.match(JSON.stringify(entityTypesList)))
-			// console.log('_type entityTypesList.indexOf(_type)',_type, entityTypesList.indexOf(_type))
-			// if (entityTypesList.indexOf(_type) < 0) {
-			if ( (JSON.stringify(entityTypesList).indexOf(_type) === -1) ) {
-			// if ( _type.match(JSON.stringify(entityTypesList)) === false ) {
+// 		var type = null;
+// 		if (_type) {
+// 			// console.log('entityTypesList.indexOf(_type)', JSON.stringify(entityTypesList).indexOf(_type))
+// 			// console.log('_type entityTypesList match', _type, JSON.stringify(entityTypesList), _type.match(JSON.stringify(entityTypesList)))
+// 			// console.log('_type entityTypesList.indexOf(_type)',_type, entityTypesList.indexOf(_type))
+// 			// if (entityTypesList.indexOf(_type) < 0) {
+// 			if ( (JSON.stringify(entityTypesList).indexOf(_type) === -1) ) {
+// 			// if ( _type.match(JSON.stringify(entityTypesList)) === false ) {
 
 				
-				if (  Array.isArray(_type) ) {
-					type = null
-				} else {
-					type = {
-						id: _type,
-						val:_type,
-						txt:_type.substring(_type.indexOf(":")+1, _type.length)
-					}
-				}
+// 				if (  Array.isArray(_type) ) {
+// 					type = null
+// 				} else {
+// 					type = {
+// 						id: _type,
+// 						val:_type,
+// 						txt:_type.substring(_type.indexOf(":")+1, _type.length)
+// 					}
+// 				}
 
-				// console.log('type',type)
-			}	
-		}
+// 				// console.log('type',type)
+// 			}	
+// 		}
 
-		if (type) {											// if unique type add to list
-			entityTypesList.push(type);
-			// console.log('type', JSON.stringify(type))
+// 		if (type) {											// if unique type add to list
+// 			entityTypesList.push(type);
+// 			// console.log('type', JSON.stringify(type))
 
-		}
-	}; //end rawnodes
-	// console.log('entityTypesList.length', entityTypesList.length)
+// 		}
+// 	}; //end rawnodes
+// 	// console.log('entityTypesList.length', entityTypesList.length)
 	
-	entityTypesList.sort(function(a, b) {
-	    var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
-		//console.log(a.txt, b.txt, result)
-	    return result  ;
-	});
-	//entityTypesList.sort();
-	// console.log('entityTypesList', JSON.stringify(entityTypesList))
+// 	entityTypesList.sort(function(a, b) {
+// 	    var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
+// 		//console.log(a.txt, b.txt, result)
+// 	    return result  ;
+// 	});
+// 	//entityTypesList.sort();
+// 	// console.log('entityTypesList', JSON.stringify(entityTypesList))
 	
-	//  create option for each unique node type	
-	for (var i = 0; i < entityTypesList.length; i++) {
-		if (entityTypesList[i].id !== "./") {
-			var option = document.createElement('option');
-			option.setAttribute('id', entityTypesList[i].id);
-			option.setAttribute('value', entityTypesList[i].val);
-			var textNode = document.createTextNode(entityTypesList[i].txt);
-			option.appendChild(textNode);
-			var es = document.getElementById("entitySelector") || null;
-			if (es) es.appendChild(option);	
-		}
-	};
+// 	//  create option for each unique node type	
+// 	for (var i = 0; i < entityTypesList.length; i++) {
+// 		if (entityTypesList[i].id !== "./") {
+// 			var option = document.createElement('option');
+// 			option.setAttribute('id', entityTypesList[i].id);
+// 			option.setAttribute('value', entityTypesList[i].val);
+// 			var textNode = document.createTextNode(entityTypesList[i].txt);
+// 			option.appendChild(textNode);
+// 			var es = document.getElementById("entitySelector") || null;
+// 			if (es) es.appendChild(option);	
+// 		}
+// 	};
 	
 	
 	
