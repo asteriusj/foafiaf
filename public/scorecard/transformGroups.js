@@ -84,6 +84,7 @@
     
       let Tree = [] ;
       let Groups = [] ;
+      let Children = [] ;    // sames as Groups
       
       try {
         
@@ -99,6 +100,7 @@
         // Make groups at same time as node procssing
         let rootGroup = makeGroupFromNode(rootNode)
         Groups.push(rootGroup)
+        Children.push(rootGroup)
         
         // FIRST LEVEL
         // (a) level
@@ -113,7 +115,9 @@
 	          
             let aGroup = makeGroupFromNode(aNode)
             rootGroup.groups.push(aGroup)
+            rootGroup.children.push(aGroup)
             aGroup.groups = [] ;
+            aGroup.children = [] ;
             
             // then do next (b) level...
             let aChilderen = aNode.children || []  // in case it does not exist
@@ -126,7 +130,9 @@
   	          
               let bGroup = makeGroupFromNode(bNode)
               aGroup.groups.push(bGroup)
+              aGroup.children.push(bGroup)
               bGroup.groups = [] ;
+              bGroup.children = [] ;
               
               // then do next (c) level...
               let bChilderen = bNode.children || []  // in case it does not exist
@@ -139,7 +145,9 @@
     	          
                 let cGroup = makeGroupFromNode(cNode)
                 bGroup.groups.push(cGroup)
+                bGroup.children.push(cGroup)
                 cGroup.groups = [] ;
+                cGroup.children = [] ;
                 
               } // end for
             } // end for
@@ -250,6 +258,7 @@
       
               newGroup.id = node.id || node["@id"] ;
               newGroup.label = node.label ;
+              newGroup.name = node.label ;
               newGroup.full = node.full ;
               
               newGroup.polarity = node.status ;
@@ -268,9 +277,18 @@
               newGroup.ranktrend = node.ranktrend ;
               
               newGroup.ingroup = node.ingroup ;
+              newGroup.group = node.ingroup ;
+              
+              newGroup.parent = null ;
+              let pIds = node.parents || [] ;
+              if (pIds[0] != undefined) {
+                 let pid= pIds[0];
+                 newGroup.parent = getNodeById(pid)
+              }
               
               newGroup.groups = [] ;
-            
+              newGroup.children = [] ;
+              
               Group = newGroup ;
           
           } // end if _id
