@@ -114,18 +114,18 @@ function getTheData(dataURL, cb) {
     console.log('getTheData') //  retrieve graph data from jsonld file
     
     try {
-    //var dataPromise = $.Deferred();
-    console.log('dataURL -> ', dataURL)
-    
-    $.getJSON(dataURL, function(data) {
-        console.log('getJSON')
-        //console.log(data)
-        var treeData = data
-        //console.log('treeData',treeData)
-        
-        if (cb) cb(null, treeData )
-
-    });
+      //var dataPromise = $.Deferred();
+      console.log('dataURL -> ', dataURL)
+      
+      $.getJSON(dataURL, function(data) {
+          console.log('getJSON')
+          //console.log(data)
+          var treeData = data
+          //console.log('treeData',treeData)
+          
+          if (cb) cb(null, treeData )
+  
+      });
     } catch(e) {
       console.error('e',e)
     }
@@ -135,34 +135,59 @@ function getTheData(dataURL, cb) {
 
 
 <script type="text/javascript">
-// function PartitionDiagram1() {
-//     console.log('PartitionDiagram1')
+function PartitionDiagram2() {
+    console.log('PartitionDiagram2')
     
-//     /*global getTheData*/
-//     /*global dataURL*/
-//     var result =  getTheData(dataURL, function(err, json) {
-//         if (err) {
-//           console.error(err)
-//         }
+    /*global getTheData*/
+    /*global dataURL*/
+    var result =  getTheData(dataURL, function(err, json) {
+        if (err) {
+          console.error(err)
+        }
       
-//         var data = json;
-//         console.log('PartitionDiagram1 data',data)
-//         /*global dataReceived*/
-//         dataReceived(data, function(wheelJS) {
-//             // console.log('PartitionDiagram1 wheelJS', wheelJS)
-
-//             dataLoaded(data);
-// 	          myData = data; console.log('myData', myData)
+        var data = json;
+        console.log('PartitionDiagram1 data',data)
+        myData = data; console.log('myData', myData)
+        
+        
+        var groups = transformGroups(data,"", function(transformed) {
+                
+                let d = new Date();
+              	let returned  = new Date().getTime();
+              	console.log('returned',returned)
+              	
+              	console.log('transformed:',transformed)
+              	
+              	var groups = transformed.groups;
+              	
+                // console.log('transformed Groups:',groups)
+                
+                wheelJS = groups
+                /*global whenready*/
+                whenready(groups);
+                // whenready2(groups);
+                
             
-//             /*global whenready*/
-//             whenready();    
-//       });
-//     });
-//     return result;
-// } // end PartitionDiagram1
+              
+            }) // end transformGroups
+  
+        
+        /*global dataReceived*/
+        // dataReceived(data, function(wheelJS) {
+        //     // console.log('PartitionDiagram1 wheelJS', wheelJS)
 
-// // call initiating function
-// PartitionDiagram1()
+        //     dataLoaded(data);
+	       //   myData = data; console.log('myData', myData)
+            
+        //     /*global whenready*/
+        //     whenready();    
+        // });
+    });
+    return result;
+} // end PartitionDiagram1
+
+// call initiating function
+PartitionDiagram2()
 </script>
 
 
