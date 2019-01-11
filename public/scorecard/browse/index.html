@@ -1,1 +1,248 @@
 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    version="XHTML+RDFa 1.1" xml:lang="en" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" prefix="skos: http://www.w3.org/2004/02/skos/core# dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ owl: http://www.w3.org/2002/07/owl# rdfs: http://www.w3.org/2000/01/rdf-schema#" 
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	
+	<head>
+		<!--based on http://skos.um.es/unescothes/CS000/html-->
+		<title>Linked Data Browser</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="Description" content="Search and browsing of Linked Data JSON-LD data sets " />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Jeff Stewart Asterius Media LLC"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--<link rel="start" type="text/html" href="http://skos.um.es/" />-->
+
+		<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="//skos.um.es/unesco6/css/unesco6.css" rel="stylesheet" type="text/css">
+
+		<script src="../graphUtils.js"></script>
+		<script src="../resolveGraph.js"></script>
+		
+		<link href="./browse.css" rel="stylesheet" type="text/css" />
+		<script src="./browse.js" type="text/javascript" ></script>
+
+	</head>
+	<body onload="whenPageLoaded()">
+		
+<div id="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "image": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+    "name": "Tranform Rockford Interactive Semantic Data Searhing and Browsing",
+    "author": {
+      "@type": "Organization",
+      "url": "https://github.com/asteriusj",
+      "name": "asteriusj - Jeffrey Stewart"
+    },
+  "url": "http://foafiaf.transformrockford.org/brose/index.html",
+  "datePublished": "2018-08-08",
+  "operatingSystem": "Web",
+  "fileSize" : "0",
+  "interactionCount" : "",
+  "contentRating" : "",
+  "description" : "Interactice Semantic Linked Data Search and Browse for Tranfsform Rockford Community Transformation Datasets",
+  "applicationCategory" : "Interactive Search and Browse"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NGO",
+  "name": "Transform Rockford",
+  "legalName": "Transform Rockford LLC",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 N Main, Suite 110",
+    "addressLocality": "Rockford",
+    "addressRegion": "Illinois",
+    "postalCode": "61101"
+  },
+  "description": "TRANSFORMING OUR REGION FROM WITHIN - The Transform Rockford mission is to facilitate the creation and implementation of a strategic plan by the community for the purposes of dramatically improving the social and economic well-being of the community and its residents.",
+  "telephone": "+1 815.977.5840",
+  "logo": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+  "url": "http://transformrockford.org/"
+}
+</script>
+</div>
+
+		<script type="text/javascript">
+		// 	window.onbeforeunload = function() {
+		// 		document.getElementById('loader').style.display='block';
+		// 	}
+		</script>
+		
+		<div>
+		    <a id="skipnav" href="#contenido">Go to main content</a>
+		    </div>
+			<div id="loader">
+		    </div>
+		</div>
+
+
+	  	<div id="pagina page">
+			
+			<div id="cabecera">
+				<p>
+					<span class="tituloweb titleweb" id="objName">Linked Data Browser</span> <span class="home"><a href=""><span class="material-icons">&#xE88A;</span> Homepage</a></span>
+				</p>
+			</div>
+
+		
+			<div id="contenido">
+				<h1>
+					<span id="objDescription">Search and browsing of Linked Data JSON-LD data sets </span>
+				</h1>
+				
+				<!--<div id="infocontenido">-->
+				<!--	<p id="infositenote">-->
+						<!--<font style="vertical-align: inherit;">-->
+				<!--			<p><span id="objId"></span></p>-->
+				<!--			<p><span id="objType"></span></p>-->
+				<!--			<p><span id="objUrl"></span></p>-->
+				<!--			<p><span id="objUpdated"></span></p>-->
+				<!--			<p><span id="objPublished"></span></p>-->
+						<!--</font>-->
+				<!--	</p>-->
+				<!--</div>-->
+				
+				<div id="info">
+				
+					<div id="toolbar">
+						<!--<div id="searchform">-->
+      <!--  	  					<form name="search" action="." method="post">-->
+				  <!--  				<div><label for="q"><span>Search String</span>-->
+						<!--		<input type="text" name="q" id="q" value="Text to search" onfocus="document.search.q.value= '';"></label>-->
+						<!--		<button name="submit" type="submit" value=".Search" id="searchbutton" title="Search">-->
+						<!--			<img alt="Search" src="images/search-button.png">-->
+						<!--		</button></div>-->
+						<!--	</form>-->
+						<!--</div>-->
+					</div>
+					
+					<p class="formats">
+						<!--<a href="*/rdfxml">RDF/XML</a> | -->
+						<!--<a href="*/n-triples">N-Triples</a> | -->
+						<!--<a href="*/turtle">N3/Turtle</a> | -->
+						<!--<a href="*/json">JSON</a> | -->
+						<!--<a href="*/jsonld">JSON-LD</a>-->
+					</p>
+					
+					<div id="breadcrumb">
+						/ 
+						<!--<a href="foafiaf:Segment">Segments</a> -->
+						<!--&gt; <a href="foafiaf:Segment_REVITALIZATION">Revitalization</a> -->
+						<!--&gt; <a href="foafiaf:Spoke_Education">Education</a> -->
+						
+					</div>
+					
+					<div id="node" about="" typeof="skos:Concept" ></div>
+					<!--<div id="node" about="foafiaf:Spoke_Education" typeof="skos:Concept">-->
+						
+					<!--	<h2>-->
+					<!--		<span property="skos:notation">*note</span> -->
+					<!--		<span property="skos:prefLabel" xml:lang="en">Education Spoke Impact Statement"</span> -->
+					<!--		<small>(foafiaf:Spoke_Education)</small>-->
+					<!--	</h2>-->
+					<!--	<dl>-->
+					<!--		<dt>-->
+					<!--			<em property="skos:prefLabel" xml:lang="es">Declaración del impacto de la educación</em>(es)-->
+					<!--		</dt>-->
+					<!--		<dt>-->
+					<!--			<em property="skos:prefLabel" xml:lang="fr">Education Spoke Impact Statement</em> (fr)-->
+					<!--		</dt>-->
+					<!--		<dt>-->
+					<!--			<em property="skos:prefLabel" xml:lang="sv">Utbildningssamtal</em> (sv)-->
+					<!--		</dt>-->
+					<!--	</dl>-->
+						
+					<!--	<h3>Title (dc:title)</h3>-->
+					<!--	<span property="dc:title">-->
+					<!--		Education Spoke Impact Statement-->
+					<!--	</span>-->
+						
+					<!--	<h3>Description (dc:description)</h3>-->
+					<!--	<span property="dc:description">-->
+					<!--		Our pre-K through 12 schools and students are the pride of our community and are nationally recognized for excellence. All education and training programs are dynamic, provide accessible paths to fulfilling careers, and are highly valued by our citizens and employers.-->
+  					<!--			</span>-->
+  						
+					<!--	<h3>Image (foafiaf:image)</h3>-->
+					<!--	<span property="foafiaf:image">-->
+					<!--		<img src="../img/edu-new-3-2.jpg">-->
+					<!--	</span>-->
+						
+					<!--	<h3>Topic(foaf:topic)</h3>-->
+					<!--	<span property="dc:title">-->
+					<!--		Spoke: Education"-->
+					<!--	</span>-->
+						
+					<!--	<h3>Concept Schemes (skos:inScheme)</h3>-->
+					<!--	<ul rel="skos:inScheme">-->
+					<!--		<li resource="foafiaf:Spoke_0">-->
+					<!--			<a href="foafiaf:Spoke_0"> Spokes </a>-->
+					<!--		</li>-->
+					<!--	</ul>-->
+						
+					<!--	<h3>Top Concept of ... (skos:topConceptOf)</h3>-->
+					<!--	<ul rel="skos:topConceptOf">-->
+					<!--		<li resource="">-->
+					<!--			<a href=""> </a>-->
+					<!--		</li>-->
+					<!--	</ul>-->
+						
+					<!--	<h3>Broader Concepts (skos:broader)</h3>-->
+					<!--	<ul rel="skos:broader">-->
+					<!--		<li resource="foafiaf:Segment_RENEWAL">-->
+					<!--			<a href="foafiaf:Segment_RENEWAL">Revitalization Segment </a>-->
+					<!--		</li>-->
+					<!--	</ul>-->
+						
+					<!--	<h3>Narrower Concepts (skos:narrower)</h3>-->
+					<!--	<ul rel="skos:narrower">-->
+					<!--		<li resource="foafiaf:Strategy_All_Are_Ready">-->
+					<!--			<a href="foafiaf:Strategy_All_Are_Ready">Strategy: All Are Ready </a>-->
+					<!--		</li>-->
+					<!--		<li resource="foafiaf:Strategy_Partnering_for_Success">-->
+					<!--			<a href="foafiaf:Strategy_Partnering_for_Success">"Strategy: Partnering for Success </a>-->
+					<!--		</li>-->
+					<!--		<li resource="foafiaf:Strategy_Supporting_Students_n_Families">-->
+					<!--			<a href="foafiaf:Strategy_Supporting_Students_n_Families">"Strategy: Supporting Students and Families </a>-->
+					<!--		</li>-->
+					<!--	</ul>-->
+						
+					<!--</div>		-->
+				
+				</div>		
+			</div>
+		</div>	
+		
+		<div style="width:100%" id="pie">
+				<p>Contact: <span id="schema:author" property="schema:author"><a href="https://www.linkedin.com/in/jeffreyastewart/">J Stewart</a> - <a href="mailto:jstewart@transformrockford.org">jstewart@transformrockford.org</span></a></p>
+				
+				<p><span property="schema:isBasedOn">based on UNESCO Thesaurus <a target="blank" href="http://skos.um.es/unescothes/CS000/html">http://skos.um.es/unescothes/CS000/html</a></span></p>
+				<p>
+					<a rel="license" href="//creativecommons.org/licenses/by/3.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" height="25"></a>
+				</p>
+		</div>	
+		
+		<script>
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	    
+	      ga('create', 'UA-98316611-1', 'auto');
+	      ga('send', 'pageview');
+	    </script>
+    
+		<script type="text/javascript">( function(){ window.SIG_EXT = {}; } )()</script><span id="buffer-extension-hover-button" style="display: none; position: absolute; z-index: 8675309; width: 100px; height: 25px; background-image: url(&quot;chrome-extension://noojglkidnpfjbincgijbaiedldjfbhh/data/shared/img/buffer-hover-icon@2x.png&quot;); background-size: 100px 25px; opacity: 0.9; cursor: pointer; top: 109.325px; left: 673.213px;"></span>
+
+		
+	</body>
+</html>
