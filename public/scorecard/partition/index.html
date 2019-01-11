@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="content-language" content="en">
+  <link rel="icon" type="" href="../../img/favicon32.png" sizes="32x32">
+  
+  <title>Transform Rockford Scorecard Partition Diagram</title>
+  <meta name="description" content="FOAFIAF: Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering.">
+  <meta name="description" content="The partition diagram shows...">
+  <meta name="author" content="Transform Rockford LLC | Asterius Media LLC">
+
+  <!-- social graph elements -->
+  <meta property="og:title" content="Transform Rockford FOAFIAF T-Map  Partition Diagram" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering." />
+  <meta property="og:url" content="/_template.html/" />
+  <meta property="og:image" content="../../img/favicon32.png" />
+  <meta property="og:locale" content="en_US" />
+  	
+  <!-- iOS optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="../img/favicon32.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+    
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+    
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css"/>
+    
+    <script type="text/javascript" src="../../dist/d3.js"></script>
+    <script type="text/javascript" src="../../dist/d3.layout.js"></script>
+    <script type="text/javascript" src="../../js/iw.js"></script>
+	  <script type="text/javascript" src="../../js/utils.js"></script>
+	  
+	  <!--<script src="./graphUtils.js"></script>-->
+    <script src="./../transformGroups.js"></script>
+    
+	  <script type="text/javascript" src="./partition.js"></script>
+    <link rel="stylesheet" href="./partition.css">
+	  
+	   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+     
+	   <!--<script src="/js/smtp.js"></script>-->
+     <script src="../../js/spin.min.js"></script>
+     <!--<script src="../js/search.js"></script>-->
+ 
+
+</head>
+<body>
+   <script language="javascript" type="text/javascript">
+      // control right mouse click default behavior
+      document.oncontextmenu=RightMouseDown;
+      document.onmousedown = mouseDown; 
+      function mouseDown(e) {
+          if (e.which==3) {//righClick
+          //alert("Disabled - do whatever you like here..");
+         }
+      }
+      function RightMouseDown() { return false;}
+    </script>
+
+	
+<main id="mainArea">
+    <h2 style="text-align: center;"><strong><span style="color: #ff9933;">Scorecard Partition View</span></strong></h2>
+    <div id="selectorContainer" style="display:none"></div>
+    
+    <div id="partition1">
+
+    <div id="body">
+      <div id="footer">
+        <!--<div class="hint">click or option-click to descend or ascend</div>-->
+        <!--<a href="" title="title here">http://mbostock.github.io/d3/talk/20111018/partition.html</a>-->
+      </div>
+    </div>
+   
+  </div>
+</main>
+
+
+<script type="text/javascript">
+// collect URL query string parameters
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+}
+var startid = getUrlVars()["startid"] || null;
+console.log('startid', startid)
+var datalink = getUrlVars()["datalink"] || null;
+console.log('datalink', datalink)
+var showall = getUrlVars()["showall"] || null;
+console.log('showall', showall)
+var nextid = getUrlVars()["nextid"] || null;
+console.log('nextid', nextid)
+
+
+//  retrieve graph data from jsonld file
+var dataURL = datalink || "./indicatortest.json";
+// var dataURL = datalink || "../../things/jsonld/_Indicator_.jsonld";
+// var dataURL = datalink || "https://s3.amazonaws.com/transformrockford/combinedJSONLD.jsonld";
+console.log('dataURL -> ', dataURL)
+var myData;
+
+function getTheData(dataURL, cb) {
+    console.log('getTheData') //  retrieve graph data from jsonld file
+    
+    try {
+      //var dataPromise = $.Deferred();
+      console.log('dataURL -> ', dataURL)
+      
+      $.getJSON(dataURL, function(data) {
+          console.log('getJSON')
+          //console.log(data)
+          var treeData = data
+          //console.log('treeData',treeData)
+          
+          if (cb) cb(null, treeData )
+  
+      });
+    } catch(e) {
+      console.error('e',e)
+    }
+}  
+</script>
+
+<script type="text/javascript">
+function PartitionDiagram1() {
+    console.log('PartitionDiagram1')
+    
+    /*global getTheData*/
+    /*global dataURL*/
+    var result =  getTheData(dataURL, function(err, json) {
+        if (err) {
+          console.error(err)
+        }
+      
+        var data = json;
+        console.log('PartitionDiagram1 data',data)
+        /*global dataReceived*/
+        dataReceived(data, function(wheelJS) {
+            // console.log('PartitionDiagram1 wheelJS', wheelJS)
+
+            dataLoaded(data);
+	          myData = data; console.log('myData', myData)
+            
+            /*global whenready*/
+            whenready();    
+      });
+    });
+    return result;
+} // end PartitionDiagram1
+
+// call initiating function
+PartitionDiagram1()
+</script>
+
+<script type="text/javascript">
+function PartitionDiagram2() {
+    console.log('PartitionDiagram2')
+    
+    /*global getTheData*/
+    /*global dataURL*/
+    var result =  getTheData(dataURL, function(err, json) {
+        if (err) {
+          console.error(err)
+        }
+      
+        var data = json;
+        console.log('PartitionDiagram2 data',data)
+        
+        transformGroups(data,"", function(transformed) {
+                let groups = transformed.groups;
+                let GRPS = groups[0].children
+                
+                wheelJS = GRPS
+                
+                myData = data; console.log('myData', myData)
+                
+                
+                let d = new Date();
+              	let returned  = new Date().getTime();
+              	console.log('returned',returned)
+              	 
+                /*global whenready*/
+                whenready();
+                // whenready2(groups);
+
+            }) // end transformGroups
+  
+        
+        /*global dataReceived*/
+        // dataReceived(data, function(wheelJS) {
+        //     // console.log('PartitionDiagram1 wheelJS', wheelJS)
+
+        //     dataLoaded(data);
+	       //   myData = data; console.log('myData', myData)
+            
+        //     /*global whenready*/
+        //     whenready();    
+        // });
+    });
+    return result;
+} // end PartitionDiagram1
+
+// call initiating function
+PartitionDiagram2()
+</script>
+
+
+<script>
+function dataLoaded(data) {
+	console.log('dataLoaded')
+	/* global rawNodes */
+	var rawNodes = data['@graph'];
+		// console.log('rawNodes ', JSON.stringify(rawNodes))
+	
+	
+// 	//  **
+// 	//  populate entity dropdown with known @types
+// 	//  **
+// 	var entityTypesList = [];
+// 	var typeitem = {
+// 			id: "",
+// 			val: "",
+// 			txt: ""
+// 		}
+// 	entityTypesList.push(typeitem);
+// 	// console.log('rawNodes.length', rawNodes.length)
+// 	for (var i = 0; i < rawNodes.length; i++) {				// walk through all raw nodes
+// 		var node = rawNodes[i];
+// 		var _type = node['@type'];							// eval the node type
+// 		var _dbo = node['dbo:type'];
+		
+// 		var type = null;
+// 		if (_type) {
+// 			// console.log('entityTypesList.indexOf(_type)', JSON.stringify(entityTypesList).indexOf(_type))
+// 			// console.log('_type entityTypesList match', _type, JSON.stringify(entityTypesList), _type.match(JSON.stringify(entityTypesList)))
+// 			// console.log('_type entityTypesList.indexOf(_type)',_type, entityTypesList.indexOf(_type))
+// 			// if (entityTypesList.indexOf(_type) < 0) {
+// 			if ( (JSON.stringify(entityTypesList).indexOf(_type) === -1) ) {
+// 			// if ( _type.match(JSON.stringify(entityTypesList)) === false ) {
+
+				
+// 				if (  Array.isArray(_type) ) {
+// 					type = null
+// 				} else {
+// 					type = {
+// 						id: _type,
+// 						val:_type,
+// 						txt:_type.substring(_type.indexOf(":")+1, _type.length)
+// 					}
+// 				}
+
+// 				// console.log('type',type)
+// 			}	
+// 		}
+
+// 		if (type) {											// if unique type add to list
+// 			entityTypesList.push(type);
+// 			// console.log('type', JSON.stringify(type))
+
+// 		}
+// 	}; //end rawnodes
+// 	// console.log('entityTypesList.length', entityTypesList.length)
+	
+// 	entityTypesList.sort(function(a, b) {
+// 	    var result = ( a.txt.toLowerCase() > b.txt.toLowerCase() );
+// 		//console.log(a.txt, b.txt, result)
+// 	    return result  ;
+// 	});
+// 	//entityTypesList.sort();
+// 	// console.log('entityTypesList', JSON.stringify(entityTypesList))
+	
+// 	//  create option for each unique node type	
+// 	for (var i = 0; i < entityTypesList.length; i++) {
+// 		if (entityTypesList[i].id !== "./") {
+// 			var option = document.createElement('option');
+// 			option.setAttribute('id', entityTypesList[i].id);
+// 			option.setAttribute('value', entityTypesList[i].val);
+// 			var textNode = document.createTextNode(entityTypesList[i].txt);
+// 			option.appendChild(textNode);
+// 			var es = document.getElementById("entitySelector") || null;
+// 			if (es) es.appendChild(option);	
+// 		}
+// 	};
+	
+	
+	
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  const target = document.getElementById('mainArea')
+  console.log('target',target)
+  var spinner = new Spinner().spin(target);
+  console.log('start spinner',spinner)
+</script>
+
+
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-98316611-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+</body>
+</html>
