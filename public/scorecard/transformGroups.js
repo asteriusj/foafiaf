@@ -256,10 +256,12 @@
             
               let newGroup = {};
       
+              // newGroup.i = null;
               newGroup.id = node.id || node["@id"] ;
               newGroup.label = node.label ;
               newGroup.name = node.label ;
               newGroup.full = node.full ;
+              newGroup.description = node.description ;
               
               newGroup.polarity = node.status ;
               
@@ -272,7 +274,7 @@
               newGroup.target = node.targetvalue ;
               newGroup.value = node.datavalues ;
               // newGroup.year = node.datayear ;
-              newGroup.trend = node.datatrend ;
+              newGroup.datatrend = node.datatrend ;
               newGroup.rank = node.rank ;
               newGroup.ranktrend = node.ranktrend ;
               
@@ -309,7 +311,7 @@
    
       
   function prepNewNode(node,cb) {
-    //   console.log('prepNewNode')     
+      // console.log('prepNewNode node:',node)     
       let Node = null ;
       try {
         
@@ -321,6 +323,8 @@
             
             let _dbotype = node['dbo:type'] || null;   
             if (['foafiaf:Scorecard', 'foafiaf:Metric'].indexOf(_dbotype) >= 0) {
+              
+              let _group = node['dbo:type'] || "Group";
               
             	let _label = node['rdfs:label'] || null;
             	let _title = node['dc:title'] || null;
@@ -346,11 +350,15 @@
               Node = node ;
               
               Node.id = _id ;
+              Node.group = _group  ;
               Node.label = _label || _title ;
               Node.name = _title || _label ;
               Node.full = Node.name ;
               if (_description) Node.full = Node.name + ' - ' + _description ;
+              Node.description = _description ;
               Node.weight = 10 ;
+              
+              Node.size = null ;
               
               Node.status = _status ;
               Node.gcolor = _color ;
@@ -402,7 +410,7 @@
       
       for (let z = 0; z < graph.length; z++) {
 		    let node = graph[z]
-        // console.log('z node',z,node)
+        // console.log('prepGraphNodes  z node',z,node)
         
         let _id = node['@id'];    
         
@@ -410,11 +418,19 @@
 
             // let newNode = makeGroupFromNode(node) ;
             let newNode = prepNewNode(node) ;
-            // console.log('returned newNode:',newNode)
+            // console.log('prepGraphNodes returned newNode:',newNode)
+            
             
             if (newNode != null) {
               // console.log('returned newNode.ingroup:',newNode.ingroup)
               
+              
+              
+              //set i value
+              newNode.i = z
+            
+            
+            
               var childIds = getChildren(graph, node)
               if (childIds.length>0) {
                   // console.log('childIds',childIds)
