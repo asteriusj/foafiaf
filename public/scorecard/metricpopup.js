@@ -55,6 +55,14 @@ function getGrpFull(group){
         return ""
     }
 }
+function getGrpDescription(group){
+    let _description = group.description  || null ;
+    if (_description != null) {
+        return group.description;
+    } else {
+        return ""
+    }
+}
 function getGrpStatus(group){
     let _status = group.status  || null ;
     if (_status != null) {
@@ -75,12 +83,12 @@ function getGrpValue(group){
 // !!! add condition of increasing red and decresing green !!
 //
 function getGrpTrend(group){
-    let _trend = group.trend  || null ;
-    if ((_trend != null) && (_trend != undefined)){
+    let _datatrend = group.datatrend  || null ;
+    if ((_datatrend != null) && (_datatrend != undefined)){
         let _ico = null
-        if (_trend == 'Better') _ico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="Better" aria-hidden style="color: Green;"></i>'
-        if (_trend == 'Steady') _ico = '&nbsp; <i class="far fa-arrow-alt-circle-right fa-2x"  title="Steady" aria-hidden style="color: Black;"></i>'
-        if (_trend == 'Worse')  _ico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="Worse"  aria-hidden style="color: Red;"></i>'
+        if (_datatrend.includes('Better')) _ico = '&nbsp; <i class="fas fa-arrow-up    fa-2x"  title="' +_datatrend + '" aria-hidden style="color: Green;"></i>'
+        if (_datatrend.includes('Steady')) _ico = '&nbsp; <i class="far fa-arrow-alt-circle-right fa-2x"  title="' +_datatrend + '" aria-hidden style="color: Black;"></i>'
+        if (_datatrend.includes('Worse'))  _ico = '&nbsp; <i class="fas fa-arrow-down  fa-2x"  title="' +_datatrend + '"  aria-hidden style="color: Red;"></i>'
         if (_ico != null) return '<em>5-year Trend:</em> ' + _ico ;
     } else {
         return ""
@@ -113,12 +121,20 @@ function setGroupDetails(group) {
     var grpLabel = document.getElementById("grpLabel");
     grpLabel.innerHTML = getGrpLabel(group);
     
-    var grpFull = document.getElementById("grpFull");
-    let _full = group.full  || null ;
-    if (_full != null) {
-        grpFull.innerHTML = getGrpFull(group);
+    // var grpFull = document.getElementById("grpFull");
+    // let _full = group.full  || null ;
+    // if (_full != null) {
+    //     grpFull.innerHTML = getGrpFull(group);
+    // } else {
+    //     grpFull.innerHTML = ""
+    // }
+    
+    var grpDescription = document.getElementById("grpDescription");
+    let _description = group.description  || null ;
+    if (_description != null) {
+        grpDescription.innerHTML = getGrpDescription(group);
     } else {
-        grpFull.innerHTML = ""
+        grpDescription.innerHTML = ""
     }
     
     var grpStatus = document.getElementById("grpStatus");
@@ -141,7 +157,7 @@ function setGroupDetails(group) {
     }
     
     var grpTrend = document.getElementById("grpTrend");
-    let _trend = group.trend  || null ;
+    let _trend = group.datatrend  || null ;
     if (_trend != null) {
         grpTrend.innerHTML =  getGrpTrend(group) ;
     } else {
@@ -167,6 +183,5 @@ function setGroupDetails(group) {
     
     return true
 }
-
 
 
