@@ -2,10 +2,10 @@
     function drawCards(groups) {
         console.log('drawCards groups:',groups)
         let aGroup = groups[0]
-        console.log('aGroup:',aGroup)
+        // console.log('aGroup:',aGroup)
         
         let gTopLevelGroups = aGroup.groups
-        console.log('gTopLevelGroups:',gTopLevelGroups)
+        // console.log('gTopLevelGroups:',gTopLevelGroups)
         
         //
         // loop over top level groups
@@ -13,7 +13,7 @@
         if (gTopLevelGroups.length > 0) {
             for (let g=0; g<gTopLevelGroups.length; g++) {
                 let gTopLevel = gTopLevelGroups[g]
-                console.log('gTopLevel:',gTopLevel)
+                // console.log('gTopLevel:',gTopLevel)
             
                 //
                 //  create top level html and append to page
@@ -33,7 +33,7 @@
                 
                 
                 let gThemeGroups = gTopLevel.groups
-                console.log('gThemes:',gThemeGroups)
+                // console.log('gThemes:',gThemeGroups)
             
                 //
                 // loop over theme groups
@@ -41,7 +41,7 @@
                 if (gThemeGroups.length > 0) {
                     for (let t=0; t<gThemeGroups.length; t++) {
                         let gTheme = gThemeGroups[t]
-                        console.log('gTheme:',gTheme)
+                        // console.log('gTheme:',gTheme)
                     
                         //
                         // create top level html and append to page
@@ -69,7 +69,7 @@
                         
                         
                         let gIndicatorGroups = gTheme.groups
-                        console.log('gIndicatorGroups:',gIndicatorGroups)
+                        // console.log('gIndicatorGroups:',gIndicatorGroups)
                     
                         //
                         // loop through indicator children
@@ -77,7 +77,7 @@
                         if (gIndicatorGroups.length > 0) {
                             for (let i=0; i<gIndicatorGroups.length; i++) {
                                 let gIndicator = gIndicatorGroups[i]
-                                console.log('gIndicator:',gIndicator)
+                                // console.log('gIndicator:',gIndicator)
                                 
                                 let cardHTML = createCardHTML(gIndicator)
                                 
@@ -135,7 +135,10 @@
         cardHTML +=   '<h2><span id="" style="darker">' + getGrpLabel(group) + '</span></h2>  '
     	cardHTML +=   ' <div class="content  '
     	cardHTML += 	'  <br/>  '
-    	cardHTML += 	'   <span id=""   >' + getGrpFull(group) + '</span>  '
+    // 	cardHTML += 	'   <span id=""   >' + getGrpFull(group) + '</span>  '
+    // 	cardHTML += 	'	<br/>  '
+    // 	cardHTML += 	'	<br/>  '
+    	cardHTML += 	'   <span id=""   >' + getGrpDescription(group) + '</span>  '
     	cardHTML += 	'	<br/>  '
     	cardHTML += 	'	<br/>  '
     	cardHTML += 	'	<span id="" >' + getGrpStatus(group) + '</span>  '
