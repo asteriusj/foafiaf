@@ -1,0 +1,533 @@
+{
+  "children": [
+    {
+      "id": "foafiaf:Scorecard_Recreate",
+      "name": "Recreate",
+      "size": 10,
+      "value": 10,
+      "parent_id": "foafiaf:Scorecard_Top_25",
+      "children": [
+        {
+          "id": "foafiaf:Scorecard_Diversity",
+          "name": "Diversity",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Recreate",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Foreign_born_population_share_",
+              "name": "% Foreign born population share",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Diversity"
+            },
+            {
+              "id": "foafiaf:Metric_%_Population_40_or_Younger_",
+              "name": "% Population 40 or Younger",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Diversity"
+            },
+            {
+              "id": "foafiaf:Metric_%_Population_African_American_",
+              "name": "% Population African American",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Diversity"
+            },
+            {
+              "id": "foafiaf:Metric_%_Population_Asian_",
+              "name": "% Population Asian",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Diversity"
+            },
+            {
+              "id": "foafiaf:Metric_%_Population_Hispanic-Latino_",
+              "name": "% Population Hispanic-Latino",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Diversity"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Equity",
+          "name": "Equity",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Recreate",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Income_Gap_White-African_American_",
+              "name": "% Income Gap White-African American",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Equity"
+            },
+            {
+              "id": "foafiaf:Metric_%_Income_Gap_White-Latino_",
+              "name": "% Income Gap White-Latino",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Equity"
+            },
+            {
+              "id": "foafiaf:Metric_Educational_Attainment_Gap_Latino_",
+              "name": "Educational Attainment Gap Latino",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Equity"
+            },
+            {
+              "id": "foafiaf:Metric_Educational_Attainment_Gap_White-African_American_",
+              "name": "Educational Attainment Gap White-African American",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Equity"
+            },
+            {
+              "id": "foafiaf:Metric_Top_to_Bottom_Quintile_Income_Ratio_",
+              "name": "Top to Bottom Quintile Income Ratio",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Equity"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Neighborhoods",
+          "name": "Neighborhoods",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Recreate",
+          "children": [
+            {
+              "id": "foafiaf:Metric_$_Median_Monthly_Housing_Costs_",
+              "name": "$ Median Monthly Housing Costs",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Neighborhoods"
+            },
+            {
+              "id": "foafiaf:Metric_$_Median_house_value_",
+              "name": "$ Median house value",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Neighborhoods"
+            },
+            {
+              "id": "foafiaf:Metric_%_Homeownership_rate_",
+              "name": "% Homeownership rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Neighborhoods"
+            },
+            {
+              "id": "foafiaf:Metric_%_Rent_Burdened_Households_",
+              "name": "% Rent Burdened Households",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Neighborhoods"
+            },
+            {
+              "id": "foafiaf:Metric_%_Vacancy_rate_",
+              "name": "% Vacancy rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Neighborhoods"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Quality",
+          "name": "Quality",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Recreate"
+        }
+      ]
+    },
+    {
+      "id": "foafiaf:Scorecard_Reframe",
+      "name": "Reframe",
+      "size": 10,
+      "value": 10,
+      "parent_id": "foafiaf:Scorecard_Top_25",
+      "children": [
+        {
+          "id": "foafiaf:Scorecard_Citizenship",
+          "name": "Citizenship",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Reframe"
+        },
+        {
+          "id": "foafiaf:Scorecard_Entertainment",
+          "name": "Entertainment",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Reframe"
+        },
+        {
+          "id": "foafiaf:Scorecard_Pride",
+          "name": "Pride",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Reframe"
+        },
+        {
+          "id": "foafiaf:Scorecard_Reputation",
+          "name": "Reputation",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Reframe"
+        }
+      ]
+    },
+    {
+      "id": "foafiaf:Scorecard_Renew",
+      "name": "Renew",
+      "size": 10,
+      "value": 10,
+      "parent_id": "foafiaf:Scorecard_Top_25",
+      "children": [
+        {
+          "id": "foafiaf:Scorecard_Education",
+          "name": "Education",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Renew",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_3rd_Grade_Math_at_grade_level_",
+              "name": "% 3rd Grade Math at grade level",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_3rd_Graders_Read_at_Grade_Level_",
+              "name": "% 3rd Graders Read at Grade Level",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_8th_Grade_Math_at_grade_level_",
+              "name": "% 8th Grade Math at grade level",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_8th_Graders_Read_at_Grade_Level_",
+              "name": "% 8th Graders Read at Grade Level",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_College_or_Career_Ready_",
+              "name": "% College or Career Ready",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_High_school_graduate_or_higher_",
+              "name": "% High school graduate or higher",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            },
+            {
+              "id": "foafiaf:Metric_%_with_Bachelor_Degree_or_Higher_",
+              "name": "% with Bachelor Degree or Higher",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Education"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Safety",
+          "name": "Safety",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Renew",
+          "children": [
+            {
+              "id": "foafiaf:Metric_#_Domestic_Offences_",
+              "name": "# Domestic Offences",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Safety"
+            },
+            {
+              "id": "foafiaf:Metric_#_Property_Crime__(per_100000_inhabitants)_",
+              "name": "# Property Crime  (per 100,000 inhabitants)",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Safety"
+            },
+            {
+              "id": "foafiaf:Metric_#_School_Incidents_",
+              "name": "# School Incidents",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Safety"
+            },
+            {
+              "id": "foafiaf:Metric_#_per_1000000_Violent_Crime_rate_",
+              "name": "# per 1000,000 Violent Crime rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Safety"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Wellness",
+          "name": "Wellness",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Renew",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Obese_adults_",
+              "name": "% Obese adults",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Wellness"
+            },
+            {
+              "id": "foafiaf:Metric_%_Physical_Inactivity_",
+              "name": "% Physical Inactivity",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Wellness"
+            },
+            {
+              "id": "foafiaf:Metric_%_Uninsured_Rate_",
+              "name": "% Uninsured Rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Wellness"
+            },
+            {
+              "id": "foafiaf:Metric_%_With_Access_",
+              "name": "% With Access",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Wellness"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foafiaf:Scorecard_Resource",
+      "name": "Resource",
+      "size": 10,
+      "value": 10,
+      "parent_id": "foafiaf:Scorecard_Top_25",
+      "children": [
+        {
+          "id": "foafiaf:Scorecard_Funding",
+          "name": "Funding",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Resource"
+        },
+        {
+          "id": "foafiaf:Scorecard_Growth",
+          "name": "Growth",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Resource"
+        },
+        {
+          "id": "foafiaf:Scorecard_Investment",
+          "name": "Investment",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Resource"
+        },
+        {
+          "id": "foafiaf:Scorecard_Talent",
+          "name": "Talent",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Resource",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Employment_growth_rate_in_Education_Healthcare_Social_Assistance_",
+              "name": "% Employment growth rate in Education, Healthcare, Social Assistance",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Talent"
+            },
+            {
+              "id": "foafiaf:Metric_%_Employment_growth_rate_in_Manufacturing_",
+              "name": "% Employment growth rate in Manufacturing",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Talent"
+            },
+            {
+              "id": "foafiaf:Metric_%_Employment_growth_rate_in_Professional_Scientific_and_Business_Services__",
+              "name": "% Employment growth rate in Professional, Scientific, and Business Services ",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Talent"
+            },
+            {
+              "id": "foafiaf:Metric_%_Employment_growth_rate_in_Retail_",
+              "name": "% Employment growth rate in Retail",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Talent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foafiaf:Scorecard_Revitalize",
+      "name": "Revitalize",
+      "size": 10,
+      "value": 10,
+      "parent_id": "foafiaf:Scorecard_Top_25",
+      "children": [
+        {
+          "id": "foafiaf:Scorecard_Economy",
+          "name": "Economy",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Revitalize",
+          "children": [
+            {
+              "id": "foafiaf:Metric_$(millions)_Per_capita_real_GDP_",
+              "name": "$(millions) Per capita real GDP",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Economy"
+            },
+            {
+              "id": "foafiaf:Metric_$_Median_Household_Income_",
+              "name": "$ Median Household Income",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Economy"
+            },
+            {
+              "id": "foafiaf:Metric_$_Productivity_(output_per_worker)_",
+              "name": "$ Productivity (output per worker)",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Economy"
+            },
+            {
+              "id": "foafiaf:Metric_%_Poverty_Rate_(%_people)_",
+              "name": "% Poverty Rate (% people)",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Economy"
+            },
+            {
+              "id": "foafiaf:Metric_%_Regional_Price_Parity_",
+              "name": "% Regional Price Parity",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Economy"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Employement",
+          "name": "Employement",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Revitalize",
+          "children": [
+            {
+              "id": "foafiaf:Metric_$_Median_Hourly_Wage_",
+              "name": "$ Median Hourly Wage",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Employement"
+            },
+            {
+              "id": "foafiaf:Metric_%_Job_Growth_Rate_",
+              "name": "% Job Growth Rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Employement"
+            },
+            {
+              "id": "foafiaf:Metric_%_Labor_force_participation_rate_",
+              "name": "% Labor force participation rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Employement"
+            },
+            {
+              "id": "foafiaf:Metric_%_Unemployment_rate_",
+              "name": "% Unemployment rate",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Employement"
+            },
+            {
+              "id": "foafiaf:Metric_%_with_Post-Secondary_Degree_",
+              "name": "% with Post-Secondary Degree",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Employement"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Environment",
+          "name": "Environment",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Revitalize"
+        },
+        {
+          "id": "foafiaf:Scorecard_Infrastructure",
+          "name": "Infrastructure",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Revitalize",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Highway_Miles_in_Poor_Condition_",
+              "name": "% Highway Miles in Poor Condition",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Infrastructure"
+            }
+          ]
+        },
+        {
+          "id": "foafiaf:Scorecard_Resilience",
+          "name": "Resilience",
+          "size": 10,
+          "value": 10,
+          "parent_id": "foafiaf:Scorecard_Revitalize",
+          "children": [
+            {
+              "id": "foafiaf:Metric_%_Labor_share_of_manufacturing_",
+              "name": "% Labor share of manufacturing",
+              "size": 10,
+              "value": 10,
+              "parent_id": "foafiaf:Scorecard_Resilience"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
