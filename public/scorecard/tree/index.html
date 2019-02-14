@@ -1,33 +1,64 @@
-<meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="content-language" content="en">
-  <link rel="icon" type="" href="../../img/favicon32.png" sizes="32x32">
-  
-  <title>Transform Rockford Scorecard Tree Diagram</title>
-  <meta name="description" content="FOAFIAF: Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering.">
-  <meta name="description" content="The tree diagram shows...">
-  <meta name="author" content="Transform Rockford LLC | Asterius Media LLC">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    version="XHTML+RDFa 1.1" xml:lang="en" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" prefix="skos: http://www.w3.org/2004/02/skos/core# dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ owl: http://www.w3.org/2002/07/owl# rdfs: http://www.w3.org/2000/01/rdf-schema#" 
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	
+	<head>
+		<title>Transform Rockford Indicator Scorecard Tree Diagram</title>
+    <meta name="description" content="HTML 5 SVG Interactive Sunburst Diagram for Transform Rockford Community Regional Indicator Scorecard">
+    <meta name="author" content="Transform Rockford LLC | Asterius Media LLC">
+    <meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- social graph elements -->
-  <meta property="og:title" content="Transform Rockford FOAFIAF T-Map  Tree Diagram" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Friend Of A Friend Is A Friend - A Rockford IL regional community network mapping capability leveraging RDF Linked Datasets for Social Graph visualization, analysis and question answering." />
-  <meta property="og:url" content="/_template.html/" />
-  <meta property="og:image" content="../../img/favicon32.png" />
-  <meta property="og:locale" content="en_US" />
-  	
-  <!-- iOS optimization -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="../img/favicon32.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
-    
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+	</head>
+	<body onload="">
+		
+<div id="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "image": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+    "name": "Tranform Rockford Interactive Semantic Data Searhing and Browsing",
+    "author": {
+      "@type": "Organization",
+      "url": "https://github.com/asteriusj",
+      "name": "asteriusj - Jeffrey Stewart"
+    },
+  "url": "http://foafiaf.transformrockford.org/brose/index.html",
+  "datePublished": "2018-08-08",
+  "operatingSystem": "Web",
+  "fileSize" : "0",
+  "interactionCount" : "",
+  "contentRating" : "",
+  "description" : "Interactice Semantic Linked Data Search and Browse for Tranfsform Rockford Community Transformation Datasets",
+  "applicationCategory" : "Interactive Search and Browse"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NGO",
+  "name": "Transform Rockford",
+  "legalName": "Transform Rockford LLC",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "303 N Main, Suite 110",
+    "addressLocality": "Rockford",
+    "addressRegion": "Illinois",
+    "postalCode": "61101"
+  },
+  "description": "TRANSFORMING OUR REGION FROM WITHIN - The Transform Rockford mission is to facilitate the creation and implementation of a strategic plan by the community for the purposes of dramatically improving the social and economic well-being of the community and its residents.",
+  "telephone": "+1 815.977.5840",
+  "logo": "http://transformrockford.org/wp-content/uploads/2014/05/trlogo300x300.png",
+  "url": "http://transformrockford.org/"
+}
+</script>
+</div>
+
    
 <style>
 
@@ -51,7 +82,7 @@
 }
 
 </style>
-<body>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -73,8 +104,12 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+var treeurl = 'https://6nepl40j73.execute-api.us-east-1.amazonaws.com/dev/entities//TREE'
+console.log('treeurl:',treeurl)
 // d3.json("flare.json", function(error, flare) {
-d3.json("myTree.json", function(error, flare) {
+// d3.json("myTree.json", function(error, flare) {
+d3.json(treeurl, function(error, flare) {
   if (error) throw error;
   root = d3.hierarchy(flare);
   root.x0 = 0;
@@ -199,3 +234,20 @@ function color(d) {
 }
 
 </script>
+
+		
+		<script>
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	    
+	      ga('create', 'UA-98316611-1', 'auto');
+	      ga('send', 'pageview');
+	    </script>
+    
+		<script type="text/javascript">( function(){ window.SIG_EXT = {}; } )()</script><span id="buffer-extension-hover-button" style="display: none; position: absolute; z-index: 8675309; width: 100px; height: 25px; background-image: url(&quot;chrome-extension://noojglkidnpfjbincgijbaiedldjfbhh/data/shared/img/buffer-hover-icon@2x.png&quot;); background-size: 100px 25px; opacity: 0.9; cursor: pointer; top: 109.325px; left: 673.213px;"></span>
+
+		
+	</body>
+</html>
