@@ -23,7 +23,7 @@
   // GROUPS = transformGroups(SCORECARD,"")
     
    function transformGroups(data, startid, cb) {
-      console.log('transformGroups')
+      console.log('transformGroups (02-17-2019)')
       try {
         
         let d = new Date();
@@ -80,7 +80,7 @@
    //
     	
   function makeTreeOfNodes(_nodes,startid,cb) {
-      console.log('makeTreeOfNodes')
+      // console.log('start makeTreeOfNodes _nodes:',_nodes)
     
       let Tree = [] ;
       let Groups = [] ;
@@ -92,7 +92,7 @@
         
         // get starting id node first
         let rootNode = getNodeById(_nodes,startid)
-        console.log('rootNode:',rootNode)
+        // console.log('rootNode:',rootNode)
         
         // set root node of tree
         Tree = rootNode
@@ -107,11 +107,13 @@
         rootNode.parentOf = [] ;
         for (let n=0; n<rootNode.children.length; n++) {
 	          let aNodeId = rootNode.children[n] ;
-	         // console.log("aNodeId:",aNodeId)
 	          let aNode = getNodeById(_nodes,aNodeId)
 	         // console.log("aNode:",aNode)
+	          
 	          rootNode.parentOf.push(aNode)
 	          aNode.parentOf = [] ;
+	         
+	     //console.log("makeTreeOfNodes aNode:",aNode)
 	          
             let aGroup = makeGroupFromNode(aNode)
             rootGroup.groups.push(aGroup)
@@ -124,9 +126,13 @@
             for (let p=0; p<aChilderen.length; p++) {
   	          let bNodeId = aNode.children[p] ;
   	          let bNode = getNodeById(_nodes,bNodeId)
-  	          aNode.parentOf.push(bNode)
-  	          bNode.parentOf = [] ;
   	         // console.log("bNode:",bNode)
+  	          
+    	        aNode.parentOf.push(bNode)
+    	        bNode.parentOf = [] ;
+    	 
+  	   //console.log("makeTreeOfNodes bNode:",bNode)
+  	          
   	          
               let bGroup = makeGroupFromNode(bNode)
               aGroup.groups.push(bGroup)
@@ -138,10 +144,14 @@
               let bChilderen = bNode.children || []  // in case it does not exist
               for (let p=0; p<bChilderen.length; p++) {
     	          let cNodeId = bNode.children[p] ;
+    	         // console.log("cNodeId:",cNodeId)
     	          let cNode = getNodeById(_nodes,cNodeId)
+    	         // console.log("cNode:",cNode)
+    	          
     	          bNode.parentOf.push(cNode)
     	          cNode.parentOf = [] ;
-    	         // console.log("cNode:",cNode)
+    	         
+    	         // console.log("makeTreeOfNodes cNode:",cNode)
     	          
                 let cGroup = makeGroupFromNode(cNode)
                 bGroup.groups.push(cGroup)
@@ -283,6 +293,7 @@
               
               newGroup.parent = null ;
               let pIds = node.parents || [] ;
+              // console.log('pIds:',pIds)
               if (pIds[0] != undefined) {
                  let pid= pIds[0];
                  newGroup.parent = getNodeById(pid)
@@ -316,80 +327,85 @@
       try {
         
           let _id = node['@id'] || null;
-        
+          // if (_id == 'foafiaf:Indicator_%_Foreign_born_population_share_') {
+          //     console.log('prepNewNode node:',node)    
+          // }
+          
+          // ADD Indicator Measure others AND/OR DO NOT FILTER
           // filter nodes on  @type and dbo:type and align properties to Cicle 
           let _type = node['@type'] || null;  
-          if (['skos:Concept','foafiaf:Concept'].indexOf(_type) >= 0) {
+          // if (['skos:Concept','foafiaf:Concept'].indexOf(_type) >= 0) {
             
-            let _dbotype = node['dbo:type'] || null;   
-            if (['foafiaf:Scorecard', 'foafiaf:Metric'].indexOf(_dbotype) >= 0) {
-              
-              let _group = node['dbo:type'] || "Group";
-              
-            	let _label = node['rdfs:label'] || null;
-            	let _title = node['dc:title'] || null;
-            	let _description = node['dc:description'] || null;
-            	
-              let _broader = node['skos:broader'] || null;
-              let _parent = node['foafiaf:Parent'] || null;
-            	let _monitors = node['foafiaf:monitors'] || null;
-            	
-            	let _polarity = node['foafiaf:polarity'] || null;
-            	let _timeperiodtype = node['foafiaf:timeperiodtype'] || null;
-            	let _unitofmeasure = node['foafiaf:unitofmeasure'] || null;
-            	let _targetvalue = node['foafiaf:targetvalue'] || null;
-            	let _datavalues = node['foafiaf:datavalues'] || null;
-            // 	let _datayear = node['foafiaf:datayear'] || null;
-            	let _datatrend = node['foafiaf:datatrend'] || null;
-            	let _rank = node['foafiaf:rank'] || null;
-            	let _ranktrend = node['foafiaf:ranktrend'] || null;
-            	let _status = node['foafiaf:status'] || null;
-            	let _color = node['foafiaf:color'] || null;
-     
-     
-              Node = node ;
-              
-              Node.id = _id ;
-              Node.group = _group  ;
-              Node.label = _label || _title ;
-              Node.name = _title || _label ;
-              Node.full = Node.name ;
-              if (_description) Node.full = Node.name + ' - ' + _description ;
-              Node.description = _description ;
-              Node.weight = 10 ;
-              
-              Node.size = null ;
-              
-              Node.status = _status ;
-              Node.gcolor = _color ;
-              
-              Node.polarity = _polarity ;
-              Node.timeperiodtype = _timeperiodtype ;
-              Node.unitofmeasure = _unitofmeasure ;
-              Node.targetvalue = _targetvalue ;
-              
-              Node.datavalues = _datavalues ;
-              // Node.datayear = _datayear
-              Node.datatrend = _datatrend ;
-              Node.rank = _rank ;
-              Node.ranktrend = _ranktrend ;
-              
-              
-              // console.log('_label',_label)
-              // console.log('_monitors',_monitors)
-              // console.log('_parent',_parent)
-              // console.log('_broader',_broader)
-              Node.ingroup = _monitors || _parent || _broader ;
-              // console.log('Node.ingroup',Node.ingroup)
-              // Node.groups = [] ;
-              
-              // console.log('Node.parent',Node.parent)
-              // if (Node.ingroup = null) {
-              //   Node = null ;
-              //   return null ;
-              // }
-            } // end if in list	
-          } // end if in list
+              let _dbotype = node['dbo:type'] || null;   
+              // if (['foafiaf:Scorecard', 'foafiaf:Metric', 'foafiaf:Idicator', 'foafiaf:Measure'].indexOf(_dbotype) >= 0) {
+                
+                
+                  let _group = node['dbo:type'] || "Group";
+                  
+                	let _label = node['rdfs:label'] || null;
+                	let _title = node['dc:title'] || null;
+                	let _description = node['dc:description'] || null;
+                	
+                  let _broader = node['skos:broader'] || null;
+                  let _parent = node['foafiaf:Parent'] || null;
+                	let _monitors = node['foafiaf:monitors'] || null;
+                	
+                	let _polarity = node['foafiaf:polarity'] || null;
+                	let _timeperiodtype = node['foafiaf:timeperiodtype'] || null;
+                	let _unitofmeasure = node['foafiaf:unitofmeasure'] || null;
+                	let _targetvalue = node['foafiaf:targetvalue'] || null;
+                	let _datavalues = node['foafiaf:datavalues'] || null;
+                // 	let _datayear = node['foafiaf:datayear'] || null;
+                	let _datatrend = node['foafiaf:datatrend'] || null;
+                	let _rank = node['foafiaf:rank'] || null;
+                	let _ranktrend = node['foafiaf:ranktrend'] || null;
+                	let _status = node['foafiaf:status'] || null;
+                	let _color = node['foafiaf:color'] || null;
+         
+         
+                  Node = node ;
+                  
+                  Node.id = _id ;
+                  Node.group = _group  ;
+                  Node.label = _label || _title ;
+                  Node.name = _title || _label ;
+                  Node.full = Node.name ;
+                  if (_description) Node.full = Node.name + ' - ' + _description ;
+                  Node.description = _description ;
+                  Node.weight = 10 ;
+                  
+                  Node.size = null ;
+                  
+                  Node.status = _status ;
+                  Node.gcolor = _color ;
+                  
+                  Node.polarity = _polarity ;
+                  Node.timeperiodtype = _timeperiodtype ;
+                  Node.unitofmeasure = _unitofmeasure ;
+                  Node.targetvalue = _targetvalue ;
+                  
+                  Node.datavalues = _datavalues ;
+                  // Node.datayear = _datayear
+                  Node.datatrend = _datatrend ;
+                  Node.rank = _rank ;
+                  Node.ranktrend = _ranktrend ;
+                  
+                  
+                  // console.log('_label',_label)
+                  // console.log('_monitors',_monitors)
+                  // console.log('_parent',_parent)
+                  // console.log('_broader',_broader)
+                  Node.ingroup = _monitors || _parent || _broader ;
+                  // console.log('Node.ingroup',Node.ingroup)
+                  // Node.groups = [] ;
+                  
+                  // console.log('Node.parent',Node.parent)
+                  // if (Node.ingroup = null) {
+                  //   Node = null ;
+                  //   return null ;
+                  // }
+              // } // end if indexOf(_dbotype)
+          // } // end if indexOf(_type)
           
       } catch (e) {
         console.error('prepNewNode error',e)
@@ -405,7 +421,7 @@
    
    
    function prepGraphNodes(graph) {
-    //   console.log('prepGraphNodes')     
+      // console.log('start transformGroups prepGraphNodes graph:',graph)     
       let preppedNodes = [];
       
       for (let z = 0; z < graph.length; z++) {
@@ -413,6 +429,10 @@
         // console.log('prepGraphNodes  z node',z,node)
         
         let _id = node['@id'];    
+        
+        // if (_id == 'foafiaf:Indicator_%_Foreign_born_population_share_') {
+        //       console.log('prepGraphNodes _id node:',_id,node)
+        // }
         
         if (_id != "./") {
 
@@ -424,12 +444,8 @@
             if (newNode != null) {
               // console.log('returned newNode.ingroup:',newNode.ingroup)
               
-              
-              
               //set i value
               newNode.i = z
-            
-            
             
               var childIds = getChildren(graph, node)
               if (childIds.length>0) {
@@ -439,12 +455,17 @@
               }
               
               var parentIds = getParents(graph, node)
+              // if (_id == 'foafiaf:Indicator_%_Foreign_born_population_share_') {
+              //       console.log('prepGraphNodes _id node:',_id,node)
+              // }
+              // console.log('node',node)
+              // console.log('parentIds',parentIds)
               if (parentIds.length>0) {
                 // console.log('node parentIds',node,parentIds)
                 newNode.parents = parentIds;
               }
               
-              
+          // console.log('prepGraphNodes newNode:',newNode)
               preppedNodes.push(newNode)
               
             } // end if !null
@@ -537,7 +558,7 @@
     
     
     function getParents(graph, node) {
-        // console.log('getParents')
+        // console.log('getParents node',node)
         let node_id = node.id || node['@id'];
 
         let parentNodeIds = [];
@@ -711,20 +732,20 @@
 function getNodeById(_nodes, _id) {
 // 	console.log('start getNodeById', _id)
 	try {
-		var theNode = null;
-		
-		var obj = _nodes;
-		var targetProp = 'id'
-		var targetValue = _id
-		var finalResults = [];
-		var result = findFirstObject(obj, targetProp, targetValue, finalResults)
-// 		var result = findObjects(myObject, 'id', '2', finalResults);
-// 		console.log('findFirstObject finalResults:',finalResults)
-
-		theNode = finalResults[0] || null ;
-		
-// 		console.log('theNode',theNode)
-		return theNode
+  		var theNode = null;
+  		
+  		var obj = _nodes;
+  		var targetProp = 'id'
+  		var targetValue = _id
+  		var finalResults = [];
+  		var result = findFirstObject(obj, targetProp, targetValue, finalResults)
+  		// var result = findObjects(myObject, 'id', '2', finalResults);
+  		// console.log('findFirstObject finalResults:',finalResults)
+  
+  		theNode = finalResults[0] || null ;
+  		
+  // 		console.log('theNode',theNode)
+  		return theNode
 
 	}
 	catch(e) {
@@ -739,33 +760,40 @@ function getNodeById(_nodes, _id) {
 function findFirstObject(obj, targetProp, targetValue, finalResults) {
   // https://jsfiddle.net/alexQch/5u6q2ybc/
   function getObject(theObject) {
-    let result = null;
-    if (theObject instanceof Array) {
-      for (let i = 0; i < theObject.length; i++) {
-        getObject(theObject[i]);
-      }
-    }
-    else {
-      for (let prop in theObject) {
-        if(theObject.hasOwnProperty(prop)){
-        //   console.log(prop + ': ' + theObject[prop]);
-          if (prop === targetProp) {
-            // console.log('--found id');
-            if (theObject[prop] === targetValue) {
-            //   console.log('----found porop', prop, ', ', theObject[prop]);
-              finalResults.push(theObject);
-              
-              // return after first find... a change from original
-              return theObject
-              
-            }
+      let result = null;
+      if (theObject instanceof Array) {
+          for (let i = 0; i < theObject.length; i++) {
+              getObject(theObject[i]);
           }
-          if (theObject[prop] instanceof Object || theObject[prop] instanceof Array){
-            getObject(theObject[prop]);
-          }
-        }
       }
-    }
+      else {
+          for (let prop in theObject) {
+              if(theObject.hasOwnProperty(prop)){
+                //   console.log(prop + ': ' + theObject[prop]);
+                  if (prop === targetProp) {
+                      // console.log('--found id prop targetProp:',prop,targetProp);
+                      if (theObject[prop] === targetValue) {
+                        //   console.log('----found porop', prop, ', ', theObject[prop]);
+                          // console.log('theObject[prop] === targetValue:',theObject[prop],targetValue)
+                          finalResults.push(theObject);
+                          
+                          // return after first find... a change from original
+                          // console.log('findFirstObject:',findFirstObject)
+                          return theObject
+                          
+                      } else {
+                        
+                          // if (targetValue == 'foafiaf:Indicator_%_Foreign_born_population_share_') {
+                          //     console.log('theObject[prop] NOT targetValue:',theObject[prop],targetValue)
+                          // }
+                      }
+                  }
+                  if (theObject[prop] instanceof Object || theObject[prop] instanceof Array){
+                      getObject(theObject[prop]);
+                  }
+              }
+          }
+      }
   }
 
   getObject(obj);
