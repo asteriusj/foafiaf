@@ -115,10 +115,46 @@ function embed() {
     });
     
 
-    // COMMENT OUT DATA FILE FOr teSTING
-    // fetch('../../things/jsonld/_Indicator_.jsonld')
     
-    fetch('https://6nepl40j73.execute-api.us-east-1.amazonaws.com/dev/entities//JSONLD')
+    
+    function groupDoIt(Groups) {
+          console.log('groupDoIt')
+          //
+          //
+          myPopupClose()
+          
+          
+          var _dataObject = {}
+          _dataObject.open =true
+          _dataObject.groups = Groups
+          circles.set("dataObject", _dataObject); 
+          
+          var customAttributes = function(opts, params, vars) {
+            // console.log("    fetch Color decorator callback.", params, vars);
+            vars.groupColor = params.group.gcolor;
+            vars.labelColor = "auto";
+          };
+          
+          circles.set({
+              groupColorDecorator: customAttributes,
+          }); 
+        
+    }; // end groupDoIt
+      
+    var Groups = JSON.parse(sessionStorage.getItem('groups')) || null;
+    console.log('scorecard.js Groups from sessionStorage: ',Groups)
+            
+    // check for Groups before proccesing, else get it!
+    if (Groups != null) {
+        
+        groupDoIt(Groups)
+        
+        
+    } else {
+      // COMMENT OUT DATA FILE FOr teSTING
+      // fetch('../../things/jsonld/_Indicator_.jsonld')
+    
+      fetch('https://6nepl40j73.execute-api.us-east-1.amazonaws.com/dev/entities//JSONLD')
     
         .then(function (response) {
             
@@ -129,6 +165,7 @@ function embed() {
           
             console.log('transforing Groups from data:',data)
             
+            // transform JSONLD data into Groups
             var groups = transformGroups(data,"", function(transformed) {
                 
                 let d = new Date();
@@ -141,43 +178,20 @@ function embed() {
               	
                 console.log('transformed Groups:',groups)
                 
-                //
-                //
-                myPopupClose()
+                var res = sessionStorage.setItem('groups', JSON.stringify(groups));
+                console.log("sessionStorage.setItem('groups'",res)
                 
-                
-                var _dataObject = {}
-                _dataObject.open =true
-                _dataObject.groups = groups
-                circles.set("dataObject", _dataObject); 
-                
-                var customAttributes = function(opts, params, vars) {
-                  // console.log("    fetch Color decorator callback.", params, vars);
-                  vars.groupColor = params.group.gcolor;
-                  vars.labelColor = "auto";
-                };
-                
-                circles.set({
-                    groupColorDecorator: customAttributes,
-                }); 
+                groupDoIt(groups)
             
               
             })
             
-            
-            
-            
-            
-            
-            
-        
+      }); // end fetch
       
-    });
-
-
+      
+    }; // end else if
 
     installResizeHandlerFor(circles, 0);
 }
 embed();
-
 
