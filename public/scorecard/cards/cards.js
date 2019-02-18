@@ -1,3 +1,4 @@
+console.log('loading cards.js... ')
 
     function drawCards(groups) {
         console.log('drawCards groups:',groups)
@@ -164,40 +165,56 @@
         return cardHTML ;
     }
         
+    
+    var Groups = JSON.parse(sessionStorage.getItem('groups')) || null;
+    console.log('scorecard.js Groups from sessionStorage: ',Groups)
+            
+    // check for Groups before proccesing, else get it!
+    if (Groups != null) {
         
-    // COMMENT OUT DATA FILE FOr teSTING
-    // fetch('../../things/jsonld/_Indicator_.jsonld')
-    
-    fetch('https://6nepl40j73.execute-api.us-east-1.amazonaws.com/dev/entities//JSONLD')
-    
-        .then(function (response) {
-            
-          return response.json();
-        })
-        .then(function (data) {
-            console.log('data',data);
-          
-            console.log('transforing Groups from data:',data)
-            
-            var groups = transformGroups(data,"", function(transformed) {
+        drawCards(Groups)
+        
+        
+    } else {
+        // COMMENT OUT DATA FILE FOr teSTING
+        // fetch('../../things/jsonld/_Indicator_.jsonld')
+        
+        fetch('https://6nepl40j73.execute-api.us-east-1.amazonaws.com/dev/entities//JSONLD')
+        
+            .then(function (response) {
                 
-                let d = new Date();
-              	let returned  = new Date().getTime();
-            //   	console.log('returned',returned)
-              	
-            //   	console.log('transformed:',transformed)
-              	
-              	var groups = transformed.groups;
-              	
-                // console.log('transformed Groups:',groups)
-                
-                drawCards(groups)
-                //
-                //
-                // myPopupClose()
-                
+              return response.json();
             })
-            
+            .then(function (data) {
+                console.log('data',data);
+              
+                console.log('transforing Groups from data:',data)
+                
+                var groups = transformGroups(data,"", function(transformed) {
+                    
+                    let d = new Date();
+                  	let returned  = new Date().getTime();
+                //   	console.log('returned',returned)
+                  	
+                //   	console.log('transformed:',transformed)
+                  	
+                  	var groups = transformed.groups;
+                  	
+                    // console.log('transformed Groups:',groups)
+                    console.log('transformed Groups:',groups)
+                
+                    var res = sessionStorage.setItem('groups', JSON.stringify(groups));
+                    console.log("sessionStorage.setItem('groups'",res)
+                
+                    drawCards(groups)
+                    //
+                    //
+                    // myPopupClose()
+                    
+                })
+                
+        }); // end fetch
       
-    });
+    }; // end else if
+    
     
