@@ -2,7 +2,8 @@
  * Semantic Data Broeser HTML5 (demo variant)
  * Copyright 2018, Asterius Media LLC, All Rights Reserved.
  */
- 'use strict';
+'use strict';
+console.log('loading browse.js... ')
 function dtstamp() {
     let d = new Date();
     let dt  = new Date().getTime();
@@ -74,96 +75,108 @@ function whenPageLoaded() {
     if ( isEmpty(mg) ) {
     
         console.log('isEmpty',mg)
-        fetchMyLinkedData(datalink, function(json) {
-            console.log('after fetchMyLinkedData')
-            let myLD = JSON.parse(json) || json ;
-            // console.log('myLD',myLD)
-            
-            
-            resolveLinkedData(myLD, function(_LD){
-                // console.log('after resolveLinkedData')
-                
-                // TODO: seelctively set innerHTML from obj
-                
-                // let objName = document.getElementById("objName").innerHTML = _LD["name"] || null ;
-                // let objDescription = document.getElementById("objDescription").innerHTML = _LD["description"] || null ;
-                
-                // let objId        = document.getElementById("objId").innerHTML        = _LD["@id"] || null ;
-                // let objType      = document.getElementById("objType").innerHTML      = _LD["@type"] || null ;
-                // let objUrl       = document.getElementById("objUrl").innerHTML       = _LD["url"] || null ;
-                // let objUpdated   = document.getElementById("objUpdated").innerHTML   = _LD["updated"] || null ;
-                // let objPublished = document.getElementById("objPublished").innerHTML = _LD["published"] || null ;
-                
-                // let objSameAs = _LD["sameAs"] || null ;
-                // let objIsBasedOn = _LD["isBasedOn"] || null ;
-                // let objCreator= _LD["keywords"] || null ;
-                
-                
-                let defaultId = _LD["startId"] || startid || null ;
-                
-                //
-                // TODO select info from LD to set LD Bwowser Title Description and Source URL
-                //
-                function makeSchemaJsonld () {
-                //   "@id": "_Indicator_",
-                //   "@type": "Dataset",
-                //   "startid": "foafiaf:Scorecard_Top_25",
-                //   "name": "Transform Rockford Scorecard Indicators",
-                //   "description": "A updated dataset of scorecard indicator relationships, values and metrics to provide insight into were the comminuty transformation process is at and where is it going",
-                //   "url": "",
-                //   "sameAs": "",
-                //   "keywords": [
-                    
-                //   ],
-                //   "creator": {
-                //     "@type": "Organization",
-                //     "url": "",
-                //     "name": "",
-                //     "contactPoint": {
-                //       "@type": "ContactPoint",
-                //       "contactType": "customer service",
-                //       "telephone": "",
-                //       "email": ""
-                //     }
-                //   },
-                //   "includedInDataCatalog": {
-                    
-                //   },
-                //   "distribution": [
-                    
-                //   ],
-                //   "temporalCoverage": "",
-                //   "spatialCoverage": {
-                    
-                //   },
-                //   "updated": "2018-12-25T12:34:56Z",
-                //   "published": "2018-12-25T12:34:56Z"
-                } // end 
-                
-                //
-                // TODO set graph storage name to form of path that unique identifies it
-                //
-                let myGraph = _LD["@graph"] || null ;
-                console.log('myGraph: ',myGraph)
-                let localgraph = setMyGraph(myGraph);
         
-            //     let gtree = makeTreeFromGraph(myGraph,defaultId)
-  	         //   console.log('gtree:',gtree)
+        var myGraph = JSON.parse(sessionStorage.getItem('graph')) || null;
+        console.log('browse.js myGraph from sessionStorage: ',myGraph)
                 
-            //     let bcrumbs = makeBreadCrumbs(myGraph)
-  	         //   console.log('bcrumbs:',bcrumbs)
-  	         
-  	         //   let bcrumb = getBreadCrumb(myGraph,startid)
-            //     console.log('myGraph,defaultId,bcrumb:',myGraph,startid,bcrumb)
-                
-                processGraph(myGraph);
-               
-                
-            })
+        // check for Groups before proccesing, else get it!
+        if (myGraph != null) {
+            
+            let localgraph = setMyGraph(myGraph);
+            processGraph(myGraph);
             
             
+        } else {
+        
+        
+            fetchMyLinkedData(datalink, function(json) {
+                console.log('after fetchMyLinkedData')
+                let myLD = JSON.parse(json) || json ;
+                // console.log('myLD',myLD)
+                
+                
+                resolveLinkedData(myLD, function(_LD){
+                    // console.log('after resolveLinkedData')
+                    
+                    // TODO: seelctively set innerHTML from obj
+                    
+                    // let objName = document.getElementById("objName").innerHTML = _LD["name"] || null ;
+                    // let objDescription = document.getElementById("objDescription").innerHTML = _LD["description"] || null ;
+                    
+                    // let objId        = document.getElementById("objId").innerHTML        = _LD["@id"] || null ;
+                    // let objType      = document.getElementById("objType").innerHTML      = _LD["@type"] || null ;
+                    // let objUrl       = document.getElementById("objUrl").innerHTML       = _LD["url"] || null ;
+                    // let objUpdated   = document.getElementById("objUpdated").innerHTML   = _LD["updated"] || null ;
+                    // let objPublished = document.getElementById("objPublished").innerHTML = _LD["published"] || null ;
+                    
+                    // let objSameAs = _LD["sameAs"] || null ;
+                    // let objIsBasedOn = _LD["isBasedOn"] || null ;
+                    // let objCreator= _LD["keywords"] || null ;
+                    
+                    
+                    let defaultId = _LD["startId"] || startid || null ;
+                    
+                    //
+                    // TODO select info from LD to set LD Bwowser Title Description and Source URL
+                    //
+                    function makeSchemaJsonld () {
+                    //   "@id": "_Indicator_",
+                    //   "@type": "Dataset",
+                    //   "startid": "foafiaf:Scorecard_Top_25",
+                    //   "name": "Transform Rockford Scorecard Indicators",
+                    //   "description": "A updated dataset of scorecard indicator relationships, values and metrics to provide insight into were the comminuty transformation process is at and where is it going",
+                    //   "url": "",
+                    //   "sameAs": "",
+                    //   "keywords": [
+                        
+                    //   ],
+                    //   "creator": {
+                    //     "@type": "Organization",
+                    //     "url": "",
+                    //     "name": "",
+                    //     "contactPoint": {
+                    //       "@type": "ContactPoint",
+                    //       "contactType": "customer service",
+                    //       "telephone": "",
+                    //       "email": ""
+                    //     }
+                    //   },
+                    //   "includedInDataCatalog": {
+                        
+                    //   },
+                    //   "distribution": [
+                        
+                    //   ],
+                    //   "temporalCoverage": "",
+                    //   "spatialCoverage": {
+                        
+                    //   },
+                    //   "updated": "2018-12-25T12:34:56Z",
+                    //   "published": "2018-12-25T12:34:56Z"
+                    } // end 
+                    
+                    //
+                    // TODO set graph storage name to form of path that unique identifies it
+                    //
+                    let myGraph = _LD["@graph"] || null ;
+                    console.log('myGraph: ',myGraph)
+                    
+                    
+                    var res = sessionStorage.setItem('graph', JSON.stringify(myGraph));
+                    console.log("browse.js sessionStorage.setItem('graph'",res)
+                
+                    let localgraph = setMyGraph(myGraph);
+                    processGraph(myGraph);
+                   
+                    
+                })
             
-        }) // end getMyLinkedData
+            
+            }) // end fetchMyLinkedData
+        
+        }; // end else if
+        
+        
         
     } else if ( !isEmpty(mg) ) {
             
