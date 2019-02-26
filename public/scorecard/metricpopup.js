@@ -184,4 +184,3 @@ function setGroupDetails(group) {
     return true
 }
 
-
