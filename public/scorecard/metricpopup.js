@@ -66,7 +66,7 @@ function getGrpDescription(group){
 function getGrpStatus(group){
     let _status = group.status  || null ;
     if (_status != null) {
-        return '<em>status:</em> <span style="display: inline-block; width: 10px;"></span>    <span id="statusText" ><font color="'+ group.status + '">' + group.status + '</font></span>';
+        return '<em>status:</em> <span style="display: inline-block; width: 10px;"></span>    <span id="statusText" ><font color="'+ group.gcolor + '">' + group.status + '</font></span>';
     } else {
         return ""
     }
